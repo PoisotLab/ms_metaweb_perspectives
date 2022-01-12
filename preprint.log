@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  12 JAN 2022 18:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  12 JAN 2022 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1123,7 +1123,7 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 \flrow@LT@prelastfoot=\box78
 \c@FBLTpage=\count342
 )
-<logo.png, id=7, 556.2381pt x 202.356pt>
+<logo.png, id=19, 556.2381pt x 202.356pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 207.
@@ -1269,15 +1269,20 @@ LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>
 ]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.25993pt on input line 326.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.25993pt on input line 326.
 
-LaTeX Warning: Reference `fig:inflation' on page 2 undefined on input line 346.
+
+LaTeX Warning: Reference `fig:inflation' on page 2 undefined on input line 350.
 
 
 [2]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 458.
+(Font)              scaled to size 9.0pt on input line 471.
  [3]
-Overfull \hbox (0.2941pt too wide) in paragraph at lines 593--599
+Overfull \hbox (0.2941pt too wide) in paragraph at lines 606--612
 [][]\T1/stix2/m/n/9 No'kmaq, M., Mar-shall, A., Bea-z-ley, K. F., Hum, J., joud
 ry, sha-lan, Pa-padopou-los, A., Pic-tou, S., Rabesca,
  []
@@ -1289,16 +1294,16 @@ AED: lastpage setting LastPage
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `preprint.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 91C48B663D90E1B1E942358EE831EB7A;1173.
  ) 
 Here is how much of TeX's memory you used:
- 30653 strings out of 478353
- 556769 string characters out of 5850105
- 840960 words of memory out of 5000000
- 48210 multiletter control sequences out of 15000+600000
- 521423 words of font info for 131 fonts, out of 8000000 for 9000
+ 30680 strings out of 478353
+ 557574 string characters out of 5850105
+ 841320 words of memory out of 5000000
+ 48229 multiletter control sequences out of 15000+600000
+ 534154 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,117p,405b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,12n,117p,488b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/texlive/texdi
 r/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{/opt/texlive/texdir/
@@ -1313,10 +1318,10 @@ ist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/t
 exmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dis
 t/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (5 pages, 743792 bytes).
+Output written on preprint.pdf (5 pages, 745535 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 189 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 42 words of extra memory for PDF output out of 10000 (max. 10000000)
 

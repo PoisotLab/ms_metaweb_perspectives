@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  12 JAN 2022 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  12 JAN 2022 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,12 +902,12 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 5.69998pt on input line 230.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 276.
+(Font)              scaled to size 8.54997pt on input line 280.
  [3
 
 ]
 
-LaTeX Warning: Reference `fig:inflation' on page 4 undefined on input line 287.
+LaTeX Warning: Reference `fig:inflation' on page 4 undefined on input line 291.
 
 
 [4] [5] [6] [7] [8] [9] 
@@ -917,16 +917,16 @@ AED: lastpage setting LastPage
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 2181586193B9FB7B34AE0DA793CD49B8;1176.
  ) 
 Here is how much of TeX's memory you used:
- 18740 strings out of 478353
- 304105 string characters out of 5850105
- 577473 words of memory out of 5000000
- 36543 multiletter control sequences out of 15000+600000
+ 18759 strings out of 478353
+ 304801 string characters out of 5850105
+ 577788 words of memory out of 5000000
+ 36556 multiletter control sequences out of 15000+600000
  490467 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,117p,246b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,11n,117p,487b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{/
 opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/texlive/texdir/
@@ -941,10 +941,10 @@ ist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/t
 exmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dis
 t/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (10 pages, 696218 bytes).
+Output written on draft.pdf (10 pages, 699232 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -835,10 +835,10 @@ INPUT ./draft.out
 INPUT draft.out
 INPUT ./draft.out
 INPUT draft.out
+OUTPUT draft.pdf
 INPUT ./draft.out
 INPUT ./draft.out
 OUTPUT draft.out
-OUTPUT draft.pdf
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT /opt/texlive/texdir/texmf-dist/tex/latex/caption/ltcaption.sty
