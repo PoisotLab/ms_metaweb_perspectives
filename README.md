@@ -134,6 +134,11 @@ better. Therefore, bringing a sparse graph into a continuous, dense vector space
 
 **TK** Transfer + embedding graf
 
+Rather than directly predicting biological rules [see *e.g.* @Pichler2020MacLea
+for an overview], which may be confounded by the sparse nature of graph data,
+learning embeddings works in the low-dimensional space that maximizes
+information about the network structure.
+
 ![From a low-dimensional figure vector (see @fig:embedding), it is possible to
 develop predictive approaches. Nodes in an ecological network are species, for
 which we can leverage phylogenetic relatedness [*e.g.* @Strydom2021FooWeb] or
