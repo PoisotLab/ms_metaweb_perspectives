@@ -210,27 +210,23 @@ urlcolor=blue}
 
 \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
 
-\noindent {\LARGE \textbf{\textsf{Template to prepare preprints and
-manuscripts using markdown and github actions}}}
+\noindent {\LARGE \textbf{\textsf{Predicting metawebs: graph embeddings
+can help alleviate spatial data deficiencies}}}
 
 \medskip
 \begin{flushleft}
 {\small
 %
-\href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
+\href{https://orcid.org/0000-0001-6067-1349}{Tanya\,Strydom}%
 %
 \,\textsuperscript{1,2,‡}, %
-Peregrin\,Took%
+\href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
 %
-\,\textsuperscript{3,4}, %
-Merriadoc\,Brandybuck%
-%
-\,\textsuperscript{5,4,‡}
+\,\textsuperscript{1,2,‡}
 \vskip 1em
-\textsuperscript{1}\,Université de Montréal; \textsuperscript{2}\,Québec
-Centre for Biodiversity Sciences; \textsuperscript{3}\,Inn of the
-Prancing Pony; \textsuperscript{4}\,Fellowship of the
-Ring; \textsuperscript{5}\,Green Dragon Inn\\
+\textsuperscript{1}\,Département de Sciences Biologiques, Université de
+Montréal, Montréal, Canada; \textsuperscript{2}\,Quebec Centre for
+Biodiversity Science, Montréal, Canada\\
 \textsuperscript{‡}\,These authors contributed equally to the work\\
 \vskip 1em
 \textbf{Correspondance to:}\\
@@ -250,23 +246,31 @@ pandoc\\pandoc-crossref\\github actions\\}
 
 
 
+\begin{enumerate}
+    \itemMetawebs, i.e.~networks of potential interactions within a
+species pool, are a powerful abstraction to understand how large-scales
+species interaction networks are structured.%
+    \itemBecause metawebs are typically expressed at large spatial and
+taxonomic scales, assembling them is a tedious and costly process;
+predictive methods can help circumvent the limitations in data
+deficiencies, by providing `draft' metawebs.%
+    \itemOne way to improve the predictive ability is to maximize the
+information used for prediction, by using graph embeddings rather than
+the list of species interactions. Graph embedding is an emerging field
+in machine learning that holds great potential for ecoloigcal problems.%
+    \itemIn this perspective, we outline how the challenges associated
+with infering metawebs line-up with the advantages of graph embeddings;
+furthermore, because metawebs are inherently spatial objects, we discuss
+how the choice of the species pool has consequences on the reconstructed
+network, but also embeds hypotheses about which human-made boundaries
+are ecologically meaningful.%
+\end{enumerate}
 
-        {\bfseries Purpose:}\,This template provides a series of scripts
-to render a markdown document into an interactive website and a series
-of PDFs.\\%
-        {\bfseries Motivation:}\,It makes collaborating on text with
-GitHub easier, and means that we never need to think about the
-output.\\%
-        {\bfseries Internals:}\,GitHub actions and a series of python
-scritpts. The markdown is handled with \texttt{pandoc}.\\%
-    
+
 
 \vskip 2em
 \makebox[0pt][l]{\colorRule[CCCCCC]{2.0\textwidth}{0.5pt}}
 \vskip 2em
-
-\hypertarget{intro}{%
-\section{Intro}\label{intro}}
 
 Having a general solution for inferring \emph{potential} interactions
 (despite the unavailability of interaction data) could be the catalyst
@@ -393,7 +397,7 @@ enacted at smaller scales (Ray \emph{et al.} 2021). And yet, we do not
 really have a satisfying answer to the question of ``where does a food
 web stop?''; the current most satisfying solutions involve examining the
 spatial consistency of network area relationships (see \emph{e.g.}
-Galiana \emph{et al.} 2018, 2019, 2021; Fortin \emph{et al.} 2021),
+Galiana \emph{et al.} 2018, 2019, 2021; \textbf{Fortin2021NetEco?}),
 which is of course impossible in the absence of enough information about
 the network itself. This suggests that an \emph{a posteriori} refinement
 of the results may be required, based on a downscaling of the metaweb.
@@ -491,11 +495,6 @@ J.A. \& Pascual, M.). Oxford University Press, pp. 27--86.
 Eichhorn, M.P., Baker, K. \& Griffiths, M. (2019). Steps towards
 decolonising biogeography. \emph{Frontiers of Biogeography}, 12, 1--7.
 
-\leavevmode\hypertarget{ref-Fortin2021NetEco}{}%
-Fortin, M.-J., Dale, M.R.T. \& Brimacombe, C. (2021). Network ecology in
-dynamic landscapes. \emph{Proceedings of the Royal Society B: Biological
-Sciences}, 288, rspb.2020.1889, 20201889.
-
 \leavevmode\hypertarget{ref-Galiana2021SpaSca}{}%
 Galiana, N., Barros, C., Braga, J., Ficetola, G.F., Maiorano, L.,
 Thuiller, W., \emph{et al.} (2021). The spatial scaling of food web
@@ -505,8 +504,8 @@ n/a.
 \leavevmode\hypertarget{ref-Galiana2019GeoVar}{}%
 Galiana, N., Hawkins, B.A. \& Montoya, J.M. (2019). The geographical
 variation of network structure is scale dependent: Understanding the
-biotic specialization of hostparasitoid networks. \emph{Ecography}, 42,
-1175--1187.
+biotic specialization of host--parasitoid networks. \emph{Ecography},
+42, 1175--1187.
 
 \leavevmode\hypertarget{ref-Galiana2018SpaSca}{}%
 Galiana, N., Lurgi, M., Claramunt-López, B., Fortin, M.-J., Leroux, S.,
@@ -581,7 +580,7 @@ Nost, E. \& Goldstein, J.E. (2021). A political ecology of data.
 
 \leavevmode\hypertarget{ref-OConnor2020UnvFoo}{}%
 O'Connor, L.M.J., Pollock, L.J., Braga, J., Ficetola, G.F., Maiorano,
-L., Martinez-Almoyna, C., \emph{et al.} (2020). Unveiling the food webs
+L., Martinez‐Almoyna, C., \emph{et al.} (2020). Unveiling the food webs
 of tetrapods across Europe through the prism of the Eltonian niche.
 \emph{Journal of Biogeography}, 47, 181--192.
 
