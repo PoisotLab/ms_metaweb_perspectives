@@ -329,27 +329,116 @@ of predictive algorithms.
 
 \begin{longtable}[]{@{}llll@{}}
 \toprule
-Method & Embedding approach & Reference & Ecological
-application\tabularnewline
+\begin{minipage}[b]{0.10\columnwidth}\raggedright
+Method\strut
+\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedright
+Embedding approach\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+Reference\strut
+\end{minipage} & \begin{minipage}[b]{0.35\columnwidth}\raggedright
+Species interactions application\strut
+\end{minipage}\tabularnewline
 \midrule
 \endhead
-RDPG & graphs through SVD & Young \& Scheinerman (2007) & Wardeh et al.
-(2021)\tabularnewline
-tSNE & nodes through statistical divergence & Hinton \& Roweis (2002)
-&\tabularnewline
-DeepWalk & graph walk & Perozzi et al. (2014) &\tabularnewline
-FastEmbed & graph through PCA/SVD analogue & Ramasamy \& Madhow (2015)
-&\tabularnewline
-LINE & nodes through statistical divergence & Tang et al. (2015)
-&\tabularnewline
-SDNE & nodes through auto-encoding & D. Wang et al. (2016)
-&\tabularnewline
-node2vec & node embedding & Grover \& Leskovec (2016) &\tabularnewline
-graph2vec & sub-graph embedding & Narayanan et al. (2017)
-&\tabularnewline
-HARP & nodes through a meta-strategy & Chen et al. (2017)
-&\tabularnewline
-Joint methods & multiple graphs & S. Wang et al. (2021) &\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+RDPG\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+graphs through SVD\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Young \& Scheinerman (2007)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+Poisot et al. (2021)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+tSNE\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+nodes through statistical divergence\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Hinton \& Roweis (2002)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+Cieslak et al. (2020) -- statistical interactions\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+DeepWalk\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+graph walk\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Perozzi et al. (2014)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+Wardeh et al. (2021)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+FastEmbed\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+graph through PCA/SVD analogue\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Ramasamy \& Madhow (2015)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+LINE\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+nodes through statistical divergence\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Tang et al. (2015)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+SDNE\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+nodes through auto-encoding\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+D. Wang et al. (2016)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+node2vec\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+node embedding\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Grover \& Leskovec (2016)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+graph2vec\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+sub-graph embedding\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Narayanan et al. (2017)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+DMSE\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+joint node embedding\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+D. Chen et al. (2017)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+D. Chen et al. (2017) -- joint SDMs\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+HARP\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+nodes through a meta-strategy\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+H. Chen et al. (2017)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
+Joint methods\strut
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+multiple graphs\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+S. Wang et al. (2021)\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -468,6 +557,11 @@ knowledge to action for biodiversity conservation in Canada.
 \emph{Biological Conservation}, \emph{256}, 108983.
 \url{https://doi.org/10.1016/j.biocon.2021.108983}
 
+\leavevmode\hypertarget{ref-Chen2017DeeMul}{}%
+Chen, D., Xue, Y., Fink, D., Chen, S., \& Gomes, C. P. (2017).
+\emph{Deep Multi-species Embedding}. 3639--3646.
+\url{https://www.ijcai.org/proceedings/2017/509}
+
 \leavevmode\hypertarget{ref-Chen2017HarHie}{}%
 Chen, H., Perozzi, B., Hu, Y., \& Skiena, S. (2017, November 16).
 \emph{HARP: Hierarchical Representation Learning for Networks}.
@@ -478,6 +572,13 @@ Choudry, A. (2013). Saving biodiversity, for whom and for what?
 Conservation NGOs, complicity, colonialism and conquest in an era of
 capitalist globalization. In \emph{NGOization: Complicity,
 contradictions and prospects} (pp. 24--44). Bloomsbury Publishing.
+
+\leavevmode\hypertarget{ref-Cieslak2020TdiSto}{}%
+Cieslak, M. C., Castelfranco, A. M., Roncalli, V., Lenz, P. H., \&
+Hartline, D. K. (2020). T-Distributed Stochastic Neighbor Embedding
+(t-SNE): A tool for eco-physiological transcriptomic analysis.
+\emph{Marine Genomics}, \emph{51}, 100723.
+\url{https://doi.org/10.1016/j.margen.2019.100723}
 
 \leavevmode\hypertarget{ref-Csermely2004StrLin}{}%
 Csermely, P. (2004). Strong links are important, but weak links
@@ -663,6 +764,12 @@ Poisot, T., Cirtwill, A. R., Cazelles, K., Gravel, D., Fortin, M.-J., \&
 Stouffer, D. B. (2016). The structure of probabilistic networks.
 \emph{Methods in Ecology and Evolution}, \emph{7}(3), 303--312.
 \url{https://doi.org/10.1111/2041-210X.12468}
+
+\leavevmode\hypertarget{ref-Poisot2021ImpMam}{}%
+Poisot, T., Ouellet, M.-A., Mollentze, N., Farrell, M. J., Becker, D.
+J., Albery, G. F., Gibb, R. J., Seifert, S. N., \& Carlson, C. J. (2021,
+May 31). \emph{Imputing the mammalian virome with linear filtering and
+singular value decomposition}. \url{http://arxiv.org/abs/2105.14973}
 
 \leavevmode\hypertarget{ref-Poisot2015SpeWhy}{}%
 Poisot, T., Stouffer, D. B., \& Gravel, D. (2015). Beyond species: Why

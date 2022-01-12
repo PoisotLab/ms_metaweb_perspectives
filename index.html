@@ -218,12 +218,18 @@
             <p>Graph embedding is a varied family of machine learning techniques aiming to transform nodes and edges into a vector space, usually of a lower dimension, whilst maximally retaining key properties of the graph <span class="citation" data-cites="Yan2005GraEmb">(Yan et al., 2005)</span>. Ecological networks are an interesting candidate for the widespread application of embeddings, as they tend to posess a shared sstructural backbone <span class="citation" data-cites="Mora2018IdeCom">(Mora et al., 2018)</span>, which hints at structural invariants that can be revealed a lower dimensions. Indeed, previous work by <span class="citation" data-cites="Eklof2013DimEco">Eklöf et al. (2013)</span> suggests that food webs are inherently low-dimensional objects, and can be adequately represented with less than ten dimensions.</p>
             <p>The popularity of graph embedding techniques in machine learning is rather intuitive: while graphs are discrete objects, machine learning techniques tend to handle continuous data better. Therefore, bringing a discrete graph into a continuous vector space opens up a broader variety of predictive algorithms.</p>
             <table>
+            <colgroup>
+            <col style="width: 11%" />
+            <col style="width: 31%" />
+            <col style="width: 17%" />
+            <col style="width: 40%" />
+            </colgroup>
             <thead>
             <tr class="header">
             <th>Method</th>
             <th>Embedding approach</th>
             <th>Reference</th>
-            <th>Ecological application</th>
+            <th>Species interactions application</th>
             </tr>
             </thead>
             <tbody>
@@ -231,19 +237,19 @@
             <td>RDPG</td>
             <td>graphs through SVD</td>
             <td><span class="citation" data-cites="Young2007RanDot">Young &amp; Scheinerman (2007)</span></td>
-            <td><span class="citation" data-cites="Wardeh2021PreMam">Wardeh et al. (2021)</span></td>
+            <td><span class="citation" data-cites="Poisot2021ImpMam">Poisot et al. (2021)</span></td>
             </tr>
             <tr class="even">
             <td>tSNE</td>
             <td>nodes through statistical divergence</td>
             <td><span class="citation" data-cites="Hinton2002StoNei">Hinton &amp; Roweis (2002)</span></td>
-            <td></td>
+            <td><span class="citation" data-cites="Cieslak2020TdiSto">Cieslak et al. (2020)</span> – statistical interactions</td>
             </tr>
             <tr class="odd">
             <td>DeepWalk</td>
             <td>graph walk</td>
             <td><span class="citation" data-cites="Perozzi2014DeeOnl">Perozzi et al. (2014)</span></td>
-            <td></td>
+            <td><span class="citation" data-cites="Wardeh2021PreMam">Wardeh et al. (2021)</span></td>
             </tr>
             <tr class="even">
             <td>FastEmbed</td>
@@ -276,12 +282,18 @@
             <td></td>
             </tr>
             <tr class="odd">
-            <td>HARP</td>
-            <td>nodes through a meta-strategy</td>
-            <td><span class="citation" data-cites="Chen2017HarHie">Chen et al. (2017)</span></td>
-            <td></td>
+            <td>DMSE</td>
+            <td>joint node embedding</td>
+            <td><span class="citation" data-cites="Chen2017DeeMul">D. Chen et al. (2017)</span></td>
+            <td><span class="citation" data-cites="Chen2017DeeMul">D. Chen et al. (2017)</span> – joint SDMs</td>
             </tr>
             <tr class="even">
+            <td>HARP</td>
+            <td>nodes through a meta-strategy</td>
+            <td><span class="citation" data-cites="Chen2017HarHie">H. Chen et al. (2017)</span></td>
+            <td></td>
+            </tr>
+            <tr class="odd">
             <td>Joint methods</td>
             <td>multiple graphs</td>
             <td><span class="citation" data-cites="Wang2021JoiEmb">S. Wang et al. (2021)</span></td>
@@ -304,11 +316,17 @@
             <div id="ref-Buxton2021KeyInf" class="csl-entry" role="doc-biblioentry">
             Buxton, R. T., Bennett, J. R., Reid, A. J., Shulman, C., Cooke, S. J., Francis, C. M., Nyboer, E. A., Pritchard, G., Binley, A. D., Avery-Gomm, S., Ban, N. C., Beazley, K. F., Bennett, E., Blight, L. K., Bortolotti, L. E., Camfield, A. F., Gadallah, F., Jacob, A. L., Naujokaitis-Lewis, I., … Smith, P. A. (2021). Key information needs to move from knowledge to action for biodiversity conservation in Canada. <em>Biological Conservation</em>, <em>256</em>, 108983. <a href="https://doi.org/10.1016/j.biocon.2021.108983">https://doi.org/10.1016/j.biocon.2021.108983</a>
             </div>
+            <div id="ref-Chen2017DeeMul" class="csl-entry" role="doc-biblioentry">
+            Chen, D., Xue, Y., Fink, D., Chen, S., &amp; Gomes, C. P. (2017). <em>Deep Multi-species Embedding</em>. 3639–3646. <a href="https://www.ijcai.org/proceedings/2017/509">https://www.ijcai.org/proceedings/2017/509</a>
+            </div>
             <div id="ref-Chen2017HarHie" class="csl-entry" role="doc-biblioentry">
             Chen, H., Perozzi, B., Hu, Y., &amp; Skiena, S. (2017, November 16). <em>HARP: Hierarchical Representation Learning for Networks</em>. <a href="http://arxiv.org/abs/1706.07845">http://arxiv.org/abs/1706.07845</a>
             </div>
             <div id="ref-Choudry2013SavBio" class="csl-entry" role="doc-biblioentry">
             Choudry, A. (2013). Saving biodiversity, for whom and for what? Conservation NGOs, complicity, colonialism and conquest in an era of capitalist globalization. In <em>NGOization: Complicity, contradictions and prospects</em> (pp. 24–44). Bloomsbury Publishing.
+            </div>
+            <div id="ref-Cieslak2020TdiSto" class="csl-entry" role="doc-biblioentry">
+            Cieslak, M. C., Castelfranco, A. M., Roncalli, V., Lenz, P. H., &amp; Hartline, D. K. (2020). T-Distributed Stochastic Neighbor Embedding (t-SNE): A tool for eco-physiological transcriptomic analysis. <em>Marine Genomics</em>, <em>51</em>, 100723. <a href="https://doi.org/10.1016/j.margen.2019.100723">https://doi.org/10.1016/j.margen.2019.100723</a>
             </div>
             <div id="ref-Csermely2004StrLin" class="csl-entry" role="doc-biblioentry">
             Csermely, P. (2004). Strong links are important, but weak links stabilize them. <em>Trends in Biochemical Sciences</em>, <em>29</em>(7), 331–334. <a href="https://doi.org/10.1016/j.tibs.2004.05.004">https://doi.org/10.1016/j.tibs.2004.05.004</a>
@@ -402,6 +420,9 @@
             </div>
             <div id="ref-Poisot2016StrPro" class="csl-entry" role="doc-biblioentry">
             Poisot, T., Cirtwill, A. R., Cazelles, K., Gravel, D., Fortin, M.-J., &amp; Stouffer, D. B. (2016). The structure of probabilistic networks. <em>Methods in Ecology and Evolution</em>, <em>7</em>(3), 303–312. <a href="https://doi.org/10.1111/2041-210X.12468">https://doi.org/10.1111/2041-210X.12468</a>
+            </div>
+            <div id="ref-Poisot2021ImpMam" class="csl-entry" role="doc-biblioentry">
+            Poisot, T., Ouellet, M.-A., Mollentze, N., Farrell, M. J., Becker, D. J., Albery, G. F., Gibb, R. J., Seifert, S. N., &amp; Carlson, C. J. (2021, May 31). <em>Imputing the mammalian virome with linear filtering and singular value decomposition</em>. <a href="http://arxiv.org/abs/2105.14973">http://arxiv.org/abs/2105.14973</a>
             </div>
             <div id="ref-Poisot2015SpeWhy" class="csl-entry" role="doc-biblioentry">
             Poisot, T., Stouffer, D. B., &amp; Gravel, D. (2015). Beyond species: Why ecological interaction networks vary through space and time. <em>Oikos</em>, <em>124</em>(3), 243–251. <a href="https://doi.org/10.1111/oik.01719">https://doi.org/10.1111/oik.01719</a>

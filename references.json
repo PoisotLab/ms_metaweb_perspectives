@@ -962,6 +962,42 @@
         "volume": "12"
     },
     {
+        "URL": "https://www.ijcai.org/proceedings/2017/509",
+        "author": [
+            {
+                "family": "Chen",
+                "given": "Di"
+            },
+            {
+                "family": "Xue",
+                "given": "Yexiang"
+            },
+            {
+                "family": "Fink",
+                "given": "Daniel"
+            },
+            {
+                "family": "Chen",
+                "given": "Shuo"
+            },
+            {
+                "family": "Gomes",
+                "given": "Carla P."
+            }
+        ],
+        "id": "Chen2017DeeMul",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "page": "3639-3646",
+        "title": "Deep Multi-species Embedding",
+        "type": "article-journal"
+    },
+    {
         "URL": "http://arxiv.org/abs/1706.07845",
         "author": [
             {
@@ -1014,6 +1050,46 @@
         "publisher": "Bloomsbury Publishing",
         "title": "Saving biodiversity, for whom and for what? Conservation NGOs, complicity, colonialism and conquest in an era of capitalist globalization",
         "type": "chapter"
+    },
+    {
+        "DOI": "10.1016/j.margen.2019.100723",
+        "author": [
+            {
+                "family": "Cieslak",
+                "given": "Matthew C."
+            },
+            {
+                "family": "Castelfranco",
+                "given": "Ann M."
+            },
+            {
+                "family": "Roncalli",
+                "given": "Vittoria"
+            },
+            {
+                "family": "Lenz",
+                "given": "Petra H."
+            },
+            {
+                "family": "Hartline",
+                "given": "Daniel K."
+            }
+        ],
+        "container-title": "Marine Genomics",
+        "id": "Cieslak2020TdiSto",
+        "issued": {
+            "date-parts": [
+                [
+                    2020,
+                    6,
+                    1
+                ]
+            ]
+        },
+        "page": "100723",
+        "title": "T-Distributed Stochastic Neighbor Embedding (t-SNE): A tool for eco-physiological transcriptomic analysis",
+        "type": "article-journal",
+        "volume": "51"
     },
     {
         "DOI": "10.1111/2041-210X.13180",
@@ -3943,6 +4019,59 @@
             }
         ],
         "id": "Poisot2021ImpMam",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    5,
+                    31
+                ]
+            ]
+        },
+        "title": "Imputing the mammalian virome with linear filtering and singular value decomposition",
+        "type": "webpage"
+    },
+    {
+        "URL": "http://arxiv.org/abs/2105.14973",
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Ouellet",
+                "given": "Marie-Andr\u00e9e"
+            },
+            {
+                "family": "Mollentze",
+                "given": "Nardus"
+            },
+            {
+                "family": "Farrell",
+                "given": "Maxwell J."
+            },
+            {
+                "family": "Becker",
+                "given": "Daniel J."
+            },
+            {
+                "family": "Albery",
+                "given": "Gregory F."
+            },
+            {
+                "family": "Gibb",
+                "given": "Rory J."
+            },
+            {
+                "family": "Seifert",
+                "given": "Stephanie N."
+            },
+            {
+                "family": "Carlson",
+                "given": "Colin J."
+            }
+        ],
+        "id": "Poisot2021ImpMama",
         "issued": {
             "date-parts": [
                 [
