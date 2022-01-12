@@ -910,9 +910,9 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Warning: Reference `fig:inflation' on page 4 undefined on input line 287.
 
 
-[4] [5] [6] [7] [8] 
+[4] [5] [6] [7] [8] [9] 
 AED: lastpage setting LastPage
-[9] AED endfloat: Processing end Figures and Tables (./draft.aux)
+[10] AED endfloat: Processing end Figures and Tables (./draft.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -920,13 +920,13 @@ Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 18738 strings out of 478353
- 304083 string characters out of 5850105
- 575467 words of memory out of 5000000
- 36542 multiletter control sequences out of 15000+600000
+ 18740 strings out of 478353
+ 304105 string characters out of 5850105
+ 577473 words of memory out of 5000000
+ 36543 multiletter control sequences out of 15000+600000
  490467 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,117p,246b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,11n,117p,246b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{/
 opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/texlive/texdir/
@@ -941,10 +941,10 @@ ist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/t
 exmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dis
 t/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb>
-Output written on draft.pdf (9 pages, 684045 bytes).
+Output written on draft.pdf (10 pages, 696218 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
