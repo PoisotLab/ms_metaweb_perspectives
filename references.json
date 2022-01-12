@@ -2160,6 +2160,32 @@
         "type": "book"
     },
     {
+        "author": [
+            {
+                "family": "Hinton",
+                "given": "Geoffrey"
+            },
+            {
+                "family": "Roweis",
+                "given": "Sam T"
+            }
+        ],
+        "container-title": "NIPS",
+        "id": "Hinton2002StoNei",
+        "issued": {
+            "date-parts": [
+                [
+                    2002
+                ]
+            ]
+        },
+        "page": "833-840",
+        "publisher": "Citeseer",
+        "title": "Stochastic neighbor embedding",
+        "type": "paper-conference",
+        "volume": "15"
+    },
+    {
         "DOI": "10.1126/sciadv.aau6792",
         "author": [
             {
@@ -4789,6 +4815,43 @@
         "publisher-place": "San Francisco California USA",
         "title": "Structural Deep Network Embedding",
         "type": "paper-conference"
+    },
+    {
+        "DOI": "10.1109/TPAMI.2019.2948619",
+        "author": [
+            {
+                "family": "Wang",
+                "given": "Shangsi"
+            },
+            {
+                "family": "Arroyo",
+                "given": "Jesus"
+            },
+            {
+                "family": "Vogelstein",
+                "given": "Joshua T."
+            },
+            {
+                "family": "Priebe",
+                "given": "Carey E."
+            }
+        ],
+        "container-title": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "id": "Wang2021JoiEmb",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    4,
+                    1
+                ]
+            ]
+        },
+        "page": "1324-1336",
+        "title": "Joint Embedding of Graphs",
+        "type": "article-journal",
+        "volume": "43"
     },
     {
         "DOI": "10.1002/ece3.1640",
