@@ -1682,7 +1682,7 @@
             }
         ],
         "container-title": "Proceedings of the Royal Society B: Biological Sciences",
-        "id": "Fortin2021NetEcoa",
+        "id": "Fortin2021NetEco",
         "issue": "1949",
         "issued": {
             "date-parts": [
@@ -4095,59 +4095,6 @@
             }
         ],
         "id": "Poisot2021ImpMam",
-        "issued": {
-            "date-parts": [
-                [
-                    2021,
-                    5,
-                    31
-                ]
-            ]
-        },
-        "title": "Imputing the mammalian virome with linear filtering and singular value decomposition",
-        "type": "webpage"
-    },
-    {
-        "URL": "http://arxiv.org/abs/2105.14973",
-        "author": [
-            {
-                "family": "Poisot",
-                "given": "Timoth\u00e9e"
-            },
-            {
-                "family": "Ouellet",
-                "given": "Marie-Andr\u00e9e"
-            },
-            {
-                "family": "Mollentze",
-                "given": "Nardus"
-            },
-            {
-                "family": "Farrell",
-                "given": "Maxwell J."
-            },
-            {
-                "family": "Becker",
-                "given": "Daniel J."
-            },
-            {
-                "family": "Albery",
-                "given": "Gregory F."
-            },
-            {
-                "family": "Gibb",
-                "given": "Rory J."
-            },
-            {
-                "family": "Seifert",
-                "given": "Stephanie N."
-            },
-            {
-                "family": "Carlson",
-                "given": "Colin J."
-            }
-        ],
-        "id": "Poisot2021ImpMama",
         "issued": {
             "date-parts": [
                 [
