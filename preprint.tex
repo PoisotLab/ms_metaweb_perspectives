@@ -371,14 +371,14 @@ interactions}\label{graph-embedding-offers-promises-for-the-inference-of-potenti
 
 Graph embedding is a varied family of machine learning techniques aiming
 to transform nodes and edges into a vector space, usually of a lower
-dimension, whilst maximally retaining key properties of the graph.
-Ecological networks are an interesting candidate for the widespread
-application of embeddings, as they tend to posess a shared sstructural
-backbone (Mora et al., 2018), which hints at structural invariants that
-can be revealed a lower dimensions. Indeed, previous work by Eklöf et
-al. (2013) suggests that food webs are inherently low-dimensional
-objects, and can be adequately represented with less than ten
-dimensions.
+dimension, whilst maximally retaining key properties of the graph (Yan
+et al., 2005). Ecological networks are an interesting candidate for the
+widespread application of embeddings, as they tend to posess a shared
+sstructural backbone (Mora et al., 2018), which hints at structural
+invariants that can be revealed a lower dimensions. Indeed, previous
+work by Eklöf et al. (2013) suggests that food webs are inherently
+low-dimensional objects, and can be adequately represented with less
+than ten dimensions.
 
 The popularity of graph embedding techniques in machine learning is
 rather intuitive: while graphs are discrete objects, machine learning
@@ -388,13 +388,18 @@ of predictive algorithms.
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
-Method & Embedded object & Reference\tabularnewline
+Method & Embedding approach & Reference\tabularnewline
 \midrule
 \endhead
 DeepWalk & graph walk & Perozzi et al. (2014)\tabularnewline
+FastEmbed & graph through PCA/SVD analogue & Ramasamy \& Madhow
+(2015)\tabularnewline
+LINE & nodes through statistical divergence & Tang et al.
+(2015)\tabularnewline
+SDNE & nodes through auto-encoding & Wang et al. (2016)\tabularnewline
 node2vec & node embedding & Grover \& Leskovec (2016)\tabularnewline
 graph2vec & sub-graph embedding & Narayanan et al. (2017)\tabularnewline
-SDNE & nodes through auto-encoding & Wang et al. (2016)\tabularnewline
+HARP & nodes through a meta-strategy & Chen et al. (2017)\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -512,6 +517,11 @@ I., \ldots{} Smith, P. A. (2021). Key information needs to move from
 knowledge to action for biodiversity conservation in Canada.
 \emph{Biological Conservation}, \emph{256}, 108983.
 \url{https://doi.org/10.1016/j.biocon.2021.108983}
+
+\leavevmode\hypertarget{ref-Chen2017HarHie}{}%
+Chen, H., Perozzi, B., Hu, Y., \& Skiena, S. (2017, November 16).
+\emph{HARP: Hierarchical Representation Learning for Networks}.
+\url{http://arxiv.org/abs/1706.07845}
 
 \leavevmode\hypertarget{ref-Choudry2013SavBio}{}%
 Choudry, A. (2013). Saving biodiversity, for whom and for what?
@@ -706,6 +716,13 @@ ecological interaction networks vary through space and time.
 \emph{Oikos}, \emph{124}(3), 243--251.
 \url{https://doi.org/10.1111/oik.01719}
 
+\leavevmode\hypertarget{ref-Ramasamy2015ComSpe}{}%
+Ramasamy, D., \& Madhow, U. (2015). Compressive spectral embedding:
+Sidestepping the SVD. In C. Cortes, N. Lawrence, D. Lee, M. Sugiyama, \&
+R. Garnett (Eds.), \emph{Advances in neural information processing
+systems} (Vol. 28). Curran Associates, Inc.
+\url{https://proceedings.neurips.cc/paper/2015/file/4f6ffe13a5d75b2d6a3923922b3922e5-Paper.pdf}
+
 \leavevmode\hypertarget{ref-Ray2021BioCri}{}%
 Ray, J. C., Grimm, J., \& Olive, A. (2021). The biodiversity crisis in
 Canada: Failures and challenges of federal and sub-national strategic
@@ -720,6 +737,12 @@ towards predicting species interaction networks (across space and time).
 \emph{Philosophical Transactions of the Royal Society B: Biological
 Sciences}, \emph{376}(1837), 20210063.
 \url{https://doi.org/10.1098/rstb.2021.0063}
+
+\leavevmode\hypertarget{ref-Tang2015LinLar}{}%
+Tang, J., Qu, M., Wang, M., Zhang, M., Yan, J., \& Mei, Q. (2015). LINE:
+Large-scale Information Network Embedding. \emph{Proceedings of the 24th
+International Conference on World Wide Web}, 1067--1077.
+\url{https://doi.org/10.1145/2736277.2741093}
 
 \leavevmode\hypertarget{ref-Turak2017UsiEss}{}%
 Turak, E., Brazill-Boast, J., Cooney, T., Drielsma, M., DelaCruz, J.,
@@ -741,6 +764,13 @@ Wood, S. A., Russell, R., Hanson, D., Williams, R. J., \& Dunne, J. A.
 (2015). Effects of spatial scale of sampling on food web structure.
 \emph{Ecology and Evolution}, \emph{5}(17), 3769--3782.
 \url{https://doi.org/10.1002/ece3.1640}
+
+\leavevmode\hypertarget{ref-Yan2005GraEmb}{}%
+Yan, S., Xu, D., Zhang, B., \& Zhang, H.-J. (2005). Graph embedding: A
+general framework for dimensionality reduction. \emph{2005 IEEE Computer
+Society Conference on Computer Vision and Pattern Recognition
+(CVPR'05)}, \emph{2}, 830--837 vol. 2.
+\url{https://doi.org/10.1109/CVPR.2005.170}
 
 \end{CSLReferences}
 

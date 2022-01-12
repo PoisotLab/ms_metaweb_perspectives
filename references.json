@@ -962,6 +962,39 @@
         "volume": "12"
     },
     {
+        "URL": "http://arxiv.org/abs/1706.07845",
+        "author": [
+            {
+                "family": "Chen",
+                "given": "Haochen"
+            },
+            {
+                "family": "Perozzi",
+                "given": "Bryan"
+            },
+            {
+                "family": "Hu",
+                "given": "Yifan"
+            },
+            {
+                "family": "Skiena",
+                "given": "Steven"
+            }
+        ],
+        "id": "Chen2017HarHie",
+        "issued": {
+            "date-parts": [
+                [
+                    2017,
+                    11,
+                    16
+                ]
+            ]
+        },
+        "title": "HARP: Hierarchical Representation Learning for Networks",
+        "type": "webpage"
+    },
+    {
         "author": [
             {
                 "family": "Choudry",
@@ -3916,6 +3949,54 @@
         "type": "book"
     },
     {
+        "URL": "https://proceedings.neurips.cc/paper/2015/file/4f6ffe13a5d75b2d6a3923922b3922e5-Paper.pdf",
+        "author": [
+            {
+                "family": "Ramasamy",
+                "given": "Dinesh"
+            },
+            {
+                "family": "Madhow",
+                "given": "Upamanyu"
+            }
+        ],
+        "container-title": "Advances in neural information processing systems",
+        "editor": [
+            {
+                "family": "Cortes",
+                "given": "C."
+            },
+            {
+                "family": "Lawrence",
+                "given": "N."
+            },
+            {
+                "family": "Lee",
+                "given": "D."
+            },
+            {
+                "family": "Sugiyama",
+                "given": "M."
+            },
+            {
+                "family": "Garnett",
+                "given": "R."
+            }
+        ],
+        "id": "Ramasamy2015ComSpe",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "publisher": "Curran Associates, Inc.",
+        "title": "Compressive spectral embedding: Sidestepping the SVD",
+        "type": "paper-conference",
+        "volume": "28"
+    },
+    {
         "DOI": "10.1139/facets-2020-0075",
         "author": [
             {
@@ -4363,6 +4444,50 @@
         "volume": "9"
     },
     {
+        "DOI": "10.1145/2736277.2741093",
+        "URL": "http://arxiv.org/abs/1503.03578",
+        "author": [
+            {
+                "family": "Tang",
+                "given": "Jian"
+            },
+            {
+                "family": "Qu",
+                "given": "Meng"
+            },
+            {
+                "family": "Wang",
+                "given": "Mingzhe"
+            },
+            {
+                "family": "Zhang",
+                "given": "Ming"
+            },
+            {
+                "family": "Yan",
+                "given": "Jun"
+            },
+            {
+                "family": "Mei",
+                "given": "Qiaozhu"
+            }
+        ],
+        "container-title": "Proceedings of the 24th International Conference on World Wide Web",
+        "id": "Tang2015LinLar",
+        "issued": {
+            "date-parts": [
+                [
+                    2015,
+                    5,
+                    18
+                ]
+            ]
+        },
+        "page": "1067-1077",
+        "title": "LINE: Large-scale Information Network Embedding",
+        "type": "article-journal"
+    },
+    {
         "author": [
             {
                 "family": "Thessen",
@@ -4752,6 +4877,42 @@
         },
         "title": "Understanding graph embedding methods and their applications",
         "type": "webpage"
+    },
+    {
+        "DOI": "10.1109/CVPR.2005.170",
+        "author": [
+            {
+                "family": "Yan",
+                "given": "Shuicheng"
+            },
+            {
+                "family": "Xu",
+                "given": "Dong"
+            },
+            {
+                "family": "Zhang",
+                "given": "Benyu"
+            },
+            {
+                "family": "Zhang",
+                "given": "Hong-Jiang"
+            }
+        ],
+        "container-title": "2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR\u201905)",
+        "event": "2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR\u201905)",
+        "id": "Yan2005GraEmb",
+        "issued": {
+            "date-parts": [
+                [
+                    2005,
+                    6
+                ]
+            ]
+        },
+        "page": "830-837 vol. 2",
+        "title": "Graph embedding: A general framework for dimensionality reduction",
+        "type": "paper-conference",
+        "volume": "2"
     },
     {
         "DOI": "10.1073/pnas.1408471111",
