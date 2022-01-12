@@ -78,26 +78,30 @@ interactions can exist; indeed, with a probabilistic metaweb, we can consider
 that the metaweb represents an aggregation of informative priors on the
 interactions.
 
+![Overview of the embedding process. A network (*A*), possibbly represented as
+its adjacency matrix (*B*), is converted into a lower-dimensional object (*C*)
+where nodes, subgraphs, or edges have specific values (see @tbl:methods). For
+the purposes of prediction, this low-dimensional object encodes feature vectors
+for *e.g.* the nodes. Embedding also allows to visualize the structure in the
+data differently (*D*), much like with a principal component
+analysis.](figures/conceptual_embedding.jpg){#fig:embedding}
+
 # Graph embedding offers promises for the inference of potential interactions
 
-Graph embedding is a varied family of machine learning techniques aiming to
-transform nodes and edges into a vector space, usually of a lower dimension,
-whilst maximally retaining key properties of the graph [@Yan2005GraEmb].
-Ecological networks are an interesting candidate for the widespread application
-of embeddings, as they tend to posess a shared sstructural backbone
-[@Mora2018IdeCom], which hints at structural invariants that can be revealed a
-lower dimensions. Indeed, previous work by @Eklof2013DimEco suggests that food
-webs are inherently low-dimensional objects, and can be adequately represented
-with less than ten dimensions. Simulation results by @Botella2022AppGra suggest
-that there is no best method to identify architectural similarities between
-networks, and that multiple approaches need to be tested and compared to the
-network descriptor of interest.
-
-But the popularity of graph embedding techniques in machine learning is rather
-more intuitive than the search for structural invariants: while graphs are
-discrete objects, machine learning techniques tend to handle continuous data
-better. Therefore, bringing a discrete graph into a continuous vector space
-opens up a broader variety of predictive algorithms.
+Graph embedding [@fig:embedding] is a varied family of machine learning
+techniques aiming to transform nodes and edges into a vector space
+[@Arsov2019NetEmb], usually of a lower dimension, whilst maximally retaining key
+properties of the graph [@Yan2005GraEmb]. Ecological networks are an interesting
+candidate for the widespread application of embeddings, as they tend to posess a
+shared sstructural backbone [@Mora2018IdeCom], which hints at structural
+invariants that can be revealed a lower dimensions. Indeed, previous work by
+@Eklof2013DimEco suggests that food webs are inherently low-dimensional objects,
+and can be adequately represented with less than ten dimensions. Simulation
+results by @Botella2022AppGra suggest that there is no best method to identify
+architectural similarities between networks, and that multiple approaches need
+to be tested and compared to the network descriptor of interest. This matches
+with previous, more general results on graph embedding, which suggest that
+embedding algorithm choice matters for the results [@Goyal2018GraEmb].
 
 | Method        | Embedding approach                   |            Reference | Species interactions application |
 | :------------ | :----------------------------------- | -------------------: | -------------------------------: |
@@ -121,7 +125,24 @@ interactions; most of the examples we identified were either statistical
 associations, or analogues to joint species distribution models. $^a$:
 statistical interactions; $^b$: joint-SDM-like approach. {#tbl:methods}
 
+But the popularity of graph embedding techniques in machine learning is rather
+more intuitive than the search for structural invariants: while graphs are
+discrete objects, machine learning techniques tend to handle continuous data
+better. Therefore, bringing a sparse graph into a continuous, dense vector space
+[@Xu2020UndGra] opens up a broader variety of predictive algorithms.
+
+
 **TK** Transfer + embedding graf
+
+![From a low-dimensional figure vector (see @fig:embedding), it is possible to
+develop predictive approaches. Nodes in an ecological network are species, for
+which we can leverage phylogenetic relatedness [*e.g.* @Strydom2021FooWeb] or
+functional traits to fill the values of additional species we would like to
+project in this space (here, I, J, K, and L) from the embedding of known species
+(here, A, B, C, and D). Because embeddings can be projected back to a graph,
+this allows to reconstruct a network with these new species. This approach
+constitutes an instance of transfer
+learning.](figures/conceptual_predictions.jpg){#fig:prediction}
 
 # The metaweb embeds strong ecological hypotheses
 
