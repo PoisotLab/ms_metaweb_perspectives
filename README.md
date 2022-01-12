@@ -1,5 +1,3 @@
-# Intro
-
 Having a general solution for inferring *potential* interactions (despite the
 unavailability of interaction data) could be the catalyst for significant
 breakthroughs in our ability to start thinking about species interaction
@@ -51,7 +49,6 @@ which should then be filtered [@Morales-Castilla2015InfBio]. In practice (and in
 this instance) the reconstructed metaweb will predict interactions that are
 plausible based on the species' evolutionary history, however some interactions
 would/would not be realized due to human impact.
-
 
 @Dallas2017PreCry suggested that most links in ecological networks may be
 cryptic, *i.e.* uncommon or otherwise hard to observe. This argument essentially

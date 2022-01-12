@@ -1,42 +1,37 @@
 {
-  "title": "Template to prepare preprints and manuscripts using markdown and github actions",
+  "title": "Predicting metawebs: graph embeddings can help alleviate spatial data deficiencies",
   "authors": [
     {
       "affiliations": [
-        "Université de Montréal",
-        "Québec Centre for Biodiversity Sciences"
+        "Département de Sciences Biologiques, Université de Montréal, Montréal, Canada",
+        "Quebec Centre for Biodiversity Science, Montréal, Canada"
+      ],
+      "familyname": "Strydom",
+      "givennames": "Tanya",
+      "email": "tanya.strydom@umontreal.ca",
+      "orcid": "0000-0001-6067-1349",
+      "status": [
+        "equal"
+      ]
+    },
+    {
+      "affiliations": [
+        "Département de Sciences Biologiques, Université de Montréal, Montréal, Canada",
+        "Quebec Centre for Biodiversity Science, Montréal, Canada"
       ],
       "familyname": "Poisot",
       "givennames": "Timothée",
       "email": "timothee.poisot@umontreal.ca",
       "orcid": "0000-0002-0735-5184",
       "status": ["corresponding", "equal"]
-    },
-    {
-      "affiliations": [
-        "Inn of the Prancing Pony",
-        "Fellowship of the Ring"
-      ],
-      "familyname": "Took",
-      "givennames": "Peregrin",
-      "email": "pippin@took.shire"
-    },
-    {
-      "affiliations": [
-        "Green Dragon Inn",
-        "Fellowship of the Ring"
-      ],
-      "familyname": "Brandybuck",
-      "givennames": "Merriadoc",
-      "email": "merry@fellowship.ring",
-      "status": ["equal"]
     }
   ],
-  "abstract": {
-    "Purpose": "This template provides a series of scripts to render a markdown document into an interactive website and a series of PDFs.",
-    "Motivation": "It makes collaborating on text with GitHub easier, and means that we never need to think about the output.",
-    "Internals": "GitHub actions and a series of python scritpts. The markdown is handled with `pandoc`."
-  },
+  "abstract": [
+    "Metawebs, i.e. networks of potential interactions within a species pool, are a powerful abstraction to understand how large-scales species interaction networks are structured.",
+    "Because metawebs are typically expressed at large spatial and taxonomic scales, assembling them is a tedious and costly process; predictive methods can help circumvent the limitations in data deficiencies, by providing 'draft' metawebs.",
+    "One way to improve the predictive ability is to maximize the information used for prediction, by using graph embeddings rather than the list of species interactions. Graph embedding is an emerging field in machine learning that holds great potential for ecoloigcal problems.",
+    "In this perspective, we outline how the challenges associated with infering metawebs line-up with the advantages of graph embeddings; furthermore, because metawebs are inherently spatial objects, we discuss how the choice of the species pool has consequences on the reconstructed network, but also embeds hypotheses about which human-made boundaries are ecologically meaningful."
+  ],
   "keywords": [
     "pandoc",
     "pandoc-crossref",
