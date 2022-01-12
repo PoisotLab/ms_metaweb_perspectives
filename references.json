@@ -2982,6 +2982,43 @@
         "volume": "n/a"
     },
     {
+        "DOI": "10.1007/s41109-020-00339-2",
+        "author": [
+            {
+                "family": "Melnyk",
+                "given": "Kateryna"
+            },
+            {
+                "family": "Klus",
+                "given": "Stefan"
+            },
+            {
+                "family": "Montavon",
+                "given": "Gr\u00e9goire"
+            },
+            {
+                "family": "Conrad",
+                "given": "Tim O. F."
+            }
+        ],
+        "container-title": "Applied Network Science",
+        "id": "Melnyk2020GraGra",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2020,
+                    12,
+                    1
+                ]
+            ]
+        },
+        "page": "96",
+        "title": "GraphKKE: Graph Kernel Koopman embedding for human microbiome analysis",
+        "type": "article-journal",
+        "volume": "5"
+    },
+    {
         "DOI": "10.1038/s41467-018-05056-0",
         "author": [
             {
