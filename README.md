@@ -80,6 +80,15 @@ interactions.
 
 # Graph embedding offers promises the inference of potential interactions
 
+Graph embedding is a varied family of machine learning techniques aiming to
+transform nodes and edges into a vector space, usually of a lower dimension,
+whilst maximally retaining key properties of the graph. Ecological networks are
+an interesting candidate for the widespread application of embeddings, as they
+tend to posess a shared sstructural backbone [@Mora2018IdeCom], which hints at
+structural invariants that can be revealed a lower dimensions. Indeed, previous
+work by @Eklof2013DimEco suggests that food webs are inherently low-dimensional
+objects, and can be adequately represented with less than ten dimensions.
+
 # The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
 As @Herbert1965Dun rightfully pointed out, "[y]ou can't draw neat lines around
