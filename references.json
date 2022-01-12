@@ -1395,6 +1395,100 @@
         "volume": "12"
     },
     {
+        "DOI": "10.1111/ele.12081",
+        "author": [
+            {
+                "family": "Ekl\u00f6f",
+                "given": "Anna"
+            },
+            {
+                "family": "Jacob",
+                "given": "Ute"
+            },
+            {
+                "family": "Kopp",
+                "given": "Jason"
+            },
+            {
+                "family": "Bosch",
+                "given": "Jordi"
+            },
+            {
+                "family": "Castro-Urgal",
+                "given": "Roc\u00edo"
+            },
+            {
+                "family": "Chacoff",
+                "given": "Natacha P."
+            },
+            {
+                "family": "Dalsgaard",
+                "given": "Bo"
+            },
+            {
+                "family": "Sassi",
+                "given": "Claudio",
+                "non-dropping-particle": "de"
+            },
+            {
+                "family": "Galetti",
+                "given": "Mauro"
+            },
+            {
+                "family": "Guimar\u00e3es",
+                "given": "Paulo R."
+            },
+            {
+                "family": "Lom\u00e1scolo",
+                "given": "Silvia Beatriz"
+            },
+            {
+                "family": "Mart\u00edn Gonz\u00e1lez",
+                "given": "Ana M."
+            },
+            {
+                "family": "Pizo",
+                "given": "Marco Aurelio"
+            },
+            {
+                "family": "Rader",
+                "given": "Romina"
+            },
+            {
+                "family": "Rodrigo",
+                "given": "Anselm"
+            },
+            {
+                "family": "Tylianakis",
+                "given": "Jason M."
+            },
+            {
+                "family": "V\u00e1zquez",
+                "given": "Diego P."
+            },
+            {
+                "family": "Allesina",
+                "given": "Stefano"
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Eklof2013DimEco",
+        "issue": "5",
+        "issued": {
+            "date-parts": [
+                [
+                    2013,
+                    5,
+                    1
+                ]
+            ]
+        },
+        "page": "577-583",
+        "title": "The dimensionality of ecological networks",
+        "type": "article-journal",
+        "volume": "16"
+    },
+    {
         "DOI": "10.1007/s12080-015-0273-9",
         "author": [
             {
