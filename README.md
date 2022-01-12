@@ -95,10 +95,11 @@ to handle continuous data better. Therefore, bringing a discrete graph into a
 continuous vector space opens up a broader variety of predictive algorithms.
 
 
-| Method   | Embedded object | Reference          |
-| -------- | --------------- | ------------------ |
-| DeepWalk | graph walk      | @Perozzi2014DeeOnl |
-| node2vec | node embedding  | @Grover2016NodSca  |
+| Method    | Embedded object     | Reference            |
+| --------- | ------------------- | -------------------- |
+| DeepWalk  | graph walk          | @Perozzi2014DeeOnl   |
+| node2vec  | node embedding      | @Grover2016NodSca    |
+| graph2vec | sub-graph embedding | @Narayanan2017GraLea |
 
 # The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
