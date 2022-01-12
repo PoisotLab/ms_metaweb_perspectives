@@ -4632,6 +4632,40 @@
         "volume": "90"
     },
     {
+        "DOI": "10.1145/2939672.2939753",
+        "author": [
+            {
+                "family": "Wang",
+                "given": "Daixin"
+            },
+            {
+                "family": "Cui",
+                "given": "Peng"
+            },
+            {
+                "family": "Zhu",
+                "given": "Wenwu"
+            }
+        ],
+        "container-title": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+        "event": "KDD \u201916: The 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+        "id": "Wang2016StrDee",
+        "issued": {
+            "date-parts": [
+                [
+                    2016,
+                    8,
+                    13
+                ]
+            ]
+        },
+        "page": "1225-1234",
+        "publisher": "ACM",
+        "publisher-place": "San Francisco California USA",
+        "title": "Structural Deep Network Embedding",
+        "type": "paper-conference"
+    },
+    {
         "DOI": "10.1002/ece3.1640",
         "author": [
             {
