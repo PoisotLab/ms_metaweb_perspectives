@@ -391,7 +391,7 @@ continuous vector space opens up a broader variety of predictive
 algorithms.
 
 \hypertarget{tbl:methods}{}
-\begin{longtable}[]{@{}llll@{}}
+\begin{longtable}[]{@{}llrr@{}}
 \caption{\label{tbl:methods}Overview of some common graph embedding
 approaches, by time of publication, alongside examples of their use in
 the prediction of species interactions. Surprisingly, these methods have
@@ -404,9 +404,9 @@ interactions; \(^b\): joint-SDM-like approach.}\tabularnewline
 Method\strut
 \end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
 Embedding approach\strut
-\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedleft
 Reference\strut
-\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedleft
 Species interactions application\strut
 \end{minipage}\tabularnewline
 \midrule
@@ -416,9 +416,9 @@ Species interactions application\strut
 Method\strut
 \end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
 Embedding approach\strut
-\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedleft
 Reference\strut
-\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedleft
 Species interactions application\strut
 \end{minipage}\tabularnewline
 \midrule
@@ -427,108 +427,108 @@ Species interactions application\strut
 RDPG\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 graphs through SVD\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Young \& Scheinerman (2007)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 Poisot et al. (2021)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 tSNE\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 nodes through statistical divergence\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Hinton \& Roweis (2002)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 Cieslak et al. (2020) \(^a\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 DeepWalk\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 graph walk\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Perozzi et al. (2014)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 Wardeh et al. (2021)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 FastEmbed\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 graph through PCA/SVD analogue\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Ramasamy \& Madhow (2015)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 LINE\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 nodes through statistical divergence\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Tang et al. (2015)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 SDNE\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 nodes through auto-encoding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 D. Wang et al. (2016)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 node2vec\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 node embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Grover \& Leskovec (2016)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 graph2vec\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 sub-graph embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Narayanan et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 DMSE\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 joint node embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 D. Chen et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 D. Chen et al. (2017) \(^b\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 HARP\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 nodes through a meta-strategy\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 H. Chen et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 GraphKKE\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 graph embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 Melnyk et al. (2020)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 Melnyk et al. (2020) \(^a\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\raggedright
 Joint methods\strut
 \end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
 multiple graphs\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
 S. Wang et al. (2021)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \bottomrule
