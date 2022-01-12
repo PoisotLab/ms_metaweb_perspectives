@@ -96,15 +96,18 @@ to handle continuous data better. Therefore, bringing a discrete graph into a
 continuous vector space opens up a broader variety of predictive algorithms.
 
 
-| Method    | Embedding approach                   | Reference            |
-| --------- | ------------------------------------ | -------------------- |
-| DeepWalk  | graph walk                           | @Perozzi2014DeeOnl   |
-| FastEmbed | graph through PCA/SVD analogue       | @Ramasamy2015ComSpe  |
-| LINE      | nodes through statistical divergence | @Tang2015LinLar      |
-| SDNE      | nodes through auto-encoding          | @Wang2016StrDee      |
-| node2vec  | node embedding                       | @Grover2016NodSca    |
-| graph2vec | sub-graph embedding                  | @Narayanan2017GraLea |
-| HARP      | nodes through a meta-strategy        | @Chen2017HarHie      |
+| Method        | Embedding approach                   | Reference            |
+| ------------- | ------------------------------------ | -------------------- |
+| RDPG          | graphs through SVD                   | @Young2007RanDot     |
+| tSNE          | nodes through statistical divergence | @Hinton2002StoNei    |
+| DeepWalk      | graph walk                           | @Perozzi2014DeeOnl   |
+| FastEmbed     | graph through PCA/SVD analogue       | @Ramasamy2015ComSpe  |
+| LINE          | nodes through statistical divergence | @Tang2015LinLar      |
+| SDNE          | nodes through auto-encoding          | @Wang2016StrDee      |
+| node2vec      | node embedding                       | @Grover2016NodSca    |
+| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |
+| HARP          | nodes through a meta-strategy        | @Chen2017HarHie      |
+| Joint methods | multiple graphs                      | @Wang2021JoiEmb      |
 
 # The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
