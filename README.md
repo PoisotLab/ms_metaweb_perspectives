@@ -100,19 +100,25 @@ better. Therefore, bringing a discrete graph into a continuous vector space
 opens up a broader variety of predictive algorithms.
 
 
-| Method        | Embedding approach                   | Reference            | Species interactions application               |
-| ------------- | ------------------------------------ | -------------------- | ---------------------------------------------- |
-| RDPG          | graphs through SVD                   | @Young2007RanDot     | @Poisot2021ImpMam                              |
-| tSNE          | nodes through statistical divergence | @Hinton2002StoNei    | @Cieslak2020TdiSto -- statistical interactions |
-| DeepWalk      | graph walk                           | @Perozzi2014DeeOnl   | @Wardeh2021PreMam                              |
-| FastEmbed     | graph through PCA/SVD analogue       | @Ramasamy2015ComSpe  |                                                |
-| LINE          | nodes through statistical divergence | @Tang2015LinLar      |                                                |
-| SDNE          | nodes through auto-encoding          | @Wang2016StrDee      |                                                |
-| node2vec      | node embedding                       | @Grover2016NodSca    |                                                |
-| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                                |
-| DMSE          | joint node embedding                 | @Chen2017DeeMul      | @Chen2017DeeMul -- joint SDMs                  |
-| HARP          | nodes through a meta-strategy        | @Chen2017HarHie      |                                                |
-| Joint methods | multiple graphs                      | @Wang2021JoiEmb      |                                                |
+| Method        | Embedding approach                   | Reference            | Species interactions application |
+| ------------- | ------------------------------------ | -------------------- | -------------------------------- |
+| RDPG          | graphs through SVD                   | @Young2007RanDot     | @Poisot2021ImpMam                |
+| tSNE          | nodes through statistical divergence | @Hinton2002StoNei    | @Cieslak2020TdiSto $^a$          |
+| DeepWalk      | graph walk                           | @Perozzi2014DeeOnl   | @Wardeh2021PreMam                |
+| FastEmbed     | graph through PCA/SVD analogue       | @Ramasamy2015ComSpe  |                                  |
+| LINE          | nodes through statistical divergence | @Tang2015LinLar      |                                  |
+| SDNE          | nodes through auto-encoding          | @Wang2016StrDee      |                                  |
+| node2vec      | node embedding                       | @Grover2016NodSca    |                                  |
+| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                  |
+| DMSE          | joint node embedding                 | @Chen2017DeeMul      | @Chen2017DeeMul $^b$             |
+| HARP          | nodes through a meta-strategy        | @Chen2017HarHie      |                                  |
+| Joint methods | multiple graphs                      | @Wang2021JoiEmb      |                                  |
+
+: Overview of some common graph embedding approaches, by time of publication,
+alongside examples of their use in the prediction of species interactions.
+Surprisingly, these methods have not yet been used routinely to predict species
+interactions. $^a$: statistical interactions; $^b$: joint-SDM-like approach.
+{#tbl:methods}
 
 # The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
