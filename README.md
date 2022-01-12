@@ -112,13 +112,15 @@ opens up a broader variety of predictive algorithms.
 | graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                  |
 | DMSE          | joint node embedding                 | @Chen2017DeeMul      | @Chen2017DeeMul $^b$             |
 | HARP          | nodes through a meta-strategy        | @Chen2017HarHie      |                                  |
+| GraphKKE      | graph embedding                      | @Melnyk2020GraGra    | @Melnyk2020GraGra $^a$           |
 | Joint methods | multiple graphs                      | @Wang2021JoiEmb      |                                  |
 
 : Overview of some common graph embedding approaches, by time of publication,
 alongside examples of their use in the prediction of species interactions.
 Surprisingly, these methods have not yet been used routinely to predict species
-interactions. $^a$: statistical interactions; $^b$: joint-SDM-like approach.
-{#tbl:methods}
+interactions; most of the examples we identified were either statistical
+associations, or analogues to joint species distribution models. $^a$:
+statistical interactions; $^b$: joint-SDM-like approach. {#tbl:methods}
 
 # The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
