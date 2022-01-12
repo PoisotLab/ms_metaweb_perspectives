@@ -39,6 +39,8 @@ chance of success of a Bernoulli trial [see *e.g.* @Poisot2016StrPro];
 therefore, not only does our method recommend interactions that may exist, it
 gives each interaction a score, allowing us to properly weigh them.
 
+# The metaweb is an inherently probabilistic object
+
 Yet, owing to the inherent plasticity of interactions, there have been
 documented instances of food webs undergoing rapid collapse/recovery cycles over
 short periods of time [@Pedersen2017SigCol]. The embedding of a network, in a
@@ -75,6 +77,10 @@ of local networks easier, because it fixes an "upper bound" on which
 interactions can exist; indeed, with a probabilistic metaweb, we can consider
 that the metaweb represents an aggregation of informative priors on the
 interactions.
+
+# Graph embedding offers promises the inference of potential interactions
+
+# The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
 As @Herbert1965Dun rightfully pointed out, "[y]ou can't draw neat lines around
 planet-wide problems"; in this regard, our approach (and indeed, any inference
