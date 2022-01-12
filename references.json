@@ -4854,6 +4854,40 @@
         "volume": "43"
     },
     {
+        "DOI": "10.1038/s41467-021-21034-5",
+        "author": [
+            {
+                "family": "Wardeh",
+                "given": "Maya"
+            },
+            {
+                "family": "Baylis",
+                "given": "Matthew"
+            },
+            {
+                "family": "Blagrove",
+                "given": "Marcus S. C."
+            }
+        ],
+        "container-title": "Nature Communications",
+        "id": "Wardeh2021PreMam",
+        "issue": "1, 1",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    2,
+                    16
+                ]
+            ]
+        },
+        "page": "780",
+        "publisher": "Nature Publishing Group",
+        "title": "Predicting mammalian hosts in which novel coronaviruses can be generated",
+        "type": "article-journal",
+        "volume": "12"
+    },
+    {
         "DOI": "10.1002/ece3.1640",
         "author": [
             {
