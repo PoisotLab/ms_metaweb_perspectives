@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1642026148 "draft.tex" "draft.pdf" "draft" 1642026150
+["pdflatex"] 1642026366 "draft.tex" "draft.pdf" "draft" 1642026367
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc" 1610747736 3416 3b99a05a42a4705ec5a5521d2bffa072 ""
@@ -147,11 +147,11 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1641000204 4374883 f09fc8f64aee65cc15d8e3eda9cc4548 ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1641000247 2820060 ec8f320064ff9d298f96b33a57187d6d ""
   "/opt/texlive/texdir/texmf.cnf" 1641000197 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "draft.aux" 1642026149 5872 b5bfb52d3eededd2758ccf5ecaefaf94 "pdflatex"
-  "draft.fff" 1642026149 1444 3cacd8bd661dcaffec3aebc9a97d8c92 "pdflatex"
-  "draft.out" 1642026149 1141 49d898d1c276d15785aecc60deeeed0c "pdflatex"
-  "draft.tex" 1642026146 46122 4992ccd50d273f12a19ea40cc1dda16e ""
-  "figures/conceptual_embedding.jpg" 1642026146 144064 4b6df82f6fcd6c6059dcc7b22e360240 ""
+  "draft.aux" 1642026367 5872 89c97391a0e23638e00cd0c6e57a3140 "pdflatex"
+  "draft.fff" 1642026367 1444 3cacd8bd661dcaffec3aebc9a97d8c92 "pdflatex"
+  "draft.out" 1642026367 1141 49d898d1c276d15785aecc60deeeed0c "pdflatex"
+  "draft.tex" 1642026364 46747 4abfc0b4474bd8c974adde648f6a8038 ""
+  "figures/conceptual_embedding.jpg" 1642026365 144064 4b6df82f6fcd6c6059dcc7b22e360240 ""
   "figures/conceptual_predictions.jpg" 0 -1 0 ""
   (generated)
   "draft.aux"

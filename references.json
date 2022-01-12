@@ -3735,6 +3735,46 @@
         "volume": "110"
     },
     {
+        "DOI": "10.1111/2041-210X.13329",
+        "author": [
+            {
+                "family": "Pichler",
+                "given": "Maximilian"
+            },
+            {
+                "family": "Boreux",
+                "given": "Virginie"
+            },
+            {
+                "family": "Klein",
+                "given": "Alexandra-Maria"
+            },
+            {
+                "family": "Schleuning",
+                "given": "Matthias"
+            },
+            {
+                "family": "Hartig",
+                "given": "Florian"
+            }
+        ],
+        "container-title": "Methods in Ecology and Evolution",
+        "id": "Pichler2020MacLea",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "other-ids": "Pichler2020MacLeaa",
+        "page": "281-293",
+        "title": "Machine learning algorithms to infer trait-matching and predict species interactions in ecological networks",
+        "type": "article-journal",
+        "volume": "11"
+    },
+    {
         "DOI": "10.1098/rspb.2015.1367",
         "author": [
             {

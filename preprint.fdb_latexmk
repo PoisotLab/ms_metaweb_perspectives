@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1642026132 "preprint.tex" "preprint.pdf" "preprint" 1642026133
+["pdflatex"] 1642026367 "preprint.tex" "preprint.pdf" "preprint" 1642026369
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc" 1610747736 3416 3b99a05a42a4705ec5a5521d2bffa072 ""
@@ -223,12 +223,12 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1641000204 4374883 f09fc8f64aee65cc15d8e3eda9cc4548 ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1641000247 2820060 ec8f320064ff9d298f96b33a57187d6d ""
   "/opt/texlive/texdir/texmf.cnf" 1641000197 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "figures/conceptual_embedding.jpg" 1642026129 144064 4b6df82f6fcd6c6059dcc7b22e360240 ""
+  "figures/conceptual_embedding.jpg" 1642026365 144064 4b6df82f6fcd6c6059dcc7b22e360240 ""
   "figures/conceptual_predictions.jpg" 0 -1 0 ""
-  "logo.png" 1642026129 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
-  "preprint.aux" 1642026133 6073 0b349e92929f89495a7244f7fa149ba4 "pdflatex"
-  "preprint.out" 1642026133 1137 fa23fe7d4eefa0bc9c3297b7c7a20f11 "pdflatex"
-  "preprint.tex" 1642026129 47700 ddae2b56cf1f1c3a93f474002ffceb15 ""
+  "logo.png" 1642026365 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
+  "preprint.aux" 1642026369 6073 0b349e92929f89495a7244f7fa149ba4 "pdflatex"
+  "preprint.out" 1642026369 1137 fa23fe7d4eefa0bc9c3297b7c7a20f11 "pdflatex"
+  "preprint.tex" 1642026365 48325 7a13710325520aa122342e955eb23219 ""
   (generated)
   "preprint.aux"
   "preprint.log"

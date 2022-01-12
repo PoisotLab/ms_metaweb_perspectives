@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  12 JAN 2022 22:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  12 JAN 2022 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1258,7 +1258,7 @@ Underfull \hbox (badness 10000) in alignment at lines 436--546
 [2] [3 <./figures/conceptual_embedding.jpg>]
 
 LaTeX Warning: File `figures/conceptual_predictions.jpg' not found on input lin
-e 571.
+e 577.
 
 
 ! Package pdftex.def Error: File `figures/conceptual_predictions.jpg' not found
@@ -1268,15 +1268,15 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.571 }
+l.577 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 571.
+(Font)              scaled to size 9.0pt on input line 577.
 [4] [5] [6]
-Overfull \hbox (0.2941pt too wide) in paragraph at lines 897--903
+Overfull \hbox (0.2941pt too wide) in paragraph at lines 903--909
 [][]\T1/stix2/m/n/9 No'kmaq, M., Mar-shall, A., Bea-z-ley, K. F., Hum, J., joud
 ry, sha-lan, Pa-padopou-los, A., Pic-tou, S., Rabesca,
  []
@@ -1291,8 +1291,8 @@ Package rerunfilecheck Info: File `preprint.out' has not changed.
 (rerunfilecheck)             Checksum: FA23FE7D4EEFA0BC9C3297B7C7A20F11;1137.
  ) 
 Here is how much of TeX's memory you used:
- 30796 strings out of 478353
- 560236 string characters out of 5850105
+ 30797 strings out of 478353
+ 560257 string characters out of 5850105
  845750 words of memory out of 5000000
  48290 multiletter control sequences out of 15000+600000
  541855 words of font info for 137 fonts, out of 8000000 for 9000
@@ -1312,10 +1312,10 @@ ist/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/t
 exmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dis
 t/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (8 pages, 908377 bytes).
+Output written on preprint.pdf (8 pages, 908901 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
- 86 named destinations out of 1000 (max. 500000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 87 named destinations out of 1000 (max. 500000)
  55 words of extra memory for PDF output out of 10000 (max. 10000000)
 
