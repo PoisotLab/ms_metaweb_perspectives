@@ -2940,6 +2940,47 @@
         "volume": "87"
     },
     {
+        "URL": "http://arxiv.org/abs/1707.05005",
+        "author": [
+            {
+                "family": "Narayanan",
+                "given": "Annamalai"
+            },
+            {
+                "family": "Chandramohan",
+                "given": "Mahinthan"
+            },
+            {
+                "family": "Venkatesan",
+                "given": "Rajasekar"
+            },
+            {
+                "family": "Chen",
+                "given": "Lihui"
+            },
+            {
+                "family": "Liu",
+                "given": "Yang"
+            },
+            {
+                "family": "Jaiswal",
+                "given": "Shantanu"
+            }
+        ],
+        "id": "Narayanan2017GraLea",
+        "issued": {
+            "date-parts": [
+                [
+                    2017,
+                    7,
+                    17
+                ]
+            ]
+        },
+        "title": "Graph2vec: Learning Distributed Representations of Graphs",
+        "type": "webpage"
+    },
+    {
         "DOI": "10.3389/fgene.2019.00381",
         "author": [
             {
