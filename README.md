@@ -78,7 +78,7 @@ interactions can exist; indeed, with a probabilistic metaweb, we can consider
 that the metaweb represents an aggregation of informative priors on the
 interactions.
 
-# Graph embedding offers promises the inference of potential interactions
+# Graph embedding offers promises for the inference of potential interactions
 
 Graph embedding is a varied family of machine learning techniques aiming to
 transform nodes and edges into a vector space, usually of a lower dimension,
@@ -95,11 +95,12 @@ to handle continuous data better. Therefore, bringing a discrete graph into a
 continuous vector space opens up a broader variety of predictive algorithms.
 
 
-| Method    | Embedded object     | Reference            |
-| --------- | ------------------- | -------------------- |
-| DeepWalk  | graph walk          | @Perozzi2014DeeOnl   |
-| node2vec  | node embedding      | @Grover2016NodSca    |
-| graph2vec | sub-graph embedding | @Narayanan2017GraLea |
+| Method    | Embedded object             | Reference            |
+| --------- | --------------------------- | -------------------- |
+| DeepWalk  | graph walk                  | @Perozzi2014DeeOnl   |
+| node2vec  | node embedding              | @Grover2016NodSca    |
+| graph2vec | sub-graph embedding         | @Narayanan2017GraLea |
+| SDNE      | nodes through auto-encoding | @Wang2016StrDee      |
 
 # The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
