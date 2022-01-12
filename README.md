@@ -89,6 +89,17 @@ structural invariants that can be revealed a lower dimensions. Indeed, previous
 work by @Eklof2013DimEco suggests that food webs are inherently low-dimensional
 objects, and can be adequately represented with less than ten dimensions.
 
+The popularity of graph embedding techniques in machine learning is rather
+intuitive: while graphs are discrete objects, machine learning techniques tend
+to handle continuous data better. Therefore, bringing a discrete graph into a
+continuous vector space opens up a broader variety of predictive algorithms.
+
+
+| Method   | Embedded object | Reference          |
+| -------- | --------------- | ------------------ |
+| DeepWalk | graph walk      | @Perozzi2014DeeOnl |
+| node2vec | node embedding  | @Grover2016NodSca  |
+
 # The metaweb embeds hypotheses about which spatial boundaries are meaningful
 
 As @Herbert1965Dun rightfully pointed out, "[y]ou can't draw neat lines around
