@@ -1874,6 +1874,36 @@
         "type": "article-journal"
     },
     {
+        "DOI": "10.1145/2939672.2939754",
+        "author": [
+            {
+                "family": "Grover",
+                "given": "Aditya"
+            },
+            {
+                "family": "Leskovec",
+                "given": "Jure"
+            }
+        ],
+        "container-title": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+        "event": "KDD \u201916: The 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+        "id": "Grover2016NodSca",
+        "issued": {
+            "date-parts": [
+                [
+                    2016,
+                    8,
+                    13
+                ]
+            ]
+        },
+        "page": "855-864",
+        "publisher": "ACM",
+        "publisher-place": "San Francisco California USA",
+        "title": "Node2vec: Scalable Feature Learning for Networks",
+        "type": "paper-conference"
+    },
+    {
         "DOI": "10.1038/s42003-020-0962-9",
         "author": [
             {
@@ -3290,6 +3320,40 @@
         "title": "Signatures of the collapse and incipient recovery of an overexploited marine ecosystem",
         "type": "article-journal",
         "volume": "4"
+    },
+    {
+        "DOI": "10.1145/2623330.2623732",
+        "author": [
+            {
+                "family": "Perozzi",
+                "given": "Bryan"
+            },
+            {
+                "family": "Al-Rfou",
+                "given": "Rami"
+            },
+            {
+                "family": "Skiena",
+                "given": "Steven"
+            }
+        ],
+        "collection-title": "KDD \u201914",
+        "container-title": "Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining",
+        "id": "Perozzi2014DeeOnl",
+        "issued": {
+            "date-parts": [
+                [
+                    2014,
+                    8,
+                    24
+                ]
+            ]
+        },
+        "page": "701-710",
+        "publisher": "Association for Computing Machinery",
+        "publisher-place": "New York, NY, USA",
+        "title": "DeepWalk: Online learning of social representations",
+        "type": "paper-conference"
     },
     {
         "DOI": "10.1073/pnas.1216076110",
