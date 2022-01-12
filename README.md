@@ -1,14 +1,14 @@
 Having a general solution for inferring *potential* interactions (despite the
 unavailability of interaction data) could be the catalyst for significant
 breakthroughs in our ability to start thinking about species interaction
-networks over large spatial scales. In a recent overview of the field of
-ecological network prediction, @Strydom2021RoaPre identified two challenges of
-interest to the prediction of interactions at large scales. First, there is a
-relative scarcity of relevant data in most places globally -- paradoxically,
-this restricts our ability to infer interactions to locations where inference is
-perhaps the least required; second, accurate predictions often demand accurate
-predictors, and the lack of methods that can leverage small amount of data is a
-serious impediment to our predictive ability globally.
+networks over large spatial scales [@Hortal2015SevSho]. In a recent overview of
+the field of ecological network prediction, @Strydom2021RoaPre identified two
+challenges of interest to the prediction of interactions at large scales. First,
+there is a relative scarcity of relevant data in most places globally --
+paradoxically, this restricts our ability to infer interactions to locations
+where inference is perhaps the least required; second, accurate predictions
+often demand accurate predictors, and the lack of methods that can leverage
+small amount of data is a serious impediment to our predictive ability globally.
 
 Following the definition of @Dunne2006NetStr, a metaweb is a network analogue to
 the regional species pool; specifically, it is an inventory of all *potential*
@@ -98,7 +98,6 @@ more intuitive than the search for structural invariants: while graphs are
 discrete objects, machine learning techniques tend to handle continuous data
 better. Therefore, bringing a discrete graph into a continuous vector space
 opens up a broader variety of predictive algorithms.
-
 
 | Method        | Embedding approach                   | Reference            | Species interactions application |
 | ------------- | ------------------------------------ | -------------------- | -------------------------------- |
