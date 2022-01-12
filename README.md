@@ -147,7 +147,7 @@ project in this space (here, I, J, K, and L) from the embedding of known species
 (here, A, B, C, and D). Because embeddings can be projected back to a graph,
 this allows to reconstruct a network with these new species. This approach
 constitutes an instance of transfer
-learning.](figures/conceptual_predictions.jpg){#fig:prediction}
+learning.](figures/conceptual_prediction.jpg){#fig:prediction}
 
 # The metaweb embeds strong ecological hypotheses
 
