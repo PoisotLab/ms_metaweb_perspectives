@@ -219,9 +219,9 @@ Having a general solution for inferring \emph{potential} interactions
 for significant breakthroughs in our ability to start thinking about
 species interaction networks over large spatial scales (Hortal et al.,
 2015). In a recent overview of the field of ecological network
-prediction, Strydom et al. (2021) identified two challenges of interest
-to the prediction of interactions at large scales. First, there is a
-relative scarcity of relevant data in most places globally --
+prediction, Strydom, Catchen, et al. (2021) identified two challenges of
+interest to the prediction of interactions at large scales. First, there
+is a relative scarcity of relevant data in most places globally --
 paradoxically, this restricts our ability to infer interactions to
 locations where inference is perhaps the least required; second,
 accurate predictions often demand accurate predictors, and the lack of
@@ -300,36 +300,47 @@ learning algorithms, in these situations, can act as data generators
 (Hoffmann et al., 2019): in this perspective, high quality observational
 data can be supplemented with synthetic data coming from predictive
 models, which increases the volume of information available for
-inference. Indeed, Strydom et al. (2021) suggested that knowing the
-metaweb may render the prediction of local networks easier, because it
-fixes an ``upper bound'' on which interactions can exist; indeed, with a
-probabilistic metaweb, we can consider that the metaweb represents an
-aggregation of informative priors on the interactions.
+inference. Indeed, Strydom, Catchen, et al. (2021) suggested that
+knowing the metaweb may render the prediction of local networks easier,
+because it fixes an ``upper bound'' on which interactions can exist;
+indeed, with a probabilistic metaweb, we can consider that the metaweb
+represents an aggregation of informative priors on the interactions.
+
+\begin{figure}
+\hypertarget{fig:embedding}{%
+\centering
+\includegraphics{figures/conceptual_embedding.jpg}
+\caption{Overview of the embedding process. A network (\emph{A}),
+possibbly represented as its adjacency matrix (\emph{B}), is converted
+into a lower-dimensional object (\emph{C}) where nodes, subgraphs, or
+edges have specific values (see tbl.~\ref{tbl:methods}). For the
+purposes of prediction, this low-dimensional object encodes feature
+vectors for \emph{e.g.} the nodes. Embedding also allows to visualize
+the structure in the data differently (\emph{D}), much like with a
+principal component analysis.}\label{fig:embedding}
+}
+\end{figure}
 
 \hypertarget{graph-embedding-offers-promises-for-the-inference-of-potential-interactions}{%
 \section{Graph embedding offers promises for the inference of potential
 interactions}\label{graph-embedding-offers-promises-for-the-inference-of-potential-interactions}}
 
-Graph embedding is a varied family of machine learning techniques aiming
-to transform nodes and edges into a vector space, usually of a lower
-dimension, whilst maximally retaining key properties of the graph (Yan
-et al., 2005). Ecological networks are an interesting candidate for the
-widespread application of embeddings, as they tend to posess a shared
-sstructural backbone (Mora et al., 2018), which hints at structural
-invariants that can be revealed a lower dimensions. Indeed, previous
-work by Eklöf et al. (2013) suggests that food webs are inherently
-low-dimensional objects, and can be adequately represented with less
-than ten dimensions. Simulation results by Botella et al. (2022) suggest
-that there is no best method to identify architectural similarities
-between networks, and that multiple approaches need to be tested and
-compared to the network descriptor of interest.
-
-But the popularity of graph embedding techniques in machine learning is
-rather more intuitive than the search for structural invariants: while
-graphs are discrete objects, machine learning techniques tend to handle
-continuous data better. Therefore, bringing a discrete graph into a
-continuous vector space opens up a broader variety of predictive
-algorithms.
+Graph embedding fig.~\ref{fig:embedding} is a varied family of machine
+learning techniques aiming to transform nodes and edges into a vector
+space (Arsov \& Mirceva, 2019), usually of a lower dimension, whilst
+maximally retaining key properties of the graph (Yan et al., 2005).
+Ecological networks are an interesting candidate for the widespread
+application of embeddings, as they tend to posess a shared sstructural
+backbone (Mora et al., 2018), which hints at structural invariants that
+can be revealed a lower dimensions. Indeed, previous work by Eklöf et
+al. (2013) suggests that food webs are inherently low-dimensional
+objects, and can be adequately represented with less than ten
+dimensions. Simulation results by Botella et al. (2022) suggest that
+there is no best method to identify architectural similarities between
+networks, and that multiple approaches need to be tested and compared to
+the network descriptor of interest. This matches with previous, more
+general results on graph embedding, which suggest that embedding
+algorithm choice matters for the results (Goyal \& Ferrara, 2018).
 
 \hypertarget{tbl:methods}{}
 \begin{longtable}[]{@{}llrr@{}}
@@ -475,7 +486,31 @@ S. Wang et al. (2021)\strut
 \bottomrule
 \end{longtable}
 
+But the popularity of graph embedding techniques in machine learning is
+rather more intuitive than the search for structural invariants: while
+graphs are discrete objects, machine learning techniques tend to handle
+continuous data better. Therefore, bringing a sparse graph into a
+continuous, dense vector space (Xu, 2020) opens up a broader variety of
+predictive algorithms.
+
 \textbf{TK} Transfer + embedding graf
+
+\begin{figure}
+\hypertarget{fig:prediction}{%
+\centering
+\includegraphics{figures/conceptual_predictions.jpg}
+\caption{From a low-dimensional figure vector (see
+fig.~\ref{fig:embedding}), it is possible to develop predictive
+approaches. Nodes in an ecological network are species, for which we can
+leverage phylogenetic relatedness (\emph{e.g.} Strydom, Bouskila, et
+al., 2021) or functional traits to fill the values of additional species
+we would like to project in this space (here, I, J, K, and L) from the
+embedding of known species (here, A, B, C, and D). Because embeddings
+can be projected back to a graph, this allows to reconstruct a network
+with these new species. This approach constitutes an instance of
+transfer learning.}\label{fig:prediction}
+}
+\end{figure}
 
 \hypertarget{the-metaweb-embeds-strong-ecological-hypotheses}{%
 \section{The metaweb embeds strong ecological
@@ -587,6 +622,10 @@ Gravel, D. (2019). The marine fish food web is globally connected.
 \emph{Nature Ecology \& Evolution}, \emph{3}(8, 8), 1153--1161.
 \url{https://doi.org/10.1038/s41559-019-0950-y}
 
+\leavevmode\hypertarget{ref-Arsov2019NetEmb}{}%
+Arsov, N., \& Mirceva, G. (2019, November 26). \emph{Network Embedding:
+An Overview}. \url{http://arxiv.org/abs/1911.11726}
+
 \leavevmode\hypertarget{ref-Botella2022AppGra}{}%
 Botella, C., Dray, S., Matias, C., Miele, V., \& Thuiller, W. (2022). An
 appraisal of graph embeddings for comparing trophic network
@@ -690,6 +729,11 @@ Galiana, N., Lurgi, M., Claramunt-López, B., Fortin, M.-J., Leroux, S.,
 Cazelles, K., Gravel, D., \& Montoya, J. M. (2018). The spatial scaling
 of species interaction networks. \emph{Nature Ecology \& Evolution},
 \emph{2}(5), 782--790. \url{https://doi.org/10.1038/s41559-018-0517-3}
+
+\leavevmode\hypertarget{ref-Goyal2018GraEmb}{}%
+Goyal, P., \& Ferrara, E. (2018). Graph embedding techniques,
+applications, and performance: A survey. \emph{Knowledge-Based Systems},
+\emph{151}, 78--94. \url{https://doi.org/10.1016/j.knosys.2018.03.022}
 
 \leavevmode\hypertarget{ref-Gravel2018BriElt}{}%
 Gravel, D., Baiser, B., Dunne, J. A., Kopelke, J.-P., Martinez, N. D.,
@@ -855,6 +899,13 @@ Canada: Failures and challenges of federal and sub-national strategic
 and legal frameworks. \emph{FACETS}, \emph{6}, 1044--1068.
 \url{https://doi.org/10.1139/facets-2020-0075}
 
+\leavevmode\hypertarget{ref-Strydom2021FooWeb}{}%
+Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,
+M. J., Fortin, M.-J., Hemming, V., Mercier, B., Pollock, L., Runghen,
+R., Riva, G. V. D., \& Poisot, T. (2021). \emph{Food web reconstruction
+through phylogenetic transfer of low-rank network representation}.
+\url{https://doi.org/10.32942/osf.io/y7sdz}
+
 \leavevmode\hypertarget{ref-Strydom2021RoaPre}{}%
 Strydom, T., Catchen, M. D., Banville, F., Caron, D., Dansereau, G.,
 Desjardins-Proulx, P., Forero-Muñoz, N. R., Higino, G., Mercier, B.,
@@ -902,6 +953,10 @@ Wood, S. A., Russell, R., Hanson, D., Williams, R. J., \& Dunne, J. A.
 (2015). Effects of spatial scale of sampling on food web structure.
 \emph{Ecology and Evolution}, \emph{5}(17), 3769--3782.
 \url{https://doi.org/10.1002/ece3.1640}
+
+\leavevmode\hypertarget{ref-Xu2020UndGra}{}%
+Xu, M. (2020, December 14). \emph{Understanding graph embedding methods
+and their applications}. \url{http://arxiv.org/abs/2012.08019}
 
 \leavevmode\hypertarget{ref-Yan2005GraEmb}{}%
 Yan, S., Xu, D., Zhang, B., \& Zhang, H.-J. (2005). Graph embedding: A
