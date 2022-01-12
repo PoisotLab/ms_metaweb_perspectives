@@ -123,7 +123,7 @@ statistical interactions; $^b$: joint-SDM-like approach. {#tbl:methods}
 
 **TK** Transfer + embedding graf
 
-# The metaweb embeds hypotheses about which spatial boundaries are meaningful
+# The metaweb embeds strong ecological hypotheses
 
 As @Herbert1965Dun rightfully pointed out, "[y]ou can't draw neat lines around
 planet-wide problems"; in this regard, any inference of a metaweb at large
