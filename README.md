@@ -96,9 +96,9 @@ to handle continuous data better. Therefore, bringing a discrete graph into a
 continuous vector space opens up a broader variety of predictive algorithms.
 
 
-| Method        | Embedding approach                   | Reference            |
-| ------------- | ------------------------------------ | -------------------- |
-| RDPG          | graphs through SVD                   | @Young2007RanDot     |
+| Method        | Embedding approach                   | Reference            | Ecological application |
+| ------------- | ------------------------------------ | -------------------- | ---------------------- |
+| RDPG          | graphs through SVD                   | @Young2007RanDot     | @Wardeh2021PreMam      |
 | tSNE          | nodes through statistical divergence | @Hinton2002StoNei    |
 | DeepWalk      | graph walk                           | @Perozzi2014DeeOnl   |
 | FastEmbed     | graph through PCA/SVD analogue       | @Ramasamy2015ComSpe  |
