@@ -400,6 +400,45 @@
         "volume": "11"
     },
     {
+        "DOI": "10.1111/2041-210X.13738",
+        "author": [
+            {
+                "family": "Botella",
+                "given": "Christophe"
+            },
+            {
+                "family": "Dray",
+                "given": "St\u00e9phane"
+            },
+            {
+                "family": "Matias",
+                "given": "Catherine"
+            },
+            {
+                "family": "Miele",
+                "given": "Vincent"
+            },
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            }
+        ],
+        "container-title": "Methods in Ecology and Evolution",
+        "id": "Botella2022AppGra",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "page": "203-216",
+        "title": "An appraisal of graph embeddings for comparing trophic network architectures",
+        "type": "article-journal",
+        "volume": "13"
+    },
+    {
         "DOI": "10.1111/ele.13842",
         "author": [
             {
