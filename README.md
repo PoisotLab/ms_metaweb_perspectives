@@ -88,12 +88,16 @@ of embeddings, as they tend to posess a shared sstructural backbone
 [@Mora2018IdeCom], which hints at structural invariants that can be revealed a
 lower dimensions. Indeed, previous work by @Eklof2013DimEco suggests that food
 webs are inherently low-dimensional objects, and can be adequately represented
-with less than ten dimensions.
+with less than ten dimensions. Simulation results by @Botella2022AppGra suggest
+that there is no best method to identify architectural similarities between
+networks, and that multiple approaches need to be tested and compared to the
+network descriptor of interest.
 
-The popularity of graph embedding techniques in machine learning is rather
-intuitive: while graphs are discrete objects, machine learning techniques tend
-to handle continuous data better. Therefore, bringing a discrete graph into a
-continuous vector space opens up a broader variety of predictive algorithms.
+But the popularity of graph embedding techniques in machine learning is rather
+more intuitive than the search for structural invariants: while graphs are
+discrete objects, machine learning techniques tend to handle continuous data
+better. Therefore, bringing a discrete graph into a continuous vector space
+opens up a broader variety of predictive algorithms.
 
 
 | Method        | Embedding approach                   | Reference            | Species interactions application               |
