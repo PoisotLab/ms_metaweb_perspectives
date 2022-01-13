@@ -218,36 +218,36 @@
             <img src="figures/conceptual_embedding.jpg" id="fig:embedding" alt="Figure 1: Overview of the embedding process. A network (A), possibbly represented as its adjacency matrix (B), is converted into a lower-dimensional object (C) where nodes, subgraphs, or edges have specific values (see tbl. 1). For the purposes of prediction, this low-dimensional object encodes feature vectors for e.g. the nodes. Embedding also allows to visualize the structure in the data differently (D), much like with a principal component analysis." /><figcaption aria-hidden="true">Figure 1: Overview of the embedding process. A network (<em>A</em>), possibbly represented as its adjacency matrix (<em>B</em>), is converted into a lower-dimensional object (<em>C</em>) where nodes, subgraphs, or edges have specific values (see tbl. 1). For the purposes of prediction, this low-dimensional object encodes feature vectors for <em>e.g.</em> the nodes. Embedding also allows to visualize the structure in the data differently (<em>D</em>), much like with a principal component analysis.</figcaption>
             </figure>
             <h1 id="graph-embedding-offers-promises-for-the-inference-of-potential-interactions">Graph embedding offers promises for the inference of potential interactions</h1>
-            <p>Graph embedding fig. 1 is a varied family of machine learning techniques aiming to transform nodes and edges into a vector space <span class="citation" data-cites="Arsov2019NetEmb">(Arsov &amp; Mirceva, 2019)</span>, usually of a lower dimension, whilst maximally retaining key properties of the graph <span class="citation" data-cites="Yan2005GraEmb">(Yan et al., 2005)</span>. Ecological networks are an interesting candidate for the widespread application of embeddings, as they tend to posess a shared sstructural backbone <span class="citation" data-cites="Mora2018IdeCom">(Mora et al., 2018)</span>, which hints at structural invariants that can be revealed a lower dimensions. Indeed, previous work by <span class="citation" data-cites="Eklof2013DimEco">Eklöf et al. (2013)</span> suggests that food webs are inherently low-dimensional objects, and can be adequately represented with less than ten dimensions. Simulation results by <span class="citation" data-cites="Botella2022AppGra">Botella et al. (2022)</span> suggest that there is no best method to identify architectural similarities between networks, and that multiple approaches need to be tested and compared to the network descriptor of interest. This matches with previous, more general results on graph embedding, which suggest that embedding algorithm choice matters for the results <span class="citation" data-cites="Goyal2018GraEmb">(Goyal &amp; Ferrara, 2018)</span>.</p>
+            <p>Graph embedding fig. 1 is a varied family of machine learning techniques aiming to transform nodes and edges into a vector space <span class="citation" data-cites="Arsov2019NetEmb">(Arsov &amp; Mirceva, 2019)</span>, usually of a lower dimension, whilst maximally retaining key properties of the graph <span class="citation" data-cites="Yan2005GraEmb">(Yan et al., 2005)</span>. Ecological networks are an interesting candidate for the widespread application of embeddings, as they tend to posess a shared sstructural backbone <span class="citation" data-cites="Mora2018IdeCom">(Mora et al., 2018)</span>, which hints at structural invariants that can be revealed a lower dimensions. Indeed, previous work by <span class="citation" data-cites="Eklof2013DimEco">Eklöf et al. (2013)</span> suggests that food webs are inherently low-dimensional objects, and can be adequately represented with less than ten dimensions. Simulation results by <span class="citation" data-cites="Botella2022AppGra">Botella et al. (2022)</span> suggest that there is no best method to identify architectural similarities between networks, and that multiple approaches need to be tested and compared to the network descriptor of interest. This matches with previous, more general results on graph embedding, which suggest that embedding algorithm choice matters for the results <span class="citation" data-cites="Goyal2018GraEmb">(Goyal &amp; Ferrara, 2018)</span>. In tbl. 1, we present a selection of common graph embeddings methods, alongside examples of their use to predict species interactions (when they have been used this way).</p>
             <div id="tbl:methods">
             <table>
             <caption>Table 1: Overview of some common graph embedding approaches, by time of publication, alongside examples of their use in the prediction of species interactions. Surprisingly, these methods have not yet been used routinely to predict species interactions; most of the examples we identified were either statistical associations, or analogues to joint species distribution models. <span class="math inline"><sup><em>a</em></sup></span>: statistical interactions; <span class="math inline"><sup><em>b</em></sup></span>: joint-SDM-like approach.</caption>
             <colgroup>
-            <col style="width: 12%" />
-            <col style="width: 35%" />
-            <col style="width: 19%" />
-            <col style="width: 31%" />
+            <col style="width: 14%" />
+            <col style="width: 39%" />
+            <col style="width: 21%" />
+            <col style="width: 25%" />
             </colgroup>
             <thead>
             <tr class="header">
             <th style="text-align: left;">Method</th>
             <th style="text-align: left;">Embedding approach</th>
             <th style="text-align: right;">Reference</th>
-            <th style="text-align: right;">Species interactions application</th>
+            <th style="text-align: right;">Application</th>
             </tr>
             </thead>
             <tbody>
             <tr class="odd">
-            <td style="text-align: left;">RDPG</td>
-            <td style="text-align: left;">graphs through SVD</td>
-            <td style="text-align: right;"><span class="citation" data-cites="Young2007RanDot">Young &amp; Scheinerman (2007)</span></td>
-            <td style="text-align: right;"><span class="citation" data-cites="Poisot2021ImpMam">Poisot et al. (2021)</span></td>
-            </tr>
-            <tr class="even">
             <td style="text-align: left;">tSNE</td>
             <td style="text-align: left;">nodes through statistical divergence</td>
             <td style="text-align: right;"><span class="citation" data-cites="Hinton2002StoNei">Hinton &amp; Roweis (2002)</span></td>
             <td style="text-align: right;"><span class="citation" data-cites="Cieslak2020TdiSto">Cieslak et al. (2020)</span> <span class="math inline"><sup><em>a</em></sup></span></td>
+            </tr>
+            <tr class="even">
+            <td style="text-align: left;">RDPG</td>
+            <td style="text-align: left;">graph through SVD</td>
+            <td style="text-align: right;"><span class="citation" data-cites="Young2007RanDot">Young &amp; Scheinerman (2007)</span></td>
+            <td style="text-align: right;"><span class="citation" data-cites="Poisot2021ImpMam">Poisot et al. (2021)</span></td>
             </tr>
             <tr class="odd">
             <td style="text-align: left;">DeepWalk</td>
@@ -275,7 +275,7 @@
             </tr>
             <tr class="odd">
             <td style="text-align: left;">node2vec</td>
-            <td style="text-align: left;">node embedding</td>
+            <td style="text-align: left;">nodes embedding</td>
             <td style="text-align: right;"><span class="citation" data-cites="Grover2016NodSca">Grover &amp; Leskovec (2016)</span></td>
             <td style="text-align: right;"></td>
             </tr>
@@ -287,7 +287,7 @@
             </tr>
             <tr class="odd">
             <td style="text-align: left;">DMSE</td>
-            <td style="text-align: left;">joint node embedding</td>
+            <td style="text-align: left;">joint nodes embedding</td>
             <td style="text-align: right;"><span class="citation" data-cites="Chen2017DeeMul">D. Chen et al. (2017)</span></td>
             <td style="text-align: right;"><span class="citation" data-cites="Chen2017DeeMul">D. Chen et al. (2017)</span> <span class="math inline"><sup><em>b</em></sup></span></td>
             </tr>
@@ -312,10 +312,7 @@
             </tbody>
             </table>
             </div>
-            <p>But the popularity of graph embedding techniques in machine learning is rather more intuitive than the search for structural invariants: while graphs are discrete objects, machine learning techniques tend to handle continuous data better. Therefore, bringing a sparse graph into a continuous, dense vector space <span class="citation" data-cites="Xu2020UndGra">(Xu, 2020)</span> opens up a broader variety of predictive algorithms.</p>
-            <p><strong>TK</strong> Transfer + embedding graf</p>
-            <p>Rather than directly predicting biological rules <span class="citation" data-cites="Pichler2020MacLea">(see <em>e.g.</em> Pichler et al., 2020 for an overview)</span>, which may be confounded by the sparse nature of graph data, learning embeddings works in the low-dimensional space that maximizes information about the network structure.</p>
-            <p>The embedding of a network, in a sense, embeds its macro-evolutionary history, especially as RDPG captures ecological signal <span class="citation" data-cites="DallaRiva2016ExpEvo">(Dalla Riva &amp; Stouffer, 2016)</span>; at this point,</p>
+            <p>The popularity of graph embedding techniques in machine learning is more prosaic than the search for structural invariants: graphs are discrete objects, and machine learning techniques tend to handle continuous data better. Bringing a sparse graph into a continuous, dense vector space <span class="citation" data-cites="Xu2020UndGra">(Xu, 2020)</span> opens up a broader variety of predictive algorithms, notably of the sort that are able to predict events as probabilities <span class="citation" data-cites="Murphy2022ProMac">(Murphy, 2022)</span>. Furthermore, the projection of the graph itself is a representation that can be learned; <span class="citation" data-cites="Runghen2021ExpNod">Runghen et al. (2021)</span>, for example, used a neural network to learn the embedding of a network in which not all interactions were known, based on nodes metadata. This example has many parallels in ecology see 2, in which node metadata can be given by phylogeny or functional traits. Rather than directly predicting biological rules <span class="citation" data-cites="Pichler2020MacLea">(see <em>e.g.</em> Pichler et al., 2020 for an overview)</span>, which may be confounded by the sparse nature of graph data, learning embeddings works in the low-dimensional space that maximizes information about the network structure. This approach is further justified by the observation, for example, that the macro-evolutionary history of a network is adequately represented by some graph embeddings <span class="citation" data-cites="DallaRiva2016ExpEvo">(RDPG; see Dalla Riva &amp; Stouffer, 2016)</span>.</p>
             <figure>
             <img src="figures/conceptual_prediction.jpg" id="fig:prediction" alt="Figure 2: From a low-dimensional feature vector (see fig. 1), it is possible to develop predictive approaches. Nodes in an ecological network are species, for which we can leverage phylogenetic relatedness e.g.(e.g. Strydom, Bouskila, et al., 2021) or functional traits to fill the values of additional species we would like to project in this space (here, I, J, K, and L) from the embedding of known species (here, A, B, C, and D). Because embeddings can be projected back to a graph, this allows to reconstruct a network with these new species. This approach constitutes an instance of transfer learning." /><figcaption aria-hidden="true">Figure 2: From a low-dimensional feature vector (see fig. 1), it is possible to develop predictive approaches. Nodes in an ecological network are species, for which we can leverage phylogenetic relatedness <span class="citation" data-cites="Strydom2021FooWeb">(<em>e.g.</em> Strydom, Bouskila, et al., 2021)</span> or functional traits to fill the values of additional species we would like to project in this space (here, I, J, K, and L) from the embedding of known species (here, A, B, C, and D). Because embeddings can be projected back to a graph, this allows to reconstruct a network with these new species. This approach constitutes an instance of transfer learning.</figcaption>
             </figure>
@@ -437,6 +434,9 @@
             <div id="ref-MoseboFernandes2020MacLea" class="csl-entry" role="doc-biblioentry">
             Mosebo Fernandes, A. C., Quintero Gonzalez, R., Lenihan-Clarke, M. A., Leslie Trotter, E. F., &amp; Jokar Arsanjani, J. (2020). Machine Learning for Conservation Planning in a Changing Climate. <em>Sustainability</em>, <em>12</em>(18, 18), 7657. <a href="https://doi.org/10.3390/su12187657">https://doi.org/10.3390/su12187657</a>
             </div>
+            <div id="ref-Murphy2022ProMac" class="csl-entry" role="doc-biblioentry">
+            Murphy, K. P. (2022). <em>Probabilistic machine learning: An introduction</em>. MIT Press. <a href="https://probml.ai">probml.ai</a>
+            </div>
             <div id="ref-Narayanan2017GraLea" class="csl-entry" role="doc-biblioentry">
             Narayanan, A., Chandramohan, M., Venkatesan, R., Chen, L., Liu, Y., &amp; Jaiswal, S. (2017, July 17). <em>Graph2vec: Learning Distributed Representations of Graphs</em>. <a href="http://arxiv.org/abs/1707.05005">http://arxiv.org/abs/1707.05005</a>
             </div>
@@ -475,6 +475,9 @@
             </div>
             <div id="ref-Ray2021BioCri" class="csl-entry" role="doc-biblioentry">
             Ray, J. C., Grimm, J., &amp; Olive, A. (2021). The biodiversity crisis in Canada: Failures and challenges of federal and sub-national strategic and legal frameworks. <em>FACETS</em>, <em>6</em>, 1044–1068. <a href="https://doi.org/10.1139/facets-2020-0075">https://doi.org/10.1139/facets-2020-0075</a>
+            </div>
+            <div id="ref-Runghen2021ExpNod" class="csl-entry" role="doc-biblioentry">
+            Runghen, R., Stouffer, D. B., &amp; Dalla Riva, G. V. (2021). <em>Exploiting node metadata to predict interactions in large networks using graph embedding and neural networks</em>. <a href="https://doi.org/10.1101/2021.06.10.447991">https://doi.org/10.1101/2021.06.10.447991</a>
             </div>
             <div id="ref-Strydom2021FooWeb" class="csl-entry" role="doc-biblioentry">
             Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell, M. J., Fortin, M.-J., Hemming, V., Mercier, B., Pollock, L., Runghen, R., Riva, G. V. D., &amp; Poisot, T. (2021). <em>Food web reconstruction through phylogenetic transfer of low-rank network representation</em>. <a href="https://doi.org/10.32942/osf.io/y7sdz">https://doi.org/10.32942/osf.io/y7sdz</a>

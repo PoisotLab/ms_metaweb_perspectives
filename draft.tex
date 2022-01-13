@@ -343,7 +343,10 @@ there is no best method to identify architectural similarities between
 networks, and that multiple approaches need to be tested and compared to
 the network descriptor of interest. This matches with previous, more
 general results on graph embedding, which suggest that embedding
-algorithm choice matters for the results (Goyal \& Ferrara, 2018).
+algorithm choice matters for the results (Goyal \& Ferrara, 2018). In
+tbl.~\ref{tbl:methods}, we present a selection of common graph
+embeddings methods, alongside examples of their use to predict species
+interactions (when they have been used this way).
 
 \hypertarget{tbl:methods}{}
 \begin{longtable}[]{@{}llrr@{}}
@@ -355,158 +358,159 @@ examples we identified were either statistical associations, or
 analogues to joint species distribution models. \(^a\): statistical
 interactions; \(^b\): joint-SDM-like approach.}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.11\columnwidth}\raggedright
+\begin{minipage}[b]{0.13\columnwidth}\raggedright
 Method\strut
-\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.35\columnwidth}\raggedright
 Embedding approach\strut
-\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedleft
 Reference\strut
-\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedleft
-Species interactions application\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+Application\strut
 \end{minipage}\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.11\columnwidth}\raggedright
+\begin{minipage}[b]{0.13\columnwidth}\raggedright
 Method\strut
-\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.35\columnwidth}\raggedright
 Embedding approach\strut
-\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedleft
 Reference\strut
-\end{minipage} & \begin{minipage}[b]{0.28\columnwidth}\raggedleft
-Species interactions application\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+Application\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
-RDPG\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-graphs through SVD\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
-Young \& Scheinerman (2007)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
-Poisot et al. (2021)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 tSNE\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 nodes through statistical divergence\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 Hinton \& Roweis (2002)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 Cieslak et al. (2020) \(^a\)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
+RDPG\strut
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+graph through SVD\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+Young \& Scheinerman (2007)\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+Poisot et al. (2021)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 DeepWalk\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 graph walk\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 Perozzi et al. (2014)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 Wardeh et al. (2021)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 FastEmbed\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 graph through PCA/SVD analogue\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 Ramasamy \& Madhow (2015)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 LINE\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 nodes through statistical divergence\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 Tang et al. (2015)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 SDNE\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 nodes through auto-encoding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 D. Wang et al. (2016)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 node2vec\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-node embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+nodes embedding\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 Grover \& Leskovec (2016)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 graph2vec\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 sub-graph embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 Narayanan et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 DMSE\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
-joint node embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+joint nodes embedding\strut
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 D. Chen et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 D. Chen et al. (2017) \(^b\)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 HARP\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 nodes through a meta-strategy\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 H. Chen et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 GraphKKE\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 graph embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 Melnyk et al. (2020)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 Melnyk et al. (2020) \(^a\)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.11\columnwidth}\raggedright
+\begin{minipage}[t]{0.13\columnwidth}\raggedright
 Joint methods\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
 multiple graphs\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
 S. Wang et al. (2021)\strut
-\end{minipage} & \begin{minipage}[t]{0.28\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
 
-But the popularity of graph embedding techniques in machine learning is
-rather more intuitive than the search for structural invariants: while
-graphs are discrete objects, machine learning techniques tend to handle
-continuous data better. Therefore, bringing a sparse graph into a
-continuous, dense vector space (Xu, 2020) opens up a broader variety of
-predictive algorithms.
-
-\textbf{TK} Transfer + embedding graf
-
-Rather than directly predicting biological rules (see \emph{e.g.}
-Pichler et al., 2020 for an overview), which may be confounded by the
-sparse nature of graph data, learning embeddings works in the
-low-dimensional space that maximizes information about the network
-structure.
-
-The embedding of a network, in a sense, embeds its macro-evolutionary
-history, especially as RDPG captures ecological signal (Dalla Riva \&
-Stouffer, 2016); at this point,
+The popularity of graph embedding techniques in machine learning is more
+prosaic than the search for structural invariants: graphs are discrete
+objects, and machine learning techniques tend to handle continuous data
+better. Bringing a sparse graph into a continuous, dense vector space
+(Xu, 2020) opens up a broader variety of predictive algorithms, notably
+of the sort that are able to predict events as probabilities (Murphy,
+2022). Furthermore, the projection of the graph itself is a
+representation that can be learned; Runghen et al. (2021), for example,
+used a neural network to learn the embedding of a network in which not
+all interactions were known, based on nodes metadata. This example has
+many parallels in ecology see \ref{fig:prediction}, in which node
+metadata can be given by phylogeny or functional traits. Rather than
+directly predicting biological rules (see \emph{e.g.} Pichler et al.,
+2020 for an overview), which may be confounded by the sparse nature of
+graph data, learning embeddings works in the low-dimensional space that
+maximizes information about the network structure. This approach is
+further justified by the observation, for example, that the
+macro-evolutionary history of a network is adequately represented by
+some graph embeddings (RDPG; see Dalla Riva \& Stouffer, 2016).
 
 \begin{figure}
 \hypertarget{fig:prediction}{%
@@ -837,6 +841,10 @@ Leslie Trotter, E. F., \& Jokar Arsanjani, J. (2020). Machine Learning
 for Conservation Planning in a Changing Climate. \emph{Sustainability},
 \emph{12}(18, 18), 7657. \url{https://doi.org/10.3390/su12187657}
 
+\leavevmode\hypertarget{ref-Murphy2022ProMac}{}%
+Murphy, K. P. (2022). \emph{Probabilistic machine learning: An
+introduction}. MIT Press. \href{https://probml.ai}{probml.ai}
+
 \leavevmode\hypertarget{ref-Narayanan2017GraLea}{}%
 Narayanan, A., Chandramohan, M., Venkatesan, R., Chen, L., Liu, Y., \&
 Jaiswal, S. (2017, July 17). \emph{Graph2vec: Learning Distributed
@@ -918,6 +926,12 @@ Ray, J. C., Grimm, J., \& Olive, A. (2021). The biodiversity crisis in
 Canada: Failures and challenges of federal and sub-national strategic
 and legal frameworks. \emph{FACETS}, \emph{6}, 1044--1068.
 \url{https://doi.org/10.1139/facets-2020-0075}
+
+\leavevmode\hypertarget{ref-Runghen2021ExpNod}{}%
+Runghen, R., Stouffer, D. B., \& Dalla Riva, G. V. (2021).
+\emph{Exploiting node metadata to predict interactions in large networks
+using graph embedding and neural networks}.
+\url{https://doi.org/10.1101/2021.06.10.447991}
 
 \leavevmode\hypertarget{ref-Strydom2021FooWeb}{}%
 Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,

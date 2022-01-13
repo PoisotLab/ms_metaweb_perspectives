@@ -3245,6 +3245,26 @@
         "volume": "87"
     },
     {
+        "URL": "probml.ai",
+        "author": [
+            {
+                "family": "Murphy",
+                "given": "Kevin P."
+            }
+        ],
+        "id": "Murphy2022ProMac",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "publisher": "MIT Press",
+        "title": "Probabilistic machine learning: An introduction",
+        "type": "book"
+    },
+    {
         "URL": "http://arxiv.org/abs/1707.05005",
         "author": [
             {
