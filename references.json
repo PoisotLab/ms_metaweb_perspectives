@@ -1743,6 +1743,40 @@
         "volume": "288"
     },
     {
+        "URL": "https://www.science.org/doi/abs/10.1126/science.abk3510",
+        "author": [
+            {
+                "family": "Fricke",
+                "given": "Evan C."
+            },
+            {
+                "family": "Ordonez",
+                "given": "Alejandro"
+            },
+            {
+                "family": "Rogers",
+                "given": "Haldre S."
+            },
+            {
+                "family": "Svenning",
+                "given": "Jens-Christian"
+            }
+        ],
+        "container-title": "Science",
+        "id": "Fricke2022EffDef",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    1,
+                    14
+                ]
+            ]
+        },
+        "title": "The effects of defaunation on plants\u2019 capacity to track climate change",
+        "type": "article-journal"
+    },
+    {
         "DOI": "10.1038/s41559-018-0517-3",
         "author": [
             {
@@ -1874,6 +1908,141 @@
         "title": "The spatial scaling of food web structure across European biogeographical regions",
         "type": "article-journal",
         "volume": "n/a"
+    },
+    {
+        "DOI": "10.1038/s41559-021-01644-4",
+        "author": [
+            {
+                "family": "Galiana",
+                "given": "N\u00faria"
+            },
+            {
+                "family": "Lurgi",
+                "given": "Miguel"
+            },
+            {
+                "family": "Bastazini",
+                "given": "Vinicius A. G."
+            },
+            {
+                "family": "Bosch",
+                "given": "Jordi"
+            },
+            {
+                "family": "Cagnolo",
+                "given": "Luciano"
+            },
+            {
+                "family": "Cazelles",
+                "given": "Kevin"
+            },
+            {
+                "family": "Claramunt-L\u00f3pez",
+                "given": "Bernat"
+            },
+            {
+                "family": "Emer",
+                "given": "Carine"
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            },
+            {
+                "family": "Grass",
+                "given": "Ingo"
+            },
+            {
+                "family": "Hern\u00e1ndez-Castellano",
+                "given": "Carlos"
+            },
+            {
+                "family": "Jauker",
+                "given": "Frank"
+            },
+            {
+                "family": "Leroux",
+                "given": "Shawn J."
+            },
+            {
+                "family": "McCann",
+                "given": "Kevin"
+            },
+            {
+                "family": "McLeod",
+                "given": "Anne M."
+            },
+            {
+                "family": "Montoya",
+                "given": "Daniel"
+            },
+            {
+                "family": "Mulder",
+                "given": "Christian"
+            },
+            {
+                "family": "Osorio-Canadas",
+                "given": "Sergio"
+            },
+            {
+                "family": "Revert\u00e9",
+                "given": "Sara"
+            },
+            {
+                "family": "Rodrigo",
+                "given": "Anselm"
+            },
+            {
+                "family": "Steffan-Dewenter",
+                "given": "Ingolf"
+            },
+            {
+                "family": "Traveset",
+                "given": "Anna"
+            },
+            {
+                "family": "Valverde",
+                "given": "Sergi"
+            },
+            {
+                "family": "V\u00e1zquez",
+                "given": "Diego P."
+            },
+            {
+                "family": "Wood",
+                "given": "Spencer A."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Roslin",
+                "given": "Tomas"
+            },
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            },
+            {
+                "family": "Montoya",
+                "given": "Jos\u00e9 M."
+            }
+        ],
+        "container-title": "Nature Ecology & Evolution",
+        "id": "Galiana2022EcoNet",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    1,
+                    13
+                ]
+            ]
+        },
+        "page": "1-8",
+        "title": "Ecological network complexity scales with area",
+        "type": "article-journal"
     },
     {
         "DOI": "10.1093/icb/39.2.374",
