@@ -15,22 +15,25 @@ establishing the interactions between these species is difficult.
 
 Following the definition of @Dunne2006NetStr, a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories *potential*
-interactions between species for a spatially delimited area (and so captures
-the $\gamma$ diversity of interactions). The metaweb is not a prediction of the
+interactions between species for a spatially delimited area (and so captures the
+$\gamma$ diversity of interactions). The metaweb is not a prediction of the
 network at a specific point within the spatial area it covers: it will have a
 different structure, notably by having a larger connectance [see *e.g.*
-@Wood2015EffSpa], from any of these local networks. These local networks
-(capturing the $\alpha$ diversity of interactions) are a subset of the metaweb's
-species and interactions, and have been called "metaweb realizations"
-[@Poisot2015SpeWhy]. Differences between local networks and their metawebs are
-due to chance, species abundance and co-occurrence, local environmental
-conditions, and local distribution of functional traits, among others.
+@Wood2015EffSpa] and complexity [see *e.g.* @Galiana2022EcoNet], from any of
+these local networks. These local networks (capturing the $\alpha$ diversity of
+interactions) are a subset of the metaweb's species and interactions, and have
+been called "metaweb realizations" [@Poisot2015SpeWhy]. Differences between
+local networks and their metawebs are due to chance, species abundance and
+co-occurrence, local environmental conditions, and local distribution of
+functional traits, among others.
 
 Because the metaweb represents the joint effect of functional, phylogenetic, and
 macroecological processes [@Morales-Castilla2015InfBio], it holds valuable
 ecological information. Specifically, it is the "upper bounds" on what the
-composition of the local networks can be [see *e.g.* @McLeod2021SamAsy]. These
-local networks may be reconstructed given appropriate knowledge of local species
+composition of the local networks can be [see *e.g.* @McLeod2021SamAsy]; this
+information can help evaluate the ability of ecological assemblages to withstand
+the effects of, for example, climate change [@Fricke2022EffDef]. These local
+networks may be reconstructed given appropriate knowledge of local species
 composition, providing information on structure of food webs at finer spatial
 scales. This has been done for example for tree-galler-parasitoid systems
 [@Gravel2018BriElt], fish trophic interactions [@Albouy2019MarFis], tetrapod
