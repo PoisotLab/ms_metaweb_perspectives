@@ -159,7 +159,7 @@ this allows to reconstruct a network with these new species. This approach
 constitutes an instance of transfer
 learning.](figures/conceptual_prediction.jpg){#fig:prediction}
 
-# The metaweb embeds strong ecological hypotheses
+# The metaweb embeds ecological hypotheses and practices
 
 The goal of metaweb inference is to provide information about the interactions
 between species at a large spatial scale. But as @Herbert1965Dun rightfully
