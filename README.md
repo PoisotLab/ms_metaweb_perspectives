@@ -1,25 +1,28 @@
-Having a general solution for inferring *potential* interactions (despite the
-unavailability of interaction data) could be the catalyst for significant
-breakthroughs in our ability to start thinking about species interaction
-networks over large spatial scales [@Hortal2015SevSho]. In a recent overview of
-the field of ecological network prediction, @Strydom2021RoaPre identified two
-challenges of interest to the prediction of interactions at large scales. First,
-there is a relative scarcity of relevant data in most places globally --
-paradoxically, this restricts our ability to infer interactions to locations
-where inference is perhaps the least required; second, accurate predictions
-often demand accurate predictors, and the lack of methods that can leverage
-small amount of data is a serious impediment to our predictive ability globally.
+Being able to infer *potential* interactions could be the catalyst for
+significant breakthroughs in our ability to start thinking about species
+interaction networks over large spatial scales [@Hortal2015SevSho]. In a recent
+overview of the field of ecological network prediction, @Strydom2021RoaPre
+identified two challenges of interest to the prediction of interactions at large
+scales. First, there is a relative scarcity of relevant data in most places
+globally -- paradoxically, this restricts our ability to infer interactions to
+locations where inference is perhaps the least required; second, accurate
+predictions often demand accurate predictors, and the lack of methods that can
+leverage small amount of data is a serious impediment to our global predictive
+ability. In most places, our most reliable biodiversity knowledge is that of a
+species pool: through the analysis of databases like GBIF or IUCN, it is
+possible to establish a list of species in a region of interest; but
+establishing the interactions between these species is difficult.
 
-Following the definition of @Dunne2006NetStr, a metaweb is a network analogue to
-the regional species pool; specifically, it is an inventory of all *potential*
+Following the definition of @Dunne2006NetStr, a metaweb is the ecological
+network analogue to the species pool; specifically, it iventories *potential*
 interactions between species from a spatially delimited area (and so captures
-the $\gamma$ diversity of interactions). The metaweb is, therefore, *not* a
-prediction of the food web at a specific locale within the spatial area it
-covers, and will have a different structure [notably by having a larger
-connectance; see *e.g.* @Wood2015EffSpa]. These local food webs (which captures
-the $\alpha$ diversity of interactions) are a subset of the metaweb's species
-and interactions, and have been called "metaweb realizations"
-[@Poisot2015SpeWhy]. Differences between local food web and their metaweb are
+the $\gamma$ diversity of interactions). The metaweb is not a prediction of the
+network at a specific point within the spatial area it covers: it will have a
+different structure, notably by having a larger connectance [see *e.g.*
+@Wood2015EffSpa], from any of these local networks. These local networks
+(capturing the $\alpha$ diversity of interactions) are a subset of the metaweb's
+species and interactions, and have been called "metaweb realizations"
+[@Poisot2015SpeWhy]. Differences between local networks and their metawebs are
 due to chance, species abundance and co-occurrence, local environmental
 conditions, and local distribution of functional traits, among others.
 
@@ -27,56 +30,56 @@ Because the metaweb represents the joint effect of functional, phylogenetic, and
 macroecological processes [@Morales-Castilla2015InfBio], it holds valuable
 ecological information. Specifically, it is the "upper bounds" on what the
 composition of the local networks can be [see *e.g.* @McLeod2021SamAsy]. These
-local networks, in turn, can be reconstructed given appropriate knowledge of
-local species composition, providing information on structure of food webs at
-finer spatial scales. This has been done for example for tree-galler-parasitoid
-systems [@Gravel2018BriElt], fish trophic interactions [@Albouy2019MarFis],
-tetrapod trophic interactions [@OConnor2020UnvFoo], and crop-pest networks
-[@Grunig2020CroFor]. Whereas the original metaweb definition, and indeed most
-past uses of metawebs, was based on the presence/absence of interactions, we
-focus on *probabilistic* metawebs where interactions are represented as the
-chance of success of a Bernoulli trial [see *e.g.* @Poisot2016StrPro];
-therefore, not only does our method recommend interactions that may exist, it
-gives each interaction a score, allowing us to properly weigh them.
+local networks may be reconstructed given appropriate knowledge of local species
+composition, providing information on structure of food webs at finer spatial
+scales. This has been done for example for tree-galler-parasitoid systems
+[@Gravel2018BriElt], fish trophic interactions [@Albouy2019MarFis], tetrapod
+trophic interactions [@OConnor2020UnvFoo], and crop-pest networks
+[@Grunig2020CroFor]. In this contribution, we highlight the *probabilistic*
+nature of metawebs, discuss how a family of machine learning tools (graph
+embeddings and transfer learning) can be used to overcome data limitations to
+metaweb inference, and highlight how the use of metawebs introduces important
+questions for the field of network ecology.
 
 # The metaweb is an inherently probabilistic object
 
-Yet, owing to the inherent plasticity of interactions, there have been
-documented instances of food webs undergoing rapid collapse/recovery cycles over
-short periods of time [@Pedersen2017SigCol]. The embedding of a network, in a
-sense, embeds its macro-evolutionary history, especially as RDPG captures
-ecological signal [@DallaRiva2016ExpEvo]; at this point, it is important to
-recall that a metaweb is intended as a catalogue of all potential interactions,
-which should then be filtered [@Morales-Castilla2015InfBio]. In practice (and in
-this instance) the reconstructed metaweb will predict interactions that are
-plausible based on the species' evolutionary history, however some interactions
-would/would not be realized due to human impact.
+@Dallas2017PreCry suggested that most links in ecological networks are cryptic,
+*i.e.* uncommon or hard to observe. This argument echoes @Jordano2016SamNet:
+sampling ecological interactions is difficult because it requires first the
+joint observation of two species, and then the observation of their interaction.
+In addition, it is generally expected that weak or rare links would be more
+common in networks [@Csermely2004StrLin], compared to strong, persistent links;
+this is notably the case in food chains, wherein many weaker links are key to
+the stability of a system [@Neutel2002StaRea]. In the light of these
+observations, we expect to see an over-representation of low-probability
+interactions under a model that accurately predicts interaction probabilities.
+Yet the original metaweb definition, and indeed most past uses of metawebs, was
+based on the presence/absence of interactions. Moving towards *probabilistic*
+metawebs, by represent interactions as Bernoulli events [see *e.g.*
+@Poisot2016StrPro], offers the opportunity to weigh these rare interactions
+appropriately. The inherent plasticity of interactions is important to capture:
+there have been documented instances of food webs undergoing rapid
+collapse/recovery cycles over short periods of time [*e.g.*
+@Pedersen2017SigCol]. These considerations emphasize why metaweb predictions
+should focus on quantitative (preferentially probabilistic) predictions; this
+should constrain the suite of appropriate models.
 
-@Dallas2017PreCry suggested that most links in ecological networks may be
-cryptic, *i.e.* uncommon or otherwise hard to observe. This argument essentially
-echoes @Jordano2016SamNet: the sampling of ecological interactions is difficult
-because it requires first the joint observation of two species, and then the
-observation of their interaction. In addition, it is generally expected that
-weak or rare links would be more common in networks [@Csermely2004StrLin],
-compared to strong, persistent links; this is notably the case in food chains,
-wherein many weaker links are key to the stability of a system
-[@Neutel2002StaRea]. In the light of these observations, the results in
-@fig:inflation are not particularly surprising: we expect to see a surge in
-these low-probability interactions under a model that has a good predictive
-accuracy. Because the predictions we generate are by design probabilistic, then
-one can weigh these rare links appropriately. In a sense, that most ecological
-interactions are elusive can call for a slightly different approach to sampling:
-once the common interactions are documented, the effort required in documenting
-each rare interaction may increase exponentially. Recent proposals suggest that
-machine learning algorithms, in these situations, can act as data generators
-[@Hoffmann2019MacLea]: in this perspective, high quality observational data can
-be supplemented with synthetic data coming from predictive models, which
-increases the volume of information available for inference. Indeed,
-@Strydom2021RoaPre suggested that knowing the metaweb may render the prediction
-of local networks easier, because it fixes an "upper bound" on which
-interactions can exist; indeed, with a probabilistic metaweb, we can consider
-that the metaweb represents an aggregation of informative priors on the
-interactions.
+Yet it is important to recall that a metaweb is intended as a catalogue of all
+potential interactions, which is then filtered [@Morales-Castilla2015InfBio]. In
+a sense, that most ecological interactions are elusive can call for a slightly
+different approach to sampling: once the common interactions are documented, the
+effort required in documenting each rare interaction will increase
+exponentially, and will do so for each undocumented interaction. Recent
+proposals suggest that machine learning algorithms, in these situations, can act
+as data generators [@Hoffmann2019MacLea]: high quality observational data can
+generate the core rules underpinning the network structure, and be supplemented
+with synthetic data coming from predictive models, increasing the volume of
+information available for inference. Indeed, @Strydom2021RoaPre suggested that
+knowing the metaweb may render the prediction of local networks easier, because
+it fixes an "upper bound" on which interactions can exist. A probabilistic
+metaweb represents an aggregation of informative priors on the interactions, an
+elusive information with the potential to boost our predictive ability
+[@Bartomeus2016ComFra].
 
 ![Overview of the embedding process. A network (*A*), possibbly represented as
 its adjacency matrix (*B*), is converted into a lower-dimensional object (*C*)
@@ -138,6 +141,10 @@ Rather than directly predicting biological rules [see *e.g.* @Pichler2020MacLea
 for an overview], which may be confounded by the sparse nature of graph data,
 learning embeddings works in the low-dimensional space that maximizes
 information about the network structure.
+
+The embedding of a network, in a sense, embeds its
+macro-evolutionary history, especially as RDPG captures ecological signal
+[@DallaRiva2016ExpEvo]; at this point,
 
 ![From a low-dimensional feature vector (see @fig:embedding), it is possible to
 develop predictive approaches. Nodes in an ecological network are species, for
