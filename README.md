@@ -161,65 +161,57 @@ learning.](figures/conceptual_prediction.jpg){#fig:prediction}
 
 # The metaweb embeds strong ecological hypotheses
 
-As @Herbert1965Dun rightfully pointed out, "[y]ou can't draw neat lines around
-planet-wide problems"; in this regard, any inference of a metaweb at large
-scales must contend with several interesting and interwoven families of
-problems.
+The goal of metaweb inference is to provide information about the interactions
+between species at a large spatial scale. But as @Herbert1965Dun rightfully
+pointed out, "[y]ou can't draw neat lines around planet-wide problems"; any
+inference of a metaweb at large scales must contend with several novel, and
+interwoven, families of problems.
 
 The first is the spatial and taxonomic limit of the metaweb to embed and
 transfer. If the initial metaweb is too narrow in scope, notably from a
 taxonomic point of view, the chances of finding another area with enough related
 species (through phylogenetic relatedness or similarity of functional traits) to
 make a reliable inference decreases; this would likely be indicated by large
-confidence intervals during estimation of the values in the low-rank space, but
-the lack of well documented metawebs is currently preventing the development of
-more concrete guidelines. The question of phylogenetic relatedness and dispersal
-is notably true if the metaweb is assembled in an area with mostly endemic
-species, and as with every predictive algorithm, there is room for the
-application of our best ecological judgement. Conversely, the metaweb should be
-reliably filled, which assumes that the $S^2$ interactions in a pool of $S$
-species have been examined, either through literature surveys or expert
-elicitation. 
-
-**TK** Supp. Mat. 1 provides some guidance as to the type of sampling
-effort that should be prioritized. While RDPG was able to maintain very high
-predictive power when interactions were missing, the addition of false positive
-interactions was immediately detected; this suggests that it may be appropriate
-to err on the side of "too many" interactions when constructing the initial
-metaweb to be transferred.
+confidence intervals during estimation of the values in the low-rank space, or
+by non-overlapping trait distributions in the known and unknown species. The
+lack of well documented metawebs is currently preventing the development of more
+concrete guidelines. The question of phylogenetic relatedness and dispersal is
+notably true if the metaweb is assembled in an area with mostly endemic species,
+and as with every predictive algorithm, there is room for the application of our
+best ecological judgement.
 
 The second series of problems are related to determining which area should be
 used to infer the new metaweb in, as this determines the species pool that must
-be used.
+be used. Metawebs can be constructed by assigning interactions in a list of
+species within geographic boundaries. The upside of this approach is that
+information at the country level is likely to be required for biodiversity
+assessments, as countries set goals at the national level [@Buxton2021KeyInf],
+and as quantitative instruments are designed to work at these scales
+[@Turak2017UsiEss]; specific strategies are often enacted at smaller scales,
+nested within a specific country [@Ray2021BioCri]. But there is no guarantee
+that these boundaries are meaningful. In fact, we do not have a satisfying
+answer to the question of "where does a food web stop?"; the most promising
+solutions involve examining the spatial consistency of network area
+relationships [see *e.g.* @Galiana2018SpaSca; @Galiana2019GeoVar;
+@Galiana2021SpaSca; @Fortin2021NetEco], which is impossible in the absence of
+enough information about the network itself. This suggests that infered metaweb
+should be futher downscaled to allow *a posteriori* analyses.
 
-**TK** In our application, we focused on the mammals of Canada. The upside of
-this approach is that information at the country level is likely to be required
-by policy makers and stakeholders for their biodiversity assessment, as each
-country tends to set goals at the national level [@Buxton2021KeyInf] for which
-quantitative instruments are designed [@Turak2017UsiEss], with specific
-strategies often enacted at smaller scales [@Ray2021BioCri]. And yet, we do not
-really have a satisfying answer to the question of "where does a food web
-stop?"; the current most satisfying solutions involve examining the spatial
-consistency of network area relationships [see *e.g.* @Galiana2018SpaSca;
-@Galiana2019GeoVar; @Galiana2021SpaSca; @Fortin2021NetEco], which is of course
-impossible in the absence of enough information about the network itself. This
-suggests that an *a posteriori* refinement of the results may be required, based
-on a downscaling of the metaweb.
-
-The final family of problems relates less to the availability of data or
-quantitative tools, and more to the praxis of spatial ecology. Operating under
-the context of national divisions, in large parts of the world, reflects nothing
-more than the legacy of settler colonialism. Indeed, the use of ecological data
-is not an apolitical act [@Nost2021PolEco], as data infrastructures tend to be
-designed to answer questions within national boundaries, and their use both
-draws upon and reinforces territorial statecraft; as per @Machen2021ThiAlg, this
-is particularly true when the output of "algorithmic thinking" (*e.g.* relying
-on machine learning to generate knowledge) can be re-used for governance (*e.g.*
+The final family of problems relates less to ecological concepts and more to the
+praxis of ecological research. Operating under the context of national
+divisions, in large parts of the world, reflects nothing more than the legacy of
+settler colonialism. Indeed, the use of ecological data is not an apolitical act
+[@Nost2021PolEco], as data infrastructures tend to be designed to answer
+questions within national boundaries, and their use both draws upon and
+reinforces territorial statecraft; as per @Machen2021ThiAlg, this is
+particularly true when the output of "algorithmic thinking" (*e.g.* relying on
+machine learning to generate knowledge) can be re-used for governance (*e.g.*
 enacting conservation decisions at the national scale). We therefore recognize
-that methods such as we propose operate under the framework that contributed to
-the ongoing biodiversity crisis [@Adam2014EleTre], reinforced environmental
-injustice [@Choudry2013SavBio; @Dominguez2020DecCon], and on Turtle Island
-especially, should be replaced by Indigenous principles of land management
+that predictive approaches deployed at the continental scale, no matter their
+intent, originate in the framework that contributed to the ongoing biodiversity
+crisis [@Adam2014EleTre], reinforced environmental injustice
+[@Choudry2013SavBio; @Dominguez2020DecCon], and on Turtle Island especially,
+should be replaced by Indigenous principles of land management
 [@Eichhorn2019SteDec; @Nokmaq2021AwaSle]. As we see AI/ML being increasingly
 mobilized to generate knowledge that is lacking for conservation decisions
 [*e.g.* @Lamba2019DeeLea; @MoseboFernandes2020MacLea], our discussion of these
