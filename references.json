@@ -247,6 +247,50 @@
         "volume": "6"
     },
     {
+        "URL": "http://onlinelibrary.wiley.com/doi/10.1111/1365-2435.12666/full",
+        "author": [
+            {
+                "family": "Bartomeus",
+                "given": "Ignasi"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Tylianakis",
+                "given": "Jason M."
+            },
+            {
+                "family": "Aizen",
+                "given": "Marcelo A."
+            },
+            {
+                "family": "Dickie",
+                "given": "Ian A."
+            },
+            {
+                "family": "Bernard-Verdier",
+                "given": "Maud"
+            }
+        ],
+        "container-title": "Functional Ecology",
+        "id": "Bartomeus2016ComFra",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "other-ids": "BartGrav16,Bartomeus2016ComFraa",
+        "page": "1894-1903",
+        "title": "A common framework for identifying linkage rules across different types of interactions",
+        "type": "article-journal",
+        "volume": "30"
+    },
+    {
         "DOI": "10.1073/pnas.1633576100",
         "author": [
             {
