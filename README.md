@@ -139,7 +139,7 @@ for an overview], which may be confounded by the sparse nature of graph data,
 learning embeddings works in the low-dimensional space that maximizes
 information about the network structure.
 
-![From a low-dimensional figure vector (see @fig:embedding), it is possible to
+![From a low-dimensional feature vector (see @fig:embedding), it is possible to
 develop predictive approaches. Nodes in an ecological network are species, for
 which we can leverage phylogenetic relatedness [*e.g.* @Strydom2021FooWeb] or
 functional traits to fill the values of additional species we would like to
