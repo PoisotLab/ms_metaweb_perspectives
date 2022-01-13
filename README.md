@@ -104,22 +104,25 @@ results by @Botella2022AppGra suggest that there is no best method to identify
 architectural similarities between networks, and that multiple approaches need
 to be tested and compared to the network descriptor of interest. This matches
 with previous, more general results on graph embedding, which suggest that
-embedding algorithm choice matters for the results [@Goyal2018GraEmb].
+embedding algorithm choice matters for the results [@Goyal2018GraEmb]. In
+@tbl:methods, we present a selection of common graph embeddings methods,
+alongside examples of their use to predict species interactions (when they have
+been used this way).
 
-| Method        | Embedding approach                   |            Reference | Species interactions application |
-| :------------ | :----------------------------------- | -------------------: | -------------------------------: |
-| RDPG          | graphs through SVD                   |     @Young2007RanDot |                @Poisot2021ImpMam |
-| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei |          @Cieslak2020TdiSto $^a$ |
-| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |                @Wardeh2021PreMam |
-| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                                  |
-| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                                  |
-| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                                  |
-| node2vec      | node embedding                       |    @Grover2016NodSca |                                  |
-| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                  |
-| DMSE          | joint node embedding                 |      @Chen2017DeeMul |             @Chen2017DeeMul $^b$ |
-| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                                  |
-| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |           @Melnyk2020GraGra $^a$ |
-| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                                  |
+| Method        | Embedding approach                   |            Reference |             Application |
+| :------------ | :----------------------------------- | -------------------: | ----------------------: |
+| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei | @Cieslak2020TdiSto $^a$ |
+| RDPG          | graph through SVD                    |     @Young2007RanDot |       @Poisot2021ImpMam |
+| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |       @Wardeh2021PreMam |
+| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                         |
+| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                         |
+| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                         |
+| node2vec      | nodes embedding                      |    @Grover2016NodSca |                         |
+| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                         |
+| DMSE          | joint nodes embedding                |      @Chen2017DeeMul |    @Chen2017DeeMul $^b$ |
+| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                         |
+| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |  @Melnyk2020GraGra $^a$ |
+| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                         |
 
 : Overview of some common graph embedding approaches, by time of publication,
 alongside examples of their use in the prediction of species interactions.
@@ -128,23 +131,23 @@ interactions; most of the examples we identified were either statistical
 associations, or analogues to joint species distribution models. $^a$:
 statistical interactions; $^b$: joint-SDM-like approach. {#tbl:methods}
 
-But the popularity of graph embedding techniques in machine learning is rather
-more intuitive than the search for structural invariants: while graphs are
-discrete objects, machine learning techniques tend to handle continuous data
-better. Therefore, bringing a sparse graph into a continuous, dense vector space
-[@Xu2020UndGra] opens up a broader variety of predictive algorithms.
-
-
-**TK** Transfer + embedding graf
-
-Rather than directly predicting biological rules [see *e.g.* @Pichler2020MacLea
-for an overview], which may be confounded by the sparse nature of graph data,
-learning embeddings works in the low-dimensional space that maximizes
-information about the network structure.
-
-The embedding of a network, in a sense, embeds its
-macro-evolutionary history, especially as RDPG captures ecological signal
-[@DallaRiva2016ExpEvo]; at this point,
+The popularity of graph embedding techniques in machine learning is more prosaic
+than the search for structural invariants: graphs are discrete objects, and
+machine learning techniques tend to handle continuous data better. Bringing a
+sparse graph into a continuous, dense vector space [@Xu2020UndGra] opens up a
+broader variety of predictive algorithms, notably of the sort that are able to
+predict events as probabilities [@Murphy2022ProMac]. Furthermore, the projection
+of the graph itself is a representation that can be learned; @Runghen2021ExpNod,
+for example, used a neural network to learn the embedding of a network in which
+not all interactions were known, based on nodes metadata. This example has many
+parallels in ecology [see @fig:prediction], in which node metadata can be given
+by phylogeny or functional traits. Rather than directly predicting biological
+rules [see *e.g.* @Pichler2020MacLea for an overview], which may be confounded
+by the sparse nature of graph data, learning embeddings works in the
+low-dimensional space that maximizes information about the network structure.
+This approach is further justified by the observation, for example, that the
+macro-evolutionary history of a network is adequately represented by some graph
+embeddings [RDPG; see @DallaRiva2016ExpEvo].
 
 ![From a low-dimensional feature vector (see @fig:embedding), it is possible to
 develop predictive approaches. Nodes in an ecological network are species, for
