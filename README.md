@@ -14,8 +14,8 @@ possible to establish a list of species in a region of interest; but
 establishing the interactions between these species is difficult.
 
 Following the definition of @Dunne2006NetStr, a metaweb is the ecological
-network analogue to the species pool; specifically, it iventories *potential*
-interactions between species from a spatially delimited area (and so captures
+network analogue to the species pool; specifically, it inventories *potential*
+interactions between species for a spatially delimited area (and so captures
 the $\gamma$ diversity of interactions). The metaweb is not a prediction of the
 network at a specific point within the spatial area it covers: it will have a
 different structure, notably by having a larger connectance [see *e.g.*
@@ -87,7 +87,7 @@ where nodes, subgraphs, or edges have specific values (see @tbl:methods). For
 the purposes of prediction, this low-dimensional object encodes feature vectors
 for *e.g.* the nodes. Embedding also allows to visualize the structure in the
 data differently (*D*), much like with a principal component
-analysis.](figures/conceptual_embedding.jpg){#fig:embedding}
+analysis.](figures/conceptual_embedding.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
 
@@ -157,7 +157,7 @@ project in this space (here, I, J, K, and L) from the embedding of known species
 (here, A, B, C, and D). Because embeddings can be projected back to a graph,
 this allows to reconstruct a network with these new species. This approach
 constitutes an instance of transfer
-learning.](figures/conceptual_prediction.jpg){#fig:prediction}
+learning.](figures/conceptual_prediction.png){#fig:prediction}
 
 # The metaweb embeds ecological hypotheses and practices
 
