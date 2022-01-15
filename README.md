@@ -25,7 +25,12 @@ interactions) are a subset of the metaweb's species and interactions, and have
 been called "metaweb realizations" [@Poisot2015SpeWhy]. Differences between
 local networks and their metawebs are due to chance, species abundance and
 co-occurrence, local environmental conditions, and local distribution of
-functional traits, among others.
+functional traits, among others. Yet, recent results by @Saravia2021EcoNet
+strongly suggest that the local realizations only respond weakly to local
+conditions: instead, they reflect constraints inherited by the structure of
+their metaweb. This establishes the metaweb structure as the core goal of
+predictive network ecology, as it is a required information to accurately
+produce downscaled, local predictions.
 
 Because the metaweb represents the joint effect of functional, phylogenetic, and
 macroecological processes [@Morales-Castilla2015InfBio], it holds valuable
