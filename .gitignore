@@ -8,3 +8,6 @@ abstract.json
 .assets/*csl
 author_template.tsv
 _wc.docx
+
+# MacOS nonsense
+.DS_Store
