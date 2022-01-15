@@ -4588,6 +4588,44 @@
         "type": "article-journal"
     },
     {
+        "DOI": "10.1111/1365-2656.13652",
+        "author": [
+            {
+                "family": "Saravia",
+                "given": "Leonardo A."
+            },
+            {
+                "family": "Marina",
+                "given": "Tom\u00e1s I."
+            },
+            {
+                "family": "Kristensen",
+                "given": "Nadiah P."
+            },
+            {
+                "family": "De Troch",
+                "given": "Marleen"
+            },
+            {
+                "family": "Momo",
+                "given": "Fernando R."
+            }
+        ],
+        "container-title": "Journal of Animal Ecology",
+        "id": "Saravia2021EcoNet",
+        "issue": "n/a",
+        "issued": {
+            "date-parts": [
+                [
+                    2021
+                ]
+            ]
+        },
+        "title": "Ecological network assembly: How the regional metaweb influences local food webs",
+        "type": "article-journal",
+        "volume": "n/a"
+    },
+    {
         "author": [
             {
                 "family": "Schoener",
