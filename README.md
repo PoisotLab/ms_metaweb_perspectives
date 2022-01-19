@@ -103,8 +103,8 @@ Graph embedding [@fig:embedding] is a varied family of machine learning
 techniques aiming to transform nodes and edges into a vector space
 [@Arsov2019NetEmb], usually of a lower dimension, whilst maximally retaining key
 properties of the graph [@Yan2005GraEmb]. Ecological networks are an interesting
-candidate for the widespread application of embeddings, as they tend to posess a
-shared sstructural backbone [@Mora2018IdeCom], which hints at structural
+candidate for the widespread application of embeddings, as they tend to possess
+a shared structural backbone [@Mora2018IdeCom], which hints at structural
 invariants that can be revealed a lower dimensions. Indeed, previous work by
 @Eklof2013DimEco suggests that food webs are inherently low-dimensional objects,
 and can be adequately represented with less than ten dimensions. Simulation
@@ -202,8 +202,8 @@ answer to the question of "where does a food web stop?"; the most promising
 solutions involve examining the spatial consistency of network area
 relationships [see *e.g.* @Galiana2018SpaSca; @Galiana2019GeoVar;
 @Galiana2021SpaSca; @Fortin2021NetEco], which is impossible in the absence of
-enough information about the network itself. This suggests that infered metaweb
-should be futher downscaled to allow *a posteriori* analyses.
+enough information about the network itself. This suggests that inferred metaweb
+should be further downscaled to allow *a posteriori* analyses.
 
 The final family of problems relates less to ecological concepts and more to the
 praxis of ecological research. Operating under the context of national
