@@ -229,7 +229,7 @@ can have.
 **Acknowledgements:** We acknowledge that this study was conducted on land
 within the traditional unceded territory of the Saint Lawrence Iroquoian,
 Anishinabewaki, Mohawk, Huron-Wendat, and Omàmiwininiwak nations. TP, TS, DC,
-and LP received funding from the Canadian Institue for Ecology & Evolution. FB
+and LP received funding from the Canadian Institute for Ecology & Evolution. FB
 is funded by the Institute for Data Valorization (IVADO). TS, SB, and TP are
 funded by a donation from the Courtois Foundation. CB was awarded a Mitacs
 Elevate Fellowship no. IT12391, in partnership with fRI Research, and also
