@@ -67,7 +67,7 @@ we expect to see an over-representation of low-probability interactions under a
 model that accurately predicts interaction probabilities. Yet the original
 metaweb definition, and indeed most past uses of metawebs, was based on the
 presence/absence of interactions. Moving towards *probabilistic* metawebs, by
-represent interactions as Bernoulli events [see *e.g.* @Poisot2016StrPro],
+representing interactions as Bernoulli events [see *e.g.* @Poisot2016StrPro],
 offers the opportunity to weigh these rare interactions appropriately. The
 inherent plasticity of interactions is important to capture: there have been
 documented instances of food webs undergoing rapid collapse/recovery cycles over
@@ -108,7 +108,7 @@ techniques aiming to transform nodes and edges into a vector space
 properties of the graph [@Yan2005GraEmb]. Ecological networks are an interesting
 candidate for the widespread application of embeddings, as they tend to possess
 a shared structural backbone [@Mora2018IdeCom], which hints at structural
-invariants that can be revealed a lower dimensions. Indeed, food webs are
+invariants that can be revealed at lower dimensions. Indeed, food webs are
 inherently low-dimensional objects, and can be adequately represented with less
 than ten dimensions [@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by
 @Botella2022AppGra suggest that there is no best method to identify
@@ -177,7 +177,7 @@ pointed out, "[y]ou can't draw neat lines around planet-wide problems"; any
 inference of a metaweb at large scales must contend with several novel, and
 interwoven, families of problems.
 
-The first is the spatial and taxonomic limit of the metaweb to embed and
+The first is the taxonomic and spatial limit of the metaweb to embed and
 transfer. If the initial metaweb is too narrow in scope, notably from a
 taxonomic point of view, the chances of finding another area with enough related
 species (through phylogenetic relatedness or similarity of functional traits) to
