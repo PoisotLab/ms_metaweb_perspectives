@@ -206,7 +206,7 @@ solutions involve examining the spatial consistency of network area
 relationships [see *e.g.* @Galiana2018SpaSca; @Galiana2019GeoVar;
 @Galiana2021SpaSca; @Fortin2021NetEco], which is impossible in the absence of
 enough information about the network itself. This suggests that inferred metawebs
-should be further downscaled to allow *a posteriori* analyses.
+should be further downscaled to allow for *a posteriori* analyses.
 
 The final family of problems relates less to ecological concepts and more to the
 praxis of ecological research. Operating under the context of national
