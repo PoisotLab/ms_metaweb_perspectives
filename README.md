@@ -14,23 +14,23 @@ possible to establish a list of species in a region of interest; but
 establishing the interactions between these species is difficult.
 
 Following the definition of @Dunne2006NetStr, a metaweb is the ecological
-network analogue to the species pool; specifically, it inventories *potential*
-interactions between species for a spatially delimited area (and so captures the
-$\gamma$ diversity of interactions). The metaweb is not a prediction of the
-network at a specific point within the spatial area it covers: it will have a
-different structure, notably by having a larger connectance [see *e.g.*
-@Wood2015EffSpa] and complexity [see *e.g.* @Galiana2022EcoNet], from any of
-these local networks. These local networks (capturing the $\alpha$ diversity of
-interactions) are a subset of the metaweb's species and their interactions, and
-have been called "metaweb realizations" [@Poisot2015SpeWhy]. Differences between
-local networks and their metawebs are due to chance, species abundance and
-co-occurrence, local environmental conditions, and local distribution of
-functional traits, among others. Yet, recent results by @Saravia2021EcoNet
-strongly suggest that the local realizations only respond weakly to local
-conditions: instead, they reflect constraints inherited by the structure of
-their metaweb. This establishes the metaweb structure as the core goal of
-predictive network ecology, as it is a required information to accurately
-produce downscaled, local predictions.
+network analogue to the species pool; specifically, it inventories all
+*potential* interactions between species for a spatially delimited area (and so
+captures the $\gamma$ diversity of interactions). The metaweb is not a
+prediction of the network at a specific point within the spatial area it covers:
+it will have a different structure, notably by having a larger connectance [see
+*e.g.* @Wood2015EffSpa] and complexity [see *e.g.* @Galiana2022EcoNet], from any
+of these local networks. These local networks (which capture the $\alpha$
+diversity of interactions) are a subset of the metaweb's species and their
+interactions, and have been called "metaweb realizations" [@Poisot2015SpeWhy].
+Differences between local networks and their metawebs are due to chance, species
+abundance and co-occurrence, local environmental conditions, and local
+distribution of functional traits, among others. Yet, recent results by
+@Saravia2021EcoNet strongly suggest that the local realizations only respond
+weakly to local conditions: instead, they reflect constraints inherited by the
+structure of their metaweb. This establishes the metaweb structure as the core
+goal of predictive network ecology, as it is a required information to
+accurately produce downscaled, local predictions.
 
 Because the metaweb represents the joint effect of functional, phylogenetic, and
 macroecological processes [@Morales-Castilla2015InfBio], it holds valuable
@@ -43,12 +43,13 @@ appropriate knowledge of local species composition and provide information on
 the structure of food webs at finer spatial scales. This has been done for
 example for tree-galler-parasitoid systems [@Gravel2018BriElt], fish trophic
 interactions [@Albouy2019MarFis], tetrapod trophic interactions
-[@OConnor2020UnvFoo], and crop-pest networks [@Grunig2020CroFor]. In this
-contribution, we highlight the power in viewing (and constructing) metawebs as
-*probabilistic* objects in the context of rare interactions, discuss how a
-family of machine learning tools (graph embeddings and transfer learning) can be
-used to overcome data limitations to metaweb inference, and highlight how the
-use of metawebs introduces important questions for the field of network ecology.
+[@Braga2019SpaAna; @OConnor2020UnvFoo], and crop-pest networks
+[@Grunig2020CroFor]. In this contribution, we highlight the power in viewing
+(and constructing) metawebs as *probabilistic* objects in the context of rare
+interactions, discuss how a family of machine learning tools (graph embeddings
+and transfer learning) can be used to overcome data limitations to metaweb
+inference, and highlight how the use of metawebs introduces important questions
+for the field of network ecology.
 
 # The metaweb is an inherently probabilistic object
 
@@ -58,13 +59,13 @@ links in ecological networks are cryptic, *i.e.* uncommon or hard to observe.
 This argument echoes @Jordano2016SamNet: sampling ecological interactions is
 difficult because it requires first the joint observation of two species, and
 then the observation of their interaction. In addition, it is generally expected
-that weak or rare links would be more common in networks [@Csermely2004StrLin],
-compared to strong, persistent links; this is notably the case in food chains,
-wherein many weaker links are key to the stability of a system
-[@Neutel2002StaRea]. In the light of these observations, we expect to see an
-over-representation of low-probability interactions under a model that
-accurately predicts interaction probabilities. Yet the original metaweb
-definition, and indeed most past uses of metawebs, was based on the
+that weak or rare links to be more prevalent in networks than common or rare
+links [@Csermely2004StrLin], compared to strong, persistent links; this is
+notably the case in food chains, wherein many weaker links are key to the
+stability of a system [@Neutel2002StaRea]. In the light of these observations,
+we expect to see an over-representation of low-probability interactions under a
+model that accurately predicts interaction probabilities. Yet the original
+metaweb definition, and indeed most past uses of metawebs, was based on the
 presence/absence of interactions. Moving towards *probabilistic* metawebs, by
 represent interactions as Bernoulli events [see *e.g.* @Poisot2016StrPro],
 offers the opportunity to weigh these rare interactions appropriately. The
@@ -80,17 +81,16 @@ potential interactions, which is then filtered [@Morales-Castilla2015InfBio]. In
 a sense, that most ecological interactions are elusive can call for a slightly
 different approach to sampling: once the common interactions are documented, the
 effort required in documenting each rare interaction will increase
-exponentially, and will do so for each undocumented interaction. Recent
-proposals suggest that machine learning algorithms, in these situations, can act
-as data generators [@Hoffmann2019MacLea]: high quality observational data can
-generate the core rules underpinning the network structure, and be supplemented
-with synthetic data coming from predictive models, increasing the volume of
-information available for inference. Indeed, @Strydom2021RoaPre suggested that
-knowing the metaweb may render the prediction of local networks easier, because
-it fixes an "upper bound" on which interactions can exist. A probabilistic
-metaweb represents an aggregation of informative priors on the interactions, an
-elusive information with the potential to boost our predictive ability
-[@Bartomeus2016ComFra].
+exponentially. Recent proposals suggest that machine learning algorithms, in
+these situations, can act as data generators [@Hoffmann2019MacLea]: high quality
+observational data can generate the core rules underpinning the network
+structure, and be supplemented with synthetic data coming from predictive
+models, increasing the volume of information available for inference. Indeed,
+@Strydom2021RoaPre suggested that knowing the metaweb may render the prediction
+of local networks easier, because it fixes an "upper bound" on which
+interactions can exist. In this context a probabilistic metaweb represents an
+aggregation of informative priors on the interactions, elusive information with
+the potential to boost our predictive ability [@Bartomeus2016ComFra].
 
 ![Overview of the embedding process. A network (*A*), possibly represented as
 its adjacency matrix (*B*), is converted into a lower-dimensional object (*C*)
@@ -102,45 +102,44 @@ analysis.](figures/conceptual_embedding.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
 
-Graph embedding [@fig:embedding] is a varied family of machine learning
+Graph embedding (@fig:embedding) is a varied family of machine learning
 techniques aiming to transform nodes and edges into a vector space
 [@Arsov2019NetEmb], usually of a lower dimension, whilst maximally retaining key
 properties of the graph [@Yan2005GraEmb]. Ecological networks are an interesting
 candidate for the widespread application of embeddings, as they tend to possess
 a shared structural backbone [@Mora2018IdeCom], which hints at structural
-invariants that can be revealed a lower dimensions. Indeed, previous work by
-@Eklof2013DimEco suggests that food webs are inherently low-dimensional objects,
-and can be adequately represented with less than ten dimensions. Simulation
-results by @Botella2022AppGra suggest that there is no best method to identify
+invariants that can be revealed a lower dimensions. Indeed, food webs are
+inherently low-dimensional objects, and can be adequately represented with less
+than ten dimensions [@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by
+@Botella2022AppGra suggest that there is no best method to identify
 architectural similarities between networks, and that multiple approaches need
 to be tested and compared to the network descriptor of interest. This matches
-with previous, more general results on graph embedding, which suggest that
-embedding algorithm choice matters for the results [@Goyal2018GraEmb]. In
-@tbl:methods, we present a selection of common graph embeddings methods,
-alongside examples of their use to predict species interactions (when they have
-been used this way).
+previous, more general results on graph embedding, which suggest that the choice
+of embedding algorithm matters for the results [@Goyal2018GraEmb]. In
+@tbl:methods, we present a selection of common graph embedding methods,
+alongside examples of their use to predict species interactions.
 
-| Method        | Embedding approach                   |            Reference |             Application |
-| :------------ | :----------------------------------- | -------------------: | ----------------------: |
-| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei | @Cieslak2020TdiSto $^a$ |
-| RDPG          | graph through SVD                    |     @Young2007RanDot |       @Poisot2021ImpMam |
-| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |       @Wardeh2021PreMam |
-| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                         |
-| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                         |
-| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                         |
-| node2vec      | nodes embedding                      |    @Grover2016NodSca |                         |
-| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                         |
-| DMSE          | joint nodes embedding                |      @Chen2017DeeMul |    @Chen2017DeeMul $^b$ |
-| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                         |
-| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |  @Melnyk2020GraGra $^a$ |
-| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                         |
+| Method        | Embedding approach                   |            Reference | Application in species interactions |
+| :------------ | :----------------------------------- | -------------------: | ----------------------------------: |
+| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei |             @Cieslak2020TdiSto $^a$ |
+| RDPG          | graph through SVD                    |     @Young2007RanDot |                   @Poisot2021ImpMam |
+| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |                   @Wardeh2021PreMam |
+| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                                     |
+| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                                     |
+| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                                     |
+| node2vec      | nodes embedding                      |    @Grover2016NodSca |                                     |
+| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                     |
+| DMSE          | joint nodes embedding                |      @Chen2017DeeMul |                @Chen2017DeeMul $^b$ |
+| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                                     |
+| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |              @Melnyk2020GraGra $^a$ |
+| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                                     |
 
 : Overview of some common graph embedding approaches, by time of publication,
-alongside examples of their use in the prediction of species interactions.
-Surprisingly, these methods have not yet been used routinely to predict species
-interactions; most of the examples we identified were either statistical
-associations, or analogues to joint species distribution models. $^a$:
-statistical interactions; $^b$: joint-SDM-like approach. {#tbl:methods}
+alongside examples of their use in the prediction of species interactions. These
+methods have not yet been routinely used to predict species interactions; most
+examples that we identified were either statistical associations, or analogues
+to joint species distribution models. $^a$: statistical interactions; $^b$:
+joint-SDM-like approach. {#tbl:methods}
 
 The popularity of graph embedding techniques in machine learning is more prosaic
 than the search for structural invariants: graphs are discrete objects, and
@@ -151,7 +150,7 @@ predict events as probabilities [@Murphy2022ProMac]. Furthermore, the projection
 of the graph itself is a representation that can be learned; @Runghen2021ExpNod,
 for example, used a neural network to learn the embedding of a network in which
 not all interactions were known, based on nodes metadata. This example has many
-parallels in ecology [see @fig:prediction], in which node metadata can be given
+parallels in ecology (see @fig:prediction), in which node metadata can be given
 by phylogeny or functional traits. Rather than directly predicting biological
 rules [see *e.g.* @Pichler2020MacLea for an overview], which may be confounded
 by the sparse nature of graph data, learning embeddings works in the
@@ -188,8 +187,9 @@ by non-overlapping trait distributions in the known and unknown species. The
 lack of well documented metawebs is currently preventing the development of more
 concrete guidelines. The question of phylogenetic relatedness and dispersal is
 notably true if the metaweb is assembled in an area with mostly endemic species
-(*i.e.* potentially limited phylogenetic overlap), and as with every predictive
-algorithm, there is room for the application of our best ecological judgement.
+(*i.e.* potentially limited phylogenetic/species overlap), and as with every
+predictive algorithm, there is room for the application of our best ecological
+judgement.
 
 The second series of problems are related to determining which area should be
 used to infer the new metaweb in, as this determines the species pool that must
@@ -205,7 +205,7 @@ answer to the question of "where does a food web stop?"; the most promising
 solutions involve examining the spatial consistency of network area
 relationships [see *e.g.* @Galiana2018SpaSca; @Galiana2019GeoVar;
 @Galiana2021SpaSca; @Fortin2021NetEco], which is impossible in the absence of
-enough information about the network itself. This suggests that inferred metaweb
+enough information about the network itself. This suggests that inferred metawebs
 should be further downscaled to allow *a posteriori* analyses.
 
 The final family of problems relates less to ecological concepts and more to the
@@ -213,7 +213,7 @@ praxis of ecological research. Operating under the context of national
 divisions, in large parts of the world, reflects nothing more than the legacy of
 settler colonialism. Indeed, the use of ecological data is not an apolitical act
 [@Nost2021PolEco], as data infrastructures tend to be designed to answer
-questions within national boundaries, and their use both draws upon and
+questions within national boundaries, and their use often draws upon and
 reinforces territorial statecraft; as per @Machen2021ThiAlg, this is
 particularly true when the output of "algorithmic thinking" (*e.g.* relying on
 machine learning to generate knowledge) can be re-used for governance (*e.g.*
@@ -221,13 +221,13 @@ enacting conservation decisions at the national scale). We therefore recognize
 that predictive approaches deployed at the continental scale, no matter their
 intent, originate in the framework that contributed to the ongoing biodiversity
 crisis [@Adam2014EleTre], reinforced environmental injustice
-[@Choudry2013SavBio; @Dominguez2020DecCon], and on Turtle Island especially,
+[@Choudry2013SavBio; @Dominguez2020DecCon], and *e.g.* as on Turtle Island,
 should be replaced by Indigenous principles of land management
-[@Eichhorn2019SteDec; @Nokmaq2021AwaSle]. As we see AI/ML being increasingly
-mobilized to generate knowledge that is lacking for conservation decisions
-[*e.g.* @Lamba2019DeeLea; @MoseboFernandes2020MacLea], our discussion of these
-tools need to go beyond the technical, and into the governance consequences they
-can have.
+[@Eichhorn2019SteDec; @Nokmaq2021AwaSle]. As we see artificial
+intelligence/machine learning being increasingly mobilized to generate knowledge
+that is lacking for conservation decisions [*e.g.* @Lamba2019DeeLea;
+@MoseboFernandes2020MacLea], our discussion of these tools need to go beyond the
+technical, and into the governance consequences they can have.
 
 **Acknowledgements:** We acknowledge that this study was conducted on land
 within the traditional unceded territory of the Saint Lawrence Iroquoian,
