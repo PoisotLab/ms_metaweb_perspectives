@@ -165,13 +165,58 @@ embeddings can help alleviate spatial data deficiencies}
 \href{https://orcid.org/0000-0001-6067-1349}{Tanya\,Strydom}%
 %
 \,\textsuperscript{1,2,‡}\quad %
+\href{https://orcid.org/0000-0003-0193-5441}{Salomé\,Bouskila}%
+%
+\,\textsuperscript{1,‡}\quad %
+\href{https://orcid.org/0000-0001-9051-0597}{Francis\,Banville}%
+%
+\,\textsuperscript{1,3,2}\quad %
+\href{https://orcid.org/0000-0003-4036-977X}{Ceres\,Barros}%
+%
+\,\textsuperscript{4}\quad %
+\href{https://orcid.org/0000-0002-2151-6693}{Dominique\,Caron}%
+%
+\,\textsuperscript{5,2}\quad %
+\href{https://orcid.org/0000-0003-0452-6993}{Maxwell J\,Farrell}%
+%
+\,\textsuperscript{6}\quad %
+\href{https://orcid.org/0000-0002-9935-1366}{Marie-Josée\,Fortin}%
+%
+\,\textsuperscript{6}\quad %
+\href{https://orcid.org/0000-0003-3220-6161}{Victoria\,Hemming}%
+%
+\,\textsuperscript{7}\quad %
+\href{https://orcid.org/0000-0002-4104-9463}{Benjamin\,Mercier}%
+%
+\,\textsuperscript{3,2}\quad %
+\href{https://orcid.org/0000-0002-6004-4027}{Laura J.\,Pollock}%
+%
+\,\textsuperscript{5,2}\quad %
+\href{https://orcid.org/0000-0001-5785-8321}{Rogini\,Runghen}%
+%
+\,\textsuperscript{8}\quad %
+\href{https://orcid.org/0000-0002-3454-0633}{Giulio V.\,Dalla Riva}%
+%
+\,\textsuperscript{9}\quad %
 \href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
 %
 \,\textsuperscript{1,2,‡}
 
 \textsuperscript{1}\,Département de Sciences Biologiques, Université de
 Montréal, Montréal, Canada\quad \textsuperscript{2}\,Quebec Centre for
-Biodiversity Science, Montréal, Canada
+Biodiversity Science, Montréal,
+Canada\quad \textsuperscript{3}\,Département de Biologie, Université de
+Sherbrooke, Sherbrooke, Canada\quad \textsuperscript{4}\,Department of
+Forest Resources Management, University of British Columbia, Vancouver,
+B.C., Canada\quad \textsuperscript{5}\,Department of Biology, McGill
+University, Montréal, Canada\quad \textsuperscript{6}\,Department of
+Ecology \& Evolutionary Biology, University of Toronto, Toronto,
+Canada\quad \textsuperscript{7}\,Department of Forest and Conservation
+Sciences, University of British Columbia, Vancouver,
+Canada\quad \textsuperscript{8}\,Centre for Integrative Ecology, School
+of Biological Sciences, University of Canterbury, Canterbury, New
+Zealand\quad \textsuperscript{9}\,School of Mathematics and Statistics,
+University of Canterbury, Canterbury, New Zealand
 
 \textsuperscript{‡}\,These authors contributed equally to the work\\
 
@@ -232,97 +277,100 @@ species in a region of interest; but establishing the interactions
 between these species is difficult.
 
 Following the definition of Dunne (2006), a metaweb is the ecological
-network analogue to the species pool; specifically, it inventories
+network analogue to the species pool; specifically, it inventories all
 \emph{potential} interactions between species for a spatially delimited
 area (and so captures the \(\gamma\) diversity of interactions). The
 metaweb is not a prediction of the network at a specific point within
 the spatial area it covers: it will have a different structure, notably
 by having a larger connectance (see \emph{e.g.} Wood et al., 2015) and
 complexity (see \emph{e.g.} Galiana et al., 2022), from any of these
-local networks. These local networks (capturing the \(\alpha\) diversity
-of interactions) are a subset of the metaweb's species and interactions,
-and have been called ``metaweb realizations'' (Poisot et al., 2015).
-Differences between local networks and their metawebs are due to chance,
-species abundance and co-occurrence, local environmental conditions, and
-local distribution of functional traits, among others. Yet, recent
-results by Saravia et al. (2021) strongly suggest that the local
-realizations only respond weakly to local conditions: instead, they
-reflect constraints inherited by the structure of their metaweb. This
-establishes the metaweb structure as the core goal of predictive network
-ecology, as it is a required information to accurately produce
-downscaled, local predictions.
+local networks. These local networks (which capture the \(\alpha\)
+diversity of interactions) are a subset of the metaweb's species and
+their interactions, and have been called ``metaweb realizations''
+(Poisot et al., 2015). Differences between local networks and their
+metawebs are due to chance, species abundance and co-occurrence, local
+environmental conditions, and local distribution of functional traits,
+among others. Yet, recent results by Saravia et al. (2021) strongly
+suggest that the local realizations only respond weakly to local
+conditions: instead, they reflect constraints inherited by the structure
+of their metaweb. This establishes the metaweb structure as the core
+goal of predictive network ecology, as it is a required information to
+accurately produce downscaled, local predictions.
 
 Because the metaweb represents the joint effect of functional,
 phylogenetic, and macroecological processes (Morales-Castilla et al.,
 2015), it holds valuable ecological information. Specifically, it is the
-``upper bounds'' on what the composition of the local networks can be
-(see \emph{e.g.} McLeod et al., 2021); this information can help
-evaluate the ability of ecological assemblages to withstand the effects
-of, for example, climate change (Fricke et al., 2022). These local
-networks may be reconstructed given appropriate knowledge of local
-species composition, providing information on structure of food webs at
-finer spatial scales. This has been done for example for
-tree-galler-parasitoid systems (Gravel et al., 2018), fish trophic
-interactions (Albouy et al., 2019), tetrapod trophic interactions
-(O'Connor et al., 2020), and crop-pest networks (Grünig et al., 2020).
-In this contribution, we highlight the \emph{probabilistic} nature of
-metawebs, discuss how a family of machine learning tools (graph
-embeddings and transfer learning) can be used to overcome data
-limitations to metaweb inference, and highlight how the use of metawebs
-introduces important questions for the field of network ecology.
+``upper bounds'' on what the composition of the local networks, given
+the local species pool, can be (see \emph{e.g.} McLeod et al., 2021);
+this information can help evaluate the ability of ecological assemblages
+to withstand the effects of, for example, climate change (Fricke et al.,
+2022). These local networks may be reconstructed given an appropriate
+knowledge of local species composition and provide information on the
+structure of food webs at finer spatial scales. This has been done for
+example for tree-galler-parasitoid systems (Gravel et al., 2018), fish
+trophic interactions (Albouy et al., 2019), tetrapod trophic
+interactions (O'Connor et al., 2020; \textbf{Braga2019SpaAna?}), and
+crop-pest networks (Grünig et al., 2020). In this contribution, we
+highlight the power in viewing (and constructing) metawebs as
+\emph{probabilistic} objects in the context of rare interactions,
+discuss how a family of machine learning tools (graph embeddings and
+transfer learning) can be used to overcome data limitations to metaweb
+inference, and highlight how the use of metawebs introduces important
+questions for the field of network ecology.
 
 \hypertarget{the-metaweb-is-an-inherently-probabilistic-object}{%
 \section{The metaweb is an inherently probabilistic
 object}\label{the-metaweb-is-an-inherently-probabilistic-object}}
 
-Dallas et al. (2017) suggested that most links in ecological networks
-are cryptic, \emph{i.e.} uncommon or hard to observe. This argument
-echoes Jordano (2016): sampling ecological interactions is difficult
-because it requires first the joint observation of two species, and then
-the observation of their interaction. In addition, it is generally
-expected that weak or rare links would be more common in networks
-(Csermely, 2004), compared to strong, persistent links; this is notably
-the case in food chains, wherein many weaker links are key to the
-stability of a system (Neutel et al., 2002). In the light of these
+Treating interactions probabilistic (as opposed to binary) is a more
+nuanced and realistic way to represent interactions. Dallas et al.
+(2017) suggested that most links in ecological networks are cryptic,
+\emph{i.e.} uncommon or hard to observe. This argument echoes Jordano
+(2016): sampling ecological interactions is difficult because it
+requires first the joint observation of two species, and then the
+observation of their interaction. In addition, it is generally expected
+that weak or rare links to be more prevalent in networks than common or
+rare links (Csermely, 2004), compared to strong, persistent links; this
+is notably the case in food chains, wherein many weaker links are key to
+the stability of a system (Neutel et al., 2002). In the light of these
 observations, we expect to see an over-representation of low-probability
 interactions under a model that accurately predicts interaction
 probabilities. Yet the original metaweb definition, and indeed most past
 uses of metawebs, was based on the presence/absence of interactions.
-Moving towards \emph{probabilistic} metawebs, by represent interactions
-as Bernoulli events (see \emph{e.g.} Poisot et al., 2016), offers the
-opportunity to weigh these rare interactions appropriately. The inherent
-plasticity of interactions is important to capture: there have been
-documented instances of food webs undergoing rapid collapse/recovery
-cycles over short periods of time (\emph{e.g.} Pedersen et al., 2017).
-These considerations emphasize why metaweb predictions should focus on
-quantitative (preferentially probabilistic) predictions; this should
-constrain the suite of appropriate models.
+Moving towards \emph{probabilistic} metawebs, by representing
+interactions as Bernoulli events (see \emph{e.g.} Poisot et al., 2016),
+offers the opportunity to weigh these rare interactions appropriately.
+The inherent plasticity of interactions is important to capture: there
+have been documented instances of food webs undergoing rapid
+collapse/recovery cycles over short periods of time (\emph{e.g.}
+Pedersen et al., 2017). These considerations emphasize why metaweb
+predictions should focus on quantitative (preferentially probabilistic)
+predictions; this should constrain the suite of appropriate models.
 
 Yet it is important to recall that a metaweb is intended as a catalogue
 of all potential interactions, which is then filtered (Morales-Castilla
 et al., 2015). In a sense, that most ecological interactions are elusive
 can call for a slightly different approach to sampling: once the common
 interactions are documented, the effort required in documenting each
-rare interaction will increase exponentially, and will do so for each
-undocumented interaction. Recent proposals suggest that machine learning
-algorithms, in these situations, can act as data generators (Hoffmann et
-al., 2019): high quality observational data can generate the core rules
-underpinning the network structure, and be supplemented with synthetic
-data coming from predictive models, increasing the volume of information
-available for inference. Indeed, Strydom, Catchen, et al. (2021)
-suggested that knowing the metaweb may render the prediction of local
-networks easier, because it fixes an ``upper bound'' on which
-interactions can exist. A probabilistic metaweb represents an
-aggregation of informative priors on the interactions, an elusive
-information with the potential to boost our predictive ability
-(Bartomeus et al., 2016).
+rare interaction will increase exponentially. Recent proposals suggest
+that machine learning algorithms, in these situations, can act as data
+generators (Hoffmann et al., 2019): high quality observational data can
+generate the core rules underpinning the network structure, and be
+supplemented with synthetic data coming from predictive models,
+increasing the volume of information available for inference. Indeed,
+Strydom, Catchen, et al. (2021) suggested that knowing the metaweb may
+render the prediction of local networks easier, because it fixes an
+``upper bound'' on which interactions can exist. In this context a
+probabilistic metaweb represents an aggregation of informative priors on
+the interactions, elusive information with the potential to boost our
+predictive ability (Bartomeus et al., 2016).
 
 \begin{figure}
 \hypertarget{fig:embedding}{%
 \centering
 \includegraphics{figures/conceptual_embedding.png}
 \caption{Overview of the embedding process. A network (\emph{A}),
-possibbly represented as its adjacency matrix (\emph{B}), is converted
+possibly represented as its adjacency matrix (\emph{B}), is converted
 into a lower-dimensional object (\emph{C}) where nodes, subgraphs, or
 edges have specific values (see tbl.~\ref{tbl:methods}). For the
 purposes of prediction, this low-dimensional object encodes feature
@@ -336,165 +384,165 @@ principal component analysis.}\label{fig:embedding}
 \section{Graph embedding offers promises for the inference of potential
 interactions}\label{graph-embedding-offers-promises-for-the-inference-of-potential-interactions}}
 
-Graph embedding fig.~\ref{fig:embedding} is a varied family of machine
+Graph embedding (fig.~\ref{fig:embedding}) is a varied family of machine
 learning techniques aiming to transform nodes and edges into a vector
 space (Arsov \& Mirceva, 2019), usually of a lower dimension, whilst
 maximally retaining key properties of the graph (Yan et al., 2005).
 Ecological networks are an interesting candidate for the widespread
 application of embeddings, as they tend to possess a shared structural
 backbone (Mora et al., 2018), which hints at structural invariants that
-can be revealed a lower dimensions. Indeed, previous work by Eklöf et
-al. (2013) suggests that food webs are inherently low-dimensional
-objects, and can be adequately represented with less than ten
-dimensions. Simulation results by Botella et al. (2022) suggest that
-there is no best method to identify architectural similarities between
-networks, and that multiple approaches need to be tested and compared to
-the network descriptor of interest. This matches with previous, more
-general results on graph embedding, which suggest that embedding
-algorithm choice matters for the results (Goyal \& Ferrara, 2018). In
-tbl.~\ref{tbl:methods}, we present a selection of common graph
-embeddings methods, alongside examples of their use to predict species
-interactions (when they have been used this way).
+can be revealed at lower dimensions. Indeed, food webs are inherently
+low-dimensional objects, and can be adequately represented with less
+than ten dimensions (Eklöf et al., 2013; \textbf{Braga2019SpaAna?}).
+Simulation results by Botella et al. (2022) suggest that there is no
+best method to identify architectural similarities between networks, and
+that multiple approaches need to be tested and compared to the network
+descriptor of interest. This matches previous, more general results on
+graph embedding, which suggest that the choice of embedding algorithm
+matters for the results (Goyal \& Ferrara, 2018). In
+tbl.~\ref{tbl:methods}, we present a selection of common graph embedding
+methods, alongside examples of their use to predict species
+interactions.
 
 \hypertarget{tbl:methods}{}
 \begin{longtable}[]{@{}llrr@{}}
 \caption{\label{tbl:methods}Overview of some common graph embedding
 approaches, by time of publication, alongside examples of their use in
-the prediction of species interactions. Surprisingly, these methods have
-not yet been used routinely to predict species interactions; most of the
-examples we identified were either statistical associations, or
-analogues to joint species distribution models. \(^a\): statistical
-interactions; \(^b\): joint-SDM-like approach.}\tabularnewline
+the prediction of species interactions. These methods have not yet been
+routinely used to predict species interactions; most examples that we
+identified were either statistical associations, or analogues to joint
+species distribution models. \(^a\): statistical interactions; \(^b\):
+joint-SDM-like approach.}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.13\columnwidth}\raggedright
+\begin{minipage}[b]{0.11\columnwidth}\raggedright
 Method\strut
-\end{minipage} & \begin{minipage}[b]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.31\columnwidth}\raggedright
 Embedding approach\strut
-\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedleft
 Reference\strut
-\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
-Application\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
+Application in species interactions\strut
 \end{minipage}\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.13\columnwidth}\raggedright
+\begin{minipage}[b]{0.11\columnwidth}\raggedright
 Method\strut
-\end{minipage} & \begin{minipage}[b]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{0.31\columnwidth}\raggedright
 Embedding approach\strut
-\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedleft
 Reference\strut
-\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
-Application\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
+Application in species interactions\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 tSNE\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 nodes through statistical divergence\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Hinton \& Roweis (2002)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 Cieslak et al. (2020) \(^a\)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 RDPG\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 graph through SVD\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Young \& Scheinerman (2007)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 Poisot et al. (2021)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 DeepWalk\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 graph walk\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Perozzi et al. (2014)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 Wardeh et al. (2021)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 FastEmbed\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 graph through PCA/SVD analogue\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Ramasamy \& Madhow (2015)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 LINE\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 nodes through statistical divergence\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Tang et al. (2015)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 SDNE\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 nodes through auto-encoding\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 D. Wang et al. (2016)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 node2vec\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 nodes embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Grover \& Leskovec (2016)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 graph2vec\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 sub-graph embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Narayanan et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 DMSE\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 joint nodes embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 D. Chen et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 D. Chen et al. (2017) \(^b\)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 HARP\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 nodes through a meta-strategy\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 H. Chen et al. (2017)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 GraphKKE\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 graph embedding\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 Melnyk et al. (2020)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 Melnyk et al. (2020) \(^a\)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.13\columnwidth}\raggedright
+\begin{minipage}[t]{0.11\columnwidth}\raggedright
 Joint methods\strut
-\end{minipage} & \begin{minipage}[t]{0.35\columnwidth}\raggedright
+\end{minipage} & \begin{minipage}[t]{0.31\columnwidth}\raggedright
 multiple graphs\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedleft
 S. Wang et al. (2021)\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
 \strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -510,7 +558,7 @@ of the sort that are able to predict events as probabilities (Murphy,
 representation that can be learned; Runghen et al. (2021), for example,
 used a neural network to learn the embedding of a network in which not
 all interactions were known, based on nodes metadata. This example has
-many parallels in ecology see \ref{fig:prediction}, in which node
+many parallels in ecology (see fig.~\ref{fig:prediction}), in which node
 metadata can be given by phylogeny or functional traits. Rather than
 directly predicting biological rules (see \emph{e.g.} Pichler et al.,
 2020 for an overview), which may be confounded by the sparse nature of
@@ -547,7 +595,7 @@ interactions between species at a large spatial scale. But as Herbert
 planet-wide problems''; any inference of a metaweb at large scales must
 contend with several novel, and interwoven, families of problems.
 
-The first is the spatial and taxonomic limit of the metaweb to embed and
+The first is the taxonomic and spatial limit of the metaweb to embed and
 transfer. If the initial metaweb is too narrow in scope, notably from a
 taxonomic point of view, the chances of finding another area with enough
 related species (through phylogenetic relatedness or similarity of
@@ -558,8 +606,9 @@ distributions in the known and unknown species. The lack of well
 documented metawebs is currently preventing the development of more
 concrete guidelines. The question of phylogenetic relatedness and
 dispersal is notably true if the metaweb is assembled in an area with
-mostly endemic species, and as with every predictive algorithm, there is
-room for the application of our best ecological judgement.
+mostly endemic species (\emph{i.e.} potentially limited
+phylogenetic/species overlap), and as with every predictive algorithm,
+there is room for the application of our best ecological judgement.
 
 The second series of problems are related to determining which area
 should be used to infer the new metaweb in, as this determines the
@@ -577,7 +626,7 @@ promising solutions involve examining the spatial consistency of network
 area relationships (Fortin et al., 2021; see \emph{e.g.} Galiana et al.,
 2018, 2019, 2021), which is impossible in the absence of enough
 information about the network itself. This suggests that inferred
-metaweb should be further downscaled to allow \emph{a posteriori}
+metawebs should be further downscaled to allow for \emph{a posteriori}
 analyses.
 
 The final family of problems relates less to ecological concepts and
@@ -586,7 +635,7 @@ of national divisions, in large parts of the world, reflects nothing
 more than the legacy of settler colonialism. Indeed, the use of
 ecological data is not an apolitical act (Nost \& Goldstein, 2021), as
 data infrastructures tend to be designed to answer questions within
-national boundaries, and their use both draws upon and reinforces
+national boundaries, and their use often draws upon and reinforces
 territorial statecraft; as per Machen \& Nost (2021), this is
 particularly true when the output of ``algorithmic thinking''
 (\emph{e.g.} relying on machine learning to generate knowledge) can be
@@ -595,13 +644,13 @@ the national scale). We therefore recognize that predictive approaches
 deployed at the continental scale, no matter their intent, originate in
 the framework that contributed to the ongoing biodiversity crisis (Adam,
 2014), reinforced environmental injustice (Choudry, 2013; Domínguez \&
-Luoma, 2020), and on Turtle Island especially, should be replaced by
+Luoma, 2020), and \emph{e.g.} as on Turtle Island, should be replaced by
 Indigenous principles of land management (Eichhorn et al., 2019; No'kmaq
-et al., 2021). As we see AI/ML being increasingly mobilized to generate
-knowledge that is lacking for conservation decisions (\emph{e.g.} Lamba
-et al., 2019; Mosebo Fernandes et al., 2020), our discussion of these
-tools need to go beyond the technical, and into the governance
-consequences they can have.
+et al., 2021). As we see artificial intelligence/machine learning being
+increasingly mobilized to generate knowledge that is lacking for
+conservation decisions (\emph{e.g.} Lamba et al., 2019; Mosebo Fernandes
+et al., 2020), our discussion of these tools need to go beyond the
+technical, and into the governance consequences they can have.
 
 \textbf{Acknowledgements:} We acknowledge that this study was conducted
 on land within the traditional unceded territory of the Saint Lawrence

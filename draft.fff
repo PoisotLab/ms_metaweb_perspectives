@@ -3,7 +3,7 @@
 \centering
 \includegraphics{figures/conceptual_embedding.png}
 \caption{Overview of the embedding process. A network (\emph{A}),
-possibbly represented as its adjacency matrix (\emph{B}), is converted
+possibly represented as its adjacency matrix (\emph{B}), is converted
 into a lower-dimensional object (\emph{C}) where nodes, subgraphs, or
 edges have specific values (see tbl.~\ref{tbl:methods}). For the
 purposes of prediction, this low-dimensional object encodes feature
