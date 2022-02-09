@@ -238,8 +238,9 @@ should be replaced by Indigenous principles of land management
 [@Eichhorn2019SteDec; @Nokmaq2021AwaSle]. As we see artificial
 intelligence/machine learning being increasingly mobilized to generate knowledge
 that is lacking for conservation decisions [*e.g.* @Lamba2019DeeLea;
-@MoseboFernandes2020MacLea], our discussion of these tools need to go beyond the
-technical, and into the governance consequences they can have.
+@MoseboFernandes2020MacLea] and drive policy decisions [@Weiskopf2022IncUpt],
+our discussion of these tools need to go beyond the technical, and into the
+governance consequences they can have.
 
 **Acknowledgements:** We acknowledge that this study was conducted on land
 within the traditional unceded territory of the Saint Lawrence Iroquoian,
