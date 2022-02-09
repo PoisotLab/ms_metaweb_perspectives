@@ -247,7 +247,6 @@
         "volume": "6"
     },
     {
-        "URL": "http://onlinelibrary.wiley.com/doi/10.1111/1365-2435.12666/full",
         "author": [
             {
                 "family": "Bartomeus",
@@ -483,6 +482,69 @@
         "volume": "13"
     },
     {
+        "DOI": "10.1111/geb.12981",
+        "author": [
+            {
+                "family": "Braga",
+                "given": "Jo\u00e3o"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura J."
+            },
+            {
+                "family": "Barros",
+                "given": "Ceres"
+            },
+            {
+                "family": "Galiana",
+                "given": "N\u00faria"
+            },
+            {
+                "family": "Montoya",
+                "given": "Jos\u00e9 M."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Maiorano",
+                "given": "Luigi"
+            },
+            {
+                "family": "Montemaggiori",
+                "given": "Alessandro"
+            },
+            {
+                "family": "Ficetola",
+                "given": "Gentile Francesco"
+            },
+            {
+                "family": "Dray",
+                "given": "St\u00e9phane"
+            },
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            }
+        ],
+        "container-title": "Global Ecology and Biogeography",
+        "id": "Braga2019SpaAna",
+        "issue": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "page": "1636-1648",
+        "title": "Spatial analyses of multi-trophic terrestrial vertebrate assemblages in Europe",
+        "type": "article-journal",
+        "volume": "28"
+    },
+    {
         "DOI": "10.1111/ele.13842",
         "author": [
             {
@@ -519,6 +581,47 @@
         "title": "Phylogenetic reconstruction of ancestral ecological networks through time for pierid butterflies and their host plants",
         "type": "article-journal",
         "volume": "n/a"
+    },
+    {
+        "DOI": "10.1038/s41467-018-05056-0",
+        "author": [
+            {
+                "family": "Bramon Mora",
+                "given": "Bernat"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Gilarranz",
+                "given": "Luis J."
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            }
+        ],
+        "container-title": "Nature Communications",
+        "id": "BramonMora2018IdeCom",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2018,
+                    7,
+                    4
+                ]
+            ]
+        },
+        "page": "2603",
+        "title": "Identifying a common backbone of interactions underlying food webs from different ecosystems",
+        "type": "article-journal",
+        "volume": "9"
     },
     {
         "DOI": "10.1890/0012-9658(2006)87[2411:CBRINF]2.0.CO;2",
@@ -653,7 +756,7 @@
             ]
         },
         "page": "2411-2417",
-        "title": "Consumer\u2013Resource Body-Size Relationships in Natural Food Webs",
+        "title": "ConsumerResource Body-Size Relationships in Natural Food Webs",
         "type": "article-journal",
         "volume": "87"
     },
@@ -1045,7 +1148,6 @@
         "volume": "12"
     },
     {
-        "URL": "https://www.ijcai.org/proceedings/2017/509",
         "author": [
             {
                 "family": "Chen",
@@ -1182,7 +1284,7 @@
                 "given": "Alyssa R."
             },
             {
-                "family": "Ekl\u04e7f",
+                "family": "Ekl",
                 "given": "Anna"
             },
             {
@@ -1743,7 +1845,6 @@
         "volume": "288"
     },
     {
-        "URL": "https://www.science.org/doi/abs/10.1126/science.abk3510",
         "author": [
             {
                 "family": "Fricke",
@@ -1855,7 +1956,7 @@
             ]
         },
         "page": "1175-1187",
-        "title": "The geographical variation of network structure is scale dependent: Understanding the biotic specialization of host\u2013parasitoid networks",
+        "title": "The geographical variation of network structure is scale dependent: Understanding the biotic specialization of hostparasitoid networks",
         "type": "article-journal",
         "volume": "42"
     },
@@ -3232,47 +3333,6 @@
         "volume": "5"
     },
     {
-        "DOI": "10.1038/s41467-018-05056-0",
-        "author": [
-            {
-                "family": "Mora",
-                "given": "Bernat Bramon"
-            },
-            {
-                "family": "Gravel",
-                "given": "Dominique"
-            },
-            {
-                "family": "Gilarranz",
-                "given": "Luis J."
-            },
-            {
-                "family": "Poisot",
-                "given": "Timoth\u00e9e"
-            },
-            {
-                "family": "Stouffer",
-                "given": "Daniel B."
-            }
-        ],
-        "container-title": "Nature Communications",
-        "id": "Mora2018IdeCom",
-        "issue": "1",
-        "issued": {
-            "date-parts": [
-                [
-                    2018,
-                    7,
-                    4
-                ]
-            ]
-        },
-        "page": "2603",
-        "title": "Identifying a common backbone of interactions underlying food webs from different ecosystems",
-        "type": "article-journal",
-        "volume": "9"
-    },
-    {
         "DOI": "10.1016/j.tree.2015.03.014",
         "author": [
             {
@@ -3458,7 +3518,6 @@
         "volume": "87"
     },
     {
-        "URL": "probml.ai",
         "author": [
             {
                 "family": "Murphy",
@@ -3737,7 +3796,7 @@
                 "given": "Luigi"
             },
             {
-                "family": "Martinez\u2010Almoyna",
+                "family": "Martinez-Almoyna",
                 "given": "Camille"
             },
             {
@@ -4400,7 +4459,6 @@
         "type": "book"
     },
     {
-        "URL": "https://proceedings.neurips.cc/paper/2015/file/4f6ffe13a5d75b2d6a3923922b3922e5-Paper.pdf",
         "author": [
             {
                 "family": "Ramasamy",
@@ -5421,6 +5479,94 @@
         "volume": "12"
     },
     {
+        "DOI": "10.1016/j.envsoft.2022.105318",
+        "author": [
+            {
+                "family": "Weiskopf",
+                "given": "Sarah R."
+            },
+            {
+                "family": "Harm\u00e1\u010dkov\u00e1",
+                "given": "Zuzana V."
+            },
+            {
+                "family": "Johnson",
+                "given": "Ciara G."
+            },
+            {
+                "family": "Londo\u00f1o-Murcia",
+                "given": "Mar\u00eda Cecilia"
+            },
+            {
+                "family": "Miller",
+                "given": "Brian W."
+            },
+            {
+                "family": "Myers",
+                "given": "Bonnie J. E."
+            },
+            {
+                "family": "Pereira",
+                "given": "Laura"
+            },
+            {
+                "family": "Arce-Plata",
+                "given": "Maria Isabel"
+            },
+            {
+                "family": "Blanchard",
+                "given": "Julia L."
+            },
+            {
+                "family": "Ferrier",
+                "given": "Simon"
+            },
+            {
+                "family": "Fulton",
+                "given": "Elizabeth A."
+            },
+            {
+                "family": "Harfoot",
+                "given": "Mike"
+            },
+            {
+                "family": "Isbell",
+                "given": "Forest"
+            },
+            {
+                "family": "Johnson",
+                "given": "Justin A."
+            },
+            {
+                "family": "Mori",
+                "given": "Akira S."
+            },
+            {
+                "family": "Weng",
+                "given": "Ensheng"
+            },
+            {
+                "family": "Rosa",
+                "given": "Isabel M. D."
+            }
+        ],
+        "container-title": "Environmental Modelling & Software",
+        "id": "Weiskopf2022IncUpt",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    3,
+                    1
+                ]
+            ]
+        },
+        "page": "105318",
+        "title": "Increasing the uptake of ecological model results in policy decisions to improve biodiversity outcomes",
+        "type": "article-journal",
+        "volume": "149"
+    },
+    {
         "DOI": "10.1002/ece3.1640",
         "author": [
             {
@@ -5715,7 +5861,7 @@
         },
         "page": "3911",
         "publisher": "Nature Publishing Group",
-        "title": "Reconstruction of plant\u2013pollinator networks from observational data",
+        "title": "Reconstruction of plantpollinator networks from observational data",
         "type": "article-journal",
         "volume": "12"
     },
