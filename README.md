@@ -257,6 +257,7 @@ Innovation, and Employment. BM is funded by the NSERC Alexander Graham Bell
 Canada Graduate Scholarship and the FRQNT master’s scholarship. LP acknowledges
 funding from NSERC Discovery Grant (NSERC RGPIN-2019-05771). TP acknowledges
 financial support from NSERC through the Discovery Grants and Discovery
-Accelerator Supplement programs.
+Accelerator Supplement programs. MJF is supported by an NSERC PDF and an RBC
+Post-Doctoral Fellowship
 
 # References
