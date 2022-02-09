@@ -8,14 +8,16 @@ species. In a recent overview of the field of ecological network prediction,
 @Strydom2021RoaPre identified two challenges of interest to the prediction of
 interactions at large scales. First, there is a relative scarcity of relevant
 data in most places globally -- paradoxically, this restricts our ability to
-infer interactions to locations where inference is perhaps the least required
-(and still leaves us unable to address regions without data); second, accurate
-predictions often demand accurate predictors, and the lack of methods that can
-leverage small amount of data is a serious impediment to our global predictive
-ability. In most places, our most reliable biodiversity knowledge is that of a
-species pool: through the analysis of databases like GBIF or IUCN, it is
-possible to establish a list of species in a region of interest; but
-establishing the interactions between these species is difficult.
+infer interactions for locations where inference is perhaps the least required
+(and leaves us unable to make inference in regions without interaction data);
+second, accurate predictions often demand accurate predictors, and the lack of
+methods that can leverage small amount of *accurate* data is a serious
+impediment to our global predictive ability. In most places, our most reliable
+biodiversity knowledge is that of a species pool (*i.e.* a set of potentially
+interacting species in a given area): through the analysis of databases like
+GBIF or IUCN, it is possible to construct a list of species in a region of
+interest; but inferring the potential interactions between these species is
+difficult.
 
 Following the definition of @Dunne2006NetStr, a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories all
@@ -111,7 +113,7 @@ techniques aiming to transform nodes and edges into a vector space
 [@Arsov2019NetEmb], usually of a lower dimension, whilst maximally retaining key
 properties of the graph [@Yan2005GraEmb]. Ecological networks are an interesting
 candidate for the widespread application of embeddings, as they tend to possess
-a shared structural backbone [@Mora2018IdeCom], which hints at structural
+a shared structural backbone [@BramonMora2018IdeCom], which hints at structural
 invariants that can be revealed at lower dimensions. Indeed, food webs are
 inherently low-dimensional objects, and can be adequately represented with less
 than ten dimensions [@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by
@@ -123,20 +125,20 @@ of embedding algorithm matters for the results [@Goyal2018GraEmb]. In
 @tbl:methods, we present a selection of common graph embedding methods,
 alongside examples of their use to predict species interactions.
 
-| Method        | Embedding approach                   |            Reference | Application in species interactions |
-| :------------ | :----------------------------------- | -------------------: | ----------------------------------: |
-| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei |             @Cieslak2020TdiSto $^a$ |
-| RDPG          | graph through SVD                    |     @Young2007RanDot |                   @Poisot2021ImpMam |
-| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |                   @Wardeh2021PreMam |
-| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                                     |
-| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                                     |
-| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                                     |
-| node2vec      | nodes embedding                      |    @Grover2016NodSca |                                     |
-| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                     |
-| DMSE          | joint nodes embedding                |      @Chen2017DeeMul |                @Chen2017DeeMul $^b$ |
-| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                                     |
-| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |              @Melnyk2020GraGra $^a$ |
-| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                                     |
+| Method        | Embedding approach                   |            Reference | Application in species interactions     |
+| :------------ | :----------------------------------- | -------------------: | --------------------------------------: |
+| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei |                 @Cieslak2020TdiSto $^a$ |
+| RDPG          | graph through SVD                    |     @Young2007RanDot | @Poisot2021ImpMam; @DallaRiva2016ExpEvo |
+| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |                       @Wardeh2021PreMam |
+| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                                         |
+| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                                         |
+| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                                         |
+| node2vec      | nodes embedding                      |    @Grover2016NodSca |                                         |
+| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                         |
+| DMSE          | joint nodes embedding                |      @Chen2017DeeMul |                    @Chen2017DeeMul $^b$ |
+| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                                         |
+| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |                  @Melnyk2020GraGra $^a$ |
+| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                                         |
 
 : Overview of some common graph embedding approaches, by time of publication,
 alongside examples of their use in the prediction of species interactions. These
@@ -187,13 +189,17 @@ taxonomic point of view, the chances of finding another area with enough related
 species (through phylogenetic relatedness or similarity of functional traits) to
 make a reliable inference decreases; this would likely be indicated by large
 confidence intervals during estimation of the values in the low-rank space, or
-by non-overlapping trait distributions in the known and unknown species. The
-lack of well documented metawebs is currently preventing the development of more
-concrete guidelines. The question of phylogenetic relatedness and dispersal is
-notably true if the metaweb is assembled in an area with mostly endemic species
-(*i.e.* potentially limited phylogenetic/species overlap), and as with every
-predictive algorithm, there is room for the application of our best ecological
-judgement.
+by non-overlapping trait distributions in the known and unknown species.
+Alternatively a metaweb is too large (taxonomically), then the resulting
+embeddings would have interactions relative to taxonomic groups that not present
+in the new location, resulting in the potential under or over estimation of the
+strength of new predicted interactions. The lack of well documented metawebs is
+currently preventing the development of more concrete guidelines. The question
+of phylogenetic relatedness and dispersal is notably true if the metaweb is
+assembled in an area with mostly endemic species (*e.g.* a system that has
+undergone recent radiation and might not have an analogous system with which to
+draw knowledge from), and as with every predictive algorithm, there is room for
+the application of our best ecological judgement.
 
 The second series of problems relate to determining which area should be used to
 infer the new metaweb in, as this determines the species pool that must be used.
@@ -215,8 +221,10 @@ metawebs should be further downscaled to allow for *a posteriori* analyses.
 The final family of problems relates less to ecological concepts and more to the
 praxis of ecological research. Operating under the context of national
 divisions, in large parts of the world, reflects nothing more than the legacy of
-settler colonialism. Indeed, the use of ecological data is not an apolitical act
-[@Nost2021PolEco], as data infrastructures tend to be designed to answer
+settler colonialism, which not only drive a disparity in available ecological
+data, but can entrench said biases with the machine learning models that make
+predictions with them. Indeed, the use of ecological data is not an apolitical
+act [@Nost2021PolEco], as data infrastructures tend to be designed to answer
 questions within national boundaries, and their use often draws upon and
 reinforces territorial statecraft. As per @Machen2021ThiAlg, this is
 particularly true when the output of "algorithmic thinking" (*e.g.* relying on
