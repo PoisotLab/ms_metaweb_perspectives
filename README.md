@@ -1,11 +1,15 @@
 Being able to infer *potential* interactions could be the catalyst for
 significant breakthroughs in our ability to start thinking about species
-interaction networks over large spatial scales [@Hortal2015SevSho]. In a recent
-overview of the field of ecological network prediction, @Strydom2021RoaPre
-identified two challenges of interest to the prediction of interactions at large
-scales. First, there is a relative scarcity of relevant data in most places
-globally -- paradoxically, this restricts our ability to infer interactions to
-locations where inference is perhaps the least required; second, accurate
+interaction networks over large spatial scales [@Hortal2015SevSho].
+Understanding species interactions holds enormous potential to not only
+understand and more rapidly learn about species interactions and metawebs, but
+also how changes in management of a single species may impact non-target
+species. In a recent overview of the field of ecological network prediction,
+@Strydom2021RoaPre identified two challenges of interest to the prediction of
+interactions at large scales. First, there is a relative scarcity of relevant
+data in most places globally -- paradoxically, this restricts our ability to
+infer interactions to locations where inference is perhaps the least required
+(and still leaves us unable to address regions without data); second, accurate
 predictions often demand accurate predictors, and the lack of methods that can
 leverage small amount of data is a serious impediment to our global predictive
 ability. In most places, our most reliable biodiversity knowledge is that of a
@@ -92,12 +96,12 @@ interactions can exist. In this context a probabilistic metaweb represents an
 aggregation of informative priors on the interactions, elusive information with
 the potential to boost our predictive ability [@Bartomeus2016ComFra].
 
-![Overview of the embedding process. A network (*A*), possibly represented as
-its adjacency matrix (*B*), is converted into a lower-dimensional object (*C*)
-where nodes, subgraphs, or edges have specific values (see @tbl:methods). For
-the purposes of prediction, this low-dimensional object encodes feature vectors
-for *e.g.* the nodes. Embedding also allows to visualize the structure in the
-data differently (*D*), much like with a principal component
+![Overview of the embedding process. A network (*A*), represented as its
+adjacency matrix (*B*), is converted into a lower-dimensional object (*C*) where
+nodes, subgraphs, or edges have specific values (see @tbl:methods). For the
+purposes of prediction, this low-dimensional object encodes feature vectors for
+*e.g.* the nodes. Embedding also allows to visualize the structure in the data
+differently (*D*), much like with a principal component
 analysis.](figures/conceptual_embedding.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
@@ -165,7 +169,7 @@ which we can leverage phylogenetic relatedness [*e.g.* @Strydom2021FooWeb] or
 functional traits to fill the values of additional species we would like to
 project in this space (here, I, J, K, and L) from the embedding of known species
 (here, A, B, C, and D). Because embeddings can be projected back to a graph,
-this allows to reconstruct a network with these new species. This approach
+this allows us to reconstruct a network with these new species. This approach
 constitutes an instance of transfer
 learning.](figures/conceptual_prediction.png){#fig:prediction}
 
@@ -191,13 +195,13 @@ notably true if the metaweb is assembled in an area with mostly endemic species
 predictive algorithm, there is room for the application of our best ecological
 judgement.
 
-The second series of problems are related to determining which area should be
-used to infer the new metaweb in, as this determines the species pool that must
-be used. Metawebs can be constructed by assigning interactions in a list of
-species within geographic boundaries. The upside of this approach is that
-information at the country level is likely to be required for biodiversity
-assessments, as countries set goals at the national level [@Buxton2021KeyInf],
-and as quantitative instruments are designed to work at these scales
+The second series of problems relate to determining which area should be used to
+infer the new metaweb in, as this determines the species pool that must be used.
+Metawebs can be constructed by assigning interactions in a list of species
+within geographic boundaries. The upside of this approach is that information at
+the country level is likely to be required for biodiversity assessments, as
+countries set goals at the national level [@Buxton2021KeyInf], and as
+quantitative instruments are designed to work at these scales
 [@Turak2017UsiEss]; specific strategies are often enacted at smaller scales,
 nested within a specific country [@Ray2021BioCri]. But there is no guarantee
 that these boundaries are meaningful. In fact, we do not have a satisfying
@@ -205,8 +209,8 @@ answer to the question of "where does a food web stop?"; the most promising
 solutions involve examining the spatial consistency of network area
 relationships [see *e.g.* @Galiana2018SpaSca; @Galiana2019GeoVar;
 @Galiana2021SpaSca; @Fortin2021NetEco], which is impossible in the absence of
-enough information about the network itself. This suggests that inferred metawebs
-should be further downscaled to allow for *a posteriori* analyses.
+enough information about the network itself. This suggests that inferred
+metawebs should be further downscaled to allow for *a posteriori* analyses.
 
 The final family of problems relates less to ecological concepts and more to the
 praxis of ecological research. Operating under the context of national
@@ -214,7 +218,7 @@ divisions, in large parts of the world, reflects nothing more than the legacy of
 settler colonialism. Indeed, the use of ecological data is not an apolitical act
 [@Nost2021PolEco], as data infrastructures tend to be designed to answer
 questions within national boundaries, and their use often draws upon and
-reinforces territorial statecraft; as per @Machen2021ThiAlg, this is
+reinforces territorial statecraft. As per @Machen2021ThiAlg, this is
 particularly true when the output of "algorithmic thinking" (*e.g.* relying on
 machine learning to generate knowledge) can be re-used for governance (*e.g.*
 enacting conservation decisions at the national scale). We therefore recognize
