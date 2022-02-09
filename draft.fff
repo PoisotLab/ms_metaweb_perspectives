@@ -3,13 +3,13 @@
 \centering
 \includegraphics{figures/conceptual_embedding.png}
 \caption{Overview of the embedding process. A network (\emph{A}),
-possibly represented as its adjacency matrix (\emph{B}), is converted
-into a lower-dimensional object (\emph{C}) where nodes, subgraphs, or
-edges have specific values (see tbl.~\ref{tbl:methods}). For the
-purposes of prediction, this low-dimensional object encodes feature
-vectors for \emph{e.g.} the nodes. Embedding also allows to visualize
-the structure in the data differently (\emph{D}), much like with a
-principal component analysis.}\label{fig:embedding}
+represented as its adjacency matrix (\emph{B}), is converted into a
+lower-dimensional object (\emph{C}) where nodes, subgraphs, or edges
+have specific values (see tbl.~\ref{tbl:methods}). For the purposes of
+prediction, this low-dimensional object encodes feature vectors for
+\emph{e.g.} the nodes. Embedding also allows to visualize the structure
+in the data differently (\emph{D}), much like with a principal component
+analysis.}\label{fig:embedding}
 }
 \end{figure}
 \efloatseparator
@@ -25,8 +25,8 @@ leverage phylogenetic relatedness (\emph{e.g.} Strydom, Bouskila, et
 al., 2021) or functional traits to fill the values of additional species
 we would like to project in this space (here, I, J, K, and L) from the
 embedding of known species (here, A, B, C, and D). Because embeddings
-can be projected back to a graph, this allows to reconstruct a network
-with these new species. This approach constitutes an instance of
+can be projected back to a graph, this allows us to reconstruct a
+network with these new species. This approach constitutes an instance of
 transfer learning.}\label{fig:prediction}
 }
 \end{figure}
