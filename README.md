@@ -147,15 +147,15 @@ examples that we identified were either statistical associations, or analogues
 to joint species distribution models. $^a$: statistical interactions; $^b$:
 joint-SDM-like approach. {#tbl:methods}
 
-The popularity of graph embedding techniques in machine learning is more prosaic
-than the search for structural invariants: graphs are discrete objects, and
-machine learning techniques tend to handle continuous data better. Bringing a
-sparse graph into a continuous, dense vector space [@Xu2020UndGra] opens up a
-broader variety of predictive algorithms, notably of the sort that are able to
-predict events as probabilities [@Murphy2022ProMac]. Furthermore, the projection
-of the graph itself is a representation that can be learned; @Runghen2021ExpNod,
-for example, used a neural network to learn the embedding of a network in which
-not all interactions were known, based on nodes metadata. This example has many
+The popularity of graph embedding techniques in machine learning is more than
+the search for structural invariants: graphs are discrete objects, and machine
+learning techniques tend to handle continuous data better. Bringing a sparse
+graph into a continuous, dense vector space [@Xu2020UndGra] opens up a broader
+variety of predictive algorithms, notably of the sort that are able to predict
+events as probabilities [@Murphy2022ProMac]. Furthermore, the projection of the
+graph itself is a representation that can be learned; @Runghen2021ExpNod, for
+example, used a neural network to learn the embedding of a network in which not
+all interactions were known, based on nodes metadata. This example has many
 parallels in ecology (see @fig:prediction), in which node metadata can be given
 by phylogeny or functional traits. Rather than directly predicting biological
 rules [see *e.g.* @Pichler2020MacLea for an overview], which may be confounded
