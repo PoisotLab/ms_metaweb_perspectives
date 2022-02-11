@@ -31,6 +31,7 @@ The work described here has not been published elsewhere. All authors agree with
 the the manuscript content and its submission to the journal. No part of this
 manuscript has been published in any form elsewhere or is being considered for
 publication elsewhere while it is being considered for publication in this
-journal.
+journal. This manuscript appeared as a preprint on EcoEvoRXiV with the following
+DOI: **TK**.
 
 We look forward to your editorial decision on this manuscript.
