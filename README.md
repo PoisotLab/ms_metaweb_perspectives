@@ -260,4 +260,11 @@ financial support from NSERC through the Discovery Grants and Discovery
 Accelerator Supplement programs. MJF is supported by an NSERC PDF and an RBC
 Post-Doctoral Fellowship
 
+**Conflict of interest:** The authors have no conflict interests to disclose
+
+**Authors' contributions:** TS, and TP outlined the key concepts discussed in
+the manuscript. All authors contributed to writing and editing the manuscript.
+
+**Data availability:** There is no data associated with this manuscript.
+
 # References
