@@ -262,8 +262,8 @@ Post-Doctoral Fellowship
 
 **Conflict of interest:** The authors have no conflict interests to disclose
 
-**Authors' contributions:** TS, and TP outlined the key concepts discussed in
-the manuscript. All authors contributed to writing and editing the manuscript.
+**Authors' contributions:** TS, and TP conceived the ideas discussed in the
+manuscript. All authors contributed to writing and editing the manuscript.
 
 **Data availability:** There is no data associated with this manuscript.
 
