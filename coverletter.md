@@ -35,3 +35,11 @@ journal. This manuscript appeared as a preprint on EcoEvoRXiV with the following
 DOI: **TK**.
 
 We look forward to your editorial decision on this manuscript.
+
+> In no more than 50 words please explain how your paper is suited to the
+> journal’s scope.
+
+The discussion in this perspective piece will help in further the discussion on
+the use and applicability of metawebs as well providing readers with an overview
+of how the use of graph embedding can help us to construct ecologically
+plausible metawebs with which to work with.
