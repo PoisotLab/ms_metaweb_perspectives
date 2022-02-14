@@ -19,11 +19,11 @@ potential to be a powerful starting point from which to understand how
 large-scales species interaction networks are structured. However, the
 challenges inherit in sampling species interactions makes assembling sufficient
 data at a large enough scale a tedious and costly process. Predictive methods
-have the potential to help circumvent these limitations, of these predictive
-tools available graph embeddings (rather than focusing on the list of species
-interactions) holds, great potential. In this perspective, we outline how the
-challenges associated with inferring metawebs line-up with the advantages of
-graph embeddings; as well as how the choice of the species pool not only has
+can help in circumventing these limitations, of these predictive tools available
+graph embeddings (rather than focusing on the list of species interactions)
+holds, great potential. In this perspective, we outline how the challenges
+associated with inferring metawebs line-up with the advantages of graph
+embeddings; as well as how the choice of the species pool not only has
 consequences on the reconstructed network, but also embeds hypotheses about
 which human-made boundaries are ecologically meaningful.
 
