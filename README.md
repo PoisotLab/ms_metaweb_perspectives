@@ -57,16 +57,6 @@ and transfer learning) can be used to overcome data limitations to metaweb
 inference, and highlight how the use of metawebs introduces important questions
 for the field of network ecology.
 
-$\begin{table}
-\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} |}
-  -- cut --
-\end{tabular}
-\caption{My table}
-\label{table:kysymys}
-\end{table}$
-
-Table $\ref{table:kysymys}$ on page
-
 # The metaweb is an inherently probabilistic object
 
 Treating interactions probabilistic (as opposed to binary) is a more nuanced and
