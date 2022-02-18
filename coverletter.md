@@ -5,14 +5,13 @@ On behalf of my co-authors, I am pleased to submit our manuscript entitled
 data deficiencies” for consideration as a Perspective Article in Methods in
 Ecology and Evolution. This manuscript is the off-shoot of another manuscript
 that is currently under review at Methods in Ecology and Evolution (ID
-MEE-21-11-855) and discusses topics previously included in the original
-manuscript but were removed so as to keep the focus of the original manuscript
+MEE-21-11-855.R1) and discusses topics previously included in the original
+manuscript, that were removed so as to keep the focus of the original manuscript
 on the methodological framework and maintain some sense of brevity. We have
-discussed this decision to split the original manuscript with the **TK**
-**Associate editor** (Dr. Nicolas Lecomte), who has approved this decision. This
-submission thus puts forward a bigger discussion as to how the transferring of
+discussed this decision to split the original manuscript with the EiC Prof. Nicolas Lecomte, who has approved this decision. This
+submission thus puts forward a broader discussion as to how the transferring of
 graph embeddings could prove to be a practical tool in addressing the spatial
-data deficiencies we are faced with when working with ecological networks.
+data deficiencies we are faced with when working with ecological networks, and provides an overview of the graph embedding techniques.
 
 Metawebs (networks of potential interactions within a species pool), have the
 potential to be a powerful starting point from which to understand how
@@ -36,10 +35,9 @@ DOI: **TK**.
 
 We look forward to your editorial decision on this manuscript.
 
-> In no more than 50 words please explain how your paper is suited to the
-> journal’s scope.
+**Suitability statement:**
 
-The discussion in this perspective piece will help in further the discussion on
-the use and applicability of metawebs as well providing readers with an overview
-of how the use of graph embedding can help us to construct ecologically
-plausible metawebs with which to work with.
+> The discussion in this perspective piece will help in further the discussion on
+> the use and applicability of metawebs as well providing readers with an overview
+> of how the use of graph embedding can help us to construct ecologically
+> plausible metawebs with which to work.
