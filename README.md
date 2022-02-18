@@ -57,6 +57,14 @@ and transfer learning) can be used to overcome data limitations to metaweb
 inference, and highlight how the use of metawebs introduces important questions
 for the field of network ecology.
 
+$\begin{center}
+\begin{tabular}{ c c c }
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\  
+ cell7 & cell8 & cell9    
+\end{tabular}
+\end{center}$
+
 # The metaweb is an inherently probabilistic object
 
 Treating interactions probabilistic (as opposed to binary) is a more nuanced and
