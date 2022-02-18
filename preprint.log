@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.1)  18 FEB 2022 22:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.1)  18 FEB 2022 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1224,145 +1224,104 @@ LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 
 {/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>
 ]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.386 \(\begin{center}
-                       \begin{tabular}{ c c c }  cell1 & cell2 & cell3 \\  c...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.386 \(\begin{center}
-                       \begin{tabular}{ c c c }  cell1 & cell2 & cell3 \\  c...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-! LaTeX Error: \begin{document} ended by \end{center}.
+! LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.386 ... cell8 & cell9 \end{tabular} \end{center}
-                                                  \)
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+l.386 \(\begin{table} \begin
+                            {tabular}{| p{5cm} | p{5cm} | p{5cm} |}  -- cut ...
 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.386 ... cell8 & cell9 \end{tabular} \end{center}
-                                                  \)
-Things are pretty mixed up, but I think the worst is over.
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Bad math environment delimiter.
+LaTeX Warning: Reference `table:kysymys' on page 2 undefined on input line 388.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.386 ...ell8 & cell9 \end{tabular} \end{center}\)
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.25993pt on input line 390.
+(Font)              scaled to size 10.25993pt on input line 392.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.25993pt on input line 390.
-
-Underfull \hbox (badness 10000) in paragraph at lines 390--390
-|\T1/phv/b/n/10.79997 The metaweb is an in-her-ently prob-a-bilis-tic ob-ject|
- []
-
+(Font)              scaled to size 10.25993pt on input line 392.
 [2]
 <figures/conceptual_embedding.png, id=62, 1128.6165pt x 1013.9481pt>
 File: figures/conceptual_embedding.png Graphic file (type png)
 <use figures/conceptual_embedding.png>
 Package pdftex.def Info: figures/conceptual_embedding.png  used on input line 4
-47.
+49.
 (pdftex.def)             Requested size: 386.67299pt x 347.38344pt.
 
-Underfull \hbox (badness 3861) in paragraph at lines 447--447
+Underfull \hbox (badness 3861) in paragraph at lines 449--449
 \T1/stix2/m/n/8.21255 dimensional ob-ject (\T1/stix2/m/it/8.21255 C\T1/stix2/m/
 n/8.21255 ) where nodes, sub-
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 447--447
+Underfull \hbox (badness 3375) in paragraph at lines 449--449
 \T1/stix2/m/n/8.21255 graphs, or edges have spe-cific val-ues (see
  []
 
 
-Overfull \hbox (386.67299pt too wide) detected at line 482
+Overfull \hbox (386.67299pt too wide) detected at line 484
 []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 475--494
+Underfull \hbox (badness 10000) in alignment at lines 477--496
 [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 494--506
+Underfull \hbox (badness 10000) in alignment at lines 496--508
 [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 506--616
+Underfull \hbox (badness 10000) in alignment at lines 508--618
 [] [] [] []
  []
 
 [3 <./figures/conceptual_embedding.png (PNG copy)>]
-<figures/conceptual_prediction.png, id=75, 1749.6567pt x 611.886pt>
+<figures/conceptual_prediction.png, id=76, 1749.6567pt x 611.886pt>
 File: figures/conceptual_prediction.png Graphic file (type png)
 <use figures/conceptual_prediction.png>
 Package pdftex.def Info: figures/conceptual_prediction.png  used on input line 
-652.
+654.
 (pdftex.def)             Requested size: 386.67299pt x 135.22221pt.
 
-Underfull \hbox (badness 1762) in paragraph at lines 652--652
+Underfull \hbox (badness 1762) in paragraph at lines 654--654
 []\T1/stix2/b/n/8.21255 Figure 2 |\T1/stix2/m/n/8.21255 From a low-dimensional 
 fea-ture
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 657--657
-|\T1/phv/b/n/10.79997 The metaweb em-beds eco-log-i-cal hy-pothe-ses and prac-t
-ices|
- []
-
 [4] [5 <./figures/conceptual_prediction.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 761--761
-|\T1/phv/b/n/10.79997 References|
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 778.
+ [6] [7]
+Overfull \hbox (0.2941pt too wide) in paragraph at lines 1024--1030
+[][]\T1/stix2/m/n/9 No'kmaq, M., Mar-shall, A., Bea-z-ley, K. F., Hum, J., joud
+ry, sha-lan, Pa-padopou-los, A., Pic-tou, S., Rabesca,
  []
 
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 776.
-[6] [7] [8] [9] 
+[8] [9] 
 AED: lastpage setting LastPage
 [10] (./preprint.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `preprint.out' has not changed.
 (rerunfilecheck)             Checksum: BBD3B93C86911F40C1BB0F3674DFA12C;1175.
  ) 
 Here is how much of TeX's memory you used:
- 30768 strings out of 478287
- 559255 string characters out of 5848761
- 837789 words of memory out of 5000000
- 48333 multiletter control sequences out of 15000+600000
- 607684 words of font info for 138 fonts, out of 8000000 for 9000
+ 30773 strings out of 478287
+ 559326 string characters out of 5848761
+ 838789 words of memory out of 5000000
+ 48338 multiletter control sequences out of 15000+600000
+ 636124 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,117p,786b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,13n,117p,786b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}
 {/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/texlive/texdi
 r/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-t1.enc}{/opt/texlive/texdir/texm
@@ -1376,10 +1335,10 @@ nts/type1/public/stix2-type1/STIX2Text-Bold.pfb></opt/texlive/texdir/texmf-dist
 /texmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-d
 ist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/t
 ype1/urw/helvetic/uhvr8a.pfb>
-Output written on preprint.pdf (10 pages, 2100520 bytes).
+Output written on preprint.pdf (10 pages, 2112844 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
+ 324 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
  97 named destinations out of 1000 (max. 500000)
  60 words of extra memory for PDF output out of 10000 (max. 10000000)
 
