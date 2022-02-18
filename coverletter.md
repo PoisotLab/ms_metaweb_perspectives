@@ -8,10 +8,12 @@ that is currently under review at Methods in Ecology and Evolution (ID
 MEE-21-11-855.R1) and discusses topics previously included in the original
 manuscript, that were removed so as to keep the focus of the original manuscript
 on the methodological framework and maintain some sense of brevity. We have
-discussed this decision to split the original manuscript with the EiC Prof. Nicolas Lecomte, who has approved this decision. This
-submission thus puts forward a broader discussion as to how the transferring of
-graph embeddings could prove to be a practical tool in addressing the spatial
-data deficiencies we are faced with when working with ecological networks, and provides an overview of the graph embedding techniques.
+discussed this decision to split the original manuscript with the EiC Prof.
+Nicolas Lecomte, who has approved this decision. This submission thus puts
+forward a broader discussion as to how the transferring of graph embeddings
+could prove to be a practical tool in addressing the spatial data deficiencies
+we are faced with when working with ecological networks, and provides an
+overview of the graph embedding techniques.
 
 Metawebs (networks of potential interactions within a species pool), have the
 potential to be a powerful starting point from which to understand how
@@ -37,7 +39,7 @@ We look forward to your editorial decision on this manuscript.
 
 **Suitability statement:**
 
-> The discussion in this perspective piece will help in further the discussion on
-> the use and applicability of metawebs as well providing readers with an overview
-> of how the use of graph embedding can help us to construct ecologically
-> plausible metawebs with which to work.
+> The discussion in this perspective piece will help in further the discussion
+> on the use and applicability of metawebs as well providing readers with an
+> overview of how the use of graph embedding can help us to construct
+> ecologically plausible metawebs with which to work.
