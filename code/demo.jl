@@ -25,7 +25,7 @@ L2 = [sum((adjacency(M) - prod(rdpg(M, r))) .^ 2) for r in rnk]
 # Plot layout
 fig = Figure(resolution=(800, 550))
 ax1 = Axis(fig[1, 1], xlabel="Rank", ylabel="L2 loss", title="A", titlealign=:left)
-ax2 = Axis(fig[1, 2], xlabel="Dimension 1 (left-subspace)", ylabel="Dimension 2 (left-subspace)", title="B", titlealign=:left)
+ax2 = Axis(fig[1, 2], xlabel="Dimension 1", ylabel="Dimension 2", title="B", titlealign=:left)
 ax3 = Axis(fig[2, 1], xlabel="Predicted weight", ylabel="Density", title="C", titlealign=:left)
 ax4 = Axis(fig[2, 2], xlabel="Dimension 1 (left-subspace)", ylabel="Number of hosts", title="D", titlealign=:left)
 fig
