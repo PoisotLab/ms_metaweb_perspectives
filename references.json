@@ -189,6 +189,38 @@
         "volume": "9"
     },
     {
+        "DOI": "10.1016/j.cosrev.2021.100378",
+        "author": [
+            {
+                "family": "Anowar",
+                "given": "Farzana"
+            },
+            {
+                "family": "Sadaoui",
+                "given": "Samira"
+            },
+            {
+                "family": "Selim",
+                "given": "Bassant"
+            }
+        ],
+        "container-title": "Computer Science Review",
+        "id": "Anowar2021ConEmp",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    5,
+                    1
+                ]
+            ]
+        },
+        "page": "100378",
+        "title": "Conceptual and empirical comparison of dimensionality reduction algorithms (PCA, KPCA, LDA, MDS, SVD, LLE, ISOMAP, LE, ICA, t-SNE)",
+        "type": "article-journal",
+        "volume": "40"
+    },
+    {
         "URL": "http://arxiv.org/abs/1911.11726",
         "author": [
             {
@@ -211,7 +243,7 @@
             ]
         },
         "title": "Network Embedding: An Overview",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "DOI": "10.21105/joss.02721",
@@ -247,6 +279,7 @@
         "volume": "6"
     },
     {
+        "URL": "http://onlinelibrary.wiley.com/doi/10.1111/1365-2435.12666/full",
         "author": [
             {
                 "family": "Bartomeus",
@@ -441,6 +474,47 @@
         "title": "Predicting bacteriophage hosts based on sequences of annotated receptor-binding proteins",
         "type": "article-journal",
         "volume": "11"
+    },
+    {
+        "DOI": "10.1016/j.tree.2017.03.001",
+        "author": [
+            {
+                "family": "Bohan",
+                "given": "David A."
+            },
+            {
+                "family": "Vacher",
+                "given": "Corinne"
+            },
+            {
+                "family": "Tamaddoni-Nezhad",
+                "given": "Alireza"
+            },
+            {
+                "family": "Raybould",
+                "given": "Alan"
+            },
+            {
+                "family": "Dumbrell",
+                "given": "Alex J."
+            },
+            {
+                "family": "Woodward",
+                "given": "Guy"
+            }
+        ],
+        "container-title": "Trends in Ecology & Evolution",
+        "id": "Bohan2017NexGlo",
+        "issued": {
+            "date-parts": [
+                [
+                    2017,
+                    3
+                ]
+            ]
+        },
+        "title": "Next-Generation Global Biomonitoring: Large-scale, Automated Reconstruction of Ecological Networks",
+        "type": "article-journal"
     },
     {
         "DOI": "10.1111/2041-210X.13738",
@@ -756,7 +830,7 @@
             ]
         },
         "page": "2411-2417",
-        "title": "ConsumerResource Body-Size Relationships in Natural Food Webs",
+        "title": "Consumer\u2013Resource Body-Size Relationships in Natural Food Webs",
         "type": "article-journal",
         "volume": "87"
     },
@@ -989,7 +1063,7 @@
             ]
         },
         "title": "A Comprehensive Survey of Graph Embedding: Problems, Techniques and Applications",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "DOI": "10.1002/ecs2.2645",
@@ -1148,6 +1222,7 @@
         "volume": "12"
     },
     {
+        "URL": "https://www.ijcai.org/proceedings/2017/509",
         "author": [
             {
                 "family": "Chen",
@@ -1213,7 +1288,7 @@
             ]
         },
         "title": "HARP: Hierarchical Representation Learning for Networks",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "author": [
@@ -1284,7 +1359,7 @@
                 "given": "Alyssa R."
             },
             {
-                "family": "Ekl",
+                "family": "Ekl\u04e7f",
                 "given": "Anna"
             },
             {
@@ -1453,6 +1528,35 @@
         "title": "Predicting cryptic links in host-parasite networks",
         "type": "article-journal",
         "volume": "13"
+    },
+    {
+        "DOI": "10.21105/joss.03349",
+        "author": [
+            {
+                "family": "Danisch",
+                "given": "Simon"
+            },
+            {
+                "family": "Krumbiegel",
+                "given": "Julius"
+            }
+        ],
+        "container-title": "Journal of Open Source Software",
+        "id": "Danisch2021MakJl",
+        "issue": "65",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    9,
+                    1
+                ]
+            ]
+        },
+        "page": "3349",
+        "title": "Makie.jl: Flexible high-performance data visualization for Julia",
+        "type": "article-journal",
+        "volume": "6"
     },
     {
         "DOI": "10.21105/joss.02872",
@@ -1657,6 +1761,59 @@
         "type": "chapter"
     },
     {
+        "DOI": "10.1093/icesjms/fsab145",
+        "author": [
+            {
+                "family": "Eero",
+                "given": "Margit"
+            },
+            {
+                "family": "Dierking",
+                "given": "Jan"
+            },
+            {
+                "family": "Humborg",
+                "given": "Christoph"
+            },
+            {
+                "family": "Undeman",
+                "given": "Emma"
+            },
+            {
+                "family": "MacKenzie",
+                "given": "Brian R"
+            },
+            {
+                "family": "Ojaveer",
+                "given": "Henn"
+            },
+            {
+                "family": "Salo",
+                "given": "Tiina"
+            },
+            {
+                "family": "K\u00f6ster",
+                "given": "Friedrich Wilhelm"
+            }
+        ],
+        "container-title": "ICES Journal of Marine Science",
+        "id": "Eero2021UseFoo",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    11,
+                    1
+                ]
+            ]
+        },
+        "page": "2645-2663",
+        "title": "Use of food web knowledge in environmental conservation and management of living resources in the Baltic Sea",
+        "type": "article-journal",
+        "volume": "78"
+    },
+    {
         "DOI": "10.21425/F5FBG44795",
         "author": [
             {
@@ -1845,6 +2002,7 @@
         "volume": "288"
     },
     {
+        "URL": "https://www.science.org/doi/abs/10.1126/science.abk3510",
         "author": [
             {
                 "family": "Fricke",
@@ -1956,7 +2114,7 @@
             ]
         },
         "page": "1175-1187",
-        "title": "The geographical variation of network structure is scale dependent: Understanding the biotic specialization of hostparasitoid networks",
+        "title": "The geographical variation of network structure is scale dependent: Understanding the biotic specialization of host\u2013parasitoid networks",
         "type": "article-journal",
         "volume": "42"
     },
@@ -2301,6 +2459,33 @@
         "volume": "6"
     },
     {
+        "author": [
+            {
+                "family": "Goodfellow",
+                "given": "Ian"
+            },
+            {
+                "family": "Bengio",
+                "given": "Yoshua"
+            },
+            {
+                "family": "Courville",
+                "given": "Aaron"
+            }
+        ],
+        "id": "Goodfellow2016DeeLea",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "publisher": "MIT Press",
+        "title": "Deep learning",
+        "type": "book"
+    },
+    {
         "DOI": "10.1016/j.knosys.2018.03.022",
         "author": [
             {
@@ -2390,6 +2575,36 @@
         "title": "Bringing Elton and Grinnell together: A quantitative framework to represent the biogeography of ecological interaction networks",
         "type": "article-journal",
         "volume": "0"
+    },
+    {
+        "DOI": "10.1145/3287560.3287563",
+        "author": [
+            {
+                "family": "Green",
+                "given": "Ben"
+            },
+            {
+                "family": "Chen",
+                "given": "Yiling"
+            }
+        ],
+        "collection-title": "FAT* \u201919",
+        "container-title": "Proceedings of the Conference on Fairness, Accountability, and Transparency",
+        "id": "Green2019DisInt",
+        "issued": {
+            "date-parts": [
+                [
+                    2019,
+                    1,
+                    29
+                ]
+            ]
+        },
+        "page": "90-99",
+        "publisher": "Association for Computing Machinery",
+        "publisher-place": "New York, NY, USA",
+        "title": "Disparate Interactions: An Algorithm-in-the-Loop Analysis of Fairness in Risk Assessments",
+        "type": "paper-conference"
     },
     {
         "DOI": "10.32942/osf.io/e3qnz",
@@ -2500,6 +2715,39 @@
         "title": "Crop and forest pest metawebs shift towards increased linkage and suitability overlap under climate change",
         "type": "article-journal",
         "volume": "3"
+    },
+    {
+        "DOI": "10.1016/j.matpr.2021.01.950",
+        "author": [
+            {
+                "family": "Gupta",
+                "given": "Atika"
+            },
+            {
+                "family": "Matta",
+                "given": "Priya"
+            },
+            {
+                "family": "Pant",
+                "given": "Bhasker"
+            }
+        ],
+        "collection-title": "International Conference on Technological Advancements in Materials Science and Manufacturing",
+        "container-title": "Materials Today: Proceedings",
+        "id": "Gupta2021GraNeu",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    1,
+                    1
+                ]
+            ]
+        },
+        "page": "10927-10932",
+        "title": "Graph neural network: Current state of Art, challenges and applications",
+        "type": "article-journal",
+        "volume": "46"
     },
     {
         "DOI": "10.1109/MIS.2009.36",
@@ -3042,6 +3290,32 @@
         "volume": "61"
     },
     {
+        "URL": "https://proceedings.mlr.press/v5/maaten09a.html",
+        "author": [
+            {
+                "dropping-particle": "van der",
+                "family": "Maaten",
+                "given": "Laurens"
+            }
+        ],
+        "container-title": "Proceedings of the Twelth International Conference on Artificial Intelligence and Statistics",
+        "event": "Artificial Intelligence and Statistics",
+        "id": "Maaten2009LeaPar",
+        "issued": {
+            "date-parts": [
+                [
+                    2009,
+                    4,
+                    15
+                ]
+            ]
+        },
+        "page": "384-391",
+        "publisher": "PMLR",
+        "title": "Learning a Parametric Embedding by Preserving Local Structure",
+        "type": "paper-conference"
+    },
+    {
         "DOI": "10.1016/j.patter.2020.100079",
         "author": [
             {
@@ -3518,6 +3792,7 @@
         "volume": "87"
     },
     {
+        "URL": "probml.ai",
         "author": [
             {
                 "family": "Murphy",
@@ -3535,6 +3810,61 @@
         "publisher": "MIT Press",
         "title": "Probabilistic machine learning: An introduction",
         "type": "book"
+    },
+    {
+        "DOI": "10.1002/wat2.1590",
+        "author": [
+            {
+                "family": "Naman",
+                "given": "Sean M."
+            },
+            {
+                "family": "White",
+                "given": "Seth M."
+            },
+            {
+                "family": "Bellmore",
+                "given": "J. Ryan"
+            },
+            {
+                "family": "McHugh",
+                "given": "Peter A."
+            },
+            {
+                "family": "Kaylor",
+                "given": "Matthew J."
+            },
+            {
+                "family": "Baxter",
+                "given": "Colden V."
+            },
+            {
+                "family": "Danehy",
+                "given": "Robert J."
+            },
+            {
+                "family": "Naiman",
+                "given": "Robert J."
+            },
+            {
+                "family": "Puls",
+                "given": "Amy L."
+            }
+        ],
+        "container-title": "WIREs Water",
+        "id": "Naman2022FooWeb",
+        "issue": "n/a",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "page": "e1590",
+        "title": "Food web perspectives and methods for riverine fish conservation",
+        "type": "article-journal",
+        "volume": "n/a"
     },
     {
         "URL": "http://arxiv.org/abs/1707.05005",
@@ -3575,7 +3905,7 @@
             ]
         },
         "title": "Graph2vec: Learning Distributed Representations of Graphs",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "DOI": "10.3389/fgene.2019.00381",
@@ -3796,7 +4126,7 @@
                 "given": "Luigi"
             },
             {
-                "family": "Martinez-Almoyna",
+                "family": "Martinez\u2010Almoyna",
                 "given": "Camille"
             },
             {
@@ -4437,7 +4767,7 @@
             ]
         },
         "title": "Imputing the mammalian virome with linear filtering and singular value decomposition",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "author": [
@@ -4459,6 +4789,7 @@
         "type": "book"
     },
     {
+        "URL": "https://proceedings.neurips.cc/paper/2015/file/4f6ffe13a5d75b2d6a3923922b3922e5-Paper.pdf",
         "author": [
             {
                 "family": "Ramasamy",
@@ -4581,7 +4912,7 @@
             ]
         },
         "title": "How to partition diversity",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "DOI": "10.4322/natcon.2013.002",
@@ -4765,7 +5096,7 @@
             ]
         },
         "title": "A Tutorial on Principal Component Analysis",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "DOI": "10.1093/molbev/msx235",
@@ -4799,6 +5130,88 @@
         "title": "PhyloNetworks: A Package for Phylogenetic Networks",
         "type": "article-journal",
         "volume": "34"
+    },
+    {
+        "DOI": "10.2139/ssrn.3489440",
+        "author": [
+            {
+                "family": "Stevenson",
+                "given": "Megan T."
+            },
+            {
+                "family": "Doleac",
+                "given": "Jennifer L."
+            }
+        ],
+        "genre": "SSRN Scholarly Paper",
+        "id": "Stevenson2021AlgRis",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    4,
+                    21
+                ]
+            ]
+        },
+        "publisher-place": "Rochester, NY",
+        "title": "Algorithmic Risk Assessment in the Hands of Humans",
+        "type": ""
+    },
+    {
+        "DOI": "10.1111/conl.12245",
+        "author": [
+            {
+                "family": "Stier",
+                "given": "Adrian C."
+            },
+            {
+                "family": "Samhouri",
+                "given": "Jameal F."
+            },
+            {
+                "family": "Gray",
+                "given": "Steven"
+            },
+            {
+                "family": "Martone",
+                "given": "Rebecca G."
+            },
+            {
+                "family": "Mach",
+                "given": "Megan E."
+            },
+            {
+                "family": "Halpern",
+                "given": "Benjamin S."
+            },
+            {
+                "family": "Kappel",
+                "given": "Carrie V."
+            },
+            {
+                "family": "Scarborough",
+                "given": "Courtney"
+            },
+            {
+                "family": "Levin",
+                "given": "Phillip S."
+            }
+        ],
+        "container-title": "Conservation Letters",
+        "id": "Stier2017IntExp",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "page": "67-76",
+        "title": "Integrating Expert Perceptions into Food Web Conservation and Management",
+        "type": "article-journal",
+        "volume": "10"
     },
     {
         "author": [
@@ -5652,7 +6065,7 @@
             ]
         },
         "title": "Understanding graph embedding methods and their applications",
-        "type": "webpage"
+        "type": "manuscript"
     },
     {
         "DOI": "10.1109/CVPR.2005.170",
@@ -5861,9 +6274,65 @@
         },
         "page": "3911",
         "publisher": "Nature Publishing Group",
-        "title": "Reconstruction of plantpollinator networks from observational data",
+        "title": "Reconstruction of plant\u2013pollinator networks from observational data",
         "type": "article-journal",
         "volume": "12"
+    },
+    {
+        "DOI": "10.1016/j.aiopen.2021.01.001",
+        "author": [
+            {
+                "family": "Zhou",
+                "given": "Jie"
+            },
+            {
+                "family": "Cui",
+                "given": "Ganqu"
+            },
+            {
+                "family": "Hu",
+                "given": "Shengding"
+            },
+            {
+                "family": "Zhang",
+                "given": "Zhengyan"
+            },
+            {
+                "family": "Yang",
+                "given": "Cheng"
+            },
+            {
+                "family": "Liu",
+                "given": "Zhiyuan"
+            },
+            {
+                "family": "Wang",
+                "given": "Lifeng"
+            },
+            {
+                "family": "Li",
+                "given": "Changcheng"
+            },
+            {
+                "family": "Sun",
+                "given": "Maosong"
+            }
+        ],
+        "container-title": "AI Open",
+        "id": "Zhou2020GraNeu",
+        "issued": {
+            "date-parts": [
+                [
+                    2020,
+                    1,
+                    1
+                ]
+            ]
+        },
+        "page": "57-81",
+        "title": "Graph neural networks: A review of methods and applications",
+        "type": "article-journal",
+        "volume": "1"
     },
     {
         "DOI": "10.1016/j.csda.2005.09.010",

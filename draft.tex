@@ -415,25 +415,25 @@ interactions; most of these methods rely either on linear algebra, or on
 pseudo-random walks on graphs.
 
 One prominent family of approaches we do not discuss in the present
-manuscript is Graph Neural Networks (GNN; \textbf{Zhou2020GraNeu?}); GNN
-are, in a sense, a method to embed a graph into a dense subspace, but
-belong to the family of deep learning methods, which has its own set of
-practices (see \emph{e.g.} \textbf{Goodfellow2016DeeLea?}). An important
-issue with methods based on deep learning is that because their
-parameter space is immense, the sample size of the data fed into them
-must be similarly large (typically thousands of instances). This is a
+manuscript is Graph Neural Networks (GNN; Zhou et al., 2020); GNN are,
+in a sense, a method to embed a graph into a dense subspace, but belong
+to the family of deep learning methods, which has its own set of
+practices (see \emph{e.g.} Goodfellow et al., 2016). An important issue
+with methods based on deep learning is that because their parameter
+space is immense, the sample size of the data fed into them must be
+similarly large (typically thousands of instances). This is a
 requirement for the model to converge correctly during training, but
 this assumption is unlikely to be met given the size of datasets about
 currently available metawebs (or single time/location species
 interaction networks). This data volume requirement is mostly absent
 from the techniques we list below. Furthermore, GNN still have some
 challenges related to their shallow structure, and concerns related to
-scalability (see \textbf{Gupta2021GraNeu?} for a review), which are
-mostly absent from the methods listed in tbl.~\ref{tbl:methods}.
-Assuming that the uptake of next-generation biomonitoring techniques
-does indeed deliver larger datasets on species interactions
-(\textbf{Bohan2017NexGlo?}), there is a potential for GNN to become an
-applicable embedding/predictive technique in the coming years.
+scalability (see Gupta et al., 2021 for a review), which are mostly
+absent from the methods listed in tbl.~\ref{tbl:methods}. Assuming that
+the uptake of next-generation biomonitoring techniques does indeed
+deliver larger datasets on species interactions (Bohan et al., 2017),
+there is a potential for GNN to become an applicable
+embedding/predictive technique in the coming years.
 
 \hypertarget{tbl:methods}{}
 \begin{longtable}[]{@{}llrr@{}}
@@ -616,13 +616,13 @@ species, and as many informative dimensions as trophically unique
 species; Strydom, Dalla Riva, et al., 2021). But this is not
 necessarilly the case -- indeed, one may perform a PCA (a special case
 of SVD) to project the raw data into a subspace that improves the
-efficacy of t-SNE (\textbf{Maaten2009LeaPar?}). There are many
-dimensionality reductions (\textbf{Anowar2021ConEmp?}) that can be
-applied to an embedded network should the need for dimensionality
-reduction (for example for data visualisation) arise. In brief, many
-graph embeddings \emph{can} serve as dimensionality reduction steps, but
-not all do, neither do all dimensionality reduction methods provide
-adequate graph embedding capacities.
+efficacy of t-SNE (Maaten, 2009). There are many dimensionality
+reductions (Anowar et al., 2021) that can be applied to an embedded
+network should the need for dimensionality reduction (for example for
+data visualisation) arise. In brief, many graph embeddings \emph{can}
+serve as dimensionality reduction steps, but not all do, neither do all
+dimensionality reduction methods provide adequate graph embedding
+capacities.
 
 \begin{figure}
 \hypertarget{fig:prediction}{%
@@ -654,9 +654,9 @@ parasites and 121 hosts (the same metaweb was used for the illustration
 of interaction inference through deep learning in Strydom, Catchen, et
 al., 2021), and its adjacency matrix has full rank (\emph{i.e.} it
 represents a space with 121 dimensions). All analyses were done using
-Julia (Bezanson et al., 2017) version 1.7.2, \emph{Makie.jl}
-(\textbf{Danisch2021MakJl?}), and \emph{EcologicalNetworks.jl} (Poisot
-et al., 2019).
+Julia (Bezanson et al., 2017) version 1.7.2, \emph{Makie.jl} (Danisch \&
+Krumbiegel, 2021), and \emph{EcologicalNetworks.jl} (Poisot et al.,
+2019).
 
 \hypertarget{the-metaweb-embeds-both-ecological-hypotheses-and-practices}{%
 \section{The metaweb embeds both ecological hypotheses and
@@ -739,28 +739,28 @@ re-used for governance (\emph{e.g.} enacting conservation decisions at
 the national scale). As information on species interaction networks
 structure is increasingly leveraged as a tool to guide conservation
 actions (see \emph{e.g.} recent discussions for food-web based
-conservation; \textbf{Eero2021UseFoo?}; \textbf{NamanFooWeb?};
-\textbf{Stier2017IntExp?}), the need to appraise and correct biases that
-are unwittingly propagated to algorithms when embedded from the original
-data is paramount. Predictive approaches deployed at the continental
-scale, no matter their intent, originate in the framework that
-contributed to the ongoing biodiversity crisis (Adam, 2014) and
-reinforced environmental injustice (Choudry, 2013; Domínguez \& Luoma,
-2020). Particularly on Turtle Island and other territories that were
-traditionally stewarded by Indigenous people, these approaches should be
-replaced (or at least guided and framed) by Indigenous principles of
-land management (Eichhorn et al., 2019; No'kmaq et al., 2021), as part
-of an ``algorithm-in-the-loop'' approach. Human-algorithm interactions
-are notoriously difficult and can yield adverse effect
-(\textbf{Green2019DisInt?}; \textbf{Stevenson2021AlgRis?}), suggesting
-the need to systematically study them for the specific purpose of
-biodiversity governance, as well as to improve the algorithmic literacy
-of decision makers. As we see artificial intelligence/machine learning
-being increasingly mobilized to generate knowledge that is lacking for
-conservation decisions (\emph{e.g.} Lamba et al., 2019; Mosebo Fernandes
-et al., 2020) and drive policy decisions (Weiskopf et al., 2022), our
-discussion of these tools need to go beyond the technical and
-statistical, and into the governance consequences they can have.
+conservation; Eero et al., 2021; Naman et al., 2022; Stier et al.,
+2017), the need to appraise and correct biases that are unwittingly
+propagated to algorithms when embedded from the original data is
+paramount. Predictive approaches deployed at the continental scale, no
+matter their intent, originate in the framework that contributed to the
+ongoing biodiversity crisis (Adam, 2014) and reinforced environmental
+injustice (Choudry, 2013; Domínguez \& Luoma, 2020). Particularly on
+Turtle Island and other territories that were traditionally stewarded by
+Indigenous people, these approaches should be replaced (or at least
+guided and framed) by Indigenous principles of land management (Eichhorn
+et al., 2019; No'kmaq et al., 2021), as part of an
+``algorithm-in-the-loop'' approach. Human-algorithm interactions are
+notoriously difficult and can yield adverse effect (Green \& Chen, 2019;
+Stevenson \& Doleac, 2021), suggesting the need to systematically study
+them for the specific purpose of biodiversity governance, as well as to
+improve the algorithmic literacy of decision makers. As we see
+artificial intelligence/machine learning being increasingly mobilized to
+generate knowledge that is lacking for conservation decisions
+(\emph{e.g.} Lamba et al., 2019; Mosebo Fernandes et al., 2020) and
+drive policy decisions (Weiskopf et al., 2022), our discussion of these
+tools need to go beyond the technical and statistical, and into the
+governance consequences they can have.
 
 \textbf{Acknowledgements:} We acknowledge that this study was conducted
 on land within the traditional unceded territory of the Saint Lawrence
@@ -810,20 +810,34 @@ Gravel, D. (2019). The marine fish food web is globally connected.
 \emph{Nature Ecology \& Evolution}, \emph{3}(8, 8), 1153--1161.
 \url{https://doi.org/10.1038/s41559-019-0950-y}
 
+\leavevmode\hypertarget{ref-Anowar2021ConEmp}{}%
+Anowar, F., Sadaoui, S., \& Selim, B. (2021). Conceptual and empirical
+comparison of dimensionality reduction algorithms (PCA, KPCA, LDA, MDS,
+SVD, LLE, ISOMAP, LE, ICA, t-SNE). \emph{Computer Science Review},
+\emph{40}, 100378. \url{https://doi.org/10.1016/j.cosrev.2021.100378}
+
 \leavevmode\hypertarget{ref-Arsov2019NetEmb}{}%
-Arsov, N., \& Mirceva, G. (2019, November 26). \emph{Network Embedding:
-An Overview}. \url{http://arxiv.org/abs/1911.11726}
+Arsov, N., \& Mirceva, G. (2019). \emph{Network Embedding: An Overview}.
+\url{http://arxiv.org/abs/1911.11726}
 
 \leavevmode\hypertarget{ref-Bartomeus2016ComFra}{}%
 Bartomeus, I., Gravel, D., Tylianakis, J. M., Aizen, M. A., Dickie, I.
 A., \& Bernard-Verdier, M. (2016). A common framework for identifying
 linkage rules across different types of interactions. \emph{Functional
 Ecology}, \emph{30}(12), 1894--1903.
+\url{http://onlinelibrary.wiley.com/doi/10.1111/1365-2435.12666/full}
 
 \leavevmode\hypertarget{ref-Bezanson2017JulFre}{}%
 Bezanson, J., Edelman, A., Karpinski, S., \& Shah, V. (2017). Julia: A
 Fresh Approach to Numerical Computing. \emph{SIAM Review}, \emph{59}(1),
 65--98. \url{https://doi.org/10.1137/141000671}
+
+\leavevmode\hypertarget{ref-Bohan2017NexGlo}{}%
+Bohan, D. A., Vacher, C., Tamaddoni-Nezhad, A., Raybould, A., Dumbrell,
+A. J., \& Woodward, G. (2017). Next-Generation Global Biomonitoring:
+Large-scale, Automated Reconstruction of Ecological Networks.
+\emph{Trends in Ecology \& Evolution}.
+\url{https://doi.org/10.1016/j.tree.2017.03.001}
 
 \leavevmode\hypertarget{ref-Botella2022AppGra}{}%
 Botella, C., Dray, S., Matias, C., Miele, V., \& Thuiller, W. (2022). An
@@ -858,10 +872,11 @@ knowledge to action for biodiversity conservation in Canada.
 \leavevmode\hypertarget{ref-Chen2017DeeMul}{}%
 Chen, D., Xue, Y., Fink, D., Chen, S., \& Gomes, C. P. (2017).
 \emph{Deep Multi-species Embedding}. 3639--3646.
+\url{https://www.ijcai.org/proceedings/2017/509}
 
 \leavevmode\hypertarget{ref-Chen2017HarHie}{}%
-Chen, H., Perozzi, B., Hu, Y., \& Skiena, S. (2017, November 16).
-\emph{HARP: Hierarchical Representation Learning for Networks}.
+Chen, H., Perozzi, B., Hu, Y., \& Skiena, S. (2017). \emph{HARP:
+Hierarchical Representation Learning for Networks}.
 \url{http://arxiv.org/abs/1706.07845}
 
 \leavevmode\hypertarget{ref-Choudry2013SavBio}{}%
@@ -893,6 +908,12 @@ links in host-parasite networks. \emph{PLOS Computational Biology},
 \emph{13}(5), e1005557.
 \url{https://doi.org/10.1371/journal.pcbi.1005557}
 
+\leavevmode\hypertarget{ref-Danisch2021MakJl}{}%
+Danisch, S., \& Krumbiegel, J. (2021). Makie.jl: Flexible
+high-performance data visualization for Julia. \emph{Journal of Open
+Source Software}, \emph{6}(65), 3349.
+\url{https://doi.org/10.21105/joss.03349}
+
 \leavevmode\hypertarget{ref-Dominguez2020DecCon}{}%
 Domínguez, L., \& Luoma, C. (2020). Decolonising Conservation Policy:
 How Colonial Land and Conservation Ideologies Persist and Perpetuate
@@ -903,6 +924,13 @@ Indigenous Injustices at the Expense of the Environment. \emph{Land},
 Dunne, J. A. (2006). The Network Structure of Food Webs. In J. A. Dunne
 \& M. Pascual (Eds.), \emph{Ecological networks: Linking structure and
 dynamics} (pp. 27--86). Oxford University Press.
+
+\leavevmode\hypertarget{ref-Eero2021UseFoo}{}%
+Eero, M., Dierking, J., Humborg, C., Undeman, E., MacKenzie, B. R.,
+Ojaveer, H., Salo, T., \& Köster, F. W. (2021). Use of food web
+knowledge in environmental conservation and management of living
+resources in the Baltic Sea. \emph{ICES Journal of Marine Science},
+\emph{78}(8), 2645--2663. \url{https://doi.org/10.1093/icesjms/fsab145}
 
 \leavevmode\hypertarget{ref-Eichhorn2019SteDec}{}%
 Eichhorn, M. P., Baker, K., \& Griffiths, M. (2019). Steps towards
@@ -927,6 +955,7 @@ Biological Sciences}, \emph{288}(1949), rspb.2020.1889, 20201889.
 Fricke, E. C., Ordonez, A., Rogers, H. S., \& Svenning, J.-C. (2022).
 The effects of defaunation on plants' capacity to track climate change.
 \emph{Science}.
+\url{https://www.science.org/doi/abs/10.1126/science.abk3510}
 
 \leavevmode\hypertarget{ref-Galiana2021SpaSca}{}%
 Galiana, N., Barros, C., Braga, J., Ficetola, G. F., Maiorano, L.,
@@ -938,7 +967,7 @@ of food web structure across European biogeographical regions.
 \leavevmode\hypertarget{ref-Galiana2019GeoVar}{}%
 Galiana, N., Hawkins, B. A., \& Montoya, J. M. (2019). The geographical
 variation of network structure is scale dependent: Understanding the
-biotic specialization of hostparasitoid networks. \emph{Ecography},
+biotic specialization of host--parasitoid networks. \emph{Ecography},
 \emph{42}(6), 1175--1187. \url{https://doi.org/10.1111/ecog.03684}
 
 \leavevmode\hypertarget{ref-Galiana2022EcoNet}{}%
@@ -956,6 +985,10 @@ Cazelles, K., Gravel, D., \& Montoya, J. M. (2018). The spatial scaling
 of species interaction networks. \emph{Nature Ecology \& Evolution},
 \emph{2}(5), 782--790. \url{https://doi.org/10.1038/s41559-018-0517-3}
 
+\leavevmode\hypertarget{ref-Goodfellow2016DeeLea}{}%
+Goodfellow, I., Bengio, Y., \& Courville, A. (2016). \emph{Deep
+learning}. MIT Press.
+
 \leavevmode\hypertarget{ref-Goyal2018GraEmb}{}%
 Goyal, P., \& Ferrara, E. (2018). Graph embedding techniques,
 applications, and performance: A survey. \emph{Knowledge-Based Systems},
@@ -969,6 +1002,12 @@ quantitative framework to represent the biogeography of ecological
 interaction networks. \emph{Ecography}, \emph{0}(0).
 \url{https://doi.org/10.1111/ecog.04006}
 
+\leavevmode\hypertarget{ref-Green2019DisInt}{}%
+Green, B., \& Chen, Y. (2019). Disparate Interactions: An
+Algorithm-in-the-Loop Analysis of Fairness in Risk Assessments.
+\emph{Proceedings of the Conference on Fairness, Accountability, and
+Transparency}, 90--99. \url{https://doi.org/10.1145/3287560.3287563}
+
 \leavevmode\hypertarget{ref-Grover2016NodSca}{}%
 Grover, A., \& Leskovec, J. (2016). Node2vec: Scalable Feature Learning
 for Networks. \emph{Proceedings of the 22nd ACM SIGKDD International
@@ -981,6 +1020,12 @@ Grünig, M., Mazzi, D., Calanca, P., Karger, D. N., \& Pellissier, L.
 and suitability overlap under climate change. \emph{Communications
 Biology}, \emph{3}(1, 1), 1--10.
 \url{https://doi.org/10.1038/s42003-020-0962-9}
+
+\leavevmode\hypertarget{ref-Gupta2021GraNeu}{}%
+Gupta, A., Matta, P., \& Pant, B. (2021). Graph neural network: Current
+state of Art, challenges and applications. \emph{Materials Today:
+Proceedings}, \emph{46}, 10927--10932.
+\url{https://doi.org/10.1016/j.matpr.2021.01.950}
 
 \leavevmode\hypertarget{ref-Herbert1965Dun}{}%
 Herbert, F. (1965). \emph{Dune} (1st ed.). Chilton Book Company.
@@ -1014,6 +1059,12 @@ learning for environmental conservation. \emph{Current Biology},
 \emph{29}(19), R977--R982.
 \url{https://doi.org/10.1016/j.cub.2019.08.016}
 
+\leavevmode\hypertarget{ref-Maaten2009LeaPar}{}%
+Maaten, L. van der. (2009). Learning a Parametric Embedding by
+Preserving Local Structure. \emph{Proceedings of the Twelth
+International Conference on Artificial Intelligence and Statistics},
+384--391. \url{https://proceedings.mlr.press/v5/maaten09a.html}
+
 \leavevmode\hypertarget{ref-Machen2021ThiAlg}{}%
 Machen, R., \& Nost, E. (2021). Thinking algorithmically: The making of
 hegemonic knowledge in climate governance. \emph{Transactions of the
@@ -1046,11 +1097,18 @@ for Conservation Planning in a Changing Climate. \emph{Sustainability},
 
 \leavevmode\hypertarget{ref-Murphy2022ProMac}{}%
 Murphy, K. P. (2022). \emph{Probabilistic machine learning: An
-introduction}. MIT Press.
+introduction}. MIT Press. \href{https://probml.ai}{probml.ai}
+
+\leavevmode\hypertarget{ref-Naman2022FooWeb}{}%
+Naman, S. M., White, S. M., Bellmore, J. R., McHugh, P. A., Kaylor, M.
+J., Baxter, C. V., Danehy, R. J., Naiman, R. J., \& Puls, A. L. (2022).
+Food web perspectives and methods for riverine fish conservation.
+\emph{WIREs Water}, \emph{n/a}(n/a), e1590.
+\url{https://doi.org/10.1002/wat2.1590}
 
 \leavevmode\hypertarget{ref-Narayanan2017GraLea}{}%
 Narayanan, A., Chandramohan, M., Venkatesan, R., Chen, L., Liu, Y., \&
-Jaiswal, S. (2017, July 17). \emph{Graph2vec: Learning Distributed
+Jaiswal, S. (2017). \emph{Graph2vec: Learning Distributed
 Representations of Graphs}. \url{http://arxiv.org/abs/1707.05005}
 
 \leavevmode\hypertarget{ref-Neutel2002StaRea}{}%
@@ -1073,7 +1131,7 @@ Nost, E., \& Goldstein, J. E. (2021). A political ecology of data.
 
 \leavevmode\hypertarget{ref-OConnor2020UnvFoo}{}%
 O'Connor, L. M. J., Pollock, L. J., Braga, J., Ficetola, G. F.,
-Maiorano, L., Martinez-Almoyna, C., Montemaggiori, A., Ohlmann, M., \&
+Maiorano, L., Martinez‐Almoyna, C., Montemaggiori, A., Ohlmann, M., \&
 Thuiller, W. (2020). Unveiling the food webs of tetrapods across Europe
 through the prism of the Eltonian niche. \emph{Journal of Biogeography},
 \emph{47}(1), 181--192. \url{https://doi.org/10.1111/jbi.13773}
@@ -1112,8 +1170,8 @@ Stouffer, D. B. (2016). The structure of probabilistic networks.
 
 \leavevmode\hypertarget{ref-Poisot2021ImpMam}{}%
 Poisot, T., Ouellet, M.-A., Mollentze, N., Farrell, M. J., Becker, D.
-J., Albery, G. F., Gibb, R. J., Seifert, S. N., \& Carlson, C. J. (2021,
-May 31). \emph{Imputing the mammalian virome with linear filtering and
+J., Albery, G. F., Gibb, R. J., Seifert, S. N., \& Carlson, C. J.
+(2021). \emph{Imputing the mammalian virome with linear filtering and
 singular value decomposition}. \url{http://arxiv.org/abs/2105.14973}
 
 \leavevmode\hypertarget{ref-Poisot2015SpeWhy}{}%
@@ -1127,6 +1185,7 @@ Ramasamy, D., \& Madhow, U. (2015). Compressive spectral embedding:
 Sidestepping the SVD. In C. Cortes, N. Lawrence, D. Lee, M. Sugiyama, \&
 R. Garnett (Eds.), \emph{Advances in neural information processing
 systems} (Vol. 28). Curran Associates, Inc.
+\url{https://proceedings.neurips.cc/paper/2015/file/4f6ffe13a5d75b2d6a3923922b3922e5-Paper.pdf}
 
 \leavevmode\hypertarget{ref-Ray2021BioCri}{}%
 Ray, J. C., Grimm, J., \& Olive, A. (2021). The biodiversity crisis in
@@ -1145,6 +1204,18 @@ Saravia, L. A., Marina, T. I., Kristensen, N. P., De Troch, M., \& Momo,
 F. R. (2021). Ecological network assembly: How the regional metaweb
 influences local food webs. \emph{Journal of Animal Ecology},
 \emph{n/a}(n/a). \url{https://doi.org/10.1111/1365-2656.13652}
+
+\leavevmode\hypertarget{ref-Stevenson2021AlgRis}{}%
+Stevenson, M. T., \& Doleac, J. L. (2021). \emph{Algorithmic Risk
+Assessment in the Hands of Humans} {[}SSRN Scholarly Paper{]}.
+\url{https://doi.org/10.2139/ssrn.3489440}
+
+\leavevmode\hypertarget{ref-Stier2017IntExp}{}%
+Stier, A. C., Samhouri, J. F., Gray, S., Martone, R. G., Mach, M. E.,
+Halpern, B. S., Kappel, C. V., Scarborough, C., \& Levin, P. S. (2017).
+Integrating Expert Perceptions into Food Web Conservation and
+Management. \emph{Conservation Letters}, \emph{10}(1), 67--76.
+\url{https://doi.org/10.1111/conl.12245}
 
 \leavevmode\hypertarget{ref-Strydom2021FooWeb}{}%
 Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,
@@ -1218,8 +1289,8 @@ Wood, S. A., Russell, R., Hanson, D., Williams, R. J., \& Dunne, J. A.
 \url{https://doi.org/10.1002/ece3.1640}
 
 \leavevmode\hypertarget{ref-Xu2020UndGra}{}%
-Xu, M. (2020, December 14). \emph{Understanding graph embedding methods
-and their applications}. \url{http://arxiv.org/abs/2012.08019}
+Xu, M. (2020). \emph{Understanding graph embedding methods and their
+applications}. \url{http://arxiv.org/abs/2012.08019}
 
 \leavevmode\hypertarget{ref-Yan2005GraEmb}{}%
 Yan, S., Xu, D., Zhang, B., \& Zhang, H.-J. (2005). Graph embedding: A
@@ -1233,6 +1304,12 @@ Young, S. J., \& Scheinerman, E. R. (2007). Random Dot Product Graph
 Models for Social Networks. In A. Bonato \& F. R. K. Chung (Eds.),
 \emph{Algorithms and Models for the Web-Graph} (pp. 138--149). Springer.
 \url{https://doi.org/10.1007/978-3-540-77004-6_11}
+
+\leavevmode\hypertarget{ref-Zhou2020GraNeu}{}%
+Zhou, J., Cui, G., Hu, S., Zhang, Z., Yang, C., Liu, Z., Wang, L., Li,
+C., \& Sun, M. (2020). Graph neural networks: A review of methods and
+applications. \emph{AI Open}, \emph{1}, 57--81.
+\url{https://doi.org/10.1016/j.aiopen.2021.01.001}
 
 \end{CSLReferences}
 
