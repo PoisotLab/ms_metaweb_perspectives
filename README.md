@@ -215,7 +215,20 @@ this allows us to reconstruct a network with these new species. This approach
 constitutes an instance of transfer
 learning.](figures/conceptual_prediction.png){#fig:prediction}
 
-# The metaweb embeds ecological hypotheses and practices
+# An illustration of metaweb embedding
+
+In this section, we illustrate the embedding of a collection of bipartite
+networks collected by **REF**, using truncated Singular Value Decomposition
+(t-SVD). The code to reproduce this example (as a Jupyter notebook) is available
+as supplementary material. The resulting (binary) metaweb $\mathcal{M}$ has 2131
+interactions between 206 parasites and 121 hosts [the same metaweb was used for
+the illustration of interaction inference through deep learning in
+@Strydom2021RoaPre], and its adjacency matrix has full rank (*i.e.* it
+represents a space with 121 dimensions). All analyses were done using Julia
+[@Bezanson2017JulFre] version 1.7.2, *Makie.jl* [@Danisch2021MakJl], and
+*EcologicalNetworks.jl* [@Poisot2019EcoJl].
+
+# The metaweb embeds both ecological hypotheses and practices
 
 The goal of metaweb inference is to provide information about the interactions
 between species at a large spatial scale. But as @Herbert1965Dun rightfully
