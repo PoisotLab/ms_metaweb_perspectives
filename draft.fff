@@ -30,3 +30,12 @@ network with these new species. This approach constitutes an instance of
 transfer learning.}\label{fig:prediction}
 }
 \end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:illustration}{%
+\centering
+\includegraphics{figures/illustration.png}
+\caption{Need to add text here}\label{fig:illustration}
+}
+\end{figure}
