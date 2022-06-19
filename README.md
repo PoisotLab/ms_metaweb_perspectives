@@ -301,7 +301,7 @@ generate knowledge) can be re-used for governance (*e.g.* enacting conservation
 decisions at the national scale). As information on species interaction networks
 structure is increasingly leveraged as a tool to guide conservation actions [see
 *e.g.* recent discussions for food-web based conservation; @Eero2021UseFoo;
-@NamanFooWeb; @Stier2017IntExp], the need to appraise and correct biases that
+@Naman2022FooWeb; @Stier2017IntExp], the need to appraise and correct biases that
 are unwittingly propagated to algorithms when embedded from the original data is
 paramount. Predictive approaches deployed at the continental scale, no matter
 their intent, originate in the framework that contributed to the ongoing
