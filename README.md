@@ -103,8 +103,15 @@ adjacency matrix (*B*), is converted into a lower-dimensional object (*C*) where
 nodes, subgraphs, or edges have specific values (see @tbl:methods). For the
 purposes of prediction, this low-dimensional object encodes feature vectors for
 *e.g.* the nodes. Embedding also allows to visualize the structure in the data
-differently (*D*), much like with a principal component
-analysis.](figures/conceptual_embedding.png){#fig:embedding}
+differently (*D*), much like with a principal component analysis. From a
+low-dimensional feature vector , it is possible to develop predictive
+approaches. Nodes in an ecological network are species, for which we can
+leverage phylogenetic relatedness [*e.g.* @Strydom2021FooWeb] or functional
+traits to fill the values of additional species we would like to project in this
+space (here, I, J, K, and L) from the embedding of known species (here, A, B, C,
+and D). Because embeddings can be projected back to a graph, this allows us to
+reconstruct a network with these new species. This approach constitutes an
+instance of transfer learning.](figures/conceptual_2.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
 
@@ -204,16 +211,6 @@ embedded network should the need for dimensionality reduction (for example for
 data visualisation) arise. In brief, many graph embeddings *can* serve as
 dimensionality reduction steps, but not all do, neither do all dimensionality
 reduction methods provide adequate graph embedding capacities.
-
-![From a low-dimensional feature vector (see @fig:embedding), it is possible to
-develop predictive approaches. Nodes in an ecological network are species, for
-which we can leverage phylogenetic relatedness [*e.g.* @Strydom2021FooWeb] or
-functional traits to fill the values of additional species we would like to
-project in this space (here, I, J, K, and L) from the embedding of known species
-(here, A, B, C, and D). Because embeddings can be projected back to a graph,
-this allows us to reconstruct a network with these new species. This approach
-constitutes an instance of transfer
-learning.](figures/conceptual_prediction.png){#fig:prediction}
 
 # An illustration of metaweb embedding
 
