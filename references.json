@@ -2750,6 +2750,42 @@
         "volume": "46"
     },
     {
+        "DOI": "10.1086/674445",
+        "author": [
+            {
+                "family": "Hadfield",
+                "given": "Jarrod D."
+            },
+            {
+                "family": "Krasnov",
+                "given": "Boris R."
+            },
+            {
+                "family": "Poulin",
+                "given": "Robert"
+            },
+            {
+                "family": "Nakagawa",
+                "given": "Shinichi"
+            }
+        ],
+        "container-title": "The American Naturalist",
+        "id": "Hadfield2014TalTwo",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2014,
+                    1
+                ]
+            ]
+        },
+        "page": "174-187",
+        "title": "A Tale of Two Phylogenies: Comparative Analyses of Ecological Interactions",
+        "type": "article-journal",
+        "volume": "183"
+    },
+    {
         "DOI": "10.1109/MIS.2009.36",
         "author": [
             {
@@ -5472,6 +5508,69 @@
         "title": "SVD Entropy Reveals the High Complexity of Ecological Networks",
         "type": "article-journal",
         "volume": "9"
+    },
+    {
+        "DOI": "10.1111/2041-210X.13835",
+        "author": [
+            {
+                "family": "Strydom",
+                "given": "Tanya"
+            },
+            {
+                "family": "Bouskila",
+                "given": "Salom\u00e9"
+            },
+            {
+                "family": "Banville",
+                "given": "Francis"
+            },
+            {
+                "family": "Barros",
+                "given": "Ceres"
+            },
+            {
+                "family": "Caron",
+                "given": "Dominique"
+            },
+            {
+                "family": "Farrell",
+                "given": "Maxwell J."
+            },
+            {
+                "family": "Fortin",
+                "given": "Marie-Jos\u00e9e"
+            },
+            {
+                "family": "Hemming",
+                "given": "Victoria"
+            },
+            {
+                "family": "Mercier",
+                "given": "Benjamin"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura J."
+            },
+            {
+                "family": "Runghen",
+                "given": "Rogini"
+            },
+            {
+                "family": "Dalla Riva",
+                "given": "Giulio V."
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            }
+        ],
+        "container-title": "Methods in Ecology and Evolution",
+        "id": "StrydomFooWeb",
+        "issue": "n/a",
+        "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
+        "type": "article-journal",
+        "volume": "n/a"
     },
     {
         "DOI": "10.1145/2736277.2741093",
