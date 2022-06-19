@@ -338,7 +338,7 @@ Canada Graduate Scholarship and the FRQNT master’s scholarship. LP acknowledge
 funding from NSERC Discovery Grant (NSERC RGPIN-2019-05771). TP acknowledges
 financial support from NSERC through the Discovery Grants and Discovery
 Accelerator Supplement programs. MJF is supported by an NSERC PDF and an RBC
-Post-Doctoral Fellowship
+Post-Doctoral Fellowship.
 
 **Conflict of interest:** The authors have no conflict interests to disclose
 
