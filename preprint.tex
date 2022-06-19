@@ -698,9 +698,26 @@ transfer learning.}\label{fig:prediction}
 }
 \end{figure}
 
-\hypertarget{the-metaweb-embeds-ecological-hypotheses-and-practices}{%
-\section{The metaweb embeds ecological hypotheses and
-practices}\label{the-metaweb-embeds-ecological-hypotheses-and-practices}}
+\hypertarget{an-illustration-of-metaweb-embedding}{%
+\section{An illustration of metaweb
+embedding}\label{an-illustration-of-metaweb-embedding}}
+
+In this section, we illustrate the embedding of a collection of
+bipartite networks collected by \textbf{REF}, using truncated Singular
+Value Decomposition (t-SVD). The code to reproduce this example (as a
+Jupyter notebook) is available as supplementary material. The resulting
+(binary) metaweb \(\mathcal{M}\) has 2131 interactions between 206
+parasites and 121 hosts (the same metaweb was used for the illustration
+of interaction inference through deep learning in Strydom, Catchen, et
+al., 2021), and its adjacency matrix has full rank (\emph{i.e.} it
+represents a space with 121 dimensions). All analyses were done using
+Julia (Bezanson et al., 2017) version 1.7.2, \emph{Makie.jl}
+(\textbf{Danisch2021MakJl?}), and \emph{EcologicalNetworks.jl} (Poisot
+et al., 2019).
+
+\hypertarget{the-metaweb-embeds-both-ecological-hypotheses-and-practices}{%
+\section{The metaweb embeds both ecological hypotheses and
+practices}\label{the-metaweb-embeds-both-ecological-hypotheses-and-practices}}
 
 The goal of metaweb inference is to provide information about the
 interactions between species at a large spatial scale. But as Herbert
@@ -859,6 +876,11 @@ Bartomeus, I., Gravel, D., Tylianakis, J. M., Aizen, M. A., Dickie, I.
 A., \& Bernard-Verdier, M. (2016). A common framework for identifying
 linkage rules across different types of interactions. \emph{Functional
 Ecology}, \emph{30}(12), 1894--1903.
+
+\leavevmode\hypertarget{ref-Bezanson2017JulFre}{}%
+Bezanson, J., Edelman, A., Karpinski, S., \& Shah, V. (2017). Julia: A
+Fresh Approach to Numerical Computing. \emph{SIAM Review}, \emph{59}(1),
+65--98. \url{https://doi.org/10.1137/141000671}
 
 \leavevmode\hypertarget{ref-Botella2022AppGra}{}%
 Botella, C., Dray, S., Matias, C., Miele, V., \& Thuiller, W. (2022). An
@@ -1133,6 +1155,11 @@ Pichler, M., Boreux, V., Klein, A.-M., Schleuning, M., \& Hartig, F.
 species interactions in ecological networks. \emph{Methods in Ecology
 and Evolution}, \emph{11}(2), 281--293.
 \url{https://doi.org/10.1111/2041-210X.13329}
+
+\leavevmode\hypertarget{ref-Poisot2019EcoJl}{}%
+Poisot, T., Belisle, Z., Hoebeke, L., Stock, M., \& Szefer, P. (2019).
+EcologicalNetworks.jl - analysing ecological networks. \emph{Ecography}.
+\url{https://doi.org/10.1111/ecog.04310}
 
 \leavevmode\hypertarget{ref-Poisot2016StrPro}{}%
 Poisot, T., Cirtwill, A. R., Cazelles, K., Gravel, D., Fortin, M.-J., \&
