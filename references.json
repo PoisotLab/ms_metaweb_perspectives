@@ -5566,8 +5566,15 @@
             }
         ],
         "container-title": "Methods in Ecology and Evolution",
-        "id": "StrydomFooWeb",
+        "id": "Strydom2022FooWeb",
         "issue": "n/a",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
         "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
         "type": "article-journal",
         "volume": "n/a"

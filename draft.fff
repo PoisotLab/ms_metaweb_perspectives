@@ -13,15 +13,15 @@ in the data differently (see fig.~\ref{fig:illustration}), much like
 with a principal component analysis. From a low-dimensional feature
 vector, it is possible to develop predictive approaches. Nodes in an
 ecological network are usually species (\textbf{C}), for which we can
-leverage phylogenetic relatedness (\emph{e.g.}
-\textbf{Strydom2022FooWeb?}) or functional traits to fill the values of
-additional species we would like to project in this space (here for
-nodes I, J, K, and L) from the embedding of known species (here, nodes
-A, B, C, and D). Because embeddings can be projected back to a graph,
-this allows us to reconstruct a network with these new species
-(\textbf{D}). This entire cycle constitutes an instance of transfer
-learning, where the transfered information is the representation of
-graph \textbf{A} through its embedding.}\label{fig:embedding}
+leverage phylogenetic relatedness (\emph{e.g.} Strydom et al., 2022) or
+functional traits to fill the values of additional species we would like
+to project in this space (here for nodes I, J, K, and L) from the
+embedding of known species (here, nodes A, B, C, and D). Because
+embeddings can be projected back to a graph, this allows us to
+reconstruct a network with these new species (\textbf{D}). This entire
+cycle constitutes an instance of transfer learning, where the transfered
+information is the representation of graph \textbf{A} through its
+embedding.}\label{fig:embedding}
 }
 \end{figure}
 \efloatseparator
