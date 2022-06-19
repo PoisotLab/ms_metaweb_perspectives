@@ -228,6 +228,10 @@ represents a space with 121 dimensions). All analyses were done using Julia
 [@Bezanson2017JulFre] version 1.7.2, *Makie.jl* [@Danisch2021MakJl], and
 *EcologicalNetworks.jl* [@Poisot2019EcoJl].
 
+@fig:illustration
+
+![Need to add text here](figures/illustration.png){#fig:illustration}
+
 # The metaweb embeds both ecological hypotheses and practices
 
 The goal of metaweb inference is to provide information about the interactions
