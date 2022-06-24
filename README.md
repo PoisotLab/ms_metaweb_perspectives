@@ -120,23 +120,24 @@ embedding.](figures/conceptual_2.png){#fig:embedding}
 
 Graph (or Network) embedding (@fig:embedding) is a family of machine learning
 techniques, whose main task is to learn a mapping function from a discrete graph
-to a continuous domain [@Arsov2019NetEmb]. Their main goal is to learn a low
-dimensional vector representations for the nodes of the graph (embeddings), such
-that key properties of the graph (e.g. local or global structures) are retained
-in the embedding space[@Yan2005GraEmb]. Ecological networks are an interesting
-candidate for the widespread application of embeddings, as they tend to possess
-a shared structural backbone [@BramonMora2018IdeCom], which hints at structural
-invariants that can be revealed at lower dimensions. Indeed, food webs are
-inherently low-dimensional objects, and can be adequately represented with less
-than ten dimensions [@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by
-@Botella2022AppGra suggest that there is no best method to identify
-architectural similarities between networks, and that multiple approaches need
-to be tested and compared to the network descriptor of interest. This matches
-previous, more general results on graph embedding, which suggest that the choice
-of embedding algorithm matters for the results [@Goyal2018GraEmb]. In
-@tbl:methods, we present a selection of common graph and node embedding methods,
-alongside examples of their use to predict species interactions; most of these
-methods rely either on linear algebra, or on pseudo-random walks on graphs.
+to a continuous domain [@Arsov2019NetEmb; @Chami2022MacLea]. Their main goal is
+to learn a low dimensional vector representations for the nodes of the graph
+(embeddings), such that key properties of the graph (e.g. local or global
+structures) are retained in the embedding space[@Yan2005GraEmb]. Ecological
+networks are an interesting candidate for the widespread application of
+embeddings, as they tend to possess a shared structural backbone
+[@BramonMora2018IdeCom], which hints at structural invariants that can be
+revealed at lower dimensions. Indeed, food webs are inherently low-dimensional
+objects, and can be adequately represented with less than ten dimensions
+[@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by @Botella2022AppGra
+suggest that there is no best method to identify architectural similarities
+between networks, and that multiple approaches need to be tested and compared to
+the network descriptor of interest. This matches previous, more general results
+on graph embedding, which suggest that the choice of embedding algorithm matters
+for the results [@Goyal2018GraEmb]. In @tbl:methods, we present a selection of
+common graph and node embedding methods, alongside examples of their use to
+predict species interactions; most of these methods rely either on linear
+algebra, or on pseudo-random walks on graphs.
 
 One prominent family of approaches we do not discuss in the present manuscript
 is Graph Neural Networks [GNN; @Zhou2020GraNeu]. GNN are, in a sense, a method
@@ -177,9 +178,9 @@ interactions. These methods have not yet been routinely used to predict species
 interactions; most examples that we identified were either statistical
 associations, or analogues to joint species distribution models. $^a$:
 statistical interactions; $^b$: joint-SDM-like approach. Note that tSNE has been
-included because it is frequently used to embedd graphs, despite not being,
-strictly speaking, a graph embedding technique [see *e.g.* @Chami2022MacLea]
-{#tbl:methods}
+included because it is frequently used to embedd graphs, including of species
+associations/interactions, despite not being strictly speaking, a graph
+embedding technique [see *e.g.* @Chami2022MacLea] {#tbl:methods}
 
 The popularity of graph embedding techniques in machine learning is more than
 the search for structural invariants: graphs are discrete objects, and machine
