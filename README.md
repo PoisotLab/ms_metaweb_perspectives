@@ -56,7 +56,7 @@ and transfer learning) can be used to overcome data limitations to metaweb
 inference, and highlight how the use of metawebs introduces important questions
 for the field of network ecology.
 
-# The metaweb is an inherently probabilistic object
+# A metaweb is an inherently probabilistic object
 
 Treating interactions as probabilistic (as opposed to binary) events is a more
 nuanced and realistic way to represent them. @Dallas2017PreCry suggested that
@@ -79,9 +79,9 @@ there have been documented instances of food webs undergoing rapid
 collapse/recovery cycles over short periods of time [*e.g.*
 @Pedersen2017SigCol]. These considerations emphasize why metaweb predictions
 should focus on quantitative (preferentially probabilistic) predictions; this
-should constrain the suite of appropriate models.
+should constrain the suite of appropriate models used to predict them.
 
-Yet it is important to recall that a metaweb is intended as a catalogue of all
+It is important to recall that a metaweb is intended as a catalogue of all
 potential interactions, which is then filtered [@Morales-Castilla2015InfBio]. In
 a sense, that most ecological interactions are elusive can call for a slightly
 different approach to sampling: once the common interactions are documented, the
@@ -117,12 +117,12 @@ embedding.](figures/conceptual_2.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
 
-Graph embedding (@fig:embedding) is a varied family of machine learning
-techniques aiming to transform nodes and edges into a vector space
-[@Arsov2019NetEmb], usually of a lower dimension, whilst maximally retaining key
-properties of the graph [@Yan2005GraEmb]. Ecological networks are an interesting
-candidate for the widespread application of embeddings, as they tend to possess
-a shared structural backbone [@BramonMora2018IdeCom], which hints at structural
+Graph embedding (@fig:embedding) is a family of machine learning techniques
+aiming to transform nodes and edges into a vector space [@Arsov2019NetEmb],
+usually of a lower dimension, whilst maximally retaining key properties of the
+graph [@Yan2005GraEmb]. Ecological networks are an interesting candidate for the
+widespread application of embeddings, as they tend to possess a shared
+structural backbone [@BramonMora2018IdeCom], which hints at structural
 invariants that can be revealed at lower dimensions. Indeed, food webs are
 inherently low-dimensional objects, and can be adequately represented with less
 than ten dimensions [@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by
@@ -136,7 +136,7 @@ alongside examples of their use to predict species interactions; most of these
 methods rely either on linear algebra, or on pseudo-random walks on graphs.
 
 One prominent family of approaches we do not discuss in the present manuscript
-is Graph Neural Networks [GNN; @Zhou2020GraNeu]; GNN are, in a sense, a method
+is Graph Neural Networks [GNN; @Zhou2020GraNeu]. GNN are, in a sense, a method
 to embed a graph into a dense subspace, but belong to the family of deep
 learning methods, which has its own set of practices [see *e.g.*
 @Goodfellow2016DeeLea]. An important issue with methods based on deep learning
@@ -202,7 +202,7 @@ Canada based on knowledge of European species, despite a limited ($\approx$ 5%)
 taxonomic overlap.
 
 Graph embeddings *can* serve as a dimensionality reduction method. For example,
-RDPG [@Strydom2022FooWeb] and t-SVD [truncated singular value decomposition;
+RDPG [@Strydom2022FooWeb] and t-SVD [truncated Singular Value Decomposition;
 @Poisot2021ImpMam] typically embed networks using fewer dimensions than the
 original network [the original network has as many dimensions as species, and as
 many informative dimensions as trophically unique species; @Strydom2021SvdEnt].
@@ -220,18 +220,18 @@ reduction can affect the quality of the embedding.
 # An illustration of metaweb embedding
 
 In this section, we illustrate the embedding of a collection of bipartite
-networks collected by @Hadfield2014TalTwo, using truncated Singular Value
-Decomposition (t-SVD) and RDPG [see @Strydom2022FooWeb for the full details].
-Briefly, an RDPG decomposes a network into two subspaces (left and right), which
-are matrices that when multiplied give an approximation of the original network.
-The code to reproduce this example is available as supplementary material [note,
-for the sake of comparison, that @Strydom2021RoaPre have an example using
-embedding through PCA followed by prediction using a deep neural network on the
-same dataset]. The resulting (binary) metaweb $\mathcal{M}$ has 2131
-interactions between 206 parasites and 121 hosts, and its adjacency matrix has
-full rank (*i.e.* it represents a space with 121 dimensions). All analyses were
-done using Julia [@Bezanson2017JulFre] version 1.7.2, *Makie.jl*
-[@Danisch2021MakJl], and *EcologicalNetworks.jl* [@Poisot2019EcoJl].
+networks collected by @Hadfield2014TalTwo, using t-SVD and RDPG [see
+@Strydom2022FooWeb for the full details]. Briefly, an RDPG decomposes a network
+into two subspaces (left and right), which are matrices that when multiplied
+give an approximation of the original network. The code to reproduce this
+example is available as supplementary material [note, for the sake of
+comparison, that @Strydom2021RoaPre have an example using embedding through PCA
+followed by prediction using a deep neural network on the same dataset]. The
+resulting (binary) metaweb $\mathcal{M}$ has 2131 interactions between 206
+parasites and 121 hosts, and its adjacency matrix has full rank (*i.e.* it
+represents a space with 121 dimensions). All analyses were done using Julia
+[@Bezanson2017JulFre] version 1.7.2, *Makie.jl* [@Danisch2021MakJl], and
+*EcologicalNetworks.jl* [@Poisot2019EcoJl].
 
 ![Illustration of an embedding for an host-parasite metaweb, using Random Dot
 Product Graphs. **A**, decrease in approximation error as the number of
@@ -250,23 +250,24 @@ often a trade-off between the number of dimensions to use (more dimensions are
 more computationally demanding) and the quality of the representation. In this
 instance, accepting $L_2 = 500$ as an approximation of the network means that
 the error for every position in the metaweb is $\approx \left(500/(206\times
-121)\right)^{1/2}$. In **B**, we show the positions of hosts and parasites on
-the first two dimensions of the left and right subspaces. Note that these values
-largely skew negative, because the first dimensions capture the coarse structure
-of the network: most pairs of species do not interact, and therefore have
-negative values. In **C**, we show the predicted weight (*i.e.* the result of
-the multiplication of the RDGP subspaces at a rank of 25) as a function of
-whether the interactions are observed, not-observed, or unknown due to lack of
-co-occurence. This reveals that the obserbed interactions have higher predicted
-weights, although there is some overlap; the usual approach to identify possible
-interactions based on this information would be a thresholding analysis, which
-is outside the scope of this manuscript (and is done in the papers cited in this
-illustration). Note that the values are not bound to the unit interval, which
-emphasizes the need for either scaling or clamping (although thresholding
-analyses are insensitive to this choice). Finally, in **D**, we show that the
-embedding, as it captures structural information about the network, holds
-ecological information; indeed, the position of the parasite on the first
-dimension of the left sub-space is a linear predictor of its number of hosts.
+121)\right)^{1/2}$. In @fig:illustration, panel **B**, we show the positions of
+hosts and parasites on the first two dimensions of the left and right subspaces.
+Note that these values largely skew negative, because the first dimensions
+capture the coarse structure of the network: most pairs of species do not
+interact, and therefore have negative values. In @fig:illustration, panel **C**,
+we show the predicted weight (*i.e.* the result of the multiplication of the
+RDGP subspaces at a rank of 25) as a function of whether the interactions are
+observed, not-observed, or unknown due to lack of co-occurence. This reveals
+that the obserbed interactions have higher predicted weights, although there is
+some overlap; the usual approach to identify possible interactions based on this
+information would be a thresholding analysis, which is outside the scope of this
+manuscript (and is done in the papers cited in this illustration). Note that the
+values are not bound to the unit interval, which emphasizes the need for either
+scaling or clamping (although thresholding analyses are insensitive to this
+choice). Finally, in @fig:illustration, panel **D**, we show that the embedding,
+as it captures structural information about the network, holds ecological
+information; indeed, the position of the parasite on the first dimension of the
+left sub-space is a linear predictor of its number of hosts.
 
 # The metaweb embeds both ecological hypotheses and practices
 
@@ -288,21 +289,21 @@ indicated by large confidence intervals during estimation of the values in the
 low-rank space, meaning that the representation of the original graph is
 difficult to transfer to the new problem. In addition, other problems can arise
 due to non-overlapping trait distributions in the known and unknown species.
-Alternatively a metaweb is too large (taxonomically), then the resulting
-embeddings would need to represent interactions between taxonomic groups that
-are not present in the new location. This would lead to a much higher variance
-in the starting dataset, and to under-dispersal in the target dataset, resulting
-in the potential under or over estimation of the strength of new predicted
-interactions. The lack of well documented metawebs is currently preventing the
-development of more concrete guidelines. The question of phylogenetic
-relatedness and dispersal is notably true if the metaweb is assembled in an area
-with mostly endemic species (*e.g.* a system that has undergone recent radiation
-and might not have an analogous system with which to draw knowledge from), and
-as with every predictive algorithm, there is room for the application of our
-best ecological judgement. Because this problem relates to dispersal of species
-in the geographic or phylogenetic space, it can certainly be approached through
-assessing the performance of embedding transfer in simulated starting/target
-species pools.
+Alternatively the initial metaweb is too large (taxonomically), then the
+resulting embeddings would need to represent interactions between taxonomic
+groups that are not present in the new location. This would lead to a much
+higher variance in the starting dataset, and to under-dispersal in the target
+dataset, resulting in the potential under or over estimation of the strength of
+new predicted interactions. The lack of well documented metawebs is currently
+preventing the development of more concrete guidelines. The question of
+phylogenetic relatedness and dispersal is notably true if the metaweb is
+assembled in an area with mostly endemic species (*e.g.* a system that has
+undergone recent radiation and might not have an analogous system with which to
+draw knowledge from), and as with every predictive algorithm, there is room for
+the application of our best ecological judgement. Because this problem relates
+to dispersal of species in the geographic or phylogenetic space, it can
+certainly be approached through assessing the performance of embedding transfer
+in simulated starting/target species pools.
 
 The second series of problems relate to determining which area should be used to
 infer the new metaweb in, as this determines the species pool that must be used.
