@@ -156,7 +156,7 @@ uptake of next-generation biomonitoring techniques does indeed deliver larger
 datasets on species interactions [@Bohan2017NexGlo], there is a potential for
 GNN to become an applicable embedding/predictive technique in the coming years.
 
-| Method        | Embedded object | Embedding technique    | Reference            | Application in species interactions      |
+| Method        | Object          | Technique              | Reference            | Application                              |
 | ------------- | --------------- | ---------------------- | -------------------- | ---------------------------------------- |
 | tSNE          | nodes           | statistical divergence | @Hinton2002StoNei    | @Gibb2021DatPro; @Cieslak2020TdiSto $^a$ |
 | LINE          | nodes           | statistical divergence | @Tang2015LinLar      |                                          |
