@@ -118,12 +118,14 @@ embedding.](figures/conceptual_2.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
 
-Graph embedding (@fig:embedding) is a family of machine learning techniques
-aiming to transform nodes and edges into a vector space [@Arsov2019NetEmb],
-usually of a lower dimension, whilst maximally retaining key properties of the
-graph [@Yan2005GraEmb]. Ecological networks are an interesting candidate for the
-widespread application of embeddings, as they tend to possess a shared
-structural backbone [@BramonMora2018IdeCom], which hints at structural
+Graph (or Network) embedding (@fig:embedding) is a family of machine learning
+techniques, whose main task is to learn a mapping function from a discrete graph
+to a continuous domain [@Arsov2019NetEmb]. Their main goal is to learn a low
+dimensional vector representations for the nodes of the graph (embeddings), such
+that key properties of the graph (e.g. local or global structures) are retained
+in the embedding space[@Yan2005GraEmb]. Ecological networks are an interesting
+candidate for the widespread application of embeddings, as they tend to possess
+a shared structural backbone [@BramonMora2018IdeCom], which hints at structural
 invariants that can be revealed at lower dimensions. Indeed, food webs are
 inherently low-dimensional objects, and can be adequately represented with less
 than ten dimensions [@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by
