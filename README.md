@@ -26,7 +26,7 @@ prediction of the network at a specific point within the spatial area it covers:
 it will have a different structure, notably by having a larger connectance [see
 *e.g.* @Wood2015EffSpa] and complexity [see *e.g.* @Galiana2022EcoNet], from any
 of these local networks. These local networks (which capture the $\alpha$
-diversity of interactions) are a subset of the metaweb's species and their
+diversity of interactions) are a subset of the metaweb's species and realized
 interactions, and have been called "metaweb realizations" [@Poisot2015SpeWhy].
 Differences between local networks and their metawebs are due to chance, species
 abundance and co-occurrence, local environmental conditions, and local
@@ -98,8 +98,8 @@ metaweb represents an aggregation of informative priors on the interactions,
 elusive information with the potential to boost our predictive ability
 [@Bartomeus2016ComFra].
 
-![Overview of the embedding process. A network (*A*), represented here as its
-adjacency matrix, is converted into a lower-dimensional object (*B*) where
+![Overview of the embedding process. A network (**A**), represented here as its
+adjacency matrix, is converted into a lower-dimensional object (**B**) where
 nodes, subgraphs, or edges have specific values (see @tbl:methods for an
 overview of methods and their use for species interactions). For the purposes of
 prediction, this low-dimensional object encodes feature vectors for *e.g.* the
@@ -200,7 +200,7 @@ project a metaweb of trophic interactions between European mammals, and
 transferred this information to mammals of Canada, using the phylogenetic
 distance between related clades to infer the values in the latent sub-space into
 which the European metaweb was projected. By performing the RDPG step on
-re-constructed value, this approach yields a probabilistic trophic metaweb for
+re-constructed values, this approach yields a probabilistic trophic metaweb for
 mammals of Canada based on knowledge of European species, despite a limited
 ($\approx$ 5%) taxonomic overlap.
 
@@ -247,30 +247,31 @@ parasite generalism.](figures/illustration.png){#fig:illustration}
 The embedding of the metaweb holds several pieces of information
 (@fig:illustration). In panel **A**, we show that the $L_2$ loss (*i.e.* the sum
 of squared errors) between the empirical and reconstructed metaweb decreases
-when number of dimensions (rank) of the subspace increases, with an inflection
-point around 25 dimensions. As discussed by @Runghen2021ExpNod, there is often a
-trade-off between the number of dimensions to use (more dimensions are more
-computationally demanding) and the quality of the representation. In this
-instance, accepting $L_2 = 500$ as an approximation of the network means that
-the error for every position in the metaweb is $\approx \left(500/(206\times
-121)\right)^{1/2}$. In @fig:illustration, panel **B**, we show the positions of
-hosts and parasites on the first two dimensions of the left and right subspaces.
-Note that these values largely skew negative, because the first dimensions
-capture the coarse structure of the network: most pairs of species do not
-interact, and therefore have negative values. In @fig:illustration, panel **C**,
-we show the predicted weight (*i.e.* the result of the multiplication of the
-RDGP subspaces at a rank of 25) as a function of whether the interactions are
-observed, not-observed, or unknown due to lack of co-occurrence. This reveals
-that the observed interactions have higher predicted weights, although there is
-some overlap; the usual approach to identify possible interactions based on this
-information would be a thresholding analysis, which is outside the scope of this
-manuscript (and is done in the papers cited in this illustration). Note that the
-values are not bound to the unit interval, which emphasizes the need for either
-scaling or clamping (although thresholding analyses are insensitive to this
-choice). Finally, in @fig:illustration, panel **D**, we show that the embedding,
-as it captures structural information about the network, holds ecological
-information; indeed, the position of the parasite on the first dimension of the
-left sub-space is a linear predictor of its number of hosts.
+when the number of dimensions (rank) of the subspace increases, with an
+inflection point around 25 dimensions. As discussed by @Runghen2021ExpNod, there
+is often a trade-off between the number of dimensions to use (more dimensions
+are more computationally demanding) and the quality of the representation. In
+this instance, accepting $L_2 = 500$ as an approximation of the network means
+that the error for every position in the metaweb is $\approx
+\left(500/(206\times 121)\right)^{1/2}$. In @fig:illustration, panel **B**, we
+show the positions of hosts and parasites on the first two dimensions of the
+left and right subspaces. Note that these values largely skew negative, because
+the first dimensions capture the coarse structure of the network: most pairs of
+species do not interact, and therefore have negative values. In
+@fig:illustration, panel **C**, we show the predicted weight (*i.e.* the result
+of the multiplication of the RDGP subspaces at a rank of 25) as a function of
+whether the interactions are observed, not-observed, or unknown due to lack of
+co-occurrence. This reveals that the observed interactions have higher predicted
+weights, although there is some overlap; the usual approach to identify
+potential interactions based on this information would be a thresholding
+analysis, which is outside the scope of this manuscript (and is done in the
+papers cited in this illustration). Note that the values are not bound to the
+unit interval, which emphasizes the need for either scaling or clamping
+(although thresholding analyses are insensitive to this choice). Finally, in
+@fig:illustration, panel **D**, we show that the embedding, as it captures
+structural information about the network, holds ecological information; indeed,
+the position of the parasite on the first dimension of the left sub-space is a
+linear predictor of its number of hosts.
 
 # The metaweb embeds both ecological hypotheses and practices
 
@@ -334,7 +335,7 @@ divisions, in large parts of the world, reflects nothing more than the legacy of
 settler colonialism, which drives a disparity in available ecological data.
 Applying any embedding to biased data does not debias them, but instead embeds
 these very same biases, propagating them to the machine learning models using
-embeddings tomake predictions. Indeed, the use of ecological data is not an
+embeddings to make predictions. Indeed, the use of ecological data is not an
 apolitical act [@Nost2021PolEco], as data infrastructures tend to be designed to
 answer questions within national boundaries (therefore placing contingencies on
 what is available to be embedded), and their use often draws upon and reinforces
@@ -344,10 +345,10 @@ generate knowledge) can be re-used for governance (*e.g.* enacting conservation
 decisions at the national scale). As information on species interaction networks
 structure is increasingly leveraged as a tool to guide conservation actions [see
 *e.g.* recent discussions for food-web based conservation; @Eero2021UseFoo;
-@Naman2022FooWeb; @Stier2017IntExp], the need to appraise and correct biases that
-are unwittingly propagated to algorithms when embedded from the original data is
-paramount. Predictive approaches deployed at the continental scale, no matter
-their intent, originate in the framework that contributed to the ongoing
+@Naman2022FooWeb; @Stier2017IntExp], the need to appraise and correct biases
+that are unwittingly propagated to algorithms when embedded from the original
+data is paramount. Predictive approaches deployed at the continental scale, no
+matter their intent, originate in the framework that contributed to the ongoing
 biodiversity crisis [@Adam2014EleTre] and reinforced environmental injustice
 [@Choudry2013SavBio; @Dominguez2020DecCon]. Particularly on Turtle Island and
 other territories that were traditionally stewarded by Indigenous people, these
