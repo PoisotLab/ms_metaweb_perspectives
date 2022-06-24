@@ -257,8 +257,8 @@ capture the coarse structure of the network: most pairs of species do not
 interact, and therefore have negative values. In @fig:illustration, panel **C**,
 we show the predicted weight (*i.e.* the result of the multiplication of the
 RDGP subspaces at a rank of 25) as a function of whether the interactions are
-observed, not-observed, or unknown due to lack of co-occurence. This reveals
-that the obserbed interactions have higher predicted weights, although there is
+observed, not-observed, or unknown due to lack of co-occurrence. This reveals
+that the observed interactions have higher predicted weights, although there is
 some overlap; the usual approach to identify possible interactions based on this
 information would be a thresholding analysis, which is outside the scope of this
 manuscript (and is done in the papers cited in this illustration). Note that the
