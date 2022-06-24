@@ -156,27 +156,29 @@ uptake of next-generation biomonitoring techniques does indeed deliver larger
 datasets on species interactions [@Bohan2017NexGlo], there is a potential for
 GNN to become an applicable embedding/predictive technique in the coming years.
 
-| Method        | Embedding approach                   |            Reference | Application in species interactions     |
-| :------------ | :----------------------------------- | -------------------: | --------------------------------------: |
-| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei |                 @Cieslak2020TdiSto $^a$ |
-| RDPG          | graph through SVD                    |     @Young2007RanDot | @Poisot2021ImpMam; @DallaRiva2016ExpEvo |
-| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |                       @Wardeh2021PreMam |
-| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                                         |
-| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                                         |
-| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                                         |
-| node2vec      | nodes embedding                      |    @Grover2016NodSca |                                         |
-| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                         |
-| DMSE          | joint nodes embedding                |      @Chen2017DeeMul |                    @Chen2017DeeMul $^b$ |
-| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                                         |
-| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |                  @Melnyk2020GraGra $^a$ |
-| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                                         |
+| Method        | Embedding approach                   |            Reference |      Application in species interactions |
+| :------------ | :----------------------------------- | -------------------: | ---------------------------------------: |
+| tSNE          | nodes through statistical divergence |    @Hinton2002StoNei | @Gibb2021DatPro; @Cieslak2020TdiSto $^a$ |
+| RDPG          | graph through SVD                    |     @Young2007RanDot |  @Poisot2021ImpMam; @DallaRiva2016ExpEvo |
+| DeepWalk      | graph walk                           |   @Perozzi2014DeeOnl |                        @Wardeh2021PreMam |
+| FastEmbed     | graph through PCA/SVD analogue       |  @Ramasamy2015ComSpe |                                          |
+| LINE          | nodes through statistical divergence |      @Tang2015LinLar |                                          |
+| SDNE          | nodes through auto-encoding          |      @Wang2016StrDee |                                          |
+| node2vec      | nodes embedding                      |    @Grover2016NodSca |                                          |
+| graph2vec     | sub-graph embedding                  | @Narayanan2017GraLea |                                          |
+| DMSE          | joint nodes embedding                |      @Chen2017DeeMul |                     @Chen2017DeeMul $^b$ |
+| HARP          | nodes through a meta-strategy        |      @Chen2017HarHie |                                          |
+| GraphKKE      | graph embedding                      |    @Melnyk2020GraGra |                   @Melnyk2020GraGra $^a$ |
+| Joint methods | multiple graphs                      |      @Wang2021JoiEmb |                                          |
 
 : Overview of some common graph embedding approaches, by time of publication,
 alongside examples of their use in the prediction of species interactions. These
 methods have not yet been routinely used to predict species interactions; most
 examples that we identified were either statistical associations, or analogues
 to joint species distribution models. $^a$: statistical interactions; $^b$:
-joint-SDM-like approach. {#tbl:methods}
+joint-SDM-like approach. Note that tSNE has been included because it is
+frequently used to embedd graphs, despite not being, strictly speaking, a graph
+embedding technique [see *e.g.* @Chami2022MacLea] {#tbl:methods}
 
 The popularity of graph embedding techniques in machine learning is more than
 the search for structural invariants: graphs are discrete objects, and machine
