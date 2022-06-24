@@ -1,23 +1,22 @@
-Being able to infer *potential* interactions could be the catalyst for
-significant breakthroughs in our ability to start thinking about species
-interaction networks over large spatial scales [@Hortal2015SevSho].
-Understanding species interactions holds enormous potential to not only
-understand and more rapidly learn about species interactions and metawebs, but
-also how changes in management of a single species may impact non-target
-species. In a recent overview of the field of ecological network prediction,
-@Strydom2021RoaPre identified two challenges of interest to the prediction of
-interactions at large scales. First, there is a relative scarcity of relevant
-data in most places globally -- paradoxically, this restricts our ability to
-infer interactions for locations where inference is perhaps the least required
-(and leaves us unable to make inference in regions without interaction data);
-second, accurate predictions often demand accurate predictors, and the lack of
-methods that can leverage small amount of *accurate* data is a serious
-impediment to our global predictive ability. In most places, our most reliable
-biodiversity knowledge is that of a species pool (*i.e.* a set of potentially
-interacting species in a given area): through the analysis of databases like
-GBIF or IUCN, it is possible to construct a list of species in a region of
-interest; but inferring the potential interactions between these species is
-difficult.
+Being able to infer *potential* interactions could serve as a significant
+breakthrough in our ability to start thinking about species interaction
+networks over large spatial scales [@Hortal2015SevSho]. Understanding species
+interactions holds enormous potential to not only understand and more rapidly
+learn about species interactions and metawebs, but also how changes in
+management of a single species may impact non-target species. In a recent
+overview of the field of ecological network prediction, @Strydom2021RoaPre
+identified two challenges of interest to the prediction of interactions at large
+scales. First, there is a relative scarcity of relevant data in most places
+globally -- paradoxically, this restricts our ability to infer interactions for
+locations where inference is perhaps the least required (and leaves us unable to
+make inference in regions without interaction data); second, accurate
+predictions often demand accurate predictors, and the lack of methods that can
+leverage small amount of *accurate* data is a serious impediment to our global
+predictive ability. In most places, our most reliable biodiversity knowledge is
+that of a species pool (*i.e.* a set of potentially interacting species in a
+given area): through the analysis of databases like GBIF or IUCN, it is possible
+to construct a list of species in a region of interest; but inferring the
+potential interactions between these species is difficult.
 
 Following the definition of @Dunne2006NetStr, a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories all
@@ -32,10 +31,10 @@ interactions, and have been called "metaweb realizations" [@Poisot2015SpeWhy].
 Differences between local networks and their metawebs are due to chance, species
 abundance and co-occurrence, local environmental conditions, and local
 distribution of functional traits, among others. Yet, recent results by
-@Saravia2021EcoNet strongly suggest that the local realizations only respond
-weakly to local conditions: instead, they reflect constraints inherited by the
-structure of their metaweb. This establishes the metaweb structure as the core
-goal of predictive network ecology, as it is a required information to
+@Saravia2021EcoNet strongly suggest that the local (metaweb) realizations only
+respond weakly to local conditions: instead, they reflect constraints inherited
+by the structure of their metaweb. This establishes the metaweb structure as the
+core goal of predictive network ecology, as it is a required information to
 accurately produce downscaled, local predictions.
 
 Because the metaweb represents the joint effect of functional, phylogenetic, and
@@ -69,7 +68,7 @@ generally expected that weak or rare links to be more prevalent in networks than
 common or rare links [@Csermely2004StrLin], compared to strong, persistent
 links; this is notably the case in food chains, wherein many weaker links are
 key to the stability of a system [@Neutel2002StaRea]. In the light of these
-observations, we expect to see an over-representation of low-probability
+observations, we expect to see an over-representation of low-probability (rare)
 interactions under a model that accurately predicts interaction probabilities.
 Yet the original metaweb definition, and indeed most past uses of metawebs, was
 based on the presence/absence of interactions. Moving towards *probabilistic*
@@ -192,23 +191,24 @@ confounded by the sparse nature of graph data, learning embeddings works in the
 low-dimensional space that maximizes information about the network structure.
 This approach is further justified by the observation, for example, that the
 macro-evolutionary history of a network is adequately represented by some graph
-embeddings [RDPG; see @DallaRiva2016ExpEvo]. In a recent publication,
-@Strydom2022FooWeb have used an embedding (based on RDPG) to project a metaweb
-of trophic interactions between European mammals, and transfered this
-information to mammals of Canada by using the phylogenetic distance between
-related clades to infer the values in the latent sub-space into which the
-metaweb was projected. By performing the RDPG step on re-constructed value, this
-approach yields a probabilistic trophic metaweb for mammals of Canada based on
-knowledge of European species, despite a limited ($\approx$ 5%) taxonomic
-overlap.
+embeddings [Random dot product graphs (RDPG); see @DallaRiva2016ExpEvo]. In a
+recent publication, @Strydom2022FooWeb have used an embedding (based on RDPG) to
+project a metaweb of trophic interactions between European mammals, and
+transfered this information to mammals of Canada by using the phylogenetic
+distance between related clades to infer the values in the latent sub-space into
+which the metaweb was projected. By performing the RDPG step on re-constructed
+value, this approach yields a probabilistic trophic metaweb for mammals of
+Canada based on knowledge of European species, despite a limited ($\approx$ 5%)
+taxonomic overlap.
 
 Graph embeddings *can* serve as a dimensionality reduction method. For example,
-RDPG [@Strydom2022FooWeb] and t-SVD [@Poisot2021ImpMam] typically embed networks
-using fewer dimensions than the original network [the original network has as
-many dimensions as species, and as many informative dimensions as trophically
-unique species; @Strydom2021SvdEnt]. But this is not necessarilly the case --
-indeed, one may perform a PCA (a special case of SVD) to project the raw data
-into a subspace that improves the efficacy of t-SNE [@Maaten2009LeaPar]. There
+RDPG [@Strydom2022FooWeb] and t-SVD [truncated singular value decomposition;
+@Poisot2021ImpMam] typically embed networks using fewer dimensions than the
+original network [the original network has as many dimensions as species, and as
+many informative dimensions as trophically unique species; @Strydom2021SvdEnt].
+But this is not necessarily the case -- indeed, one may perform a PCA (a special
+case of SVD) to project the raw data into a subspace that improves the efficacy
+of t-SNE [t-distributed stochastic neighbor embedding; @Maaten2009LeaPar]. There
 are many dimensionality reductions [@Anowar2021ConEmp] that can be applied to an
 embedded network should the need for dimensionality reduction (for example for
 data visualisation) arise. In brief, many graph embeddings *can* serve as
