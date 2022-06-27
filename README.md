@@ -162,15 +162,15 @@ GNN to become an applicable embedding/predictive technique in the coming years.
 | tSNE          | nodes           | statistical divergence | @Hinton2002StoNei    | @Gibb2021DatPro; @Cieslak2020TdiSto $^a$ |
 | LINE          | nodes           | statistical divergence | @Tang2015LinLar      |                                          |
 | SDNE          | nodes           | auto-encoding          | @Wang2016StrDee      |                                          |
-| node2vec      | nodes           |                        | @Grover2016NodSca    |                                          |
+| node2vec      | nodes           | biased random walk     | @Grover2016NodSca    |                                          |
 | HARP          | nodes           | meta-strategy          | @Chen2017HarHie      |                                          |
-| DMSE          | joint nodes     |                        | @Chen2017DeeMul      | @Chen2017DeeMul $^b$                     |
-| graph2vec     | sub-graph       |                        | @Narayanan2017GraLea |                                          |
+| DMSE          | joint nodes     | deep neural network    | @Chen2017DeeMul      | @Chen2017DeeMul $^b$                     |
+| graph2vec     | sub-graph       | skipgram network       | @Narayanan2017GraLea |                                          |
 | RDPG          | graph           | SVD                    | @Young2007RanDot     | @Poisot2021ImpMam; @DallaRiva2016ExpEvo  |
 | DeepWalk      | graph           | random walk            | @Perozzi2014DeeOnl   | @Wardeh2021PreMam                        |
-| FastEmbed     | graph           | eigendecomposition     | @Ramasamy2015ComSpe  |                                          |
-| GraphKKE      | graph           |                        | @Melnyk2020GraGra    | @Melnyk2020GraGra $^a$                   |
-| Joint methods | multiple graphs |                        | @Wang2021JoiEmb      |                                          |
+| FastEmbed     | graph           | eigen decomposition    | @Ramasamy2015ComSpe  |                                          |
+| GraphKKE      | graph           | spectral analysis      | @Melnyk2020GraGra    | @Melnyk2020GraGra $^a$                   |
+| Joint methods | multiple graphs | multiple strategies    | @Wang2021JoiEmb      |                                          |
 
 : Overview of some common graph embedding approaches, by type of embedded
 objects, alongside examples of their use in the prediction of species
@@ -178,7 +178,7 @@ interactions. These methods have not yet been routinely used to predict species
 interactions; most examples that we identified were either statistical
 associations, or analogues to joint species distribution models. $^a$:
 statistical interactions; $^b$: joint-SDM-like approach. Note that tSNE has been
-included because it is frequently used to embedd graphs, including of species
+included because it is frequently used to embed graphs, including of species
 associations/interactions, despite not being strictly speaking, a graph
 embedding technique [see *e.g.* @Chami2022MacLea] {#tbl:methods}
 
