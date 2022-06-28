@@ -134,7 +134,7 @@ graph\strut
 \end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright
 Laplacian eigenmap\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-(\textbf{Torres2020GleGeo?})\strut
+Torres et al. (2020)\strut
 \end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
 \strut
 \end{minipage}\tabularnewline
@@ -178,7 +178,7 @@ graph\strut
 \end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright
 eigen decomposition\strut
 \end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-(\textbf{S2013GraEmb?})\strut
+S \& Surendran (2013)\strut
 \end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
 Strydom, Catchen, et al. (2021)\strut
 \end{minipage}\tabularnewline

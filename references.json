@@ -5125,6 +5125,32 @@
         "type": "article-journal"
     },
     {
+        "URL": "https://www.semanticscholar.org/paper/Graph-Embedding-and-Dimensionality-Reduction-A-Surendran/3f413d591e4b2b876e033eeb9390e232ad4826ca",
+        "author": [
+            {
+                "family": "S",
+                "given": "Nishana S"
+            },
+            {
+                "family": "Surendran",
+                "given": "Subu"
+            }
+        ],
+        "container-title": "International Journal of Computer Science & Engineering Technology",
+        "id": "S2013GraEmb",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "title": "Graph Embedding and Dimensionality Reduction - A Survey",
+        "type": "article-journal",
+        "volume": "4"
+    },
+    {
         "DOI": "10.1111/1365-2656.13652",
         "author": [
             {
@@ -5302,6 +5328,7 @@
                 ]
             ]
         },
+        "number": "3489440",
         "publisher-place": "Rochester, NY",
         "title": "Algorithmic Risk Assessment in the Hands of Humans",
         "type": ""
@@ -5761,6 +5788,39 @@
         "title": "Knowledge extraction and semantic annotation of text from the encyclopedia of life",
         "type": "article-journal",
         "volume": "9"
+    },
+    {
+        "DOI": "10.1093/comnet/cnaa007",
+        "author": [
+            {
+                "family": "Torres",
+                "given": "Leo"
+            },
+            {
+                "family": "Chan",
+                "given": "Kevin S"
+            },
+            {
+                "family": "Eliassi-Rad",
+                "given": "Tina"
+            }
+        ],
+        "container-title": "Journal of Complex Networks",
+        "id": "Torres2020GleGeo",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2020,
+                    4,
+                    1
+                ]
+            ]
+        },
+        "page": "cnaa007",
+        "title": "GLEE: Geometric Laplacian Eigenmap Embedding",
+        "type": "article-journal",
+        "volume": "8"
     },
     {
         "author": [
