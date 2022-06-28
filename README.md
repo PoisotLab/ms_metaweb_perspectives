@@ -123,7 +123,7 @@ techniques, whose main task is to learn a mapping function from a discrete graph
 to a continuous domain [@Arsov2019NetEmb; @Chami2022MacLea]. Their main goal is
 to learn a low dimensional vector representations for the nodes of the graph
 (embeddings), such that key properties of the graph (e.g. local or global
-structures) are retained in the embedding space[@Yan2005GraEmb]. Ecological
+structures) are retained in the embedding space [@Yan2005GraEmb]. Ecological
 networks are an interesting candidate for the widespread application of
 embeddings, as they tend to possess a shared structural backbone
 [@BramonMora2018IdeCom], which hints at structural invariants that can be
