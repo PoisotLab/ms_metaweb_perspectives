@@ -1222,6 +1222,45 @@
         "volume": "12"
     },
     {
+        "URL": "http://jmlr.org/papers/v23/20-852.html",
+        "author": [
+            {
+                "family": "Chami",
+                "given": "Ines"
+            },
+            {
+                "family": "Abu-El-Haija",
+                "given": "Sami"
+            },
+            {
+                "family": "Perozzi",
+                "given": "Bryan"
+            },
+            {
+                "family": "R\u00e9",
+                "given": "Christopher"
+            },
+            {
+                "family": "Murphy",
+                "given": "Kevin"
+            }
+        ],
+        "container-title": "Journal of Machine Learning Research",
+        "id": "Chami2022MacLea",
+        "issue": "89",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "page": "1-64",
+        "title": "Machine Learning on Graphs: A Model and Comprehensive Taxonomy",
+        "type": "article-journal",
+        "volume": "23"
+    },
+    {
         "URL": "https://www.ijcai.org/proceedings/2017/509",
         "author": [
             {
@@ -2427,6 +2466,79 @@
         "title": "Phylogenetic patterns are not proxies of community assembly mechanisms (they are far better)",
         "type": "article-journal",
         "volume": "29"
+    },
+    {
+        "DOI": "10.1093/biosci/biab080",
+        "author": [
+            {
+                "family": "Gibb",
+                "given": "Rory"
+            },
+            {
+                "family": "Albery",
+                "given": "Gregory F"
+            },
+            {
+                "family": "Becker",
+                "given": "Daniel J"
+            },
+            {
+                "family": "Brierley",
+                "given": "Liam"
+            },
+            {
+                "family": "Connor",
+                "given": "Ryan"
+            },
+            {
+                "family": "Dallas",
+                "given": "Tad A"
+            },
+            {
+                "family": "Eskew",
+                "given": "Evan A"
+            },
+            {
+                "family": "Farrell",
+                "given": "Maxwell J"
+            },
+            {
+                "family": "Rasmussen",
+                "given": "Angela L"
+            },
+            {
+                "family": "Ryan",
+                "given": "Sadie J"
+            },
+            {
+                "family": "Sweeny",
+                "given": "Amy"
+            },
+            {
+                "family": "Carlson",
+                "given": "Colin J"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            }
+        ],
+        "container-title": "BioScience",
+        "id": "Gibb2021DatPro",
+        "issue": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    11,
+                    1
+                ]
+            ]
+        },
+        "page": "1148-1156",
+        "title": "Data Proliferation, Reconciliation, and Synthesis in Viral Ecology",
+        "type": "article-journal",
+        "volume": "71"
     },
     {
         "DOI": "10.1016/j.mex.2019.07.020",
