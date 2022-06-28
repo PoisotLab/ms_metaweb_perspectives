@@ -157,30 +157,34 @@ uptake of next-generation biomonitoring techniques does indeed deliver larger
 datasets on species interactions [@Bohan2017NexGlo], there is a potential for
 GNN to become an applicable embedding/predictive technique in the coming years.
 
-| Method        | Object          | Technique              | Reference            | Application                              |
-| ------------- | --------------- | ---------------------- | -------------------- | ---------------------------------------- |
-| tSNE          | nodes           | statistical divergence | @Hinton2002StoNei    | @Gibb2021DatPro; @Cieslak2020TdiSto $^a$ |
-| LINE          | nodes           | statistical divergence | @Tang2015LinLar      |                                          |
-| SDNE          | nodes           | auto-encoding          | @Wang2016StrDee      |                                          |
-| node2vec      | nodes           | biased random walk     | @Grover2016NodSca    |                                          |
-| HARP          | nodes           | meta-strategy          | @Chen2017HarHie      |                                          |
-| DMSE          | joint nodes     | deep neural network    | @Chen2017DeeMul      | @Chen2017DeeMul $^b$                     |
-| graph2vec     | sub-graph       | skipgram network       | @Narayanan2017GraLea |                                          |
-| RDPG          | graph           | SVD                    | @Young2007RanDot     | @Poisot2021ImpMam; @DallaRiva2016ExpEvo  |
-| DeepWalk      | graph           | random walk            | @Perozzi2014DeeOnl   | @Wardeh2021PreMam                        |
-| FastEmbed     | graph           | eigen decomposition    | @Ramasamy2015ComSpe  |                                          |
-| GraphKKE      | graph           | spectral analysis      | @Melnyk2020GraGra    | @Melnyk2020GraGra $^a$                   |
-| Joint methods | multiple graphs | multiple strategies    | @Wang2021JoiEmb      |                                          |
+| Method        | Object          | Technique                        | Reference            | Application                              |
+| ------------- | --------------- | -------------------------------- | -------------------- | ---------------------------------------- |
+| tSNE          | nodes           | statistical divergence           | @Hinton2002StoNei    | @Gibb2021DatPro; @Cieslak2020TdiSto $^a$ |
+| LINE          | nodes           | stochastic gradient descent      | @Tang2015LinLar      |                                          |
+| SDNE          | nodes           | gradient descent                 | @Wang2016StrDee      |                                          |
+| node2vec      | nodes           | stochastic gradient descent      | @Grover2016NodSca    |                                          |
+| HARP          | nodes           | meta-strategy                    | @Chen2017HarHie      |                                          |
+| DMSE          | joint nodes     | deep neural network              | @Chen2017DeeMul      | @Chen2017DeeMul $^b$                     |
+| graph2vec     | sub-graph       | skipgram network                 | @Narayanan2017GraLea |                                          |
+| RDPG          | graph           | SVD                              | @Young2007RanDot     | @Poisot2021ImpMam; @DallaRiva2016ExpEvo  |
+| GLEE          | graph           | Laplacian eigenmap               | @Torres2020GleGeo    |                                          |
+| DeepWalk      | graph           | stochastic gradient descent      | @Perozzi2014DeeOnl   | @Wardeh2021PreMam                        |
+| GraphKKE      | graph           | stochastic differential equation | @Melnyk2020GraGra    | @Melnyk2020GraGra $^a$                   |
+| FastEmbed     | graph           | eigen decomposition              | @Ramasamy2015ComSpe  |                                          |
+| PCA           | graph           | eigen decomposition              | @S2013GraEmb         | @Strydom2021RoaPre                       |
+| Joint methods | multiple graphs | multiple strategies              | @Wang2021JoiEmb      |                                          |
 
 : Overview of some common graph embedding approaches, by type of embedded
 objects, alongside examples of their use in the prediction of species
 interactions. These methods have not yet been routinely used to predict species
 interactions; most examples that we identified were either statistical
 associations, or analogues to joint species distribution models. $^a$:
-statistical interactions; $^b$: joint-SDM-like approach. Note that tSNE has been
-included because it is frequently used to embed graphs, including of species
-associations/interactions, despite not being strictly speaking, a graph
-embedding technique [see *e.g.* @Chami2022MacLea] {#tbl:methods}
+statistical interactions; $^b$: joint-SDM-like approach. Note that the row for
+PCA also applies to kernel/probabilistic PCA, which are variations on the more
+general method of SVD. Note further that tSNE has been included because it is
+frequently used to embed graphs, including of species associations/interactions,
+despite not being strictly speaking, a graph embedding technique [see *e.g.*
+@Chami2022MacLea] {#tbl:methods}
 
 The popularity of graph embedding techniques in machine learning is more than
 the search for structural invariants: graphs are discrete objects, and machine
