@@ -33,7 +33,7 @@ end
 # Before moving forward with the results, we will setup the multi-panel figure
 # used in main text:
 
-fig = Figure(resolution=(800, 550))
+fig = Figure(resolution=(800, 650))
 ax1 = Axis(fig[1, 1], xlabel="Rank", ylabel=" ", title="A", titlealign=:left)
 ax2 = Axis(fig[1, 2], xlabel="Dimension 1", ylabel="Dimension 2", title="B", titlealign=:left)
 ax3 = Axis(fig[2, 1], xlabel="Predicted weight", ylabel="Density", title="C", titlealign=:left)
