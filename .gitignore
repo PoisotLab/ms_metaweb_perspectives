@@ -9,5 +9,7 @@ abstract.json
 author_template.tsv
 _wc.docx
 
+Manifest.toml
+
 # MacOS nonsense
 .DS_Store
