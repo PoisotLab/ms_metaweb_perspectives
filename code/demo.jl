@@ -1,8 +1,9 @@
 # # Demonstration of metaweb embedding using RDPG
 
-using EcologicalNetworks
+using EcologicalNetworks, GBIF
 using CairoMakie
 using LinearAlgebra
+CairoMakie.activate!(; px_per_unit = 2)
 
 # The first step is to load a series of bipartite quantitative networks between
 # hosts and parasites, coming from the Hadfield et al. paper on host-parasite
@@ -25,19 +26,44 @@ M = reduce(∪, N)
 
 C = zeros(Int64, size(M))
 for n in N
-    i = indexin(species(n; dims=1), species(M; dims=1))
-    j = indexin(species(n; dims=2), species(M; dims=2))
+    i = indexin(species(n; dims = 1), species(M; dims = 1))
+    j = indexin(species(n; dims = 2), species(M; dims = 2))
     C[i, j] .+= 1
 end
 
 # Before moving forward with the results, we will setup the multi-panel figure
 # used in main text:
 
-fig = Figure(resolution=(800, 650))
-ax1 = Axis(fig[1, 1], xlabel="Rank", ylabel=" ", title="A", titlealign=:left)
-ax2 = Axis(fig[1, 2], xlabel="Dimension 1", ylabel="Dimension 2", title="B", titlealign=:left)
-ax3 = Axis(fig[2, 1], xlabel="Predicted weight", ylabel="Density", title="C", titlealign=:left)
-ax4 = Axis(fig[2, 2], xlabel="Dimension 1 (left-subspace)", ylabel="Number of hosts", title="D", titlealign=:left)
+fig = Figure(; resolution = (800, 950))
+ax1 = Axis(fig[1, 1]; xlabel = "Rank", ylabel = " ", title = "A", titlealign = :left)
+ax2 = Axis(
+    fig[1, 2];
+    xlabel = "Dimension 1",
+    ylabel = "Dimension 2",
+    title = "B",
+    titlealign = :left,
+)
+ax3 = Axis(
+    fig[2, 1];
+    xlabel = "Predicted weight",
+    ylabel = "Density",
+    title = "C",
+    titlealign = :left,
+)
+ax4 = Axis(
+    fig[2, 2];
+    xlabel = "Dimension 1 (left-subspace)",
+    ylabel = "Number of hosts",
+    title = "D",
+    titlealign = :left,
+)
+ax5 = Axis(
+    fig[3, 1:2];
+    ylabel = "Dimension 1 (left-subspace)",
+    title = "E",
+    titlealign = :left,
+    xticklabelrotation = π / 4,
+)
 current_figure()
 
 # The first thing we want to do is measure the L2 loss (the sum of squared
@@ -56,7 +82,7 @@ L2 = [sum((adjacency(M) - prod(rdpg(M, r))) .^ 2) ./ prod(size(M)) for r in rnk]
 
 # We add this to the first panel of the figure:
 
-lines!(ax1, rnk, L2; color=:black, label="L2 Loss")
+lines!(ax1, rnk, L2; color = :black, label = "L2 Loss")
 current_figure()
 
 # In order to identify the point of inflexion at which to perform the embedding,
@@ -67,7 +93,13 @@ current_figure()
 # the singular values of the SVD yielding the RDPG used for the embedding:
 
 singularvalues = svd(adjacency(M)).S
-lines!(ax1, rnk, singularvalues ./ sum(singularvalues); color=:red, label="Variance explained")
+lines!(
+    ax1,
+    rnk,
+    singularvalues ./ sum(singularvalues);
+    color = :red,
+    label = "Variance explained",
+)
 axislegend(ax1)
 current_figure()
 
@@ -78,11 +110,11 @@ sv = copy(singularvalues)
 diff = zeros(size(L2))
 for i in axes(diff, 1)
     if i == 1
-        diff[i] = sv[i+2] - 2sv[i+1] + sv[i]
+        diff[i] = sv[i + 2] - 2sv[i + 1] + sv[i]
     elseif i == length(diff)
-        diff[i] = sv[i] - 2sv[i-1] + sv[i-2]
+        diff[i] = sv[i] - 2sv[i - 1] + sv[i - 2]
     else
-        diff[i] = sv[i+1] - 2sv[i] + sv[i-1]
+        diff[i] = sv[i + 1] - 2sv[i] + sv[i - 1]
     end
 end
 
@@ -141,20 +173,56 @@ current_figure()
 # Another potentially useful visualisation is to look at the position of each
 # species on the first/second dimension of the relevant subspace.
 
-para = scatter!(ax2, L[:, 1], L[:, 2]; marker=:rect)
+para = scatter!(ax2, L[:, 1], L[:, 2]; marker = :rect)
 host = scatter!(ax2, R'[:, 1], R'[:, 2])
-axislegend(ax2, [para, host], ["Parasites", "Hosts"], position=:lb)
+axislegend(ax2, [para, host], ["Parasites", "Hosts"]; position = :lb)
 current_figure()
 
-# Finally, we can attempt to link the position on the first dimension to
-# ecologically relevant information, like *e.g.* the number of hosts:
+# We can now attempt to link the position on the first dimension to ecologically
+# relevant information, like *e.g.* the number of hosts:
 
-scatter!(ax4, L[:, 1], vec(sum(adjacency(M); dims=2)); color=:black)
+scatter!(ax4, L[:, 1], vec(sum(adjacency(M); dims = 2)); color = :black)
 current_figure()
 
-# This last line is saving the figure, which is used in main text.
+# Finally, we can reconcile the names in the original dataset with GBIF names to
+# look at the position on the first dimension of the parasite-subspace by taxonomic
+# family:
 
-save("figures/illustration.png", fig, px_per_unit=2)
+family = Vector{String}(undef, richness(M; dims = 1))
+for (i, s) in enumerate(species(M; dims = 1))
+    try
+        tax = GBIF.taxon(s; rank = :SPECIES, strict = true)
+        family[i] = tax.family.first
+    catch
+        family[i] = "Other"
+    end
+end
+
+# This is a simple plot to add to the figure:
+
+rainclouds!(
+    ax5,
+    family,
+    L[:,1];
+    plot_boxplots = true,
+    boxplot_width = 0.22,
+    boxplot_nudge = 0.25,
+    strokewidth = 0.0,
+    clouds = nothing,
+    datalimits = extrema,
+    orientation = :vertical,
+    markersize = 6,
+    side_nudge = -0.125,
+    jitter_width = 0.22,
+)
+current_figure()
+
+# These last lines are adjusting the layout for saving, and then saving the
+# figure, which is the one used in main text of the manuscript:
+
+colgap!(fig.layout, 20)
+rowgap!(fig.layout, 20)
+save("figures/illustration.png", fig; px_per_unit = 3)
 
 # Finally, we compile this document to a notebook, which constitutes the
 # supplementary material of the manuscript. Note that the lines to compile the
@@ -162,4 +230,8 @@ save("figures/illustration.png", fig, px_per_unit=2)
 # the Supp. Mat. of the article.
 
 using Literate #src
-Literate.notebook(@__FILE__, pwd(); config=Dict("execute" => false, "name" => "SupplementaryMaterial")) #src
+Literate.notebook(
+    @__FILE__,
+    pwd();
+    config = Dict("execute" => false, "name" => "SupplementaryMaterial"),
+) #src
