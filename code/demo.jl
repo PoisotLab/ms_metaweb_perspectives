@@ -35,7 +35,9 @@ end
 # used in main text:
 
 fig = Figure(; resolution = (800, 950))
-ax1 = Axis(fig[1, 1]; xlabel = "Rank", ylabel = " ", title = "A", titlealign = :left)
+fig[1, 1] = GridLayout()
+ax1a = Axis(fig[1, 1][1, 1]; ylabel = "L2 loss", title = "A", titlealign = :left)
+ax1b = Axis(fig[1, 1][2, 1]; xlabel = "Rank", ylabel = "Var. explained")
 ax2 = Axis(
     fig[1, 2];
     xlabel = "Dimension 1",
@@ -64,6 +66,7 @@ ax5 = Axis(
     titlealign = :left,
     xticklabelrotation = π / 4,
 )
+hidexdecorations!(ax1a; grid = false)
 current_figure()
 
 # The first thing we want to do is measure the L2 loss (the sum of squared
@@ -82,7 +85,7 @@ L2 = [sum((adjacency(M) - prod(rdpg(M, r))) .^ 2) ./ prod(size(M)) for r in rnk]
 
 # We add this to the first panel of the figure:
 
-lines!(ax1, rnk, L2; color = :black, label = "L2 Loss")
+lines!(ax1a, rnk, L2; color = :black)
 current_figure()
 
 # In order to identify the point of inflexion at which to perform the embedding,
@@ -94,13 +97,10 @@ current_figure()
 
 singularvalues = svd(adjacency(M)).S
 lines!(
-    ax1,
+    ax1b,
     rnk,
-    singularvalues ./ sum(singularvalues);
-    color = :red,
-    label = "Variance explained",
+    cumsum(singularvalues)./sum(singularvalues); color = :black,
 )
-axislegend(ax1)
 current_figure()
 
 # The finite differences methods to get the inflexion points proper is simply
@@ -203,7 +203,7 @@ end
 rainclouds!(
     ax5,
     family,
-    L[:,1];
+    L[:, 1];
     plot_boxplots = true,
     boxplot_width = 0.22,
     boxplot_nudge = 0.25,
