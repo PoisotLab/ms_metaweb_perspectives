@@ -273,8 +273,8 @@ current_figure()
 scatter!(
     figure2b,
     rodents.dimension,
-    rodents.bodymass,
-    color = :black
+    rodents.bodymass;
+    color = :black,
 )
 current_figure()
 
