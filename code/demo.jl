@@ -245,6 +245,8 @@ rodents.dim1 = R[1, species_index]
     :bodymass = $(Symbol("5-1_AdultBodyMass_g"))
 )
 
+rodents = @orderby(rodents, :family)
+
 # This is a simple plot to add to the figure:
 
 rainclouds!(
