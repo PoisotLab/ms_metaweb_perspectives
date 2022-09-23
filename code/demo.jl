@@ -1,8 +1,11 @@
 # # Demonstration of metaweb embedding using RDPG
 
-using EcologicalNetworks, GBIF
+using EcologicalNetworks
 using CairoMakie
 using LinearAlgebra
+import CSV
+using DataFrames
+using DataFramesMeta
 CairoMakie.activate!(; px_per_unit = 2)
 
 # The first step is to load a series of bipartite quantitative networks between
@@ -34,39 +37,35 @@ end
 # Before moving forward with the results, we will setup the multi-panel figure
 # used in main text:
 
-fig = Figure(; resolution = (800, 950))
-fig[1, 1] = GridLayout()
-ax1a = Axis(fig[1, 1][1, 1]; ylabel = "L2 loss", title = "A", titlealign = :left)
-ax1b = Axis(fig[1, 1][2, 1]; xlabel = "Rank", ylabel = "Var. explained")
-ax2 = Axis(
-    fig[1, 2];
-    xlabel = "Dimension 1",
-    ylabel = "Dimension 2",
+figure1 = Figure(; resolution = (950, 800))
+figure1a = Axis(
+    figure1[1, 1];
+    xlabel = "Rank",
+    ylabel = "L2 loss",
+    title = "A",
+    titlealign = :left,
+)
+figure1b = Axis(
+    figure1[1, 2];
+    xlabel = "Rank",
+    ylabel = "Variance explained",
     title = "B",
     titlealign = :left,
 )
-ax3 = Axis(
-    fig[2, 1];
-    xlabel = "Predicted weight",
-    ylabel = "Density",
+figure1c = Axis(
+    figure1[2, 1];
+    xlabel = "Dimension 1",
+    ylabel = "Dimension 2",
     title = "C",
     titlealign = :left,
 )
-ax4 = Axis(
-    fig[2, 2];
-    xlabel = "Dimension 1 (left-subspace)",
-    ylabel = "Number of hosts",
+figure1d = Axis(
+    figure1[2, 2];
+    xlabel = "Predicted weight",
+    ylabel = "Density",
     title = "D",
     titlealign = :left,
 )
-ax5 = Axis(
-    fig[3, 1:2];
-    ylabel = "Dimension 1 (left-subspace)",
-    title = "E",
-    titlealign = :left,
-    xticklabelrotation = π / 4,
-)
-hidexdecorations!(ax1a; grid = false)
 current_figure()
 
 # The first thing we want to do is measure the L2 loss (the sum of squared
@@ -85,7 +84,7 @@ L2 = [sum((adjacency(M) - prod(rdpg(M, r))) .^ 2) ./ prod(size(M)) for r in rnk]
 
 # We add this to the first panel of the figure:
 
-lines!(ax1a, rnk, L2; color = :black)
+lines!(figure1a, rnk, L2; color = :black)
 current_figure()
 
 # In order to identify the point of inflexion at which to perform the embedding,
@@ -97,9 +96,9 @@ current_figure()
 
 singularvalues = svd(adjacency(M)).S
 lines!(
-    ax1b,
+    figure1b,
     rnk,
-    cumsum(singularvalues)./sum(singularvalues); color = :black,
+    cumsum(singularvalues) ./ sum(singularvalues); color = :black,
 )
 current_figure()
 
@@ -127,6 +126,15 @@ end
 # approximation of the network.
 
 embedding_rank = last(findmin(abs.(diff)))
+
+# We can add it to the figure:
+scatter!(figure1a, [embedding_rank], [L2[embedding_rank]]; color = :black)
+scatter!(
+    figure1b,
+    [embedding_rank],
+    [(cumsum(singularvalues) ./ sum(singularvalues))[embedding_rank]];
+    color = :black,
+)
 
 # In the next steps, we will perform the RDPG embedding at this rank. We can
 # check the L2 loss associated with this representation:
@@ -158,11 +166,14 @@ P = L * R
 # observed. We simply plot the desntiy for each of these three situations and
 # add it to the figure:
 
-noc = density!(ax3, P[findall(iszero.(C))])
-pos = density!(ax3, P[findall(adjacency(M))])
-neg = density!(ax3, P[findall(iszero.(adjacency(M)) .& .~iszero.(C))])
-axislegend(ax3, [pos, neg, noc], ["Interactions", "Non-interactions", "No co-occurence"])
-current_figure()
+noc = density!(figure1d, P[findall(iszero.(C))])
+pos = density!(figure1d, P[findall(adjacency(M))])
+neg = density!(figure1d, P[findall(iszero.(adjacency(M)) .& .~iszero.(C))])
+axislegend(
+    figure1d,
+    [pos, neg, noc],
+    ["Interactions", "Non-interactions", "No co-occurence"],
+)
 
 # From this panel, it is rather clear that a lot of interactions without
 # documented co-occurrence have a lower assigned weight, and are therefore less
@@ -173,37 +184,73 @@ current_figure()
 # Another potentially useful visualisation is to look at the position of each
 # species on the first/second dimension of the relevant subspace.
 
-para = scatter!(ax2, L[:, 1], L[:, 2]; marker = :rect)
-host = scatter!(ax2, R'[:, 1], R'[:, 2])
+para = scatter!(figure1c, L[:, 1], L[:, 2]; marker = :rect)
+host = scatter!(figure1c, R'[:, 1], R'[:, 2])
 axislegend(ax2, [para, host], ["Parasites", "Hosts"]; position = :lb)
+current_figure()
+
+# We finally save a high-dpi version of the first figure to disk:
+
+save("figures/illustration-part1.png", figure1; px_per_unit = 3)
+
+# SETUP FIGURE 2
+
+figure2 = Figure(; resolution = (950, 800))
+figure2a = Axis(
+    figure2[1, 1];
+    xlabel = "Dimension 1 (right-subspace)",
+    ylabel = "Number of parasites",
+    title = "A",
+    titlealign = :left,
+)
+figure2b = Axis(
+    figure2[1, 2];
+    xlabel = "Dimension 1 (right-subspace)",
+    ylabel = "Body mass (grams)",
+    yscale = log10,
+    title = "B",
+    titlealign = :left,
+)
+figure2c = Axis(
+    figure2[2, 1:2];
+    ylabel = "Dimension 1 (right-subspace)",
+    title = "C",
+    titlealign = :left,
+    xticklabelrotation = π / 4,
+)
 current_figure()
 
 # We can now attempt to link the position on the first dimension to ecologically
 # relevant information, like *e.g.* the number of hosts:
 
-scatter!(ax4, L[:, 1], vec(sum(adjacency(M); dims = 2)); color = :black)
+scatter!(figure2a, R[1, :], vec(sum(adjacency(M); dims = 1)); color = :black)
 current_figure()
 
-# Finally, we can reconcile the names in the original dataset with GBIF names to
-# look at the position on the first dimension of the parasite-subspace by taxonomic
-# family:
+# We will now load the PnaTHERIA database to do TK
 
-family = Vector{String}(undef, richness(M; dims = 1))
-for (i, s) in enumerate(species(M; dims = 1))
-    try
-        tax = GBIF.taxon(s; rank = :SPECIES, strict = true)
-        family[i] = tax.family.first
-    catch
-        family[i] = "Other"
-    end
-end
+pantheria = DataFrame(CSV.File(joinpath(@__DIR__, "PanTHERIA_1-0_WR05_Aug2008.txt")))
+
+# The rows in PanTHERIA with
+
+vidx = filter(!isnothing, indexin(species(M; dims = 2), pantheria.MSW05_Binomial))
+rodents = pantheria[vidx, :]
+species_index = indexin(rodents.MSW05_Binomial, species(M; dims = 2))
+rodents.dim1 = R[1, species_index]
+
+@select!(
+    rodents,
+    :species = :MSW05_Binomial,
+    :family = :MSW05_Family,
+    :dimension = :dim1,
+    :bodymass = $(Symbol("5-1_AdultBodyMass_g"))
+)
 
 # This is a simple plot to add to the figure:
 
 rainclouds!(
-    ax5,
-    family,
-    L[:, 1];
+    figure2c,
+    rodents.family,
+    rodents.dimension;
     plot_boxplots = true,
     boxplot_width = 0.22,
     boxplot_nudge = 0.25,
@@ -217,12 +264,23 @@ rainclouds!(
 )
 current_figure()
 
-# These last lines are adjusting the layout for saving, and then saving the
-# figure, which is the one used in main text of the manuscript:
+#-
 
-colgap!(fig.layout, 20)
-rowgap!(fig.layout, 20)
-save("figures/illustration.png", fig; px_per_unit = 3)
+@subset!(rodents, :bodymass .>= 0.0)
+
+#-
+
+scatter!(
+    figure2b,
+    rodents.dimension,
+    rodents.bodymass,
+    color = :black
+)
+current_figure()
+
+#-
+
+save("figures/illustration-part2.png", figure2; px_per_unit = 3)
 
 # Finally, we compile this document to a notebook, which constitutes the
 # supplementary material of the manuscript. Note that the lines to compile the
