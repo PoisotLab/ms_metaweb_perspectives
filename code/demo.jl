@@ -186,14 +186,16 @@ axislegend(
 
 para = scatter!(figure1c, L[:, 1], L[:, 2]; marker = :rect)
 host = scatter!(figure1c, R'[:, 1], R'[:, 2])
-axislegend(ax2, [para, host], ["Parasites", "Hosts"]; position = :lb)
+axislegend(figure1c, [para, host], ["Parasites", "Hosts"]; position = :lb)
 current_figure()
 
 # We finally save a high-dpi version of the first figure to disk:
 
 save("figures/illustration-part1.png", figure1; px_per_unit = 3)
 
-# SETUP FIGURE 2
+# In the second figure, we will relate the embedding information to
+# taxonomic/ecological information about the species, using hosts as an
+# illustration:
 
 figure2 = Figure(; resolution = (950, 800))
 figure2a = Axis(
@@ -220,17 +222,20 @@ figure2c = Axis(
 )
 current_figure()
 
-# We can now attempt to link the position on the first dimension to ecologically
-# relevant information, like *e.g.* the number of hosts:
+# We can now link the position on the first dimension to ecologically relevant
+# information, like *e.g.* the number of parasites.
 
 scatter!(figure2a, R[1, :], vec(sum(adjacency(M); dims = 1)); color = :black)
 current_figure()
 
-# We will now load the PnaTHERIA database to do TK
+# We will now load the PanTHERIA database to get metadata and functional traits
+# on host species:
 
 pantheria = DataFrame(CSV.File(joinpath(@__DIR__, "PanTHERIA_1-0_WR05_Aug2008.txt")))
 
-# The rows in PanTHERIA with
+# We can match the PanTHERIA rows with species names, and extract the columns we
+# will use: species name, family, position on the first dimension, and finally
+# bodymass:
 
 vidx = filter(!isnothing, indexin(species(M; dims = 2), pantheria.MSW05_Binomial))
 rodents = pantheria[vidx, :]
@@ -247,7 +252,8 @@ rodents.dim1 = R[1, species_index]
 
 rodents = @orderby(rodents, :family)
 
-# This is a simple plot to add to the figure:
+# We can plot the positions on the first dimension by taxonomic family (outliers
+# do not appear on the boxplots):
 
 rainclouds!(
     figure2c,
@@ -266,11 +272,12 @@ rainclouds!(
 )
 current_figure()
 
-#-
+# To examine the relationship with functional traits, we remove the species with
+# no known bodymass:
 
 @subset!(rodents, :bodymass .>= 0.0)
 
-#-
+# And we can finally plot this as the last panel of the figure:
 
 scatter!(
     figure2b,
@@ -280,7 +287,7 @@ scatter!(
 )
 current_figure()
 
-#-
+# We save the figure to disk in the same way as before:
 
 save("figures/illustration-part2.png", figure2; px_per_unit = 3)
 
