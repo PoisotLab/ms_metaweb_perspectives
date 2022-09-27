@@ -465,8 +465,11 @@ in the prediction of species interactions. These methods have not yet
 been routinely used to predict species interactions; most examples that
 we identified were either statistical associations, or analogues to
 joint species distribution models. \(^a\): statistical interactions;
-\(^b\): joint-SDM-like approach. Note that the row for PCA also applies
-to kernel/probabilistic PCA, which are variations on the more general
+\(^b\): joint-SDM-like approach. Given the need to evaluate different
+methods on a problem-specific basis, the fact that a lot of methods have
+not been used on network problems is an opportunity for benchmarking and
+method development. Note that the row for PCA also applies to
+kernel/probabilistic PCA, which are variations on the more general
 method of SVD. Note further that tSNE has been included because it is
 frequently used to embed graphs, including of species
 associations/interactions, despite not being strictly speaking, a graph
@@ -667,7 +670,20 @@ can be learned; Runghen et al. (2021), for example, used a neural
 network to learn the embedding of a network in which not all
 interactions were known, based on the nodes' metadata. This example has
 many parallels in ecology (see fig.~\ref{fig:embedding} \textbf{C}), in
-which node metadata can be given by phylogeny or functional traits.
+which node metadata can be represented by phylogeny, abundance, or
+functional traits. Using phylogeny as a source of information assumes
+(or strives to capture) the action of evolutionary processes on network
+structure, which at least for food webs have been well documented
+\textbf{TK REF}; similarly, the use of functional traits assumes that
+interactions can be infered from the knowledge of trait-matching rules,
+which is similarly well supported in the empirical literature \textbf{TK
+REF}. Relating this information to an embedding rather than a list of
+networks measures would allow to capture their effect on the more
+fundamental aspects of network structure; conversely, the absence of a
+phylogenetic or functional signal may suggest that evolutionary/trait
+processes are not strong drivers of network structure, therefore opening
+a new way to perform hypothesis testing.
+
 Rather than directly predicting biological rules (see \emph{e.g.}
 Pichler et al., 2020 for an overview), which may be confounded by the
 sparse nature of graph data, learning embeddings works in the
