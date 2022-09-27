@@ -146,6 +146,9 @@ node embedding methods, alongside examples of their use to predict species
 interactions; most of these methods rely either on linear algebra, or on
 pseudo-random walks on graphs.
 
+@Gaucher2021OutDet - embeddings don't assume a specific structure of the
+network, add to previous paragraph
+
 One prominent family of approaches we do not discuss in the present manuscript
 is Graph Neural Networks [GNN; @Zhou2020GraNeu]. GNN are, in a sense, a method
 to embed a graph into a dense subspace, but belong to the family of deep
