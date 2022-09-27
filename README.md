@@ -125,19 +125,26 @@ to learn a low dimensional vector representations for the nodes of the graph
 (embeddings), such that key properties of the graph (e.g. local or global
 structures) are retained in the embedding space [@Yan2005GraEmb]. Ecological
 networks are an interesting candidate for the widespread application of
-embeddings, as they tend to possess a shared structural backbone
-[@BramonMora2018IdeCom], which hints at structural invariants that can be
-revealed at lower dimensions. Indeed, food webs are inherently low-dimensional
-objects, and can be adequately represented with less than ten dimensions
-[@Eklof2013DimEco; @Braga2019SpaAna]. Simulation results by @Botella2022AppGra
-suggest that there is no best method to identify architectural similarities
-between networks, and that multiple approaches need to be tested and compared to
-the network descriptor of interest. This matches previous, more general results
-on graph embedding, which suggest that the choice of embedding algorithm matters
-for the results [@Goyal2018GraEmb]. In @tbl:methods, we present a selection of
-common graph and node embedding methods, alongside examples of their use to
-predict species interactions; most of these methods rely either on linear
-algebra, or on pseudo-random walks on graphs.
+embeddings, as they tend to possess a shared structural backbone [see *e.g.*
+@BramonMora2018IdeCom for food webs], which hints at structural invariants in
+empirical data; assuming that these structural invariants are indeed widespread,
+they would dominate the structure of networks, and therefore be adequately
+captured by the first (lower) dimensions of an embedding, without the need to
+measure derived aspects of their structure (*e.g.* motifs, paths, modularity,
+...).
+
+Indeed, food webs are inherently low-dimensional objects, and can be adequately
+represented with less than ten dimensions [@Eklof2013DimEco; @Braga2019SpaAna].
+Simulation results by @Botella2022AppGra suggest that there is no best method to
+identify architectural similarities between networks, and that multiple
+approaches need to be tested and compared to the network descriptor of interest.
+This matches previous, more general results on graph embedding, which suggest
+that different embedding algorithms yield different network embeddings
+[@Goyal2018GraEmb], calling for a careful selection of the problem-specific
+approach to use. In @tbl:methods, we present a selection of common graph and
+node embedding methods, alongside examples of their use to predict species
+interactions; most of these methods rely either on linear algebra, or on
+pseudo-random walks on graphs.
 
 One prominent family of approaches we do not discuss in the present manuscript
 is Graph Neural Networks [GNN; @Zhou2020GraNeu]. GNN are, in a sense, a method
