@@ -186,12 +186,15 @@ objects, alongside examples of their use in the prediction of species
 interactions. These methods have not yet been routinely used to predict species
 interactions; most examples that we identified were either statistical
 associations, or analogues to joint species distribution models. $^a$:
-statistical interactions; $^b$: joint-SDM-like approach. Note that the row for
-PCA also applies to kernel/probabilistic PCA, which are variations on the more
-general method of SVD. Note further that tSNE has been included because it is
-frequently used to embed graphs, including of species associations/interactions,
-despite not being strictly speaking, a graph embedding technique [see *e.g.*
-@Chami2022MacLea] {#tbl:methods}
+statistical interactions; $^b$: joint-SDM-like approach. Given the need to
+evaluate different methods on a problem-specific basis, the fact that a lot of
+methods have not been used on network problems is an opportunity for
+benchmarking and method development. Note that the row for PCA also applies to
+kernel/probabilistic PCA, which are variations on the more general method of
+SVD. Note further that tSNE has been included because it is frequently used to
+embed graphs, including of species associations/interactions, despite not being
+strictly speaking, a graph embedding technique [see *e.g.* @Chami2022MacLea]
+{#tbl:methods}
 
 The popularity of graph embedding techniques in machine learning is more than
 the search for structural invariants: graphs are discrete objects, and machine
@@ -203,21 +206,32 @@ graph itself is a representation that can be learned; @Runghen2021ExpNod, for
 example, used a neural network to learn the embedding of a network in which not
 all interactions were known, based on the nodes' metadata. This example has many
 parallels in ecology (see @fig:embedding **C**), in which node metadata can be
-given by phylogeny or functional traits. Rather than directly predicting
-biological rules [see *e.g.* @Pichler2020MacLea for an overview], which may be
-confounded by the sparse nature of graph data, learning embeddings works in the
-low-dimensional space that maximizes information about the network structure.
-This approach is further justified by the observation, for example, that the
-macro-evolutionary history of a network is adequately represented by some graph
-embeddings [Random dot product graphs (RDPG); see @DallaRiva2016ExpEvo]. In a
-recent publication, @Strydom2022FooWeb have used an embedding (based on RDPG) to
-project a metaweb of trophic interactions between European mammals, and
-transferred this information to mammals of Canada, using the phylogenetic
-distance between related clades to infer the values in the latent sub-space into
-which the European metaweb was projected. By performing the RDPG step on
-re-constructed values, this approach yields a probabilistic trophic metaweb for
-mammals of Canada based on knowledge of European species, despite a limited
-($\approx$ 5%) taxonomic overlap.
+represented by phylogeny, abundance, or functional traits. Using phylogeny as a
+source of information assumes (or strives to capture) the action of evolutionary
+processes on network structure, which at least for food webs have been well
+documented **TK REF**; similarly, the use of functional traits assumes that
+interactions can be infered from the knowledge of trait-matching rules, which is
+similarly well supported in the empirical literature **TK REF**. Relating this
+information to an embedding rather than a list of networks measures would allow
+to capture their effect on the more fundamental aspects of network structure;
+conversely, the absence of a phylogenetic or functional signal may suggest that
+evolutionary/trait processes are not strong drivers of network structure,
+therefore opening a new way to perform hypothesis testing.
+
+Rather than directly predicting biological rules [see *e.g.* @Pichler2020MacLea
+for an overview], which may be confounded by the sparse nature of graph data,
+learning embeddings works in the low-dimensional space that maximizes
+information about the network structure. This approach is further justified by
+the observation, for example, that the macro-evolutionary history of a network
+is adequately represented by some graph embeddings [Random dot product graphs
+(RDPG); see @DallaRiva2016ExpEvo]. In a recent publication, @Strydom2022FooWeb
+have used an embedding (based on RDPG) to project a metaweb of trophic
+interactions between European mammals, and transferred this information to
+mammals of Canada, using the phylogenetic distance between related clades to
+infer the values in the latent sub-space into which the European metaweb was
+projected. By performing the RDPG step on re-constructed values, this approach
+yields a probabilistic trophic metaweb for mammals of Canada based on knowledge
+of European species, despite a limited ($\approx$ 5%) taxonomic overlap.
 
 Graph embeddings *can* serve as a dimensionality reduction method. For example,
 RDPG [@Strydom2022FooWeb] and t-SVD [truncated Singular Value Decomposition;
