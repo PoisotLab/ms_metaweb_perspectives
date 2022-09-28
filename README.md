@@ -14,9 +14,11 @@ are important for accurate predictions, and the lack of methods that can
 leverage a small amount of *accurate* data is a serious impediment to our
 predictive ability. In most places, our most reliable biodiversity knowledge is
 that of a species pool (*i.e.* a set of potentially interacting species in a
-given area): through the analysis of databases like GBIF or IUCN, it is possible
-to construct a list of species in a region of interest; but inferring the
-potential interactions between these species is difficult.
+given area): through the analysis of databases like the Global Biodiversity
+Information Facility (GBIF) or the International Union for the Conservation of
+Nature (IUCN), it is possible to construct a list of species in a region of
+interest; but inferring the potential interactions between these species is
+difficult.
 
 Following the definition of @Dunne2006NetStr, a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories all
@@ -30,12 +32,16 @@ diversity of interactions) are a subset of the metaweb's species and realized
 interactions, and have been called "metaweb realizations" [@Poisot2015SpeWhy].
 Differences between local networks and their metawebs are due to chance, species
 abundance and co-occurrence, local environmental conditions, and local
-distribution of functional traits, among others. Yet, recent results by
-@Saravia2021EcoNet strongly suggest that the local (metaweb) realizations only
-respond weakly to local conditions: instead, they reflect constraints inherited
-by the structure of their metaweb. This establishes the metaweb structure as the
-core goal of predictive network ecology, as it is a required information to
-accurately produce downscaled, local predictions.
+distribution of functional traits, among others. Specifically, although
+co-occurrence can be driven by interactions [@Cazelles2016TheSpe], co-occurrence
+alone is not a predictor of interactions [@Blanchet2020CooNot;
+@Thurman2019TesLin], and therefore lack of co-occurrence cannot be used to rule
+out lack of a feasible interaction. Yet, recent results by @Saravia2021EcoNet
+strongly suggest that the local (metaweb) realizations only respond weakly to
+local conditions: instead, they reflect constraints inherited by the structure
+of their metaweb. This establishes the metaweb structure as the core goal of
+predictive network ecology, as it is a required information to accurately
+produce downscaled, local predictions.
 
 Because the metaweb represents the joint effect of functional, phylogenetic, and
 macroecological processes [@Morales-Castilla2015InfBio], it holds valuable
@@ -108,22 +114,23 @@ aggregation of informative priors on the biological feasibility of interactions,
 which is usually hard to obtain yet has possibly the most potential to boost our
 predictive ability [@Bartomeus2016ComFra].
 
-![Overview of the embedding process. A network (**A**), represented here as its
-adjacency matrix, is converted into a lower-dimensional object (**B**) where
-nodes, subgraphs, or edges have specific values (see @tbl:methods for an
-overview of methods and their use for species interactions). For the purposes of
-prediction, this low-dimensional object encodes feature vectors for *e.g.* the
-nodes. Embedding also allows to visualize the structure in the data differently
-(see @fig:illustration), much like with a principal component analysis. From a
-low-dimensional feature vector, it is possible to develop predictive approaches.
-Nodes in an ecological network are usually species (**C**), for which we can
-leverage phylogenetic relatedness [*e.g.* @Strydom2022FooWeb] or functional
-traits to fill the values of additional species we would like to project in this
-space (here for nodes I, J, K, and L) from the embedding of known species (here,
-nodes A, B, C, and D). Because embeddings can be projected back to a graph, this
-allows us to reconstruct a network with these new species (**D**). This entire
-cycle constitutes an instance of transfer learning, where the transfered
-information is the representation of graph **A** through its
+![Overview of the embedding and transfer process. A network (**A**), represented
+here as its adjacency matrix, is converted into a lower-dimensional object
+(**B**) where nodes, subgraphs, or edges have specific values (see @tbl:methods
+for an overview of methods and their use for species interactions). For the
+purposes of prediction, this low-dimensional object encodes feature vectors for
+*e.g.* the nodes. Embedding also allows to visualize the structure in the data
+differently (see @fig:illustration), much like with a principal component
+analysis. From a low-dimensional feature vector, it is possible to develop
+predictive approaches. Nodes in an ecological network are usually species
+(**C**), for which we can leverage phylogenetic relatedness [*e.g.*
+@Strydom2022FooWeb] or functional traits to fill the values of additional
+species we would like to project in this space (here for nodes I, J, K, and L)
+from the embedding of known species (here, nodes A, B, C, and D). Because
+embeddings can be projected back to a graph, this allows us to reconstruct a
+network with these new species (**D**). This entire cycle constitutes an
+instance of transfer learning, where the transfered information is the
+representation of graph **A** through its
 embedding.](figures/conceptual_2.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
@@ -204,15 +211,17 @@ objects, alongside examples of their use in the prediction of species
 interactions. These methods have not yet been routinely used to predict species
 interactions; most examples that we identified were either statistical
 associations, or analogues to joint species distribution models. $^a$:
-statistical interactions; $^b$: joint-SDM-like approach. Given the need to
-evaluate different methods on a problem-specific basis, the fact that a lot of
-methods have not been used on network problems is an opportunity for
-benchmarking and method development. Note that the row for PCA also applies to
-kernel/probabilistic PCA, which are variations on the more general method of
-SVD. Note further that tSNE has been included because it is frequently used to
-embed graphs, including of species associations/interactions, despite not being
-strictly speaking, a graph embedding technique [see *e.g.* @Chami2022MacLea]
-{#tbl:methods}
+application is concerned with *statistical* interactions, which are not
+necessarilly direct biotic interactions; $^b$:application is concerned with
+joint-SDM-like approach, which is also very close to statistical associations as
+opposed to direct biotic interactions. Given the need to evaluate different
+methods on a problem-specific basis, the fact that a lot of methods have not
+been used on network problems is an opportunity for benchmarking and method
+development. Note that the row for PCA also applies to kernel/probabilistic PCA,
+which are variations on the more general method of SVD. Note further that tSNE
+has been included because it is frequently used to embed graphs, including of
+species associations/interactions, despite not being strictly speaking, a graph
+embedding technique [see *e.g.* @Chami2022MacLea] {#tbl:methods}
 
 The popularity of graph embedding techniques in machine learning is more than
 the search for structural invariants: graphs are discrete objects, and machine
@@ -227,14 +236,16 @@ parallels in ecology (see @fig:embedding **C**), in which node metadata can be
 represented by phylogeny, abundance, or functional traits. Using phylogeny as a
 source of information assumes (or strives to capture) the action of evolutionary
 processes on network structure, which at least for food webs have been well
-documented **TK REF**; similarly, the use of functional traits assumes that
-interactions can be infered from the knowledge of trait-matching rules, which is
-similarly well supported in the empirical literature **TK REF**. Relating this
-information to an embedding rather than a list of networks measures would allow
-to capture their effect on the more fundamental aspects of network structure;
-conversely, the absence of a phylogenetic or functional signal may suggest that
-evolutionary/trait processes are not strong drivers of network structure,
-therefore opening a new way to perform hypothesis testing.
+documented [@DallaRiva2016ExpEvo; @Stouffer2007EviExi; @Stouffer2012EvoCon];
+similarly, the use of functional traits assumes that interactions can be infered
+from the knowledge of trait-matching rules, which is similarly well supported in
+the empirical literature [@Bartomeus2013UndLin; @Bartomeus2016ComFra;
+@Gravel2013InfFoo]. Relating this information to an embedding rather than a list
+of networks measures would allow to capture their effect on the more fundamental
+aspects of network structure; conversely, the absence of a phylogenetic or
+functional signal may suggest that evolutionary/trait processes are not strong
+drivers of network structure, therefore opening a new way to perform hypothesis
+testing.
 
 Before moving further, it is important to clarify the epistemic status of node
 values derived from embeddings: specifically, they are *not* functional traits,
@@ -351,21 +362,23 @@ of hosts and parasite richness. **D**, distribution of positions alongside the
 same axis for hosts grouped by taxonomic
 family.](figures/illustration-part2.png){#fig:illustration2}
 
-As the results of @fig:illustration1 show that we can extract an embedding of
-the metaweb that captures enough variance to be relevant, in @fig:illustration2,
-we relate the values of latent variables for hosts to different
-ecologically-relevant data. In panel **A**, we show that host with a higher
-value on the first dimension have fewer parasites. This relates to the body size
-of hosts in the *PanTHERIA* database [@Jones2009PanSpe], as shown in panel
-**B**: interestingly, the position on the first axis is only weakly correlated
-to body mass of the host; this matches well establihed results showing that body
-size/mass is not always a direct predictor of parasite richness in terrestrial
-mammals [@Morand1998DenBod], a result we observe in panel **C**. Finally, in
-panel **D**, we can see how different taxonomic families occupy different
-positions on the first axis, with *e.g.* Sciuridae being biased towards higher
-values. These results show how we can look for ecological informations in the
-output of network embeddings, which can further be refined into the selection of
-predictors for transfer learning.
+The results of @fig:illustration1 show that we can extract an embedding of the
+metaweb that captures enough variance to be relevant; specifically, this is true
+both of $L_2$ loss (indicating that RDPG is able to capture pairwise processes)
+and the cumulative variance explained (indicating that RDPG is able to capture
+network-level structure). Therefore, in @fig:illustration2, we relate the values
+of latent variables for hosts to different ecologically-relevant data. In panel
+**A**, we show that host with a higher value on the first dimension have fewer
+parasites. This relates to the body size of hosts in the *PanTHERIA* database
+[@Jones2009PanSpe], as shown in panel **B**: interestingly, the position on the
+first axis is only weakly correlated to body mass of the host; this matches well
+establihed results showing that body size/mass is not always a direct predictor
+of parasite richness in terrestrial mammals [@Morand1998DenBod], a result we
+observe in panel **C**. Finally, in panel **D**, we can see how different
+taxonomic families occupy different positions on the first axis, with *e.g.*
+Sciuridae being biased towards higher values. These results show how we can look
+for ecological informations in the output of network embeddings, which can
+further be refined into the selection of predictors for transfer learning.
 
 # The metaweb embeds both ecological hypotheses and practices
 
