@@ -154,7 +154,15 @@ that different embedding algorithms yield different network embeddings
 approach to use. In @tbl:methods, we present a selection of common graph and
 node embedding methods, alongside examples of their use to predict species
 interactions; most of these methods rely either on linear algebra, or on
-pseudo-random walks on graphs.
+pseudo-random walks on graphs. All forms of embeddings presented in the table
+share the common property of summarizing their objects into (sets of) dense
+feature vectors, that capture the overall network structure, pairwise
+information on nodes, and emergent aspects of the network, in a compressed way
+(*i.e.* with some information loss, as we later discuss in the illustration).
+Node embeddings tend to focus on maintaining pairwise relationships, while graph
+embeddings focus on maintaining the network structure. Nevertheless, some graph
+embedding techniques [like RDPG, see *e.g.* @Wu2021MaxPos] will provide usable
+node-level embeddings.
 
 One prominent family of approaches we do not discuss in the present manuscript
 is Graph Neural Networks [GNN; @Zhou2020GraNeu]. GNN are, in a sense, a method
@@ -228,6 +236,17 @@ conversely, the absence of a phylogenetic or functional signal may suggest that
 evolutionary/trait processes are not strong drivers of network structure,
 therefore opening a new way to perform hypothesis testing.
 
+Before moving further, it is important to clarify the epistemic status of node
+values derived from embeddings: specifically, they are *not* functional traits,
+and therefore should not be discussed in terms of effects or responses. As per
+the framework of @Malaterre2019FunDiv, these values neither derive from, nor
+result in, changes in organismal fitness, and should therefore not be used to
+quantify *e.g.* functional diversity. This holds true even when there are
+correlations between latent values and functional traits: although these enable
+an ecological discussion of how traits condition the structure of the network,
+the existence of a statistical relationship does not elevate the latent values
+to the status of functional traits.
+
 Rather than directly predicting biological rules [see *e.g.* @Pichler2020MacLea
 for an overview], which may be confounded by the sparse nature of graph data,
 learning embeddings works in the low-dimensional space that maximizes
@@ -265,15 +284,18 @@ In this section, we illustrate the embedding of a collection of bipartite
 networks collected by @Hadfield2014TalTwo, using t-SVD and RDPG [see
 @Strydom2022FooWeb for the full details]. Briefly, an RDPG decomposes a network
 into two subspaces (left and right), which are matrices that when multiplied
-give an approximation of the original network. The code to reproduce this
-example is available as supplementary material [note, for the sake of
-comparison, that @Strydom2021RoaPre have an example using embedding through PCA
-followed by prediction using a deep neural network on the same dataset]. The
-resulting (binary) metaweb $\mathcal{M}$ has 2131 interactions between 206
-parasites and 121 hosts, and its adjacency matrix has full rank (*i.e.* it
-represents a space with 121 dimensions). All analyses were done using Julia
-[@Bezanson2017JulFre] version 1.7.2, *Makie.jl* [@Danisch2021MakJl], and
-*EcologicalNetworks.jl* [@Poisot2019EcoJl].
+give an approximation of the original network. RDPG has the particularly
+desirable properties of being a graph embedding technique that produces relevant
+node-level feature vectors, and provides good approximations of graphs with
+varied structures [@Athreya2017StaInf]. The code to reproduce this example is
+available as supplementary material [note, for the sake of comparison, that
+@Strydom2021RoaPre have an example using embedding through PCA followed by
+prediction using a deep neural network on the same dataset]. The resulting
+(binary) metaweb $\mathcal{M}$ has 2131 interactions between 206 parasites and
+121 hosts, and its adjacency matrix has full rank (*i.e.* it represents a space
+with 121 dimensions). All analyses were done using Julia [@Bezanson2017JulFre]
+version 1.7.2, *Makie.jl* [@Danisch2021MakJl], and *EcologicalNetworks.jl*
+[@Poisot2019EcoJl].
 
 ![Validation of an embedding for a host-parasite metaweb, using Random Dot
 Product Graphs. **A**, decrease in approximation error as the number of
