@@ -27,16 +27,38 @@ embedding.}\label{fig:embedding}
 \efloatseparator
  
 \begin{figure}
-\hypertarget{fig:illustration}{%
+\hypertarget{fig:illustration1}{%
 \centering
-\includegraphics{figures/illustration.png}
-\caption{Illustration of an embedding for an host-parasite metaweb,
-using Random Dot Product Graphs. \textbf{A}, decrease in approximation
-error as the number of dimensions in the subspaces increases.
-\textbf{B}, position of hosts and parasites in the first two dimensions
-of their respective subspaces. \textbf{C}, predicted interaction weight
-from the RDPG based on the status of the species pair in the metaweb.
-\textbf{D}, relationship between the position on the first dimension and
-parasite generalism.}\label{fig:illustration}
+\includegraphics{figures/illustration-part1.png}
+\caption{Validation of an embedding for a host-parasite metaweb, using
+Random Dot Product Graphs. \textbf{A}, decrease in approximation error
+as the number of dimensions in the subspaces increases. \textbf{B},
+increase in cumulative variance explained as the number of ranks
+considered increases; in \textbf{A} and \textbf{B}, the dot represents
+the point of inflexion in the curve (at rank 39) estimated using the
+finite differences method. \textbf{C}, position of hosts and parasites
+in the space of latent variables on the first and second dimensions of
+their respective subspaces (the results have been clamped to the unit
+interval). \textbf{D}, predicted interaction weight from the RDPG based
+on the status of the species pair in the
+metaweb.}\label{fig:illustration1}
+}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\hypertarget{fig:illustration2}{%
+\centering
+\includegraphics{figures/illustration-part2.png}
+\caption{Ecological analysis of an embedding for a host-parasite
+metaweb, using Random Dot Product Graphs. \textbf{A}, relationship
+between the number of parasites and position along the first axis of the
+right-subspace for all hosts, showing that the embedding captures
+elements of network structure at the species scale. \textbf{B}, weak
+relationship between the body mass of hosts (in grams) and the position
+alongside the same dimension. \textbf{C}, weak relationship between
+bodymass of hosts and parasite richness. \textbf{D}, distribution of
+positions alongside the same axis for hosts grouped by taxonomic
+family.}\label{fig:illustration2}
 }
 \end{figure}

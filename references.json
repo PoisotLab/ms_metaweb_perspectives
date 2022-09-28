@@ -2411,6 +2411,37 @@
         "volume": "173"
     },
     {
+        "DOI": "10.1016/j.csda.2021.107308",
+        "author": [
+            {
+                "family": "Gaucher",
+                "given": "Solenne"
+            },
+            {
+                "family": "Klopp",
+                "given": "Olga"
+            },
+            {
+                "family": "Robin",
+                "given": "Genevi\u00e8ve"
+            }
+        ],
+        "container-title": "Computational Statistics & Data Analysis",
+        "id": "Gaucher2021OutDet",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    12
+                ]
+            ]
+        },
+        "page": "107308",
+        "title": "Outlier detection in networks with missing links",
+        "type": "article-journal",
+        "volume": "164"
+    },
+    {
         "DOI": "10.15468/39omei",
         "author": [
             {
@@ -3158,6 +3189,128 @@
         "type": "article-journal"
     },
     {
+        "DOI": "10.1890/08-1494.1",
+        "author": [
+            {
+                "family": "Jones",
+                "given": "Kate E."
+            },
+            {
+                "family": "Bielby",
+                "given": "Jon"
+            },
+            {
+                "family": "Cardillo",
+                "given": "Marcel"
+            },
+            {
+                "family": "Fritz",
+                "given": "Susanne A."
+            },
+            {
+                "family": "O\u2019Dell",
+                "given": "Justin"
+            },
+            {
+                "family": "Orme",
+                "given": "C. David L."
+            },
+            {
+                "family": "Safi",
+                "given": "Kamran"
+            },
+            {
+                "family": "Sechrest",
+                "given": "Wes"
+            },
+            {
+                "family": "Boakes",
+                "given": "Elizabeth H."
+            },
+            {
+                "family": "Carbone",
+                "given": "Chris"
+            },
+            {
+                "family": "Connolly",
+                "given": "Christina"
+            },
+            {
+                "family": "Cutts",
+                "given": "Michael J."
+            },
+            {
+                "family": "Foster",
+                "given": "Janine K."
+            },
+            {
+                "family": "Grenyer",
+                "given": "Richard"
+            },
+            {
+                "family": "Habib",
+                "given": "Michael"
+            },
+            {
+                "family": "Plaster",
+                "given": "Christopher A."
+            },
+            {
+                "family": "Price",
+                "given": "Samantha A."
+            },
+            {
+                "family": "Rigby",
+                "given": "Elizabeth A."
+            },
+            {
+                "family": "Rist",
+                "given": "Janna"
+            },
+            {
+                "family": "Teacher",
+                "given": "Amber"
+            },
+            {
+                "family": "Bininda-Emonds",
+                "given": "Olaf R. P."
+            },
+            {
+                "family": "Gittleman",
+                "given": "John L."
+            },
+            {
+                "family": "Mace",
+                "given": "Georgina M."
+            },
+            {
+                "family": "Purvis",
+                "given": "Andy"
+            }
+        ],
+        "container-title": "Ecology",
+        "editor": [
+            {
+                "family": "Michener",
+                "given": "W. K."
+            }
+        ],
+        "id": "Jones2009PanSpe",
+        "issue": "9",
+        "issued": {
+            "date-parts": [
+                [
+                    2009,
+                    9
+                ]
+            ]
+        },
+        "page": "2648-2648",
+        "title": "PanTHERIA: A species\u2010level database of life history, ecology, and geography of extant and recently extinct mammals: Ecological Archives E090\u2010184",
+        "type": "article-journal",
+        "volume": "90"
+    },
+    {
         "DOI": "10.1371/journal.pbio.1002559",
         "author": [
             {
@@ -3790,6 +3943,34 @@
         "title": "Inferring biotic interactions from proxies",
         "type": "article-journal",
         "volume": "30"
+    },
+    {
+        "DOI": "10.1023/A:1006537600093",
+        "author": [
+            {
+                "family": "Morand",
+                "given": "Serge"
+            },
+            {
+                "family": "Poulin",
+                "given": "Robert"
+            }
+        ],
+        "container-title": "Evolutionary Ecology",
+        "id": "Morand1998DenBod",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    1998,
+                    8
+                ]
+            ]
+        },
+        "page": "717-727",
+        "title": "Density, body mass and parasite species richness of terrestrial mammals",
+        "type": "article-journal",
+        "volume": "12"
     },
     {
         "DOI": "10.3390/su12187657",
