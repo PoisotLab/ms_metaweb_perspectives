@@ -246,6 +246,65 @@
         "type": "manuscript"
     },
     {
+        "URL": "http://arxiv.org/abs/1709.05454",
+        "author": [
+            {
+                "family": "Athreya",
+                "given": "Avanti"
+            },
+            {
+                "family": "Fishkind",
+                "given": "Donniell E."
+            },
+            {
+                "family": "Levin",
+                "given": "Keith"
+            },
+            {
+                "family": "Lyzinski",
+                "given": "Vince"
+            },
+            {
+                "family": "Park",
+                "given": "Youngser"
+            },
+            {
+                "family": "Qin",
+                "given": "Yichen"
+            },
+            {
+                "family": "Sussman",
+                "given": "Daniel L."
+            },
+            {
+                "family": "Tang",
+                "given": "Minh"
+            },
+            {
+                "family": "Vogelstein",
+                "given": "Joshua T."
+            },
+            {
+                "family": "Priebe",
+                "given": "Carey E."
+            }
+        ],
+        "id": "Athreya2017StaInf",
+        "issued": {
+            "date-parts": [
+                [
+                    2017,
+                    9,
+                    16
+                ]
+            ]
+        },
+        "number": "arXiv:1709.05454",
+        "publisher": "arXiv",
+        "title": "Statistical inference on random dot product graphs: A survey",
+        "type": ""
+    },
+    {
         "DOI": "10.21105/joss.02721",
         "author": [
             {
@@ -3755,6 +3814,91 @@
         "volume": "29"
     },
     {
+        "DOI": "10.1093/biosci/biz089",
+        "author": [
+            {
+                "family": "Malaterre",
+                "given": "Christophe"
+            },
+            {
+                "family": "Dussault",
+                "given": "Antoine C"
+            },
+            {
+                "family": "Mermans",
+                "given": "Ely"
+            },
+            {
+                "family": "Barker",
+                "given": "Gillian"
+            },
+            {
+                "family": "Beisner",
+                "given": "Beatrix E"
+            },
+            {
+                "family": "Bouchard",
+                "given": "Fr\u00e9d\u00e9ric"
+            },
+            {
+                "family": "Desjardins",
+                "given": "Eric"
+            },
+            {
+                "family": "Handa",
+                "given": "I Tanya"
+            },
+            {
+                "family": "Kembel",
+                "given": "Steven W"
+            },
+            {
+                "family": "Lajoie",
+                "given": "Genevi\u00e8ve"
+            },
+            {
+                "family": "Maris",
+                "given": "Virginie"
+            },
+            {
+                "family": "Munson",
+                "given": "Alison D"
+            },
+            {
+                "family": "Odenbaugh",
+                "given": "Jay"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Shapiro",
+                "given": "B Jesse"
+            },
+            {
+                "family": "Suttle",
+                "given": "Curtis A"
+            }
+        ],
+        "container-title": "BioScience",
+        "id": "Malaterre2019FunDiv",
+        "issue": "10",
+        "issued": {
+            "date-parts": [
+                [
+                    2019,
+                    10,
+                    1
+                ]
+            ]
+        },
+        "page": "800-811",
+        "title": "Functional Diversity: An Epistemic Roadmap",
+        "type": "article-journal",
+        "volume": "69"
+    },
+    {
         "DOI": "10.1038/s41467-018-07049-5",
         "author": [
             {
@@ -6476,6 +6620,37 @@
         "title": "Effects of spatial scale of sampling on food web structure",
         "type": "article-journal",
         "volume": "5"
+    },
+    {
+        "URL": "http://arxiv.org/abs/2101.02180",
+        "author": [
+            {
+                "family": "Wu",
+                "given": "David"
+            },
+            {
+                "family": "Palmer",
+                "given": "David R."
+            },
+            {
+                "family": "Deford",
+                "given": "Daryl R."
+            }
+        ],
+        "id": "Wu2021MaxPos",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    12,
+                    16
+                ]
+            ]
+        },
+        "number": "arXiv:2101.02180",
+        "publisher": "arXiv",
+        "title": "Maximum a Posteriori Inference of Random Dot Product Graphs via Conic Programming",
+        "type": ""
     },
     {
         "DOI": "10.1016/j.gecco.2021.e01805",
