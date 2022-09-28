@@ -338,6 +338,29 @@
         "volume": "6"
     },
     {
+        "URL": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0069200",
+        "author": [
+            {
+                "family": "Bartomeus",
+                "given": "Ignasi"
+            }
+        ],
+        "container-title": "PloS one",
+        "id": "Bartomeus2013UndLin",
+        "issue": "7",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "page": "e69200",
+        "title": "Understanding linkage rules in plant-pollinator networks by using hierarchical models that incorporate pollinator detectability and plant traits",
+        "type": "article-journal",
+        "volume": "8"
+    },
+    {
         "URL": "http://onlinelibrary.wiley.com/doi/10.1111/1365-2435.12666/full",
         "author": [
             {
@@ -487,6 +510,34 @@
         "title": "Julia: A Fresh Approach to Numerical Computing",
         "type": "article-journal",
         "volume": "59"
+    },
+    {
+        "author": [
+            {
+                "family": "Blanchet",
+                "given": "F. Guillaume"
+            },
+            {
+                "family": "Cazelles",
+                "given": "Kevin"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Ecology Letters",
+        "id": "Blanchet2020CooNot",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
+        "publisher": "Wiley Online Library",
+        "title": "Co-occurrence is not evidence of ecological interactions",
+        "type": "article-journal"
     },
     {
         "DOI": "10.1038/s41598-021-81063-4",
@@ -1279,6 +1330,42 @@
         "title": "The merging of community ecology and phylogenetic biology",
         "type": "article-journal",
         "volume": "12"
+    },
+    {
+        "DOI": "10.1007/s12080-015-0281-9",
+        "author": [
+            {
+                "family": "Cazelles",
+                "given": "K\u00e9vin"
+            },
+            {
+                "family": "Ara\u00fajo",
+                "given": "Miguel B."
+            },
+            {
+                "family": "Mouquet",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Theoretical Ecology",
+        "id": "Cazelles2016TheSpe",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2016,
+                    2
+                ]
+            ]
+        },
+        "page": "39-48",
+        "title": "A theory for species co-occurrence in interaction networks",
+        "type": "article-journal",
+        "volume": "9"
     },
     {
         "URL": "http://jmlr.org/papers/v23/20-852.html",
@@ -2714,6 +2801,52 @@
         "title": "Graph embedding techniques, applications, and performance: A survey",
         "type": "article-journal",
         "volume": "151"
+    },
+    {
+        "DOI": "10.1111/2041-210X.12103",
+        "author": [
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timoth\u00e9e"
+            },
+            {
+                "family": "Albouy",
+                "given": "Camille"
+            },
+            {
+                "family": "Velez",
+                "given": "Laure"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            }
+        ],
+        "container-title": "Methods in Ecology and Evolution",
+        "editor": [
+            {
+                "family": "Freckleton",
+                "given": "Robert"
+            }
+        ],
+        "id": "Gravel2013InfFoo",
+        "issue": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2013,
+                    11
+                ]
+            ]
+        },
+        "page": "1083-1090",
+        "title": "Inferring food web structure from predator-prey body size relationships",
+        "type": "article-journal",
+        "volume": "4"
     },
     {
         "DOI": "10.1111/ecog.04006",
@@ -5049,19 +5182,12 @@
             }
         ],
         "container-title": "Methods in Ecology and Evolution",
-        "editor": [
-            {
-                "family": "Vamosi",
-                "given": "Jana"
-            }
-        ],
         "id": "Poisot2016StrPro",
         "issue": "3",
         "issued": {
             "date-parts": [
                 [
-                    2016,
-                    3
+                    2016
                 ]
             ]
         },
@@ -5734,6 +5860,43 @@
         "type": "article-journal"
     },
     {
+        "DOI": "10.1098/rspb.2007.0571",
+        "author": [
+            {
+                "family": "Stouffer",
+                "given": "D. B"
+            },
+            {
+                "family": "Camacho",
+                "given": "J."
+            },
+            {
+                "family": "Jiang",
+                "given": "W."
+            },
+            {
+                "family": "Nunes Amaral",
+                "given": "L. A"
+            }
+        ],
+        "container-title": "Proceedings of the Royal Society B: Biological Sciences",
+        "id": "Stouffer2007EviExi",
+        "issue": "1621",
+        "issued": {
+            "date-parts": [
+                [
+                    2007,
+                    8,
+                    22
+                ]
+            ]
+        },
+        "page": "1931-1940",
+        "title": "Evidence for the existence of a robust pattern of prey selection in food webs",
+        "type": "article-journal",
+        "volume": "274"
+    },
+    {
         "DOI": "10.1126/science.1216556",
         "author": [
             {
@@ -6113,6 +6276,39 @@
         "title": "Knowledge extraction and semantic annotation of text from the encyclopedia of life",
         "type": "article-journal",
         "volume": "9"
+    },
+    {
+        "DOI": "10.1111/ecog.04360",
+        "author": [
+            {
+                "family": "Thurman",
+                "given": "Lindsey L."
+            },
+            {
+                "family": "Barner",
+                "given": "Allison K."
+            },
+            {
+                "family": "Garcia",
+                "given": "Tiffany S."
+            },
+            {
+                "family": "Chestnut",
+                "given": "Tara"
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "Thurman2019TesLin",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "title": "Testing the link between species interactions and co-occurrence in a trophic network",
+        "type": "article-journal",
+        "volume": "0"
     },
     {
         "DOI": "10.1093/comnet/cnaa007",
@@ -6679,27 +6875,6 @@
         "title": "The rise of ecological network meta-analyses: Problems and prospects",
         "type": "article-journal",
         "volume": "30"
-    },
-    {
-        "URL": "http://arxiv.org/abs/2012.08019",
-        "author": [
-            {
-                "family": "Xu",
-                "given": "Mengjia"
-            }
-        ],
-        "id": "Xu2020UndGra",
-        "issued": {
-            "date-parts": [
-                [
-                    2020,
-                    12,
-                    14
-                ]
-            ]
-        },
-        "title": "Understanding graph embedding methods and their applications",
-        "type": "manuscript"
     },
     {
         "DOI": "10.1137/20M1386062",

@@ -2,11 +2,11 @@
 \hypertarget{fig:embedding}{%
 \centering
 \includegraphics{figures/conceptual_2.png}
-\caption{Overview of the embedding process. A network (\textbf{A}),
-represented here as its adjacency matrix, is converted into a
-lower-dimensional object (\textbf{B}) where nodes, subgraphs, or edges
-have specific values (see tbl.~\ref{tbl:methods} for an overview of
-methods and their use for species interactions). For the purposes of
+\caption{Overview of the embedding and transfer process. A network
+(\textbf{A}), represented here as its adjacency matrix, is converted
+into a lower-dimensional object (\textbf{B}) where nodes, subgraphs, or
+edges have specific values (see tbl.~\ref{tbl:methods} for an overview
+of methods and their use for species interactions). For the purposes of
 prediction, this low-dimensional object encodes feature vectors for
 \emph{e.g.} the nodes. Embedding also allows to visualize the structure
 in the data differently (see fig.~\ref{fig:illustration}), much like

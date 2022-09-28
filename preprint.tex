@@ -336,10 +336,11 @@ accurate predictions, and the lack of methods that can leverage a small
 amount of \emph{accurate} data is a serious impediment to our predictive
 ability. In most places, our most reliable biodiversity knowledge is
 that of a species pool (\emph{i.e.} a set of potentially interacting
-species in a given area): through the analysis of databases like GBIF or
-IUCN, it is possible to construct a list of species in a region of
-interest; but inferring the potential interactions between these species
-is difficult.
+species in a given area): through the analysis of databases like the
+Global Biodiversity Information Facility (GBIF) or the International
+Union for the Conservation of Nature (IUCN), it is possible to construct
+a list of species in a region of interest; but inferring the potential
+interactions between these species is difficult.
 
 Following the definition of Dunne (2006), a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories all
@@ -355,12 +356,17 @@ realized interactions, and have been called ``metaweb realizations''
 (Poisot et al., 2015). Differences between local networks and their
 metawebs are due to chance, species abundance and co-occurrence, local
 environmental conditions, and local distribution of functional traits,
-among others. Yet, recent results by Saravia et al. (2021) strongly
-suggest that the local (metaweb) realizations only respond weakly to
-local conditions: instead, they reflect constraints inherited by the
-structure of their metaweb. This establishes the metaweb structure as
-the core goal of predictive network ecology, as it is a required
-information to accurately produce downscaled, local predictions.
+among others. Specifically, although co-occurrence can be driven by
+interactions (Cazelles et al., 2016), co-occurrence alone is not a
+predictor of interactions (Blanchet et al., 2020; Thurman et al., 2019),
+and therefore lack of co-occurrence cannot be used to rule out lack of a
+feasible interaction. Yet, recent results by Saravia et al. (2021)
+strongly suggest that the local (metaweb) realizations only respond
+weakly to local conditions: instead, they reflect constraints inherited
+by the structure of their metaweb. This establishes the metaweb
+structure as the core goal of predictive network ecology, as it is a
+required information to accurately produce downscaled, local
+predictions.
 
 Because the metaweb represents the joint effect of functional,
 phylogenetic, and macroecological processes (Morales-Castilla et al.,
@@ -447,11 +453,11 @@ yet has possibly the most potential to boost our predictive ability
 \hypertarget{fig:embedding}{%
 \centering
 \includegraphics{figures/conceptual_2.png}
-\caption{Overview of the embedding process. A network (\textbf{A}),
-represented here as its adjacency matrix, is converted into a
-lower-dimensional object (\textbf{B}) where nodes, subgraphs, or edges
-have specific values (see tbl.~\ref{tbl:methods} for an overview of
-methods and their use for species interactions). For the purposes of
+\caption{Overview of the embedding and transfer process. A network
+(\textbf{A}), represented here as its adjacency matrix, is converted
+into a lower-dimensional object (\textbf{B}) where nodes, subgraphs, or
+edges have specific values (see tbl.~\ref{tbl:methods} for an overview
+of methods and their use for species interactions). For the purposes of
 prediction, this low-dimensional object encodes feature vectors for
 \emph{e.g.} the nodes. Embedding also allows to visualize the structure
 in the data differently (see fig.~\ref{fig:illustration}), much like
@@ -542,14 +548,17 @@ approaches, by type of embedded objects, alongside examples of their use
 in the prediction of species interactions. These methods have not yet
 been routinely used to predict species interactions; most examples that
 we identified were either statistical associations, or analogues to
-joint species distribution models. \(^a\): statistical interactions;
-\(^b\): joint-SDM-like approach. Given the need to evaluate different
-methods on a problem-specific basis, the fact that a lot of methods have
-not been used on network problems is an opportunity for benchmarking and
-method development. Note that the row for PCA also applies to
-kernel/probabilistic PCA, which are variations on the more general
-method of SVD. Note further that tSNE has been included because it is
-frequently used to embed graphs, including of species
+joint species distribution models. \(^a\): application is concerned with
+\emph{statistical} interactions, which are not necessarilly direct
+biotic interactions; \(^b\):application is concerned with joint-SDM-like
+approach, which is also very close to statistical associations as
+opposed to direct biotic interactions. Given the need to evaluate
+different methods on a problem-specific basis, the fact that a lot of
+methods have not been used on network problems is an opportunity for
+benchmarking and method development. Note that the row for PCA also
+applies to kernel/probabilistic PCA, which are variations on the more
+general method of SVD. Note further that tSNE has been included because
+it is frequently used to embed graphs, including of species
 associations/interactions, despite not being strictly speaking, a graph
 embedding technique (see \emph{e.g.} Chami et al., 2022)}\tabularnewline
 \toprule
@@ -751,16 +760,18 @@ many parallels in ecology (see fig.~\ref{fig:embedding} \textbf{C}), in
 which node metadata can be represented by phylogeny, abundance, or
 functional traits. Using phylogeny as a source of information assumes
 (or strives to capture) the action of evolutionary processes on network
-structure, which at least for food webs have been well documented
-\textbf{TK REF}; similarly, the use of functional traits assumes that
-interactions can be infered from the knowledge of trait-matching rules,
-which is similarly well supported in the empirical literature \textbf{TK
-REF}. Relating this information to an embedding rather than a list of
-networks measures would allow to capture their effect on the more
-fundamental aspects of network structure; conversely, the absence of a
-phylogenetic or functional signal may suggest that evolutionary/trait
-processes are not strong drivers of network structure, therefore opening
-a new way to perform hypothesis testing.
+structure, which at least for food webs have been well documented (Dalla
+Riva \& Stouffer, 2016; Stouffer et al., 2012; Stouffer et al., 2007);
+similarly, the use of functional traits assumes that interactions can be
+infered from the knowledge of trait-matching rules, which is similarly
+well supported in the empirical literature (Bartomeus, 2013; Bartomeus
+et al., 2016; Gravel et al., 2013). Relating this information to an
+embedding rather than a list of networks measures would allow to capture
+their effect on the more fundamental aspects of network structure;
+conversely, the absence of a phylogenetic or functional signal may
+suggest that evolutionary/trait processes are not strong drivers of
+network structure, therefore opening a new way to perform hypothesis
+testing.
 
 Before moving further, it is important to clarify the epistemic status
 of node values derived from embeddings: specifically, they are
@@ -905,15 +916,18 @@ family.}\label{fig:illustration2}
 }
 \end{figure}
 
-As the results of fig.~\ref{fig:illustration1} show that we can extract
-an embedding of the metaweb that captures enough variance to be
-relevant, in fig.~\ref{fig:illustration2}, we relate the values of
-latent variables for hosts to different ecologically-relevant data. In
-panel \textbf{A}, we show that host with a higher value on the first
-dimension have fewer parasites. This relates to the body size of hosts
-in the \emph{PanTHERIA} database (Jones et al., 2009), as shown in panel
-\textbf{B}: interestingly, the position on the first axis is only weakly
-correlated to body mass of the host; this matches well establihed
+The results of fig.~\ref{fig:illustration1} show that we can extract an
+embedding of the metaweb that captures enough variance to be relevant;
+specifically, this is true both of \(L_2\) loss (indicating that RDPG is
+able to capture pairwise processes) and the cumulative variance
+explained (indicating that RDPG is able to capture network-level
+structure). Therefore, in fig.~\ref{fig:illustration2}, we relate the
+values of latent variables for hosts to different ecologically-relevant
+data. In panel \textbf{A}, we show that host with a higher value on the
+first dimension have fewer parasites. This relates to the body size of
+hosts in the \emph{PanTHERIA} database (Jones et al., 2009), as shown in
+panel \textbf{B}: interestingly, the position on the first axis is only
+weakly correlated to body mass of the host; this matches well establihed
 results showing that body size/mass is not always a direct predictor of
 parasite richness in terrestrial mammals (Morand \& Poulin, 1998), a
 result we observe in panel \textbf{C}. Finally, in panel \textbf{D}, we
@@ -1092,6 +1106,12 @@ Y., Sussman, D. L., Tang, M., Vogelstein, J. T., \& Priebe, C. E.
 survey} (No. arXiv:1709.05454). arXiv.
 \url{http://arxiv.org/abs/1709.05454}
 
+\leavevmode\hypertarget{ref-Bartomeus2013UndLin}{}%
+Bartomeus, I. (2013). Understanding linkage rules in plant-pollinator
+networks by using hierarchical models that incorporate pollinator
+detectability and plant traits. \emph{PloS One}, \emph{8}(7), e69200.
+\url{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0069200}
+
 \leavevmode\hypertarget{ref-Bartomeus2016ComFra}{}%
 Bartomeus, I., Gravel, D., Tylianakis, J. M., Aizen, M. A., Dickie, I.
 A., \& Bernard-Verdier, M. (2016). A common framework for identifying
@@ -1103,6 +1123,10 @@ Ecology}, \emph{30}(12), 1894--1903.
 Bezanson, J., Edelman, A., Karpinski, S., \& Shah, V. (2017). Julia: A
 Fresh Approach to Numerical Computing. \emph{SIAM Review}, \emph{59}(1),
 65--98. \url{https://doi.org/10.1137/141000671}
+
+\leavevmode\hypertarget{ref-Blanchet2020CooNot}{}%
+Blanchet, F. G., Cazelles, K., \& Gravel, D. (2020). Co-occurrence is
+not evidence of ecological interactions. \emph{Ecology Letters}.
 
 \leavevmode\hypertarget{ref-Bohan2017NexGlo}{}%
 Bohan, D. A., Vacher, C., Tamaddoni-Nezhad, A., Raybould, A., Dumbrell,
@@ -1140,6 +1164,12 @@ I., \ldots{} Smith, P. A. (2021). Key information needs to move from
 knowledge to action for biodiversity conservation in Canada.
 \emph{Biological Conservation}, \emph{256}, 108983.
 \url{https://doi.org/10.1016/j.biocon.2021.108983}
+
+\leavevmode\hypertarget{ref-Cazelles2016TheSpe}{}%
+Cazelles, K., Araújo, M. B., Mouquet, N., \& Gravel, D. (2016). A theory
+for species co-occurrence in interaction networks. \emph{Theoretical
+Ecology}, \emph{9}(1), 39--48.
+\url{https://doi.org/10.1007/s12080-015-0281-9}
 
 \leavevmode\hypertarget{ref-Chami2022MacLea}{}%
 Chami, I., Abu-El-Haija, S., Perozzi, B., Ré, C., \& Murphy, K. (2022).
@@ -1293,6 +1323,12 @@ Nyman, T., Poisot, T., Stouffer, D. B., Tylianakis, J. M., Wood, S. A.,
 quantitative framework to represent the biogeography of ecological
 interaction networks. \emph{Ecography}, \emph{0}(0).
 \url{https://doi.org/10.1111/ecog.04006}
+
+\leavevmode\hypertarget{ref-Gravel2013InfFoo}{}%
+Gravel, D., Poisot, T., Albouy, C., Velez, L., \& Mouillot, D. (2013).
+Inferring food web structure from predator-prey body size relationships.
+\emph{Methods in Ecology and Evolution}, \emph{4}(11), 1083--1090.
+\url{https://doi.org/10.1111/2041-210X.12103}
 
 \leavevmode\hypertarget{ref-Green2019DisInt}{}%
 Green, B., \& Chen, Y. (2019). Disparate Interactions: An
@@ -1544,6 +1580,19 @@ Integrating Expert Perceptions into Food Web Conservation and
 Management. \emph{Conservation Letters}, \emph{10}(1), 67--76.
 \url{https://doi.org/10.1111/conl.12245}
 
+\leavevmode\hypertarget{ref-Stouffer2007EviExi}{}%
+Stouffer, D. B., Camacho, J., Jiang, W., \& Nunes Amaral, L. A. (2007).
+Evidence for the existence of a robust pattern of prey selection in food
+webs. \emph{Proceedings of the Royal Society B: Biological Sciences},
+\emph{274}(1621), 1931--1940.
+\url{https://doi.org/10.1098/rspb.2007.0571}
+
+\leavevmode\hypertarget{ref-Stouffer2012EvoCon}{}%
+Stouffer, D. B., Sales-Pardo, M., Sirer, M. I., \& Bascompte, J. (2012).
+Evolutionary Conservation of Species' Roles in Food Webs.
+\emph{Science}, \emph{335}(6075), 1489--1492.
+\url{https://doi.org/10.1126/science.1216556}
+
 \leavevmode\hypertarget{ref-Strydom2022FooWeb}{}%
 Strydom, T., Bouskila, S., Banville, F., Barros, C., Caron, D., Farrell,
 M. J., Fortin, M.-J., Hemming, V., Mercier, B., Pollock, L. J., Runghen,
@@ -1572,6 +1621,12 @@ Tang, J., Qu, M., Wang, M., Zhang, M., Yan, J., \& Mei, Q. (2015). LINE:
 Large-scale Information Network Embedding. \emph{Proceedings of the 24th
 International Conference on World Wide Web}, 1067--1077.
 \url{https://doi.org/10.1145/2736277.2741093}
+
+\leavevmode\hypertarget{ref-Thurman2019TesLin}{}%
+Thurman, L. L., Barner, A. K., Garcia, T. S., \& Chestnut, T. (2019).
+Testing the link between species interactions and co-occurrence in a
+trophic network. \emph{Ecography}, \emph{0}.
+\url{https://doi.org/10.1111/ecog.04360}
 
 \leavevmode\hypertarget{ref-Torres2020GleGeo}{}%
 Torres, L., Chan, K. S., \& Eliassi-Rad, T. (2020). GLEE: Geometric
