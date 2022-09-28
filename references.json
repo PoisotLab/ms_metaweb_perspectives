@@ -6702,6 +6702,30 @@
         "type": "manuscript"
     },
     {
+        "DOI": "10.1137/20M1386062",
+        "author": [
+            {
+                "family": "Xu",
+                "given": "Mengjia"
+            }
+        ],
+        "container-title": "SIAM Review",
+        "id": "Xu2021UndGra",
+        "issue": "4",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    1
+                ]
+            ]
+        },
+        "page": "825-853",
+        "title": "Understanding Graph Embedding Methods and Their Applications",
+        "type": "article-journal",
+        "volume": "63"
+    },
+    {
         "DOI": "10.1109/CVPR.2005.170",
         "author": [
             {
