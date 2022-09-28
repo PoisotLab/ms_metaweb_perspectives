@@ -217,7 +217,7 @@ strictly speaking, a graph embedding technique [see *e.g.* @Chami2022MacLea]
 The popularity of graph embedding techniques in machine learning is more than
 the search for structural invariants: graphs are discrete objects, and machine
 learning techniques tend to handle continuous data better. Bringing a sparse
-graph into a continuous, dense vector space [@Xu2020UndGra] opens up a broader
+graph into a continuous, dense vector space [@Xu2021UndGra] opens up a broader
 variety of predictive algorithms, notably of the sort that are able to predict
 events as probabilities [@Murphy2022ProMac]. Furthermore, the projection of the
 graph itself is a representation that can be learned; @Runghen2021ExpNod, for
