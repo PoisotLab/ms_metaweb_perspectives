@@ -70,6 +70,7 @@ links; this is notably the case in food chains, wherein many weaker links are
 key to the stability of a system [@Neutel2002StaRea]. In the light of these
 observations, we expect to see an over-representation of low-probability (rare)
 interactions under a model that accurately predicts interaction probabilities.
+
 Yet the original metaweb definition, and indeed most past uses of metawebs, was
 based on the presence/absence of interactions. Moving towards *probabilistic*
 metawebs, by representing interactions as Bernoulli events [see *e.g.*
@@ -77,26 +78,35 @@ metawebs, by representing interactions as Bernoulli events [see *e.g.*
 appropriately. The inherent plasticity of interactions is important to capture:
 there have been documented instances of food webs undergoing rapid
 collapse/recovery cycles over short periods of time [*e.g.*
-@Pedersen2017SigCol]. These considerations emphasize why metaweb predictions
-should focus on quantitative (preferentially probabilistic) predictions, and
-this should constrain the suite of appropriate models used to predict them.
+@Pedersen2017SigCol]. Furthermore, because the structure of the metaweb cannot
+be known in advance, it is important to rely on predictive tools that do not
+assume a specific network topology for link prediction [@Gaucher2021OutDet], but
+are able to work on generalizations of the network. These considerations
+emphasize why metaweb predictions should focus on quantitative (preferentially
+probabilistic) predictions, and this should constrain the suite of appropriate
+models used to predict them.
 
 It is important to recall that a metaweb is intended as a catalogue of all
-potential interactions, which is then filtered for a given application
-[@Morales-Castilla2015InfBio]. In a sense, that most ecological interactions are
-elusive can call for a slightly different approach to sampling: once the common
-interactions are documented, the effort required in documenting each rare
-interaction will increase exponentially. Recent proposals suggest that machine
-learning algorithms can also act as data generators [@Hoffmann2019MacLea]: high
-quality observational data can be used to infer core rules underpinning network
-structure, and be supplemented with synthetic data coming from predictive models
-trained on them, thereby increasing the volume of information available for
-analysis. Indeed, @Strydom2021RoaPre suggested that knowing the metaweb may
-render the prediction of local networks easier, because it fixes an "upper
-bound" on which interactions can exist. In this context, a probabilistic metaweb
-represents an aggregation of informative priors on the interactions, elusive
-information with the potential to boost our predictive ability
-[@Bartomeus2016ComFra].
+potential (feasible) interactions, which is then filtered for a given
+application [@Morales-Castilla2015InfBio]. It is therefore important to separate
+the interactions that happen "almost surely" (repeated observational data),
+"almost never" (repeated lack of evidence *or* evidence that the link is
+forbidden through *e.g.* trait mis-match), and interactions with a probability
+that lays somewhere in between. In a sense, that most ecological interactions
+are elusive can call for a slightly different approach to sampling: once the
+common interactions are documented, the effort required in documenting each rare
+interaction will increase exponentially [@Jordano2016SamNet]. Recent proposals
+in other fields emphasize the idea that machine learning algorithms can also act
+as data generators [@Hoffmann2019MacLea]: high quality observational data can be
+used to infer core rules underpinning network structure, and be supplemented
+with synthetic data coming from predictive models trained on them, thereby
+increasing the volume of information available for analysis. Indeed,
+@Strydom2021RoaPre suggested that knowing the metaweb may render the prediction
+of local networks easier, because it fixes an "upper bound" on which
+interactions can exist. In this context, a probabilistic metaweb represents an
+aggregation of informative priors on the biological feasibility of interactions,
+which is usually hard to obtain yet has possibly the most potential to boost our
+predictive ability [@Bartomeus2016ComFra].
 
 ![Overview of the embedding process. A network (**A**), represented here as its
 adjacency matrix, is converted into a lower-dimensional object (**B**) where
@@ -145,9 +155,6 @@ approach to use. In @tbl:methods, we present a selection of common graph and
 node embedding methods, alongside examples of their use to predict species
 interactions; most of these methods rely either on linear algebra, or on
 pseudo-random walks on graphs.
-
-@Gaucher2021OutDet - embeddings don't assume a specific structure of the
-network, add to previous paragraph
 
 One prominent family of approaches we do not discuss in the present manuscript
 is Graph Neural Networks [GNN; @Zhou2020GraNeu]. GNN are, in a sense, a method
@@ -268,42 +275,75 @@ represents a space with 121 dimensions). All analyses were done using Julia
 [@Bezanson2017JulFre] version 1.7.2, *Makie.jl* [@Danisch2021MakJl], and
 *EcologicalNetworks.jl* [@Poisot2019EcoJl].
 
-![Illustration of an embedding for an host-parasite metaweb, using Random Dot
+![Validation of an embedding for a host-parasite metaweb, using Random Dot
 Product Graphs. **A**, decrease in approximation error as the number of
-dimensions in the subspaces increases. **B**, position of hosts and parasites in
-the first two dimensions of their respective subspaces. **C**, predicted
+dimensions in the subspaces increases. **B**, increase in cumulative variance
+explained as the number of ranks considered increases; in **A** and **B**, the
+dot represents the point of inflexion in the curve (at rank 39) estimated using
+the finite differences method. **C**, position of hosts and parasites in the
+space of latent variables on the first and second dimensions of their respective
+subspaces (the results have been clamped to the unit interval). **D**, predicted
 interaction weight from the RDPG based on the status of the species pair in the
-metaweb. **D**, relationship between the position on the first dimension and
-parasite generalism.](figures/illustration.png){#fig:illustration}
+metaweb.](figures/illustration-part1.png){#fig:illustration1}
 
-The embedding of the metaweb holds several pieces of information
-(@fig:illustration). In panel **A**, we show that the $L_2$ loss (*i.e.* the sum
-of squared errors) between the empirical and reconstructed metaweb decreases
-when the number of dimensions (rank) of the subspace increases, with an
-inflection point around 25 dimensions. As discussed by @Runghen2021ExpNod, there
-is often a trade-off between the number of dimensions to use (more dimensions
-are more computationally demanding) and the quality of the representation. In
-this instance, accepting $L_2 = 500$ as an approximation of the network means
-that the error for every position in the metaweb is $\approx
-\left(500/(206\times 121)\right)^{1/2}$. In @fig:illustration, panel **B**, we
-show the positions of hosts and parasites on the first two dimensions of the
-left and right subspaces. Note that these values largely skew negative, because
-the first dimensions capture the coarse structure of the network: most pairs of
-species do not interact, and therefore have negative values. In
-@fig:illustration, panel **C**, we show the predicted weight (*i.e.* the result
-of the multiplication of the RDGP subspaces at a rank of 25) as a function of
-whether the interactions are observed, not-observed, or unknown due to lack of
-co-occurrence. This reveals that the observed interactions have higher predicted
-weights, although there is some overlap; the usual approach to identify
-potential interactions based on this information would be a thresholding
-analysis, which is outside the scope of this manuscript (and is done in the
-papers cited in this illustration). Note that the values are not bound to the
-unit interval, which emphasizes the need for either scaling or clamping
-(although thresholding analyses are insensitive to this choice). Finally, in
-@fig:illustration, panel **D**, we show that the embedding, as it captures
-structural information about the network, holds ecological information; indeed,
-the position of the parasite on the first dimension of the left sub-space is a
-linear predictor of its number of hosts.
+In @fig:illustration1, we focus on some statistical checks of the embedding. In
+panel **A**, we show that the averaged $L_2$ loss (*i.e.* the sum of squared
+errors) between the empirical and reconstructed metaweb decreases when the
+number of dimensions (rank) of the subspace increases, with an inflection at 39
+dimensions (out of 120 initially) according to the finite differences method. As
+discussed by @Runghen2021ExpNod, there is often a trade-off between the number
+of dimensions to use (more dimensions are more computationally demanding) and
+the quality of the representation. In panel **B**, we show the increase in
+cumulative variance explained at each rank, and visualize that using 39 ranks
+explains about 70% of the variance in the empirical metaweb. This is a different
+information from the $L_2$ loss (which is averaged across interactions), as it
+works on the eigenvalues of the embedding, and therefore captures higher-level
+features of the network. In panel **C**, we show positions of hosts and
+parasites on the first two dimensions of the left and right subspaces. Note that
+these values largely skew negative, because the first dimensions capture the
+coarse structure of the network: most pairs of species do not interact, and
+therefore have negative values. Finally in panel **D**, we show the predicted
+weight (*i.e.* the result of the multiplication of the RDGP subspaces at a rank
+of 25) as a function of whether the interactions are observed, not-observed, or
+unknown due to lack of co-occurrence. This reveals that the observed
+interactions have higher predicted weights, although there is some overlap; the
+usual approach to identify potential interactions based on this information
+would be a thresholding analysis, which is outside the scope of this manuscript
+(and is done in the papers cited in this illustration). Because the values
+returned from RDPG are not bound to the unit interval, we performed a clamping
+of the weights to the unit space, showing a one-inflation in documented
+interaction, and a zero-inflation in other species pairs. This last figure
+crosses from the statistical into the ecological, by showing that species pairs
+with no documented co-occurrence have weights that are not distinguishable from
+species pairs with no documented interactions, suggesting that (as befits a
+host-parasite model) the ability to interact is a strong predictor of
+co-occurrence.
+
+![Ecological analysis of an embedding for a host-parasite metaweb, using Random
+Dot Product Graphs. **A**, relationship between the number of parasites and
+position along the first axis of the right-subspace for all hosts, showing that
+the embedding captures elements of network structure at the species scale.
+**B**, weak relationship between the body mass of hosts (in grams) and the
+position alongside the same dimension. **C**, weak relationship between bodymass
+of hosts and parasite richness. **D**, distribution of positions alongside the
+same axis for hosts grouped by taxonomic
+family.](figures/illustration-part2.png){#fig:illustration2}
+
+As the results of @fig:illustration1 show that we can extract an embedding of
+the metaweb that captures enough variance to be relevant, in @fig:illustration2,
+we relate the values of latent variables for hosts to different
+ecologically-relevant data. In panel **A**, we show that host with a higher
+value on the first dimension have fewer parasites. This relates to the body size
+of hosts in the *PanTHERIA* database [@Jones2009PanSpe], as shown in panel
+**B**: interestingly, the position on the first axis is only weakly correlated
+to body mass of the host; this matches well establihed results showing that body
+size/mass is not always a direct predictor of parasite richness in terrestrial
+mammals [@Morand1998DenBod], a result we observe in panel **C**. Finally, in
+panel **D**, we can see how different taxonomic families occupy different
+positions on the first axis, with *e.g.* Sciuridae being biased towards higher
+values. These results show how we can look for ecological informations in the
+output of network embeddings, which can further be refined into the selection of
+predictors for transfer learning.
 
 # The metaweb embeds both ecological hypotheses and practices
 

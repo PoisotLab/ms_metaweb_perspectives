@@ -158,7 +158,7 @@ size(L)
 # dimension). We will approximate the network at the previously identified rank,
 # and call it P:
 
-P = L * R
+P = clamp.(L * R, 0., 1.)
 
 # With this matrix, we can start looking at the weight given for (i) positive
 # interactions, (ii) interactions that are never observed but for which the
@@ -207,16 +207,24 @@ figure2a = Axis(
 )
 figure2b = Axis(
     figure2[1, 2];
-    xlabel = "Dimension 1 (right-subspace)",
-    ylabel = "Body mass (grams)",
-    yscale = log10,
+    ylabel = "Dimension 1 (right-subspace)",
+    xlabel = "Body mass (grams)",
+    xscale = log10,
     title = "B",
     titlealign = :left,
 )
 figure2c = Axis(
-    figure2[2, 1:2];
-    ylabel = "Dimension 1 (right-subspace)",
+    figure2[1, 3];
+    ylabel = "Number of parasites",
+    xlabel = "Body mass (grams)",
+    xscale = log10,
     title = "C",
+    titlealign = :left,
+)
+figure2d = Axis(
+    figure2[2, 1:3];
+    ylabel = "Dimension 1 (right-subspace)",
+    title = "D",
     titlealign = :left,
     xticklabelrotation = π / 4,
 )
@@ -241,12 +249,14 @@ vidx = filter(!isnothing, indexin(species(M; dims = 2), pantheria.MSW05_Binomial
 rodents = pantheria[vidx, :]
 species_index = indexin(rodents.MSW05_Binomial, species(M; dims = 2))
 rodents.dim1 = R[1, species_index]
+rodents.prich = [degree(M)[k] for k in rodents.MSW05_Binomial]
 
 @select!(
     rodents,
     :species = :MSW05_Binomial,
     :family = :MSW05_Family,
     :dimension = :dim1,
+    :parasites = :prich,
     :bodymass = $(Symbol("5-1_AdultBodyMass_g"))
 )
 
@@ -256,7 +266,7 @@ rodents = @orderby(rodents, :family)
 # do not appear on the boxplots):
 
 rainclouds!(
-    figure2c,
+    figure2d,
     rodents.family,
     rodents.dimension;
     plot_boxplots = true,
@@ -281,8 +291,18 @@ current_figure()
 
 scatter!(
     figure2b,
-    rodents.dimension,
-    rodents.bodymass;
+    rodents.bodymass,
+    rodents.dimension;
+    color = :black,
+)
+current_figure()
+
+#-
+
+scatter!(
+    figure2c,
+    rodents.bodymass,
+    rodents.parasites;
     color = :black,
 )
 current_figure()
