@@ -129,7 +129,7 @@ species we would like to project in this space (here for nodes I, J, K, and L)
 from the embedding of known species (here, nodes A, B, C, and D). Because
 embeddings can be projected back to a graph, this allows us to reconstruct a
 network with these new species (**D**). This entire cycle constitutes an
-instance of transfer learning, where the transfered information is the
+instance of transfer learning, where the transferred information is the
 representation of graph **A** through its
 embedding.](figures/conceptual_2.png){#fig:embedding}
 
