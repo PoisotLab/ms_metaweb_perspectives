@@ -237,15 +237,15 @@ represented by phylogeny, abundance, or functional traits. Using phylogeny as a
 source of information assumes (or strives to capture) the action of evolutionary
 processes on network structure, which at least for food webs have been well
 documented [@DallaRiva2016ExpEvo; @Stouffer2007EviExi; @Stouffer2012EvoCon];
-similarly, the use of functional traits assumes that interactions can be infered
-from the knowledge of trait-matching rules, which is similarly well supported in
-the empirical literature [@Bartomeus2013UndLin; @Bartomeus2016ComFra;
-@Gravel2013InfFoo]. Relating this information to an embedding rather than a list
-of networks measures would allow to capture their effect on the more fundamental
-aspects of network structure; conversely, the absence of a phylogenetic or
-functional signal may suggest that evolutionary/trait processes are not strong
-drivers of network structure, therefore opening a new way to perform hypothesis
-testing.
+similarly, the use of functional traits assumes that interactions can be
+inferred from the knowledge of trait-matching rules, which is similarly well
+supported in the empirical literature [@Bartomeus2013UndLin;
+@Bartomeus2016ComFra; @Gravel2013InfFoo]. Relating this information to an
+embedding rather than a list of networks measures would allow to capture their
+effect on the more fundamental aspects of network structure; conversely, the
+absence of a phylogenetic or functional signal may suggest that
+evolutionary/trait processes are not strong drivers of network structure,
+therefore opening a new way to perform hypothesis testing.
 
 Before moving further, it is important to clarify the epistemic status of node
 values derived from embeddings: specifically, they are *not* functional traits,
