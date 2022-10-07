@@ -453,26 +453,19 @@ yet has possibly the most potential to boost our predictive ability
 \hypertarget{fig:embedding}{%
 \centering
 \includegraphics{figures/conceptual_2.png}
-\caption{Overview of the embedding and transfer process. A network
-(\textbf{A}), represented here as its adjacency matrix, is converted
-into a lower-dimensional object (\textbf{B}) where nodes, subgraphs, or
-edges have specific values (see tbl.~\ref{tbl:methods} for an overview
-of methods and their use for species interactions). For the purposes of
-prediction, this low-dimensional object encodes feature vectors for
-\emph{e.g.} the nodes. Embedding also allows to visualize the structure
-in the data differently (see fig.~\ref{fig:illustration}), much like
-with a principal component analysis. From a low-dimensional feature
-vector, it is possible to develop predictive approaches. Nodes in an
-ecological network are usually species (\textbf{C}), for which we can
-leverage phylogenetic relatedness (\emph{e.g.} Strydom et al., 2022) or
-functional traits to fill the values of additional species we would like
-to project in this space (here for nodes I, J, K, and L) from the
-embedding of known species (here, nodes A, B, C, and D). Because
-embeddings can be projected back to a graph, this allows us to
-reconstruct a network with these new species (\textbf{D}). This entire
-cycle constitutes an instance of transfer learning, where the
-transferred information is the representation of graph \textbf{A}
-through its embedding.}\label{fig:embedding}
+\caption{The embedding process (\textbf{A}) can help to identify links
+(interactions) that may have been missed within the current sample
+(community, \textbf{B}), while transfer learning (\textbf{D}) allows for
+predicting links (interactions) for species external to the original
+sample as well as within sample links (\textbf{F}). Transfer learning
+allows for the prediction links (interactions) when novel species
+(\textbf{C}) are included in the sample by learning using other relevant
+predictors (e.g.~traits) in conjunction with the known interactions to
+infer latent values (\textbf{E}). Within this context the predicted
+networks as well as the ecological predictors used (green boxes) are
+products that can be quantified through field measurements, whereas the
+embedded as well as imputed matrices are representative of
+\textbf{TK}}\label{fig:embedding}
 }
 \end{figure}
 
