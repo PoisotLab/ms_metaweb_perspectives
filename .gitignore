@@ -6,10 +6,8 @@ affiliations.json
 abstract.json
 .vscode
 .assets/*csl
-author_template.tsv
-_wc.docx
-
 Manifest.toml
-
-# MacOS nonsense
-.DS_Store
+filename
+filename.json
+manuscript-metadata.json
+.~lock*
