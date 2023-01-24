@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,23 +1011,23 @@ LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 753.
 
 [11]
 
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 816.
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 821.
 
 [12]
 
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 857.
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 849.
 
 [13]
 
-LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 905.
+LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 896.
 
 [14]
 
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 965.
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 956.
 
 [15]
 
-LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 1021.
+LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 1015.
 
 [16]
 
@@ -1035,36 +1035,36 @@ LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 1081.
 
 [17]
 
-LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 1140.
+LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 1135.
 
 [18]
 
-LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 1208.
+LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 1196.
 
 [19]
 
-LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 1262.
+LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 1257.
 
 [20]
 
-LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 1323.
+LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 1321.
 
 [21]
 
-LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 1384.
+LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 1378.
 
 [22]
 
-LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 1444.
+LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 1438.
 
 [23]
 
-LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 1502.
+LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 1498.
 
 [24] 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 1524.
+LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 1536.
 
 [25] AED endfloat: Processing end Figures and Tables
 (./Strydom_et_al_2023_graph_embedding_draft.fff
@@ -1097,7 +1097,7 @@ Package pdftex.def Info: figures/illustration-part2.png  used on input line 56.
 (pdftex.def)             Requested size: 489.10307pt x 411.87712pt.
 )
 
-LaTeX Warning: Reference `LastPage' on page 28 undefined on input line 1524.
+LaTeX Warning: Reference `LastPage' on page 28 undefined on input line 1536.
 
 [28 <./figures/illustration-part2.png>]
 (./Strydom_et_al_2023_graph_embedding_draft.aux)
@@ -1141,8 +1141,8 @@ st/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/te
 xmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist
 /fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
-Output written on Strydom_et_al_2023_graph_embedding_draft.pdf (28 pages, 29029
-51 bytes).
+Output written on Strydom_et_al_2023_graph_embedding_draft.pdf (28 pages, 29051
+87 bytes).
 PDF statistics:
  451 PDF objects out of 1000 (max. 8388607)
  395 compressed objects within 4 object streams

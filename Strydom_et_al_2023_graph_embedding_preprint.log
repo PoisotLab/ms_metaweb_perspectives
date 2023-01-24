@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1422,14 +1422,14 @@ LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 823.
 
 [7 <./figures/illustration-part2.png>]
 
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 913.
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 905.
 
 [8]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 960.
+(Font)              scaled to size 9.0pt on input line 972.
 
 
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 1001.
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 1003.
 
 [9]
 
@@ -1441,38 +1441,38 @@ LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 1227.
 
 [11]
 
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 1335.
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 1336.
 
 [12]
-Overfull \hbox (0.2941pt too wide) in paragraph at lines 1347--1353
+Overfull \hbox (0.2941pt too wide) in paragraph at lines 1359--1365
 []\T1/stix2/m/n/9 No'kmaq, M., Mar-shall, A., Bea-z-ley, K. F., Hum, J., joudry
 , sha-lan, Pa-padopou-los, A., Pic-tou, S., Rabesca,
  []
 
 
-Overfull \hbox (0.97362pt too wide) in paragraph at lines 1429--1434
+Overfull \hbox (0.97362pt too wide) in paragraph at lines 1441--1446
 \T1/stix2/m/it/9 tional Jour-nal of Com-puter Sci-ence & En-gi-neer-ing Tech-no
 l-ogy\T1/stix2/m/n/9 , \T1/stix2/m/it/9 4\T1/stix2/m/n/9 (1). [][]$\T1/zi4/m/n/
 9 https : / / www . semanticscholar .
  []
 
 
-Overfull \hbox (111.69862pt too wide) in paragraph at lines 1429--1434
+Overfull \hbox (111.69862pt too wide) in paragraph at lines 1441--1446
 \T1/zi4/m/n/9 org / paper / Graph-[]Embedding-[]and-[]Dimensionality-[]Reductio
 n-[]A-[]Surendran / 3f413d591e4b2b876e033eeb9390e232ad4826ca$[][] 
  []
 
 
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 1441.
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 1447.
 
 [13]
 
-LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 1548.
+LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 1554.
 
 [14] 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 1580.
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 1592.
 
 [15] (./Strydom_et_al_2023_graph_embedding_preprint.aux)
 
@@ -1516,7 +1516,7 @@ xmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist
 /fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
 Output written on Strydom_et_al_2023_graph_embedding_preprint.pdf (15 pages, 29
-52148 bytes).
+54759 bytes).
 PDF statistics:
  427 PDF objects out of 1000 (max. 8388607)
  382 compressed objects within 4 object streams
