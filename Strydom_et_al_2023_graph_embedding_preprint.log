@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1382,7 +1382,7 @@ LaTeX Warning: Reference `fig:illustration' on page 5 undefined on input line 6
 LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 695.
 
 [5]
-<figures/illustration-part1.png, id=66, 2860.6875pt x 2409.0pt>
+<figures/illustration-part1.png, id=64, 2860.6875pt x 2409.0pt>
 File: figures/illustration-part1.png Graphic file (type png)
 <use figures/illustration-part1.png>
 Package pdftex.def Info: figures/illustration-part1.png  used on input line 732
@@ -1418,7 +1418,7 @@ LaTeX Warning: Reference `fig:illustration2' on page 7 undefined on input line
 794.
 
 
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 823.
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 812.
 
 [7 <./figures/illustration-part2.png>]
 
@@ -1429,50 +1429,43 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 9.0pt on input line 972.
 
 
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 1003.
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 1002.
 
 [9]
 
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 1117.
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 1121.
 
 [10]
 
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 1227.
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 1230.
 
 [11]
 
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 1336.
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 1338.
 
 [12]
-Overfull \hbox (0.2941pt too wide) in paragraph at lines 1359--1365
+Overfull \hbox (0.2941pt too wide) in paragraph at lines 1367--1373
 []\T1/stix2/m/n/9 No'kmaq, M., Mar-shall, A., Bea-z-ley, K. F., Hum, J., joudry
 , sha-lan, Pa-padopou-los, A., Pic-tou, S., Rabesca,
  []
 
 
-Overfull \hbox (0.97362pt too wide) in paragraph at lines 1441--1446
-\T1/stix2/m/it/9 tional Jour-nal of Com-puter Sci-ence & En-gi-neer-ing Tech-no
-l-ogy\T1/stix2/m/n/9 , \T1/stix2/m/it/9 4\T1/stix2/m/n/9 (1). [][]$\T1/zi4/m/n/
-9 https : / / www . semanticscholar .
- []
-
-
-Overfull \hbox (111.69862pt too wide) in paragraph at lines 1441--1446
-\T1/zi4/m/n/9 org / paper / Graph-[]Embedding-[]and-[]Dimensionality-[]Reductio
-n-[]A-[]Surendran / 3f413d591e4b2b876e033eeb9390e232ad4826ca$[][] 
- []
-
-
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 1447.
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 1453.
 
 [13]
+Overfull \hbox (1.35706pt too wide) in paragraph at lines 1465--1470
+\T1/stix2/m/it/9 Na-tional Academy of Sci-ences\T1/stix2/m/n/9 , \T1/stix2/m/it
+/9 119\T1/stix2/m/n/9 (43), e2102860119. [][]$\T1/zi4/m/n/9 https : / / doi . o
+rg / 10 . 1073 / pnas . 2102860119$[][] 
+ []
 
-LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 1554.
+
+LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 1565.
 
 [14] 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 1592.
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 1603.
 
 [15] (./Strydom_et_al_2023_graph_embedding_preprint.aux)
 
@@ -1493,8 +1486,8 @@ preprint.out':
 (rerunfilecheck)             After:  508D8454C99EB3145DDE7B242360C5CF;1428.
  ) 
 Here is how much of TeX's memory you used:
- 31091 strings out of 476093
- 566730 string characters out of 5793588
+ 31093 strings out of 476093
+ 566769 string characters out of 5793588
  1878793 words of memory out of 5000000
  50793 multiletter control sequences out of 15000+600000
  652415 words of font info for 147 fonts, out of 8000000 for 9000
@@ -1516,10 +1509,10 @@ xmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist
 /fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
 Output written on Strydom_et_al_2023_graph_embedding_preprint.pdf (15 pages, 29
-54759 bytes).
+53853 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
- 135 named destinations out of 1000 (max. 500000)
+ 417 PDF objects out of 1000 (max. 8388607)
+ 372 compressed objects within 4 object streams
+ 137 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1674586181 "Strydom_et_al_2023_graph_embedding_preprint.tex" "Strydom_et_al_2023_graph_embedding_preprint.pdf" "Strydom_et_al_2023_graph_embedding_preprint" 1674586184 2
+["pdflatex"] 1674586378 "Strydom_et_al_2023_graph_embedding_preprint.tex" "Strydom_et_al_2023_graph_embedding_preprint.pdf" "Strydom_et_al_2023_graph_embedding_preprint" 1674586382 2
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc" 1610747736 3356 2818ff063f8b5d0d850e1203330b9fda ""
@@ -227,13 +227,13 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1672535614 4623321 6abbe6b7353361ea94d693a930a55e17 ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1672535757 7874664 004a18cd5a2cccd70536874e6c3d8d01 ""
   "/opt/texlive/texdir/texmf.cnf" 1672535606 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "Strydom_et_al_2023_graph_embedding_preprint.aux" 1674586184 9537 f39151d79a4d40107b0a75094b195b8c "pdflatex"
-  "Strydom_et_al_2023_graph_embedding_preprint.out" 1674586184 1428 508d8454c99eb3145dde7b242360c5cf "pdflatex"
-  "Strydom_et_al_2023_graph_embedding_preprint.tex" 1674586179 81736 75fdbb526a41f83edc792ab485fedaf7 ""
-  "figures/conceptual_2.png" 1674586180 1616152 b1dd303eaeb48a41b7bd1012da15e3f1 ""
-  "figures/illustration-part1.png" 1674586180 252784 ba37eb0694fdb9873d06efff63bf0891 ""
-  "figures/illustration-part2.png" 1674586180 295152 d1af32ba220a2569f48342689be53dc7 ""
-  "logo.png" 1674586179 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
+  "Strydom_et_al_2023_graph_embedding_preprint.aux" 1674586381 9537 390ff97ed63c76bfe50d2657cc5002b1 "pdflatex"
+  "Strydom_et_al_2023_graph_embedding_preprint.out" 1674586381 1428 508d8454c99eb3145dde7b242360c5cf "pdflatex"
+  "Strydom_et_al_2023_graph_embedding_preprint.tex" 1674586377 82048 11f8a1d56624900714e8bfd43c929c53 ""
+  "figures/conceptual_2.png" 1674586377 1616152 b1dd303eaeb48a41b7bd1012da15e3f1 ""
+  "figures/illustration-part1.png" 1674586377 252784 ba37eb0694fdb9873d06efff63bf0891 ""
+  "figures/illustration-part2.png" 1674586377 295152 d1af32ba220a2569f48342689be53dc7 ""
+  "logo.png" 1674586376 48455 a63f319933b5fbf1cb3d97b6f6857e7e ""
   (generated)
   "Strydom_et_al_2023_graph_embedding_preprint.aux"
   "Strydom_et_al_2023_graph_embedding_preprint.log"

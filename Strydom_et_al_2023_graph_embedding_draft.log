@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.1)  24 JAN 2023 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1023,52 +1023,52 @@ LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 896.
 
 [14]
 
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 956.
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 962.
 
 [15]
 
-LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 1015.
+LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 1018.
 
 [16]
 
-LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 1081.
+LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 1084.
 
 [17]
 
-LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 1135.
+LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 1148.
 
 [18]
 
-LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 1196.
+LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 1210.
 
 [19]
 
-LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 1257.
+LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 1264.
 
 [20]
 
-LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 1321.
+LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 1329.
 
 [21]
 
-LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 1378.
+LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 1391.
 
 [22]
 
-LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 1438.
+LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 1449.
 
 [23]
 
-LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 1498.
+LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 1509.
 
 [24] 
 AED: lastpage setting LastPage
 
-LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 1536.
+LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 1547.
 
 [25] AED endfloat: Processing end Figures and Tables
 (./Strydom_et_al_2023_graph_embedding_draft.fff
-<figures/conceptual_2.png, id=350, 1812.7725pt x 1329.768pt>
+<figures/conceptual_2.png, id=338, 1812.7725pt x 1329.768pt>
 File: figures/conceptual_2.png Graphic file (type png)
 <use figures/conceptual_2.png>
 Package pdftex.def Info: figures/conceptual_2.png  used on input line 18.
@@ -1078,7 +1078,7 @@ Package pdftex.def Info: figures/conceptual_2.png  used on input line 18.
 LaTeX Warning: Reference `LastPage' on page 26 undefined on input line 20.
 
 [26 <./figures/conceptual_2.png (PNG copy)>]
-<figures/illustration-part1.png, id=357, 2860.6875pt x 2409.0pt>
+<figures/illustration-part1.png, id=345, 2860.6875pt x 2409.0pt>
 File: figures/illustration-part1.png Graphic file (type png)
 <use figures/illustration-part1.png>
 Package pdftex.def Info: figures/illustration-part1.png  used on input line 38.
@@ -1089,7 +1089,7 @@ Package pdftex.def Info: figures/illustration-part1.png  used on input line 38.
 LaTeX Warning: Reference `LastPage' on page 27 undefined on input line 40.
 
 [27 <./figures/illustration-part1.png>]
-<figures/illustration-part2.png, id=364, 2860.6875pt x 2409.0pt>
+<figures/illustration-part2.png, id=353, 2860.6875pt x 2409.0pt>
 File: figures/illustration-part2.png Graphic file (type png)
 <use figures/illustration-part2.png>
 Package pdftex.def Info: figures/illustration-part2.png  used on input line 56.
@@ -1097,7 +1097,7 @@ Package pdftex.def Info: figures/illustration-part2.png  used on input line 56.
 (pdftex.def)             Requested size: 489.10307pt x 411.87712pt.
 )
 
-LaTeX Warning: Reference `LastPage' on page 28 undefined on input line 1536.
+LaTeX Warning: Reference `LastPage' on page 28 undefined on input line 1547.
 
 [28 <./figures/illustration-part2.png>]
 (./Strydom_et_al_2023_graph_embedding_draft.aux)
@@ -1119,8 +1119,8 @@ draft.out':
 (rerunfilecheck)             After:  654B5E399D5D00BAF8DE56834E6B0978;1433.
  ) 
 Here is how much of TeX's memory you used:
- 19494 strings out of 476093
- 317955 string characters out of 5793588
+ 19496 strings out of 476093
+ 317994 string characters out of 5793588
  1870793 words of memory out of 5000000
  39429 multiletter control sequences out of 15000+600000
  607115 words of font info for 96 fonts, out of 8000000 for 9000
@@ -1141,11 +1141,11 @@ st/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb></opt/texlive/texdir/te
 xmf-dist/fonts/type1/public/ccicons/ccicons.pfb></opt/texlive/texdir/texmf-dist
 /fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/texdir/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb>
-Output written on Strydom_et_al_2023_graph_embedding_draft.pdf (28 pages, 29051
-87 bytes).
+Output written on Strydom_et_al_2023_graph_embedding_draft.pdf (28 pages, 29055
+41 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 395 compressed objects within 4 object streams
- 149 named destinations out of 1000 (max. 500000)
+ 441 PDF objects out of 1000 (max. 8388607)
+ 385 compressed objects within 4 object streams
+ 151 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
