@@ -427,7 +427,11 @@ metawebs should be further downscaled to allow for *a posteriori* analyses. The
 methodology for metaweb downscaling is currently limited, and it is likely that
 the sustained effort to characterize the spatial dependency of food web
 structure will lead to more prescriptive guidelines about the need for
-prediction downscaling.
+prediction downscaling. Recent results by @Martins2022GloReg suggest that
+networks are shaped within eco-regions, with abrupt structural transitions from
+an eco-region to the next. Should this trend hold generally, this would provide
+an ecologically-relevant scale at which metawebs can be downscaled and
+predicted.
 
 The final family of problems relates less to ecological methods than to the
 praxis of ecological research. Operating under the context of national
@@ -447,23 +451,29 @@ structure is increasingly leveraged as a tool to guide conservation actions [see
 *e.g.* recent discussions for food-web based conservation; @Eero2021UseFoo;
 @Naman2022FooWeb; @Stier2017IntExp], the need to appraise and correct biases
 that are unwittingly propagated to algorithms when embedded from the original
-data is paramount. Predictive approaches deployed at the continental scale, no
-matter their intent, originate in the framework that contributed to the ongoing
-biodiversity crisis [@Adam2014EleTre] and reinforced environmental injustice
-[@Choudry2013SavBio; @Dominguez2020DecCon]. Particularly on Turtle Island and
-other territories that were traditionally stewarded by Indigenous people, these
-approaches should be replaced (or at least guided and framed) by Indigenous
-principles of land management [@Eichhorn2019SteDec; @Nokmaq2021AwaSle], as part
-of an "algorithm-in-the-loop" approach. Human-algorithm interactions are
-notoriously difficult and can yield adverse effect [@Green2019DisInt;
-@Stevenson2021AlgRis], suggesting the need to systematically study them for the
-specific purpose of biodiversity governance, as well as to improve the
-algorithmic literacy of decision makers. As we see artificial
-intelligence/machine learning being increasingly mobilized to generate knowledge
-that is lacking for conservation decisions [*e.g.* @Lamba2019DeeLea;
-@MoseboFernandes2020MacLea] and drive policy decisions [@Weiskopf2022IncUpt],
-our discussion of these tools need to go beyond the technical and statistical,
-and into the governance consequences they can have.
+data is paramount. These considerations are even more urgent in the specific
+context of biodiversity data, as long-term colonial legacies still shape
+taxonomic composition to this day [@Lenzner2022NatAli; @Raja2022ColSha], and
+where much shorter-term changes in taxonomic and genetic richness emerged as a
+consequence of environmental racism. [@Schmidt2022SysRac].
+
+Predictive approaches, regardless of the scale at which they are deployed and
+the intent of their deployment, originate in the framework that contributed to
+the ongoing biodiversity crisis [@Adam2014EleTre] and reinforced environmental
+injustice [@Choudry2013SavBio; @Dominguez2020DecCon]. Particularly on Turtle
+Island and other territories that were traditionally stewarded by Indigenous
+people, these approaches should be replaced (or at least guided and framed) by
+Indigenous principles of land management [@Eichhorn2019SteDec;
+@Nokmaq2021AwaSle], as part of an "algorithm-in-the-loop" approach.
+Human-algorithm interactions are notoriously difficult and can yield adverse
+effect [@Green2019DisInt; @Stevenson2021AlgRis], suggesting the need to
+systematically study them for the specific purpose of biodiversity governance,
+as well as to improve the algorithmic literacy of decision makers. As we see
+artificial intelligence/machine learning being increasingly mobilized to
+generate knowledge that is lacking for conservation decisions [*e.g.*
+@Lamba2019DeeLea; @MoseboFernandes2020MacLea] and drive policy decisions
+[@Weiskopf2022IncUpt], our discussion of these tools need to go beyond the
+technical and statistical, and into the governance consequences they can have.
 
 **Acknowledgements:** We acknowledge that this study was conducted on land
 within the traditional unceded territory of the Saint Lawrence Iroquoian,
