@@ -275,28 +275,28 @@ ecological network prediction, Strydom, Catchen, et al. (2021)
 identified two challenges of interest to the prediction of interactions
 at large scales. First, there is a relative scarcity of relevant data in
 most places globally -- paradoxically, this restricts our ability to
-infer interactions for locations where inference is perhaps the least
-required (and leaves us unable to make inference in regions without
-interaction data); second, accurate predictors are important for
-accurate predictions, and the lack of methods that can leverage a small
-amount of \emph{accurate} data is a serious impediment to our predictive
-ability. In most places, our most reliable biodiversity knowledge is
-that of a species pool (\emph{i.e.} a set of potentially interacting
-species in a given area): through the analysis of databases like the
-Global Biodiversity Information Facility (GBIF) or the International
-Union for the Conservation of Nature (IUCN), it is possible to construct
-a list of species in a region of interest; but inferring the potential
-interactions between these species is difficult.
+infer interactions to locations where inference is perhaps the least
+required (and leaves us unable to make inference in data scarce
+regions); second, accurate predictors are important for accurate
+predictions, and the lack of methods that can leverage a small amount of
+\emph{accurate} data is a serious impediment to our predictive ability.
+In most places, our most reliable biodiversity knowledge is that of a
+species pool (\emph{i.e.} a set of potentially interacting species in a
+given area): through the analysis of databases like the Global
+Biodiversity Information Facility (GBIF) or the International Union for
+the Conservation of Nature (IUCN), it is possible to construct a list of
+species for a region of interest; however inferring the potential
+interactions between these species still remains a challenge.
 
 Following the definition of Dunne (2006), a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories all
 \emph{potential} interactions between species for a spatially delimited
 area (and so captures the \(\gamma\) diversity of interactions). The
-metaweb is not a prediction of the network at a specific point within
-the spatial area it covers: it will have a different structure, notably
-by having a larger connectance (see \emph{e.g.} Wood et al., 2015) and
-complexity (see \emph{e.g.} Galiana et al., 2022), from any of these
-local networks. These local networks (which capture the \(\alpha\)
+metaweb itself is not a prediction of the network at a specific point
+within the spatial area it covers: it will have a different structure,
+notably by having a larger connectance (see \emph{e.g.} Wood et al.,
+2015) and complexity (see \emph{e.g.} Galiana et al., 2022), from any of
+these local networks. These local networks (which capture the \(\alpha\)
 diversity of interactions) are a subset of the metaweb's species and
 realized interactions, and have been called ``metaweb realizations''
 (Poisot et al., 2015). Differences between local networks and their
@@ -328,7 +328,7 @@ has been done for example for tree-galler-parasitoid systems (Gravel et
 al., 2018), fish trophic interactions (Albouy et al., 2019), tetrapod
 trophic interactions (J. Braga et al., 2019; O'Connor et al., 2020), and
 crop-pest networks (Grünig et al., 2020). In this contribution, we
-highlight the power in viewing (and constructing) metawebs as
+highlight the power of viewing (and constructing) metawebs as
 \emph{probabilistic} objects in the context of rare interactions,
 discuss how a family of machine learning tools (graph embeddings and
 transfer learning) can be used to overcome data limitations to metaweb
@@ -346,8 +346,8 @@ suggested that most links in ecological networks are cryptic,
 (2016): sampling ecological interactions is difficult because it
 requires first the joint observation of two species, and then the
 observation of their interaction. In addition, it is generally expected
-weak or rare links to be more prevalent in networks than common or
-strong links (Csermely, 2004), compared to strong, persistent links;
+that weak or rare links will be more prevalent in networks than common
+or strong links (Csermely, 2004), compared to strong, persistent links;
 this is notably the case in food chains, wherein many weaker links are
 key to the stability of a system (Neutel et al., 2002). In the light of
 these observations, we expect to see an over-representation of
@@ -368,7 +368,7 @@ a specific network topology for link prediction (Gaucher et al., 2021),
 but are able to work on generalizations of the network. These
 considerations emphasize why metaweb predictions should focus on
 quantitative (preferentially probabilistic) predictions, and this should
-constrain the suite of appropriate models used to predict them.
+constrain the suite of models that are appropriate for prediction.
 
 It is important to recall that a metaweb is intended as a catalogue of
 all potential (feasible) interactions, which is then filtered for a
@@ -407,19 +407,20 @@ variability (Gupta et al., 2022).
 \includegraphics{figures/conceptual_2.png}
 \caption{The embedding process (\textbf{A}) can help to identify links
 (interactions) that may have been missed within the original community
-(represented by the orange dashed lines, \textbf{B}). Transfer learning
-allows for the prediction links (interactions) when novel species
-(\textbf{C}) are included alongside the original community (\textbf{D}).
-This is achieved by learning using other relevant predictors
+(represented by the orange dashed arrows, \textbf{B}). Transfer learning
+(\textbf{D}) allows for the prediction links (interactions) even when
+novel species (\textbf{C}) are included alongside the original
+community. This is achieved by learning using other relevant predictors
 (\emph{e.g.} traits) in conjunction with the known interactions to infer
 latent values (\textbf{E}). Ultimately this allows us to predict links
-(interactions) for species external to the original sample as well as
-within sample links (\textbf{F}). Within this context the predicted (and
-original) networks as well as the ecological predictors used (green
-boxes) are products that can be quantified through field measurements,
-whereas the embedded as well as imputed matrices (purple box) are
-representative of a decomposition of the interaction
-networks}\label{fig:embedding}
+(interactions) for species external from the original sample (blue
+dashed arrows) as well as missing within sample links (\textbf{F}).
+Within this context the predicted (and original) networks as well as the
+ecological predictors used (green boxes) are products that can be
+quantified through measurements in the field, whereas the embedded as
+well as imputed matrices (purple box) are representative of a
+decomposition of the interaction matrices onto the embedding
+space}\label{fig:embedding}
 }
 \end{figure}
 
@@ -639,7 +640,7 @@ improves the efficacy of t-SNE {[}t-distributed stochastic neighbor
 embedding; Maaten (2009){]}. There are many dimensionality reductions
 (Anowar et al., 2021) that can be applied to an embedded network should
 the need for dimensionality reduction (for example for data
-visualisation) arise. In brief, many graph embeddings \emph{can} serve
+visualization) arise. In brief, many graph embeddings \emph{can} serve
 as dimensionality reduction steps, but not all do, neither do all
 dimensionality reduction methods provide adequate graph embedding
 capacities. In the next section (and fig.~\ref{fig:embedding}), we show
@@ -734,8 +735,8 @@ between the number of parasites and position along the first axis of the
 right-subspace for all hosts, showing that the embedding captures
 elements of network structure at the species scale. \textbf{B}, weak
 relationship between the body mass of hosts (in grams) and the position
-alongside the same dimension. \textbf{C}, weak relationship between
-bodymass of hosts and parasite richness. \textbf{D}, distribution of
+alongside the same dimension. \textbf{C}, weak relationship between body
+mass of hosts and parasite richness. \textbf{D}, distribution of
 positions alongside the same axis for hosts grouped by taxonomic
 family.}\label{fig:illustration2}
 }
@@ -752,15 +753,15 @@ data. In panel \textbf{A}, we show that host with a higher value on the
 first dimension have fewer parasites. This relates to the body size of
 hosts in the \emph{PanTHERIA} database (Jones et al., 2009), as shown in
 panel \textbf{B}: interestingly, the position on the first axis is only
-weakly correlated to body mass of the host; this matches well establihed
-results showing that body size/mass is not always a direct predictor of
-parasite richness in terrestrial mammals (Morand \& Poulin, 1998), a
-result we observe in panel \textbf{C}. Finally, in panel \textbf{D}, we
-can see how different taxonomic families occupy different positions on
-the first axis, with \emph{e.g.} Sciuridae being biased towards higher
-values. These results show how we can look for ecological informations
-in the output of network embeddings, which can further be refined into
-the selection of predictors for transfer learning.
+weakly correlated to body mass of the host; this matches well
+established results showing that body size/mass is not always a direct
+predictor of parasite richness in terrestrial mammals (Morand \& Poulin,
+1998), a result we observe in panel \textbf{C}. Finally, in panel
+\textbf{D}, we can see how different taxonomic families occupy different
+positions on the first axis, with \emph{e.g.} Sciuridae being biased
+towards higher values. These results show how we can look for ecological
+informations in the output of network embeddings, which can further be
+refined into the selection of predictors for transfer learning.
 
 \hypertarget{the-metaweb-embeds-both-ecological-hypotheses-and-practices}{%
 \section{The metaweb embeds both ecological hypotheses and
@@ -772,9 +773,9 @@ interactions between species at a large spatial scale. But as Herbert
 planet-wide problems''; any inference of a metaweb at large scales must
 contend with several novel, and interwoven, families of problems. In
 this section, we list some of the most pressing research priorities
-(\emph{i.e.} problems that can be adressed with subsequent data analysis
-or simulations), as well as issues related to the application of these
-methods at the science-policy interface.
+(\emph{i.e.} problems that can be addressed with subsequent data
+analysis or simulations), as well as issues related to the application
+of these methods at the science-policy interface.
 
 \hypertarget{identifying-the-properties-of-the-network-to-embed}{%
 \subsection{Identifying the properties of the network to

@@ -355,21 +355,21 @@ limitations</div>
             prediction of interactions at large scales. First, there is
             a relative scarcity of relevant data in most places globally
             – paradoxically, this restricts our ability to infer
-            interactions for locations where inference is perhaps the
+            interactions to locations where inference is perhaps the
             least required (and leaves us unable to make inference in
-            regions without interaction data); second, accurate
-            predictors are important for accurate predictions, and the
-            lack of methods that can leverage a small amount of
-            <em>accurate</em> data is a serious impediment to our
-            predictive ability. In most places, our most reliable
-            biodiversity knowledge is that of a species pool
-            (<em>i.e.</em> a set of potentially interacting species in a
-            given area): through the analysis of databases like the
-            Global Biodiversity Information Facility (GBIF) or the
-            International Union for the Conservation of Nature (IUCN),
-            it is possible to construct a list of species in a region of
-            interest; but inferring the potential interactions between
-            these species is difficult.</p>
+            data scarce regions); second, accurate predictors are
+            important for accurate predictions, and the lack of methods
+            that can leverage a small amount of <em>accurate</em> data
+            is a serious impediment to our predictive ability. In most
+            places, our most reliable biodiversity knowledge is that of
+            a species pool (<em>i.e.</em> a set of potentially
+            interacting species in a given area): through the analysis
+            of databases like the Global Biodiversity Information
+            Facility (GBIF) or the International Union for the
+            Conservation of Nature (IUCN), it is possible to construct a
+            list of species for a region of interest; however inferring
+            the potential interactions between these species still
+            remains a challenge.</p>
             <p>Following the definition of <span class="citation"
             data-cites="Dunne2006Network">Dunne (2006)</span>, a metaweb
             is the ecological network analogue to the species pool;
@@ -377,7 +377,7 @@ limitations</div>
             interactions between species for a spatially delimited area
             (and so captures the <span
             class="math inline"><em>γ</em></span> diversity of
-            interactions). The metaweb is not a prediction of the
+            interactions). The metaweb itself is not a prediction of the
             network at a specific point within the spatial area it
             covers: it will have a different structure, notably by
             having a larger connectance <span class="citation"
@@ -438,7 +438,7 @@ limitations</div>
             et al., 2019; O’Connor et al., 2020)</span>, and crop-pest
             networks <span class="citation"
             data-cites="Grunig2020Crop">(Grünig et al., 2020)</span>. In
-            this contribution, we highlight the power in viewing (and
+            this contribution, we highlight the power of viewing (and
             constructing) metawebs as <em>probabilistic</em> objects in
             the context of rare interactions, discuss how a family of
             machine learning tools (graph embeddings and transfer
@@ -459,7 +459,7 @@ limitations</div>
             sampling ecological interactions is difficult because it
             requires first the joint observation of two species, and
             then the observation of their interaction. In addition, it
-            is generally expected weak or rare links to be more
+            is generally expected that weak or rare links will be more
             prevalent in networks than common or strong links <span
             class="citation" data-cites="Csermely2004Strong">(Csermely,
             2004)</span>, compared to strong, persistent links; this is
@@ -491,7 +491,7 @@ limitations</div>
             network. These considerations emphasize why metaweb
             predictions should focus on quantitative (preferentially
             probabilistic) predictions, and this should constrain the
-            suite of appropriate models used to predict them.</p>
+            suite of models that are appropriate for prediction.</p>
             <p>It is important to recall that a metaweb is intended as a
             catalogue of all potential (feasible) interactions, which is
             then filtered for a given application <span class="citation"
@@ -541,26 +541,27 @@ limitations</div>
             2022)</span>.</p>
             <figure>
             <img src="figures/conceptual_2.png" id="fig:embedding"
-            alt="Figure 1: The embedding process (A) can help to identify links (interactions) that may have been missed within the original community (represented by the orange dashed lines, B). Transfer learning allows for the prediction links (interactions) when novel species (C) are included alongside the original community (D). This is achieved by learning using other relevant predictors (e.g. traits) in conjunction with the known interactions to infer latent values (E). Ultimately this allows us to predict links (interactions) for species external to the original sample as well as within sample links (F). Within this context the predicted (and original) networks as well as the ecological predictors used (green boxes) are products that can be quantified through field measurements, whereas the embedded as well as imputed matrices (purple box) are representative of a decomposition of the interaction networks" />
+            alt="Figure 1: The embedding process (A) can help to identify links (interactions) that may have been missed within the original community (represented by the orange dashed arrows, B). Transfer learning (D) allows for the prediction links (interactions) even when novel species (C) are included alongside the original community. This is achieved by learning using other relevant predictors (e.g. traits) in conjunction with the known interactions to infer latent values (E). Ultimately this allows us to predict links (interactions) for species external from the original sample (blue dashed arrows) as well as missing within sample links (F). Within this context the predicted (and original) networks as well as the ecological predictors used (green boxes) are products that can be quantified through measurements in the field, whereas the embedded as well as imputed matrices (purple box) are representative of a decomposition of the interaction matrices onto the embedding space" />
             <figcaption aria-hidden="true">Figure 1: The embedding
             process (<strong>A</strong>) can help to identify links
             (interactions) that may have been missed within the original
-            community (represented by the orange dashed lines,
-            <strong>B</strong>). Transfer learning allows for the
-            prediction links (interactions) when novel species
-            (<strong>C</strong>) are included alongside the original
-            community (<strong>D</strong>). This is achieved by learning
-            using other relevant predictors (<em>e.g.</em> traits) in
+            community (represented by the orange dashed arrows,
+            <strong>B</strong>). Transfer learning (<strong>D</strong>)
+            allows for the prediction links (interactions) even when
+            novel species (<strong>C</strong>) are included alongside
+            the original community. This is achieved by learning using
+            other relevant predictors (<em>e.g.</em> traits) in
             conjunction with the known interactions to infer latent
             values (<strong>E</strong>). Ultimately this allows us to
-            predict links (interactions) for species external to the
-            original sample as well as within sample links
-            (<strong>F</strong>). Within this context the predicted (and
-            original) networks as well as the ecological predictors used
-            (green boxes) are products that can be quantified through
-            field measurements, whereas the embedded as well as imputed
-            matrices (purple box) are representative of a decomposition
-            of the interaction networks</figcaption>
+            predict links (interactions) for species external from the
+            original sample (blue dashed arrows) as well as missing
+            within sample links (<strong>F</strong>). Within this
+            context the predicted (and original) networks as well as the
+            ecological predictors used (green boxes) are products that
+            can be quantified through measurements in the field, whereas
+            the embedded as well as imputed matrices (purple box) are
+            representative of a decomposition of the interaction
+            matrices onto the embedding space</figcaption>
             </figure>
             <h1
             id="graph-embedding-offers-promises-for-the-inference-of-potential-interactions">Graph
@@ -936,7 +937,7 @@ limitations</div>
             data-cites="Anowar2021Conceptual">(Anowar et al.,
             2021)</span> that can be applied to an embedded network
             should the need for dimensionality reduction (for example
-            for data visualisation) arise. In brief, many graph
+            for data visualization) arise. In brief, many graph
             embeddings <em>can</em> serve as dimensionality reduction
             steps, but not all do, neither do all dimensionality
             reduction methods provide adequate graph embedding
@@ -1049,7 +1050,7 @@ limitations</div>
             <figure>
             <img src="figures/illustration-part2.png"
             id="fig:illustration2"
-            alt="Figure 3: Ecological analysis of an embedding for a host-parasite metaweb, using Random Dot Product Graphs. A, relationship between the number of parasites and position along the first axis of the right-subspace for all hosts, showing that the embedding captures elements of network structure at the species scale. B, weak relationship between the body mass of hosts (in grams) and the position alongside the same dimension. C, weak relationship between bodymass of hosts and parasite richness. D, distribution of positions alongside the same axis for hosts grouped by taxonomic family." />
+            alt="Figure 3: Ecological analysis of an embedding for a host-parasite metaweb, using Random Dot Product Graphs. A, relationship between the number of parasites and position along the first axis of the right-subspace for all hosts, showing that the embedding captures elements of network structure at the species scale. B, weak relationship between the body mass of hosts (in grams) and the position alongside the same dimension. C, weak relationship between body mass of hosts and parasite richness. D, distribution of positions alongside the same axis for hosts grouped by taxonomic family." />
             <figcaption aria-hidden="true">Figure 3: Ecological analysis
             of an embedding for a host-parasite metaweb, using Random
             Dot Product Graphs. <strong>A</strong>, relationship between
@@ -1059,9 +1060,10 @@ limitations</div>
             <strong>B</strong>, weak relationship between the body mass
             of hosts (in grams) and the position alongside the same
             dimension. <strong>C</strong>, weak relationship between
-            bodymass of hosts and parasite richness. <strong>D</strong>,
-            distribution of positions alongside the same axis for hosts
-            grouped by taxonomic family.</figcaption>
+            body mass of hosts and parasite richness.
+            <strong>D</strong>, distribution of positions alongside the
+            same axis for hosts grouped by taxonomic
+            family.</figcaption>
             </figure>
             <p>The results of fig. 2 show that we can extract an
             embedding of the metaweb that captures enough variance to be
@@ -1079,7 +1081,7 @@ limitations</div>
             data-cites="Jones2009Pantheria">(Jones et al., 2009)</span>,
             as shown in panel <strong>B</strong>: interestingly, the
             position on the first axis is only weakly correlated to body
-            mass of the host; this matches well establihed results
+            mass of the host; this matches well established results
             showing that body size/mass is not always a direct predictor
             of parasite richness in terrestrial mammals <span
             class="citation" data-cites="Morand1998Density">(Morand
@@ -1103,7 +1105,7 @@ limitations</div>
             scales must contend with several novel, and interwoven,
             families of problems. In this section, we list some of the
             most pressing research priorities (<em>i.e.</em> problems
-            that can be adressed with subsequent data analysis or
+            that can be addressed with subsequent data analysis or
             simulations), as well as issues related to the application
             of these methods at the science-policy interface.</p>
             <h2
