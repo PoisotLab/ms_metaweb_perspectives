@@ -124,8 +124,8 @@ values (**E**). Ultimately this allows us to predict links (interactions) for
 species external to the original sample as well as within sample links (**F**).
 Within this context the predicted (and original) networks as well as the
 ecological predictors used (green boxes) are products that can be quantified
-through field measurements, whereas the embedded as well as imputed matrices are
-representative of a decomposition of the interaction
+through field measurements, whereas the embedded as well as imputed matrices
+(purple box) are representative of a decomposition of the interaction
 networks](figures/conceptual_2.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
