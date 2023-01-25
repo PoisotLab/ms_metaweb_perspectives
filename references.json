@@ -7,7 +7,7 @@
                 "given": "Rachelle"
             }
         ],
-        "id": "Adam2014EleTre",
+        "id": "Adam2014Elephant",
         "title": "Elephant treaties: The Colonial legacy of the biodiversity crisis",
         "issued": {
             "date-parts": [
@@ -20,11 +20,12 @@
     },
     {
         "publisher": "Nature Publishing Group",
-        "issue": "8",
+        "issue": "8, 8",
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    8
                 ]
             ]
         },
@@ -91,7 +92,7 @@
                 "given": "Dominique"
             }
         ],
-        "id": "Albouy2019MarFis",
+        "id": "Albouy2019Marine",
         "DOI": "10.1038/s41559-019-0950-y",
         "volume": "3",
         "page": "1153-1161",
@@ -103,7 +104,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    8,
+                    9
                 ]
             ]
         },
@@ -178,7 +181,7 @@
                 "given": "Matthias"
             }
         ],
-        "id": "Albrecht2018PlaAni",
+        "id": "Albrecht2018Plant",
         "DOI": "10.1038/s41467-018-05610-w",
         "volume": "9",
         "page": "3177",
@@ -189,7 +192,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    5,
+                    1
                 ]
             ]
         },
@@ -208,7 +213,7 @@
                 "given": "Bassant"
             }
         ],
-        "id": "Anowar2021ConEmp",
+        "id": "Anowar2021Conceptual",
         "DOI": "10.1016/j.cosrev.2021.100378",
         "volume": "40",
         "page": "100378",
@@ -226,18 +231,19 @@
                 "given": "Georgina"
             }
         ],
-        "URL": "https://arxiv.org/abs/1911.11726",
-        "id": "Arsov2019NetEmb",
+        "URL": "http://arxiv.org/abs/1911.11726",
+        "id": "Arsov2019Network",
         "title": "Network Embedding: An Overview",
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    11,
+                    26
                 ]
             ]
         },
-        "container-title": "arXiv:1911.11726 [cs, stat]",
-        "type": "article-journal"
+        "type": "manuscript"
     },
     {
         "publisher": "arXiv",
@@ -284,13 +290,15 @@
                 "given": "Carey E."
             }
         ],
-        "URL": "https://arxiv.org/abs/1709.05454",
-        "id": "Athreya2017StaInf",
+        "URL": "http://arxiv.org/abs/1709.05454",
+        "id": "Athreya2017Statistical",
         "title": "Statistical inference on random dot product graphs: A survey",
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    9,
+                    16
                 ]
             ]
         },
@@ -301,7 +309,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    5,
+                    5
                 ]
             ]
         },
@@ -320,7 +330,7 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Banville2021ManJl",
+        "id": "Banville2021Mangal",
         "DOI": "10.21105/joss.02721",
         "volume": "6",
         "page": "2721",
@@ -328,17 +338,30 @@
         "type": "article-journal"
     },
     {
-        "volume": "8",
+        "edition": "1",
+        "publisher": "Oxford University PressOxford",
+        "issued": {
+            "date-parts": [
+                [
+                    2005,
+                    11,
+                    10
+                ]
+            ]
+        },
         "author": [
             {
-                "family": "Bartomeus",
-                "given": "Ignasi"
+                "family": "Barrett",
+                "given": "Scott"
             }
         ],
+        "id": "Barrett2005Environment",
+        "DOI": "10.1093/0199286094.001.0001",
+        "title": "Environment and Statecraft: The Strategy of Environmental Treaty-Making",
+        "type": "book"
+    },
+    {
         "issue": "7",
-        "id": "Bartomeus2013UndLin",
-        "page": "e69200",
-        "title": "Understanding linkage rules in plant-pollinator networks by using hierarchical models that incorporate pollinator detectability and plant traits",
         "issued": {
             "date-parts": [
                 [
@@ -347,10 +370,29 @@
             ]
         },
         "container-title": "PloS one",
+        "author": [
+            {
+                "family": "Bartomeus",
+                "given": "Ignasi"
+            }
+        ],
+        "id": "Bartomeus2013Understanding",
+        "volume": "8",
+        "URL": "http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0069200",
+        "page": "e69200",
+        "title": "Understanding linkage rules in plant-pollinator networks by using hierarchical models that incorporate pollinator detectability and plant traits",
         "type": "article-journal"
     },
     {
-        "volume": "30",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2016
+                ]
+            ]
+        },
+        "container-title": "Functional Ecology",
         "author": [
             {
                 "family": "Bartomeus",
@@ -377,19 +419,12 @@
                 "given": "Maud"
             }
         ],
-        "issue": "12",
-        "id": "Bartomeus2016ComFra",
+        "id": "Bartomeus2016Common",
+        "volume": "30",
+        "URL": "http://onlinelibrary.wiley.com/doi/10.1111/1365-2435.12666/full",
         "page": "1894-1903",
         "title": "A common framework for identifying linkage rules across different types of interactions",
         "other-ids": "BartGrav16,Bartomeus2016ComFraa",
-        "issued": {
-            "date-parts": [
-                [
-                    2016
-                ]
-            ]
-        },
-        "container-title": "Functional Ecology",
         "type": "article-journal"
     },
     {
@@ -397,7 +432,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2003
+                    2003,
+                    8,
+                    5
                 ]
             ]
         },
@@ -420,7 +457,7 @@
                 "given": "J. M."
             }
         ],
-        "id": "Bascompte2003NesAss",
+        "id": "Bascompte2003Nested",
         "DOI": "10.1073/pnas.1633576100",
         "volume": "100",
         "page": "9383-9387",
@@ -432,7 +469,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2006
+                    2006,
+                    9,
+                    12
                 ]
             ]
         },
@@ -451,7 +490,7 @@
                 "given": "Philip H."
             }
         ],
-        "id": "Beckerman2006ForBio",
+        "id": "Beckerman2006Foraging",
         "DOI": "10.1073/pnas.0603039103",
         "volume": "103",
         "page": "13745-13749",
@@ -463,7 +502,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    1,
+                    1
                 ]
             ]
         },
@@ -486,7 +527,7 @@
                 "given": "Viral B."
             }
         ],
-        "id": "Bezanson2017JulFre",
+        "id": "Bezanson2017Julia",
         "DOI": "10.1137/141000671",
         "volume": "59",
         "page": "65-98",
@@ -509,7 +550,7 @@
                 "given": "Dominique"
             }
         ],
-        "id": "Blanchet2020CooNot",
+        "id": "Blanchet2020Cooccurrence",
         "title": "Co-occurrence is not evidence of ecological interactions",
         "issued": {
             "date-parts": [
@@ -523,11 +564,13 @@
     },
     {
         "publisher": "Nature Publishing Group",
-        "issue": "1",
+        "issue": "1, 1",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    1,
+                    14
                 ]
             ]
         },
@@ -558,7 +601,7 @@
                 "given": "Yves"
             }
         ],
-        "id": "Boeckaerts2021PreBac",
+        "id": "Boeckaerts2021Predicting",
         "DOI": "10.1038/s41598-021-81063-4",
         "volume": "11",
         "page": "1467",
@@ -566,7 +609,15 @@
         "type": "article-journal"
     },
     {
-        "DOI": "10.1016/j.tree.2017.03.001",
+        "issued": {
+            "date-parts": [
+                [
+                    2017,
+                    3
+                ]
+            ]
+        },
+        "container-title": "Trends in Ecology & Evolution",
         "author": [
             {
                 "family": "Bohan",
@@ -593,16 +644,9 @@
                 "given": "Guy"
             }
         ],
-        "id": "Bohan2017NexGlo",
+        "id": "Bohan2017Nextgeneration",
+        "DOI": "10.1016/j.tree.2017.03.001",
         "title": "Next-Generation Global Biomonitoring: Large-scale, Automated Reconstruction of Ecological Networks",
-        "issued": {
-            "date-parts": [
-                [
-                    2017
-                ]
-            ]
-        },
-        "container-title": "Trends in Ecology & Evolution",
         "type": "article-journal"
     },
     {
@@ -637,7 +681,7 @@
                 "given": "Wilfried"
             }
         ],
-        "id": "Botella2022AppGra",
+        "id": "Botella2022Appraisal",
         "DOI": "10.1111/2041-210X.13738",
         "volume": "13",
         "page": "203-216",
@@ -700,7 +744,7 @@
                 "given": "Wilfried"
             }
         ],
-        "id": "Braga2019SpaAna",
+        "id": "Braga2019Spatial",
         "DOI": "10.1111/geb.12981",
         "volume": "28",
         "page": "1636-1648",
@@ -739,7 +783,7 @@
                 "given": "Michael J."
             }
         ],
-        "id": "Braga2021PhyRec",
+        "id": "Braga2021Phylogenetic",
         "DOI": "10.1111/ele.13842",
         "volume": "n/a",
         "title": "Phylogenetic reconstruction of ancestral ecological networks through time for pierid butterflies and their host plants",
@@ -750,7 +794,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    7,
+                    4
                 ]
             ]
         },
@@ -777,7 +823,7 @@
                 "given": "Daniel B."
             }
         ],
-        "id": "BramonMora2018IdeCom",
+        "id": "BramonMora2018Identifying",
         "DOI": "10.1038/s41467-018-05056-0",
         "volume": "9",
         "page": "2603",
@@ -789,7 +835,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2006
+                    2006,
+                    10,
+                    1
                 ]
             ]
         },
@@ -912,18 +960,20 @@
                 "given": "Joel E."
             }
         ],
-        "id": "Brose2006ConRes",
+        "id": "Brose2006Consumer",
         "DOI": "10.1890/0012-9658(2006)87[2411:CBRINF]2.0.CO;2",
         "volume": "87",
         "page": "2411-2417",
-        "title": "Consumer in Natural Food Webs",
+        "title": "Consumer–Resource Body-Size Relationships in Natural Food Webs",
         "type": "article-journal"
     },
     {
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    4,
+                    1
                 ]
             ]
         },
@@ -1114,7 +1164,7 @@
                 "given": "Paul A."
             }
         ],
-        "id": "Buxton2021KeyInf",
+        "id": "Buxton2021Key",
         "DOI": "10.1016/j.biocon.2021.108983",
         "volume": "256",
         "page": "108983",
@@ -1137,7 +1187,7 @@
             }
         ],
         "URL": "https://arxiv.org/abs/1709.07604",
-        "id": "Cai2017ComSur",
+        "id": "Cai2017Comprehensive",
         "title": "A Comprehensive Survey of Graph Embedding: Problems, Techniques and Applications",
         "issued": {
             "date-parts": [
@@ -1146,8 +1196,7 @@
                 ]
             ]
         },
-        "container-title": "arXiv preprint arXiv:1709.07604",
-        "type": "article-journal"
+        "type": "manuscript"
     },
     {
         "issue": "3",
@@ -1193,7 +1242,7 @@
                 "given": "Aimée T."
             }
         ],
-        "id": "Cameron2019UneGlo",
+        "id": "Cameron2019Uneven",
         "DOI": "10.1002/ecs2.2645",
         "volume": "10",
         "page": "e02645",
@@ -1205,7 +1254,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    10,
+                    1
                 ]
             ]
         },
@@ -1224,7 +1275,7 @@
                 "given": "Xiao-Ke"
             }
         ],
-        "id": "Cao2019NetEmb",
+        "id": "Cao2019Network",
         "DOI": "10.1063/1.5120724",
         "volume": "29",
         "page": "103102",
@@ -1233,11 +1284,12 @@
     },
     {
         "publisher": "Nature Publishing Group",
-        "issue": "7",
+        "issue": "7, 7",
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    7
                 ]
             ]
         },
@@ -1260,12 +1312,48 @@
                 "given": "Shweta"
             }
         ],
-        "id": "Carlson2019GloEst",
+        "id": "Carlson2019Global",
         "DOI": "10.1038/s41559-019-0910-6",
         "volume": "3",
         "page": "1070-1075",
         "title": "Global estimates of mammalian viral diversity accounting for host sharing",
         "type": "article-journal"
+    },
+    {
+        "publisher": "EcoEvoRXiV",
+        "DOI": "10.32942/X2DW22",
+        "genre": "preprint",
+        "author": [
+            {
+                "family": "Catchen",
+                "given": "Michael"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            },
+            {
+                "family": "Pollock",
+                "given": "Laura"
+            },
+            {
+                "family": "Gonzalez",
+                "given": "Andrew"
+            }
+        ],
+        "number": "4929",
+        "id": "Catchen2023Missing",
+        "title": "The missing link: Discerning true from false negatives when sampling species interaction networks",
+        "issued": {
+            "date-parts": [
+                [
+                    2023,
+                    1,
+                    18
+                ]
+            ]
+        },
+        "type": ""
     },
     {
         "issue": "7",
@@ -1295,7 +1383,7 @@
                 "given": "Steven W."
             }
         ],
-        "id": "Cavender-Bares2009MerCom",
+        "id": "Cavender-Bares2009Merging",
         "DOI": "10.1111/j.1461-0248.2009.01314.x",
         "volume": "12",
         "page": "693-715",
@@ -1307,7 +1395,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    2
                 ]
             ]
         },
@@ -1330,7 +1419,7 @@
                 "given": "Dominique"
             }
         ],
-        "id": "Cazelles2016TheSpe",
+        "id": "Cazelles2016Theory",
         "DOI": "10.1007/s12080-015-0281-9",
         "volume": "9",
         "page": "39-48",
@@ -1369,8 +1458,9 @@
                 "given": "Kevin"
             }
         ],
-        "id": "Chami2022MacLea",
+        "id": "Chami2022Machine",
         "volume": "23",
+        "URL": "http://jmlr.org/papers/v23/20-852.html",
         "page": "1-64",
         "title": "Machine Learning on Graphs: A Model and Comprehensive Taxonomy",
         "type": "article-journal"
@@ -1398,7 +1488,8 @@
                 "given": "Carla P."
             }
         ],
-        "id": "Chen2017DeeMul",
+        "URL": "https://www.ijcai.org/proceedings/2017/509",
+        "id": "Chen2017Deep",
         "page": "3639-3646",
         "title": "Deep Multi-species Embedding",
         "issued": {
@@ -1429,18 +1520,19 @@
                 "given": "Steven"
             }
         ],
-        "URL": "https://arxiv.org/abs/1706.07845",
-        "id": "Chen2017HarHie",
+        "URL": "http://arxiv.org/abs/1706.07845",
+        "id": "Chen2017Harp",
         "title": "HARP: Hierarchical Representation Learning for Networks",
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    11,
+                    16
                 ]
             ]
         },
-        "container-title": "arXiv:1706.07845 [cs]",
-        "type": "article-journal"
+        "type": "manuscript"
     },
     {
         "publisher": "Bloomsbury Publishing",
@@ -1450,7 +1542,7 @@
                 "given": "Aziz"
             }
         ],
-        "id": "Choudry2013SavBio",
+        "id": "Choudry2013Saving",
         "page": "24-44",
         "title": "Saving biodiversity, for whom and for what? Conservation NGOs, complicity, colonialism and conquest in an era of capitalist globalization",
         "issued": {
@@ -1467,7 +1559,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    6,
+                    1
                 ]
             ]
         },
@@ -1494,7 +1588,7 @@
                 "given": "Daniel K."
             }
         ],
-        "id": "Cieslak2020TdiSto",
+        "id": "Cieslak2020Tdistributed",
         "DOI": "10.1016/j.margen.2019.100723",
         "volume": "51",
         "page": "100723",
@@ -1502,22 +1596,14 @@
         "type": "article-journal"
     },
     {
-        "issue": "ja",
-        "issued": {
-            "date-parts": [
-                [
-                    2019
-                ]
-            ]
-        },
-        "container-title": "Methods in Ecology and Evolution",
+        "DOI": "10.1111/2041-210X.13180",
         "author": [
             {
                 "family": "Cirtwill",
                 "given": "Alyssa R."
             },
             {
-                "family": "Eklf",
+                "family": "Eklӧf",
                 "given": "Anna"
             },
             {
@@ -1533,17 +1619,26 @@
                 "given": "Dominique"
             }
         ],
-        "id": "Cirtwill2019QuaFra",
-        "DOI": "10.1111/2041-210X.13180",
         "volume": "0",
+        "id": "Cirtwill2019Quantitative",
         "title": "A quantitative framework for investigating the reliability of empirical network construction",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "container-title": "Methods in Ecology and Evolution",
         "type": "article-journal"
     },
     {
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    2,
+                    1
                 ]
             ]
         },
@@ -1558,7 +1653,7 @@
                 "given": "Peter"
             }
         ],
-        "id": "Cirtwill2021BuiFoo",
+        "id": "Cirtwill2021Building",
         "DOI": "10.1016/j.baae.2020.11.007",
         "volume": "50",
         "page": "67-76",
@@ -1570,7 +1665,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2004
+                    2004,
+                    7
                 ]
             ]
         },
@@ -1581,7 +1677,7 @@
                 "given": "Peter"
             }
         ],
-        "id": "Csermely2004StrLin",
+        "id": "Csermely2004Strong",
         "DOI": "10.1016/j.tibs.2004.05.004",
         "volume": "29",
         "page": "331-334",
@@ -1590,6 +1686,14 @@
     },
     {
         "publisher": "Annual Reviews",
+        "issued": {
+            "date-parts": [
+                [
+                    2010
+                ]
+            ]
+        },
+        "container-title": "Annual Review of Ecology, Evolution, and Systematics",
         "author": [
             {
                 "family": "Dale",
@@ -1600,18 +1704,11 @@
                 "given": "M.-J."
             }
         ],
+        "id": "Dale2010Graphs",
         "volume": "41",
-        "id": "Dale2010GraSpa",
+        "URL": "https://www.jstor.org/stable/27896212",
         "page": "21-38",
         "title": "From Graphs to Spatial Graphs",
-        "issued": {
-            "date-parts": [
-                [
-                    2010
-                ]
-            ]
-        },
-        "container-title": "Annual Review of Ecology, Evolution, and Systematics",
         "type": "article-journal"
     },
     {
@@ -1619,7 +1716,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    4
                 ]
             ]
         },
@@ -1634,7 +1732,7 @@
                 "given": "Daniel B."
             }
         ],
-        "id": "DallaRiva2016ExpEvo",
+        "id": "DallaRiva2016Exploring",
         "DOI": "10.1111/oik.02305",
         "volume": "125",
         "page": "446-456",
@@ -1647,7 +1745,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    5,
+                    25
                 ]
             ]
         },
@@ -1666,7 +1766,7 @@
                 "given": "John M."
             }
         ],
-        "id": "Dallas2017PreCry",
+        "id": "Dallas2017Predicting",
         "DOI": "10.1371/journal.pcbi.1005557",
         "volume": "13",
         "page": "e1005557",
@@ -1678,7 +1778,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    9,
+                    1
                 ]
             ]
         },
@@ -1693,7 +1795,7 @@
                 "given": "Julius"
             }
         ],
-        "id": "Danisch2021MakJl",
+        "id": "Danisch2021Makie",
         "DOI": "10.21105/joss.03349",
         "volume": "6",
         "page": "3349",
@@ -1705,7 +1807,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    1,
+                    27
                 ]
             ]
         },
@@ -1720,7 +1824,7 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Dansereau2021SimJl",
+        "id": "Dansereau2021Simplesdmlayers",
         "DOI": "10.21105/joss.02872",
         "volume": "6",
         "page": "2872",
@@ -1787,13 +1891,15 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Delmas2018AnaEco",
+        "id": "Delmas2018Analysing",
         "page": "112540",
         "title": "Analysing ecological networks of species interactions",
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    6,
+                    20
                 ]
             ]
         },
@@ -1802,11 +1908,12 @@
     },
     {
         "publisher": "Multidisciplinary Digital Publishing Institute",
-        "issue": "3",
+        "issue": "3, 3",
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    3
                 ]
             ]
         },
@@ -1821,7 +1928,7 @@
                 "given": "Colin"
             }
         ],
-        "id": "Dominguez2020DecCon",
+        "id": "Dominguez2020Decolonising",
         "DOI": "10.3390/land9030065",
         "volume": "9",
         "page": "65",
@@ -1834,7 +1941,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2010
+                    2010,
+                    4,
+                    23
                 ]
             ]
         },
@@ -1857,7 +1966,7 @@
                 "given": "Dirk"
             }
         ],
-        "id": "Dormann2010EvoCli",
+        "id": "Dormann2010Evolution",
         "DOI": "10.1098/rsbl.2009.0688",
         "volume": "6",
         "page": "229-232",
@@ -1872,7 +1981,7 @@
                 "given": "Jennifer A"
             }
         ],
-        "id": "Dunne2006NetStr",
+        "id": "Dunne2006Network",
         "page": "27-86",
         "title": "The Network Structure of Food Webs",
         "editor": [
@@ -1900,7 +2009,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    11,
+                    1
                 ]
             ]
         },
@@ -1939,7 +2050,7 @@
                 "given": "Friedrich Wilhelm"
             }
         ],
-        "id": "Eero2021UseFoo",
+        "id": "Eero2021Use",
         "DOI": "10.1093/icesjms/fsab145",
         "volume": "78",
         "page": "2645-2663",
@@ -1971,7 +2082,7 @@
                 "given": "Mark"
             }
         ],
-        "id": "Eichhorn2019SteDec",
+        "id": "Eichhorn2019Steps",
         "DOI": "10.21425/F5FBG44795",
         "volume": "12",
         "page": "1-7",
@@ -1983,7 +2094,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2013
+                    2013,
+                    5,
+                    1
                 ]
             ]
         },
@@ -2063,7 +2176,7 @@
                 "given": "Stefano"
             }
         ],
-        "id": "Eklof2013DimEco",
+        "id": "Eklof2013Dimensionality",
         "DOI": "10.1111/ele.12081",
         "volume": "16",
         "page": "577-583",
@@ -2075,7 +2188,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    2,
+                    1
                 ]
             ]
         },
@@ -2090,7 +2205,7 @@
                 "given": "Daniel B."
             }
         ],
-        "id": "Eklof2016PhyCom",
+        "id": "Eklof2016Phylogenetic",
         "DOI": "10.1007/s12080-015-0273-9",
         "volume": "9",
         "page": "107-115",
@@ -2102,7 +2217,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    4,
+                    28
                 ]
             ]
         },
@@ -2121,7 +2238,7 @@
                 "given": "Chris"
             }
         ],
-        "id": "Fortin2021NetEco",
+        "id": "Fortin2021Network",
         "DOI": "10.1098/rspb.2020.1889",
         "volume": "288",
         "page": "rspb.2020.1889, 20201889",
@@ -2147,12 +2264,15 @@
                 "given": "Jens-Christian"
             }
         ],
-        "id": "Fricke2022EffDef",
+        "URL": "https://www.science.org/doi/abs/10.1126/science.abk3510",
+        "id": "Fricke2022Effects",
         "title": "The effects of defaunation on plants’ capacity to track climate change",
         "issued": {
             "date-parts": [
                 [
-                    2022
+                    2022,
+                    1,
+                    14
                 ]
             ]
         },
@@ -2164,7 +2284,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    5
                 ]
             ]
         },
@@ -2203,7 +2324,7 @@
                 "given": "José M."
             }
         ],
-        "id": "Galiana2018SpaSca",
+        "id": "Galiana2018Spatial",
         "DOI": "10.1038/s41559-018-0517-3",
         "volume": "2",
         "page": "782-790",
@@ -2234,11 +2355,11 @@
                 "given": "José M."
             }
         ],
-        "id": "Galiana2019GeoVar",
+        "id": "Galiana2019Geographical",
         "DOI": "10.1111/ecog.03684",
         "volume": "42",
         "page": "1175-1187",
-        "title": "The geographical variation of network structure is scale dependent: Understanding the biotic specialization of hostparasitoid networks",
+        "title": "The geographical variation of network structure is scale dependent: Understanding the biotic specialization of host–parasitoid networks",
         "type": "article-journal"
     },
     {
@@ -2285,14 +2406,23 @@
                 "given": "Miguel"
             }
         ],
-        "id": "Galiana2021SpaSca",
+        "id": "Galiana2021Spatial",
         "DOI": "10.1111/ecog.05229",
         "volume": "n/a",
         "title": "The spatial scaling of food web structure across European biogeographical regions",
         "type": "article-journal"
     },
     {
-        "DOI": "10.1038/s41559-021-01644-4",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    1,
+                    13
+                ]
+            ]
+        },
+        "container-title": "Nature Ecology & Evolution",
         "author": [
             {
                 "family": "Galiana",
@@ -2411,17 +2541,10 @@
                 "given": "José M."
             }
         ],
-        "id": "Galiana2022EcoNet",
+        "id": "Galiana2022Ecological",
+        "DOI": "10.1038/s41559-021-01644-4",
         "page": "1-8",
         "title": "Ecological network complexity scales with area",
-        "issued": {
-            "date-parts": [
-                [
-                    2022
-                ]
-            ]
-        },
-        "container-title": "Nature Ecology & Evolution",
         "type": "article-journal"
     },
     {
@@ -2429,7 +2552,9 @@
         "issued": {
             "date-parts": [
                 [
-                    1999
+                    1999,
+                    4,
+                    1
                 ]
             ]
         },
@@ -2449,7 +2574,7 @@
                 "given": "ANTHONY R."
             }
         ],
-        "id": "Garland1999IntPhy",
+        "id": "Garland1999Introduction",
         "DOI": "10.1093/icb/39.2.374",
         "volume": "39",
         "page": "374-388",
@@ -2461,7 +2586,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    11
                 ]
             ]
         },
@@ -2481,7 +2607,7 @@
                 "given": "Andrea"
             }
         ],
-        "id": "Garlaschelli2018CovStr",
+        "id": "Garlaschelli2018Covariance",
         "DOI": "10.1007/s10955-018-2114-x",
         "volume": "173",
         "URL": "https://arxiv.org/abs/1711.04273",
@@ -2493,7 +2619,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    12
                 ]
             ]
         },
@@ -2512,7 +2639,7 @@
                 "given": "Geneviève"
             }
         ],
-        "id": "Gaucher2021OutDet",
+        "id": "Gaucher2021Outlier",
         "DOI": "10.1016/j.csda.2021.107308",
         "volume": "164",
         "page": "107308",
@@ -2526,7 +2653,7 @@
                 "literal": "GBIF Secretariat"
             }
         ],
-        "id": "GBIFSecretariat2021GbiBac",
+        "id": "GBIFSecretariat2021Gbif",
         "title": "GBIF Backbone Taxonomy",
         "issued": {
             "date-parts": [
@@ -2569,7 +2696,7 @@
                 "given": "Andreas"
             }
         ],
-        "id": "Gerhold2015PhyPat",
+        "id": "Gerhold2015Phylogenetic",
         "DOI": "10.1111/1365-2435.12425",
         "volume": "29",
         "page": "600-614",
@@ -2581,7 +2708,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    11,
+                    1
                 ]
             ]
         },
@@ -2640,7 +2769,7 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Gibb2021DatPro",
+        "id": "Gibb2021Data",
         "DOI": "10.1093/biosci/biab080",
         "volume": "71",
         "page": "1148-1156",
@@ -2670,11 +2799,46 @@
                 "given": "Damià"
             }
         ],
-        "id": "Ginebreda2019QuaEco",
+        "id": "Ginebreda2019Quantification",
         "DOI": "10.1016/j.mex.2019.07.020",
         "volume": "6",
         "page": "1668-1676",
         "title": "Quantification of ecological complexity and resilience from multivariate biological metrics datasets using singular value decomposition entropy",
+        "type": "article-journal"
+    },
+    {
+        "issued": {
+            "date-parts": [
+                [
+                    2023
+                ]
+            ]
+        },
+        "container-title": "Journal of Tropical Ecology",
+        "author": [
+            {
+                "family": "Goebel",
+                "given": "Larissa Gabriela Araujo"
+            },
+            {
+                "family": "Vitorino",
+                "given": "Breno Dias"
+            },
+            {
+                "family": "Frota",
+                "given": "Angélica Vilas Boas"
+            },
+            {
+                "family": "Santos-Filho",
+                "given": "Manoel",
+                "dropping-particle": "dos"
+            }
+        ],
+        "id": "Goebel2023Body",
+        "DOI": "10.1017/S0266467422000505",
+        "volume": "39",
+        "page": "e12",
+        "title": "Body mass determines the role of mammal species in a frugivore-large fruit interaction network in a Neotropical savanna",
         "type": "article-journal"
     },
     {
@@ -2693,7 +2857,7 @@
                 "given": "Aaron"
             }
         ],
-        "id": "Goodfellow2016DeeLea",
+        "id": "Goodfellow2016Deep",
         "title": "Deep learning",
         "issued": {
             "date-parts": [
@@ -2708,7 +2872,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    7,
+                    1
                 ]
             ]
         },
@@ -2723,7 +2889,7 @@
                 "given": "Emilio"
             }
         ],
-        "id": "Goyal2018GraEmb",
+        "id": "Goyal2018Graph",
         "DOI": "10.1016/j.knosys.2018.03.022",
         "volume": "151",
         "page": "78-94",
@@ -2735,7 +2901,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2013
+                    2013,
+                    11
                 ]
             ]
         },
@@ -2762,7 +2929,7 @@
                 "given": "David"
             }
         ],
-        "id": "gravel_inferring_2013",
+        "id": "Gravel2013Inferring",
         "editor": [
             {
                 "family": "Freckleton",
@@ -2780,7 +2947,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    10
                 ]
             ]
         },
@@ -2831,7 +2999,7 @@
                 "given": "Tomas"
             }
         ],
-        "id": "Gravel2018BriElt",
+        "id": "Gravel2018Bringing",
         "DOI": "10.1111/ecog.04006",
         "volume": "0",
         "title": "Bringing Elton and Grinnell together: A quantitative framework to represent the biogeography of ecological interaction networks",
@@ -2843,7 +3011,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    1,
+                    29
                 ]
             ]
         },
@@ -2858,7 +3028,7 @@
                 "given": "Yiling"
             }
         ],
-        "id": "Green2019DisInt",
+        "id": "Green2019Disparate",
         "collection-title": "FAT* ’19",
         "DOI": "10.1145/3287560.3287563",
         "page": "90-99",
@@ -2890,24 +3060,29 @@
                 "given": "Alban"
             }
         ],
-        "id": "Grenie2021HarTax",
+        "id": "Grenie2021Harmonizing",
         "title": "Harmonizing taxon names in biodiversity data: A review of tools, databases, and best practices",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    9,
+                    3
                 ]
             ]
         },
-        "type": ""
+        "type": "article-journal"
     },
     {
         "publisher": "ACM",
+        "event": "KDD ’16: The 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
         "publisher-place": "San Francisco California USA",
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    8,
+                    13
                 ]
             ]
         },
@@ -2922,7 +3097,7 @@
                 "given": "Jure"
             }
         ],
-        "id": "Grover2016NodSca",
+        "id": "Grover2016Node2vec",
         "DOI": "10.1145/2939672.2939754",
         "page": "855-864",
         "title": "Node2vec: Scalable Feature Learning for Networks",
@@ -2930,11 +3105,13 @@
     },
     {
         "publisher": "Nature Publishing Group",
-        "issue": "1",
+        "issue": "1, 1",
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    5,
+                    11
                 ]
             ]
         },
@@ -2961,7 +3138,7 @@
                 "given": "Loïc"
             }
         ],
-        "id": "Grunig2020CroFor",
+        "id": "Grunig2020Crop",
         "DOI": "10.1038/s42003-020-0962-9",
         "volume": "3",
         "page": "1-10",
@@ -2972,7 +3149,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    1,
+                    1
                 ]
             ]
         },
@@ -2991,7 +3170,7 @@
                 "given": "Bhasker"
             }
         ],
-        "id": "Gupta2021GraNeu",
+        "id": "Gupta2021Graph",
         "collection-title": "International Conference on Technological Advancements in Materials Science and Manufacturing",
         "DOI": "10.1016/j.matpr.2021.01.950",
         "volume": "46",
@@ -3000,11 +3179,43 @@
         "type": "article-journal"
     },
     {
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2022
+                ]
+            ]
+        },
+        "container-title": "Ecology and Evolution",
+        "author": [
+            {
+                "family": "Gupta",
+                "given": "Anubhav"
+            },
+            {
+                "family": "Furrer",
+                "given": "Reinhard"
+            },
+            {
+                "family": "Petchey",
+                "given": "Owen L."
+            }
+        ],
+        "id": "Gupta2022Simultaneously",
+        "DOI": "10.1002/ece3.8643",
+        "volume": "12",
+        "page": "e8643",
+        "title": "Simultaneously estimating food web connectance and structure with uncertainty",
+        "type": "article-journal"
+    },
+    {
         "issue": "2",
         "issued": {
             "date-parts": [
                 [
-                    2014
+                    2014,
+                    1
                 ]
             ]
         },
@@ -3027,7 +3238,7 @@
                 "given": "Shinichi"
             }
         ],
-        "id": "Hadfield2014TalTwo",
+        "id": "Hadfield2014Tale",
         "DOI": "10.1086/674445",
         "volume": "183",
         "page": "174-187",
@@ -3039,7 +3250,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2009
+                    2009,
+                    3
                 ]
             ]
         },
@@ -3058,7 +3270,7 @@
                 "given": "F."
             }
         ],
-        "id": "Halevy2009UnrEff",
+        "id": "Halevy2009Unreasonable",
         "DOI": "10.1109/MIS.2009.36",
         "volume": "24",
         "page": "8-12",
@@ -3071,7 +3283,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2011
+                    2011,
+                    1,
+                    1
                 ]
             ]
         },
@@ -3090,7 +3304,7 @@
                 "given": "J. A."
             }
         ],
-        "id": "Halko2011FinStr",
+        "id": "Halko2011Finding",
         "DOI": "10.1137/090771806",
         "volume": "53",
         "page": "217-288",
@@ -3098,7 +3312,7 @@
         "type": "article-journal"
     },
     {
-        "edition": "First",
+        "edition": "1",
         "publisher": "Chilton Book Company",
         "author": [
             {
@@ -3107,7 +3321,7 @@
             }
         ],
         "publisher-place": "Philadelphia",
-        "id": "Herbert1965Dun",
+        "id": "Herbert1965Dune",
         "title": "Dune",
         "issued": {
             "date-parts": [
@@ -3131,7 +3345,7 @@
                 "given": "Sam T"
             }
         ],
-        "id": "Hinton2002StoNei",
+        "id": "Hinton2002Stochastic",
         "page": "833-840",
         "title": "Stochastic neighbor embedding",
         "issued": {
@@ -3149,7 +3363,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    4,
+                    1
                 ]
             ]
         },
@@ -3184,7 +3400,7 @@
                 "given": "Chris H."
             }
         ],
-        "id": "Hoffmann2019MacLea",
+        "id": "Hoffmann2019Machine",
         "DOI": "10.1126/sciadv.aau6792",
         "volume": "5",
         "page": "eaau6792",
@@ -3196,7 +3412,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    4,
+                    5
                 ]
             ]
         },
@@ -3207,7 +3425,7 @@
                 "given": "Elizabeth A."
             }
         ],
-        "id": "Holm2019DefBla",
+        "id": "Holm2019Defense",
         "DOI": "10.1126/science.aax0162",
         "volume": "364",
         "page": "26-27",
@@ -3245,7 +3463,7 @@
             }
         ],
         "issue": "1",
-        "id": "Hortal2015SevSho",
+        "id": "Hortal2015Seven",
         "page": "523-549",
         "title": "Seven Shortfalls that Beset Large-Scale Knowledge of Biodiversity",
         "issued": {
@@ -3259,7 +3477,14 @@
         "type": "article-journal"
     },
     {
-        "DOI": "10.1002/ecy.1955",
+        "issued": {
+            "date-parts": [
+                [
+                    2017
+                ]
+            ]
+        },
+        "container-title": "Ecology",
         "author": [
             {
                 "family": "Hutchinson",
@@ -3274,17 +3499,10 @@
                 "given": "Daniel B."
             }
         ],
-        "id": "Hutchinson2017CopSig",
+        "id": "Hutchinson2017Cophylogenetic",
+        "DOI": "10.1002/ecy.1955",
         "page": "n/a-n/a",
         "title": "Cophylogenetic signal is detectable in pollination interactions across ecological scales",
-        "issued": {
-            "date-parts": [
-                [
-                    2017
-                ]
-            ]
-        },
-        "container-title": "Ecology",
         "type": "article-journal"
     },
     {
@@ -3292,7 +3510,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2009
+                    2009,
+                    9
                 ]
             ]
         },
@@ -3395,7 +3614,7 @@
                 "given": "Andy"
             }
         ],
-        "id": "Jones2009PanSpe",
+        "id": "Jones2009Pantheria",
         "editor": [
             {
                 "family": "Michener",
@@ -3405,7 +3624,7 @@
         "DOI": "10.1890/08-1494.1",
         "volume": "90",
         "page": "2648-2648",
-        "title": "PanTHERIA: A species-level database of life history, ecology, and geography of extant and recently extinct mammals: Ecological Archives E090-184",
+        "title": "PanTHERIA: A species‐level database of life history, ecology, and geography of extant and recently extinct mammals: Ecological Archives E090‐184",
         "type": "article-journal"
     },
     {
@@ -3413,7 +3632,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    9,
+                    15
                 ]
             ]
         },
@@ -3424,7 +3645,7 @@
                 "given": "Pedro"
             }
         ],
-        "id": "Jordano2016ChaEco",
+        "id": "Jordano2016Chasing",
         "DOI": "10.1371/journal.pbio.1002559",
         "volume": "14",
         "page": "e1002559",
@@ -3436,7 +3657,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    12
                 ]
             ]
         },
@@ -3447,7 +3669,7 @@
                 "given": "Pedro"
             }
         ],
-        "id": "Jordano2016SamNet",
+        "id": "Jordano2016Sampling",
         "editor": [
             {
                 "family": "Stouffer",
@@ -3490,7 +3712,7 @@
                 "given": "Michio"
             }
         ],
-        "id": "Kawatsu2021AreNet",
+        "id": "Kawatsu2021Are",
         "DOI": "10.1111/ele.13672",
         "volume": "24",
         "page": "543-552",
@@ -3502,7 +3724,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2012
+                    2012,
+                    4
                 ]
             ]
         },
@@ -3569,7 +3792,7 @@
                 "given": "Ulrich"
             }
         ],
-        "id": "Kefi2012MorMea",
+        "id": "Kefi2012More",
         "DOI": "10.1111/j.1461-0248.2011.01732.x",
         "volume": "15",
         "page": "291-300",
@@ -3582,7 +3805,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    10,
+                    7
                 ]
             ]
         },
@@ -3605,7 +3830,7 @@
                 "given": "Lian Pin"
             }
         ],
-        "id": "Lamba2019DeeLea",
+        "id": "Lamba2019Deep",
         "DOI": "10.1016/j.cub.2019.08.016",
         "volume": "29",
         "page": "R977-R982",
@@ -3617,7 +3842,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    10,
+                    1
                 ]
             ]
         },
@@ -3644,7 +3871,7 @@
                 "given": "Ulf"
             }
         ],
-        "id": "Landi2018ComSta",
+        "id": "Landi2018Complexity",
         "DOI": "10.1007/s10144-018-0628-3",
         "volume": "60",
         "page": "319-345",
@@ -3652,7 +3879,16 @@
         "type": "article-journal"
     },
     {
-        "DOI": "10.1038/s41559-022-01865-1",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    10,
+                    17
+                ]
+            ]
+        },
+        "container-title": "Nature Ecology & Evolution",
         "author": [
             {
                 "family": "Lenzner",
@@ -3712,17 +3948,10 @@
                 "given": "Franz"
             }
         ],
-        "id": "Lenzner2022NatAli",
+        "id": "Lenzner2022Naturalized",
+        "DOI": "10.1038/s41559-022-01865-1",
         "page": "1-10",
         "title": "Naturalized alien floras still carry the legacy of European colonialism",
-        "issued": {
-            "date-parts": [
-                [
-                    2022
-                ]
-            ]
-        },
-        "container-title": "Nature Ecology & Evolution",
         "type": "article-journal"
     },
     {
@@ -3730,7 +3959,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2012
+                    2012,
+                    5,
+                    1
                 ]
             ]
         },
@@ -3745,7 +3976,7 @@
                 "given": "Nicolas"
             }
         ],
-        "id": "Litsios2012EffPhy",
+        "id": "Litsios2012Effects",
         "DOI": "10.1093/sysbio/syr124",
         "volume": "61",
         "page": "533-538",
@@ -3753,7 +3984,77 @@
         "type": "article-journal"
     },
     {
+        "publisher": "Ecology",
+        "DOI": "10.1101/2022.09.02.506446",
+        "genre": "preprint",
+        "author": [
+            {
+                "family": "Llewelyn",
+                "given": "John"
+            },
+            {
+                "family": "Strona",
+                "given": "Giovanni"
+            },
+            {
+                "family": "Dickman",
+                "given": "Christopher R."
+            },
+            {
+                "family": "Greenville",
+                "given": "Aaron C."
+            },
+            {
+                "family": "Wardle",
+                "given": "Glenda M."
+            },
+            {
+                "family": "Lee",
+                "given": "Michael S. Y."
+            },
+            {
+                "family": "Doherty",
+                "given": "Seamus"
+            },
+            {
+                "family": "Shabani",
+                "given": "Farzin"
+            },
+            {
+                "family": "Saltré",
+                "given": "Frédérik"
+            },
+            {
+                "family": "Bradshaw",
+                "given": "Corey J. A."
+            }
+        ],
+        "id": "Llewelyn2022Predicting",
+        "title": "Predicting predator-prey interactions in terrestrial endotherms using random forest",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    9,
+                    5
+                ]
+            ]
+        },
+        "type": "report"
+    },
+    {
         "publisher": "PMLR",
+        "event": "Artificial Intelligence and Statistics",
+        "issued": {
+            "date-parts": [
+                [
+                    2009,
+                    4,
+                    15
+                ]
+            ]
+        },
+        "container-title": "Proceedings of the Twelth International Conference on Artificial Intelligence and Statistics",
         "author": [
             {
                 "family": "Maaten",
@@ -3761,17 +4062,10 @@
                 "dropping-particle": "van der"
             }
         ],
-        "id": "Maaten2009LeaPar",
+        "id": "Maaten2009Learning",
+        "URL": "https://proceedings.mlr.press/v5/maaten09a.html",
         "page": "384-391",
         "title": "Learning a Parametric Embedding by Preserving Local Structure",
-        "issued": {
-            "date-parts": [
-                [
-                    2009
-                ]
-            ]
-        },
-        "container-title": "Proceedings of the Twelth International Conference on Artificial Intelligence and Statistics",
         "type": "paper-conference"
     },
     {
@@ -3780,7 +4074,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    7,
+                    29
                 ]
             ]
         },
@@ -3799,7 +4095,7 @@
                 "given": "Timothée"
             }
         ],
-        "id": "MacDonald2020RevLin",
+        "id": "MacDonald2020Revisiting",
         "DOI": "10.1016/j.patter.2020.100079",
         "volume": "0",
         "title": "Revisiting the Links-Species Scaling Relationship in Food Webs",
@@ -3825,7 +4121,7 @@
                 "given": "Eric"
             }
         ],
-        "id": "Machen2021ThiAlg",
+        "id": "Machen2021Thinking",
         "DOI": "10.1111/tran.12441",
         "volume": "46",
         "page": "555-569",
@@ -3834,7 +4130,13 @@
     },
     {
         "publisher": "Dryad",
-        "DOI": "10.5061/DRYAD.JM63XSJ7B",
+        "issued": {
+            "date-parts": [
+                [
+                    2020
+                ]
+            ]
+        },
         "author": [
             {
                 "family": "Maiorano",
@@ -3857,24 +4159,20 @@
                 "given": "Wilfried"
             }
         ],
-        "id": "Maiorano2020DatTet",
+        "id": "Maiorano2020Data",
+        "version": "3",
+        "DOI": "10.5061/DRYAD.JM63XSJ7B",
         "page": "16596876 bytes",
         "title": "Data from: Tetra-EU 1.0: A species-level trophic meta-web of European tetrapods",
-        "issued": {
-            "date-parts": [
-                [
-                    2020
-                ]
-            ]
-        },
-        "type": ""
+        "type": "dataset"
     },
     {
         "issue": "9",
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    9
                 ]
             ]
         },
@@ -3901,7 +4199,7 @@
                 "given": "Wilfried"
             }
         ],
-        "id": "Maiorano2020TetSpe",
+        "id": "Maiorano2020Tetraeu",
         "DOI": "10.1111/geb.13138",
         "volume": "29",
         "page": "1452-1457",
@@ -3913,7 +4211,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    10,
+                    1
                 ]
             ]
         },
@@ -3984,7 +4284,7 @@
                 "given": "Curtis A"
             }
         ],
-        "id": "Malaterre2019FunDiv",
+        "id": "Malaterre2019Functional",
         "DOI": "10.1093/biosci/biz089",
         "volume": "69",
         "page": "800-811",
@@ -3996,7 +4296,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    11,
+                    5
                 ]
             ]
         },
@@ -4019,7 +4321,7 @@
                 "given": "James E. M."
             }
         ],
-        "id": "Marco2018ChaHum",
+        "id": "Marco2018Changes",
         "DOI": "10.1038/s41467-018-07049-5",
         "volume": "9",
         "page": "4621",
@@ -4027,11 +4329,14 @@
         "type": "article-journal"
     },
     {
-        "issue": "1",
+        "publisher": "Nature Publishing Group",
+        "issue": "1, 1",
         "issued": {
             "date-parts": [
                 [
-                    2022
+                    2022,
+                    11,
+                    14
                 ]
             ]
         },
@@ -4159,7 +4464,7 @@
                 "given": "Jason M."
             }
         ],
-        "id": "Martins2022GloReg",
+        "id": "Martins2022Global",
         "DOI": "10.1038/s41467-022-34355-w",
         "volume": "13",
         "page": "6943",
@@ -4171,7 +4476,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2007
+                    2007,
+                    3,
+                    1
                 ]
             ]
         },
@@ -4182,7 +4489,7 @@
                 "given": "Kevin"
             }
         ],
-        "id": "McCann2007ProBio",
+        "id": "McCann2007Protecting",
         "DOI": "10.1038/446029a",
         "volume": "446",
         "page": "29-29",
@@ -4237,7 +4544,7 @@
                 "given": "Spencer A."
             }
         ],
-        "id": "McLeod2021SamAsy",
+        "id": "McLeod2021Sampling",
         "DOI": "10.1111/oik.08650",
         "volume": "n/a",
         "title": "Sampling and asymptotic network properties of spatial multi-trophic networks",
@@ -4248,7 +4555,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    12,
+                    1
                 ]
             ]
         },
@@ -4271,7 +4580,7 @@
                 "given": "Tim O. F."
             }
         ],
-        "id": "Melnyk2020GraGra",
+        "id": "Melnyk2020Graphkke",
         "DOI": "10.1007/s41109-020-00339-2",
         "volume": "5",
         "page": "96",
@@ -4283,7 +4592,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2015
+                    2015,
+                    6
                 ]
             ]
         },
@@ -4306,7 +4616,7 @@
                 "given": "Miguel B."
             }
         ],
-        "id": "Morales-Castilla2015InfBio",
+        "id": "Morales-Castilla2015Inferring",
         "DOI": "10.1016/j.tree.2015.03.014",
         "volume": "30",
         "page": "347-356",
@@ -4319,7 +4629,8 @@
         "issued": {
             "date-parts": [
                 [
-                    1998
+                    1998,
+                    8
                 ]
             ]
         },
@@ -4334,7 +4645,7 @@
                 "given": "Robert"
             }
         ],
-        "id": "Morand1998DenBod",
+        "id": "Morand1998Density",
         "DOI": "10.1023/A:1006537600093",
         "volume": "12",
         "page": "717-727",
@@ -4343,11 +4654,12 @@
     },
     {
         "publisher": "Multidisciplinary Digital Publishing Institute",
-        "issue": "18",
+        "issue": "18, 18",
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    1
                 ]
             ]
         },
@@ -4374,7 +4686,7 @@
                 "given": "Jamal"
             }
         ],
-        "id": "MoseboFernandes2020MacLea",
+        "id": "MoseboFernandes2020Machine",
         "DOI": "10.3390/su12187657",
         "volume": "12",
         "page": "7657",
@@ -4481,7 +4793,7 @@
                 "given": "Wilfried"
             }
         ],
-        "id": "Mouquet2012EcoAdv",
+        "id": "Mouquet2012Ecophylogenetics",
         "DOI": "10.1111/j.1469-185X.2012.00224.x",
         "volume": "87",
         "page": "769-785",
@@ -4496,7 +4808,8 @@
                 "given": "Kevin P."
             }
         ],
-        "id": "Murphy2022ProMac",
+        "URL": "probml.ai",
+        "id": "Murphy2022Probabilistic",
         "title": "Probabilistic machine learning: An introduction",
         "issued": {
             "date-parts": [
@@ -4555,7 +4868,7 @@
                 "given": "Amy L."
             }
         ],
-        "id": "Naman2022FooWeb",
+        "id": "Naman2022Food",
         "DOI": "10.1002/wat2.1590",
         "volume": "n/a",
         "page": "e1590",
@@ -4589,18 +4902,19 @@
                 "given": "Shantanu"
             }
         ],
-        "URL": "https://arxiv.org/abs/1707.05005",
-        "id": "Narayanan2017GraLea",
+        "URL": "http://arxiv.org/abs/1707.05005",
+        "id": "Narayanan2017Graph2vec",
         "title": "Graph2vec: Learning Distributed Representations of Graphs",
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    7,
+                    17
                 ]
             ]
         },
-        "container-title": "arXiv:1707.05005 [cs]",
-        "type": "article-journal"
+        "type": "manuscript"
     },
     {
         "issued": {
@@ -4637,7 +4951,7 @@
                 "given": "Roded"
             }
         ],
-        "id": "Nelson2019EmbNot",
+        "id": "Nelson2019Embed",
         "DOI": "10.3389/fgene.2019.00381",
         "volume": "10",
         "title": "To Embed or Not: Network Embedding as a Paradigm in Computational Biology",
@@ -4648,7 +4962,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2014
+                    2014,
+                    9,
+                    10
                 ]
             ]
         },
@@ -4667,7 +4983,7 @@
                 "given": "Sara"
             }
         ],
-        "id": "Nenzen2014Imp850",
+        "id": "Nenzen2014Impact",
         "DOI": "10.1371/journal.pone.0106651",
         "volume": "9",
         "page": "e106651",
@@ -4680,7 +4996,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2002
+                    2002,
+                    5,
+                    10
                 ]
             ]
         },
@@ -4700,7 +5018,7 @@
                 "non-dropping-particle": "de"
             }
         ],
-        "id": "Neutel2002StaRea",
+        "id": "Neutel2002Stability",
         "DOI": "10.1126/science.1068326",
         "volume": "296",
         "page": "1120-1123",
@@ -4760,14 +5078,23 @@
                 "given": "Melanie"
             }
         ],
-        "id": "Nokmaq2021AwaSle",
+        "id": "Nokmaq2021Awakening",
         "volume": "6",
         "page": "839-869",
         "title": "“Awakening the sleeping giant”: Re-Indigenization principles for transforming biodiversity conservation in Canada and beyond",
         "type": "article-journal"
     },
     {
-        "DOI": "10.1177/25148486211043503",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    9,
+                    23
+                ]
+            ]
+        },
+        "container-title": "Environment and Planning E: Nature and Space",
         "author": [
             {
                 "family": "Nost",
@@ -4778,17 +5105,10 @@
                 "given": "Jenny Elaine"
             }
         ],
-        "id": "Nost2021PolEco",
+        "id": "Nost2021Political",
+        "DOI": "10.1177/25148486211043503",
         "page": "25148486211043503",
         "title": "A political ecology of data",
-        "issued": {
-            "date-parts": [
-                [
-                    2021
-                ]
-            ]
-        },
-        "container-title": "Environment and Planning E: Nature and Space",
         "type": "article-journal"
     },
     {
@@ -4796,7 +5116,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    1
                 ]
             ]
         },
@@ -4823,7 +5144,7 @@
                 "given": "Luigi"
             },
             {
-                "family": "Martinez-Almoyna",
+                "family": "Martinez‐Almoyna",
                 "given": "Camille"
             },
             {
@@ -4839,7 +5160,7 @@
                 "given": "Wilfried"
             }
         ],
-        "id": "OConnor2020UnvFoo",
+        "id": "OConnor2020Unveiling",
         "DOI": "10.1111/jbi.13773",
         "volume": "47",
         "page": "181-192",
@@ -4847,11 +5168,13 @@
         "type": "article-journal"
     },
     {
+        "event": "IEEE Transactions on Knowledge and Data Engineering",
         "issue": "10",
         "issued": {
             "date-parts": [
                 [
-                    2010
+                    2010,
+                    10
                 ]
             ]
         },
@@ -4866,7 +5189,7 @@
                 "given": "Qiang"
             }
         ],
-        "id": "Pan2010SurTra",
+        "id": "Pan2010Survey",
         "DOI": "10.1109/TKDE.2009.191",
         "volume": "22",
         "page": "1345-1359",
@@ -4879,7 +5202,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2004
+                    2004,
+                    12,
+                    7
                 ]
             ]
         },
@@ -4894,7 +5219,7 @@
                 "given": "M. E. J."
             }
         ],
-        "id": "Park2004StaMec",
+        "id": "Park2004Statistical",
         "DOI": "10.1103/PhysRevE.70.066117",
         "volume": "70",
         "page": "066117",
@@ -4906,7 +5231,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    7
                 ]
             ]
         },
@@ -4965,7 +5291,7 @@
                 "given": "Pierre"
             }
         ],
-        "id": "Pedersen2017SigCol",
+        "id": "Pedersen2017Signatures",
         "DOI": "10.1098/rsos.170215",
         "volume": "4",
         "page": "170215",
@@ -4978,7 +5304,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2014
+                    2014,
+                    8,
+                    24
                 ]
             ]
         },
@@ -4997,7 +5325,7 @@
                 "given": "Steven"
             }
         ],
-        "id": "Perozzi2014DeeOnl",
+        "id": "Perozzi2014Deepwalk",
         "collection-title": "KDD ’14",
         "DOI": "10.1145/2623330.2623732",
         "page": "701-710",
@@ -5009,7 +5337,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2013
+                    2013,
+                    3,
+                    26
                 ]
             ]
         },
@@ -5028,7 +5358,7 @@
                 "given": "George"
             }
         ],
-        "id": "Perretti2013ModFor",
+        "id": "Perretti2013Modelfree",
         "DOI": "10.1073/pnas.1216076110",
         "volume": "110",
         "page": "5253-5257",
@@ -5067,7 +5397,7 @@
                 "given": "Florian"
             }
         ],
-        "id": "Pichler2020MacLea",
+        "id": "Pichler2020Machine",
         "DOI": "10.1111/2041-210X.13329",
         "volume": "11",
         "page": "281-293",
@@ -5080,7 +5410,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2015
+                    2015,
+                    9,
+                    7
                 ]
             ]
         },
@@ -5113,7 +5445,7 @@
                 "given": "Paulo R."
             }
         ],
-        "id": "Pires2015PleMeg",
+        "id": "Pires2015Pleistocene",
         "DOI": "10.1098/rspb.2015.1367",
         "volume": "282",
         "page": "20151367",
@@ -5124,7 +5456,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2014
+                    2014,
+                    11,
+                    1
                 ]
             ]
         },
@@ -5143,7 +5477,7 @@
                 "given": "Chris J."
             }
         ],
-        "id": "Poelen2014GloBio",
+        "id": "Poelen2014Global",
         "DOI": "10.1016/j.ecoinf.2014.08.005",
         "volume": "24",
         "page": "148-159",
@@ -5182,7 +5516,7 @@
                 "given": "Dominique"
             }
         ],
-        "id": "Poisot2012DisSpe",
+        "id": "Poisot2012Dissimilarity",
         "DOI": "10.1111/ele.12002",
         "volume": "15",
         "page": "1353-1361",
@@ -5194,7 +5528,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2015
+                    2015,
+                    3
                 ]
             ]
         },
@@ -5213,7 +5548,7 @@
                 "given": "Dominique"
             }
         ],
-        "id": "Poisot2015SpeWhy",
+        "id": "Poisot2015Species",
         "DOI": "10.1111/oik.01719",
         "volume": "124",
         "page": "243-251",
@@ -5257,7 +5592,7 @@
                 "given": "Daniel B."
             }
         ],
-        "id": "Poisot2016StrPro",
+        "id": "Poisot2016Structure",
         "DOI": "10.1111/2041-210X.12468",
         "volume": "7",
         "page": "303-312",
@@ -5269,7 +5604,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    2,
+                    1
                 ]
             ]
         },
@@ -5284,7 +5621,7 @@
                 "given": "Daniel B."
             }
         ],
-        "id": "Poisot2018IntRet",
+        "id": "Poisot2018Interactions",
         "DOI": "10.1111/oik.03788",
         "volume": "127",
         "page": "230-238",
@@ -5315,7 +5652,7 @@
                 "given": "Piotr"
             }
         ],
-        "id": "Poisot2019EcoJl",
+        "id": "Poisot2019Ecologicalnetworks",
         "title": "EcologicalNetworks.jl - analysing ecological networks",
         "issued": {
             "date-parts": [
@@ -5375,7 +5712,7 @@
                 "given": "Steve"
             }
         ],
-        "id": "Poisot2021GloKno",
+        "id": "Poisot2021Global",
         "DOI": "10.1111/jbi.14127",
         "volume": "n/a",
         "title": "Global knowledge gaps in species interaction networks data",
@@ -5420,18 +5757,19 @@
                 "given": "Colin J."
             }
         ],
-        "URL": "https://arxiv.org/abs/2105.14973",
-        "id": "Poisot2021ImpMam",
+        "URL": "http://arxiv.org/abs/2105.14973",
+        "id": "Poisot2021Imputing",
         "title": "Imputing the mammalian virome with linear filtering and singular value decomposition",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    5,
+                    31
                 ]
             ]
         },
-        "container-title": "arXiv:2105.14973 [q-bio]",
-        "type": "article-journal"
+        "type": "manuscript"
     },
     {
         "publisher": "Cambridge University Press",
@@ -5441,7 +5779,7 @@
                 "given": "Peter W"
             }
         ],
-        "id": "Price2003MacThe",
+        "id": "Price2003Macroevolutionary",
         "title": "Macroevolutionary theory on macroecological patterns",
         "issued": {
             "date-parts": [
@@ -5453,29 +5791,38 @@
         "type": "book"
     },
     {
-        "DOI": "10.1038/s41559-022-01903-y",
+        "issued": {
+            "date-parts": [
+                [
+                    2022,
+                    10,
+                    17
+                ]
+            ]
+        },
+        "container-title": "Nature Ecology & Evolution",
         "author": [
             {
                 "family": "Raja",
                 "given": "Nussaïbah B."
             }
         ],
-        "id": "Raja2022ColSha",
+        "id": "Raja2022Colonialism",
+        "DOI": "10.1038/s41559-022-01903-y",
         "page": "1-2",
         "title": "Colonialism shaped today’s biodiversity",
-        "issued": {
-            "date-parts": [
-                [
-                    2022
-                ]
-            ]
-        },
-        "container-title": "Nature Ecology & Evolution",
         "type": "article-journal"
     },
     {
         "publisher": "Curran Associates, Inc.",
-        "volume": "28",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "container-title": "Advances in neural information processing systems",
         "author": [
             {
                 "family": "Ramasamy",
@@ -5486,8 +5833,7 @@
                 "given": "Upamanyu"
             }
         ],
-        "id": "Ramasamy2015ComSpe",
-        "title": "Compressive spectral embedding: Sidestepping the SVD",
+        "id": "Ramasamy2015Compressive",
         "editor": [
             {
                 "family": "Cortes",
@@ -5510,14 +5856,9 @@
                 "given": "R."
             }
         ],
-        "issued": {
-            "date-parts": [
-                [
-                    2015
-                ]
-            ]
-        },
-        "container-title": "Advances in neural information processing systems",
+        "volume": "28",
+        "URL": "https://proceedings.neurips.cc/paper/2015/file/4f6ffe13a5d75b2d6a3923922b3922e5-Paper.pdf",
+        "title": "Compressive spectral embedding: Sidestepping the SVD",
         "type": "paper-conference"
     },
     {
@@ -5525,7 +5866,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    1,
+                    1
                 ]
             ]
         },
@@ -5544,7 +5887,7 @@
                 "given": "Andrea"
             }
         ],
-        "id": "Ray2021BioCri",
+        "id": "Ray2021Biodiversity",
         "DOI": "10.1139/facets-2020-0075",
         "volume": "6",
         "page": "1044-1068",
@@ -5582,22 +5925,31 @@
                 "given": "Louise"
             }
         ],
-        "URL": "https://arxiv.org/abs/1404.6520",
-        "id": "Reeve2016HowPar",
+        "URL": "http://arxiv.org/abs/1404.6520",
+        "id": "Reeve2016How",
         "title": "How to partition diversity",
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    12,
+                    8
                 ]
             ]
         },
-        "container-title": "arXiv:1404.6520 [q-bio]",
-        "type": "article-journal"
+        "type": "manuscript"
     },
     {
-        "DOI": "10.4322/natcon.2013.002",
-        "volume": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2013,
+                    7,
+                    1
+                ]
+            ]
+        },
+        "container-title": "Natureza & conservaç~ao revista brasileira de conservaç~ao da natureza",
         "author": [
             {
                 "family": "Rosado",
@@ -5613,17 +5965,11 @@
                 "non-dropping-particle": "de"
             }
         ],
-        "id": "Rosado2013GoiBac",
+        "id": "Rosado2013Going",
+        "DOI": "10.4322/natcon.2013.002",
+        "volume": "11",
         "page": "15-22",
         "title": "Going Back to Basics: Importance of Ecophysiology when Choosing Functional Traits for Studying Communities and Ecosystems",
-        "issued": {
-            "date-parts": [
-                [
-                    2013
-                ]
-            ]
-        },
-        "container-title": "Natureza & conservaç~ao revista brasileira de conservaç~ao da natureza",
         "type": "article-journal"
     },
     {
@@ -5642,40 +5988,17 @@
                 "given": "Giulio V"
             }
         ],
-        "id": "Runghen2021ExpNod",
+        "id": "Runghen2021Exploiting",
         "title": "Exploiting node metadata to predict interactions in large networks using graph embedding and neural networks",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    6,
+                    11
                 ]
             ]
         },
-        "type": "article-journal"
-    },
-    {
-        "volume": "4",
-        "author": [
-            {
-                "family": "S",
-                "given": "Nishana S"
-            },
-            {
-                "family": "Surendran",
-                "given": "Subu"
-            }
-        ],
-        "issue": "1",
-        "id": "S2013GraEmb",
-        "title": "Graph Embedding and Dimensionality Reduction - A Survey",
-        "issued": {
-            "date-parts": [
-                [
-                    2013
-                ]
-            ]
-        },
-        "container-title": "International Journal of Computer Science & Engineering Technology",
         "type": "article-journal"
     },
     {
@@ -5710,7 +6033,7 @@
                 "given": "Fernando R."
             }
         ],
-        "id": "Saravia2021EcoNet",
+        "id": "Saravia2021Ecological",
         "DOI": "10.1111/1365-2656.13652",
         "volume": "n/a",
         "title": "Ecological network assembly: How the regional metaweb influences local food webs",
@@ -5722,7 +6045,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2022
+                    2022,
+                    10,
+                    25
                 ]
             ]
         },
@@ -5737,7 +6062,7 @@
                 "given": "Colin J."
             }
         ],
-        "id": "Schmidt2022SysRac",
+        "id": "Schmidt2022Systemic",
         "DOI": "10.1073/pnas.2102860119",
         "volume": "119",
         "page": "e2102860119",
@@ -5753,7 +6078,7 @@
             }
         ],
         "issue": "6",
-        "id": "Schoener1989FooWeb",
+        "id": "Schoener1989Food",
         "page": "1559-1589",
         "title": "Food webs from the small to the large",
         "issued": {
@@ -5771,7 +6096,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    10,
+                    1
                 ]
             ]
         },
@@ -5798,7 +6125,7 @@
                 "given": "Jörg"
             }
         ],
-        "id": "Seibold2018NecMul",
+        "id": "Seibold2018Necessity",
         "DOI": "10.1016/j.tree.2018.07.001",
         "volume": "33",
         "page": "754-764",
@@ -5812,25 +6139,28 @@
                 "given": "Jonathon"
             }
         ],
-        "URL": "https://arxiv.org/abs/1404.1100",
-        "id": "Shlens2014TutPri",
+        "URL": "http://arxiv.org/abs/1404.1100",
+        "id": "Shlens2014Tutorial",
         "title": "A Tutorial on Principal Component Analysis",
         "issued": {
             "date-parts": [
                 [
-                    2014
+                    2014,
+                    4,
+                    3
                 ]
             ]
         },
-        "container-title": "arXiv:1404.1100 [cs, stat]",
-        "type": "article-journal"
+        "type": "manuscript"
     },
     {
         "issue": "12",
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    12,
+                    1
                 ]
             ]
         },
@@ -5849,7 +6179,7 @@
                 "given": "Cécile"
             }
         ],
-        "id": "Solis-Lemus2017PhyPac",
+        "id": "Solis-Lemus2017Phylonetworks",
         "DOI": "10.1093/molbev/msx235",
         "volume": "34",
         "page": "3292-3298",
@@ -5858,7 +6188,7 @@
     },
     {
         "DOI": "10.2139/ssrn.3489440",
-        "genre": "{{SSRN Scholarly Paper}}",
+        "genre": "SSRN Scholarly Paper",
         "author": [
             {
                 "family": "Stevenson",
@@ -5871,12 +6201,14 @@
         ],
         "number": "3489440",
         "publisher-place": "Rochester, NY",
-        "id": "Stevenson2021AlgRis",
+        "id": "Stevenson2021Algorithmic",
         "title": "Algorithmic Risk Assessment in the Hands of Humans",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    4,
+                    21
                 ]
             ]
         },
@@ -5930,7 +6262,7 @@
                 "given": "Phillip S."
             }
         ],
-        "id": "Stier2017IntExp",
+        "id": "Stier2017Integrating",
         "DOI": "10.1111/conl.12245",
         "volume": "10",
         "page": "67-76",
@@ -5944,7 +6276,7 @@
                 "given": "Michiel"
             }
         ],
-        "id": "Stock2021PaiLea",
+        "id": "Stock2021Pairwise",
         "page": "14",
         "title": "Pairwise learning for predicting pollination interactions based on traits and phylogeny",
         "issued": {
@@ -5962,7 +6294,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2007
+                    2007,
+                    8,
+                    22
                 ]
             ]
         },
@@ -5985,7 +6319,7 @@
                 "given": "L. A"
             }
         ],
-        "id": "stouffer_evidence_2007",
+        "id": "Stouffer2007Evidence",
         "DOI": "10.1098/rspb.2007.0571",
         "volume": "274",
         "page": "1931-1940",
@@ -5997,7 +6331,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2012
+                    2012,
+                    3,
+                    23
                 ]
             ]
         },
@@ -6020,7 +6356,7 @@
                 "given": "J."
             }
         ],
-        "id": "Stouffer2012EvoCon",
+        "id": "Stouffer2012Evolutionary",
         "DOI": "10.1126/science.1216556",
         "volume": "335",
         "page": "1489-1492",
@@ -6032,7 +6368,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2014
+                    2014,
+                    8,
+                    29
                 ]
             ]
         },
@@ -6047,7 +6385,7 @@
                 "given": "Shawn J."
             }
         ],
-        "id": "Strong2014ImpNon",
+        "id": "Strong2014Impact",
         "DOI": "10.1371/journal.pone.0106264",
         "volume": "9",
         "page": "e106264",
@@ -6111,16 +6449,18 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Strydom2021FooWeb",
+        "id": "Strydom2021Food",
         "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    8,
+                    12
                 ]
             ]
         },
-        "type": ""
+        "type": "article-journal"
     },
     {
         "publisher": "Royal Society",
@@ -6128,7 +6468,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    11,
+                    8
                 ]
             ]
         },
@@ -6187,7 +6529,7 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Strydom2021RoaPre",
+        "id": "Strydom2021Roadmap",
         "DOI": "10.1098/rstb.2021.0063",
         "volume": "376",
         "page": "20210063",
@@ -6218,7 +6560,7 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Strydom2021SvdEnt",
+        "id": "Strydom2021Svd",
         "DOI": "10.3389/fevo.2021.623141",
         "volume": "9",
         "title": "SVD Entropy Reveals the High Complexity of Ecological Networks",
@@ -6288,10 +6630,32 @@
                 "given": "Timothée"
             }
         ],
-        "id": "Strydom2022FooWeb",
+        "id": "Strydom2022Food",
         "DOI": "10.1111/2041-210X.13835",
         "volume": "n/a",
         "title": "Food web reconstruction through phylogenetic transfer of low-rank network representation",
+        "type": "article-journal"
+    },
+    {
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "container-title": "International Journal of Computer Science & Engineering Technology",
+        "author": [
+            {
+                "family": "Surendran",
+                "given": "Subu"
+            }
+        ],
+        "id": "Surendran2013Graph",
+        "volume": "4",
+        "URL": "https://www.semanticscholar.org/paper/Graph-Embedding-and-Dimensionality-Reduction-A-Surendran/3f413d591e4b2b876e033eeb9390e232ad4826ca",
+        "title": "Graph Embedding and Dimensionality Reduction - A Survey",
         "type": "article-journal"
     },
     {
@@ -6323,13 +6687,15 @@
             }
         ],
         "URL": "https://arxiv.org/abs/1503.03578",
-        "id": "Tang2015LinLar",
+        "id": "Tang2015Line",
         "page": "1067-1077",
         "title": "LINE: Large-scale Information Network Embedding",
         "issued": {
             "date-parts": [
                 [
-                    2015
+                    2015,
+                    5,
+                    18
                 ]
             ]
         },
@@ -6350,7 +6716,7 @@
             }
         ],
         "issue": "3",
-        "id": "Thessen2014KnoExt",
+        "id": "Thessen2014Knowledge",
         "page": "e89550",
         "title": "Knowledge extraction and semantic annotation of text from the encyclopedia of life",
         "issued": {
@@ -6364,15 +6730,7 @@
         "type": "article-journal"
     },
     {
-        "issue": "ja",
-        "issued": {
-            "date-parts": [
-                [
-                    2019
-                ]
-            ]
-        },
-        "container-title": "Ecography",
+        "DOI": "10.1111/ecog.04360",
         "author": [
             {
                 "family": "Thurman",
@@ -6391,10 +6749,17 @@
                 "given": "Tara"
             }
         ],
-        "id": "Thurman2019TesLin",
-        "DOI": "10.1111/ecog.04360",
         "volume": "0",
+        "id": "Thurman2019Testing",
         "title": "Testing the link between species interactions and co-occurrence in a trophic network",
+        "issued": {
+            "date-parts": [
+                [
+                    2019
+                ]
+            ]
+        },
+        "container-title": "Ecography",
         "type": "article-journal"
     },
     {
@@ -6402,7 +6767,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    4,
+                    1
                 ]
             ]
         },
@@ -6421,7 +6788,7 @@
                 "given": "Tina"
             }
         ],
-        "id": "Torres2020GleGeo",
+        "id": "Torres2020Glee",
         "DOI": "10.1093/comnet/cnaa007",
         "volume": "8",
         "page": "cnaa007",
@@ -6440,7 +6807,7 @@
                 "given": "Jude"
             }
         ],
-        "id": "Torrey2010TraLea",
+        "id": "Torrey2010Transfer",
         "page": "242-264",
         "title": "Transfer learning",
         "issued": {
@@ -6458,7 +6825,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    7,
+                    1
                 ]
             ]
         },
@@ -6473,7 +6842,7 @@
                 "given": "Jens M."
             }
         ],
-        "id": "Trojelsgaard2016EcoNet",
+        "id": "Trojelsgaard2016Ecological",
         "DOI": "10.1111/1365-2435.12710",
         "volume": "30",
         "page": "1926-1935",
@@ -6484,7 +6853,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2017
+                    2017,
+                    9,
+                    1
                 ]
             ]
         },
@@ -6559,7 +6930,7 @@
                 "given": "Kristen"
             }
         ],
-        "id": "Turak2017UsiEss",
+        "id": "Turak2017Using",
         "collection-title": "SI:Measures of biodiversity",
         "DOI": "10.1016/j.biocon.2016.08.019",
         "volume": "213",
@@ -6573,7 +6944,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2019
+                    2019,
+                    12,
+                    4
                 ]
             ]
         },
@@ -6592,7 +6965,7 @@
                 "given": "Walter"
             }
         ],
-        "id": "Upham2019InfMam",
+        "id": "Upham2019Inferring",
         "DOI": "10.1371/journal.pbio.3000494",
         "volume": "17",
         "page": "e3000494",
@@ -6604,7 +6977,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2018
+                    2018,
+                    11
                 ]
             ]
         },
@@ -6624,7 +6998,7 @@
                 "given": "Dmitri"
             }
         ],
-        "id": "vanderHoorn2018SpaMax",
+        "id": "vanderHoorn2018Sparse",
         "DOI": "10.1007/s10955-017-1887-7",
         "volume": "173",
         "URL": "https://arxiv.org/abs/1705.10261",
@@ -6649,7 +7023,8 @@
             }
         ],
         "issue": "1",
-        "id": "Vermaat2009MajDim",
+        "URL": "https://www.ncbi.nlm.nih.gov/pubmed/19294932",
+        "id": "Vermaat2009Major",
         "page": "278-282",
         "title": "Major dimensions in food-web structure properties.",
         "issued": {
@@ -6664,11 +7039,14 @@
     },
     {
         "publisher": "ACM",
+        "event": "KDD ’16: The 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
         "publisher-place": "San Francisco California USA",
         "issued": {
             "date-parts": [
                 [
-                    2016
+                    2016,
+                    8,
+                    13
                 ]
             ]
         },
@@ -6687,7 +7065,7 @@
                 "given": "Wenwu"
             }
         ],
-        "id": "Wang2016StrDee",
+        "id": "Wang2016Structural",
         "DOI": "10.1145/2939672.2939753",
         "page": "1225-1234",
         "title": "Structural Deep Network Embedding",
@@ -6698,7 +7076,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    4,
+                    1
                 ]
             ]
         },
@@ -6721,7 +7101,7 @@
                 "given": "Carey E."
             }
         ],
-        "id": "Wang2021JoiEmb",
+        "id": "Wang2021Joint",
         "DOI": "10.1109/TPAMI.2019.2948619",
         "volume": "43",
         "page": "1324-1336",
@@ -6730,11 +7110,13 @@
     },
     {
         "publisher": "Nature Publishing Group",
-        "issue": "1",
+        "issue": "1, 1",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    2,
+                    16
                 ]
             ]
         },
@@ -6753,7 +7135,7 @@
                 "given": "Marcus S. C."
             }
         ],
-        "id": "Wardeh2021PreMam",
+        "id": "Wardeh2021Predicting",
         "DOI": "10.1038/s41467-021-21034-5",
         "volume": "12",
         "page": "780",
@@ -6764,7 +7146,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2022
+                    2022,
+                    3,
+                    1
                 ]
             ]
         },
@@ -6839,11 +7223,39 @@
                 "given": "Isabel M. D."
             }
         ],
-        "id": "Weiskopf2022IncUpt",
+        "id": "Weiskopf2022Increasing",
         "DOI": "10.1016/j.envsoft.2022.105318",
         "volume": "149",
         "page": "105318",
         "title": "Increasing the uptake of ecological model results in policy decisions to improve biodiversity outcomes",
+        "type": "article-journal"
+    },
+    {
+        "issue": "6774",
+        "issued": {
+            "date-parts": [
+                [
+                    2000,
+                    3
+                ]
+            ]
+        },
+        "container-title": "Nature",
+        "author": [
+            {
+                "family": "Williams",
+                "given": "Richard J."
+            },
+            {
+                "family": "Martinez",
+                "given": "Neo D."
+            }
+        ],
+        "id": "Williams2000Simple",
+        "DOI": "10.1038/35004572",
+        "volume": "404",
+        "page": "180-183",
+        "title": "Simple rules yield complex food webs",
         "type": "article-journal"
     },
     {
@@ -6878,7 +7290,7 @@
                 "given": "Jennifer A."
             }
         ],
-        "id": "Wood2015EffSpa",
+        "id": "Wood2015Effects",
         "DOI": "10.1002/ece3.1640",
         "volume": "5",
         "page": "3769-3782",
@@ -6902,13 +7314,15 @@
                 "given": "Daryl R."
             }
         ],
-        "URL": "https://arxiv.org/abs/2101.02180",
-        "id": "Wu2021MaxPos",
+        "URL": "http://arxiv.org/abs/2101.02180",
+        "id": "Wu2021Maximum",
         "title": "Maximum a Posteriori Inference of Random Dot Product Graphs via Conic Programming",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    12,
+                    16
                 ]
             ]
         },
@@ -6918,7 +7332,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    10,
+                    1
                 ]
             ]
         },
@@ -6933,7 +7349,7 @@
                 "given": "Tom M."
             }
         ],
-        "id": "Xing2021RisEco",
+        "id": "Xing2021Rise",
         "DOI": "10.1016/j.gecco.2021.e01805",
         "volume": "30",
         "page": "e01805",
@@ -6945,7 +7361,8 @@
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    1
                 ]
             ]
         },
@@ -6956,7 +7373,7 @@
                 "given": "Mengjia"
             }
         ],
-        "id": "Xu2021UndGra",
+        "id": "Xu2021Understanding",
         "DOI": "10.1137/20M1386062",
         "volume": "63",
         "page": "825-853",
@@ -6964,10 +7381,12 @@
         "type": "article-journal"
     },
     {
+        "event": "2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR’05)",
         "issued": {
             "date-parts": [
                 [
-                    2005
+                    2005,
+                    6
                 ]
             ]
         },
@@ -6990,7 +7409,7 @@
                 "given": "Hong-Jiang"
             }
         ],
-        "id": "Yan2005GraEmb",
+        "id": "Yan2005Graph",
         "DOI": "10.1109/CVPR.2005.170",
         "volume": "2",
         "page": "830-837 vol. 2",
@@ -7031,13 +7450,14 @@
             }
         ],
         "issue": "40",
-        "id": "Yeakel2014ColEco",
+        "id": "Yeakel2014Collapse",
         "page": "14472-14477",
         "title": "Collapse of an ecological network in Ancient Egypt",
         "issued": {
             "date-parts": [
                 [
-                    2014
+                    2014,
+                    10
                 ]
             ]
         },
@@ -7060,7 +7480,7 @@
                 "given": "W. J."
             }
         ],
-        "id": "Youden1950IndRat",
+        "id": "Youden1950Index",
         "DOI": "10.1002/1097-0142(1950)3:1<32::AID-CNCR2820030106>3.0.CO;2-3",
         "volume": "3",
         "page": "32-35",
@@ -7088,7 +7508,7 @@
                 "given": "Edward R."
             }
         ],
-        "id": "Young2007RanDot",
+        "id": "Young2007Random",
         "editor": [
             {
                 "family": "Bonato",
@@ -7106,7 +7526,17 @@
         "type": "paper-conference"
     },
     {
-        "DOI": "10.1093/comnet/cnaa046",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2021,
+                    3,
+                    7
+                ]
+            ]
+        },
+        "container-title": "Journal of Complex Networks",
         "author": [
             {
                 "family": "Young",
@@ -7121,27 +7551,21 @@
                 "given": "M E J"
             }
         ],
-        "issue": "6",
+        "id": "Young2021Bayesian",
+        "DOI": "10.1093/comnet/cnaa046",
         "volume": "8",
-        "id": "Young2021BayInf",
         "title": "Bayesian inference of network structure from unreliable data",
-        "issued": {
-            "date-parts": [
-                [
-                    2021
-                ]
-            ]
-        },
-        "container-title": "Journal of Complex Networks",
         "type": "article-journal"
     },
     {
         "publisher": "Nature Publishing Group",
-        "issue": "1",
+        "issue": "1, 1",
         "issued": {
             "date-parts": [
                 [
-                    2021
+                    2021,
+                    6,
+                    23
                 ]
             ]
         },
@@ -7160,18 +7584,20 @@
                 "given": "M. E. J."
             }
         ],
-        "id": "Young2021RecPla",
+        "id": "Young2021Reconstruction",
         "DOI": "10.1038/s41467-021-24149-x",
         "volume": "12",
         "page": "3911",
-        "title": "Reconstruction of plantpollinator networks from observational data",
+        "title": "Reconstruction of plant–pollinator networks from observational data",
         "type": "article-journal"
     },
     {
         "issued": {
             "date-parts": [
                 [
-                    2020
+                    2020,
+                    1,
+                    1
                 ]
             ]
         },
@@ -7214,7 +7640,7 @@
                 "given": "Maosong"
             }
         ],
-        "id": "Zhou2020GraNeu",
+        "id": "Zhou2020Graph",
         "DOI": "10.1016/j.aiopen.2021.01.001",
         "volume": "1",
         "page": "57-81",
@@ -7226,7 +7652,9 @@
         "issued": {
             "date-parts": [
                 [
-                    2006
+                    2006,
+                    11,
+                    15
                 ]
             ]
         },
@@ -7241,7 +7669,7 @@
                 "given": "Ali"
             }
         ],
-        "id": "Zhu2006AutDim",
+        "id": "Zhu2006Automatic",
         "DOI": "10.1016/j.csda.2005.09.010",
         "volume": "51",
         "page": "918-930",
