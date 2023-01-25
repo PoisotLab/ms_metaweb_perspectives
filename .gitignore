@@ -11,3 +11,6 @@ filename
 filename.json
 manuscript-metadata.json
 .~lock*
+figures/.DS_Store
+_wc.docx
+.DS_Store
