@@ -485,14 +485,14 @@ interactions}\label{graph-embedding-offers-promises-for-the-inference-of-potenti
 
 Graph (or Network) embedding (fig.~\ref{fig:embedding}) is a family of
 machine learning techniques, whose main task is to learn a mapping
-function from a discrete graph to a continuous domain (Chami et al.,
-2022; \textbf{arsov\_network\_2019?}). Their main goal is to learn a low
-dimensional vector representations of the graph (embeddings), such that
-its key properties (\emph{e.g.} local or global structures) are retained
-in the embedding space (Yan et al., 2005). The embedding space may, but
-will not necessarily, have lower dimensionality than the graph.
-Ecological networks are promising candidates for the routine application
-of embeddings, as they tend to possess a shared structural backbone (see
+function from a discrete graph to a continuous domain (Arsov \& Mirceva,
+2019; Chami et al., 2022). Their main goal is to learn a low dimensional
+vector representations of the graph (embeddings), such that its key
+properties (\emph{e.g.} local or global structures) are retained in the
+embedding space (Yan et al., 2005). The embedding space may, but will
+not necessarily, have lower dimensionality than the graph. Ecological
+networks are promising candidates for the routine application of
+embeddings, as they tend to possess a shared structural backbone (see
 \emph{e.g.} Bramon Mora et al., 2018), which hints at structural
 invariants in empirical data. Assuming that these structural invariants
 are common enough, they would dominate the structure of networks, and
@@ -698,9 +698,9 @@ the need for dimensionality reduction (for example for data
 visualisation) arise. In brief, many graph embeddings \emph{can} serve
 as dimensionality reduction steps, but not all do, neither do all
 dimensionality reduction methods provide adequate graph embedding
-capacities. In the next section (and fig.~\ref{fig:illustration}), we
-show how the amount of dimensionality reduction can affect the quality
-of the embedding.
+capacities. In the next section (and fig.~\ref{fig:embedding}), we show
+how the amount of dimensionality reduction can affect the quality of the
+embedding.
 
 \hypertarget{an-illustration-of-metaweb-embedding}{%
 \section{An illustration of metaweb
@@ -872,12 +872,12 @@ boundaries. The upside of this approach is that information at the
 country level is likely to be required for biodiversity assessments, as
 countries set conservation goals at the national level (Buxton et al.,
 2021), and as quantitative instruments are designed to work at these
-scales (\textbf{turak\_measuring\_2017?}); specific strategies are often
-enacted at smaller scales, nested within a specific country (Ray et al.,
-2021). But there is no guarantee that these boundaries are meaningful.
-In fact, we do not have a satisfying answer to the question of ``where
-does an ecological network stop?''. Recent results by Martins et al.
-(2022) suggest that networks are shaped within eco-regions, with abrupt
+scales (Turak et al., 2017); specific strategies are often enacted at
+smaller scales, nested within a specific country (Ray et al., 2021). But
+there is no guarantee that these boundaries are meaningful. In fact, we
+do not have a satisfying answer to the question of ``where does an
+ecological network stop?''. Recent results by Martins et al. (2022)
+suggest that networks are shaped within eco-regions, with abrupt
 structural transitions from an eco-region to the next. Should this trend
 hold generally, this would provide an ecologically-relevant scale at
 which metawebs can be downscaled and predicted. Other solutions leverage
@@ -1005,6 +1005,10 @@ Anowar, F., Sadaoui, S., \& Selim, B. (2021). Conceptual and empirical
 comparison of dimensionality reduction algorithms (PCA, KPCA, LDA, MDS,
 SVD, LLE, ISOMAP, LE, ICA, t-SNE). \emph{Computer Science Review},
 \emph{40}, 100378. \url{https://doi.org/10.1016/j.cosrev.2021.100378}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Arsov2019Network}{}}%
+Arsov, N., \& Mirceva, G. (2019). \emph{Network Embedding: An Overview}.
+\url{http://arxiv.org/abs/1911.11726}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Athreya2017Statistical}{}}%
 Athreya, A., Fishkind, D. E., Levin, K., Lyzinski, V., Park, Y., Qin,
@@ -1596,6 +1600,15 @@ trophic network. \emph{Ecography}, \emph{0}.
 Torres, L., Chan, K. S., \& Eliassi-Rad, T. (2020). GLEE: Geometric
 Laplacian Eigenmap Embedding. \emph{Journal of Complex Networks},
 \emph{8}(2), cnaa007. \url{https://doi.org/10.1093/comnet/cnaa007}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Turak2017Using}{}}%
+Turak, E., Brazill-Boast, J., Cooney, T., Drielsma, M., DelaCruz, J.,
+Dunkerley, G., Fernandez, M., Ferrier, S., Gill, M., Jones, H., Koen,
+T., Leys, J., McGeoch, M., Mihoub, J.-B., Scanes, P., Schmeller, D., \&
+Williams, K. (2017). Using the essential biodiversity variables
+framework to measure biodiversity change at national scale.
+\emph{Biological Conservation}, \emph{213}, 264--271.
+\url{https://doi.org/10.1016/j.biocon.2016.08.019}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Wang2016Structural}{}}%
 Wang, D., Cui, P., \& Zhu, W. (2016). Structural Deep Network Embedding.
