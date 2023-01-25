@@ -138,7 +138,7 @@ networks](figures/conceptual_2.png){#fig:embedding}
 
 Graph (or Network) embedding (@fig:embedding) is a family of machine learning
 techniques, whose main task is to learn a mapping function from a discrete graph
-to a continuous domain [@arsov_network_2019; @Chami2022Machine]. Their main goal
+to a continuous domain [@Arsov2019Network; @Chami2022Machine]. Their main goal
 is to learn a low dimensional vector representations of the graph (embeddings),
 such that its key properties (*e.g.* local or global structures) are retained in
 the embedding space [@Yan2005Graph]. The embedding space may, but will not
@@ -291,7 +291,7 @@ applied to an embedded network should the need for dimensionality reduction (for
 example for data visualisation) arise. In brief, many graph embeddings *can*
 serve as dimensionality reduction steps, but not all do, neither do all
 dimensionality reduction methods provide adequate graph embedding capacities. In
-the next section (and @fig:illustration), we show how the amount of
+the next section (and @fig:embedding), we show how the amount of
 dimensionality reduction can affect the quality of the embedding.
 
 # An illustration of metaweb embedding
@@ -428,7 +428,7 @@ interactions in a list of species within geographic boundaries. The upside of
 this approach is that information at the country level is likely to be required
 for biodiversity assessments, as countries set conservation goals at the
 national level [@Buxton2021Key], and as quantitative instruments are designed to
-work at these scales [@turak_measuring_2017]; specific strategies are often
+work at these scales [@Turak2017Using]; specific strategies are often
 enacted at smaller scales, nested within a specific country
 [@Ray2021Biodiversity]. But there is no guarantee that these boundaries are
 meaningful. In fact, we do not have a satisfying answer to the question of
