@@ -115,16 +115,18 @@ which is usually hard to obtain yet has possibly the most potential to boost our
 predictive ability [@Bartomeus2016ComFra].
 
 ![The embedding process (**A**) can help to identify links (interactions) that
-may have been missed within the current sample (community, **B**), while
-transfer learning (**D**) allows for predicting links (interactions) for species
-external to the original sample as well as within sample links (**F**). Transfer
-learning allows for the prediction links (interactions) when novel species
-(**C**) are included in the sample by learning using other relevant predictors
-(e.g. traits) in conjunction with the known interactions to infer latent values
-(**E**). Within this context the predicted networks as well as the ecological
-predictors used (green boxes) are products that can be quantified through field
-measurements, whereas the embedded as well as imputed matrices are
-representative of **TK**](figures/conceptual_2.png){#fig:embedding}
+may have been missed within the original community (represented by the orange
+dashed lines, **B**). Transfer learning allows for the prediction links
+(interactions) when novel species (**C**) are included alongside the original
+community (**D**). This is achieved by learning using other relevant predictors
+(*e.g.* traits) in conjunction with the known interactions to infer latent
+values (**E**). Ultimately this allows us to predict links (interactions) for
+species external to the original sample as well as within sample links (**F**).
+Within this context the predicted (and original) networks as well as the
+ecological predictors used (green boxes) are products that can be quantified
+through field measurements, whereas the embedded as well as imputed matrices are
+representative of a decomposition of the interaction
+networks](figures/conceptual_2.png){#fig:embedding}
 
 # Graph embedding offers promises for the inference of potential interactions
 
