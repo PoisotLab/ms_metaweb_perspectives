@@ -1,23 +1,23 @@
-Being able to infer *potential* interactions could serve as a significant
-breakthrough in our ability to start thinking about species interaction networks
-over large spatial scales [@Hortal2015Seven]. Understanding species interactions
-holds enormous potential to not only understand and more rapidly learn about
-species interactions and metawebs, but also how changes in management of a
-single species may impact non-target species. In a recent overview of the field
-of ecological network prediction, @Strydom2021Roadmap identified two challenges
-of interest to the prediction of interactions at large scales. First, there is a
-relative scarcity of relevant data in most places globally -- paradoxically,
-this restricts our ability to infer interactions to locations where inference is
-perhaps the least required (and leaves us unable to make inference in data
-scarce regions); second, accurate predictors are important for accurate
-predictions, and the lack of methods that can leverage a small amount of
-*accurate* data is a serious impediment to our predictive ability. In most
-places, our most reliable biodiversity knowledge is that of a species pool
-(*i.e.* a set of potentially interacting species in a given area): through the
-analysis of databases like the Global Biodiversity Information Facility (GBIF)
-or the International Union for the Conservation of Nature (IUCN), it is possible
-to construct a list of species for a region of interest; however inferring the
-potential interactions between these species still remains a challenge.
+The ability to infer *potential* interactions could serve as a significant
+breakthrough in our ability to conceptualize species interaction networks over
+large spatial scales [@Hortal2015Seven]. Robust inferences would not only boost
+our understanding of the structure of species interaction networks, but also
+increase the amount of information that can be used for biodiversity management.
+In a recent overview of the field of ecological network prediction,
+@Strydom2021Roadmap identified two challenges of interest to the prediction of
+interactions at large scales. First, there is a relative scarcity of relevant
+data in most places globally -- paradoxically, this restricts our ability to
+infer interactions to locations where inference is perhaps the least required
+(and leaves us unable to make inference in data scarce regions); second,
+accurate predictors are important for accurate predictions, and the lack of
+methods that can leverage a small amount of *accurate* data is a serious
+impediment to our predictive ability. In most places, our most reliable
+biodiversity knowledge is that of a species pool (*i.e.* a set of potentially
+interacting species in a given area): through the analysis of databases like the
+Global Biodiversity Information Facility (GBIF) or the International Union for
+the Conservation of Nature (IUCN), it is possible to construct a list of species
+for a region of interest; however inferring the potential interactions between
+these species still remains a challenge.
 
 Following the definition of @Dunne2006Network, a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories all
@@ -153,6 +153,8 @@ networks, and therefore be adequately captured by the first (lower) dimensions
 of an embedding, without the need to measure derived aspects of their structure
 (*e.g.* motifs, paths, modularity, ...).
 
+## Ecological networks are good candidates for embedding
+
 Indeed, food webs are inherently low-dimensional objects, and can be adequately
 represented with less than ten dimensions [@Braga2021Phylogenetic;
 @Eklof2013Dimensionality; @Braga2019Spatial]. Simulation results by
@@ -175,6 +177,52 @@ species interactions), while graph embeddings focus on maintaining the network
 structure (*i.e.* emergent properties). Nevertheless, some graph embedding
 techniques [like RDPG, see *e.g.* @Wu2021Maximum] will provide high-quality
 node-level embeddings while also preserving network structure.
+
+## Graph embeddings produce novel latent variables to predict interactions
+
+Before moving further, it is important to clarify the epistemic status of node
+values derived from embeddings: specifically, they are *not* functional traits,
+and therefore should not be discussed in terms of effects or responses. As per
+the framework of @Malaterre2019Functional, these values neither derive from, nor
+result in, changes in organismal performance, and should therefore not be used
+to quantify *e.g.* functional diversity. This holds true even when there are
+correlations between latent values and functional traits: although these enable
+an ecological discussion of how traits condition the structure of the network,
+the existence of a statistical relationship does not elevate the latent values
+to the status of functional traits.
+
+Rather than directly predicting biological rules [see *e.g.* @Pichler2020Machine
+for an overview], which may be confounded by the sparse nature of graph data,
+learning embeddings works in the low-dimensional space that maximizes
+information about the network structure. This approach is further justified by
+the observation, for example, that the macro-evolutionary history of a network
+is adequately represented by some graph embeddings [Random dot product graphs
+(RDPG); see @DallaRiva2016Exploring]. In a recent publication, @Strydom2022Food
+have used an embedding (based on RDPG) to project a metaweb of trophic
+interactions between European mammals, and transferred this information to
+mammals of Canada, using the phylogenetic distance between related clades to
+infer the values in the latent sub-space into which the European metaweb was
+projected. By performing the RDPG step on re-constructed values, this approach
+yields a probabilistic trophic metaweb for mammals of Canada based on knowledge
+of European species, despite a limited ($\approx$ 5%) taxonomic overlap.
+
+Graph embeddings *can* serve as a dimensionality reduction method. For example,
+RDPG [@Strydom2022Food] and t-SVD [truncated Singular Value Decomposition;
+@Poisot2021Imputing] typically embed networks using fewer dimensions than the
+original network [the original network has as many dimensions as species, and as
+many informative dimensions as trophically unique species; @Strydom2021Svd]. But
+this is not necessarily the case -- indeed, one may perform a PCA (a special
+case of SVD) to project the raw data into a subspace that improves the efficacy
+of t-SNE [t-distributed stochastic neighbor embedding; @Maaten2009Learning].
+There are many dimensionality reductions [@Anowar2021Conceptual] that can be
+applied to an embedded network should the need for dimensionality reduction (for
+example for data visualization) arise. In brief, many graph embeddings *can*
+serve as dimensionality reduction steps, but not all do, neither do all
+dimensionality reduction methods provide adequate graph embedding capacities. In
+the next section (and @fig:embedding), we show how the amount of dimensionality
+reduction can affect the quality of the embedding.
+
+## Graph embedding has been under-used in the prediction of species interactions
 
 One prominent family of approaches we do not discuss in the present manuscript
 is Graph Neural Networks [GNN; @Zhou2020Graph]. GNN are, in a sense, a method to
@@ -253,48 +301,6 @@ fundamental aspects of network structure; conversely, the absence of a
 phylogenetic or functional signal may suggest that evolutionary/trait processes
 are not strong drivers of network structure, therefore opening a new way to
 perform hypothesis testing.
-
-Before moving further, it is important to clarify the epistemic status of node
-values derived from embeddings: specifically, they are *not* functional traits,
-and therefore should not be discussed in terms of effects or responses. As per
-the framework of @Malaterre2019Functional, these values neither derive from, nor
-result in, changes in organismal performance, and should therefore not be used
-to quantify *e.g.* functional diversity. This holds true even when there are
-correlations between latent values and functional traits: although these enable
-an ecological discussion of how traits condition the structure of the network,
-the existence of a statistical relationship does not elevate the latent values
-to the status of functional traits.
-
-Rather than directly predicting biological rules [see *e.g.* @Pichler2020Machine
-for an overview], which may be confounded by the sparse nature of graph data,
-learning embeddings works in the low-dimensional space that maximizes
-information about the network structure. This approach is further justified by
-the observation, for example, that the macro-evolutionary history of a network
-is adequately represented by some graph embeddings [Random dot product graphs
-(RDPG); see @DallaRiva2016Exploring]. In a recent publication, @Strydom2022Food
-have used an embedding (based on RDPG) to project a metaweb of trophic
-interactions between European mammals, and transferred this information to
-mammals of Canada, using the phylogenetic distance between related clades to
-infer the values in the latent sub-space into which the European metaweb was
-projected. By performing the RDPG step on re-constructed values, this approach
-yields a probabilistic trophic metaweb for mammals of Canada based on knowledge
-of European species, despite a limited ($\approx$ 5%) taxonomic overlap.
-
-Graph embeddings *can* serve as a dimensionality reduction method. For example,
-RDPG [@Strydom2022Food] and t-SVD [truncated Singular Value Decomposition;
-@Poisot2021Imputing] typically embed networks using fewer dimensions than the
-original network [the original network has as many dimensions as species, and as
-many informative dimensions as trophically unique species; @Strydom2021Svd]. But
-this is not necessarily the case -- indeed, one may perform a PCA (a special
-case of SVD) to project the raw data into a subspace that improves the efficacy
-of t-SNE [t-distributed stochastic neighbor embedding; @Maaten2009Learning].
-There are many dimensionality reductions [@Anowar2021Conceptual] that can be
-applied to an embedded network should the need for dimensionality reduction (for
-example for data visualization) arise. In brief, many graph embeddings *can*
-serve as dimensionality reduction steps, but not all do, neither do all
-dimensionality reduction methods provide adequate graph embedding capacities. In
-the next section (and @fig:embedding), we show how the amount of dimensionality
-reduction can affect the quality of the embedding.
 
 # An illustration of metaweb embedding
 
@@ -386,119 +392,136 @@ different taxonomic families occupy different positions on the first axis, with
 can look for ecological informations in the output of network embeddings, which
 can further be refined into the selection of predictors for transfer learning.
 
-# The metaweb embeds both ecological hypotheses and practices
+# The metaweb merges ecological hypotheses and practices
 
-The goal of metaweb inference is to provide information about the interactions
-between species at a large spatial scale. But as @Herbert1965Dune rightfully
-pointed out, "[y]ou can't draw neat lines around planet-wide problems"; any
-inference of a metaweb at large scales must contend with several novel, and
-interwoven, families of problems. In this section, we list some of the most
-pressing research priorities (*i.e.* problems that can be addressed with
-subsequent data analysis or simulations), as well as issues related to the
-application of these methods at the science-policy interface.
+Metaweb inference seeks to provide information about the interactions between
+species at a large spatial scale, typically a scale large enough to be
+considered of biogeographic relevance (indeed, many of the examples covered in
+the introduction span areas larger than a country, some of them global). But as
+@Herbert1965Dune rightfully pointed out, "[y]ou can't draw neat lines around
+planet-wide problems"; any inference of a metaweb must therefore contend with
+several novel, interwoven, families of problems. In this section, we outline
+three that we think are particularly important, and can discuss how they may
+addressed with subsequent data analysis or simulations, and how they emerge in
+the specific context of using embeddings; some of these issues are related to
+the application of these methods at the science-policy interface.
 
 ## Identifying the properties of the network to embed
 
 If the initial metaweb is too narrow in scope, notably from a taxonomic point of
 view, the chances of finding another area with enough related species (through
 phylogenetic relatedness or similarity of functional traits) to make a reliable
-inference decreases; this would likely be indicated by large confidence
-intervals during estimation of the values in the low-rank space, meaning that
-the representation of the original graph is difficult to transfer to the new
-problem. Alternatively, if the initial metaweb is too large (taxonomically),
-then the resulting embeddings would need to represent interactions between
-taxonomic groups that are not present in the new location. This would lead to a
-much higher variance in the starting dataset, and to under-dispersion in the
-target dataset, resulting in the potential under or over estimation of the
-strength of new predicted interactions. The lack of well documented metawebs is
-currently preventing the development of more concrete guidelines. The question
-of phylogenetic relatedness and distribution is notably relevant if the metaweb
-is assembled in an area with mostly endemic species (*e.g.* a system that has
-undergone recent radiation or that has remained in isolation for a long period
-of time might not have an analogous system with which to draw knowledge from),
-and as with every predictive algorithm, there is room for the application of our
-best ecological judgement. Because this problem relates to distribution of
-species in the geographic or phylogenetic space, it can certainly be approached
-through assessing the performance of embedding transfer in simulated
-starting/target species pools.
+inference decreases. This is because transfer requires similarity
+(@fig:embedding). A diagnostic for the lack of similar species would likely be
+large confidence intervals during estimation of the values in the low-rank
+space. In other words, the representation of the original graph is difficult to
+transfer to the new problem. Alternatively, if the initial metaweb is too large
+(taxonomically), then the resulting embeddings would need to represent
+interactions between taxonomic groups that are not present in the new location.
+This would lead to a much higher variance in the starting dataset, and to
+under-dispersion in the target dataset, resulting in the potential under or over
+estimation of the strength of new predicted interactions.
+@Llewelyn2022Predicting provide compelling evidence for these situations by
+showing that, even at small spatial scales, the transfer of information about
+interactions becomes more challenging when areas rich with endemic species are
+considered. The lack of well documented metawebs is currently preventing the
+development of more concrete guidelines. The question of phylogenetic
+relatedness and distribution is notably relevant if the metaweb is assembled in
+an area with mostly endemic species (*e.g.* a system that has undergone recent
+radiation or that has remained in isolation for a long period of time might not
+have an analogous system with which to draw knowledge from), and as with every
+predictive algorithm, there is room for the application of our best ecological
+judgement. Because this problem relates to distribution of species in the
+geographic or phylogenetic space, it can certainly be approached through
+assessing the performance of embedding transfer in simulated starting/target
+species pools.
 
 ## Identifying the scope of the prediction to perform
 
-The area used to infer the new metaweb in determines the species pool that must
-be used to perform this embedding. Metawebs can be constructed by assigning
-interactions in a list of species within geographic boundaries. The upside of
-this approach is that information at the country level is likely to be required
-for biodiversity assessments, as countries set conservation goals at the
-national level [@Buxton2021Key], and as quantitative instruments are designed to
-work at these scales [@Turak2017Using]; specific strategies are often
-enacted at smaller scales, nested within a specific country
+The area for which we seek to predict the metaweb should determine the species
+pool on which the embedding is performed. Metawebs can be constructed by
+assigning interactions in a list of species within geographic boundaries. The
+upside of this approach is that information relevant for the construction of
+this dataset is likely to exist, as countries usually set conservation goals at
+the national level [@Buxton2021Key], and as quantitative instruments are
+consequently designed to work at these scales [@Turak2017Using]; specific
+strategies are often enacted at smaller scales, nested within a specific country
 [@Ray2021Biodiversity]. But there is no guarantee that these boundaries are
 meaningful. In fact, we do not have a satisfying answer to the question of
-"where does an ecological network stop?". Recent results by @Martins2022Global
-suggest that networks are shaped within eco-regions, with abrupt structural
-transitions from an eco-region to the next. Should this trend hold generally,
-this would provide an ecologically-relevant scale at which metawebs can be
-downscaled and predicted. Other solutions leverage network-area relationships to
-identify areas in which networks are structurally similar [see *e.g.*
-@Fortin2021Network; @Galiana2018Spatial; @Galiana2022Ecological], which requires
-ample pre-existing information about the network. This suggests that inferred
-metawebs should be further downscaled to allow for *a posteriori* analyses;
-@Llewelyn2022Predicting provide compelling evidence for the fact that when a
-place is rich in endemic species, even at smaller spatial scales, the transfer
-of information about interactions becomes more challenging, re-emphasizing the
-need to identify guidelines for when and where network predictions can be
-mapped.
+"where does an ecological network stop?", the answer to which would dictate the
+spatial span to embed/predict. Recent results by @Martins2022Global suggest that
+networks are shaped within eco-regions, with abrupt structural transitions from
+an eco-region to the next. Should this trend hold generally, this would provide
+an ecologically-relevant scale at which metawebs can be downscaled and
+predicted. Other solutions could leverage network-area relationships to identify
+areas in which networks are structurally similar [see *e.g.* @Fortin2021Network;
+@Galiana2018Spatial; @Galiana2022Ecological]. Both of these solutions requires
+ample pre-existing information about the network in space. Nevertheless, the
+inclusion of species for which we have data but that are not in the right
+spatial extent*may* improve the performance of approaches based on embedding and
+transfer, *if* they increase the similarity between the target and destination
+network. This proposal can specifically be evaluated by adding nodes to the
+network to embed, and evaluating the performance of predictive models [see
+*e.g.* @Llewelyn2022Predicting].
 
 ## Minding legacies shaping ecological datasets
 
-Operating under the context of national divisions, in large parts of the world,
-reflects nothing more than the legacy of settler colonialism, which drives a
-disparity in available ecological data. Applying any embedding to biased data
-does not debias them, but instead embeds these very same biases, propagating
-them to the machine learning models using embeddings to make predictions.
-Indeed, the use of ecological data itself is not an apolitical act
-[@Nost2021Political], as data infrastructures tend to be designed to answer
-questions within national boundaries (therefore placing contingencies on what is
-available to be embedded). Furthermore, their use often draws upon, and
-reinforces, territorial statecraft [see *e.g.* @Barrett2005Environment]. As per
-@Machen2021Thinking, these biases are particularly important to consider when
-the output of "algorithmic thinking" (*i.e.* relying on machine learning to
-generate knowledge or as a substitute to human decision-making) can be
-re-purposed for governance (*e.g.* enacting conservation decisions on the basis
-of model prediction). As information on species interaction networks structure
-is increasingly leveraged as a tool to guide conservation actions [see *e.g.*
-@Eero2021Use; @Naman2022Food; @Stier2017Integrating], the need to appraise and
-correct biases that are unwittingly propagated to algorithms when embedded from
-the original data is paramount. These considerations are even more urgent in the
-specific context of biodiversity data, as long-term colonial legacies still
-shape taxonomic composition to this day [@Lenzner2022Naturalized;
-@Raja2022Colonialism], and where much shorter-term changes in taxonomic and
-genetic richness of wildlife emerged through environmental racism
-[@Schmidt2022Systemic].
+In large parts of the world, geographic boundaries only reflect the legacy of
+settler colonialism, which drives global disparity in capacity to collect and
+publish ecological data. Applying any embedding to biased data does not debias
+them, but rather embeds these biases, propagating them to the models using
+embeddings to make predictions. Furthermore, the use of ecological data itself
+is not an apolitical act [@Nost2021Political]: data infrastructures tend to be
+designed to answer questions within national boundaries (therefore placing
+contingencies on what is available to be embedded), their use often drawing
+upon, and reinforcing, territorial statecraft [see *e.g.*
+@Barrett2005Environment]. As per @Machen2021Thinking, these biases are
+particularly important to consider when knowledge generated algorithmically is
+used to supplement or replace human decision-making, especially for governance
+(*e.g.* enacting conservation decisions on the basis of model prediction). As
+information on networks is increasingly leveraged for conservation actions [see
+*e.g.* @Eero2021Use; @Naman2022Food; @Stier2017Integrating], the need to
+appraise and correct biases that are unwittingly propagated to algorithms when
+embedded from the original data is immense. These considerations are even more
+urgent in the specific context of biodiversity data. Long-term colonial legacies
+still shape taxonomic composition to this day [@Lenzner2022Naturalized;
+@Raja2022Colonialism], and much shorter-term changes in taxonomic and genetic
+richness of wildlife emerged through environmental racism
+[@Schmidt2022Systemic]. These considerations mean that "the set of species found
+at a place" is not only a response to ecological processes, and therefore there
+may exist forcing on the interactions between these species.
 
-# Conclusion: metaweb prediction in context
+# Conclusion: metawebs, predictions, and people
 
-Predictive approaches, regardless of the scale at which they are deployed and
-the intent of their deployment, originate in the framework that contributed to
-the ongoing biodiversity crisis [@Adam2014Elephant] and reinforced environmental
-injustice [@Choudry2013Saving; @Dominguez2020Decolonising]. The risk of
-embedding this legacy in our models is great, especially when the impact of this
-legacy on species pools is being increasingly documented. This problem can be
-addressed by re-framing the way we interact with models, especially in the
-context where these models are intended to support conservation actions.
-Particularly on territories that were traditionally stewarded by Indigenous
-people, these approaches should be replaced (or at least guided and framed) by
-Indigenous principles of land management [@Eichhorn2019Steps;
-@Nokmaq2021Awakening], as part of an "algorithm-in-the-loop" approach.
+Predictive approaches in ecology, regardless of the scale at which they are
+deployed and the intent of their deployment, originate in the framework that
+contributed to the ongoing biodiversity crisis [@Adam2014Elephant] and
+reinforced environmental injustice [@Choudry2013Saving;
+@Dominguez2020Decolonising]. The risk of embedding this legacy in our models is
+real, especially when the impact of this legacy on species pools is being
+increasingly documented. This problem can be addressed by re-framing the way we
+interact with models, especially when models are intended to support
+conservation actions. Particularly on territories that were traditionally
+stewarded by Indigenous people, we must interrogate how predictive approaches
+and the biases that underpin them can be put to task in accompanying Indigenous
+principles of land management [@Eichhorn2019Steps; @Nokmaq2021Awakening]. The
+discussion of "algorithm-in-the-loop" approaches that is now pervasive in the
+machine learning community provides examples of why this is important.
 Human-algorithm interactions are notoriously difficult and can yield adverse
 effect [@Green2019Disparate; @Stevenson2021Algorithmic], suggesting the need to
-systematically study them for the specific purpose of biodiversity governance,
-as well as to improve the algorithmic literacy of decision makers. As we see
-artificial intelligence/machine learning being increasingly mobilized to
-generate knowledge that is lacking for conservation decisions [*e.g.*
-@Lamba2019Deep; @MoseboFernandes2020Machine] and drive policy decisions
-[@Weiskopf2022Increasing], our discussion of these tools need to go beyond the
-technical and statistical, and into the governance consequences they can have.
+systematically study them for the specific purpose of, here, biodiversity
+governance. Improving the algorithmic literacy of decision makers is part of the
+solution [*e.g.* @Lamba2019Deep; @MoseboFernandes2020Machine], as we can
+reasonably expect that model outputs will be increasingly used to drive policy
+decisions [@Weiskopf2022Increasing]. Our discussion of these approaches need to
+go beyond the technical and statistical, and into the governance consequences
+they can have. To embed data also embeds historical and contemporary biases that
+acted on these data, both because they shaped the ecological processes
+generating them, and the global processes leading to their measurement and
+publication. For a domain as vast as species interaction networks, these biases
+exist at multiple scales along the way, and a challenge for prediction is not
+only to develop (or adopt) new quantitative tools, but to assess the behavior of
+these tools in the proper context.
 
 **Acknowledgements:** We acknowledge that this study was conducted on land
 within the traditional unceded territory of the Saint Lawrence Iroquoian,
