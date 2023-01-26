@@ -591,47 +591,8 @@ limitations</div>
             need to measure derived aspects of their structure
             (<em>e.g.</em> motifs, paths, modularity, …).</p>
             <h2
-            id="ecological-networks-are-good-candidates-for-embedding">Ecological
-            networks are good candidates for embedding</h2>
-            <p>Indeed, food webs are inherently low-dimensional objects,
-            and can be adequately represented with less than ten
-            dimensions <span class="citation"
-            data-cites="Braga2021Phylogenetic Eklof2013Dimensionality Braga2019Spatial">(J.
-            Braga et al., 2019; M. P. Braga et al., 2021; Eklöf et al.,
-            2013)</span>. Simulation results by <span class="citation"
-            data-cites="Botella2022Appraisal">Botella et al.
-            (2022)</span> suggests that there is no dominant method to
-            identify architectural similarities between networks:
-            multiple approaches need to be tested and compared to the
-            network descriptor of interest on a problem-specific basis.
-            This matches previous results on graph embedding, wherein
-            different embedding algorithms yield different network
-            embeddings <span class="citation"
-            data-cites="Goyal2018Graph">(Goyal &amp; Ferrara,
-            2018)</span>, calling for a careful selection of the
-            problem-specific approach to use. In tbl. 1, we present a
-            selection of common graph and node embedding methods,
-            alongside examples of their use to predict interactions or
-            statistical associations between species. These methods rely
-            largely on linear algebra or pseudo-random walks on graphs.
-            All forms of embeddings presented in the table share the
-            common property of summarizing their objects into (sets of)
-            dense feature vectors, that capture the overall network
-            structure, pairwise information on nodes, and emergent
-            aspects of the network, in a compressed way (<em>i.e.</em>
-            with some information loss, as we later discuss in the
-            illustration). Node embeddings tend to focus on maintaining
-            pairwise relationships (<em>i.e.</em> species interactions),
-            while graph embeddings focus on maintaining the network
-            structure (<em>i.e.</em> emergent properties). Nevertheless,
-            some graph embedding techniques <span class="citation"
-            data-cites="Wu2021Maximum">(like RDPG, see <em>e.g.</em> Wu
-            et al., 2021)</span> will provide high-quality node-level
-            embeddings while also preserving network structure.</p>
-            <h2
-            id="graph-embeddings-produce-novel-latent-variables-to-predict-interactions">Graph
-            embeddings produce novel latent variables to predict
-            interactions</h2>
+            id="graph-embeddings-produce-latent-variables-but-not-traits">Graph
+            embeddings produce latent variables (but not traits)</h2>
             <p>Before moving further, it is important to clarify the
             epistemic status of node values derived from embeddings:
             specifically, they are <em>not</em> functional traits, and
@@ -669,7 +630,48 @@ limitations</div>
             RDPG step on re-constructed values, this approach yields a
             probabilistic trophic metaweb for mammals of Canada based on
             knowledge of European species, despite a limited (<span
-            class="math inline">≈</span> 5%) taxonomic overlap.</p>
+            class="math inline">≈</span> 5%) taxonomic overlap, and
+            illustrates how the values derived from an embedding can be
+            used for prediction without being “traits” of the species
+            they represent.</p>
+            <h2
+            id="ecological-networks-are-good-candidates-for-embedding">Ecological
+            networks are good candidates for embedding</h2>
+            <p>Indeed, food webs are inherently low-dimensional objects,
+            and can be adequately represented with less than ten
+            dimensions <span class="citation"
+            data-cites="Braga2021Phylogenetic Eklof2013Dimensionality Braga2019Spatial">(J.
+            Braga et al., 2019; M. P. Braga et al., 2021; Eklöf et al.,
+            2013)</span>. Simulation results by <span class="citation"
+            data-cites="Botella2022Appraisal">Botella et al.
+            (2022)</span> suggests that there is no dominant method to
+            identify architectural similarities between networks:
+            multiple approaches need to be tested and compared to the
+            network descriptor of interest on a problem-specific basis.
+            This matches previous results on graph embedding, wherein
+            different embedding algorithms yield different network
+            embeddings <span class="citation"
+            data-cites="Goyal2018Graph">(Goyal &amp; Ferrara,
+            2018)</span>, calling for a careful selection of the
+            problem-specific approach to use. In tbl. 1, we present a
+            selection of common graph and node embedding methods,
+            alongside examples of their use to predict interactions or
+            statistical associations between species. These methods rely
+            largely on linear algebra or pseudo-random walks on graphs.
+            All forms of embeddings presented in the table share the
+            common property of summarizing their objects into (sets of)
+            dense feature vectors, that capture the overall network
+            structure, pairwise information on nodes, and emergent
+            aspects of the network, in a compressed way (<em>i.e.</em>
+            with some information loss, as we later discuss in the
+            illustration). Node embeddings tend to focus on maintaining
+            pairwise relationships (<em>i.e.</em> species interactions),
+            while graph embeddings focus on maintaining the network
+            structure (<em>i.e.</em> emergent properties). Nevertheless,
+            some graph embedding techniques <span class="citation"
+            data-cites="Wu2021Maximum">(like RDPG, see <em>e.g.</em> Wu
+            et al., 2021)</span> will provide high-quality node-level
+            embeddings while also preserving network structure.</p>
             <p>Graph embeddings <em>can</em> serve as a dimensionality
             reduction method. For example, RDPG <span class="citation"
             data-cites="Strydom2022Food">(Strydom et al., 2022)</span>

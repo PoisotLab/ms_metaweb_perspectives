@@ -500,39 +500,9 @@ therefore be adequately captured by the first (lower) dimensions of an
 embedding, without the need to measure derived aspects of their
 structure (\emph{e.g.} motifs, paths, modularity, \ldots).
 
-\hypertarget{ecological-networks-are-good-candidates-for-embedding}{%
-\subsection{Ecological networks are good candidates for
-embedding}\label{ecological-networks-are-good-candidates-for-embedding}}
-
-Indeed, food webs are inherently low-dimensional objects, and can be
-adequately represented with less than ten dimensions (J. Braga et al.,
-2019; M. P. Braga et al., 2021; Eklöf et al., 2013). Simulation results
-by Botella et al. (2022) suggests that there is no dominant method to
-identify architectural similarities between networks: multiple
-approaches need to be tested and compared to the network descriptor of
-interest on a problem-specific basis. This matches previous results on
-graph embedding, wherein different embedding algorithms yield different
-network embeddings (Goyal \& Ferrara, 2018), calling for a careful
-selection of the problem-specific approach to use. In
-tbl.~\ref{tbl:methods}, we present a selection of common graph and node
-embedding methods, alongside examples of their use to predict
-interactions or statistical associations between species. These methods
-rely largely on linear algebra or pseudo-random walks on graphs. All
-forms of embeddings presented in the table share the common property of
-summarizing their objects into (sets of) dense feature vectors, that
-capture the overall network structure, pairwise information on nodes,
-and emergent aspects of the network, in a compressed way (\emph{i.e.}
-with some information loss, as we later discuss in the illustration).
-Node embeddings tend to focus on maintaining pairwise relationships
-(\emph{i.e.} species interactions), while graph embeddings focus on
-maintaining the network structure (\emph{i.e.} emergent properties).
-Nevertheless, some graph embedding techniques (like RDPG, see
-\emph{e.g.} Wu et al., 2021) will provide high-quality node-level
-embeddings while also preserving network structure.
-
-\hypertarget{graph-embeddings-produce-novel-latent-variables-to-predict-interactions}{%
-\subsection{Graph embeddings produce novel latent variables to predict
-interactions}\label{graph-embeddings-produce-novel-latent-variables-to-predict-interactions}}
+\hypertarget{graph-embeddings-produce-latent-variables-but-not-traits}{%
+\subsection{Graph embeddings produce latent variables (but not
+traits)}\label{graph-embeddings-produce-latent-variables-but-not-traits}}
 
 Before moving further, it is important to clarify the epistemic status
 of node values derived from embeddings: specifically, they are
@@ -562,7 +532,39 @@ latent sub-space into which the European metaweb was projected. By
 performing the RDPG step on re-constructed values, this approach yields
 a probabilistic trophic metaweb for mammals of Canada based on knowledge
 of European species, despite a limited (\(\approx\) 5\%) taxonomic
-overlap.
+overlap, and illustrates how the values derived from an embedding can be
+used for prediction without being ``traits'' of the species they
+represent.
+
+\hypertarget{ecological-networks-are-good-candidates-for-embedding}{%
+\subsection{Ecological networks are good candidates for
+embedding}\label{ecological-networks-are-good-candidates-for-embedding}}
+
+Indeed, food webs are inherently low-dimensional objects, and can be
+adequately represented with less than ten dimensions (J. Braga et al.,
+2019; M. P. Braga et al., 2021; Eklöf et al., 2013). Simulation results
+by Botella et al. (2022) suggests that there is no dominant method to
+identify architectural similarities between networks: multiple
+approaches need to be tested and compared to the network descriptor of
+interest on a problem-specific basis. This matches previous results on
+graph embedding, wherein different embedding algorithms yield different
+network embeddings (Goyal \& Ferrara, 2018), calling for a careful
+selection of the problem-specific approach to use. In
+tbl.~\ref{tbl:methods}, we present a selection of common graph and node
+embedding methods, alongside examples of their use to predict
+interactions or statistical associations between species. These methods
+rely largely on linear algebra or pseudo-random walks on graphs. All
+forms of embeddings presented in the table share the common property of
+summarizing their objects into (sets of) dense feature vectors, that
+capture the overall network structure, pairwise information on nodes,
+and emergent aspects of the network, in a compressed way (\emph{i.e.}
+with some information loss, as we later discuss in the illustration).
+Node embeddings tend to focus on maintaining pairwise relationships
+(\emph{i.e.} species interactions), while graph embeddings focus on
+maintaining the network structure (\emph{i.e.} emergent properties).
+Nevertheless, some graph embedding techniques (like RDPG, see
+\emph{e.g.} Wu et al., 2021) will provide high-quality node-level
+embeddings while also preserving network structure.
 
 Graph embeddings \emph{can} serve as a dimensionality reduction method.
 For example, RDPG (Strydom et al., 2022) and t-SVD {[}truncated Singular
