@@ -244,22 +244,22 @@ biomonitoring techniques does indeed deliver larger datasets on species
 interactions [@Bohan2017Nextgeneration], there is a potential for GNN to become
 an applicable embedding/predictive technique in the coming years.
 
-| Method        | Object          | Technique                        | Reference                | Application                                  |
-| ------------- | --------------- | -------------------------------- | ------------------------ | -------------------------------------------- |
-| tSNE          | nodes           | statistical divergence           | @Hinton2002Stochastic    | @Cieslak2020Tdistributed $^a$ @Gibb2021Data  |
-| LINE          | nodes           | stochastic gradient descent      | @Tang2015Line            |                                              |
-| SDNE          | nodes           | gradient descent                 | @Wang2016Structural      |                                              |
-| node2vec      | nodes           | stochastic gradient descent      | @Grover2016Node2vec      |                                              |
-| HARP          | nodes           | meta-strategy                    | @Chen2017Harp            |                                              |
-| DMSE          | joint nodes     | deep neural network              | @Chen2017Deep            | @Chen2017Deep $^b$                           |
-| graph2vec     | sub-graph       | skipgram network                 | @Narayanan2017Graph2vec  |                                              |
-| RDPG          | graph           | SVD                              | @Young2007Random         | @DallaRiva2016Exploring; @Poisot2021Imputing |
-| GLEE          | graph           | Laplacian eigenmap               | @Torres2020Glee          |                                              |
-| DeepWalk      | graph           | stochastic gradient descent      | @Perozzi2014Deepwalk     | @Wardeh2021Predicting                        |
-| GraphKKE      | graph           | stochastic differential equation | @Melnyk2020Graphkke      | @Melnyk2020Graphkke $^a$                     |
-| FastEmbed     | graph           | eigen decomposition              | @Ramasamy2015Compressive |                                              |
-| PCA           | graph           | eigen decomposition              | @Surendran2013Graph      | @Strydom2021Roadmap                          |
-| Joint methods | multiple graphs | multiple strategies              | @Wang2021Joint           |                                              |
+| Method        | Object          | Technique                        | Reference                | Application                                                                                                       |
+| ------------- | --------------- | -------------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| tSNE          | nodes           | statistical divergence           | @Hinton2002Stochastic    | [species-environment responses $^a$; @Cieslak2020Tdistributed] [host-virus network representation; @Gibb2021Data] |
+| LINE          | nodes           | stochastic gradient descent      | @Tang2015Line            |                                                                                                                   |
+| SDNE          | nodes           | gradient descent                 | @Wang2016Structural      |                                                                                                                   |
+| node2vec      | nodes           | stochastic gradient descent      | @Grover2016Node2vec      |                                                                                                                   |
+| HARP          | nodes           | meta-strategy                    | @Chen2017Harp            |                                                                                                                   |
+| DMSE          | joint nodes     | deep neural network              | @Chen2017Deep            | [species-environment interactions $^b$; @Chen2017Deep]                                                            |
+| graph2vec     | sub-graph       | skipgram network                 | @Narayanan2017Graph2vec  |                                                                                                                   |
+| RDPG          | graph           | SVD                              | @Young2007Random         | [trophic interactions; @DallaRiva2016Exploring] [host-virus network prediction; @Poisot2021Imputing]              |
+| GLEE          | graph           | Laplacian eigenmap               | @Torres2020Glee          |                                                                                                                   |
+| DeepWalk      | graph           | stochastic gradient descent      | @Perozzi2014Deepwalk     | [host-virus interactions; @Wardeh2021Predicting]                                                                  |
+| GraphKKE      | graph           | stochastic differential equation | @Melnyk2020Graphkke      | [microbiote species associations $^a$; @Melnyk2020Graphkke]                                                       |
+| FastEmbed     | graph           | eigen decomposition              | @Ramasamy2015Compressive |                                                                                                                   |
+| PCA           | graph           | eigen decomposition              | @Surendran2013Graph      | [host-parasite interactions; @Strydom2021Roadmap]                                                                 |
+| Joint methods | multiple graphs | multiple strategies              | @Wang2021Joint           |                                                                                                                   |
 
 : Overview of some common graph embedding approaches, by type of embedded
 objects, alongside examples of their use in the prediction of species
