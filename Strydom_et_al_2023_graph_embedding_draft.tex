@@ -299,21 +299,20 @@ structure, notably by having a larger connectance (see \emph{e.g.} Wood
 et al., 2015) and complexity (see \emph{e.g.} Galiana et al., 2022),
 from any of these local networks. These local networks (which capture
 the \(\alpha\) diversity of interactions) are a subset of the metaweb's
-species and realized interactions, and have been called ``metaweb
+species and its realized interactions, and have been called ``metaweb
 realizations'' (Poisot et al., 2015). Differences between local networks
 and their metawebs are due to chance, species abundance and
 co-occurrence, local environmental conditions, and local distribution of
 functional traits, among others. Specifically, although co-occurrence
 can be driven by interactions (Cazelles et al., 2016), co-occurrence
 alone is not a predictor of interactions (Blanchet et al., 2020; Thurman
-et al., 2019), and therefore lack of co-occurrence cannot be used to
-rule out lack of a feasible interaction. Yet, recent results by Saravia
-et al. (2021) strongly suggested that the local (metaweb) realizations
-only respond weakly to local conditions: instead, they reflect
-constraints inherited by the structure of their metaweb. This sets up
-the core goal of predictive network ecology as the prediction of metaweb
-structure, as it is required to accurately produce downscaled, local
-predictions.
+et al., 2019), and therefore the lack of co-occurrence cannot be used to
+infer the lack of a feasible interaction. Yet, recent results by Saravia
+et al. (2021) strongly suggested that local (metaweb) realizations only
+respond weakly to local conditions: instead, they reflect constraints
+inherited by the structure of their metaweb. This sets up the core goal
+of predictive network ecology as the prediction of metaweb structure, as
+it is required to accurately produce downscaled, local predictions.
 
 Because the metaweb represents the joint effect of functional,
 phylogenetic, and macroecological processes (Morales-Castilla et al.,
@@ -342,21 +341,27 @@ object}\label{a-metaweb-is-an-inherently-probabilistic-object}}
 
 Treating interactions as probabilistic (as opposed to binary) events is
 a more nuanced and realistic way to represent them. Dallas et al. (2017)
-suggested that most links in ecological networks are cryptic,
-\emph{i.e.} uncommon or hard to observe. This argument echoes Jordano
-(2016): sampling ecological interactions is difficult because it
+suggested that most interactions (links) in ecological networks are
+cryptic, \emph{i.e.} uncommon or hard to observe. This argument echoes
+Jordano (2016): sampling ecological interactions is difficult because it
 requires first the joint observation of two species, and then the
 observation of their interaction. In addition, it is generally expected
-that weak or rare links will be more prevalent in networks than common
-or strong links (Csermely, 2004), compared to strong, persistent links;
-this is notably the case in food chains, wherein many weaker links are
-key to the stability of a system (Neutel et al., 2002). In the light of
-these observations, we expect to see an over-representation of
-low-probability (hereafter rare) interactions under a model that
-accurately predicts interaction probabilities.
+that weak or rare interactions will be more prevalent in networks than
+common or strong interactions (Csermely, 2004), compared to strong,
+persistent interactions; this is notably the case in food chains,
+wherein many weaker interactions are key to the stability of a system
+(Neutel et al., 2002). In the light of these observations, we expect to
+see an over-representation of low-probability (hereafter rare)
+interactions under a model that accurately predicts interaction
+probabilities. Although defining an interaction as `rare' is perhaps not
+as straight forward as one may assume (rare in the context of likelihood
+of occurrence or the context of biologically plausible?) but for the
+context of the discussion in this manuscript the core idea is that
+construction of probabilistic networks affords us the nuance of
+capturing this inherit variability of interaction occurrence.
 
-Yet the original metaweb definition, and indeed most past uses of
-metawebs, was based on the presence/absence of interactions. Moving
+Critically, the original metaweb definition, and indeed most past uses
+of metawebs, was based on the presence/absence of interactions. Moving
 towards \emph{probabilistic} metawebs, by representing interactions as
 Bernoulli events (see \emph{e.g.} Poisot et al., 2016), offers the
 opportunity to weigh these rare interactions appropriately. The inherent
@@ -395,11 +400,11 @@ prediction of local networks easier, because it fixes an ``upper bound''
 on which interactions can exist. In this context, a probabilistic
 metaweb represents an aggregation of informative priors on the
 biological feasibility of interactions, which is usually hard to obtain
-yet has possibly the most potential to boost our predictive ability
-(Bartomeus, 2013; Bartomeus et al., 2016). This would represent a
-departure from simple rules expressed at the network scale (\emph{e.g.}
-Williams \& Martinez, 2000) to a view of network prediction based on
-learning the rules that underpin interactions \emph{and} their
+yet has possibly the most potential to boost our predictive ability of
+local networks (Bartomeus, 2013; Bartomeus et al., 2016). This would
+represent a departure from simple rules expressed at the network scale
+(\emph{e.g.} Williams \& Martinez, 2000) to a view of network prediction
+based on learning the rules that underpin interactions \emph{and} their
 variability (Gupta et al., 2022).
 
 \begin{figure}
@@ -446,9 +451,9 @@ therefore be adequately captured by the first (lower) dimensions of an
 embedding, without the need to measure derived aspects of their
 structure (\emph{e.g.} motifs, paths, modularity, \ldots).
 
-\hypertarget{graph-embeddings-produce-latent-variables-but-not-traits}{%
-\subsection{Graph embeddings produce latent variables (but not
-traits)}\label{graph-embeddings-produce-latent-variables-but-not-traits}}
+\hypertarget{graph-embedding-produces-latent-variables-but-not-traits}{%
+\subsection{Graph embedding produces latent variables (but not
+traits)}\label{graph-embedding-produces-latent-variables-but-not-traits}}
 
 Before moving further, it is important to clarify the epistemic status
 of node values derived from embeddings: specifically, they are
@@ -474,7 +479,7 @@ Strydom et al. (2022) have used an embedding (based on RDPG) to project
 a metaweb of trophic interactions between European mammals, and
 transferred this information to mammals of Canada, using the
 phylogenetic distance between related clades to infer the values in the
-latent sub-space into which the European metaweb was projected. By
+latent subspace into which the European metaweb was projected. By
 performing the RDPG step on re-constructed values, this approach yields
 a probabilistic trophic metaweb for mammals of Canada based on knowledge
 of European species, despite a limited (\(\approx\) 5\%) taxonomic
@@ -518,9 +523,9 @@ For example, RDPG (Strydom et al., 2022) and t-SVD {[}truncated Singular
 Value Decomposition; Poisot et al. (2021){]} typically embed networks
 using fewer dimensions than the original network {[}the original network
 has as many dimensions as species, and as many informative dimensions as
-trophically unique species; Strydom, Dalla Riva, et al. (2021){]}. But
-this is not necessarily the case -- indeed, one may perform a PCA (a
-special case of SVD) to project the raw data into a subspace that
+trophically unique species; Strydom, Dalla Riva, et al. (2021){]}.
+However, this is not necessarily the case -- indeed, one may perform a
+PCA (a special case of SVD) to project the raw data into a subspace that
 improves the efficacy of t-SNE {[}t-distributed stochastic neighbor
 embedding; Maaten (2009){]}. There are many dimensionality reductions
 (Anowar et al., 2021) that can be applied to an embedded network should
@@ -555,7 +560,7 @@ scalability (see Gupta et al., 2021 for a review), which are mostly
 absent from the methods listed in tbl.~\ref{tbl:methods}. Assuming that
 the uptake of next-generation biomonitoring techniques does indeed
 deliver larger datasets on species interactions (Bohan et al., 2017),
-there is a potential for GNN to become an applicable
+there is nevertheless the potential for GNN to become an applicable
 embedding/predictive technique in the coming years.
 
 \hypertarget{tbl:methods}{}
@@ -582,7 +587,8 @@ applies to kernel/probabilistic PCA, which are variations on the more
 general method of SVD. Note further that tSNE has been included because
 it is frequently used to embed graphs, including of species
 associations/interactions, despite not being strictly speaking, a graph
-embedding technique (see \emph{e.g.} Chami et al., 2022)}\tabularnewline
+embedding technique (see \emph{e.g.} Chami et al.,
+2022).}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Method
@@ -660,7 +666,7 @@ of functional traits assumes that interactions can be inferred from the
 knowledge of trait-matching rules, which is similarly well supported in
 the empirical literature (Bartomeus, 2013; Bartomeus et al., 2016;
 Goebel et al., 2023; Gravel et al., 2013). Relating this information to
-an embedding rather than a list of networks measures would allow to
+an embedding rather than a list of network measures would allow to
 capture their effect on the more fundamental aspects of network
 structure; conversely, the absence of a phylogenetic or functional
 signal may suggest that evolutionary/trait processes are not strong
@@ -730,20 +736,20 @@ and therefore have negative values. Finally in panel \textbf{D}, we show
 the predicted weight (\emph{i.e.} the result of the multiplication of
 the RDGP subspaces at a rank of 39) as a function of whether the
 interactions are observed, not-observed, or unknown due to lack of
-co-occurrence. This reveals that the observed interactions have higher
-predicted weights, although there is some overlap; the usual approach to
-identify potential interactions based on this information would be a
-thresholding analysis, which is outside the scope of this manuscript
-(and is done in the papers cited in this illustration). Because the
-values returned from RDPG are not bound to the unit interval, we
-performed a clamping of the weights to the unit space, showing a
-one-inflation in documented interactions, and a zero-inflation in other
-species pairs. This last figure crosses from the statistical into the
-ecological, by showing that species pairs with no documented
-co-occurrence have weights that are not distinguishable from species
-pairs with no documented interactions, suggesting that (as befits a
-host-parasite model) the ability to interact is a strong predictor of
-co-occurrence.
+co-occurrence in the original dataset. This reveals that the observed
+interactions have higher predicted weights, although there is some
+overlap; the usual approach to identify potential interactions based on
+this information would be a thresholding analysis, which is outside the
+scope of this manuscript (and is done in the papers cited in this
+illustration). Because the values returned from RDPG are not bound to
+the unit interval, we performed a clamping of the weights to the unit
+space, showing a one-inflation in documented interactions, and a
+zero-inflation in other species pairs. This last figure crosses from the
+statistical into the ecological, by showing that species pairs with no
+documented co-occurrence have weights that are not distinguishable from
+species pairs with no documented interactions, suggesting that (as
+befits a host-parasite model) the ability to interact is a strong
+predictor of co-occurrence.
 
 \begin{figure}
 \hypertarget{fig:illustration2}{%
@@ -848,25 +854,25 @@ countries usually set conservation goals at the national level (Buxton
 et al., 2021), and as quantitative instruments are consequently designed
 to work at these scales (Turak et al., 2017); specific strategies are
 often enacted at smaller scales, nested within a specific country (Ray
-et al., 2021). But there is no guarantee that these arbitrary boundaries
-are meaningful. In fact, we do not have a satisfying answer to the
-question of ``where does an ecological network stop?'', the answer to
-which would dictate the spatial span to embed/predict. Recent results by
-Martins et al. (2022) suggested that networks are shaped within
-eco-regions, with abrupt structural transitions from an eco-region to
-the next. Should this trend hold generally, this would provide an
-ecologically-relevant scale at which metawebs can be downscaled and
-predicted. Other solutions could leverage network-area relationships to
-identify areas in which networks are structurally similar (see
-\emph{e.g.} Fortin et al., 2021; Galiana et al., 2022, 2018). Both of
-these solutions requires ample pre-existing information about the
-network in space. Nevertheless, the inclusion of species for which we
-have data but that are not in the right spatial extent\emph{may} improve
-the performance of approaches based on embedding and transfer, \emph{if}
-they increase the similarity between the target and destination network.
-This proposal can specifically be evaluated by adding nodes to the
-network to embed, and evaluating the performance of predictive models
-(see \emph{e.g.} Llewelyn et al., 2022).
+et al., 2021). However, there is no guarantee that these arbitrary
+boundaries are meaningful. In fact, we do not have a satisfying answer
+to the question of ``where does an ecological network stop?'', the
+answer to which would dictate the spatial span to embed/predict. Recent
+results by Martins et al. (2022) suggested that networks are shaped
+within eco-regions, with abrupt structural transitions from an
+eco-region to the next. Should this trend hold generally, this would
+provide an ecologically-relevant scale at which metawebs can be
+downscaled and predicted. Other solutions could leverage network-area
+relationships to identify areas in which networks are structurally
+similar (see \emph{e.g.} Fortin et al., 2021; Galiana et al., 2022,
+2018). Both of these solutions require ample pre-existing information
+about the network in space. Nevertheless, the inclusion of species for
+which we have data but that are not in the right spatial extent
+\emph{may} improve the performance of approaches based on embedding and
+transfer, \emph{if} they increase the similarity between the target and
+destination network. This proposal can specifically be evaluated by
+adding nodes to the network to embed, and assessing the performance of
+predictive models (see \emph{e.g.} Llewelyn et al., 2022).
 
 \hypertarget{minding-legacies-shaping-ecological-datasets}{%
 \subsection{Minding legacies shaping ecological
@@ -895,10 +901,11 @@ considerations are even more urgent in the specific context of
 biodiversity data. Long-term colonial legacies still shape taxonomic
 composition to this day (Lenzner et al., 2022; Raja, 2022), and much
 shorter-term changes in taxonomic and genetic richness of wildlife
-emerged through environmental racism (Schmidt \& Garroway, 2022). These
-considerations mean that ``the set of species found at a place'' is not
-only a response to ecological processes, and therefore there may exist
-forcing on the interactions between these species.
+emerged through environmental racism (Schmidt \& Garroway, 2022). Thus,
+the set of species found at a specific location is not only as the
+result of a response to ecological processes separate from human
+influence, but also the result of human-environment interaction as well
+as the result legislative/political histories.
 
 \hypertarget{conclusion-metawebs-predictions-and-people}{%
 \section{Conclusion: metawebs, predictions, and
@@ -920,7 +927,7 @@ management (Eichhorn et al., 2019; No'kmaq et al., 2021). The discussion
 of ``algorithm-in-the-loop'' approaches that is now pervasive in the
 machine learning community provides examples of why this is important.
 Human-algorithm interactions are notoriously difficult and can yield
-adverse effect (Green \& Chen, 2019; Stevenson \& Doleac, 2021),
+adverse effects (Green \& Chen, 2019; Stevenson \& Doleac, 2021),
 suggesting the need to systematically study them for the specific
 purpose of, here, biodiversity governance. Improving the algorithmic
 literacy of decision makers is part of the solution (\emph{e.g.} Lamba
@@ -957,8 +964,8 @@ Fondation Courtois, and NSERC through the Discovery Grants and Discovery
 Accelerator Supplement programs. MJF is supported by an NSERC PDF and an
 RBC Post-Doctoral Fellowship.
 
-\textbf{Conflict of interest:} The authors have no conflict interests to
-disclose
+\textbf{Conflict of interest:} The authors have no conflict of interests
+to disclose
 
 \textbf{Authors' contributions:} TS, and TP conceived the ideas
 discussed in the manuscript. All authors contributed to writing and
