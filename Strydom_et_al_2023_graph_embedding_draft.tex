@@ -229,13 +229,13 @@ Timothée Poisot --- \texttt{timothee.poisot@umontreal.ca}\\
 
 
 \begin{enumerate}
-    \item Metawebs, (networks of potential interactions within a species
+    \item Metawebs (networks of potential interactions within a species
 pool) are a powerful abstraction to understand how large-scale species
 interaction networks are structured.%
     \item Because metawebs are typically expressed at large spatial and
 taxonomic scales, assembling them is a tedious and costly process;
 predictive methods can help circumvent the limitations in data
-deficiencies, by providing a `first approximation' of metawebs.%
+deficiencies, by providing a first approximation of metawebs.%
     \item One way to improve our ability to predict metawebs is to
 maximize available information by using graph embeddings, as opposed to
 an exhaustive list of species interactions. Graph embedding is an
@@ -560,11 +560,11 @@ embedding/predictive technique in the coming years.
 
 \hypertarget{tbl:methods}{}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1016}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1172}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1875}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3438}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0660}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0761}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1624}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1218}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.5736}}@{}}
 \caption{\label{tbl:methods}Overview of some common graph embedding
 approaches, by type of embedded objects, alongside examples of their use
 in the prediction of species interactions. These methods have not yet
@@ -612,25 +612,28 @@ Application
 \midrule()
 \endhead
 tSNE & nodes & statistical divergence & Hinton \& Roweis (2002) &
-Cieslak et al. (2020) \(^a\) Gibb et al. (2021) \\
+{[}species-environment responses \(^a\); Cieslak et al. (2020){]}
+{[}host-virus network representation; Gibb et al. (2021){]} \\
 LINE & nodes & stochastic gradient descent & Tang et al. (2015) & \\
 SDNE & nodes & gradient descent & D. Wang et al. (2016) & \\
 node2vec & nodes & stochastic gradient descent & Grover \& Leskovec
 (2016) & \\
 HARP & nodes & meta-strategy & H. Chen et al. (2017) & \\
-DMSE & joint nodes & deep neural network & D. Chen et al. (2017) & D.
-Chen et al. (2017) \(^b\) \\
+DMSE & joint nodes & deep neural network & D. Chen et al. (2017) &
+{[}species-environment interactions \(^b\); D. Chen et al. (2017){]} \\
 graph2vec & sub-graph & skipgram network & Narayanan et al. (2017) & \\
-RDPG & graph & SVD & Young \& Scheinerman (2007) & Dalla Riva \&
-Stouffer (2016); Poisot et al. (2021) \\
+RDPG & graph & SVD & Young \& Scheinerman (2007) & {[}trophic
+interactions; Dalla Riva \& Stouffer (2016){]} {[}host-virus network
+prediction; Poisot et al. (2021){]} \\
 GLEE & graph & Laplacian eigenmap & Torres et al. (2020) & \\
 DeepWalk & graph & stochastic gradient descent & Perozzi et al. (2014) &
-Wardeh et al. (2021) \\
+{[}host-virus interactions; Wardeh et al. (2021){]} \\
 GraphKKE & graph & stochastic differential equation & Melnyk et al.
-(2020) & Melnyk et al. (2020) \(^a\) \\
+(2020) & {[}microbiote species associations \(^a\); Melnyk et al.
+(2020){]} \\
 FastEmbed & graph & eigen decomposition & Ramasamy \& Madhow (2015) & \\
-PCA & graph & eigen decomposition & Surendran (2013) & Strydom, Catchen,
-et al. (2021) \\
+PCA & graph & eigen decomposition & Surendran (2013) & {[}host-parasite
+interactions; Strydom, Catchen, et al. (2021){]} \\
 Joint methods & multiple graphs & multiple strategies & S. Wang et al.
 (2021) & \\
 \bottomrule()
