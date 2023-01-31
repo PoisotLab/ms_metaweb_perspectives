@@ -246,19 +246,19 @@ an applicable embedding/predictive technique in the coming years.
 
 | Method        | Object          | Technique                        | Reference                | Application                                                                                                       |
 | ------------- | --------------- | -------------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| tSNE          | nodes           | statistical divergence           | @Hinton2002Stochastic    | [species-environment responses $^a$; @Cieslak2020Tdistributed] [host-virus network representation; @Gibb2021Data] |
+| tSNE          | nodes           | statistical divergence           | @Hinton2002Stochastic    | [@Cieslak2020Tdistributed, species-environment responses $^a$] [@Gibb2021Data, host-virus network representation] |
 | LINE          | nodes           | stochastic gradient descent      | @Tang2015Line            |                                                                                                                   |
 | SDNE          | nodes           | gradient descent                 | @Wang2016Structural      |                                                                                                                   |
 | node2vec      | nodes           | stochastic gradient descent      | @Grover2016Node2vec      |                                                                                                                   |
 | HARP          | nodes           | meta-strategy                    | @Chen2017Harp            |                                                                                                                   |
-| DMSE          | joint nodes     | deep neural network              | @Chen2017Deep            | [species-environment interactions $^b$; @Chen2017Deep]                                                            |
+| DMSE          | joint nodes     | deep neural network              | @Chen2017Deep            | [@Chen2017Deep, species-environment interactions $^b$]                                                            |
 | graph2vec     | sub-graph       | skipgram network                 | @Narayanan2017Graph2vec  |                                                                                                                   |
-| RDPG          | graph           | SVD                              | @Young2007Random         | [trophic interactions; @DallaRiva2016Exploring] [host-virus network prediction; @Poisot2021Imputing]              |
+| RDPG          | graph           | SVD                              | @Young2007Random         | [@DallaRiva2016Exploring, trophic interactions] [@Poisot2021Imputing, host-virus network prediction]              |
 | GLEE          | graph           | Laplacian eigenmap               | @Torres2020Glee          |                                                                                                                   |
-| DeepWalk      | graph           | stochastic gradient descent      | @Perozzi2014Deepwalk     | [host-virus interactions; @Wardeh2021Predicting]                                                                  |
-| GraphKKE      | graph           | stochastic differential equation | @Melnyk2020Graphkke      | [microbiote species associations $^a$; @Melnyk2020Graphkke]                                                       |
+| DeepWalk      | graph           | stochastic gradient descent      | @Perozzi2014Deepwalk     | [@Wardeh2021Predicting, host-virus interactions]                                                                  |
+| GraphKKE      | graph           | stochastic differential equation | @Melnyk2020Graphkke      | [@Melnyk2020Graphkke, microbiote species associations $^a$]                                                       |
 | FastEmbed     | graph           | eigen decomposition              | @Ramasamy2015Compressive |                                                                                                                   |
-| PCA           | graph           | eigen decomposition              | @Surendran2013Graph      | [host-parasite interactions; @Strydom2021Roadmap]                                                                 |
+| PCA           | graph           | eigen decomposition              | @Surendran2013Graph      | [@Strydom2021Roadmap, host-parasite interactions]                                                                 |
 | Joint methods | multiple graphs | multiple strategies              | @Wang2021Joint           |                                                                                                                   |
 
 : Overview of some common graph embedding approaches, by type of embedded
