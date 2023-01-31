@@ -75,14 +75,9 @@ compared to strong, persistent interactions; this is notably the case in food
 chains, wherein many weaker interactions are key to the stability of a system
 [@Neutel2002Stability]. In the light of these observations, we expect to see an
 over-representation of low-probability (hereafter rare) interactions under a
-model that accurately predicts interaction probabilities. Although defining an
-interaction as 'rare' is perhaps not as straight forward as one may assume (rare
-in the context of likelihood of occurrence or the context of biologically
-plausible?) but for the context of the discussion in this manuscript the core
-idea is that construction of probabilistic networks affords us the nuance of
-capturing this inherit variability of interaction occurrence.
+model that accurately predicts interaction probabilities. 
 
-Critically, the original metaweb definition, and indeed most past uses of
+Yet, the original metaweb definition, and indeed most past uses of
 metawebs, was based on the presence/absence of interactions. Moving towards
 *probabilistic* metawebs, by representing interactions as Bernoulli events [see
 *e.g.* @Poisot2016Structure], offers the opportunity to weigh these rare
