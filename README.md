@@ -141,7 +141,7 @@ space](figures/conceptual_2.png){#fig:embedding}
 Graph (or network) embedding (@fig:embedding) is a family of machine learning
 techniques, whose main task is to learn a mapping function from a discrete graph
 to a continuous domain [@Arsov2019Network; @Chami2022Machine]. Their main goal
-is to learn a low dimensional vector representations of the graph (embeddings),
+is to learn a low dimensional vector representation of the graph (embeddings),
 such that its key properties (*e.g.* local or global structures) are retained in
 the embedding space [@Yan2005Graph]. The embedding space may, but will not
 necessarily, have lower dimensionality than the graph. Ecological networks are
