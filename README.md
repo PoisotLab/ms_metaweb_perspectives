@@ -6,18 +6,19 @@ also increase the amount of information that can be used for biodiversity
 management. In a recent overview of the field of ecological network prediction,
 @Strydom2021Roadmap identified two challenges of interest to the prediction of
 interactions at large scales. First, there is a relative scarcity of relevant
-data in most places globally -- restricting the inference of interactions to
-locations where least required (and leaves us unable to make inference in data
-scarce regions); second, accurate predictors are important for accurate
-predictions, and the lack of methods that can leverage a small amount of
-*accurate* data is a serious impediment to our predictive ability. In most
-places, our most reliable biodiversity knowledge is that of a species pool where
-a set of potentially interacting species in a given area could occur: through
-the analysis of databases like the Global Biodiversity Information Facility
-(GBIF) or the International Union for the Conservation of Nature (IUCN), it is
-possible to construct a list of species for a region of interest; however
-inferring the potential interactions between these species still remains a
-challenge.
+data in most places globally -- which, due to the limitations in most predictive
+methods, restricts the ability to infer interactions to locations where it is
+least required (*i.e.* regions where we already have interaction data) leaving
+us unable to make inference in data scarce regions (where we most need it);
+second, accurate predictors are important for accurate predictions, and the lack
+of methods that can leverage a small amount of *accurate* data is a serious
+impediment to our predictive ability. In most places, our most reliable
+biodiversity knowledge is that of a species pool where a set of potentially
+interacting species in a given area could occur: through the analysis of
+databases like the Global Biodiversity Information Facility (GBIF) or the
+International Union for the Conservation of Nature (IUCN), it is possible to
+construct a list of species for a region of interest; however inferring the
+potential interactions between these species still remains a challenge.
 
 Following the definition of @Dunne2006Network, a metaweb is the ecological
 network analogue to the species pool; specifically, it inventories all
@@ -26,7 +27,7 @@ captures the $\gamma$ diversity of interactions). The metaweb itself is not a
 prediction of local networks at specific locations within the spatial area it
 covers: it will have a different structure, notably by having a larger
 connectance [see *e.g.* @Wood2015Effects] and complexity [see *e.g.*
-@Galiana2022Ecological], from any of these local networks. These local networks
+@Galiana2022Ecological], than any of these local networks. These local networks
 (which capture the $\alpha$ diversity of interactions) are a subset of the
 metaweb's species and its realized interactions, and have been called "metaweb
 realizations" [@Poisot2015Species]. Differences between local networks and their
