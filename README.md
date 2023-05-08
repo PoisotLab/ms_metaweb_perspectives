@@ -225,26 +225,6 @@ graph embedding capacities. In the next section (and @fig:embedding), we show
 how the amount of dimensionality reduction can affect the quality of the
 embedding.
 
-## Graph embedding has been under-used in the prediction of species interactions
-
-One prominent family of approaches we do not discuss in the present manuscript
-is Graph Neural Networks [GNN; @Zhou2020Graph]. GNN are, in a sense, a method to
-embed a graph into a dense subspace, but belong to the family of deep learning
-methods, which has its own set of practices [see *e.g.* @Goodfellow2016Deep]. An
-important issue with methods based on deep learning is that, because their
-parameter space is immense, the sample size of the data fed into them must be
-similarly large (typically thousands of instances). This is a requirement for
-the model to converge correctly during training, but this assumption is unlikely
-to be met given the size of datasets currently available for metawebs (or single
-time/location species interaction networks). This data volume requirement is
-mostly absent from the techniques we list below. Furthermore, GNN still have
-some challenges related to their shallow structure, and concerns related to
-scalability [see @Gupta2021Graph for a review], which are mostly absent from the
-methods listed in @tbl:methods. Assuming that the uptake of next-generation
-biomonitoring techniques does indeed deliver larger datasets on species
-interactions [@Bohan2017Nextgeneration], there is nevertheless the potential for
-GNN to become an applicable embedding/predictive technique in the coming years.
-
 | Method        | Object          | Technique                        | Reference                | Application                                                                                                       |
 | ------------- | --------------- | -------------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
 | tSNE          | nodes           | statistical divergence           | @Hinton2002Stochastic    | [@Cieslak2020Tdistributed, species-environment responses $^a$] [@Gibb2021Data, host-virus network representation] |
@@ -467,35 +447,6 @@ target and destination network. This proposal can specifically be evaluated by
 adding nodes to the network to embed, and assessing the performance of
 predictive models [see *e.g.* @Llewelyn2022Predicting].
 
-## Minding legacies shaping ecological datasets
-
-In large parts of the world, boundaries that delineate geographic regions are
-merely a reflection the legacy of settler colonialism, which drives global
-disparity in capacity to collect and publish ecological data. Applying any
-embedding to biased data does not debias them, but rather embeds these biases,
-propagating them to the models using embeddings to make predictions.
-Furthermore, the use of ecological data itself is not an apolitical act
-[@Nost2021Political]: data infrastructures tend to be designed to answer
-questions within national boundaries (therefore placing contingencies on what is
-available to be embedded), their use often drawing upon, and reinforcing,
-territorial statecraft [see *e.g.* @Barrett2005Environment]. As per
-@Machen2021Thinking, these biases are particularly important to consider when
-knowledge generated algorithmically is used to supplement or replace human
-decision-making, especially for governance (*e.g.* enacting conservation
-decisions on the basis of model prediction). As information on networks is
-increasingly leveraged for conservation actions [see *e.g.* @Eero2021Use;
-@Naman2022Food; @Stier2017Integrating], the need to appraise and correct biases
-that are unwittingly propagated to algorithms when embedded from the original
-data is immense. These considerations are even more urgent in the specific
-context of biodiversity data. Long-term colonial legacies still shape taxonomic
-composition to this day [@Lenzner2022Naturalized; @Raja2022Colonialism], and
-much shorter-term changes in taxonomic and genetic richness of wildlife emerged
-through environmental racism [@Schmidt2022Systemic]. Thus, the set of species
-found at a specific location is not only as the result of a response to
-ecological processes separate from human influence, but also the result of
-human-environment interaction as well as the result legislative/political
-histories.
-
 # Conclusion: metawebs, predictions, and people
 
 Predictive approaches in ecology, regardless of the scale at which they are
@@ -552,5 +503,56 @@ NSERC PDF and an RBC Post-Doctoral Fellowship.
 manuscript. All authors contributed to writing and editing the manuscript.
 
 **Data availability:** There is no data associated with this manuscript.
+
+> Box
+
+## Graph Neural Networks
+
+One prominent family of approaches we do not discuss in the present manuscript
+is Graph Neural Networks [GNN; @Zhou2020Graph]. GNN are, in a sense, a method to
+embed a graph into a dense subspace, but belong to the family of deep learning
+methods, which has its own set of practices [see *e.g.* @Goodfellow2016Deep]. An
+important issue with methods based on deep learning is that, because their
+parameter space is immense, the sample size of the data fed into them must be
+similarly large (typically thousands of instances). This is a requirement for
+the model to converge correctly during training, but this assumption is unlikely
+to be met given the size of datasets currently available for metawebs (or single
+time/location species interaction networks). This data volume requirement is
+mostly absent from the techniques we list below. Furthermore, GNN still have
+some challenges related to their shallow structure, and concerns related to
+scalability [see @Gupta2021Graph for a review], which are mostly absent from the
+methods listed in @tbl:methods. Assuming that the uptake of next-generation
+biomonitoring techniques does indeed deliver larger datasets on species
+interactions [@Bohan2017Nextgeneration], there is nevertheless the potential for
+GNN to become an applicable embedding/predictive technique in the coming years.
+
+## Minding legacies shaping ecological datasets
+
+In large parts of the world, boundaries that delineate geographic regions are
+merely a reflection the legacy of settler colonialism, which drives global
+disparity in capacity to collect and publish ecological data. Applying any
+embedding to biased data does not debias them, but rather embeds these biases,
+propagating them to the models using embeddings to make predictions.
+Furthermore, the use of ecological data itself is not an apolitical act
+[@Nost2021Political]: data infrastructures tend to be designed to answer
+questions within national boundaries (therefore placing contingencies on what is
+available to be embedded), their use often drawing upon, and reinforcing,
+territorial statecraft [see *e.g.* @Barrett2005Environment]. As per
+@Machen2021Thinking, these biases are particularly important to consider when
+knowledge generated algorithmically is used to supplement or replace human
+decision-making, especially for governance (*e.g.* enacting conservation
+decisions on the basis of model prediction). As information on networks is
+increasingly leveraged for conservation actions [see *e.g.* @Eero2021Use;
+@Naman2022Food; @Stier2017Integrating], the need to appraise and correct biases
+that are unwittingly propagated to algorithms when embedded from the original
+data is immense. These considerations are even more urgent in the specific
+context of biodiversity data. Long-term colonial legacies still shape taxonomic
+composition to this day [@Lenzner2022Naturalized; @Raja2022Colonialism], and
+much shorter-term changes in taxonomic and genetic richness of wildlife emerged
+through environmental racism [@Schmidt2022Systemic]. Thus, the set of species
+found at a specific location is not only as the result of a response to
+ecological processes separate from human influence, but also the result of
+human-environment interaction as well as the result legislative/political
+histories.
 
 # References
