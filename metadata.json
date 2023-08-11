@@ -1,47 +1,4 @@
-{
-  "title": "Graph embedding and transfer learning can help predict potential species interaction networks despite data limitations",
-  "authors": [
-    {
-        "affiliations": [
-            "Département de Sciences Biologiques, Université de Montréal, Montréal, Canada",
-            "Quebec Centre for Biodiversity Science, Montréal, Canada"
-        ],
-        "familyname": "Strydom",
-        "givennames": "Tanya",
-        "email": "tanya.strydom@umontreal.ca",
-        "orcid": "0000-0001-6067-1349",
-        "status": ["equal"]
-    },
-    {
-        "affiliations": [
-            "Département de Sciences Biologiques, Université de Montréal, Montréal, Canada"
-        ],
-        "familyname": "Bouskila",
-        "givennames": "Salomé",
-        "email": "salome.bouskila@umontreal.ca",
-        "orcid": "0000-0003-0193-5441"
-    },
-    {
-        "affiliations": [
-            "Département de Sciences Biologiques, Université de Montréal, Montréal, Canada",
-            "Département de Biologie, Université de Sherbrooke, Sherbrooke, Canada",
-            "Quebec Centre for Biodiversity Science, Montréal, Canada"
-        ],
-        "familyname": "Banville",
-        "givennames": "Francis",
-        "email": "francis.banville@umontreal.ca",
-        "orcid": "0000-0001-9051-0597"
-    },
-    {
-        "affiliations": [
-            "Department of Forest Resources Management, University of British Columbia, Vancouver, B.C., Canada"
-        ],
-        "familyname": "Barros",
-        "givennames": "Ceres",
-        "email": "cbarros@mail.ubc.ca",
-        "orcid": "0000-0003-4036-977X"
-    },
-    {
+
         "affiliations": [
             "Department of Biology, McGill University, Montréal, Canada",
             "Quebec Centre for Biodiversity Science, Montréal, Canada"

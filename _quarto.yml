@@ -1,0 +1,33 @@
+project:
+  type: manuscript
+  output-dir: docs
+  render:
+    - "!reviews/"
+    - "!coverletter.md"
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    callout-appearance: simple
+    callout-icon: false
+    comments:
+      hypothesis: true
+    citations-hover: true
+    crossrefs-hover: true
+    toc: true
+    toc-location: left
+    title-block-style: manuscript
+    title-block-banner-color: "#1D8265"
+  docx: default
+  jats: default
+
+  # (other formats)
+  # pdf: default
+
+execute:
+  freeze: true
+
+
+
