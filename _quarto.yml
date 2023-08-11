@@ -4,6 +4,7 @@ project:
   render:
     - "!reviews/"
     - "!coverletter.md"
+    - "notebooks/*.ipynb"
 
 manuscript:
   article: index.qmd
