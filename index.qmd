@@ -23,9 +23,59 @@ authors:
     email: francis.banville@umontreal.ca
   - name: Ceres Barros
     affiliation:
-        - Department of Forest Resources Management, University of British Columbia, Vancouver, B.C., Canada
+        - ref: ubcforest
     orcid: 0000-0003-4036-977X
     email: cbarros@mail.ubc.ca
+  - name: Dominique Caron
+    affiliation:
+        - ref: mcgill
+        - ref: qcbs
+    orcid: 0000-0002-2151-6693
+    email: dominique.caron@mail.mcgill.ca
+  - name: Maxwell J. Farrell
+    affiliation:
+        - ref: uoft
+    orcid: 0000-0003-0452-6993
+    email: maxwell.farrell@utoronto.ca
+  - name: Marie-Josée Fortin
+    affiliation:
+        - ref: uoft
+    orcid: 0000-0002-9935-1366
+    email: mariejosee.fortin@utoronto.ca
+  - name: Victoria Hemming
+    affiliation:
+        - ref: ubccons
+    orcid: 0000-0003-3220-6161
+    email: victoria.hemming@ubc.ca
+  - name: Benjamin Mercier
+    affiliation:
+        - ref: udes
+        - ref: qcbs
+    orcid: 0000-0002-4104-9463
+    email: benjamin.b.mercier@usherbrooke.ca
+  - name: Laura J. Pollock
+    affiliation:
+        - ref: mcgill
+        - ref: qcbs
+    orcid: 0000-0002-6004-4027
+    email: laura.pollock@mcgill.ca
+  - name: Rogini Runghen
+    affiliation:
+        - ref: ucecology
+    orcid: 0000-0001-5785-8321
+    email: rogini.runghen@gmail.com
+  - name: Giulio V. Dalla Riva
+    affiliation:
+        - ref: ucmath
+    orcid: 0000-0002-3454-0633
+    email: giulio.dallariva@canterbury.ac.nz
+  - name: Timothée Poisot
+    affiliation:
+        - ref: udem
+        - ref: qcbs
+    orcid: 0000-0002-0735-5184
+    corresponding: true
+    email: timothee.poisot@umontreal.ca
 affiliations:
     - id: udem
       name: Département de Sciences Biologiques, Université de Montréal, Montréal, Canada
@@ -33,6 +83,18 @@ affiliations:
       name: Québec Centre for Biodiversity Science, Montréal, Canada
     - id: udes
       name: Département de Biologie, Université de Sherbrooke, Sherbrooke, Canada
+    - id: ubcforest
+      name: Department of Forest Resources Management, University of British Columbia, Vancouver, B.C., Canada
+    - id: mcgill
+      name: Department of Biology, McGill University, Montréal, Canada
+    - id: uoft
+      name: Department of Ecology & Evolutionary Biology, University of Toronto, Toronto, Canada
+    - id: ubccons
+      name: Department of Forest and Conservation Sciences, University of British Columbia, Vancouver, Canada
+    - id: ucecology
+      name: Department of Forest and Conservation Sciences, University of British Columbia, Vancouver, Canada
+    - id: ucmath
+      name: Department of Forest and Conservation Sciences, University of British Columbia, Vancouver, Canada
 bibliography: references.bib
 ---
 

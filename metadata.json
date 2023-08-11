@@ -1,77 +1,12 @@
 
-        "affiliations": [
-            "Department of Biology, McGill University, Montréal, Canada",
-            "Quebec Centre for Biodiversity Science, Montréal, Canada"
-        ],
-        "familyname": "Caron",
-        "givennames": "Dominique",
-        "email": "dominique.caron@mail.mcgill.ca",
-        "orcid": "0000-0002-2151-6693"
-    },
-    {
-        "affiliations": [
-            "Department of Ecology & Evolutionary Biology, University of Toronto, Toronto, Canada"
-        ],
-        "familyname": "Farrell",
-        "givennames": "Maxwell J",
-        "email": "maxwell.farrell@utoronto.ca",
-        "orcid": "0000-0003-0452-6993"
-    },
-    {
-        "affiliations": [
-            "Department of Ecology & Evolutionary Biology, University of Toronto, Toronto, Canada"
-        ],
-        "familyname": "Fortin",
-        "givennames": "Marie-Josée",
-        "email": "mariejosee.fortin@utoronto.ca",
-        "orcid": "0000-0002-9935-1366"
-    },
-    {
-        "affiliations": [
-            "Department of Forest and Conservation Sciences, University of British Columbia, Vancouver, Canada"
-        ],
-        "familyname": "Hemming",
-        "givennames": "Victoria",
-        "email": "victoria.hemming@ubc.ca",
-        "orcid": "0000-0003-3220-6161"
-    },
-    {
-      "affiliations": [
-        "Département de Biologie, Université de Sherbrooke, Sherbrooke, Canada",
-        "Quebec Centre for Biodiversity Science, Montréal, Canada"
-      ],
-      "familyname": "Mercier",
-      "givennames": "Benjamin",
-      "email": "benjamin.b.mercier@usherbrooke.ca",
-      "orcid": "0000-0002-4104-9463"
-    },
-    {
-        "affiliations": [
-            "Department of Biology, McGill University, Montréal, Canada",
-            "Quebec Centre for Biodiversity Science, Montréal, Canada"
-        ],
-        "familyname": "Pollock",
-        "givennames": "Laura J.",
-        "email": "laura.pollock@mcgill.ca",
-        "orcid": "0000-0002-6004-4027"
-    },
-    {
-      "affiliations": [
-            "Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Canterbury, New Zealand"
-      ],
-      "familyname": "Runghen",
-      "givennames": "Rogini",
-      "email": "rogini.runghen@gmail.com",
-      "orcid": "0000-0001-5785-8321"
-    },
     {
       "affiliations": [
             "School of Mathematics and Statistics, University of Canterbury, Canterbury, New Zealand"
       ],
       "familyname": "Dalla Riva",
       "givennames": "Giulio V.",
-      "email": "giulio.dallariva@canterbury.ac.nz",
-      "orcid": "0000-0002-3454-0633"
+      "email": "",
+      "orcid": ""
     },
     {
         "affiliations": [
@@ -80,8 +15,8 @@
         ],
         "familyname": "Poisot",
         "givennames": "Timothée",
-        "email": "timothee.poisot@umontreal.ca",
-        "orcid": "0000-0002-0735-5184",
+        "email": "",
+        "orcid": "",
         "status": ["corresponding", "equal"]
     }
 ],
