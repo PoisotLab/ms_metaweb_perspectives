@@ -1,25 +1,4 @@
 
-    {
-      "affiliations": [
-            "School of Mathematics and Statistics, University of Canterbury, Canterbury, New Zealand"
-      ],
-      "familyname": "Dalla Riva",
-      "givennames": "Giulio V.",
-      "email": "",
-      "orcid": ""
-    },
-    {
-        "affiliations": [
-            "Département de Sciences Biologiques, Université de Montréal, Montréal, Canada",
-            "Quebec Centre for Biodiversity Science, Montréal, Canada"
-        ],
-        "familyname": "Poisot",
-        "givennames": "Timothée",
-        "email": "",
-        "orcid": "",
-        "status": ["corresponding", "equal"]
-    }
-],
   "abstract": [
     "Metawebs (networks of potential interactions within a species pool) are a powerful abstraction to understand how large-scale species interaction networks are structured.",
     "Because metawebs are typically expressed at large spatial and taxonomic scales, assembling them is a tedious and costly process; predictive methods can help circumvent the limitations in data deficiencies, by providing a first approximation of metawebs.",
@@ -32,5 +11,3 @@
     "transfer learning",
     "network macroecology"
   ],
-  "citationstyle": "methods-in-ecology-and-evolution"
-}
