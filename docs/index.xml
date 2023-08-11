@@ -3336,1601 +3336,6 @@ the field of network ecology.</p>
 
 <sub-article article-type="notebook" id="nb-3-nb-1">
 <front-stub>
-</front-stub>
-
-<body>
-<p>Dear members of the Methods in Ecology and Evolution editorial
-board,</p>
-<p>On behalf of my co-authors, I am pleased to submit our manuscript
-entitled “Predicting metawebs: transfer of graph embeddings can help
-alleviate spatial data deficiencies” for consideration as a Perspective
-Article in Methods in Ecology and Evolution. This manuscript is the
-off-shoot of another manuscript that is currently under review at
-Methods in Ecology and Evolution (ID MEE-21-11-855.R1) and discusses
-topics previously included in the original manuscript, that were removed
-so as to keep the focus of the original manuscript on the methodological
-framework and maintain some sense of brevity. We have discussed this
-decision to split the original manuscript with the EiC Prof. Nicolas
-Lecomte, who has approved this decision. This submission thus puts
-forward a broader discussion as to how the transferring of graph
-embeddings could prove to be a practical tool in addressing the spatial
-data deficiencies we are faced with when working with ecological
-networks, and provides an overview of the graph embedding
-techniques.</p>
-<p>Metawebs (networks of potential interactions within a species pool),
-have the potential to be a powerful starting point from which to
-understand how large-scales species interaction networks are structured.
-However, the challenges inherit in sampling species interactions makes
-assembling sufficient data at a large enough scale a tedious and costly
-process. Predictive methods can help in circumventing these limitations,
-of these predictive tools available graph embeddings (rather than
-focusing on the list of species interactions) holds, great potential. In
-this perspective, we outline how the challenges associated with
-inferring metawebs line-up with the advantages of graph embeddings; as
-well as how the choice of the species pool not only has consequences on
-the reconstructed network, but also embeds hypotheses about which
-human-made boundaries are ecologically meaningful.</p>
-<p>The work described here has not been published elsewhere. All authors
-agree with the the manuscript content and its submission to the journal.
-No part of this manuscript has been published in any form elsewhere or
-is being considered for publication elsewhere while it is being
-considered for publication in this journal. This manuscript appeared as
-a preprint on EcoEvoRXiV with the following DOI:
-10.32942/osf.io/vyzgr.</p>
-<p>We look forward to your editorial decision on this manuscript.</p>
-<p><bold>Suitability statement:</bold></p>
-<disp-quote>
-  <p>The discussion in this perspective piece will help in further the
-  discussion on the use and applicability of metawebs as well providing
-  readers with an overview of how the use of graph embedding can help us
-  to construct ecologically plausible metawebs with which to work.</p>
-</disp-quote>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-6-nb-2">
-<front-stub>
-</front-stub>
-
-<body>
-<sec id="senior-editor-comments-to-authors-nb-2">
-  <title>Senior Editor Comments to Authors</title>
-  <p>Thank you for submitting your manuscript to Methods in Ecology and
-  Evolution. I have now received the reviewers’ reports and a
-  recommendation from the Associate Editor who handled the review
-  process of your resubmission. Copies of their reports are included
-  below. This manuscript has the potential to make a valuable
-  contribution to the area, but there are still a number of significant
-  concerns that need to be addressed. I have considered your paper in
-  light of the comments received and I would like to invite you to
-  prepare a major revision. Although the status is considered as major
-  (to give you more time to address the comments), I see that most of
-  the comments can be easily addressed and fit well in the flow of the
-  paper. I commend all your work in this resubmitted paper.</p>
-  <p>In addition to addressing the comments from the reviewers and the
-  Associate Editor, I also have some comments of my own that should be
-  addressed:</p>
-  <p>The last comment of Rev #5 suggests to replace the last 2 sections
-  by “relevant information on the benefits, shortcomings and road ahead
-  for the proposed framework”. My view is that you can keep the two last
-  sections as they are particularly relevant in a perspective paper and
-  go beyond our scientific methods. However, I agree with the reviewer
-  that you should add the practical elements for the road ahead.</p>
-  <p>With respect to section “Minding legacies shaping ecological
-  datasets”, I would suggest to add suggestions and ways to solve or at
-  least account for the issue from an analytical standpoint. We are left
-  wondering how to deal with the bias in a quantitive manner. I
-  appreciate how much that section was difficult to frame and be mindful
-  and respectful of how data were gathered. It is an important reminder
-  of how much work is left to do and the history and geographical
-  biases.</p>
-  <p>I recognised that part of the reception of the ms is linked to the
-  unfamiliar format of perspective papers that navigating between
-  opinion, quantitative aspects, and novel ideas.</p>
-  <p>My take on comment #1 of rev. #5 is that more “connecting
-  sentences” and titles between sections will be an easy fix.</p>
-</sec>
-<sec id="reviewer-2-nb-2">
-  <title>Reviewer 2</title>
-  <p>Comments to the Corresponding Author I think the authors addressed
-  all the major points raised by the editor and the reviewers. Compared
-  to the first version, many examples, illustrations and ecological
-  interpretations enriched the manuscript.</p>
-</sec>
-<sec id="reviewer-5-nb-2">
-  <title>Reviewer 5</title>
-  <p>Comments to the Corresponding Author In ms. MEE-23-01-050, the
-  authors discuss the use of graph embedding to predict species
-  interactions in ecological networks. By mapping these networks as
-  low-dimensional vectors, graph embedding can potentially identify
-  species that are likely to interact with one another. The paper
-  reviews recent published studies that show promising results and
-  presents a framework that can be implemented through Julia libraries,
-  with source codes available in online repositories. Overall, the paper
-  is well-written and addresses a hot topic in predictive ecology, how
-  to reliably predict biotic interactions. Unfortunately, it falls short
-  at providing a clear overview of the proposed approach, its potential
-  benefits, possible limitations or misuse, and the desirable next
-  steps.</p>
-  <sec id="major-comments-nb-2">
-    <title>Major comments</title>
-    <p>A major concern relates to the structuring (or lack thereof) of
-    the paper. While many interesting ideas are presented in the ms.,
-    there is not a cohesive narrative, conclusions are somewhat
-    unrelated to the paper’s core and some subsections seem rather
-    disconnected from what one would expect to read based on their
-    titles. For example, it is hard to see how the paragraph aimed at
-    showing how graph embedding is under-used to predict biotic
-    interactions (lines 150-180) does so. Instead, the authors use this
-    section to explain why Graph Neural Networks are not discussed in
-    the ms., or why embedding would suit ecological networks (why not
-    discussing in more depth the findings presented in table 1?). As
-    another example, the authors provide an interesting empirical
-    illustration of metaweb embedding, but this exercise is largely
-    disconnected from the rest of the paper. And as a final example, the
-    paper ends with historical-political implications on ecological data
-    biases, which may be interesting, but is not obviously linked to
-    graph embedding. Overall, the structure of the paper should be
-    improved by better connecting sections following a clear narrative,
-    better connecting the subsection contents to their titles, and thus
-    avoiding the mere juxtaposition of not clearly related ideas.</p>
-    <p>One of the most active areas of network science is the
-    development of algorithms to complete information represented in the
-    form of interaction networks, by making probability estimations for
-    both recorded and unrecorded connections. This allows for the
-    identification of connections that may exist but have not yet been
-    observed. In this sense, there are already hundreds of algorithms
-    that can generate these probabilities based solely on the existing
-    network structure. Moreover, there have been many performance
-    evaluations of these algorithms, some of them very exhaustive,
-    including hundreds of these methods (Ghasemian et al. 2020:PNAS), so
-    some general conclusions can be drawn. One particularly relevant
-    observation for the manuscript under review is that embedding
-    algorithms tend to perform worse than algorithms from other
-    families. It is worth noting that the purpose of the predictive
-    methods described in the reviewed article (i.e., estimating
-    interaction probabilities within metawebs and not for local
-    networks) does not exactly coincide with the algorithms evaluated by
-    Ghasemian et al. (2020). However, since all algorithms used belong
-    to the embedding family (the least favored in that evaluation), we
-    believe it is necessary for the authors to explain why these
-    algorithms, and not others from different families, are more
-    suitable for making predictions in the case of metawebs.</p>
-    <p>The authors propose the construction of a metaweb as a starting
-    point for link prediction. Nevertheless, a metaweb is already a
-    hypothesis over a known network and contains potentially
-    non-realized interactions in nature which could lead to misleading
-    results. Even though, high quality metawebs can be built through
-    hard labor and expert knowledge, this is difficult to achieve in
-    practice due to the effort required and is perhaps only feasible for
-    very well-known groups or species interactions. We would like some
-    explanation of why we should use a metaweb instead of known
-    networks, and to what extent we should trust the results coming from
-    a metaweb with spurious interactions? Beyond highlighting the
-    potential benefits of metawebs, we believe it is imperative to make
-    clear their limitations and potential biases when using them for
-    link prediction.</p>
-    <p>The ability of the proposed framework to make predictions beyond
-    the original network is promising, but it may be challenging to find
-    suitable metadata for the data elements to be predicted. For some
-    (if not many) groups, the metadata that is correlated with the
-    realization of interactions in a network may be scarce or simply
-    unavailable. While it is possible to identify relevant metadata by
-    inspecting the relationship between variables and the features
-    extracted from the model (as shown in Figure 3 of the manuscript),
-    relying solely on this approach could lead to poorly defined models
-    and inaccurate predictions. Here, the authors fail to describe in
-    detail ways to validate the results and predictions of the
-    framework, as this would be essential to assess the performance and
-    reliability of the models resulting from its application.</p>
-  </sec>
-  <sec id="linesection-comments-nb-2">
-    <title>LINE/SECTION COMMENTS</title>
-    <p>Last line of abstract - “may influence” instead of “my
-    influence”</p>
-    <disp-quote>
-      <p>Done</p>
-    </disp-quote>
-    <p>L7: Why “least required”?</p>
-    <disp-quote>
-      <p>Something approaching a first pass…</p>
-    </disp-quote>
-    <p>L20: than instead of from?</p>
-    <disp-quote>
-      <p>Done</p>
-    </disp-quote>
-    <p>L16-23: it is unclear how the alpha-gamma diversity scheme
-    transfers to the network context, please clarify.</p>
-    <p>L25-27: this passage is a bit confusing. If co-occurrence is
-    driven by interactions, then it is not a predictor of interactions
-    but a response to interactions (we know it can be both). Yet,
-    co-occurrence has been identified as a predictor of interactions,
-    able to even discriminate among (some) interaction types and
-    strength (see Araújo and Rozenfeld 2014:Ecography). Please make
-    these sentences clearer.</p>
-    <p>L36: please cite also prior research on predicting climate change
-    effects on interacting assemblages using functional, phylogenetic
-    and macroecological information (e.g. Morales-Castilla et
-    al. 2021:PhilTransRoySocB; Carlson et al. 2022:Nature).</p>
-    <p>L36: “These local networks may be reconstructed given an
-    appropriate knowledge of local species composition and provide
-    information on the structure of FOOD WEBS at finer spatial
-    scales.”</p>
-    <p>Is this a typo, or are the authors focusing only on food webs and
-    not species interaction webs in general? In L140 they refer again to
-    “trophically unique species”, so if the authors are referring only
-    to food webs, make that clear up front.</p>
-    <p>L57-59: The idea that a probabilistic representation of a network
-    is superior to a binary one for link prediction is open to question.
-    Constructing a probabilistic model for predicting the likelihood of
-    each interaction requires making subjective decisions, and if these
-    decisions are not well-informed, the benefits of using quantitative
-    data instead of binary may be negated. Furthermore, the authors
-    state that one advantage of a probabilistic representation is the
-    ability to weight rare interactions, which is interesting but
-    requires providing some reference or evidence supporting it.</p>
-    <p>L78-80: isn’t this the same idea as the backbone of biotic
-    interactions, where all unfeasible interactions are pruned,
-    suggested in Morales-castilla et al. 2015:TrendsEcolEvol?</p>
-    <p>L91: representation</p>
-    <disp-quote>
-      <p>Done</p>
-    </disp-quote>
-    <p>L107: Since the fact that latent values cannot be equated to
-    traits may seem obvious, it would help illustrating here with
-    examples, papers that have used those latent values as traits, and
-    being clearer as to which consequences making this mistake
-    involves.</p>
-    <p>L149-180: Section “Graph embedding has been under-used in the
-    prediction of species interactions”. First, it is unclear how this
-    section shows what is stated before in lines 147-148 “In the next
-    section we show how the amount of dimensionality reduction can
-    affect the quality of the embedding”. Second, this section is
-    composed of two paragraphs. One explaining Graph Neural Networks and
-    other about the latent features extracted by graph embedding and
-    their relation to commonly use metadata. None actually directly
-    relates to the section title.</p>
-    <p>L213-: “This last figure crosses from the statistical into the
-    ecological, by showing that species pairs with no documented
-    co-occurrence have weights that are not distinguishable from species
-    pairs with no documented interactions, suggesting that (as befits a
-    host-parasite model) the ability to interact is a strong predictor
-    of co-occurrence.”</p>
-    <p>We cannot make truly sense of this sentence. We understand that
-    the authors interpret Figure 2D as suggesting that when two species
-    are capable of interacting with each other, they are more likely to
-    co-occur in the same environment, but we cannot not follow this as
-    logic. Please, clarify.</p>
-    <p>L222: what is the logical consequence from the previous sentence?
-    Is therefore needed?</p>
-    <p>L242-262: Again the content of the subsection is not clearly
-    related to the title. If these properties are scale, number of
-    species, and proportion of endemics-rare species, then it should be
-    stated more clearly</p>
-    <p>L271: this is a pervasive issue in ecology, as delineating
-    individuals, populations or communities has never been a resolved
-    issue. communities do not have objective boundaries… see
-    e.g. Sterelny, K. (2006):PhilSci,73. While noting this is
-    interesting, it would be even more interesting to discussing which
-    are the implications of predicting interactions at varying scales,
-    e.g., at which scales would false positives or negatives
-    predominate, and to which purposes different inferences would be
-    more adequate</p>
-    <p>L282: In the section titled “Minding legacies shaping ecological
-    datasets”, the authors refer to how embedding-based methods could be
-    affected by geographic biases that exist in the availability and
-    quality of biodiversity data, indicating that where these biases
-    exist, they will not be corrected by these methods, but will be
-    transferred to the predictions made using them. Although the
-    existence of these geographical biases is well known, this call for
-    attention is relevant when promoting the use of methods that could
-    lead the unsuspecting user to believe that they are a panacea immune
-    to these data limitations. Moreover, it would have been appreciated
-    if the authors had referred to procedures or protocols aimed at
-    minimizing the effects of these biases, or at least made useful
-    recommendations to the reader about in which circumstances, or in
-    which specific territories applying these methods can be of greater
-    utility, and where there is a greater risk of obtaining spurious
-    results. This practical approach is at least what much of the
-    audience of Methods in Ecology and Evolution would expect. However,
-    instead doing this, the authors opted for claiming that these
-    geographic biases are often a legacy of colonialist dynamics and
-    environmental racism that must be rectified. But what practical
-    utility does this have for the reader of this piece? We believe
-    none, beyond knowing the concern that these and other authors have
-    for issues of social injustice. However, is MEE a proper forum to
-    show this?</p>
-    <p>L304: how do approaches to predict ecology reinforce
-    environmental injustices? how does that relate to the paper’s
-    topic?</p>
-    <p>Overall, the length of information and detail provided by the
-    authors in the last two sections of the manuscript about legacy
-    biases should be mainly replaced by relevant information on the
-    benefits, shortcomings and road ahead for the proposed framework. In
-    particular, some discussion on how this method is better than
-    similar methods would be welcome.</p>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-9-nb-3">
-<front-stub>
-</front-stub>
-
-<body>
-<sec id="senior-editor-comments-to-authors-nb-3">
-  <title>Senior Editor Comments to Authors</title>
-  <p>I have now received the reviewers’ reports and a recommendation
-  from the Associate Editor who handled the review process of your
-  resubmission. Copies of their reports are included below. Based on
-  their evaluations, I regret to inform you that we are unable to
-  publish your paper in Methods in Ecology and Evolution in its current
-  form.</p>
-  <p>However, we would be willing to consider another resubmission,
-  which takes into consideration the new feedback you have received. You
-  will see that several comments really ask for a structural rework
-  towards the core of the “Perspective” format of MEE, which is about
-  the stimulation of scientific debate and the offer of conceptual
-  advances. While the ms is giving some of that, it does not convince
-  readers and reviewers even after 2 reviews.</p>
-  <disp-quote>
-    <p>We are deeply grateful for the opportunity to revise our
-    manuscript. We have conducted a thorough round of changes. Notably,
-    we have expanded the example greatly, by adding new data from the
-    <italic>PanTHERIA</italic> database. We have re-organized the
-    section providing an overview of embedding techniques, and reworked
-    the table to highlight differences between the various methods. We
-    have re-worked the conclusion to frame it around what we believe to
-    be exciting emerging questions, which we hope will stimulate
-    discussions around this topic moving forward.</p>
-  </disp-quote>
-  <p>I think that reframing how it is presented would go a long way to
-  appeal to readers and current &amp; future users of graph embedding.
-  It is not usual for us to offer the possibility to resubmit after a
-  first “reject and resubmit” decision when the reviews are of that
-  extent and we did so because of there is a potential for the ms to
-  have all these comments (mentioned below) addressed. A new version
-  including all these (numerous) comments would still need much work but
-  would really allow the ms to be a useful roadmap towards predicting
-  metaweb (even if that means going above the word limit).</p>
-  <disp-quote>
-    <p>We apologize in advance for taking the last comment at face
-    value, and going over the word limit. This was, in part, necessary
-    to bring several elements of nuance that are present in the
-    literature cited, but that have been asked by reviewers to be part
-    of the text. Notably, we added an explanation of why the result of
-    an embedding is not a functional trait. We have also re-worked the
-    conceptual figure to give it more generality. Furthermore, we had to
-    clarify the relationship between embedding and dimensionality
-    reduction. All of these changes required to expand the text at
-    several places, but we are confident that this brings the manuscript
-    closer to the reviewers’ vision.</p>
-  </disp-quote>
-  <p>In addition, there are several comments from the previous round
-  that were not addressed but still created issues with the second
-  revision; dealing with them and using the additional perspective of
-  this new revision will help move the ms forward.</p>
-  <disp-quote>
-    <p>As far as we understand it, this comment stems from Reviewer 3’s
-    in-depth reading of the original submission, our responses, and the
-    revised submission. We do appreciate the effort invested, but this
-    resulted in a review where it was often unclear which material was
-    critiqued, and therefore left us with little in the way of
-    actionnable items. There are a number of claims by reviewer 3 that
-    we dispute, and we have added our detailed responses below. It was
-    our impression that all points from the previous round of comments
-    had been adressed, but we would appreciate specific guidance as to
-    which were not properly so, in order to fix it should this situation
-    indeed present itself.</p>
-  </disp-quote>
-</sec>
-<sec id="reviewer-3-comments-to-authors-nb-3">
-  <title>Reviewer 3 Comments to Authors</title>
-  <sec id="general-comments-nb-3">
-    <title>General comments</title>
-    <p>The manuscript is a resubmission of a previous version that I did
-    not review nor see. I understand that the manuscript is proposed for
-    publication under the “Perspective” type in MEE. Besides the current
-    version, I had access to the first reports and the authors’
-    answers.</p>
-    <disp-quote>
-      <p>We thank the reviewer for the obvious effort they put in their
-      comments. Yet, we do want to express concern (which we will do
-      more explicitly in the following responses) that what the comments
-      are about is often unclear; it has been sometimes difficult for us
-      to understand whether the reviewer was expressing criticism about
-      the revised manuscript, our previous set of responses, or even
-      previously published manuscripts from this working group.
-      Nevertheless, we have done our best to take the comments at face
-      value and address them in depth in the revision, whenever they
-      were about the current submission. Whenever the reviewer
-      identified issues with previous material that were also relevant
-      for this submission, we have similarly worked hard at integrating
-      them. We hope that the editor will appreciate the difficulty of
-      crafting a thorough response when the reviewer comments bear on
-      material that is not currently under consideration.</p>
-    </disp-quote>
-    <p>I think that the contents of this Perspective manuscript do not -
-    as required by the journal guidelines - “stimulate [much] scientific
-    debate”. Neither does it significantly “offer conceptual advances or
-    opinions or identify gaps”. I’ll now try to motivate this
-    opinion.</p>
-    <disp-quote>
-      <p>We think this criticism is unfair, as we had already outlined
-      in the responses how the <italic>original submission</italic>
-      introduced novel ideas, and notably identified
-      knowledge/methodological gaps. We have re-worked the discussion of
-      <italic>this resubmission</italic> to frame it around what we
-      believe are important issues, including examples of analyses that
-      can be carried out to start working on these problems. As such, we
-      are extremely confident about the novelty of the material
-      presented in <italic>this resubmission</italic>.</p>
-    </disp-quote>
-    <p>In their answers, the authors “point out that the submitted
-    version of this present manuscript includes” 3 different elements.
-    It is unclear to me whether they consider this to be the complete
-    list of the manuscript contributions.</p>
-    <disp-quote>
-      <p>This specific comment in the <italic>initial responses</italic>
-      was intended to highlight areas that were already in the
-      <italic>original submission</italic>, specifically areas that
-      constitute the “advances to the scientific debate” the reviewer
-      asked for in their previous point. We used the word
-      <italic>include</italic> here to unambiguously convey that this
-      was not an exhaustive enumeration; as we are criticized on a
-      matter of semantics, we wanted to make this unambigous. We would
-      like to note that a description of what the <italic>current
-      submission</italic> contains is given in the abstract of the
-      <italic>current submission</italic>. As the reviewer has not
-      formulated actionable critiques about the manuscript (such as, for
-      example, identification of areas needing a better description of
-      what the manuscript brings), no changes were made.</p>
-    </disp-quote>
-    <p>Anyway, let me discuss the first of these elements. It is “an
-    overview of embedding techniques and their application to species
-    interaction networks”. I do not agree with this first claim. In my
-    opinion, Table 1 that lists a large number of graph embedding
-    techniques is not sufficient to be considered an overview.</p>
-    <disp-quote>
-      <p>We have edited the text to clarify that the take-home message
-      from this table is that a large number of these methods have
-      <italic>not</italic> been applied to species interactions
-      networks, and clarified which have been applied to biological
-      associations (without being about biotic interactions <italic>per
-      se</italic>).</p>
-    </disp-quote>
-    <p>The authors barely address the difference between nodes embedding
-    and graph embedding: while I can clearly see the second column of
-    the table, the text does not contain any sentence that could help a
-    reader not familiar with these embedding techniques to learn about
-    this major difference.</p>
-    <disp-quote>
-      <p>We have added a description of the difference (and overlap)
-      between the categories of embeddings to the main text, as well as
-      in the table. We have futher re-worked this part of the text so
-      that the flow is more consistent, starting with why ecological
-      networks can be embedded, clarifying the status of the values
-      given by these embeddings, and then making the explicit point that
-      these methods have been under-used.</p>
-    </disp-quote>
-    <p>The text is even misleading when (line 75) the authors say that
-    “Their [the graph embedding techniques] main goal is to learn a low
-    dimensional vector representations for the nodes of the graph
-    (embeddings)”.</p>
-    <disp-quote>
-      <p>We have changed this sentence. We are unsure as to whether it
-      will satisfy the reviewer, as they have not indicated how they
-      thought the original one was misleading.</p>
-    </disp-quote>
-    <p>An overview of embedding techniques should go beyond a list of
-    references and come with (at least some lines of) an introduction to
-    the methods and their main differences.</p>
-    <disp-quote>
-      <p>We would like to clarify that the purpose of this paper is to
-      point out that a family of methods (embedding) has been under-used
-      in the study of ecological networks, despite their potential
-      usefulness to be related to additional data for transfer learning.
-      This is now apparent from the sub-titles of this section of the
-      text. What the reviewer suggests is a review or benchmark on each
-      of the methods, which is outside the scope of a perspective
-      manuscript, and more suitable for a review. This is written in the
-      introduction of the <italic>current submission</italic>.
-      Furthermore, there is no concise way to summarize most of these
-      methods in “some lines”. Embedding techniques can be extremely
-      complex, often use vastly different mathematical approaches, and
-      it would be a disservice not to point to the original litterature
-      instead.</p>
-    </disp-quote>
-    <p>Going back to the manuscript contributions, the end of the
-    paper’s introduction (from lines 37 to 40), sets a slightly
-    different list: “In this contribution, we highlight the power in
-    viewing (and constructing) metawebs as probabilistic objects in the
-    context of rare interactions, discuss how a family of machine
-    learning tools (graph embeddings and transfer learning) can be used
-    to overcome data limitations to metaweb inference, and highlight how
-    the use of metawebs introduces important questions for the field of
-    network ecology.” From this, I understand that the 3 elements
-    pointed out by the authors in their answer do not constitute the
-    core of their contribution, which is rather described by these
-    previous lines. This leads me to my next remark.</p>
-    <disp-quote>
-      <p>This comment is purely a consequence of the reviewer, with all
-      due respect, over-interpreting the responses to the editor and
-      using them as the basis for critiques of the <italic>re-submitted
-      manuscript</italic>. From this point onwards, it is difficult for
-      us to decide what the reviewer is actually discussing. For the
-      sake of clarity, let us re-state the manuscript “mission
-      statement”: viewing metawebs as probabilistic objects is likely to
-      be very fruitful for their prediction and study, and coupling
-      graph embeddings with transfer learning is a promising way
-      forward, but requires us to solve problems before we get there.
-      This is the last paragraph of the introduction in plain English;
-      no changes made specifically in response to this point.</p>
-    </disp-quote>
-    <p>The previous reports raised the concern that the current
-    manuscript “adds little to the previous published paper”. The
-    authors answered that “there is not a single instance where areas of
-    overlap are clearly identified”. I do identify specific places that
-    support the reports concern:</p>
-    <disp-quote>
-      <p>We have to front-load the response to the specific points by
-      stating that we fully stand by our original point, namely that
-      there is no overlap, and that no overlap was identified in the
-      previous round of review. This attempt by reviewer 3 to re-write
-      the history of the previous round of comments is baffling. We
-      would like to mention to the editor that we do not understand the
-      point of the following comments. Nevertheless, we are taking the
-      process of peer review seriously, and have engaged with all of
-      these comments in good faith.</p>
-    </disp-quote>
-    <p>The contents of the paper as described at the end of the
-    introduction match the ideas underlying the previous published
-    work;</p>
-    <disp-quote>
-      <p>We re-read both manuscripts in full, and the only “overlap”
-      that we could find (keeping in mind that the end of the
-      introduction of the <italic>re-submitted version</italic> was
-      modified following comments in the previous round of review) is
-      that some of the same general ideas are discussed; this is
-      unavoidable in order to convey foundational ideas that justify the
-      use of embeddings coupled to transfer learning: the existence of
-      conserved backbones, invariants, or action of
-      phylogenetic/trait-based processes. We would like to note that the
-      reviewer is not identifying a problem here, simply stating that
-      articles on similar concepts cover similar conceptual grounds in
-      their introduction.</p>
-    </disp-quote>
-    <p>Section “Graph embedding offers promises for the inference of
-    potential interactions” is not only “an overview of embedding
-    techniques” but rather it is biased towards “their application to
-    species interaction networks”, which is the topic of the previous
-    published paper.</p>
-    <disp-quote>
-      <p>This is correct; it is, in fact, stated as early as the title
-      of the manuscript (to wit: “Graph embedding and transfer learning
-      can help predict species interaction networks despite data
-      limitations”). Again, this comment is based on the
-      <italic>responses to reviewers</italic> from the previous round,
-      and has no actionable items related to the <italic>current
-      version</italic> of the manuscript. The point of the
-      <italic>current submission</italic> is to provide a higher level
-      <italic>perspective</italic> on the topic, of which the
-      <italic>previously published paper</italic> was a specific
-      case-study. The novelty of this submission is in (1) the broader
-      and more systematic coverage of the literature on embeddings, (2)
-      a discussion of transfer learning in a more systematic way, framed
-      by the “in sample”/“out of sample” distinction we added to Fig. 1,
-      and (3) an enumeration of what we believe are important questions
-      for the field to address.</p>
-    </disp-quote>
-    <p>Graph embedding techniques are promising for ecological networks,
-    obviously not only in the context of inferring a metaweb. This leads
-    us back to the main concern with this paragraph: that the authors do
-    not even have a sentence about the major difference between node
-    embeddings and whole graphs embeddings shows that they are not
-    interested in these techniques for ecological networks in
-    general.</p>
-    <disp-quote>
-      <p>We would appreciate that the reviewer refrains from commenting
-      on our “interest”, when we have been thinking about/working
-      on/publishing with these techniques for several years. We have
-      added information about the difference between different types of
-      embeddings, which we hope will help the reviewer evaluate the
-      seriousness of our interest in the topic.</p>
-    </disp-quote>
-    <p>Figure 1 is titled “Overview of the embedding process”, which
-    describes only part A and B so half of the scheme. The remainder is
-    concerned with the method from the previously published paper.</p>
-    <disp-quote>
-      <p>The last part of this comment is untrue, but we have lost
-      interest in tracing comments back to discussion of the past round
-      of reviews. The figure describes a general cycle of
-      input/embedding/transfer/inference, with specific mentions of
-      potential predictors to learn the embedding. We have changed the
-      title of the figure, and based on constructive comments from other
-      reviewers, have re-drawn it entirely.</p>
-    </disp-quote>
-    <p>The third element of the list pointed out by the authors in their
-    answer is “a discussion of the remaining technical and
-    methodological challenges associated with this approach”. Here I
-    understood that “this” refers to “prediction through embeddings” and
-    the title of the last section ( “The metaweb embeds both ecological
-    hypotheses and practices”) is slightly misleading as its contents
-    are rather biased towards inference of a metaweb (after its
-    embedding).</p>
-    <disp-quote>
-      <p>This is, again, a comment on the <italic>responses to
-      reviewers</italic>, which requires no change to the
-      <italic>current submission</italic>. Based on constructive
-      comments by other reviewers, the last section of the manuscript
-      has been re-organised, and the text should now flow more naturally
-      between these emerging issues.</p>
-    </disp-quote>
-    <p>For the authors (line 172) “The first open research problem is
-    the taxonomic and spatial limit of the metaweb to embed and
-    transfer” and (line 189) “The second series of problems relate to
-    determining which area should be used to infer the new metaweb”.
-    These two points could have formed a perspective in the previous
-    published paper.</p>
-    <disp-quote>
-      <p>We wholeheartedly agree, but they had to be cut to adhere to
-      space constraints. No changes requested, no changes made, intent
-      of the comment still unclear.</p>
-    </disp-quote>
-    <p>The last part (from line 203, “praxis of ecological research”)
-    opens to more general considerations but again contains specific
-    remarks related to their previous work: “Applying any embedding to
-    biased data does not debias them” (line 206); “the need to appraise
-    and correct biases that are unwittingly propagated to algorithms
-    when embedded” (line 215).</p>
-    <disp-quote>
-      <p>We dispute this comment. The ideas contained in this paragraph
-      have no relationship to our previous work, and this should be
-      obvious by examining the literature cited. No changes made to the
-      manuscript.</p>
-    </disp-quote>
-    <p>The second element of the list pointed out by the authors in
-    their answer is “a discussion of the properties of metawebs that
-    make them amenable to prediction through embeddings”. I did not
-    clearly identify which part of the manuscript corresponds to that
-    element. I can only suppose that this refers to the paragraph that
-    “a metaweb is an inherently probabilistic object”, but as far as I
-    understand, the paragraph does not make a clear link between these
-    properties and the amenability to prediction through embedding.</p>
-    <disp-quote>
-      <p>This is, again, a comment on the <italic>responses to
-      reviewers</italic>; we hope that the changes we made in response
-      to reviewer’s 5 very constructive comments on the text of the
-      actual manuscript have adequately addressed it.</p>
-    </disp-quote>
-    <p>While I am convinced that “a metaweb is an inherently
-    probabilistic object” and found interesting the part of the
-    manuscript between lines 42 to 57, I did not understand how this is
-    combined with the second half of this section (namely that “high
-    quality observational data” can be combined “with synthetic data
-    coming from predictive models” to “increase the volume of
-    information available for inference”). More precisely, that `[the
-    metaweb] fixes an upper bound on which interactions can exist’ is
-    not clearly improved by a probabilistic version of this metaweb.</p>
-    <disp-quote>
-      <p>This section has been modified following comments from other
-      reviewers, specifically by addressing the status of documented v.
-      undocumented interactions, and how probabilities outputted by
-      predictive models can help bridge the gap.</p>
-    </disp-quote>
-    <p>The manuscript points the need for the construction of metawebs
-    at large spatial and taxonomic scales. The authors are not specific
-    about what “large” is exactly. It would be interesting to be more
-    specific on that or provide some examples. Is this a world-wide
-    scale? A continental scale? Any scale for which aggregation of local
-    data is necessary? Anything else? Line 192 (and below) appears the
-    mention of “country level”; However countries are too heterogeneous
-    in their sizes to answer my point. Also, the term ‘continental
-    scale’ appears on line 217 but in a specific sentence and I am not
-    convinced that this is exactly what the authors have in mind when
-    mentioning “large” scales.</p>
-    <disp-quote>
-      <p>This has been addressed in the revised discussion.</p>
-    </disp-quote>
-    <p>The abstract contains the sentence (point 4) “[we] discuss how
-    the choice of the species pool has consequences on the reconstructed
-    network”. This is indeed an interesting question. But I did not see
-    anything in the text that could refer to this.</p>
-    <disp-quote>
-      <p>See response above.</p>
-    </disp-quote>
-  </sec>
-  <sec id="minor-comments-nb-3">
-    <title>Minor comments</title>
-    <p>line 10: “accurate predictors are important for accurate
-    predictions”. Indeed, but what is your point?</p>
-    <disp-quote>
-      <p>Our point is given in plain English immediately after the
-      comma: “the lack of methods that can leverage a small amount of
-      <italic>accurate</italic> data is a serious impediment to our
-      predictive ability”.</p>
-    </disp-quote>
-    <p>line 13: replace GBIF and UICN by the full names.</p>
-    <disp-quote>
-      <p>Fixed.</p>
-    </disp-quote>
-    <p>line 73: “Graph (or Network) embedding (fig. 1)”. You should
-    modify the reference to “fig1. A, B” because the rest of the figure
-    is not part of the embedding process. By the way, the caption of
-    figure 1 “Overview of the embedding process” is also misleading as
-    (again) this title only describes half of the scheme.</p>
-    <disp-quote>
-      <p>Changes required by the new figure made.</p>
-    </disp-quote>
-    <p>I understand that the paragraph on GNN (from line 88) was added
-    to answer a referee concern, but it is disproportionate: you use as
-    much space not to speak about GNN as to speak about (ML) graph
-    embeddings.</p>
-    <disp-quote>
-      <p>We added this paragraph in response to comments from a
-      reviewer, and we agreed with the original point raised by the
-      reviewer, specifically that readers may be curious about GNNs; no
-      changes made.</p>
-    </disp-quote>
-    <p>I understand that the illustration of metaweb embedding was added
-    to answer one of the referees of the first round. Nonetheless, I do
-    not see the added value of it.</p>
-    <disp-quote>
-      <p>We hope that the expansion of this illustration will make its
-      added value clearer. See responses to the other reviewers for more
-      details.</p>
-    </disp-quote>
-    <p>On line 147, the authors claim to see “an inflection point around
-    25 dimensions”. I do not see any inflection, but I understand this
-    is a reasonable compromise.</p>
-    <disp-quote>
-      <p>We have expanded the illustration, and now use the finite
-      differences methods to identify the inflection point.</p>
-    </disp-quote>
-    <p>line 219: “Particularly on Turtle Island and other territories”.
-    I did not understand why in a very general paragraph you refer
-    “particularly” to this specific example. Maybe “for example” would
-    be more suited.</p>
-    <disp-quote>
-      <p>Paragraph changed during the revision of the discussion.</p>
-    </disp-quote>
-  </sec>
-</sec>
-<sec id="reviewer-4-comments-to-authors-nb-3">
-  <title>Reviewer 4 Comments to Authors</title>
-  <sec id="general-comments-1-nb-3">
-    <title>General comments</title>
-    <p>The paper summarized the key challenges of inferring metawebs
-    based on graph embedding approaches. It also highlighted the
-    significant advantages of using graph embedding and transfer
-    learning techniques for species interaction network prediction and
-    other ecological problem applications. The paper provided a very
-    important research direction of applying advanced graph embedding
-    and transfer learning to tackle diverse inference tasks for species
-    interaction networks.</p>
-    <disp-quote>
-      <p>We thank the reviewer for their kind words.</p>
-    </disp-quote>
-    <p>Two main questions about this paper are listed below.</p>
-    <p>Fig.1 is a good diagram that shows the whole pipeline with the
-    input graph adjacency matrix, output graph embedding and combined
-    with transfer learning technique. I would also suggest the authors
-    to include some experimental results based on graph embedding and
-    transfer learning for specie interaction inference with real
-    dataset.</p>
-    <disp-quote>
-      <p>We have greatly expanded the illustration, and as a result have
-      split it into two components: one showing the more statistical
-      considerations, and the other showing the ecological ones.</p>
-    </disp-quote>
-    <p>Please update the article information for the paper (Xu, M..
-    Understanding graph embedding methods and their applications. SIAM
-    Review, 2021) in the reference section.</p>
-    <disp-quote>
-      <p>Thank you - we now cite the published version rather than the
-      version on arxiv.</p>
-    </disp-quote>
-  </sec>
-</sec>
-<sec id="reviewer-5-comments-to-authors-nb-3">
-  <title>Reviewer 5 Comments to Authors</title>
-  <sec id="general-comments-2-nb-3">
-    <title>General comments</title>
-    <p>This manuscript consists in a revised version (re-submission) of
-    a perspective paper dedicated to the potential contribution of graph
-    embedding to metaweb prediction.</p>
-    <p>The authors provided a pedagogical illustration on a
-    host-parasites system, aiming at predicting (in a probabilistic way)
-    the links of this bipartite network using Random Dot Product Graph
-    embedding. This illustration implements key elements of Fig. 1 and
-    might invite the reader to use or develop the embedding framework on
-    various datasets. The figure showing the decrease of the loss with
-    the rank of the embedding is particularly welcome since it shows to
-    what extent network structure can be reasonably summarised in few
-    dimensions using a specific embedding.</p>
-    <disp-quote>
-      <p>We would like to thank the reviewer for pointing out that the
-      rapid decrease in <inline-formula><alternatives>
-      <tex-math><![CDATA[L_2]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
-      loss is a good thing; we have added this information to the
-      description of the case study, and further clarified this point by
-      presenting the <inline-formula><alternatives>
-      <tex-math><![CDATA[L_2]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
-      loss (for interaction/pairwise level quality) and the cumulative
-      variance explained (for network-level quality), as a pre-requisite
-      for an ecological interpretation. We had to split the figure in
-      two following further points by the reviewer, which resulted in
-      new information in the figures and the text. We are extremely
-      grateful for the improvement this resulted in.</p>
-    </disp-quote>
-    <p>However, I got a bit surprised not to find the ecological
-    interpretation of this embedding in terms of response and effects
-    traits. I think the authors should better try to link ecological
-    theory in general and ecological hypothesis associated with machine
-    learning methods throughout the manuscript. I understand that the
-    manuscript is centered on methods to predict metawebs with somehow
-    incomplete sampling or knowledge. Consequently, as many research
-    papers on applied machine learning in ecology, ecological hypothesis
-    and theory are a bit behind the scene.</p>
-    <disp-quote>
-      <p>This is a fair point, we thank the reviewer for bringing up
-      this concern; we have added a paragraph to the section on
-      embeddings, to explain why we do not think the values outputted by
-      the models <italic>are</italic> traits. To summarize: they are not
-      directly related, as causes or consequences, to organismal
-      fitness. This does not prevent their use in predictive settings
-      (indeed, we have clarified this at several places in the text,
-      with examples), but it would be problematic to assume that they
-      are “functional” traits. We think that <italic>latent
-      values</italic> is a more appropriate descriptor, and is how we
-      refer to them throughout the text.</p>
-    </disp-quote>
-    <p>I think that a perspective paper should clarify possible
-    ecological interpretation of machine learning methods. If the
-    manuscript is clear and enlightening on the probabilistic metaweb
-    approach, ecological hypothesis associated to link predictions are
-    much more obscure. The following points should be somehow addressed
-    in the manuscript to get additional perspectives:</p>
-    <p>What are the interpretations of Random Dot Product Graph
-    embeddings in terms of latent traits?</p>
-    <disp-quote>
-      <p>In addition to the paragraph we added in response to the
-      previous point, we have decided to split the illustration figure
-      in two, in order to show how the position of species in the
-      embedding sub-space relate to ecological information.
-      Specifically, we extracted body mass information from PanTHERIA,
-      and show that the position of hosts alongside the first (main)
-      dimension of the embedding is predictive of parasite richness, but
-      not of body mass; we also tie this result to existing literature.
-      This is, in a way, a comforting result: there is information in
-      the network that is not contained in body-mass, and approaches
-      that can use both (such as embedding and transfer learning) are
-      therefore likely to access <italic>more</italic> information about
-      what makes interactions.</p>
-    </disp-quote>
-    <p>What are the hypothesis behind link prediction using other
-    information (traits, phylogeny as in Strydom et al 2022)?</p>
-    <disp-quote>
-      <p>We thank the reviewer for asking this important clarification;
-      we have greatly expanded the section on the use of node metadata
-      to clarify which hypotheses are associated to broad families of
-      predictors, alongside references to published literature showing
-      the importance of these predictors. We would like to point out
-      that doing so goes beyond the scope of the previously published
-      paper, and is a more general overview of ‘picking the right
-      predictor for the right hypothesis’, up to and including
-      hypothesis testing, as we now mention in the text. This is now
-      additionally reflected in the conceptual figure, which separates
-      ecologically relevant predictors from the rest of the latent
-      variables used in the process, which should clarify what is an
-      “ecological” data and what is created through the embedding
-      process.</p>
-    </disp-quote>
-    <p>What structures are considered in the different embeddings? Table
-    1 mentions several embedding techniques and separates node from
-    graph embedding. However, even two node embeddings algorithm can
-    have different interpretations. For example, tsne is based on
-    neighbor (local structure) whereas node2vec relies on random walks,
-    so paths in the network (global structure). Both could be
-    interpreted in ecological terms.</p>
-    <disp-quote>
-      <p>This is an important clarification to request, and we thank the
-      reviewer for bringing it up. The strength of embeddings is that
-      they are robust to network structure <italic>and</italic> remove
-      the need to know specific information about the network
-      beforehand. We have added this information in the section on
-      embeddings, but also discuss it (with new references to the
-      literature) in the specific context of RDPG in the illustration.
-      Some methods (RDPG among them) can preserve structures at
-      different scales, perhaps giving some clues as to why they perform
-      well on the few examples they have been tried on so far; this is
-      speculation, and not part of the manuscript.</p>
-    </disp-quote>
-    <p>Predicting metawebs with these two methods do not hold the same
-    hypothesis on species interactions. How does it affect potential
-    applications? I think Table 1 must be enriched more (maybe add a
-    figure or split it) in order to be a roadmap and not simply a
-    catalog. It should mix and bridge embeddings, ecological
-    interpretations and even some illustrations to guide the reader in
-    this machine learning jungle. Such clarification should be also
-    present in the manuscript</p>
-    <disp-quote>
-      <p>We have pointed out in the text, in a few places, that
-      examining the “best” embedding method for a given problem is
-      important; this is coming from existing literature. One issue with
-      what the reviewer suggests is that the embedding techniques are
-      not always easy to map onto ecological considerations. This is a
-      good thing; indeed, this is because these techniques have been
-      developed for general problems on graphs, and ecological networks
-      are very likely to fall within the range of graphs that these
-      methods will handle (in fact, this is demonstrated by the
-      references in the table, specifically the column on applications).
-      We think that one way this table can serve as a roadmap is by
-      putting more emphasis on what has <italic>not</italic> been done,
-      <italic>i.e.</italic> the majority of embedding techniques have
-      not been applied to species interaction networks. We have updated
-      the legend of the table to make this point stand out more, and
-      given this argument a sub-section in this part of the
-      manuscript.</p>
-    </disp-quote>
-    <p>To what extent co-occurence data should be considered in
-    embedding approaches? Co-occurence is considered for statistical
-    association networks but probably not in the same manner than the
-    deep learning model of (Strydom et al 2021). So, to what extent
-    co-occurence data can be used to predict interaction? Table 1
-    mentions statistical association methods and JSDM. The authors
-    should be more clear in Table 1 and in the manuscript on the
-    link/differences between association methods (that predicts
-    associations from co-occurence) and link prediction using
-    embeddings. The term statistical association is present in Table 1
-    but not in the text, it can be quite confusing for the reader.</p>
-    <disp-quote>
-      <p>We have clarified this point in the table, by explaining that
-      some methods have been used for network-like problems, without
-      being applied to species interaction data. Whether predicting
-      co-occurrence qualifies as a network-like problem is a contentious
-      point (and one we, mostly, disagree with), but the important point
-      is that these methods can get data from node properties, and
-      generate predictions that are, so to speak, network-shaped. We
-      also touch upon the issue of co-occurrence in the illustration,
-      and have added references highlighting why co-occurrence alone is
-      not a good predictor to the introduction. Nevertheless, it
-      <italic>can</italic> be added to the predictor data, and we have
-      updated the conceptual figure in this way. When approaching this
-      methodology from the perspective of different sources of
-      information representing different hypotheses on what drives
-      interactions, adding information on co-occurrence can help
-      disentangle its role.</p>
-    </disp-quote>
-    <p>I think this manuscript could be considered for publication in
-    Methods in Ecology and Evolution but it must offer broader
-    perspectives than Strydom et al. To do so, the authors should try to
-    address somehow the previous listed points.</p>
-    <disp-quote>
-      <p>We thank the reviewer for their encouraging words, and for the
-      suggestions that led to the revision of the illustration, and
-      indeed most of the manuscript. We hope that the revised version
-      will meet their expectations.</p>
-    </disp-quote>
-  </sec>
-  <sec id="minor-comments-1-nb-3">
-    <title>Minor comments</title>
-    <p>L20: Local networks capture alpha-diversity of interactions but
-    also beta diversity since interactions from the metaweb can be
-    absent from local networks species absence.</p>
-    <disp-quote>
-      <p>This is correct, but does not seem relevant to the paragraph;
-      no changes were made as we are already past the word limit.</p>
-    </disp-quote>
-    <p>L24: Yes, I agree that Saravia et al. 2021 shows that local
-    network structure (represented by network metrics blind to species
-    identity) does not differ from the one expected from a null model
-    (Trophic Theory of Island Food webs). However, the manuscript
-    focuses on alpha-diversity metrics. In terms of species and
-    interaction composition, they can still differ even if they have
-    more or less the same structure. It think this point should be
-    clarified. Indeed, otherwise, it somehow states that we do not need
-    to focus on local composition since local networks have the same
-    structure as the metaweb.</p>
-    <disp-quote>
-      <p>This is correct, and we addressed this point in the original
-      submission, in the next paragraph (which is focused on backbones
-      of networks). No changes were made.</p>
-    </disp-quote>
-    <p>L63: Does it “generate” or uncover the core rules associated to
-    species interactions? I do not really understand the point of
-    “generating rules”. For me, statistical methods try, using abstract
-    representations, to uncover/formulate biological rules.</p>
-    <disp-quote>
-      <p>This is a good point, and we thank the reviewer for pointing it
-      out. We have rephrased this sentence to clarify that observational
-      data are used for the inference of rules, and that the resulting
-      augmented dataset is used for analysis.</p>
-    </disp-quote>
-    <p>L79: Yes, embedding methods can exhibit structural invariants in
-    ecological networks. However, what characteristics of the networks
-    should be considered in the model (links,paths,motifs…)?</p>
-    <disp-quote>
-      <p>This is an interesting point; we would like to apologize,
-      first, for the lack of clarity, as we were talking about
-      structural invariant in <italic>networks</italic>, not in their
-      embeddings. We have clarified the paragraph. Second; the
-      invariants in structure are not necessarily revealed by the usual
-      network measures, but are indeed <italic>structural</italic>,
-      <italic>i.e.</italic> they can be seen through the shape of the
-      network. We have clarified the paragraph to make it clearer that
-      the lower dimensions of an embedding should capture these
-      invariants, and improved the transition to the work of Eklof et
-      al. showing the low-dimensionality of food webs.</p>
-    </disp-quote>
-    <p>L83: If the choice of the embedding matters for the result, why
-    not providing to the reader some sort of roadmap of these embeddings
-    techniques for different applications?</p>
-    <disp-quote>
-      <p>The literature suggests that the algorithm should be selected
-      on a problem-specific basis, and we have changed the paragraph to
-      reflect this. The table has been changed in response to other
-      comments.</p>
-    </disp-quote>
-    <p>L85: For the moment, Table 1 is more a catalog than a
-    roadmap.</p>
-    <disp-quote>
-      <p>This is correct – we are unsure where the notion of a “roadmap”
-      comes from, as we label the table an “overview”, and do not argue
-      in the manuscript that the table can serve as a roadmap.
-      Nevertheless, we are confident that there is value in the table as
-      it is, as our survey of methods revealed that a number of them
-      have not been used in network ecology; indeed, a number of
-      references in the table are network-adjacent, as they describe the
-      use of embeddings for JSDMs or statistical associations. In
-      keeping with the response to the previous comment (the need for a
-      case-by-base appraisal of embedding techniques), this is
-      particularly problematic; we have edited the caption of the table
-      to reflect this.</p>
-    </disp-quote>
-    <p>L86: Ok, here comes different network representations (latent
-    traits or random walks). How do we interpret these methods in
-    ecological terms? Which one is the most suitable in the various
-    potential applications.</p>
-    <disp-quote>
-      <p>As we have mentioned in other places in the manuscript, this is
-      context-dependent, and existing literature suggests that one
-      should explore different embedding techniques.</p>
-    </disp-quote>
-    <p>L99: Bohan et al. 2017 mentions several associations methods to
-    build networks. If I am correct, these associations methods are not
-    mentioned in the manuscript. The authors must clarify this
-    point.</p>
-    <disp-quote>
-      <p>The methods in Bohan et al. are not based on embedding (and
-      deal with specific categories of datasets that are far from
-      widespread anyways); we have not edited the manuscript here.</p>
-    </disp-quote>
-    <p>L115: The authors should clarify the ecological hypothesis
-    associated to such approach and the potential limits of predicting
-    interactions using node metadata.</p>
-    <disp-quote>
-      <p>We have expanded this paragraph significantly, by explicitly
-      stating what the assumptions in using these predictors are, and
-      further by showing how the relationship between phylogeny/traits
-      and embeddings can be used in the context of testing hypotheses
-      about the drivers of the structure of networks.</p>
-    </disp-quote>
-    <p>L134: I think this illustration is relevant but it must be
-    enriched in order, for example, to compare different embedding or
-    incorporating meta-data. To what extent will different embedding
-    techniques provide different networks? Will the loss with the rank
-    be similar if you use link (as in the RDGP model) or path based
-    embedding?</p>
-    <disp-quote>
-      <p>We have greatly expanded the illustration, notably to bring
-      into consideration more ecological elements. The potential to
-      perform the analysis that the reviewer suggests is limited by data
-      availability, and would be outside the scope of this
-      manuscript.</p>
-    </disp-quote>
-    <p>Moreover, Stochastic Block Model can also but used to perform
-    link predictions (Gaucher et al. 2019; Link Prediction in the
-    Stochastic Block Model with Outliers. stat.) and is related to RDGP,
-    I think it deserves a mention here.</p>
-    <disp-quote>
-      <p>We have added a discussion of this article in the section on
-      metawebs; an importantly feature of embeddings is that they do not
-      assume a specific structure for the network in order to capture
-      emergent features.</p>
-    </disp-quote>
-    <p>L136: What are the ecological hypothesis associated to RDGP model
-    in terms of response and effect traits?</p>
-    <disp-quote>
-      <p>We have addressed this comment by adding a paragraph about the
-      status of latent values w.r.t. response/effect traits, which we
-      can summarize as “the latent values should not be discussed as
-      functional traits”. Furthermore, we have added a justification of
-      why RDPG is an interesting embedding technique in the first
-      paragraph of the section on the illustration.</p>
-    </disp-quote>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-12-nb-4">
-<front-stub>
-</front-stub>
-
-<body>
-<sec id="senior-editor-comments-to-authors-nb-4">
-  <title>Senior Editor Comments to Authors</title>
-  <p>This MS is strongly linked to the recently published one in MEE
-  since it was split from this published one early on. While the links
-  between the 2 obvious, the present MS should be more clearly
-  independent from the other since the overall perspective of the
-  reviews is that the ms adds little to the previous published
-  paper.</p>
-  <disp-quote>
-    <p>We would like to express our surprise regarding this comment,
-    since the other article was only mentioned twice (in the caption of
-    a figure and in a table). In order to address specific comments by
-    the first reviewer, we actually had to cite this manuscript in a few
-    more places. We also want to point out that the submitted version of
-    this present manuscript includes (i) an overview of embedding
-    techniques and their application to species interaction networks,
-    (ii) a discussion of the properties of metawebs that make them
-    amenable to prediction through embeddings, and (iii) a discussion of
-    the remaining technical and methodological challenges associated
-    with this approach; therefore, we strongly feel like the comments
-    about this manuscript adding little, as all of the aforementioned
-    elements are absent from the previous manuscript, are unfair.
-    Specifically, our initial introduction contained the following
-    statement for this manuscript: “In this contribution, we highlight
-    the power in viewing (and constructing) metawebs as
-    <italic>probabilistic</italic> objects in the context of rare
-    interactions, discuss how a family of machine learning tools (graph
-    embeddings and transfer learning) can be used to overcome data
-    limitations to metaweb inference, and highlight how the use of
-    metawebs introduces important questions for the field of network
-    ecology”.</p>
-    <p>To be perfectly transparent about our feelings reading the
-    review, we did feel like our manuscript was reviewed with the
-    mindest that it was presented as a Research (and not Perspective)
-    article. We followed the MEE guidelines about Perspective articles,
-    <italic>i.e.</italic> “to stimulate scientific debate, [by offering]
-    conceptual advances or opinions or identity gaps in knowledge”,
-    which is a different type of work than a complete methodological
-    treatment of the topic, or a narrative Review of it.</p>
-    <p>We also, notably in response to the comments made by the second
-    reviewer, had to defend ourselves against accusations of
-    sensationalism (“marketing”), opportunism, speculation, and general
-    sloppyness. Although we did not assume that this reviewer was acting
-    entirely in bad faith, we hope that the senior editor will
-    understand that we had to take a lot of critical distance from these
-    comments. We did bring specific responses to how a significant
-    numbers of them were unfair, unsubstantiated, or unprofessional, but
-    have nevertheless done our best to respond to them fairly; this is
-    more than the courtesy extended to us by the second reviewer. It is
-    concerning to receive reviews of this nature; not only do they
-    establish the wrong example by throwing around unfounded accusations
-    of low professional standards, they have a lasting impact on the
-    perception of early career scientists, of which this manuscript has
-    many. We do politely request that the senior editor, should this
-    manuscript be sent for review again, does not asks the second
-    reviewer for their advice.</p>
-  </disp-quote>
-  <p>In summary, they should be complementary but not overlapping to a
-  large extent. In the current ms, a strong message yet different from
-  the other paper would be that graph embedding is an emerging field in
-  machine learning that holds great potential for ecological problems.
-  And this will certainly affect the whole structure of the ms.</p>
-  <disp-quote>
-    <p>We do appreciate this comment, and wholeheartedly agree. Yet, it
-    is extremely difficult for us to address, as to the best of our
-    understanding of the two reviews and the senior editor comments,
-    there is not a single instance where areas of overlap are clearly
-    identified, or indeed identified <italic>at all</italic>. Following
-    the comments of reviewer 1, we do hope that the central argument
-    (“graph embedding is useful for link prediction”) will be clearer,
-    but in the absence of specific substantiated comments about what
-    constitutes overlap, we have not made significant alterations to the
-    manuscript.</p>
-  </disp-quote>
-  <p>Adding a section on “how to” approach graph embedding, and a
-  nutshell section on embedding methods vs dimension reduction method,
-  an example dataset to assess with a R-code; all these would be
-  essential for the ms even if it coud go over the word limit. Overall,
-  if these comments are implement together with the suggestions of the
-  reviewers, the current ms would be completely revamped and would need
-  a lot of work from the authors. yet it should produce a strong ms and
-  have potential to influence the field.</p>
-  <disp-quote>
-    <p>We have added this section after the overview of techniques, and
-    we now distribute the code to perform the analysis as Supplementary
-    Material. This resulted in an additional figure, outlining a number
-    of information that can be extracted from an embedding of a
-    metaweb.</p>
-  </disp-quote>
-</sec>
-<sec id="associate-editor-comments-to-authors-nb-4">
-  <title>Associate Editor Comments to Authors</title>
-  <p>(There are no comments.)</p>
-</sec>
-<sec id="reviewer-1-comments-to-authors-nb-4">
-  <title>Reviewer 1 Comments to Authors</title>
-  <sec id="general-comments-nb-4">
-    <title>General comments</title>
-    <p>I read this interesting text about the idea of using embeddings
-    to predict metawebs. I understand that this is a perspective. About
-    2/3 of the manuscript is dealing with metawebs (very pleasant to
-    read), and the remaining 1/3 recommend the use of network embeddings
-    (actually, the authors have mixed up embedding methods and dimension
-    reduction methods, which are actually two disjoint but connected
-    concepts).</p>
-    <p>However, I am very suprised that there is no material to support
-    the proposal. Do the authors already use an embedding techniques on
-    their datasets? They claim it is promising to use embedding with
-    metawebs, but is it an intuition? or are there scientifical
-    experiments/analysis/reasoning that could support this idea?</p>
-    <disp-quote>
-      <p>This is a surprising comment. The table in the original
-      manuscript already had a list of embeddings methods applied to
-      species interactions predictions, which in our opinion should
-      assuage the concern of reviewer 1 by establishing that this is not
-      “an intuition”. Indeed, table 1 has a number of empty cases in the
-      last column, which not only outlines what has been done, but what
-      methods are available for application to species interactions.
-      Furthermore, a part of the text discusses recent work from Strydom
-      et al. (2022) wherein graph embeddings have been used to not only
-      predict a metaweb, but do so by transferring information across
-      space. Despite the fact that these information was already in the
-      original manuscript, we have re-worded and expanded a number of
-      sections to make them stand out more.</p>
-    </disp-quote>
-    <p>At some point, I am wondering if it would be have been possible
-    to write the same article replacing “embedding” by “graph neural
-    networks”… These are all interesting techniques, and I do appreciate
-    that the authors try to help ecologists to understand them. But we
-    need more facts to understand the pros/cons of these options. I am
-    afraid the reader can not be convinced reading the manuscript in its
-    present form.</p>
-    <disp-quote>
-      <p>This is a good question, which we explored during the writing
-      of the initially submitted manuscript. GNN approaches are
-      comparatively younger than the broader family of graph embeddings
-      methods. We have added a rationale for not spending too much time
-      on GNN (which would also require to introduce a solid amount of
-      literature on deep learning in general), but point readers towards
-      recent reviews. In order to help convince the reader, we are
-      confident that the addition of an illustration or embedding on
-      empirical data, alongside the discussion of already published
-      studies, will help. Furthermore, we have revised the last section
-      to bring more concrete suggestions of required work, which will
-      hopefully stimulate further analyses.</p>
-    </disp-quote>
-    <p>I am sincerely annoyed that I can’t be more positive, maybe I
-    missed something, and I hope that these comments can be used to
-    improve the manuscript. But I do think this paper is “too light” to
-    be published in MEE.</p>
-    <disp-quote>
-      <p>We hope that our gentle reminder of the nature of this
-      (Perspective) paper as given in the response to the Senior Editor,
-      will help assuage the sentiment that the paper is too “light”; it
-      is not expected to be a formal comparative analysis of the
-      methods, not is it expected to be an exhaustive narrative review.
-      Indeed, we point out that these approaches are novel for the
-      prediction of species interactions, and our hope with this
-      manuscript is that more community ecologists will attempt to use
-      them in the future. We are confident that the additions to the
-      text are addressing all major comments raised by reviewer 1.</p>
-    </disp-quote>
-  </sec>
-  <sec id="detailed-comments-nb-4">
-    <title>Detailed comments</title>
-    <p>Until l.68: a very nice introduction about the concept of
-    metaweb</p>
-    <disp-quote>
-      <p>Thank you.</p>
-    </disp-quote>
-    <p>L.72-83 &amp; Table 1 : here, there is a mixture of graph and
-    node embeddings, i.e. projecting a graph or a node into a low
-    dimensional space. Would require some clarifications.</p>
-    <disp-quote>
-      <p>The second column of the table already specifies (explicitly)
-      whether nodes or graphs (as well as sub-graphs, multiple graphs,
-      and node complexes) are embedded given the different methods; we
-      are not sure what the reviewer wants to see added as a
-      clarification. As the information asked is already given, and in
-      the absence of specific feedback, we have not changed the
-      manuscript (besides splitting the table to separate the type of
-      embedded object and the embedding method).</p>
-    </disp-quote>
-    <p>L.91 &amp; Figure 2 : there is another subtlety here. Indeed,
-    embedding is often followed by a dimension reduction technique
-    (could be PCA, t-SNE). As in figure 2, section D is for dimension
-    reduction. In my opinion, these are two distinct concepts, embedding
-    and dimension reduction. For instance, one can perform an embedding
-    listing a series of metrics, then perform a PCA to obtain a 2-D
-    representation.</p>
-    <disp-quote>
-      <p>This is indeed a subtle point, and very respectfully, we think
-      that the reviewer’s confusion justifies the need for our
-      manuscript. Graph embedding and dimensionality reduction are
-      different yet <italic>related</italic> concepts. For example, PCA
-      can be used initially to maximise the information in a dataset
-      then fed into t-SNE; both the PCA and t-SNE step can be
-      parameterized to retain fewer dimensions, but so can neither of
-      them, with the user deciding to visualize a two or three
-      dimensional representation. We have added a paragraph to make sure
-      this point is extremely clear, and we hope that it will help
-      readers decide on the appropriate method to use. As a sidenote
-      (and not discussed in the manuscript), measuring network
-      properties and performing a PCA on those (although common in
-      network ecology) is not an embedding on the network, and is
-      therefore not discussed here for the sake of text length.</p>
-    </disp-quote>
-    <list list-type="alpha-lower">
-      <list-item>
-        <label>l.</label>
-        <p>107 : “large confidence intervals during estimation of the
-        values in the low-rank space” =&gt; what does it really
-        mean?</p>
-      </list-item>
-    </list>
-    <disp-quote>
-      <p>We have clarified that this would hint at the fact that the two
-      species pools are too distinct for transfer learning to work with
-      adequate confidence. Thank you for pointing this out.</p>
-    </disp-quote>
-    <p>L. 109: “resulting embeddings would have interactions” =&gt; same
-    thing. Could you be less elusive or give references?</p>
-    <disp-quote>
-      <p>We have clarified that this would lead to higher variance in
-      the original dataset compared to the target dataset, leading to
-      too much noise in the prediction. Thank you for pointing this
-      out.</p>
-    </disp-quote>
-    <p>L. 128-141: this part is interesting at some point, but the
-    reader can loose the point of the article… In particular, mentioning
-    AI here is disconnected to the remaining text. I understand that
-    embedding methods are part of AI at some point, but AI gather so
-    many domains….</p>
-    <disp-quote>
-      <p>We have considerably expanded the last section, to further
-      clarify which issues were “research-based” <italic>v.</italic>
-      “praxis-based” problems, alongside possible avenues to start
-      adressing these problems. We do hope that this will make the point
-      of the last paragraph more obvious.</p>
-    </disp-quote>
-  </sec>
-</sec>
-<sec id="reviewer-2-comments-to-authors-nb-4">
-  <title>Reviewer 2 Comments to Authors</title>
-  <sec id="general-comments-1-nb-4">
-    <title>General comments</title>
-    <p>This manuscript consists in a perspective on the use of graph
-    embeddings to infer potential interactions, by using metadata and
-    interaction databases. It is, somehow, linked to the idea that
-    potential interactions involving a new species can be predicted from
-    its traits (vulnerability and foraging) and interactions involving
-    similar species. If such an idea , based on niche conservatism
-    regarding interactions, is not new (e.g. Desjardins-Proulx et al.
-    2017, Strydom et al. 2021a), the use of graph embeddings to infer
-    potential interactions is a useful step forward.</p>
-    <disp-quote>
-      <p>We agree with this comment; graph embeddings can indeed project
-      networks in a space where the detection of unknown interactions is
-      easier, and we support this claim with several examples throughout
-      the text. No changes requested (none made).</p>
-    </disp-quote>
-    <p>However, I strongly doubt that such a short and speculative paper
-    helps the network ecology community.</p>
-    <disp-quote>
-      <p>We have no choice but to very firmly push back on the idea that
-      the manuscript is speculative. The manuscript is prospective, or
-      forward-looking, but every claim we make is either backed by facts
-      (in the forms of references to existing literature in the fields
-      of ecology, machine learning, and environmental governance), or
-      accompanied (notably in the last section) by suggestions of
-      additional work needed to address some of the gaps we have
-      identified. “Speculative” is an unfair assessment of our work, and
-      we do hope that it did not affect the reviewer ability to take it
-      seriously. We would like to point out that despite this sweeping
-      (and serious) accusation, the reviewer is unable to point to a
-      specific instance of a speculative claim.</p>
-      <p>We furthermore point out that table 1 contains examples of
-      published research using the techniques we discuss, and that the
-      text contains discussion of some of these papers. We are therefore
-      confident that we clear the bar for the manuscript not being
-      “speculative” by a very large margin.</p>
-    </disp-quote>
-    <p>Despite being appealing (it mentions the term ‘machine learning’
-    10 times), I think that it contains too much generic wishful
-    thinking to be useful and implementable.</p>
-    <disp-quote>
-      <p>We would like to question the intent behind this comment. Is
-      there a threshold above which mentioning machine learning too much
-      opens authors to accusations of “generic wishful thinking”? Should
-      a paper specifically about a field of machine learning
-      <italic>not</italic> call the field by its name? Would a
-      predictive method by any other name predict just as well?</p>
-      <p>We also would like to point out that the doubt expressed by the
-      reviewer about the ability to implement these methods is directly
-      addressed by Table 1 and the main text, in which we discuss
-      examples of research papers using these exact methods for the
-      prediction of species interactions. We are concerned that this
-      comment, besides its inappropriate amount of sarcasm, reflects a
-      bad faith reading of our manuscript.</p>
-    </disp-quote>
-    <p>In other words, I would expect less marketing and much more
-    science for a paper in Methods in Ecology and Evolution.</p>
-    <disp-quote>
-      <p>We do not feel like such a cheap accusation, without any
-      argument to back it up, warrants a response. Again, the reviewer
-      is comfortable making sweeping statements about “marketing”
-      without seemingly being able to identify a single instance that
-      has too much marketing, or too little science.</p>
-      <p>We would expect less aggresive snark and much more constructive
-      criticism for a review in Methods in Ecology and Evolution.</p>
-    </disp-quote>
-    <p>Moreover, the main idea of the paper (using node metadata to
-    predict new interactions using nodes embedding) comes from a paper
-    of the same authors that is not peer-reviewed and I feel a bit
-    uncomfortable with that (see Strydom et al. 2021b)</p>
-    <disp-quote>
-      <p>This statement – in addition to being arguably incorrect – is
-      no longer relevant as the version of the preprint we cited has now
-      been published. We do hope that this brings reviewer 2
-      comfort.</p>
-    </disp-quote>
-  </sec>
-  <sec id="detailed-comments-1-nb-4">
-    <title>Detailed comments</title>
-    <p>L51: this sentence is a tautological, if interactions are
-    represented by parameter of bernoulli law, there are already
-    weighted appropriately</p>
-    <disp-quote>
-      <p>No changes were made - the interactions are weighed
-      appropriately compared to the binary baseline, as is the point of
-      the sentence.</p>
-    </disp-quote>
-    <p>L62: ‘machine learning algortihms’ : fancy term but not very
-    specific. What algorithms are you talking about ?</p>
-    <disp-quote>
-      <p>The paper cited at the end of this sentence primarily uses
-      artificial neural networks, but concludes on the potential to use
-      “data-driven techniques”, which feels neither less nor more
-      specific than our reference to “ML algorithms”; as we do spell out
-      in the sentence immediately after this one, the core point is that
-      ML algorithms that can be made to generate data have the potential
-      to augment data collected through empirical means. No changes made
-      to the manuscript.</p>
-    </disp-quote>
-    <p>L78: Botella et al. 2022 does not use node embeddings but network
-    embeddings. In this case, each point of the low dimension space is a
-    network and not a node. Consequently, it won’t be useful to predict
-    new potential links. Table 1 is mixing nodes and network embeddings
-    that do answer to different ecological questions.</p>
-    <disp-quote>
-      <p>The fact that Table 1 lists different types of embeddings is
-      self-evident from the second column of table 1, which is
-      specifically about the type of objects being embedded. No changes
-      made to the manuscript.</p>
-      <p>Concerning the Botella et al. 2022 paper, the reviewer is
-      indeed correct that they use graph embedding. We do agree with
-      this interpretation. In fact, nowhere do we argue that their
-      results are relevant to interaction prediction, and instead we
-      summarize the findings of this article: there is a need to
-      evaluate multiple embeddings for each problem, as their
-      performance may differ.</p>
-      <p>All the information required was already in the manuscript, no
-      changes were made.</p>
-    </disp-quote>
-    <p>L84: This sentence is too generic. What are machine learning
-    techniques here ? If you include node embedding in it, it deals with
-    discrete data. Moreover, there is a broad network science
-    litterature that deals with discrete data.</p>
-    <disp-quote>
-      <p>The techniques we discuss are listed in the reference given
-      immediately at the end of the sentence. There is indeed literature
-      on discrete data (we do not make claims to the contrary); our
-      point remains that projecting discrete data into a dense,
-      continuous space comes with a list of benefits (that are listed in
-      the remainder of this paragraph, together with references to the
-      relevant literature). No changes were made.</p>
-    </disp-quote>
-    <p>L129: This sounds a bit superficial and opportunistic. I don’t
-    think such a serious topic can be adequately covered in a short
-    paragraph. Yes, we all know that machine learning techniques will
-    save the world, thanks.</p>
-    <disp-quote>
-      <p>We would like to question whether this dismisiveness of our
-      work is contributing in a positive way to the discussion that is
-      supposed to take place as part of the review process, and whether
-      this is the behavior the second reviewer thinks should be
-      demonstrated to early career authors.</p>
-      <p>To be candid, the comments by reviewer 2 mostly come across as
-      opposed to our work as a matter of principle, but (more
-      concerningly) as refusing to take it seriously, by chosing to
-      expres a concerning number of points through sarcasm rather than
-      in a professional voice more becoming of the review process.</p>
-      <p>We did our best in our response to the specific points below to
-      not reciprocate, and explained why changes were (or were not)
-      made, but we cannot weigh this review equally to the constructive
-      comments made by the first reviewer. “Superficial”, but mostly
-      “opportunistic”, are egregious attacks on our profesionalism, and
-      insinuate that we did not write the manuscript in good faith. They
-      do not deserve a reply, for they should never have been
-      written.</p>
-    </disp-quote>
-    <p>More seriously, we should not forget that these techniques are
-    built by people and not machines. Consequently, they are also
-    subjects to cultural/national biases since influencing academic
-    centers are located in the western world.</p>
-    <disp-quote>
-      <p>We do agree with the reviewer, and this is, in fact, a core
-      point of the paragraph, and of most of the articles cited therein.
-      As the reviewer and authors are in agreement, no changes were
-      made.</p>
-    </disp-quote>
-    <p>L135: I doubt that ‘algorithmic thinking’ is generating new
-    knowledge thanks to machine learning. Actually, ecological knowledge
-    is generated by people, not machines. Of course, statistical
-    techniques help scientists to analyze and structure data. But they
-    must remain tools in the hands of individuals.</p>
-    <disp-quote>
-      <p>We do agree with the reviewer (but would like to point out that
-      the definition of algorithmic thinking we use comes from the
-      article cited immediately before we first mention “algorithmic
-      thinking”). We have added a reference to “algorithm in the loop”
-      approaches (in other fields, as this notion has been
-      under-explored in ecological sciences), alongside their possible
-      issues, and suggestions as to what the next steps are.</p>
-    </disp-quote>
-    <p>L140: But it should also be recognized that these tools, because
-    they can be difficult to understand for non-specialists, can pose
-    problems of interpretation. Moreover, they can make those who make
-    decisions dependent on a tool that they do not master.</p>
-    <disp-quote>
-      <p>This has been adressed as part of the previous comment, by
-      emphasizing the need for training and computational literacy in
-      decision makers.</p>
-    </disp-quote>
-    <p>L145 : Long acknowledgements section for a short paper !</p>
-    <disp-quote>
-      <p>We refuse to engage with this comment.</p>
-    </disp-quote>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-15-nb-5">
-<front-stub>
 <title-group>
 <article-title>Demonstration of metaweb embedding using
 RDPG</article-title>
@@ -4938,7 +3343,7 @@ RDPG</article-title>
 </front-stub>
 
 <body>
-<sec id="cell-2-nb-5" specific-use="notebook-code">
+<sec id="cell-2-nb-1" specific-use="notebook-code">
 <code language="julia">using EcologicalNetworks
 using CairoMakie
 using LinearAlgebra
@@ -4947,34 +3352,34 @@ using DataFrames
 using DataFramesMeta
 CairoMakie.activate!(; px_per_unit = 2)</code>
 </sec>
-<sec id="cell-3-nb-5" specific-use="notebook-content">
+<sec id="cell-3-nb-1" specific-use="notebook-content">
 <p>The first step is to load a series of bipartite quantitative networks
 between hosts and parasites, coming from the Hadfield et al. paper on
 host-parasite phylogenetic structure.</p>
 </sec>
-<sec id="cell-4-nb-5" specific-use="notebook-code">
+<sec id="cell-4-nb-1" specific-use="notebook-code">
 <code language="julia">ids = getfield.(filter(n -&gt; contains(&quot;Hadfield&quot;)(n.Reference), web_of_life()), :ID)</code>
 </sec>
-<sec id="cell-5-nb-5" specific-use="notebook-content">
+<sec id="cell-5-nb-1" specific-use="notebook-content">
 <p>We convert these networks to binary bipartite networks, in order to
 make the metaweb aggregation easier.</p>
 </sec>
-<sec id="cell-6-nb-5" specific-use="notebook-code">
+<sec id="cell-6-nb-1" specific-use="notebook-code">
 <code language="julia">N = [convert(BipartiteNetwork, web_of_life(n)) for n in ids]</code>
 </sec>
-<sec id="cell-7-nb-5" specific-use="notebook-content">
+<sec id="cell-7-nb-1" specific-use="notebook-content">
 <p>Transforming the array of networks into a metaweb is done through the
 union operation:</p>
 </sec>
-<sec id="cell-8-nb-5" specific-use="notebook-code">
+<sec id="cell-8-nb-1" specific-use="notebook-code">
 <code language="julia">M = reduce(∪, N)</code>
 </sec>
-<sec id="cell-9-nb-5" specific-use="notebook-content">
+<sec id="cell-9-nb-1" specific-use="notebook-content">
 <p>In order to identify the pairs of species that have never been
 observed together, we use the following loop to create a co-occurence
 matrix:</p>
 </sec>
-<sec id="cell-10-nb-5" specific-use="notebook-code">
+<sec id="cell-10-nb-1" specific-use="notebook-code">
 <code language="julia">C = zeros(Int64, size(M))
 for n in N
     i = indexin(species(n; dims = 1), species(M; dims = 1))
@@ -4982,11 +3387,11 @@ for n in N
     C[i, j] .+= 1
 end</code>
 </sec>
-<sec id="cell-11-nb-5" specific-use="notebook-content">
+<sec id="cell-11-nb-1" specific-use="notebook-content">
 <p>Before moving forward with the results, we will setup the multi-panel
 figure used in main text:</p>
 </sec>
-<sec id="cell-12-nb-5" specific-use="notebook-code">
+<sec id="cell-12-nb-1" specific-use="notebook-code">
 <code language="julia">figure1 = Figure(; resolution = (950, 800))
 figure1a = Axis(
     figure1[1, 1];
@@ -5018,32 +3423,32 @@ figure1d = Axis(
 )
 current_figure()</code>
 </sec>
-<sec id="cell-13-nb-5" specific-use="notebook-content">
+<sec id="cell-13-nb-1" specific-use="notebook-content">
 <p>The first thing we want to do is measure the L2 loss (the sum of
 squared errors) as a function of the rank. The rank of the metaweb is at
 most the number of species on its least species-rich side:</p>
 </sec>
-<sec id="cell-14-nb-5" specific-use="notebook-code">
+<sec id="cell-14-nb-1" specific-use="notebook-code">
 <code language="julia">rank(adjacency(M))</code>
 </sec>
-<sec id="cell-15-nb-5" specific-use="notebook-content">
+<sec id="cell-15-nb-1" specific-use="notebook-content">
 <p>The following list comprehension will perform the RDPG embedding for
 each rank between 1 and the rank of the metaweb, then multiply the
 left/right subspaces together to get an approximated network, and report
 the per-interaction averaged L2 error:</p>
 </sec>
-<sec id="cell-16-nb-5" specific-use="notebook-code">
+<sec id="cell-16-nb-1" specific-use="notebook-code">
 <code language="julia">rnk = collect(1:rank(adjacency(M)))
 L2 = [sum((adjacency(M) - prod(rdpg(M, r))) .^ 2) ./ prod(size(M)) for r in rnk]</code>
 </sec>
-<sec id="cell-17-nb-5" specific-use="notebook-content">
+<sec id="cell-17-nb-1" specific-use="notebook-content">
 <p>We add this to the first panel of the figure:</p>
 </sec>
-<sec id="cell-18-nb-5" specific-use="notebook-code">
+<sec id="cell-18-nb-1" specific-use="notebook-code">
 <code language="julia">lines!(figure1a, rnk, L2; color = :black)
 current_figure()</code>
 </sec>
-<sec id="cell-19-nb-5" specific-use="notebook-content">
+<sec id="cell-19-nb-1" specific-use="notebook-content">
 <p>In order to identify the point of inflexion at which to perform the
 embedding, we could calculate the second order derivate of the loss
 function w.r.t. rank, using the approximation provided by the finite
@@ -5052,7 +3457,7 @@ first (forward difference), last (backward difference), and any (central
 difference point). This can be done on the singular values of the SVD
 yielding the RDPG used for the embedding:</p>
 </sec>
-<sec id="cell-20-nb-5" specific-use="notebook-code">
+<sec id="cell-20-nb-1" specific-use="notebook-code">
 <code language="julia">singularvalues = svd(adjacency(M)).S
 lines!(
     figure1b,
@@ -5061,11 +3466,11 @@ lines!(
 )
 current_figure()</code>
 </sec>
-<sec id="cell-21-nb-5" specific-use="notebook-content">
+<sec id="cell-21-nb-1" specific-use="notebook-content">
 <p>The finite differences methods to get the inflexion points proper is
 simply given by:</p>
 </sec>
-<sec id="cell-22-nb-5" specific-use="notebook-code">
+<sec id="cell-22-nb-1" specific-use="notebook-code">
 <code language="julia">sv = copy(singularvalues)
 diff = zeros(size(L2))
 for i in axes(diff, 1)
@@ -5078,7 +3483,7 @@ for i in axes(diff, 1)
     end
 end</code>
 </sec>
-<sec id="cell-23-nb-5" specific-use="notebook-content">
+<sec id="cell-23-nb-1" specific-use="notebook-content">
 <p>In practice, the screeplot of variance explained by each rank is
 noisy, meaning that the correct inflexion point is not necessarilly
 obvious from the series of second order derivatives (themselves an
@@ -5088,13 +3493,13 @@ absolute value) - this is a slightly conservative approach that will
 keep more dimensions, but provide a better approximation of the
 network.</p>
 </sec>
-<sec id="cell-24-nb-5" specific-use="notebook-code">
+<sec id="cell-24-nb-1" specific-use="notebook-code">
 <code language="julia">embedding_rank = last(findmin(abs.(diff)))</code>
 </sec>
-<sec id="cell-25-nb-5" specific-use="notebook-content">
+<sec id="cell-25-nb-1" specific-use="notebook-content">
 <p>We can add it to the figure:</p>
 </sec>
-<sec id="cell-26-nb-5" specific-use="notebook-code">
+<sec id="cell-26-nb-1" specific-use="notebook-code">
 <code language="julia">scatter!(figure1a, [embedding_rank], [L2[embedding_rank]]; color = :black)
 scatter!(
     figure1b,
@@ -5103,46 +3508,46 @@ scatter!(
     color = :black,
 )</code>
 </sec>
-<sec id="cell-27-nb-5" specific-use="notebook-content">
+<sec id="cell-27-nb-1" specific-use="notebook-content">
 <p>In the next steps, we will perform the RDPG embedding at this rank.
 We can check the L2 loss associated with this representation:</p>
 </sec>
-<sec id="cell-28-nb-5" specific-use="notebook-code">
+<sec id="cell-28-nb-1" specific-use="notebook-code">
 <code language="julia">L2[embedding_rank]</code>
 </sec>
-<sec id="cell-29-nb-5" specific-use="notebook-content">
+<sec id="cell-29-nb-1" specific-use="notebook-content">
 <p>The left/right subspaces are given by the <monospace>rdpg</monospace>
 function, which internally performs a t-SVD and then multiply each side
 by the square root of the eigenvalues:</p>
 </sec>
-<sec id="cell-30-nb-5" specific-use="notebook-code">
+<sec id="cell-30-nb-1" specific-use="notebook-code">
 <code language="julia">L, R = rdpg(M, embedding_rank)</code>
 </sec>
-<sec id="cell-31-nb-5" specific-use="notebook-content">
+<sec id="cell-31-nb-1" specific-use="notebook-content">
 <p>Checking the sizes of the L and R subspaces is important. For
 example, the size of L is:</p>
 </sec>
-<sec id="cell-32-nb-5" specific-use="notebook-code">
+<sec id="cell-32-nb-1" specific-use="notebook-code">
 <code language="julia">size(L)</code>
 </sec>
-<sec id="cell-33-nb-5" specific-use="notebook-content">
+<sec id="cell-33-nb-1" specific-use="notebook-content">
 <p>The number of rows (parasite richness) and columns (subspaces
 dimensions) is correct, so we can move on to the next step (doing the
 same exercise for R will show why the L*R multiplication will give back
 a matrix of the correct dimension). We will approximate the network at
 the previously identified rank, and call it P:</p>
 </sec>
-<sec id="cell-34-nb-5" specific-use="notebook-code">
+<sec id="cell-34-nb-1" specific-use="notebook-code">
 <code language="julia">P = clamp.(L * R, 0., 1.)</code>
 </sec>
-<sec id="cell-35-nb-5" specific-use="notebook-content">
+<sec id="cell-35-nb-1" specific-use="notebook-content">
 <p>With this matrix, we can start looking at the weight given for (i)
 positive interactions, (ii) interactions that are never observed but for
 which the species pair is observed at least once, and (iii) species
 pairs that are never observed. We simply plot the desntiy for each of
 these three situations and add it to the figure:</p>
 </sec>
-<sec id="cell-36-nb-5" specific-use="notebook-code">
+<sec id="cell-36-nb-1" specific-use="notebook-code">
 <code language="julia">noc = density!(figure1d, P[findall(iszero.(C))])
 pos = density!(figure1d, P[findall(adjacency(M))])
 neg = density!(figure1d, P[findall(iszero.(adjacency(M)) .&amp; .~iszero.(C))])
@@ -5152,7 +3557,7 @@ axislegend(
     [&quot;Interactions&quot;, &quot;Non-interactions&quot;, &quot;No co-occurence&quot;],
 )</code>
 </sec>
-<sec id="cell-37-nb-5" specific-use="notebook-content">
+<sec id="cell-37-nb-1" specific-use="notebook-content">
 <p>From this panel, it is rather clear that a lot of interactions
 without documented co-occurrence have a lower assigned weight, and are
 therefore less likely to be feasible. Turning this information into a
@@ -5160,29 +3565,29 @@ prediction of interaction existence can be carried out as a binary
 classification exercise using <italic>e.g.</italic> weight
 thresholding.</p>
 </sec>
-<sec id="cell-38-nb-5" specific-use="notebook-content">
+<sec id="cell-38-nb-1" specific-use="notebook-content">
 <p>Another potentially useful visualisation is to look at the position
 of each species on the first/second dimension of the relevant
 subspace.</p>
 </sec>
-<sec id="cell-39-nb-5" specific-use="notebook-code">
+<sec id="cell-39-nb-1" specific-use="notebook-code">
 <code language="julia">para = scatter!(figure1c, L[:, 1], L[:, 2]; marker = :rect)
 host = scatter!(figure1c, R'[:, 1], R'[:, 2])
 axislegend(figure1c, [para, host], [&quot;Parasites&quot;, &quot;Hosts&quot;]; position = :lb)
 current_figure()</code>
 </sec>
-<sec id="cell-40-nb-5" specific-use="notebook-content">
+<sec id="cell-40-nb-1" specific-use="notebook-content">
 <p>We finally save a high-dpi version of the first figure to disk:</p>
 </sec>
-<sec id="cell-41-nb-5" specific-use="notebook-code">
+<sec id="cell-41-nb-1" specific-use="notebook-code">
 <code language="julia">save(&quot;figures/illustration-part1.png&quot;, figure1; px_per_unit = 3)</code>
 </sec>
-<sec id="cell-42-nb-5" specific-use="notebook-content">
+<sec id="cell-42-nb-1" specific-use="notebook-content">
 <p>In the second figure, we will relate the embedding information to
 taxonomic/ecological information about the species, using hosts as an
 illustration:</p>
 </sec>
-<sec id="cell-43-nb-5" specific-use="notebook-code">
+<sec id="cell-43-nb-1" specific-use="notebook-code">
 <code language="julia">figure2 = Figure(; resolution = (950, 800))
 figure2a = Axis(
     figure2[1, 1];
@@ -5216,28 +3621,28 @@ figure2d = Axis(
 )
 current_figure()</code>
 </sec>
-<sec id="cell-44-nb-5" specific-use="notebook-content">
+<sec id="cell-44-nb-1" specific-use="notebook-content">
 <p>We can now link the position on the first dimension to ecologically
 relevant information, like <italic>e.g.</italic> the number of
 parasites.</p>
 </sec>
-<sec id="cell-45-nb-5" specific-use="notebook-code">
+<sec id="cell-45-nb-1" specific-use="notebook-code">
 <code language="julia">scatter!(figure2a, R[1, :], vec(sum(adjacency(M); dims = 1)); color = :black)
 current_figure()</code>
 </sec>
-<sec id="cell-46-nb-5" specific-use="notebook-content">
+<sec id="cell-46-nb-1" specific-use="notebook-content">
 <p>We will now load the PanTHERIA database to get metadata and
 functional traits on host species:</p>
 </sec>
-<sec id="cell-47-nb-5" specific-use="notebook-code">
+<sec id="cell-47-nb-1" specific-use="notebook-code">
 <code language="julia">pantheria = DataFrame(CSV.File(joinpath(@__DIR__, &quot;PanTHERIA_1-0_WR05_Aug2008.txt&quot;)))</code>
 </sec>
-<sec id="cell-48-nb-5" specific-use="notebook-content">
+<sec id="cell-48-nb-1" specific-use="notebook-content">
 <p>We can match the PanTHERIA rows with species names, and extract the
 columns we will use: species name, family, position on the first
 dimension, and finally bodymass:</p>
 </sec>
-<sec id="cell-49-nb-5" specific-use="notebook-code">
+<sec id="cell-49-nb-1" specific-use="notebook-code">
 <code language="julia">vidx = filter(!isnothing, indexin(species(M; dims = 2), pantheria.MSW05_Binomial))
 rodents = pantheria[vidx, :]
 species_index = indexin(rodents.MSW05_Binomial, species(M; dims = 2))
@@ -5255,11 +3660,11 @@ rodents.prich = [degree(M)[k] for k in rodents.MSW05_Binomial]
 
 rodents = @orderby(rodents, :family)</code>
 </sec>
-<sec id="cell-50-nb-5" specific-use="notebook-content">
+<sec id="cell-50-nb-1" specific-use="notebook-content">
 <p>We can plot the positions on the first dimension by taxonomic family
 (outliers do not appear on the boxplots):</p>
 </sec>
-<sec id="cell-51-nb-5" specific-use="notebook-code">
+<sec id="cell-51-nb-1" specific-use="notebook-code">
 <code language="julia">rainclouds!(
     figure2d,
     rodents.family,
@@ -5277,17 +3682,17 @@ rodents = @orderby(rodents, :family)</code>
 )
 current_figure()</code>
 </sec>
-<sec id="cell-52-nb-5" specific-use="notebook-content">
+<sec id="cell-52-nb-1" specific-use="notebook-content">
 <p>To examine the relationship with functional traits, we remove the
 species with no known bodymass:</p>
 </sec>
-<sec id="cell-53-nb-5" specific-use="notebook-code">
+<sec id="cell-53-nb-1" specific-use="notebook-code">
 <code language="julia">@subset!(rodents, :bodymass .&gt;= 0.0)</code>
 </sec>
-<sec id="cell-54-nb-5" specific-use="notebook-content">
+<sec id="cell-54-nb-1" specific-use="notebook-content">
 <p>And we can finally plot this as the last panel of the figure:</p>
 </sec>
-<sec id="cell-55-nb-5" specific-use="notebook-code">
+<sec id="cell-55-nb-1" specific-use="notebook-code">
 <code language="julia">scatter!(
     figure2b,
     rodents.bodymass,
@@ -5296,7 +3701,7 @@ species with no known bodymass:</p>
 )
 current_figure()</code>
 </sec>
-<sec id="cell-56-nb-5" specific-use="notebook-code">
+<sec id="cell-56-nb-1" specific-use="notebook-code">
 <code language="julia">scatter!(
     figure2c,
     rodents.bodymass,
@@ -5305,25 +3710,25 @@ current_figure()</code>
 )
 current_figure()</code>
 </sec>
-<sec id="cell-57-nb-5" specific-use="notebook-content">
+<sec id="cell-57-nb-1" specific-use="notebook-content">
 <p>We save the figure to disk in the same way as before:</p>
 </sec>
-<sec id="cell-58-nb-5" specific-use="notebook-code">
+<sec id="cell-58-nb-1" specific-use="notebook-code">
 <code language="julia">save(&quot;figures/illustration-part2.png&quot;, figure2; px_per_unit = 3)</code>
 </sec>
-<sec id="cell-59-nb-5" specific-use="notebook-content">
+<sec id="cell-59-nb-1" specific-use="notebook-content">
 <p>Finally, we compile this document to a notebook, which constitutes
 the supplementary material of the manuscript. Note that the lines to
 compile the script into a notebook are not visible in the notebook
 distributed as part of the Supp. Mat. of the article.</p>
 </sec>
-<sec id="cell-60-nb-5" specific-use="notebook-code">
+<sec id="cell-60-nb-1" specific-use="notebook-code">
 <code language="julia">Literate.notebook(
     @__FILE__,
     pwd();
     config = Dict(&quot;execute&quot; =&gt; false, &quot;name&quot; =&gt; &quot;SupplementaryMaterial&quot;),</code>
 </sec>
-<sec id="cell-61-nb-5" specific-use="notebook-content">
+<sec id="cell-61-nb-1" specific-use="notebook-content">
 <p><italic>This notebook was generated using
 <ext-link ext-link-type="uri" xlink:href="https://github.com/fredrikekre/Literate.jl">Literate.jl</ext-link>.</italic></p>
 </sec>

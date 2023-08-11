@@ -2,9 +2,10 @@ project:
   type: manuscript
   output-dir: docs
   render:
+    - "*.qmd"
+    - "*.ipynb"
     - "!reviews/"
     - "!coverletter.md"
-    - "notebooks/*.ipynb"
 
 manuscript:
   article: index.qmd
