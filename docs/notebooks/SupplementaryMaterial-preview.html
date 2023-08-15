@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.294">
+    <meta name="generator" content="quarto-1.4.303">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -161,7 +161,9 @@
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>  
+</script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>  
       </head>
 
   <body class="quarto-notebook">
@@ -209,7 +211,7 @@
      <div id="cell-1" class="cell markdown">
 
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="cell-2" class="cell">
+<div class="cell-container"><div class="cell-decorator"><pre>In [118]:</pre></div><div id="cell-2" class="cell" data-execution_count="118">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">EcologicalNetworks</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CairoMakie</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LinearAlgebra</span></span>
@@ -221,169 +223,294 @@
 <div id="cell-3" class="cell markdown">
 <p>The first step is to load a series of bipartite quantitative networks between hosts and parasites, coming from the Hadfield et al.&nbsp;paper on host-parasite phylogenetic structure.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="cell-4" class="cell">
+<div class="cell-container"><div class="cell-decorator"><pre>In [119]:</pre></div><div id="cell-4" class="cell" data-execution_count="119">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ids <span class="op">=</span> <span class="fu">getfield</span>.(<span class="fu">filter</span>(n <span class="op">-&gt;</span> <span class="fu">contains</span>(<span class="st">"Hadfield"</span>)(n.Reference), <span class="fu">web_of_life</span>()), <span class="op">:</span>ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>51-element Vector{SubString{String}}:
+ "A_HP_001"
+ "A_HP_002"
+ "A_HP_003"
+ "A_HP_004"
+ "A_HP_005"
+ "A_HP_006"
+ "A_HP_007"
+ "A_HP_008"
+ "A_HP_009"
+ "A_HP_010"
+ ⋮
+ "A_HP_043"
+ "A_HP_044"
+ "A_HP_045"
+ "A_HP_046"
+ "A_HP_047"
+ "A_HP_048"
+ "A_HP_049"
+ "A_HP_050"
+ "A_HP_051"</code></pre>
+</div>
 </div></div>
 <div id="cell-5" class="cell markdown">
 <p>We convert these networks to binary bipartite networks, in order to make the metaweb aggregation easier.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="cell-6" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> [<span class="fu">convert</span>(BipartiteNetwork, <span class="fu">web_of_life</span>(n)) for n <span class="kw">in</span> ids]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [120]:</pre></div><div id="cell-6" class="cell" data-execution_count="120">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> [<span class="fu">convert</span>(BipartiteNetwork, <span class="fu">web_of_life</span>(n)) for n <span class="kw">in</span> ids]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>51-element Vector{BipartiteNetwork{Bool, String}}:
+ 18×10 (String) bipartite ecological network (L: 61 - Bool)
+ 24×18 (String) bipartite ecological network (L: 96 - Bool)
+ 9×23 (String) bipartite ecological network (L: 108 - Bool)
+ 21×6 (String) bipartite ecological network (L: 52 - Bool)
+ 13×7 (String) bipartite ecological network (L: 51 - Bool)
+ 37×16 (String) bipartite ecological network (L: 123 - Bool)
+ 17×8 (String) bipartite ecological network (L: 43 - Bool)
+ 24×8 (String) bipartite ecological network (L: 37 - Bool)
+ 22×14 (String) bipartite ecological network (L: 97 - Bool)
+ 31×18 (String) bipartite ecological network (L: 88 - Bool)
+ ⋮
+ 29×9 (String) bipartite ecological network (L: 73 - Bool)
+ 26×27 (String) bipartite ecological network (L: 197 - Bool)
+ 16×7 (String) bipartite ecological network (L: 57 - Bool)
+ 39×17 (String) bipartite ecological network (L: 202 - Bool)
+ 26×11 (String) bipartite ecological network (L: 100 - Bool)
+ 14×12 (String) bipartite ecological network (L: 71 - Bool)
+ 19×5 (String) bipartite ecological network (L: 39 - Bool)
+ 35×27 (String) bipartite ecological network (L: 226 - Bool)
+ 26×13 (String) bipartite ecological network (L: 107 - Bool)</code></pre>
+</div>
 </div></div>
 <div id="cell-7" class="cell markdown">
 <p>Transforming the array of networks into a metaweb is done through the union operation:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="cell-8" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="fu">reduce</span>(<span class="op">∪</span>, N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [121]:</pre></div><div id="cell-8" class="cell" data-execution_count="121">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="fu">reduce</span>(<span class="op">∪</span>, N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>206×121 (String) bipartite ecological network (L: 2131 - Bool)</code></pre>
+</div>
 </div></div>
 <div id="cell-9" class="cell markdown">
 <p>In order to identify the pairs of species that have never been observed together, we use the following loop to create a co-occurence matrix:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="cell-10" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fu">zeros</span>(<span class="dt">Int64</span>, <span class="fu">size</span>(M))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> N</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="fu">indexin</span>(<span class="fu">species</span>(n; dims <span class="op">=</span> <span class="fl">1</span>), <span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">1</span>))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    j <span class="op">=</span> <span class="fu">indexin</span>(<span class="fu">species</span>(n; dims <span class="op">=</span> <span class="fl">2</span>), <span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">2</span>))</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    C[i, j] <span class="op">.+=</span> <span class="fl">1</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [122]:</pre></div><div id="cell-10" class="cell" data-execution_count="122">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fu">zeros</span>(<span class="dt">Int64</span>, <span class="fu">size</span>(M))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> N</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="fu">indexin</span>(<span class="fu">species</span>(n; dims <span class="op">=</span> <span class="fl">1</span>), <span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">1</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    j <span class="op">=</span> <span class="fu">indexin</span>(<span class="fu">species</span>(n; dims <span class="op">=</span> <span class="fl">2</span>), <span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">2</span>))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    C[i, j] <span class="op">.+=</span> <span class="fl">1</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div id="cell-11" class="cell markdown">
 <p>Before moving forward with the results, we will setup the multi-panel figure used in main text:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="cell-12" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>figure1 <span class="op">=</span> <span class="fu">Figure</span>(; resolution <span class="op">=</span> (<span class="fl">950</span>, <span class="fl">800</span>))</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>figure1a <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">1</span>, <span class="fl">1</span>];</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Rank"</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"L2 loss"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"A"</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>figure1b <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">1</span>, <span class="fl">2</span>];</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Rank"</span>,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Variance explained"</span>,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"B"</span>,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>figure1c <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">2</span>, <span class="fl">1</span>];</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Dimension 1"</span>,</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Dimension 2"</span>,</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"C"</span>,</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>figure1d <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">2</span>, <span class="fl">2</span>];</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Predicted weight"</span>,</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Density"</span>,</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"D"</span>,</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [123]:</pre></div><div id="cell-12" class="cell" data-execution_count="123">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>figure1 <span class="op">=</span> <span class="fu">Figure</span>(; resolution <span class="op">=</span> (<span class="fl">950</span>, <span class="fl">800</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>figure1a <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">1</span>, <span class="fl">1</span>];</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Rank"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"L2 loss"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"A"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>figure1b <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">1</span>, <span class="fl">2</span>];</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Rank"</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Variance explained"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"B"</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>figure1c <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">2</span>, <span class="fl">1</span>];</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Dimension 1"</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Dimension 2"</span>,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"C"</span>,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>figure1d <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    figure1[<span class="fl">2</span>, <span class="fl">2</span>];</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Predicted weight"</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Density"</span>,</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"D"</span>,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-13" class="cell markdown">
 <p>The first thing we want to do is measure the L2 loss (the sum of squared errors) as a function of the rank. The rank of the metaweb is at most the number of species on its least species-rich side:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [14]:</pre></div><div id="cell-14" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rank</span>(<span class="fu">adjacency</span>(M))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [124]:</pre></div><div id="cell-14" class="cell" data-execution_count="124">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rank</span>(<span class="fu">adjacency</span>(M))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>121</code></pre>
+</div>
 </div></div>
 <div id="cell-15" class="cell markdown">
 <p>The following list comprehension will perform the RDPG embedding for each rank between 1 and the rank of the metaweb, then multiply the left/right subspaces together to get an approximated network, and report the per-interaction averaged L2 error:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div id="cell-16" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rnk <span class="op">=</span> <span class="fu">collect</span>(<span class="fl">1</span><span class="op">:</span><span class="fu">rank</span>(<span class="fu">adjacency</span>(M)))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>L2 <span class="op">=</span> [<span class="fu">sum</span>((<span class="fu">adjacency</span>(M) <span class="op">-</span> <span class="fu">prod</span>(<span class="fu">rdpg</span>(M, r))) <span class="op">.^</span> <span class="fl">2</span>) <span class="op">./</span> <span class="fu">prod</span>(<span class="fu">size</span>(M)) for r <span class="kw">in</span> rnk]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [125]:</pre></div><div id="cell-16" class="cell" data-execution_count="125">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rnk <span class="op">=</span> <span class="fu">collect</span>(<span class="fl">1</span><span class="op">:</span><span class="fu">rank</span>(<span class="fu">adjacency</span>(M)))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>L2 <span class="op">=</span> [<span class="fu">sum</span>((<span class="fu">adjacency</span>(M) <span class="op">-</span> <span class="fu">prod</span>(<span class="fu">rdpg</span>(M, r))) <span class="op">.^</span> <span class="fl">2</span>) <span class="op">./</span> <span class="fu">prod</span>(<span class="fu">size</span>(M)) for r <span class="kw">in</span> rnk]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>121-element Vector{Float64}:
+ 0.05744130057895759
+ 0.0488201549717561
+ 0.044182471764921294
+ 0.04014623856002384
+ 0.03731319071666472
+ 0.035036091173708594
+ 0.033129096411421304
+ 0.03128810293334584
+ 0.029824448518954886
+ 0.028485820019597416
+ ⋮
+ 4.756534964035326e-5
+ 3.871435018435366e-5
+ 3.077568517320694e-5
+ 2.3762477728538295e-5
+ 1.728209478741771e-5
+ 1.1040542326391507e-5
+ 5.9908504730463834e-6
+ 2.6163841056681962e-6
+ 3.383682609541635e-30</code></pre>
+</div>
 </div></div>
 <div id="cell-17" class="cell markdown">
 <p>We add this to the first panel of the figure:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [18]:</pre></div><div id="cell-18" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lines!</span>(figure1a, rnk, L2; color <span class="op">=</span> <span class="op">:</span>black)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [126]:</pre></div><div id="cell-18" class="cell" data-execution_count="126">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lines!</span>(figure1a, rnk, L2; color <span class="op">=</span> <span class="op">:</span>black)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-19" class="cell markdown">
 <p>In order to identify the point of inflexion at which to perform the embedding, we could calculate the second order derivate of the loss function w.r.t. rank, using the approximation provided by the finite differences method, for which there are closed form solutions for the first (forward difference), last (backward difference), and any (central difference point). This can be done on the singular values of the SVD yielding the RDPG used for the embedding:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [20]:</pre></div><div id="cell-20" class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>singularvalues <span class="op">=</span> <span class="fu">svd</span>(<span class="fu">adjacency</span>(M)).S</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines!</span>(</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    figure1b,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    rnk,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cumsum</span>(singularvalues) <span class="op">./</span> <span class="fu">sum</span>(singularvalues); color <span class="op">=</span> <span class="op">:</span>black,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [127]:</pre></div><div id="cell-20" class="cell" data-execution_count="127">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>singularvalues <span class="op">=</span> <span class="fu">svd</span>(<span class="fu">adjacency</span>(M)).S</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines!</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    figure1b,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    rnk,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cumsum</span>(singularvalues) <span class="op">./</span> <span class="fu">sum</span>(singularvalues); color <span class="op">=</span> <span class="op">:</span>black,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-21" class="cell markdown">
 <p>The finite differences methods to get the inflexion points proper is simply given by:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [22]:</pre></div><div id="cell-22" class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sv <span class="op">=</span> <span class="fu">copy</span>(singularvalues)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>diff <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">size</span>(L2))</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="fu">axes</span>(diff, <span class="fl">1</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="fl">1</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        diff[i] <span class="op">=</span> sv[i <span class="op">+</span> <span class="fl">2</span>] <span class="op">-</span> <span class="fl">2</span>sv[i <span class="op">+</span> <span class="fl">1</span>] <span class="op">+</span> sv[i]</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">==</span> <span class="fu">length</span>(diff)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        diff[i] <span class="op">=</span> sv[i] <span class="op">-</span> <span class="fl">2</span>sv[i <span class="op">-</span> <span class="fl">1</span>] <span class="op">+</span> sv[i <span class="op">-</span> <span class="fl">2</span>]</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        diff[i] <span class="op">=</span> sv[i <span class="op">+</span> <span class="fl">1</span>] <span class="op">-</span> <span class="fl">2</span>sv[i] <span class="op">+</span> sv[i <span class="op">-</span> <span class="fl">1</span>]</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [128]:</pre></div><div id="cell-22" class="cell" data-execution_count="128">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sv <span class="op">=</span> <span class="fu">copy</span>(singularvalues)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">size</span>(L2))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="fu">axes</span>(D, <span class="fl">1</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="fl">1</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        D[i] <span class="op">=</span> sv[i <span class="op">+</span> <span class="fl">2</span>] <span class="op">-</span> <span class="fl">2</span>sv[i <span class="op">+</span> <span class="fl">1</span>] <span class="op">+</span> sv[i]</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> i <span class="op">==</span> <span class="fu">length</span>(D)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        D[i] <span class="op">=</span> sv[i] <span class="op">-</span> <span class="fl">2</span>sv[i <span class="op">-</span> <span class="fl">1</span>] <span class="op">+</span> sv[i <span class="op">-</span> <span class="fl">2</span>]</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        D[i] <span class="op">=</span> sv[i <span class="op">+</span> <span class="fl">1</span>] <span class="op">-</span> <span class="fl">2</span>sv[i] <span class="op">+</span> sv[i <span class="op">-</span> <span class="fl">1</span>]</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <div id="cell-23" class="cell markdown">
 <p>In practice, the screeplot of variance explained by each rank is noisy, meaning that the correct inflexion point is not necessarilly obvious from the series of second order derivatives (themselves an approximation due to the finite differences method). Here, we are placing the inflexion point at the value that is closest to 0 (in absolute value) - this is a slightly conservative approach that will keep more dimensions, but provide a better approximation of the network.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [24]:</pre></div><div id="cell-24" class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>embedding_rank <span class="op">=</span> <span class="fu">last</span>(<span class="fu">findmin</span>(<span class="fu">abs</span>.(diff)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [129]:</pre></div><div id="cell-24" class="cell" data-execution_count="129">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>embedding_rank <span class="op">=</span> <span class="fu">last</span>(<span class="fu">findmin</span>(<span class="fu">abs</span>.(D)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>39</code></pre>
+</div>
 </div></div>
 <div id="cell-25" class="cell markdown">
 <p>We can add it to the figure:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [26]:</pre></div><div id="cell-26" class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(figure1a, [embedding_rank], [L2[embedding_rank]]; color <span class="op">=</span> <span class="op">:</span>black)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    figure1b,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    [embedding_rank],</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    [(<span class="fu">cumsum</span>(singularvalues) <span class="op">./</span> <span class="fu">sum</span>(singularvalues))[embedding_rank]];</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="op">:</span>black,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [130]:</pre></div><div id="cell-26" class="cell" data-execution_count="130">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(figure1a, [embedding_rank], [L2[embedding_rank]]; color <span class="op">=</span> <span class="op">:</span>black)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    figure1b,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    [embedding_rank],</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    [(<span class="fu">cumsum</span>(singularvalues) <span class="op">./</span> <span class="fu">sum</span>(singularvalues))[embedding_rank]];</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="op">:</span>black,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Scatter{Tuple{Vector{Point{2, Float32}}}}</code></pre>
+</div>
 </div></div>
 <div id="cell-27" class="cell markdown">
 <p>In the next steps, we will perform the RDPG embedding at this rank. We can check the L2 loss associated with this representation:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [28]:</pre></div><div id="cell-28" class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>L2[embedding_rank]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [131]:</pre></div><div id="cell-28" class="cell" data-execution_count="131">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>L2[embedding_rank]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>0.008781432658004353</code></pre>
+</div>
 </div></div>
 <div id="cell-29" class="cell markdown">
 <p>The left/right subspaces are given by the <code>rdpg</code> function, which internally performs a t-SVD and then multiply each side by the square root of the eigenvalues:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [30]:</pre></div><div id="cell-30" class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>L, R <span class="op">=</span> <span class="fu">rdpg</span>(M, embedding_rank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [132]:</pre></div><div id="cell-30" class="cell" data-execution_count="132">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>L, R <span class="op">=</span> <span class="fu">rdpg</span>(M, embedding_rank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>([-0.31286375720303533 -0.043030881301210994 … 0.13089538016786548 -0.20429603515164355; -0.13639064534793804 -0.069120397590513 … -0.022693347528150234 0.11122052820015549; … ; -0.07325950183520884 0.055523273646558215 … 0.009841316351827679 -0.01931207868006777; -0.037791712381080346 0.03795436890539979 … 0.07396177101652388 -0.10508157577475588], [-1.484396333351671 -0.6088099455780831 … -0.18331412712563155 -0.018557865543628753; -0.06204291742899854 0.07811536918416419 … -0.0649963044402432 -0.004540292268812767; … ; -0.15780083148368063 0.030858539181893643 … 0.23635721814746793 -0.039464787454680156; 0.11993993308033085 -0.2685421627054579 … 0.007877516594161235 0.10605965189104812])</code></pre>
+</div>
 </div></div>
 <div id="cell-31" class="cell markdown">
 <p>Checking the sizes of the L and R subspaces is important. For example, the size of L is:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [32]:</pre></div><div id="cell-32" class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [133]:</pre></div><div id="cell-32" class="cell" data-execution_count="133">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>(206, 39)</code></pre>
+</div>
 </div></div>
 <div id="cell-33" class="cell markdown">
 <p>The number of rows (parasite richness) and columns (subspaces dimensions) is correct, so we can move on to the next step (doing the same exercise for R will show why the L*R multiplication will give back a matrix of the correct dimension). We will approximate the network at the previously identified rank, and call it P:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [34]:</pre></div><div id="cell-34" class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> <span class="fu">clamp</span>.(L <span class="op">*</span> R, <span class="fl">0</span>., <span class="fl">1</span>.)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [134]:</pre></div><div id="cell-34" class="cell" data-execution_count="134">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> <span class="fu">clamp</span>.(L <span class="op">*</span> R, <span class="fl">0</span>., <span class="fl">1</span>.)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>206×121 Matrix{Float64}:
+ 1.0        1.0         0.199705    …  0.0854123   0.0360167   0.0
+ 1.0        1.0         0.49918        0.0130665   0.0         0.0
+ 0.869676   0.843036    0.347334       0.0         0.0275938   0.0
+ 0.995816   1.0         0.85884        0.0         0.0         0.0242046
+ 0.968721   1.0         0.198935       0.0342837   0.0         0.0
+ 1.0        1.0         0.805771    …  0.0894987   0.0         0.0670649
+ 0.116086   0.957751    0.149858       0.0375512   0.0         0.0
+ 0.950946   1.0         0.12715        0.0514532   0.0         0.0
+ 1.0        1.0         0.0514726      0.0         0.0454504   0.0850339
+ 1.0        0.938797    0.249431       0.0         0.0         0.0107727
+ ⋮                                  ⋱                          ⋮
+ 0.0        0.0353385   0.0            0.0         0.00455419  0.0
+ 0.0        0.0353385   0.0            0.0         0.00455419  0.0
+ 0.0        0.0353385   0.0            0.0         0.00455419  0.0
+ 0.0        0.0353385   0.0         …  0.0         0.00455419  0.0
+ 1.0        0.0319898   0.040841       0.804289    0.907391    0.00389104
+ 0.0338076  0.0303734   0.00853267     0.0         0.0768271   0.0
+ 0.896346   0.00938109  0.0740001      0.0         0.0         0.0146878
+ 0.0112658  0.0359472   0.0            0.0         0.0         0.0
+ 0.03336    0.007738    0.0         …  0.00215311  0.0         0.0</code></pre>
+</div>
 </div></div>
 <div id="cell-35" class="cell markdown">
 <p>With this matrix, we can start looking at the weight given for (i) positive interactions, (ii) interactions that are never observed but for which the species pair is observed at least once, and (iii) species pairs that are never observed. We simply plot the desntiy for each of these three situations and add it to the figure:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [36]:</pre></div><div id="cell-36" class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>noc <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">iszero</span>.(C))])</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">adjacency</span>(M))])</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>neg <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">iszero</span>.(<span class="fu">adjacency</span>(M)) <span class="op">.&amp;</span> <span class="op">.~</span><span class="fu">iszero</span>.(C))])</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">axislegend</span>(</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    figure1d,</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    [pos, neg, noc],</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"Interactions"</span>, <span class="st">"Non-interactions"</span>, <span class="st">"No co-occurence"</span>],</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [135]:</pre></div><div id="cell-36" class="cell" data-execution_count="135">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>noc <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">iszero</span>.(C))])</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">adjacency</span>(M))])</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>neg <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">iszero</span>.(<span class="fu">adjacency</span>(M)) <span class="op">.&amp;</span> <span class="op">.~</span><span class="fu">iszero</span>.(C))])</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">axislegend</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    figure1d,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    [pos, neg, noc],</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"Interactions"</span>, <span class="st">"Non-interactions"</span>, <span class="st">"No co-occurence"</span>],</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Legend()</code></pre>
+</div>
 </div></div>
 <div id="cell-37" class="cell markdown">
 <p>From this panel, it is rather clear that a lot of interactions without documented co-occurrence have a lower assigned weight, and are therefore less likely to be feasible. Turning this information into a prediction of interaction existence can be carried out as a binary classification exercise using <em>e.g.</em> weight thresholding.</p>
@@ -391,156 +518,2279 @@
 <div id="cell-38" class="cell markdown">
 <p>Another potentially useful visualisation is to look at the position of each species on the first/second dimension of the relevant subspace.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [39]:</pre></div><div id="cell-39" class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>para <span class="op">=</span> <span class="fu">scatter!</span>(figure1c, L[<span class="op">:</span>, <span class="fl">1</span>], L[<span class="op">:</span>, <span class="fl">2</span>]; marker <span class="op">=</span> <span class="op">:</span>rect)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>host <span class="op">=</span> <span class="fu">scatter!</span>(figure1c, R<span class="op">'</span>[<span class="op">:</span>, <span class="fl">1</span>], R<span class="op">'</span>[<span class="op">:</span>, <span class="fl">2</span>])</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">axislegend</span>(figure1c, [para, host], [<span class="st">"Parasites"</span>, <span class="st">"Hosts"</span>]; position <span class="op">=</span> <span class="op">:</span>lb)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [136]:</pre></div><div id="cell-39" class="cell" data-execution_count="136">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>para <span class="op">=</span> <span class="fu">scatter!</span>(figure1c, L[<span class="op">:</span>, <span class="fl">1</span>], L[<span class="op">:</span>, <span class="fl">2</span>]; marker <span class="op">=</span> <span class="op">:</span>rect)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>host <span class="op">=</span> <span class="fu">scatter!</span>(figure1c, R<span class="op">'</span>[<span class="op">:</span>, <span class="fl">1</span>], R<span class="op">'</span>[<span class="op">:</span>, <span class="fl">2</span>])</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">axislegend</span>(figure1c, [para, host], [<span class="st">"Parasites"</span>, <span class="st">"Hosts"</span>]; position <span class="op">=</span> <span class="op">:</span>lb)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-20-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-40" class="cell markdown">
 <p>We finally save a high-dpi version of the first figure to disk:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [41]:</pre></div><div id="cell-41" class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="st">"figures/illustration-part1.png"</span>, figure1; px_per_unit <span class="op">=</span> <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [137]:</pre></div><div id="cell-fig-illustration-1" class="cell" data-execution_count="137">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-illustration-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p class=""><img src="SupplementaryMaterial_files/figure-html/fig-illustration-1-output-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Validation of an embedding for a host-parasite metaweb, using Random Dot Product Graphs. <strong>A</strong>, decrease in approximation error as the number of dimensions in the subspaces increases. <strong>B</strong>, increase in cumulative variance explained as the number of ranks considered increases; in <strong>A</strong> and <strong>B</strong>, the dot represents the point of inflexion in the curve (at rank 39) estimated using the finite differences method. <strong>C</strong>, position of hosts and parasites in the space of latent variables on the first and second dimensions of their respective subspaces (the results have been clamped to the unit interval). <strong>D</strong>, predicted interaction weight from the RDPG based on the status of the species pair in the metaweb.</figcaption>
+</figure>
+</div>
+</div>
 </div></div>
 <div id="cell-42" class="cell markdown">
 <p>In the second figure, we will relate the embedding information to taxonomic/ecological information about the species, using hosts as an illustration:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [43]:</pre></div><div id="cell-43" class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>figure2 <span class="op">=</span> <span class="fu">Figure</span>(; resolution <span class="op">=</span> (<span class="fl">950</span>, <span class="fl">800</span>))</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>figure2a <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">1</span>, <span class="fl">1</span>];</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Dimension 1 (right-subspace)"</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Number of parasites"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"A"</span>,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>figure2b <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">1</span>, <span class="fl">2</span>];</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Dimension 1 (right-subspace)"</span>,</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Body mass (grams)"</span>,</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    xscale <span class="op">=</span> log10,</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"B"</span>,</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>figure2c <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">1</span>, <span class="fl">3</span>];</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Number of parasites"</span>,</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Body mass (grams)"</span>,</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    xscale <span class="op">=</span> log10,</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"C"</span>,</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>figure2d <span class="op">=</span> <span class="fu">Axis</span>(</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">2</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>];</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Dimension 1 (right-subspace)"</span>,</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"D"</span>,</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    xticklabelrotation <span class="op">=</span> <span class="cn">π</span> <span class="op">/</span> <span class="fl">4</span>,</span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [138]:</pre></div><div id="cell-43" class="cell" data-execution_count="138">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>figure2 <span class="op">=</span> <span class="fu">Figure</span>(; resolution <span class="op">=</span> (<span class="fl">950</span>, <span class="fl">800</span>))</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>figure2a <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">1</span>, <span class="fl">1</span>];</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Dimension 1 (right-subspace)"</span>,</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Number of parasites"</span>,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"A"</span>,</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>figure2b <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">1</span>, <span class="fl">2</span>];</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Dimension 1 (right-subspace)"</span>,</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Body mass (grams)"</span>,</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    xscale <span class="op">=</span> log10,</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"B"</span>,</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>figure2c <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">1</span>, <span class="fl">3</span>];</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Number of parasites"</span>,</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">"Body mass (grams)"</span>,</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>    xscale <span class="op">=</span> log10,</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"C"</span>,</span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>figure2d <span class="op">=</span> <span class="fu">Axis</span>(</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>    figure2[<span class="fl">2</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>];</span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">"Dimension 1 (right-subspace)"</span>,</span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"D"</span>,</span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>    titlealign <span class="op">=</span> <span class="op">:</span>left,</span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>    xticklabelrotation <span class="op">=</span> <span class="cn">π</span> <span class="op">/</span> <span class="fl">4</span>,</span>
+<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-44" class="cell markdown">
 <p>We can now link the position on the first dimension to ecologically relevant information, like <em>e.g.</em> the number of parasites.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [45]:</pre></div><div id="cell-45" class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(figure2a, R[<span class="fl">1</span>, <span class="op">:</span>], <span class="fu">vec</span>(<span class="fu">sum</span>(<span class="fu">adjacency</span>(M); dims <span class="op">=</span> <span class="fl">1</span>)); color <span class="op">=</span> <span class="op">:</span>black)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [139]:</pre></div><div id="cell-45" class="cell" data-execution_count="139">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(figure2a, R[<span class="fl">1</span>, <span class="op">:</span>], <span class="fu">vec</span>(<span class="fu">sum</span>(<span class="fu">adjacency</span>(M); dims <span class="op">=</span> <span class="fl">1</span>)); color <span class="op">=</span> <span class="op">:</span>black)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-46" class="cell markdown">
 <p>We will now load the PanTHERIA database to get metadata and functional traits on host species:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [47]:</pre></div><div id="cell-47" class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pantheria <span class="op">=</span> <span class="fu">DataFrame</span>(CSV.<span class="fu">File</span>(<span class="fu">joinpath</span>(<span class="pp">@__DIR__</span>, <span class="st">"PanTHERIA_1-0_WR05_Aug2008.txt"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [140]:</pre></div><div id="cell-47" class="cell" data-execution_count="140">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>pantheria <span class="op">=</span> <span class="fu">DataFrame</span>(CSV.<span class="fu">File</span>(<span class="fu">joinpath</span>(<span class="st">".."</span>, <span class="st">"code"</span>, <span class="st">"PanTHERIA_1-0_WR05_Aug2008.txt"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div><div style="float: left;"><span>5416×55 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">5391 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MSW05_Order</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MSW05_Family</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MSW05_Genus</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MSW05_Species</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MSW05_Binomial</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">1-1_ActivityCycle</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">5-1_AdultBodyMass_g</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">8-1_AdultForearmLen_mm</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">13-1_AdultHeadBodyLen_mm</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2-1_AgeatEyeOpening_d</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">3-1_AgeatFirstBirth_d</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">18-1_BasalMetRate_mLO2hr</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">5-2_BasalMetRateMass_g</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">6-1_DietBreadth</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">7-1_DispersalAge_d</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">9-1_GestationLen_d</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">12-1_HabitatBreadth</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">22-1_HomeRange_km2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">22-2_HomeRange_Indiv_km2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">14-1_InterbirthInterval_d</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">15-1_LitterSize</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">16-1_LittersPerYear</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">17-1_MaxLongevity_m</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">5-3_NeonateBodyMass_g</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">13-2_NeonateHeadBodyLen_mm</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">21-1_PopulationDensity_n/km2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">10-1_PopulationGrpSize</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">23-1_SexualMaturityAge_d</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">10-2_SocialGrpSize</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">24-1_TeatNumber</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">12-2_Terrestriality</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">6-2_TrophicLevel</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">25-1_WeaningAge_d</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">5-4_WeaningBodyMass_g</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">13-3_WeaningHeadBodyLen_mm</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">References</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">5-5_AdultBodyMass_g_EXT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">16-2_LittersPerYear_EXT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">5-6_NeonateBodyMass_g_EXT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">5-7_WeaningBodyMass_g_EXT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">26-1_GR_Area_km2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">26-2_GR_MaxLat_dd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">26-3_GR_MinLat_dd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">26-4_GR_MidRangeLat_dd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">26-5_GR_MaxLong_dd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">26-6_GR_MinLong_dd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">26-7_GR_MidRangeLong_dd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">27-1_HuPopDen_Min_n/km2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">27-2_HuPopDen_Mean_n/km2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">27-3_HuPopDen_5p_n/km2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">27-4_HuPopDen_Change</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">28-1_Precip_Mean_mm</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">28-2_Temp_Mean_01degC</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">30-1_AET_Mean_mm</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">30-2_PET_Mean_mm</th>
+</tr>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="InlineStrings.String31">String31</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="InlineStrings.String31">String31</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="InlineStrings.String31">String31</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="InlineStrings.String31">String31</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Artiodactyla</td>
+<td style="text-align: left;">Camelidae</td>
+<td style="text-align: left;">Camelus</td>
+<td style="text-align: left;">dromedarius</td>
+<td style="text-align: left;">Camelus dromedarius</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.92714e5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1651.62</td>
+<td style="text-align: right;">40293.0</td>
+<td style="text-align: right;">407000.0</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">386.51</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">196.32</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">614.41</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">480.0</td>
+<td style="text-align: right;">36751.2</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">11.0</td>
+<td style="text-align: right;">1947.94</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">389.38</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">511;543;719;1274;1297;1594;1654;1822;1848;2655;3044</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Carnivora</td>
+<td style="text-align: left;">Canidae</td>
+<td style="text-align: left;">Canis</td>
+<td style="text-align: left;">adustus</td>
+<td style="text-align: left;">Canis adustus</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">10392.5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">745.32</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">329.99</td>
+<td style="text-align: right;">65.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.01</td>
+<td style="text-align: right;">1.01</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">137.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">249.88</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">52.89</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">542;543;730;1113;1297;1573;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.05814e7</td>
+<td style="text-align: right;">16.72</td>
+<td style="text-align: right;">-28.73</td>
+<td style="text-align: right;">-6.0</td>
+<td style="text-align: right;">43.55</td>
+<td style="text-align: right;">-17.53</td>
+<td style="text-align: right;">13.0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">35.2</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">90.75</td>
+<td style="text-align: right;">236.51</td>
+<td style="text-align: right;">922.9</td>
+<td style="text-align: right;">1534.4</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">Carnivora</td>
+<td style="text-align: left;">Canidae</td>
+<td style="text-align: left;">Canis</td>
+<td style="text-align: left;">aureus</td>
+<td style="text-align: left;">Canis aureus</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">9658.7</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">827.53</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">61.24</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2.95</td>
+<td style="text-align: right;">3.13</td>
+<td style="text-align: right;">365.0</td>
+<td style="text-align: right;">3.74</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">192.0</td>
+<td style="text-align: right;">211.82</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">371.23</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">61.3</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">543;679;730;1113;1297;1573;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.57395e7</td>
+<td style="text-align: right;">47.0</td>
+<td style="text-align: right;">-4.71</td>
+<td style="text-align: right;">21.14</td>
+<td style="text-align: right;">108.54</td>
+<td style="text-align: right;">-17.05</td>
+<td style="text-align: right;">45.74</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">79.29</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">44.61</td>
+<td style="text-align: right;">217.23</td>
+<td style="text-align: right;">438.02</td>
+<td style="text-align: right;">1358.98</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">Carnivora</td>
+<td style="text-align: left;">Canidae</td>
+<td style="text-align: left;">Canis</td>
+<td style="text-align: left;">latrans</td>
+<td style="text-align: left;">Canis latrans</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">11989.1</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">872.39</td>
+<td style="text-align: right;">11.94</td>
+<td style="text-align: right;">365.0</td>
+<td style="text-align: right;">3699.0</td>
+<td style="text-align: right;">10450.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">255.0</td>
+<td style="text-align: right;">61.74</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">18.88</td>
+<td style="text-align: right;">19.91</td>
+<td style="text-align: right;">365.0</td>
+<td style="text-align: right;">5.72</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">262.0</td>
+<td style="text-align: right;">200.01</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">372.9</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">43.71</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">367;542;543;730;1113;1297;1573;1822;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.70991e7</td>
+<td style="text-align: right;">71.39</td>
+<td style="text-align: right;">8.02</td>
+<td style="text-align: right;">39.7</td>
+<td style="text-align: right;">-67.07</td>
+<td style="text-align: right;">-168.12</td>
+<td style="text-align: right;">-117.6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">27.27</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">53.03</td>
+<td style="text-align: right;">58.18</td>
+<td style="text-align: right;">503.02</td>
+<td style="text-align: right;">728.37</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">Carnivora</td>
+<td style="text-align: left;">Canidae</td>
+<td style="text-align: left;">Canis</td>
+<td style="text-align: left;">lupus</td>
+<td style="text-align: left;">Canis lupus</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">31756.5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1055.0</td>
+<td style="text-align: right;">14.01</td>
+<td style="text-align: right;">547.5</td>
+<td style="text-align: right;">11254.2</td>
+<td style="text-align: right;">33100.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">180.0</td>
+<td style="text-align: right;">63.5</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">159.86</td>
+<td style="text-align: right;">43.13</td>
+<td style="text-align: right;">365.0</td>
+<td style="text-align: right;">4.98</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">354.0</td>
+<td style="text-align: right;">412.31</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">679.37</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">44.82</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">367;542;543;730;1015;1052;1113;1297;1573;1594;2338;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">5.08034e7</td>
+<td style="text-align: right;">83.27</td>
+<td style="text-align: right;">11.48</td>
+<td style="text-align: right;">47.38</td>
+<td style="text-align: right;">179.65</td>
+<td style="text-align: right;">-171.84</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">37.87</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">34.79</td>
+<td style="text-align: right;">4.82</td>
+<td style="text-align: right;">313.33</td>
+<td style="text-align: right;">561.11</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">Artiodactyla</td>
+<td style="text-align: left;">Bovidae</td>
+<td style="text-align: left;">Bos</td>
+<td style="text-align: left;">frontalis</td>
+<td style="text-align: left;">Bos frontalis</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">8.00143e5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2700.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">273.75</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">403.02</td>
+<td style="text-align: right;">1.22</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">314.4</td>
+<td style="text-align: right;">22977.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.54</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">610.97</td>
+<td style="text-align: right;">40.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">186.67</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">511;543;730;899;1297;1525;1848;2655;2986</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.29433e6</td>
+<td style="text-align: right;">28.01</td>
+<td style="text-align: right;">2.86</td>
+<td style="text-align: right;">15.43</td>
+<td style="text-align: right;">108.68</td>
+<td style="text-align: right;">73.55</td>
+<td style="text-align: right;">91.12</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">152.67</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">145.21</td>
+<td style="text-align: right;">229.71</td>
+<td style="text-align: right;">1053.45</td>
+<td style="text-align: right;">1483.02</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<td style="text-align: left;">Artiodactyla</td>
+<td style="text-align: left;">Bovidae</td>
+<td style="text-align: left;">Bos</td>
+<td style="text-align: left;">grunniens</td>
+<td style="text-align: left;">Bos grunniens</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">500000.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">273.75</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">267.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">755.15</td>
+<td style="text-align: right;">110.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">243.33</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">511;899;1297;1525;1848;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.52354e6</td>
+<td style="text-align: right;">38.88</td>
+<td style="text-align: right;">29.66</td>
+<td style="text-align: right;">34.27</td>
+<td style="text-align: right;">99.23</td>
+<td style="text-align: right;">75.91</td>
+<td style="text-align: right;">87.57</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">30.41</td>
+<td style="text-align: right;">-59.31</td>
+<td style="text-align: right;">246.2</td>
+<td style="text-align: right;">732.74</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<td style="text-align: left;">Artiodactyla</td>
+<td style="text-align: left;">Bovidae</td>
+<td style="text-align: left;">Bos</td>
+<td style="text-align: left;">javanicus</td>
+<td style="text-align: left;">Bos javanicus</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">6.35974e5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2075.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">912.5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">296.78</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.22</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">318.96</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">797.31</td>
+<td style="text-align: right;">40.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">287.74</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">511;730;899;1297;1525;1848;2152;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.68792e6</td>
+<td style="text-align: right;">25.08</td>
+<td style="text-align: right;">-8.78</td>
+<td style="text-align: right;">8.15</td>
+<td style="text-align: right;">118.35</td>
+<td style="text-align: right;">94.94</td>
+<td style="text-align: right;">106.64</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">139.21</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">187.69</td>
+<td style="text-align: right;">239.18</td>
+<td style="text-align: right;">1301.28</td>
+<td style="text-align: right;">1592.26</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Pitheciidae</td>
+<td style="text-align: left;">Callicebus</td>
+<td style="text-align: left;">cupreus</td>
+<td style="text-align: left;">Callicebus cupreus</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1117.02</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">354.99</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">129.25</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">395.41</td>
+<td style="text-align: right;">1.01</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">73.6</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4.89</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.05</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">201.85</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">1544;1547;1605;1633;1848;2151;2251;2344;2655;2986</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.05</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">6.90923e5</td>
+<td style="text-align: right;">-2.5</td>
+<td style="text-align: right;">-10.67</td>
+<td style="text-align: right;">-6.58</td>
+<td style="text-align: right;">-61.59</td>
+<td style="text-align: right;">-74.92</td>
+<td style="text-align: right;">-68.25</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.07</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">196.01</td>
+<td style="text-align: right;">255.36</td>
+<td style="text-align: right;">1529.55</td>
+<td style="text-align: right;">1573.18</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Pitheciidae</td>
+<td style="text-align: left;">Callicebus</td>
+<td style="text-align: left;">discolor</td>
+<td style="text-align: left;">Callicebus discolor</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Pitheciidae</td>
+<td style="text-align: left;">Callicebus</td>
+<td style="text-align: left;">donacophilus</td>
+<td style="text-align: left;">Callicebus donacophilus</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">897.67</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">1547;1605;1633;2151;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">288759.0</td>
+<td style="text-align: right;">-10.45</td>
+<td style="text-align: right;">-21.29</td>
+<td style="text-align: right;">-15.87</td>
+<td style="text-align: right;">-57.52</td>
+<td style="text-align: right;">-67.21</td>
+<td style="text-align: right;">-62.37</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3.63</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">108.93</td>
+<td style="text-align: right;">244.32</td>
+<td style="text-align: right;">1238.19</td>
+<td style="text-align: right;">1469.11</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Pitheciidae</td>
+<td style="text-align: left;">Callicebus</td>
+<td style="text-align: left;">dubius</td>
+<td style="text-align: left;">Callicebus dubius</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">992.4</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">1605;1633;2151;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<td style="text-align: left;">Primates</td>
+<td style="text-align: left;">Pitheciidae</td>
+<td style="text-align: left;">Callicebus</td>
+<td style="text-align: left;">hoffmannsi</td>
+<td style="text-align: left;">Callicebus hoffmannsi</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1067.61</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">1547;1605;1633;2151;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">98076.5</td>
+<td style="text-align: right;">-1.95</td>
+<td style="text-align: right;">-6.0</td>
+<td style="text-align: right;">-3.97</td>
+<td style="text-align: right;">-54.87</td>
+<td style="text-align: right;">-59.21</td>
+<td style="text-align: right;">-57.04</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.6</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">158.41</td>
+<td style="text-align: right;">258.18</td>
+<td style="text-align: right;">1417.63</td>
+<td style="text-align: right;">1610.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5405</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Muridae</td>
+<td style="text-align: left;">Zelotomys</td>
+<td style="text-align: left;">hildegardeae</td>
+<td style="text-align: left;">Zelotomys hildegardeae</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">55.22</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">5.75</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">61.11</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">730;1297;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">3.21796e6</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">-14.1</td>
+<td style="text-align: right;">-4.15</td>
+<td style="text-align: right;">40.18</td>
+<td style="text-align: right;">14.4</td>
+<td style="text-align: right;">27.29</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">40.05</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">101.6</td>
+<td style="text-align: right;">220.68</td>
+<td style="text-align: right;">1045.09</td>
+<td style="text-align: right;">1519.34</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5406</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Muridae</td>
+<td style="text-align: left;">Zelotomys</td>
+<td style="text-align: left;">woosnami</td>
+<td style="text-align: left;">Zelotomys woosnami</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">54.1</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">30.99</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">31.0</td>
+<td style="text-align: right;">4.99</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">15.9</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">1297;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">3.83</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">5.57093e5</td>
+<td style="text-align: right;">-17.49</td>
+<td style="text-align: right;">-27.63</td>
+<td style="text-align: right;">-22.56</td>
+<td style="text-align: right;">26.62</td>
+<td style="text-align: right;">14.83</td>
+<td style="text-align: right;">20.73</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.08</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">32.83</td>
+<td style="text-align: right;">214.54</td>
+<td style="text-align: right;">461.02</td>
+<td style="text-align: right;">1464.56</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5407</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Anomaluridae</td>
+<td style="text-align: left;">Zenkerella</td>
+<td style="text-align: left;">insignis</td>
+<td style="text-align: left;">Zenkerella insignis</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">200.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">511;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.71071e5</td>
+<td style="text-align: right;">4.57</td>
+<td style="text-align: right;">1.65</td>
+<td style="text-align: right;">3.11</td>
+<td style="text-align: right;">16.89</td>
+<td style="text-align: right;">9.62</td>
+<td style="text-align: right;">13.26</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20.37</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">151.21</td>
+<td style="text-align: right;">238.98</td>
+<td style="text-align: right;">1342.66</td>
+<td style="text-align: right;">1488.96</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5408</td>
+<td style="text-align: left;">Cetacea</td>
+<td style="text-align: left;">Ziphiidae</td>
+<td style="text-align: left;">Ziphius</td>
+<td style="text-align: left;">cavirostris</td>
+<td style="text-align: left;">Ziphius cavirostris</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4.775e6</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">432.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">172;543;1297;2151;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5409</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: left;">Zygodontomys</td>
+<td style="text-align: left;">brevicauda</td>
+<td style="text-align: left;">Zygodontomys brevicauda</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">52.22</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">25.39</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">25.0</td>
+<td style="text-align: right;">4.23</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1029.29</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">42.69</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">18.5</td>
+<td style="text-align: right;">21.99</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">730;1297;2151;2159;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.46036e6</td>
+<td style="text-align: right;">11.58</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">5.87</td>
+<td style="text-align: right;">-51.65</td>
+<td style="text-align: right;">-83.74</td>
+<td style="text-align: right;">-67.7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">32.13</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">163.89</td>
+<td style="text-align: right;">243.08</td>
+<td style="text-align: right;">1462.12</td>
+<td style="text-align: right;">1666.76</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5410</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: left;">Zygodontomys</td>
+<td style="text-align: left;">brunneus</td>
+<td style="text-align: left;">Zygodontomys brunneus</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">75.59</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">91161.4</td>
+<td style="text-align: right;">7.46</td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">4.31</td>
+<td style="text-align: right;">-73.5</td>
+<td style="text-align: right;">-77.64</td>
+<td style="text-align: right;">-75.57</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">116.18</td>
+<td style="text-align: right;">13.0</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">150.38</td>
+<td style="text-align: right;">195.09</td>
+<td style="text-align: right;">1502.65</td>
+<td style="text-align: right;">1553.88</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5411</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Geomyidae</td>
+<td style="text-align: left;">Zygogeomys</td>
+<td style="text-align: left;">trichopus</td>
+<td style="text-align: left;">Zygogeomys trichopus</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">473.54</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">225.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">1015;2151;2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1706.58</td>
+<td style="text-align: right;">19.74</td>
+<td style="text-align: right;">19.26</td>
+<td style="text-align: right;">19.5</td>
+<td style="text-align: right;">-101.67</td>
+<td style="text-align: right;">-102.41</td>
+<td style="text-align: right;">-102.04</td>
+<td style="text-align: right;">83</td>
+<td style="text-align: right;">105.64</td>
+<td style="text-align: right;">83.0</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">84.67</td>
+<td style="text-align: right;">176.37</td>
+<td style="text-align: right;">833.34</td>
+<td style="text-align: right;">1362.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5412</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Muridae</td>
+<td style="text-align: left;">Zyzomys</td>
+<td style="text-align: left;">argurus</td>
+<td style="text-align: left;">Zyzomys argurus</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">40.42</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">107.83</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">25.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">0.00103959</td>
+<td style="text-align: right;">0.000956472</td>
+<td style="text-align: right;">219.0</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">535.51</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">155.06</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">34.99</td>
+<td style="text-align: right;">14.0</td>
+<td style="text-align: right;">81.25</td>
+<td style="text-align: left;">435;456;525;730;1297;2655;2803</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.42</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">8.86981e5</td>
+<td style="text-align: right;">-11.11</td>
+<td style="text-align: right;">-25.49</td>
+<td style="text-align: right;">-18.3</td>
+<td style="text-align: right;">147.85</td>
+<td style="text-align: right;">114.33</td>
+<td style="text-align: right;">131.09</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">62.33</td>
+<td style="text-align: right;">256.75</td>
+<td style="text-align: right;">692.93</td>
+<td style="text-align: right;">1704.98</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5413</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Muridae</td>
+<td style="text-align: left;">Zyzomys</td>
+<td style="text-align: left;">maini</td>
+<td style="text-align: left;">Zyzomys maini</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">93.99</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">51093.3</td>
+<td style="text-align: right;">-12.9</td>
+<td style="text-align: right;">-15.06</td>
+<td style="text-align: right;">-13.98</td>
+<td style="text-align: right;">133.87</td>
+<td style="text-align: right;">131.45</td>
+<td style="text-align: right;">132.66</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">90.76</td>
+<td style="text-align: right;">265.3</td>
+<td style="text-align: right;">877.9</td>
+<td style="text-align: right;">1755.73</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5414</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Muridae</td>
+<td style="text-align: left;">Zyzomys</td>
+<td style="text-align: left;">palatilis</td>
+<td style="text-align: left;">Zyzomys palatilis</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">123.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">2655</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4667.41</td>
+<td style="text-align: right;">-17.45</td>
+<td style="text-align: right;">-18.16</td>
+<td style="text-align: right;">-17.81</td>
+<td style="text-align: right;">137.43</td>
+<td style="text-align: right;">136.72</td>
+<td style="text-align: right;">137.08</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">49.0</td>
+<td style="text-align: right;">247.16</td>
+<td style="text-align: right;">637.9</td>
+<td style="text-align: right;">1638.67</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5415</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Muridae</td>
+<td style="text-align: left;">Zyzomys</td>
+<td style="text-align: left;">pedunculatus</td>
+<td style="text-align: left;">Zyzomys pedunculatus</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">100.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">126.79</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">2655;2803</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">233916.0</td>
+<td style="text-align: right;">-20.25</td>
+<td style="text-align: right;">-25.36</td>
+<td style="text-align: right;">-22.81</td>
+<td style="text-align: right;">135.78</td>
+<td style="text-align: right;">130.16</td>
+<td style="text-align: right;">132.97</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">21.64</td>
+<td style="text-align: right;">215.72</td>
+<td style="text-align: right;">291.82</td>
+<td style="text-align: right;">1405.85</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5416</td>
+<td style="text-align: left;">Rodentia</td>
+<td style="text-align: left;">Muridae</td>
+<td style="text-align: left;">Zyzomys</td>
+<td style="text-align: left;">woodwardi</td>
+<td style="text-align: left;">Zyzomys woodwardi</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">95.02</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">146.07</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">231.16</td>
+<td style="text-align: right;">2.23</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">155.06</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999</td>
+<td style="text-align: right;">34.99</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: left;">525;1297;2655;2803</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">1.38</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">70724.8</td>
+<td style="text-align: right;">-13.73</td>
+<td style="text-align: right;">-17.35</td>
+<td style="text-align: right;">-15.54</td>
+<td style="text-align: right;">127.69</td>
+<td style="text-align: right;">123.42</td>
+<td style="text-align: right;">125.55</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">-999.0</td>
+<td style="text-align: right;">79.45</td>
+<td style="text-align: right;">280.41</td>
+<td style="text-align: right;">798.86</td>
+<td style="text-align: right;">1765.19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div></div>
 <div id="cell-48" class="cell markdown">
 <p>We can match the PanTHERIA rows with species names, and extract the columns we will use: species name, family, position on the first dimension, and finally bodymass:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [49]:</pre></div><div id="cell-49" class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>vidx <span class="op">=</span> <span class="fu">filter</span>(!isnothing, <span class="fu">indexin</span>(<span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">2</span>), pantheria.MSW05_Binomial))</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>rodents <span class="op">=</span> pantheria[vidx, <span class="op">:</span>]</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>species_index <span class="op">=</span> <span class="fu">indexin</span>(rodents.MSW05_Binomial, <span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">2</span>))</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>rodents.dim1 <span class="op">=</span> R[<span class="fl">1</span>, species_index]</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>rodents.prich <span class="op">=</span> [<span class="fu">degree</span>(M)[k] for k <span class="kw">in</span> rodents.MSW05_Binomial]</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@select</span>!(</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    rodents,</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>species <span class="op">=</span> <span class="op">:</span>MSW05_Binomial,</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>family <span class="op">=</span> <span class="op">:</span>MSW05_Family,</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>dimension <span class="op">=</span> <span class="op">:</span>dim1,</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>parasites <span class="op">=</span> <span class="op">:</span>prich,</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>bodymass <span class="op">=</span> <span class="op">$</span>(<span class="fu">Symbol</span>(<span class="st">"5-1_AdultBodyMass_g"</span>))</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>rodents <span class="op">=</span> <span class="pp">@orderby</span>(rodents, <span class="op">:</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [141]:</pre></div><div id="cell-49" class="cell" data-execution_count="141">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>vidx <span class="op">=</span> <span class="fu">filter</span>(!isnothing, <span class="fu">indexin</span>(<span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">2</span>), pantheria.MSW05_Binomial))</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>rodents <span class="op">=</span> pantheria[vidx, <span class="op">:</span>]</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>species_index <span class="op">=</span> <span class="fu">indexin</span>(rodents.MSW05_Binomial, <span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">2</span>))</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>rodents.dim1 <span class="op">=</span> R[<span class="fl">1</span>, species_index]</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>rodents.prich <span class="op">=</span> [<span class="fu">degree</span>(M)[k] for k <span class="kw">in</span> rodents.MSW05_Binomial]</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@select</span>!(</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    rodents,</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>species <span class="op">=</span> <span class="op">:</span>MSW05_Binomial,</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>family <span class="op">=</span> <span class="op">:</span>MSW05_Family,</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>dimension <span class="op">=</span> <span class="op">:</span>dim1,</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>parasites <span class="op">=</span> <span class="op">:</span>prich,</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span>bodymass <span class="op">=</span> <span class="op">$</span>(<span class="fu">Symbol</span>(<span class="st">"5-1_AdultBodyMass_g"</span>))</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>rodents <span class="op">=</span> <span class="pp">@orderby</span>(rodents, <span class="op">:</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div><div style="float: left;"><span>109×5 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">84 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">species</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">family</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">dimension</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">parasites</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">bodymass</th>
+</tr>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="InlineStrings.String31">String31</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Calomyscus mystax</td>
+<td style="text-align: left;">Calomyscidae</td>
+<td style="text-align: right;">-0.0460271</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Microtus arvalis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.4844</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">26.9</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">Prometheomys schaposchnikowi</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.0686128</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">Microtus majori</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.186042</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">Cricetulus migratorius</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.0629</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">30.59</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">Chionomys nivalis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.0958455</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">42.01</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<td style="text-align: left;">Lagurus lagurus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.2039</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">20.6</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<td style="text-align: left;">Cricetus cricetus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.526361</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">428.95</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<td style="text-align: left;">Microtus oeconomus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.02079</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">33.1</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<td style="text-align: left;">Microtus gregalis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.708764</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<td style="text-align: left;">Allocricetulus eversmanni</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.25523</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: left;">Ellobius talpinus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.113965</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">40.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<td style="text-align: left;">Microtus agrestis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.06681</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">35.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">98</td>
+<td style="text-align: left;">Sorex tundrensis</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.17576</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7.65</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">99</td>
+<td style="text-align: left;">Diplomesodon pulchellum</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.0295968</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">11.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">100</td>
+<td style="text-align: left;">Sorex cinereus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.0326016</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.2</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">101</td>
+<td style="text-align: left;">Sorex roboratus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.239524</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">12.99</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">102</td>
+<td style="text-align: left;">Sorex alpinus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.230646</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8.04</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">103</td>
+<td style="text-align: left;">Neomys anomalus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.185322</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">13.19</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">104</td>
+<td style="text-align: left;">Crocidura leucodon</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.145881</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">10.88</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">105</td>
+<td style="text-align: left;">Sorex asper</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.146753</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">106</td>
+<td style="text-align: left;">Myospalax aspalax</td>
+<td style="text-align: left;">Spalacidae</td>
+<td style="text-align: right;">-0.025057</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">107</td>
+<td style="text-align: left;">Myospalax myospalax</td>
+<td style="text-align: left;">Spalacidae</td>
+<td style="text-align: right;">-0.0434989</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">225.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">108</td>
+<td style="text-align: left;">Talpa europaea</td>
+<td style="text-align: left;">Talpidae</td>
+<td style="text-align: right;">-0.789351</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">87.53</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">109</td>
+<td style="text-align: left;">Talpa altaica</td>
+<td style="text-align: left;">Talpidae</td>
+<td style="text-align: right;">-0.173096</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">-999.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div></div>
 <div id="cell-50" class="cell markdown">
 <p>We can plot the positions on the first dimension by taxonomic family (outliers do not appear on the boxplots):</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [51]:</pre></div><div id="cell-51" class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rainclouds!</span>(</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    figure2d,</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    rodents.family,</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    rodents.dimension;</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    plot_boxplots <span class="op">=</span> <span class="cn">true</span>,</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    boxplot_width <span class="op">=</span> <span class="fl">0.22</span>,</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    boxplot_nudge <span class="op">=</span> <span class="fl">0.25</span>,</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    strokewidth <span class="op">=</span> <span class="fl">0.0</span>,</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    clouds <span class="op">=</span> <span class="cn">nothing</span>,</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    datalimits <span class="op">=</span> extrema,</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    orientation <span class="op">=</span> <span class="op">:</span>vertical,</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    markersize <span class="op">=</span> <span class="fl">6</span>,</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    side_nudge <span class="op">=</span> <span class="op">-</span><span class="fl">0.125</span>,</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    jitter_width <span class="op">=</span> <span class="fl">0.22</span>,</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [142]:</pre></div><div id="cell-51" class="cell" data-execution_count="142">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rainclouds!</span>(</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    figure2d,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    rodents.family,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    rodents.dimension;</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    plot_boxplots <span class="op">=</span> <span class="cn">true</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    boxplot_width <span class="op">=</span> <span class="fl">0.22</span>,</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    boxplot_nudge <span class="op">=</span> <span class="fl">0.25</span>,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    strokewidth <span class="op">=</span> <span class="fl">0.0</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    clouds <span class="op">=</span> <span class="cn">nothing</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    datalimits <span class="op">=</span> extrema,</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    orientation <span class="op">=</span> <span class="op">:</span>vertical,</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    markersize <span class="op">=</span> <span class="fl">6</span>,</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    side_nudge <span class="op">=</span> <span class="op">-</span><span class="fl">0.125</span>,</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    jitter_width <span class="op">=</span> <span class="fl">0.22</span>,</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-26-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-52" class="cell markdown">
 <p>To examine the relationship with functional traits, we remove the species with no known bodymass:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [53]:</pre></div><div id="cell-53" class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@subset</span>!(rodents, <span class="op">:</span>bodymass <span class="op">.&gt;=</span> <span class="fl">0.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [143]:</pre></div><div id="cell-53" class="cell" data-execution_count="143">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@subset</span>!(rodents, <span class="op">:</span>bodymass <span class="op">.&gt;=</span> <span class="fl">0.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div><div style="float: left;"><span>67×5 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">42 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">species</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">family</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">dimension</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">parasites</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">bodymass</th>
+</tr>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="InlineStrings.String31">String31</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Microtus arvalis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.4844</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">26.9</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Prometheomys schaposchnikowi</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.0686128</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">75.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">Cricetulus migratorius</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.0629</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">30.59</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: left;">Chionomys nivalis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.0958455</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">42.01</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: left;">Lagurus lagurus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.2039</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">20.6</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: left;">Cricetus cricetus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.526361</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">428.95</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<td style="text-align: left;">Microtus oeconomus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.02079</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">33.1</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<td style="text-align: left;">Ellobius talpinus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.113965</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">40.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<td style="text-align: left;">Microtus agrestis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-1.06681</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">35.87</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<td style="text-align: left;">Myopus schisticolor</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.370914</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">29.99</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<td style="text-align: left;">Mesocricetus brandti</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.224993</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">198.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: left;">Microtus socialis</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.264866</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">48.0</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<td style="text-align: left;">Alticola argentatus</td>
+<td style="text-align: left;">Cricetidae</td>
+<td style="text-align: right;">-0.523342</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">37.69</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">56</td>
+<td style="text-align: left;">Sorex isodon</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.271786</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">12.23</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">57</td>
+<td style="text-align: left;">Sorex minutissimus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.367461</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2.46</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">58</td>
+<td style="text-align: left;">Crocidura suaveolens</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.395894</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">7.35</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">59</td>
+<td style="text-align: left;">Sorex tundrensis</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.17576</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7.65</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">60</td>
+<td style="text-align: left;">Diplomesodon pulchellum</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.0295968</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">11.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">61</td>
+<td style="text-align: left;">Sorex cinereus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.0326016</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4.2</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">62</td>
+<td style="text-align: left;">Sorex roboratus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.239524</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">12.99</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">63</td>
+<td style="text-align: left;">Sorex alpinus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.230646</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">8.04</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">64</td>
+<td style="text-align: left;">Neomys anomalus</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.185322</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">13.19</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">65</td>
+<td style="text-align: left;">Crocidura leucodon</td>
+<td style="text-align: left;">Soricidae</td>
+<td style="text-align: right;">-0.145881</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">10.88</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">66</td>
+<td style="text-align: left;">Myospalax myospalax</td>
+<td style="text-align: left;">Spalacidae</td>
+<td style="text-align: right;">-0.0434989</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">225.0</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">67</td>
+<td style="text-align: left;">Talpa europaea</td>
+<td style="text-align: left;">Talpidae</td>
+<td style="text-align: right;">-0.789351</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">87.53</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div></div>
 <div id="cell-54" class="cell markdown">
 <p>And we can finally plot this as the last panel of the figure:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [55]:</pre></div><div id="cell-55" class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    figure2b,</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    rodents.bodymass,</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    rodents.dimension;</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="op">:</span>black,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [144]:</pre></div><div id="cell-55" class="cell" data-execution_count="144">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    figure2b,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    rodents.bodymass,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    rodents.dimension;</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="op">:</span>black,</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-28-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [56]:</pre></div><div id="cell-56" class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    figure2c,</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    rodents.bodymass,</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    rodents.parasites;</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="op">:</span>black,</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [145]:</pre></div><div id="cell-56" class="cell" data-execution_count="145">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    figure2c,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    rodents.bodymass,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    rodents.parasites;</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="op">:</span>black,</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="SupplementaryMaterial_files/figure-html/cell-29-output-1.png" class="img-fluid"></p>
+</div>
 </div></div>
 <div id="cell-57" class="cell markdown">
 <p>We save the figure to disk in the same way as before:</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [58]:</pre></div><div id="cell-58" class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="st">"figures/illustration-part2.png"</span>, figure2; px_per_unit <span class="op">=</span> <span class="fl">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-<div id="cell-59" class="cell markdown">
-<p>Finally, we compile this document to a notebook, which constitutes the supplementary material of the manuscript. Note that the lines to compile the script into a notebook are not visible in the notebook distributed as part of the Supp. Mat. of the article.</p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [146]:</pre></div><div id="cell-fig-illustration-2" class="cell" data-execution_count="146">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="fig-illustration-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p class=""><img src="SupplementaryMaterial_files/figure-html/fig-illustration-2-output-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Ecological analysis of an embedding for a host-parasite metaweb, using Random Dot Product Graphs. <strong>A</strong>, relationship between the number of parasites and position along the first axis of the right-subspace for all hosts, showing that the embedding captures elements of network structure at the species scale. <strong>B</strong>, weak relationship between the body mass of hosts (in grams) and the position alongside the same dimension. <strong>C</strong>, weak relationship between body mass of hosts and parasite richness. <strong>D</strong>, distribution of positions alongside the same axis for hosts grouped by taxonomic family.</figcaption>
+</figure>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [60]:</pre></div><div id="cell-60" class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>Literate.<span class="fu">notebook</span>(</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@__FILE__</span>,</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pwd</span>();</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    config <span class="op">=</span> <span class="fu">Dict</span>(<span class="st">"execute"</span> <span class="op">=&gt;</span> <span class="cn">false</span>, <span class="st">"name"</span> <span class="op">=&gt;</span> <span class="st">"SupplementaryMaterial"</span>),</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
-<div id="cell-61" class="cell markdown">
-<hr>
-<p><em>This notebook was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p>
 </div>
+</div></div>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -800,6 +3050,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {

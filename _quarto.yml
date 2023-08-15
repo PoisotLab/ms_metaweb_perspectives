@@ -23,10 +23,8 @@ format:
     title-block-style: manuscript
     title-block-banner-color: "#1D8265"
   docx: default
+  pdf: default
   jats: default
-
-  # (other formats)
-  # pdf: default
 
 execute:
   freeze: true

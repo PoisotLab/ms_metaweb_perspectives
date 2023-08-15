@@ -464,32 +464,34 @@ the field of network ecology.</p>
   their variability
   (<xref alt="Anubhav Gupta, Furrer, and Petchey 2022" rid="ref-Gupta2022Simultaneously" ref-type="bibr">Anubhav
   Gupta, Furrer, and Petchey 2022</xref>).</p>
-  <graphic id="figU003Aembedding" mimetype="image" mime-subtype="png" xlink:href="figures/conceptual_2.png">
-    <alt-text>The embedding process (A) can help to identify links
-    (interactions) that may have been missed within the original
-    community (represented by the orange dashed arrows, B). Transfer
-    learning (D) allows for the prediction links (interactions) even
-    when novel species (C) are included alongside the original
-    community. This is achieved by learning using other relevant
-    predictors (e.g. traits) in conjunction with the known interactions
-    to infer latent values (E). Ultimately this allows us to predict
-    links (interactions) for species external from the original sample
-    (blue dashed arrows) as well as missing within sample links (F).
-    Within this context the predicted (and original) networks as well as
-    the ecological predictors used (green boxes) are products that can
-    be quantified through measurements in the field, whereas the
-    embedded as well as imputed matrices (purple box) are representative
-    of a decomposition of the interaction matrices onto the embedding
-    space</alt-text>
-  </graphic>
+  <fig id="fig-embedding">
+    <caption><p>Figure 1: The embedding process (<bold>A</bold>) can
+    help to identify links (interactions) that may have been missed
+    within the original community (represented by the orange dashed
+    arrows, <bold>B</bold>). Transfer learning (<bold>D</bold>) allows
+    for the prediction links (interactions) even when novel species
+    (<bold>C</bold>) are included alongside the original community. This
+    is achieved by learning using other relevant predictors
+    (<italic>e.g.</italic> traits) in conjunction with the known
+    interactions to infer latent values (<bold>E</bold>). Ultimately
+    this allows us to predict links (interactions) for species external
+    from the original sample (blue dashed arrows) as well as missing
+    within sample links (<bold>F</bold>). Within this context the
+    predicted (and original) networks as well as the ecological
+    predictors used (green boxes) are products that can be quantified
+    through measurements in the field, whereas the embedded as well as
+    imputed matrices (purple box) are representative of a decomposition
+    of the interaction matrices onto the embedding space</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="figures/conceptual_2.png" />
+  </fig>
 </sec>
 <sec id="graph-embedding-offers-promises-for-the-inference-of-potential-interactions">
   <title>Graph embedding offers promises for the inference of potential
   interactions</title>
   <p>Graph (or network) embedding
-  ((<xref alt="fig:embedding?" rid="ref-figU003Aembedding" ref-type="bibr"><bold>fig:embedding?</bold></xref>))
-  is a family of machine learning techniques, whose main task is to
-  learn a mapping function from a discrete graph to a continuous domain
+  (<xref alt="Figure 1" rid="fig-embedding">Figure 1</xref>) is a family
+  of machine learning techniques, whose main task is to learn a mapping
+  function from a discrete graph to a continuous domain
   (<xref alt="Arsov and Mirceva 2019" rid="ref-Arsov2019Network" ref-type="bibr">Arsov
   and Mirceva 2019</xref>;
   <xref alt="Chami et al. 2022" rid="ref-Chami2022Machine" ref-type="bibr">Chami
@@ -575,13 +577,12 @@ the field of network ecology.</p>
     (<xref alt="Goyal and Ferrara 2018" rid="ref-Goyal2018Graph" ref-type="bibr">Goyal
     and Ferrara 2018</xref>), calling for a careful selection of the
     problem-specific approach to use. In
-    (<xref alt="tbl:methods?" rid="ref-tblU003Amethods" ref-type="bibr"><bold>tbl:methods?</bold></xref>),
-    we present a selection of common graph and node embedding methods,
-    alongside examples of their use to predict interactions or
-    statistical associations between species. These methods rely largely
-    on linear algebra or pseudo-random walks on graphs. All forms of
-    embeddings presented in
-    (<xref alt="tbl:methods?" rid="ref-tblU003Amethods" ref-type="bibr"><bold>tbl:methods?</bold></xref>)
+    <xref alt="Table 1" rid="tbl-methods">Table 1</xref>, we present a
+    selection of common graph and node embedding methods, alongside
+    examples of their use to predict interactions or statistical
+    associations between species. These methods rely largely on linear
+    algebra or pseudo-random walks on graphs. All forms of embeddings
+    presented in <xref alt="Table 1" rid="tbl-methods">Table 1</xref>
     share the common property of summarizing their objects into (sets
     of) dense feature vectors, that capture the overall network
     structure, pairwise information on nodes, and emergent aspects of
@@ -596,7 +597,7 @@ the field of network ecology.</p>
     Palmer, and Deford 2021</xref>) will provide high-quality node-level
     embeddings while also preserving network structure.</p>
     <boxed-text>
-    <p><bold>Graph Neural Networks</bold></p>
+    <p><bold>Box 1 - Graph Neural Networks</bold></p>
     <p>One prominent family of approaches we do not discuss in the
     present manuscript is Graph Neural Networks [GNN; Zhou et al.
     (<xref alt="2020" rid="ref-Zhou2020Graph" ref-type="bibr">2020</xref>)].
@@ -617,9 +618,9 @@ the field of network ecology.</p>
     <xref alt="Atika Gupta, Matta, and Pant 2021" rid="ref-Gupta2021Graph" ref-type="bibr">Atika
     Gupta, Matta, and Pant 2021</xref> for a review), which are mostly
     absent from the methods listed in
-    (<xref alt="tbl:methods?" rid="ref-tblU003Amethods" ref-type="bibr"><bold>tbl:methods?</bold></xref>).
-    Assuming that the uptake of next-generation biomonitoring techniques
-    does indeed deliver larger datasets on species interactions
+    <xref alt="Table 1" rid="tbl-methods">Table 1</xref>. Assuming that
+    the uptake of next-generation biomonitoring techniques does indeed
+    deliver larger datasets on species interactions
     (<xref alt="Bohan et al. 2017" rid="ref-Bohan2017Nextgeneration" ref-type="bibr">Bohan
     et al. 2017</xref>), there is nevertheless the potential for GNN to
     become an applicable embedding/predictive technique in the coming
@@ -649,15 +650,15 @@ the field of network ecology.</p>
     <italic>can</italic> serve as dimensionality reduction steps, but
     not all do, neither do all dimensionality reduction methods provide
     adequate graph embedding capacities. In the next section (and
-    (<xref alt="fig:embedding?" rid="ref-figU003Aembedding" ref-type="bibr"><bold>fig:embedding?</bold></xref>)),
-    we show how the amount of dimensionality reduction can affect the
-    quality of the embedding.</p>
+    <xref alt="Figure 1" rid="fig-embedding">Figure 1</xref>), we show
+    how the amount of dimensionality reduction can affect the quality of
+    the embedding.</p>
     <table-wrap>
       <caption>
-        <p>Overview of some common graph embedding approaches, by type
-        of embedded objects, alongside examples of their use in the
-        prediction of species interactions. These methods have not yet
-        been routinely used to predict species interactions; most
+        <p>Table 1: Overview of some common graph embedding approaches,
+        by type of embedded objects, alongside examples of their use in
+        the prediction of species interactions. These methods have not
+        yet been routinely used to predict species interactions; most
         examples that we identified were either statistical
         associations, or analogues to joint species distribution models.
         <inline-formula><alternatives>
@@ -680,15 +681,15 @@ the field of network ecology.</p>
         species associations/interactions, despite not being strictly
         speaking, a graph embedding technique (see <italic>e.g.</italic>
         <xref alt="Chami et al. 2022" rid="ref-Chami2022Machine" ref-type="bibr">Chami
-        et al. 2022</xref>). {#tbl:methods}</p>
+        et al. 2022</xref>).</p>
       </caption>
-      <table>
+      <table id="tbl-methods">
         <colgroup>
-          <col width="7%" />
-          <col width="8%" />
-          <col width="16%" />
-          <col width="12%" />
-          <col width="57%" />
+          <col width="18%" />
+          <col width="18%" />
+          <col width="18%" />
+          <col width="18%" />
+          <col width="28%" />
         </colgroup>
         <thead>
           <tr>
@@ -851,7 +852,7 @@ the field of network ecology.</p>
     for example, used a neural network to learn the embedding of a
     network in which not all interactions were known, based on the
     nodes’ metadata. This example has many parallels in ecology (see
-    (<xref alt="fig:embedding?" rid="ref-figU003Aembedding" ref-type="bibr"><bold>fig:embedding?</bold></xref>)
+    <xref alt="Figure 1" rid="fig-embedding">Figure 1</xref>
     <bold>C</bold>), in which node metadata can be represented by
     phylogeny, abundance, or functional traits. Using phylogeny as a
     source of information assumes (or strives to capture) the action of
@@ -917,27 +918,29 @@ the field of network ecology.</p>
   <italic>EcologicalNetworks.jl</italic>
   (<xref alt="Poisot et al. 2019" rid="ref-Poisot2019Ecologicalnetworks" ref-type="bibr">Poisot
   et al. 2019</xref>).</p>
-  <graphic id="figU003Aillustration1" mimetype="image" mime-subtype="png" xlink:href="figures/illustration-part1.png">
-    <alt-text>Validation of an embedding for a host-parasite metaweb,
-    using Random Dot Product Graphs. A, decrease in approximation error
-    as the number of dimensions in the subspaces increases. B, increase
-    in cumulative variance explained as the number of ranks considered
-    increases; in A and B, the dot represents the point of inflexion in
-    the curve (at rank 39) estimated using the finite differences
-    method. C, position of hosts and parasites in the space of latent
-    variables on the first and second dimensions of their respective
-    subspaces (the results have been clamped to the unit interval). D,
-    predicted interaction weight from the RDPG based on the status of
-    the species pair in the metaweb.</alt-text>
-  </graphic>
-  <p>In
-  (<xref alt="fig:illustration1?" rid="ref-figU003Aillustration1" ref-type="bibr"><bold>fig:illustration1?</bold></xref>),
+  <fig id="fig-illustration-1">
+    <caption><p>Figure 2: Validation of an embedding for a host-parasite
+    metaweb, using Random Dot Product Graphs. <bold>A</bold>, decrease
+    in approximation error as the number of dimensions in the subspaces
+    increases. <bold>B</bold>, increase in cumulative variance explained
+    as the number of ranks considered increases; in <bold>A</bold> and
+    <bold>B</bold>, the dot represents the point of inflexion in the
+    curve (at rank 39) estimated using the finite differences method.
+    <bold>C</bold>, position of hosts and parasites in the space of
+    latent variables on the first and second dimensions of their
+    respective subspaces (the results have been clamped to the unit
+    interval). <bold>D</bold>, predicted interaction weight from the
+    RDPG based on the status of the species pair in the
+    metaweb.</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/fig-illustration-1-output-1.png" />
+  </fig>
+  <p>In <xref alt="Figure 2" rid="fig-illustration-1">Figure 2</xref>,
   we focus on some statistical checks of the embedding. In panel
   <bold>A</bold>, we show that the averaged
   <inline-formula><alternatives>
   <tex-math><![CDATA[L_2]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
-  loss (<italic>i.e.</italic> the sum of squared errors) between the
+  loss (<italic>i.e.</italic> the mean of squared errors) between the
   empirical and reconstructed metaweb decreases when the number of
   dimensions (rank) of the subspace increases, with an inflection at 39
   dimensions (out of 120 initially) according to the finite differences
@@ -977,30 +980,32 @@ the field of network ecology.</p>
   distinguishable from species pairs with no documented interactions,
   suggesting that (as befits a host-parasite model) the ability to
   interact is a strong predictor of co-occurrence.</p>
-  <graphic id="figU003Aillustration2" mimetype="image" mime-subtype="png" xlink:href="figures/illustration-part2.png">
-    <alt-text>Ecological analysis of an embedding for a host-parasite
-    metaweb, using Random Dot Product Graphs. A, relationship between
-    the number of parasites and position along the first axis of the
-    right-subspace for all hosts, showing that the embedding captures
-    elements of network structure at the species scale. B, weak
-    relationship between the body mass of hosts (in grams) and the
-    position alongside the same dimension. C, weak relationship between
-    body mass of hosts and parasite richness. D, distribution of
+  <fig id="fig-illustration-2">
+    <caption><p>Figure 3: Ecological analysis of an embedding for a
+    host-parasite metaweb, using Random Dot Product Graphs.
+    <bold>A</bold>, relationship between the number of parasites and
+    position along the first axis of the right-subspace for all hosts,
+    showing that the embedding captures elements of network structure at
+    the species scale. <bold>B</bold>, weak relationship between the
+    body mass of hosts (in grams) and the position alongside the same
+    dimension. <bold>C</bold>, weak relationship between body mass of
+    hosts and parasite richness. <bold>D</bold>, distribution of
     positions alongside the same axis for hosts grouped by taxonomic
-    family.</alt-text>
-  </graphic>
+    family.</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/fig-illustration-2-output-1.png" />
+  </fig>
   <p>The results of
-  (<xref alt="fig:illustration1?" rid="ref-figU003Aillustration1" ref-type="bibr"><bold>fig:illustration1?</bold></xref>)
-  show that we can extract an embedding of the metaweb that captures
-  enough variance to be relevant; specifically, this is true for both
+  <xref alt="Figure 2" rid="fig-illustration-1">Figure 2</xref> show
+  that we can extract an embedding of the metaweb that captures enough
+  variance to be relevant; specifically, this is true for both
   <inline-formula><alternatives>
   <tex-math><![CDATA[L_2]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
   loss (indicating that RDPG is able to capture pairwise processes) and
   the cumulative variance explained (indicating that RDPG is able to
   capture network-level structure). Therefore, in
-  (<xref alt="fig:illustration2?" rid="ref-figU003Aillustration2" ref-type="bibr"><bold>fig:illustration2?</bold></xref>),
-  we relate the values of latent variables for hosts to different
+  <xref alt="Figure 3" rid="fig-illustration-2">Figure 3</xref>, we
+  relate the values of latent variables for hosts to different
   ecologically-relevant data. In panel <bold>A</bold>, we show that host
   with a higher value on the first dimension have fewer parasites. This
   relates to the body size of hosts in the <italic>PanTHERIA</italic>
@@ -1035,7 +1040,10 @@ the field of network ecology.</p>
   and can discuss how they may addressed with subsequent data analysis
   or simulations, and how they emerge in the specific context of using
   embeddings; some of these issues are related to the application of
-  these methods at the science-policy interface.</p>
+  these methods at the science-policy interface. Adressing these
+  considerations as part of the methodological discussion is
+  particularly important, as the construction of metawebs can perpetuate
+  legacies of biases in data (Box 2).</p>
   <sec id="identifying-the-properties-of-the-network-to-embed">
     <title>Identifying the properties of the network to embed</title>
     <p>If the initial metaweb is too narrow in scope, notably from a
@@ -1043,8 +1051,8 @@ the field of network ecology.</p>
     enough related species (through phylogenetic relatedness or
     similarity of functional traits) to make a reliable inference
     decreases. This is because transfer requires similarity
-    ((<xref alt="fig:embedding?" rid="ref-figU003Aembedding" ref-type="bibr"><bold>fig:embedding?</bold></xref>)).
-    A diagnostic for the lack of similar species would likely be large
+    (<xref alt="Figure 1" rid="fig-embedding">Figure 1</xref>). A
+    diagnostic for the lack of similar species would likely be large
     confidence intervals during estimation of the values in the low-rank
     space. In other words, the representation of the original graph is
     difficult to transfer to the new problem. Alternatively, if the
@@ -1120,8 +1128,8 @@ the field of network ecology.</p>
     et al. 2022</xref>).</p>
   </sec>
 </sec>
-<sec id="conclusion-metawebs-predictions-and-people">
-  <title>Conclusion: metawebs, predictions, and people</title>
+<sec id="conclusion">
+  <title>Conclusion</title>
   <p>Predictive approaches in ecology, regardless of the scale at which
   they are deployed and the intent of their deployment, originate in the
   framework that contributed to the ongoing biodiversity crisis
@@ -1170,7 +1178,8 @@ the field of network ecology.</p>
   (or adopt) new quantitative tools, but to assess the behavior of these
   tools in the proper context.</p>
   <boxed-text>
-  <p><bold>Minding legacies shaping ecological datasets</bold></p>
+  <p><bold>Box 2 - Minding legacies shaping ecological
+  datasets</bold></p>
   <p>In large parts of the world, boundaries that delineate geographic
   regions are merely a reflection the legacy of settler colonialism,
   which drives global disparity in capacity to collect and publish
@@ -3496,6 +3505,29 @@ host-parasite phylogenetic structure.</p>
 </sec>
 <sec id="cell-4-nb-1" specific-use="notebook-code">
 <code language="julia">ids = getfield.(filter(n -&gt; contains(&quot;Hadfield&quot;)(n.Reference), web_of_life()), :ID)</code>
+<sec id="cell-4-output-0-nb-1" specific-use="notebook-output">
+<preformat>51-element Vector{SubString{String}}:
+ &quot;A_HP_001&quot;
+ &quot;A_HP_002&quot;
+ &quot;A_HP_003&quot;
+ &quot;A_HP_004&quot;
+ &quot;A_HP_005&quot;
+ &quot;A_HP_006&quot;
+ &quot;A_HP_007&quot;
+ &quot;A_HP_008&quot;
+ &quot;A_HP_009&quot;
+ &quot;A_HP_010&quot;
+ ⋮
+ &quot;A_HP_043&quot;
+ &quot;A_HP_044&quot;
+ &quot;A_HP_045&quot;
+ &quot;A_HP_046&quot;
+ &quot;A_HP_047&quot;
+ &quot;A_HP_048&quot;
+ &quot;A_HP_049&quot;
+ &quot;A_HP_050&quot;
+ &quot;A_HP_051&quot;</preformat>
+</sec>
 </sec>
 <sec id="cell-5-nb-1" specific-use="notebook-content">
 <p>We convert these networks to binary bipartite networks, in order to
@@ -3503,6 +3535,29 @@ make the metaweb aggregation easier.</p>
 </sec>
 <sec id="cell-6-nb-1" specific-use="notebook-code">
 <code language="julia">N = [convert(BipartiteNetwork, web_of_life(n)) for n in ids]</code>
+<sec id="cell-6-output-0-nb-1" specific-use="notebook-output">
+<preformat>51-element Vector{BipartiteNetwork{Bool, String}}:
+ 18×10 (String) bipartite ecological network (L: 61 - Bool)
+ 24×18 (String) bipartite ecological network (L: 96 - Bool)
+ 9×23 (String) bipartite ecological network (L: 108 - Bool)
+ 21×6 (String) bipartite ecological network (L: 52 - Bool)
+ 13×7 (String) bipartite ecological network (L: 51 - Bool)
+ 37×16 (String) bipartite ecological network (L: 123 - Bool)
+ 17×8 (String) bipartite ecological network (L: 43 - Bool)
+ 24×8 (String) bipartite ecological network (L: 37 - Bool)
+ 22×14 (String) bipartite ecological network (L: 97 - Bool)
+ 31×18 (String) bipartite ecological network (L: 88 - Bool)
+ ⋮
+ 29×9 (String) bipartite ecological network (L: 73 - Bool)
+ 26×27 (String) bipartite ecological network (L: 197 - Bool)
+ 16×7 (String) bipartite ecological network (L: 57 - Bool)
+ 39×17 (String) bipartite ecological network (L: 202 - Bool)
+ 26×11 (String) bipartite ecological network (L: 100 - Bool)
+ 14×12 (String) bipartite ecological network (L: 71 - Bool)
+ 19×5 (String) bipartite ecological network (L: 39 - Bool)
+ 35×27 (String) bipartite ecological network (L: 226 - Bool)
+ 26×13 (String) bipartite ecological network (L: 107 - Bool)</preformat>
+</sec>
 </sec>
 <sec id="cell-7-nb-1" specific-use="notebook-content">
 <p>Transforming the array of networks into a metaweb is done through the
@@ -3510,6 +3565,9 @@ union operation:</p>
 </sec>
 <sec id="cell-8-nb-1" specific-use="notebook-code">
 <code language="julia">M = reduce(∪, N)</code>
+<sec id="cell-8-output-0-nb-1" specific-use="notebook-output">
+<preformat>206×121 (String) bipartite ecological network (L: 2131 - Bool)</preformat>
+</sec>
 </sec>
 <sec id="cell-9-nb-1" specific-use="notebook-content">
 <p>In order to identify the pairs of species that have never been
@@ -3559,6 +3617,9 @@ figure1d = Axis(
     titlealign = :left,
 )
 current_figure()</code>
+<sec id="cell-12-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-7-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-13-nb-1" specific-use="notebook-content">
 <p>The first thing we want to do is measure the L2 loss (the sum of
@@ -3567,6 +3628,9 @@ most the number of species on its least species-rich side:</p>
 </sec>
 <sec id="cell-14-nb-1" specific-use="notebook-code">
 <code language="julia">rank(adjacency(M))</code>
+<sec id="cell-14-output-0-nb-1" specific-use="notebook-output">
+<preformat>121</preformat>
+</sec>
 </sec>
 <sec id="cell-15-nb-1" specific-use="notebook-content">
 <p>The following list comprehension will perform the RDPG embedding for
@@ -3577,6 +3641,29 @@ the per-interaction averaged L2 error:</p>
 <sec id="cell-16-nb-1" specific-use="notebook-code">
 <code language="julia">rnk = collect(1:rank(adjacency(M)))
 L2 = [sum((adjacency(M) - prod(rdpg(M, r))) .^ 2) ./ prod(size(M)) for r in rnk]</code>
+<sec id="cell-16-output-0-nb-1" specific-use="notebook-output">
+<preformat>121-element Vector{Float64}:
+ 0.05744130057895759
+ 0.0488201549717561
+ 0.044182471764921294
+ 0.04014623856002384
+ 0.03731319071666472
+ 0.035036091173708594
+ 0.033129096411421304
+ 0.03128810293334584
+ 0.029824448518954886
+ 0.028485820019597416
+ ⋮
+ 4.756534964035326e-5
+ 3.871435018435366e-5
+ 3.077568517320694e-5
+ 2.3762477728538295e-5
+ 1.728209478741771e-5
+ 1.1040542326391507e-5
+ 5.9908504730463834e-6
+ 2.6163841056681962e-6
+ 3.383682609541635e-30</preformat>
+</sec>
 </sec>
 <sec id="cell-17-nb-1" specific-use="notebook-content">
 <p>We add this to the first panel of the figure:</p>
@@ -3584,6 +3671,9 @@ L2 = [sum((adjacency(M) - prod(rdpg(M, r))) .^ 2) ./ prod(size(M)) for r in rnk]
 <sec id="cell-18-nb-1" specific-use="notebook-code">
 <code language="julia">lines!(figure1a, rnk, L2; color = :black)
 current_figure()</code>
+<sec id="cell-18-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-10-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-19-nb-1" specific-use="notebook-content">
 <p>In order to identify the point of inflexion at which to perform the
@@ -3602,6 +3692,9 @@ lines!(
     cumsum(singularvalues) ./ sum(singularvalues); color = :black,
 )
 current_figure()</code>
+<sec id="cell-20-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-11-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-21-nb-1" specific-use="notebook-content">
 <p>The finite differences methods to get the inflexion points proper is
@@ -3609,14 +3702,14 @@ simply given by:</p>
 </sec>
 <sec id="cell-22-nb-1" specific-use="notebook-code">
 <code language="julia">sv = copy(singularvalues)
-diff = zeros(size(L2))
-for i in axes(diff, 1)
+D = zeros(size(L2))
+for i in axes(D, 1)
     if i == 1
-        diff[i] = sv[i + 2] - 2sv[i + 1] + sv[i]
-    elseif i == length(diff)
-        diff[i] = sv[i] - 2sv[i - 1] + sv[i - 2]
+        D[i] = sv[i + 2] - 2sv[i + 1] + sv[i]
+    elseif i == length(D)
+        D[i] = sv[i] - 2sv[i - 1] + sv[i - 2]
     else
-        diff[i] = sv[i + 1] - 2sv[i] + sv[i - 1]
+        D[i] = sv[i + 1] - 2sv[i] + sv[i - 1]
     end
 end</code>
 </sec>
@@ -3631,7 +3724,10 @@ keep more dimensions, but provide a better approximation of the
 network.</p>
 </sec>
 <sec id="cell-24-nb-1" specific-use="notebook-code">
-<code language="julia">embedding_rank = last(findmin(abs.(diff)))</code>
+<code language="julia">embedding_rank = last(findmin(abs.(D)))</code>
+<sec id="cell-24-output-0-nb-1" specific-use="notebook-output">
+<preformat>39</preformat>
+</sec>
 </sec>
 <sec id="cell-25-nb-1" specific-use="notebook-content">
 <p>We can add it to the figure:</p>
@@ -3644,6 +3740,9 @@ scatter!(
     [(cumsum(singularvalues) ./ sum(singularvalues))[embedding_rank]];
     color = :black,
 )</code>
+<sec id="cell-26-output-0-nb-1" specific-use="notebook-output">
+<preformat>Scatter{Tuple{Vector{Point{2, Float32}}}}</preformat>
+</sec>
 </sec>
 <sec id="cell-27-nb-1" specific-use="notebook-content">
 <p>In the next steps, we will perform the RDPG embedding at this rank.
@@ -3651,6 +3750,9 @@ We can check the L2 loss associated with this representation:</p>
 </sec>
 <sec id="cell-28-nb-1" specific-use="notebook-code">
 <code language="julia">L2[embedding_rank]</code>
+<sec id="cell-28-output-0-nb-1" specific-use="notebook-output">
+<preformat>0.008781432658004353</preformat>
+</sec>
 </sec>
 <sec id="cell-29-nb-1" specific-use="notebook-content">
 <p>The left/right subspaces are given by the <monospace>rdpg</monospace>
@@ -3659,6 +3761,9 @@ by the square root of the eigenvalues:</p>
 </sec>
 <sec id="cell-30-nb-1" specific-use="notebook-code">
 <code language="julia">L, R = rdpg(M, embedding_rank)</code>
+<sec id="cell-30-output-0-nb-1" specific-use="notebook-output">
+<preformat>([-0.31286375720303533 -0.043030881301210994 … 0.13089538016786548 -0.20429603515164355; -0.13639064534793804 -0.069120397590513 … -0.022693347528150234 0.11122052820015549; … ; -0.07325950183520884 0.055523273646558215 … 0.009841316351827679 -0.01931207868006777; -0.037791712381080346 0.03795436890539979 … 0.07396177101652388 -0.10508157577475588], [-1.484396333351671 -0.6088099455780831 … -0.18331412712563155 -0.018557865543628753; -0.06204291742899854 0.07811536918416419 … -0.0649963044402432 -0.004540292268812767; … ; -0.15780083148368063 0.030858539181893643 … 0.23635721814746793 -0.039464787454680156; 0.11993993308033085 -0.2685421627054579 … 0.007877516594161235 0.10605965189104812])</preformat>
+</sec>
 </sec>
 <sec id="cell-31-nb-1" specific-use="notebook-content">
 <p>Checking the sizes of the L and R subspaces is important. For
@@ -3666,6 +3771,9 @@ example, the size of L is:</p>
 </sec>
 <sec id="cell-32-nb-1" specific-use="notebook-code">
 <code language="julia">size(L)</code>
+<sec id="cell-32-output-0-nb-1" specific-use="notebook-output">
+<preformat>(206, 39)</preformat>
+</sec>
 </sec>
 <sec id="cell-33-nb-1" specific-use="notebook-content">
 <p>The number of rows (parasite richness) and columns (subspaces
@@ -3676,6 +3784,29 @@ the previously identified rank, and call it P:</p>
 </sec>
 <sec id="cell-34-nb-1" specific-use="notebook-code">
 <code language="julia">P = clamp.(L * R, 0., 1.)</code>
+<sec id="cell-34-output-0-nb-1" specific-use="notebook-output">
+<preformat>206×121 Matrix{Float64}:
+ 1.0        1.0         0.199705    …  0.0854123   0.0360167   0.0
+ 1.0        1.0         0.49918        0.0130665   0.0         0.0
+ 0.869676   0.843036    0.347334       0.0         0.0275938   0.0
+ 0.995816   1.0         0.85884        0.0         0.0         0.0242046
+ 0.968721   1.0         0.198935       0.0342837   0.0         0.0
+ 1.0        1.0         0.805771    …  0.0894987   0.0         0.0670649
+ 0.116086   0.957751    0.149858       0.0375512   0.0         0.0
+ 0.950946   1.0         0.12715        0.0514532   0.0         0.0
+ 1.0        1.0         0.0514726      0.0         0.0454504   0.0850339
+ 1.0        0.938797    0.249431       0.0         0.0         0.0107727
+ ⋮                                  ⋱                          ⋮
+ 0.0        0.0353385   0.0            0.0         0.00455419  0.0
+ 0.0        0.0353385   0.0            0.0         0.00455419  0.0
+ 0.0        0.0353385   0.0            0.0         0.00455419  0.0
+ 0.0        0.0353385   0.0         …  0.0         0.00455419  0.0
+ 1.0        0.0319898   0.040841       0.804289    0.907391    0.00389104
+ 0.0338076  0.0303734   0.00853267     0.0         0.0768271   0.0
+ 0.896346   0.00938109  0.0740001      0.0         0.0         0.0146878
+ 0.0112658  0.0359472   0.0            0.0         0.0         0.0
+ 0.03336    0.007738    0.0         …  0.00215311  0.0         0.0</preformat>
+</sec>
 </sec>
 <sec id="cell-35-nb-1" specific-use="notebook-content">
 <p>With this matrix, we can start looking at the weight given for (i)
@@ -3693,6 +3824,9 @@ axislegend(
     [pos, neg, noc],
     [&quot;Interactions&quot;, &quot;Non-interactions&quot;, &quot;No co-occurence&quot;],
 )</code>
+<sec id="cell-36-output-0-nb-1" specific-use="notebook-output">
+<preformat>Legend()</preformat>
+</sec>
 </sec>
 <sec id="cell-37-nb-1" specific-use="notebook-content">
 <p>From this panel, it is rather clear that a lot of interactions
@@ -3712,12 +3846,32 @@ subspace.</p>
 host = scatter!(figure1c, R'[:, 1], R'[:, 2])
 axislegend(figure1c, [para, host], [&quot;Parasites&quot;, &quot;Hosts&quot;]; position = :lb)
 current_figure()</code>
+<sec id="cell-39-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-20-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-40-nb-1" specific-use="notebook-content">
 <p>We finally save a high-dpi version of the first figure to disk:</p>
 </sec>
-<sec id="cell-41-nb-1" specific-use="notebook-code">
-<code language="julia">save(&quot;figures/illustration-part1.png&quot;, figure1; px_per_unit = 3)</code>
+<sec id="cell-fig-illustration-1-nb-1" specific-use="notebook-code">
+<code language="julia">current_figure()</code>
+<sec id="cell-fig-illustration-1-output-0-nb-1" specific-use="notebook-output">
+<fig id="fig-illustration-1-nb-1">
+  <caption><p>Figure 1: Validation of an embedding for a host-parasite
+  metaweb, using Random Dot Product Graphs. <bold>A</bold>, decrease in
+  approximation error as the number of dimensions in the subspaces
+  increases. <bold>B</bold>, increase in cumulative variance explained
+  as the number of ranks considered increases; in <bold>A</bold> and
+  <bold>B</bold>, the dot represents the point of inflexion in the curve
+  (at rank 39) estimated using the finite differences method.
+  <bold>C</bold>, position of hosts and parasites in the space of latent
+  variables on the first and second dimensions of their respective
+  subspaces (the results have been clamped to the unit interval).
+  <bold>D</bold>, predicted interaction weight from the RDPG based on
+  the status of the species pair in the metaweb.</p></caption>
+  <graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/fig-illustration-1-output-1.png" />
+</fig>
+</sec>
 </sec>
 <sec id="cell-42-nb-1" specific-use="notebook-content">
 <p>In the second figure, we will relate the embedding information to
@@ -3757,6 +3911,9 @@ figure2d = Axis(
     xticklabelrotation = π / 4,
 )
 current_figure()</code>
+<sec id="cell-43-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-22-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-44-nb-1" specific-use="notebook-content">
 <p>We can now link the position on the first dimension to ecologically
@@ -3766,13 +3923,18 @@ parasites.</p>
 <sec id="cell-45-nb-1" specific-use="notebook-code">
 <code language="julia">scatter!(figure2a, R[1, :], vec(sum(adjacency(M); dims = 1)); color = :black)
 current_figure()</code>
+<sec id="cell-45-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-23-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-46-nb-1" specific-use="notebook-content">
 <p>We will now load the PanTHERIA database to get metadata and
 functional traits on host species:</p>
 </sec>
 <sec id="cell-47-nb-1" specific-use="notebook-code">
-<code language="julia">pantheria = DataFrame(CSV.File(joinpath(@__DIR__, &quot;PanTHERIA_1-0_WR05_Aug2008.txt&quot;)))</code>
+<code language="julia">pantheria = DataFrame(CSV.File(joinpath(&quot;..&quot;, &quot;code&quot;, &quot;PanTHERIA_1-0_WR05_Aug2008.txt&quot;)))</code>
+<sec id="cell-47-output-0-nb-1" specific-use="notebook-output">
+</sec>
 </sec>
 <sec id="cell-48-nb-1" specific-use="notebook-content">
 <p>We can match the PanTHERIA rows with species names, and extract the
@@ -3796,6 +3958,8 @@ rodents.prich = [degree(M)[k] for k in rodents.MSW05_Binomial]
 )
 
 rodents = @orderby(rodents, :family)</code>
+<sec id="cell-49-output-0-nb-1" specific-use="notebook-output">
+</sec>
 </sec>
 <sec id="cell-50-nb-1" specific-use="notebook-content">
 <p>We can plot the positions on the first dimension by taxonomic family
@@ -3818,6 +3982,9 @@ rodents = @orderby(rodents, :family)</code>
     jitter_width = 0.22,
 )
 current_figure()</code>
+<sec id="cell-51-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-26-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-52-nb-1" specific-use="notebook-content">
 <p>To examine the relationship with functional traits, we remove the
@@ -3825,6 +3992,8 @@ species with no known bodymass:</p>
 </sec>
 <sec id="cell-53-nb-1" specific-use="notebook-code">
 <code language="julia">@subset!(rodents, :bodymass .&gt;= 0.0)</code>
+<sec id="cell-53-output-0-nb-1" specific-use="notebook-output">
+</sec>
 </sec>
 <sec id="cell-54-nb-1" specific-use="notebook-content">
 <p>And we can finally plot this as the last panel of the figure:</p>
@@ -3837,6 +4006,9 @@ species with no known bodymass:</p>
     color = :black,
 )
 current_figure()</code>
+<sec id="cell-55-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-28-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-56-nb-1" specific-use="notebook-code">
 <code language="julia">scatter!(
@@ -3846,28 +4018,31 @@ current_figure()</code>
     color = :black,
 )
 current_figure()</code>
+<sec id="cell-56-output-0-nb-1" specific-use="notebook-output">
+<graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/cell-29-output-1.png" />
+</sec>
 </sec>
 <sec id="cell-57-nb-1" specific-use="notebook-content">
 <p>We save the figure to disk in the same way as before:</p>
 </sec>
-<sec id="cell-58-nb-1" specific-use="notebook-code">
-<code language="julia">save(&quot;figures/illustration-part2.png&quot;, figure2; px_per_unit = 3)</code>
+<sec id="cell-fig-illustration-2-nb-1" specific-use="notebook-code">
+<code language="julia">current_figure()</code>
+<sec id="cell-fig-illustration-2-output-0-nb-1" specific-use="notebook-output">
+<fig id="fig-illustration-2-nb-1">
+  <caption><p>Figure 2: Ecological analysis of an embedding for a
+  host-parasite metaweb, using Random Dot Product Graphs.
+  <bold>A</bold>, relationship between the number of parasites and
+  position along the first axis of the right-subspace for all hosts,
+  showing that the embedding captures elements of network structure at
+  the species scale. <bold>B</bold>, weak relationship between the body
+  mass of hosts (in grams) and the position alongside the same
+  dimension. <bold>C</bold>, weak relationship between body mass of
+  hosts and parasite richness. <bold>D</bold>, distribution of positions
+  alongside the same axis for hosts grouped by taxonomic
+  family.</p></caption>
+  <graphic mimetype="image" mime-subtype="png" xlink:href="SupplementaryMaterial_files/figure-jats/fig-illustration-2-output-1.png" />
+</fig>
 </sec>
-<sec id="cell-59-nb-1" specific-use="notebook-content">
-<p>Finally, we compile this document to a notebook, which constitutes
-the supplementary material of the manuscript. Note that the lines to
-compile the script into a notebook are not visible in the notebook
-distributed as part of the Supp. Mat. of the article.</p>
-</sec>
-<sec id="cell-60-nb-1" specific-use="notebook-code">
-<code language="julia">Literate.notebook(
-    @__FILE__,
-    pwd();
-    config = Dict(&quot;execute&quot; =&gt; false, &quot;name&quot; =&gt; &quot;SupplementaryMaterial&quot;),</code>
-</sec>
-<sec id="cell-61-nb-1" specific-use="notebook-content">
-<p><italic>This notebook was generated using
-<ext-link ext-link-type="uri" xlink:href="https://github.com/fredrikekre/Literate.jl">Literate.jl</ext-link>.</italic></p>
 </sec>
 </body>
 
