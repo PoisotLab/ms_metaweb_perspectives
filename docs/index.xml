@@ -292,15 +292,19 @@ have interaction data) leaving us unable to make inference in data
 scarce regions (where we most need it); second, accurate predictors are
 important for accurate predictions, and the lack of methods that can
 leverage a small amount of <italic>accurate</italic> data is a serious
-impediment to our predictive ability. In most places, our most reliable
-biodiversity knowledge is that of a species pool where a set of
-potentially interacting species in a given area could occur: through the
-analysis of databases like the Global Biodiversity Information Facility
-(GBIF) or the International Union for the Conservation of Nature (IUCN),
-it is possible to construct a list of species for a region of interest;
-however inferring the potential interactions between these species still
-remains a challenge.</p>
-<p>Following the definition of Dunne
+impediment to our predictive ability. In this contribution, we highlight
+the power of viewing (and constructing) metawebs as
+<italic>probabilistic</italic> objects in the context of low-probability
+interactions, discuss how a family of machine learning tools (graph
+embeddings and transfer learning) can be used to overcome data
+limitations to metaweb inference, and highlight how the use of metawebs
+introduces important questions for the field of network ecology.</p>
+<p>In most places, our most reliable biodiversity knowledge is that of a
+species pool where a set of potentially interacting species in a given
+area could occur: through the analysis of databases like the Global
+Biodiversity Information Facility (GBIF) or the International Union for
+the Conservation of Nature (IUCN), it is possible to construct a list of
+species for a region of interest. Following the definition of Dunne
 (<xref alt="2006" rid="ref-Dunne2006Network" ref-type="bibr">2006</xref>),
 a metaweb is the ecological network analogue to the species pool;
 specifically, it inventories all <italic>potential</italic> interactions
@@ -308,10 +312,43 @@ between species for a spatially delimited area (and so captures the
 <inline-formula><alternatives>
 <tex-math><![CDATA[\gamma]]></tex-math>
 <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>γ</mml:mi></mml:math></alternatives></inline-formula>
-diversity of interactions). The metaweb itself is not a prediction of
-local networks at specific locations within the spatial area it covers:
-it will have a different structure, notably by having a larger
-connectance (see <italic>e.g.</italic>
+diversity of interactions as per Poisot et al.
+(<xref alt="2012" rid="ref-Poisot2012Dissimilarity" ref-type="bibr">2012</xref>)).
+However, inferring the potential interactions between these species
+still remains a challenge. And yet, because the metaweb represents the
+joint effect of functional, phylogenetic, and macroecological processes
+(<xref alt="Morales-Castilla et al. 2015" rid="ref-Morales-Castilla2015Inferring" ref-type="bibr">Morales-Castilla
+et al. 2015</xref>;
+<xref alt="Carlson et al. 2022" rid="ref-carlson2022" ref-type="bibr">Carlson
+et al. 2022</xref>;
+<xref alt="Morales-Castilla et al. 2021" rid="ref-morales-castilla2021" ref-type="bibr">Morales-Castilla
+et al. 2021</xref>), it holds valuable ecological information.
+Specifically, it represents the “upper bounds” on what the composition
+of the local networks, given a local species pool, can be (see
+<italic>e.g.</italic>
+<xref alt="McLeod et al. 2021" rid="ref-McLeod2021Sampling" ref-type="bibr">McLeod
+et al. 2021</xref>); this information can help evaluate the ability of
+ecological assemblages to withstand the effects of, for example, climate
+change
+(<xref alt="Fricke et al. 2022" rid="ref-Fricke2022Effects" ref-type="bibr">Fricke
+et al. 2022</xref>). These local networks may be reconstructed given an
+appropriate knowledge of local species composition and provide
+information on the structure of networks at finer spatial scales. This
+has been done for example for tree-galler-parasitoid systems
+(<xref alt="Gravel et al. 2018" rid="ref-Gravel2018Bringing" ref-type="bibr">Gravel
+et al. 2018</xref>), fish trophic interactions
+(<xref alt="Albouy et al. 2019" rid="ref-Albouy2019Marine" ref-type="bibr">Albouy
+et al. 2019</xref>), tetrapod trophic interactions
+(<xref alt="J. Braga et al. 2019" rid="ref-Braga2019Spatial" ref-type="bibr">J.
+Braga et al. 2019</xref>;
+<xref alt="O’Connor et al. 2020" rid="ref-OConnor2020Unveiling" ref-type="bibr">O’Connor
+et al. 2020</xref>), and crop-pest networks
+(<xref alt="Grünig et al. 2020" rid="ref-Grunig2020Crop" ref-type="bibr">Grünig
+et al. 2020</xref>).</p>
+<p>The metaweb itself is not a prediction of local networks at specific
+locations within the spatial area it covers: it will have a different
+structure, notably by having a larger connectance (see
+<italic>e.g.</italic>
 <xref alt="Wood et al. 2015" rid="ref-Wood2015Effects" ref-type="bibr">Wood
 et al. 2015</xref>) and complexity (see <italic>e.g.</italic>
 <xref alt="Galiana et al. 2022" rid="ref-Galiana2022Ecological" ref-type="bibr">Galiana
@@ -342,38 +379,6 @@ to local conditions: instead, they reflect constraints inherited by the
 structure of their metaweb. This sets up the core goal of predictive
 network ecology as the prediction of metaweb structure, as it is
 required to accurately produce downscaled, local predictions.</p>
-<p>Because the metaweb represents the joint effect of functional,
-phylogenetic, and macroecological processes
-(<xref alt="Morales-Castilla et al. 2015" rid="ref-Morales-Castilla2015Inferring" ref-type="bibr">Morales-Castilla
-et al. 2015</xref>), it holds valuable ecological information.
-Specifically, it represents the “upper bounds” on what the composition
-of the local networks, given a local species pool, can be (see
-<italic>e.g.</italic>
-<xref alt="McLeod et al. 2021" rid="ref-McLeod2021Sampling" ref-type="bibr">McLeod
-et al. 2021</xref>); this information can help evaluate the ability of
-ecological assemblages to withstand the effects of, for example, climate
-change
-(<xref alt="Fricke et al. 2022" rid="ref-Fricke2022Effects" ref-type="bibr">Fricke
-et al. 2022</xref>). These local networks may be reconstructed given an
-appropriate knowledge of local species composition and provide
-information on the structure of food webs at finer spatial scales. This
-has been done for example for tree-galler-parasitoid systems
-(<xref alt="Gravel et al. 2018" rid="ref-Gravel2018Bringing" ref-type="bibr">Gravel
-et al. 2018</xref>), fish trophic interactions
-(<xref alt="Albouy et al. 2019" rid="ref-Albouy2019Marine" ref-type="bibr">Albouy
-et al. 2019</xref>), tetrapod trophic interactions
-(<xref alt="J. Braga et al. 2019" rid="ref-Braga2019Spatial" ref-type="bibr">J.
-Braga et al. 2019</xref>;
-<xref alt="O’Connor et al. 2020" rid="ref-OConnor2020Unveiling" ref-type="bibr">O’Connor
-et al. 2020</xref>), and crop-pest networks
-(<xref alt="Grünig et al. 2020" rid="ref-Grunig2020Crop" ref-type="bibr">Grünig
-et al. 2020</xref>). In this contribution, we highlight the power of
-viewing (and constructing) metawebs as <italic>probabilistic</italic>
-objects in the context of low-probability interactions, discuss how a
-family of machine learning tools (graph embeddings and transfer
-learning) can be used to overcome data limitations to metaweb inference,
-and highlight how the use of metawebs introduces important questions for
-the field of network ecology.</p>
 <sec id="a-metaweb-is-an-inherently-probabilistic-object">
   <title>A metaweb is an inherently probabilistic object</title>
   <p>Treating interactions as probabilistic (as opposed to binary)
@@ -418,7 +423,11 @@ the field of network ecology.</p>
   of the network. These considerations emphasize why metaweb predictions
   should focus on quantitative (preferentially probabilistic)
   predictions, and this should constrain the suite of models that are
-  appropriate for prediction.</p>
+  appropriate for prediction. Binary classifiers based on probabilities
+  have an extremely robust methodology to validate them, and this
+  applies naturally to the prediction of interactions
+  (<xref alt="Poisot 2023" rid="ref-poisot2023" ref-type="bibr">Poisot
+  2023</xref>).</p>
   <p>It is important to recall that a metaweb is intended as a catalogue
   of all potential (feasible) interactions, which is then filtered for a
   given application
@@ -430,10 +439,16 @@ the field of network ecology.</p>
   trait mis-match), and interactions with a probability that lays
   somewhere in between
   (<xref alt="Catchen et al. 2023" rid="ref-Catchen2023Missing" ref-type="bibr">Catchen
-  et al. 2023</xref>). In a sense, that most ecological interactions are
-  elusive can call for a slightly different approach to sampling: once
-  the common interactions are documented, the effort required in
-  documenting each rare interaction will increase exponentially
+  et al. 2023</xref>). Although metawebs can (and in practice likely do)
+  include false positives, these are statistically negligible compared
+  to the false negatives. Furthermore, Strydom et al.
+  (<xref alt="2022" rid="ref-Strydom2022Food" ref-type="bibr">2022</xref>)
+  shows that t-SVD embedding is extremely robust to (and able to detect)
+  the presence of false positives. In a sense, that most ecological
+  interactions are elusive can call for a slightly different approach to
+  sampling: once the common interactions are documented, the effort
+  required in documenting each rare interaction will increase
+  exponentially
   (<xref alt="Jordano 2016" rid="ref-Jordano2016Sampling" ref-type="bibr">Jordano
   2016</xref>). Recent proposals in other fields relying on machine
   learning approaches emphasize the idea that algorithms meant to
@@ -559,8 +574,8 @@ the field of network ecology.</p>
   </sec>
   <sec id="ecological-networks-are-good-candidates-for-embedding">
     <title>Ecological networks are good candidates for embedding</title>
-    <p>Food webs are inherently low-dimensional objects, and can be
-    adequately represented with less than ten dimensions
+    <p>Ecological networks are inherently low-dimensional objects, and
+    can be adequately represented with less than ten dimensions
     (<xref alt="M. P. Braga et al. 2021" rid="ref-Braga2021Phylogenetic" ref-type="bibr">M.
     P. Braga et al. 2021</xref>;
     <xref alt="Eklöf et al. 2013" rid="ref-Eklof2013Dimensionality" ref-type="bibr">Eklöf
@@ -576,7 +591,11 @@ the field of network ecology.</p>
     network embeddings
     (<xref alt="Goyal and Ferrara 2018" rid="ref-Goyal2018Graph" ref-type="bibr">Goyal
     and Ferrara 2018</xref>), calling for a careful selection of the
-    problem-specific approach to use. In
+    problem-specific approach to use. Additionally, Ghasemian et al.
+    (<xref alt="2020" rid="ref-ghasemian2020" ref-type="bibr">2020</xref>)
+    suggest that in some cases, nodes embeddings can be outperformed by
+    other methods, re-inforcing the need to thoroughly select the
+    appropriate data analysis technique. In
     <xref alt="Table 1" rid="tbl-methods">Table 1</xref>, we present a
     selection of common graph and node embedding methods, alongside
     examples of their use to predict interactions or statistical
@@ -685,11 +704,11 @@ the field of network ecology.</p>
       </caption>
       <table id="tbl-methods">
         <colgroup>
-          <col width="18%" />
-          <col width="18%" />
-          <col width="18%" />
-          <col width="18%" />
-          <col width="28%" />
+          <col width="20%" />
+          <col width="20%" />
+          <col width="20%" />
+          <col width="20%" />
+          <col width="20%" />
         </colgroup>
         <thead>
           <tr>
@@ -856,8 +875,8 @@ the field of network ecology.</p>
     <bold>C</bold>), in which node metadata can be represented by
     phylogeny, abundance, or functional traits. Using phylogeny as a
     source of information assumes (or strives to capture) the action of
-    evolutionary processes on network structure, which at least for food
-    webs have been well documented
+    evolutionary processes on network structure, which at least for
+    networks have been well documented
     (<xref alt="M. P. Braga et al. 2021" rid="ref-Braga2021Phylogenetic" ref-type="bibr">M.
     P. Braga et al. 2021</xref>;
     <xref alt="Dalla Riva and Stouffer 2016" rid="ref-DallaRiva2016Exploring" ref-type="bibr">Dalla
@@ -974,12 +993,13 @@ the field of network ecology.</p>
   Because the values returned from RDPG are not bound to the unit
   interval, we performed a clamping of the weights to the unit space,
   showing a one-inflation in documented interactions, and a
-  zero-inflation in other species pairs. This last figure crosses from
-  the statistical into the ecological, by showing that species pairs
-  with no documented co-occurrence have weights that are not
-  distinguishable from species pairs with no documented interactions,
-  suggesting that (as befits a host-parasite model) the ability to
-  interact is a strong predictor of co-occurrence.</p>
+  zero-inflation in other species pairs. This last figure shows that
+  species pairs with no documented co-occurrence have weights that are
+  not distinguishable from species pairs with no documented
+  interactions; in other words, looking at the embedding, species that
+  do not co-occur are not easily distinguished from species that do not
+  interact. This suggests that (as befits a host-parasite model) the
+  ability to interact is a strong predictor of co-occurrence.</p>
   <fig id="fig-illustration-2">
     <caption><p>Figure 3: Ecological analysis of an embedding for a
     host-parasite metaweb, using Random Dot Product Graphs.
@@ -1127,56 +1147,77 @@ the field of network ecology.</p>
     <xref alt="Llewelyn et al. 2022" rid="ref-Llewelyn2022Predicting" ref-type="bibr">Llewelyn
     et al. 2022</xref>).</p>
   </sec>
+  <sec id="putting-models-in-their-context">
+    <title>Putting models in their context</title>
+    <p>Predictive approaches in ecology, regardless of the scale at
+    which they are deployed and the intent of their deployment,
+    originate in the framework that contributed to the ongoing
+    biodiversity crisis
+    (<xref alt="Adam 2014" rid="ref-Adam2014Elephant" ref-type="bibr">Adam
+    2014</xref>) and reinforced environmental injustice
+    (<xref alt="Choudry 2013" rid="ref-Choudry2013Saving" ref-type="bibr">Choudry
+    2013</xref>;
+    <xref alt="Domínguez and Luoma 2020" rid="ref-Dominguez2020Decolonising" ref-type="bibr">Domínguez
+    and Luoma 2020</xref>). The risk of embedding this legacy in our
+    models is real, especially when the impact of this legacy on species
+    pools is being increasingly documented. This problem can be
+    addressed by re-framing the way we interact with models, especially
+    when models are intended to support conservation actions.
+    Particularly on territories that were traditionally stewarded by
+    Indigenous people, we must interrogate how predictive approaches and
+    the biases that underpin them can be put to task in accompanying
+    Indigenous principles of land management
+    (<xref alt="Eichhorn, Baker, and Griffiths 2019" rid="ref-Eichhorn2019Steps" ref-type="bibr">Eichhorn,
+    Baker, and Griffiths 2019</xref>;
+    <xref alt="No’kmaq et al. 2021" rid="ref-Nokmaq2021Awakening" ref-type="bibr">No’kmaq
+    et al. 2021</xref>). The discussion of “algorithm-in-the-loop”
+    approaches that is now pervasive in the machine learning community
+    provides examples of why this is important. Human-algorithm
+    interactions are notoriously difficult and can yield adverse effects
+    (<xref alt="Green and Chen 2019" rid="ref-Green2019Disparate" ref-type="bibr">Green
+    and Chen 2019</xref>;
+    <xref alt="Stevenson and Doleac 2021" rid="ref-Stevenson2021Algorithmic" ref-type="bibr">Stevenson
+    and Doleac 2021</xref>), suggesting the need to systematically study
+    them for the specific purpose of, here, biodiversity governance.
+    Improving the algorithmic literacy of decision makers is part of the
+    solution (<italic>e.g.</italic>
+    <xref alt="Lamba et al. 2019" rid="ref-Lamba2019Deep" ref-type="bibr">Lamba
+    et al. 2019</xref>;
+    <xref alt="Mosebo Fernandes et al. 2020" rid="ref-MoseboFernandes2020Machine" ref-type="bibr">Mosebo
+    Fernandes et al. 2020</xref>), as we can reasonably expect that
+    model outputs will be increasingly used to drive policy decisions
+    (<xref alt="Weiskopf et al. 2022" rid="ref-Weiskopf2022Increasing" ref-type="bibr">Weiskopf
+    et al. 2022</xref>). Our discussion of these approaches need to go
+    beyond the technical and statistical, and into the governance
+    consequences they can have. To embed data also embeds historical and
+    contemporary biases that acted on these data, both because they
+    shaped the ecological processes generating them, and the global
+    processes leading to their measurement and publication. For a domain
+    as vast as species interaction networks, these biases exist at
+    multiple scales along the way, and a challenge for prediction is not
+    only to develop (or adopt) new quantitative tools, but to assess the
+    behavior of these tools in the proper context.</p>
+  </sec>
 </sec>
 <sec id="conclusion">
   <title>Conclusion</title>
-  <p>Predictive approaches in ecology, regardless of the scale at which
-  they are deployed and the intent of their deployment, originate in the
-  framework that contributed to the ongoing biodiversity crisis
-  (<xref alt="Adam 2014" rid="ref-Adam2014Elephant" ref-type="bibr">Adam
-  2014</xref>) and reinforced environmental injustice
-  (<xref alt="Choudry 2013" rid="ref-Choudry2013Saving" ref-type="bibr">Choudry
-  2013</xref>;
-  <xref alt="Domínguez and Luoma 2020" rid="ref-Dominguez2020Decolonising" ref-type="bibr">Domínguez
-  and Luoma 2020</xref>). The risk of embedding this legacy in our
-  models is real, especially when the impact of this legacy on species
-  pools is being increasingly documented. This problem can be addressed
-  by re-framing the way we interact with models, especially when models
-  are intended to support conservation actions. Particularly on
-  territories that were traditionally stewarded by Indigenous people, we
-  must interrogate how predictive approaches and the biases that
-  underpin them can be put to task in accompanying Indigenous principles
-  of land management
-  (<xref alt="Eichhorn, Baker, and Griffiths 2019" rid="ref-Eichhorn2019Steps" ref-type="bibr">Eichhorn,
-  Baker, and Griffiths 2019</xref>;
-  <xref alt="No’kmaq et al. 2021" rid="ref-Nokmaq2021Awakening" ref-type="bibr">No’kmaq
-  et al. 2021</xref>). The discussion of “algorithm-in-the-loop”
-  approaches that is now pervasive in the machine learning community
-  provides examples of why this is important. Human-algorithm
-  interactions are notoriously difficult and can yield adverse effects
-  (<xref alt="Green and Chen 2019" rid="ref-Green2019Disparate" ref-type="bibr">Green
-  and Chen 2019</xref>;
-  <xref alt="Stevenson and Doleac 2021" rid="ref-Stevenson2021Algorithmic" ref-type="bibr">Stevenson
-  and Doleac 2021</xref>), suggesting the need to systematically study
-  them for the specific purpose of, here, biodiversity governance.
-  Improving the algorithmic literacy of decision makers is part of the
-  solution (<italic>e.g.</italic>
-  <xref alt="Lamba et al. 2019" rid="ref-Lamba2019Deep" ref-type="bibr">Lamba
-  et al. 2019</xref>;
-  <xref alt="Mosebo Fernandes et al. 2020" rid="ref-MoseboFernandes2020Machine" ref-type="bibr">Mosebo
-  Fernandes et al. 2020</xref>), as we can reasonably expect that model
-  outputs will be increasingly used to drive policy decisions
-  (<xref alt="Weiskopf et al. 2022" rid="ref-Weiskopf2022Increasing" ref-type="bibr">Weiskopf
-  et al. 2022</xref>). Our discussion of these approaches need to go
-  beyond the technical and statistical, and into the governance
-  consequences they can have. To embed data also embeds historical and
-  contemporary biases that acted on these data, both because they shaped
-  the ecological processes generating them, and the global processes
-  leading to their measurement and publication. For a domain as vast as
-  species interaction networks, these biases exist at multiple scales
-  along the way, and a challenge for prediction is not only to develop
-  (or adopt) new quantitative tools, but to assess the behavior of these
-  tools in the proper context.</p>
+  <p>Although promising, the application of embeddings to metaweb
+  prediction will require to address several challenges. First, there is
+  a need to understand how to define a metaweb as a single, cohesive,
+  unit of ecological organisation. This is likely to admit very
+  different answers based on the specific taxonomic group, temporal and
+  spatial resolution, and question being investigated. Second, there is
+  a need to understand the scale at which these predictions are
+  relevant. Although we have documented many cases of using embedding to
+  fill gaps in the metaweb, these techniques can likely be brought into
+  a spatial (and possibly temporal) context. The validation of these
+  predictions will have to proceed jointly with empirical sampling of
+  interactions, but also with the design of downsampling methods.
+  Finally, there is a need for a greater understanding of how biases in
+  the data propagate to the predictions. Because the volume of metawebs
+  is currently low, and because graph embeddings have not been commonly
+  applied, we anticipate that this discussion will take place
+  organically in the coming years.</p>
   <boxed-text>
   <p><bold>Box 2 - Minding legacies shaping ecological
   datasets</bold></p>
@@ -2847,6 +2888,26 @@ the field of network ecology.</p>
       <lpage>293</lpage>
     </element-citation>
   </ref>
+  <ref id="ref-Poisot2012Dissimilarity">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Poisot</surname><given-names>Timothée</given-names></name>
+        <name><surname>Canard</surname><given-names>Elsa</given-names></name>
+        <name><surname>Mouillot</surname><given-names>David</given-names></name>
+        <name><surname>Mouquet</surname><given-names>Nicolas</given-names></name>
+        <name><surname>Gravel</surname><given-names>Dominique</given-names></name>
+      </person-group>
+      <article-title>The dissimilarity of species interaction networks</article-title>
+      <source>Ecology Letters</source>
+      <year iso-8601-date="2012">2012</year>
+      <volume>15</volume>
+      <issue>12</issue>
+      <issn>1461023X</issn>
+      <pub-id pub-id-type="doi">10.1111/ele.12002</pub-id>
+      <fpage>1353</fpage>
+      <lpage>1361</lpage>
+    </element-citation>
+  </ref>
   <ref id="ref-Poisot2015Species">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -3475,6 +3536,90 @@ the field of network ecology.</p>
       <pub-id pub-id-type="doi">10.1016/j.aiopen.2021.01.001</pub-id>
       <fpage>57</fpage>
       <lpage>81</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-ghasemian2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ghasemian</surname><given-names>Amir</given-names></name>
+        <name><surname>Hosseinmardi</surname><given-names>Homa</given-names></name>
+        <name><surname>Galstyan</surname><given-names>Aram</given-names></name>
+        <name><surname>Airoldi</surname><given-names>Edoardo M.</given-names></name>
+        <name><surname>Clauset</surname><given-names>Aaron</given-names></name>
+      </person-group>
+      <article-title>Stacking models for nearly optimal link prediction in complex networks</article-title>
+      <source>Proceedings of the National Academy of Sciences</source>
+      <year iso-8601-date="2020-09-04">2020</year><month>09</month><day>04</day>
+      <volume>117</volume>
+      <issue>38</issue>
+      <uri>http://dx.doi.org/10.1073/pnas.1914950117</uri>
+      <pub-id pub-id-type="doi">10.1073/pnas.1914950117</pub-id>
+      <fpage>23393</fpage>
+      <lpage>23400</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-poisot2023">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Poisot</surname><given-names>Timothée</given-names></name>
+      </person-group>
+      <article-title>Guidelines for the prediction of species interactions through binary classification</article-title>
+      <source>Methods in Ecology and Evolution</source>
+      <year iso-8601-date="2023-03-21">2023</year><month>03</month><day>21</day>
+      <volume>14</volume>
+      <issue>5</issue>
+      <uri>http://dx.doi.org/10.1111/2041-210X.14071</uri>
+      <pub-id pub-id-type="doi">10.1111/2041-210x.14071</pub-id>
+      <fpage>1333</fpage>
+      <lpage>1345</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-carlson2022">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Carlson</surname><given-names>Colin J.</given-names></name>
+        <name><surname>Albery</surname><given-names>Gregory F.</given-names></name>
+        <name><surname>Merow</surname><given-names>Cory</given-names></name>
+        <name><surname>Trisos</surname><given-names>Christopher H.</given-names></name>
+        <name><surname>Zipfel</surname><given-names>Casey M.</given-names></name>
+        <name><surname>Eskew</surname><given-names>Evan A.</given-names></name>
+        <name><surname>Olival</surname><given-names>Kevin J.</given-names></name>
+        <name><surname>Ross</surname><given-names>Noam</given-names></name>
+        <name><surname>Bansal</surname><given-names>Shweta</given-names></name>
+      </person-group>
+      <article-title>Climate change increases cross-species viral transmission risk</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2022-04-28">2022</year><month>04</month><day>28</day>
+      <volume>607</volume>
+      <issue>7919</issue>
+      <uri>http://dx.doi.org/10.1038/s41586-022-04788-w</uri>
+      <pub-id pub-id-type="doi">10.1038/s41586-022-04788-w</pub-id>
+      <fpage>555</fpage>
+      <lpage>562</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-morales-castilla2021">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Morales-Castilla</surname><given-names>Ignacio</given-names></name>
+        <name><surname>Pappalardo</surname><given-names>Paula</given-names></name>
+        <name><surname>Farrell</surname><given-names>Maxwell J.</given-names></name>
+        <name><surname>Aguirre</surname><given-names>A. Alonso</given-names></name>
+        <name><surname>Huang</surname><given-names>Shan</given-names></name>
+        <name><surname>Gehman</surname><given-names>Alyssa-Lois M.</given-names></name>
+        <name><surname>Dallas</surname><given-names>Tad</given-names></name>
+        <name><surname>Gravel</surname><given-names>Dominique</given-names></name>
+        <name><surname>Davies</surname><given-names>T. Jonathan</given-names></name>
+      </person-group>
+      <article-title>Forecasting parasite sharing under climate change</article-title>
+      <source>Philosophical Transactions of the Royal Society B: Biological Sciences</source>
+      <year iso-8601-date="2021-09-20">2021</year><month>09</month><day>20</day>
+      <volume>376</volume>
+      <issue>1837</issue>
+      <uri>http://dx.doi.org/10.1098/rstb.2020.0360</uri>
+      <pub-id pub-id-type="doi">10.1098/rstb.2020.0360</pub-id>
+      <fpage>20200360</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
 </ref-list>
