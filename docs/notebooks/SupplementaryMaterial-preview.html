@@ -208,7 +208,10 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-     <div class="cell-container"><div class="cell-decorator"><pre>In [118]:</pre></div><div id="cell-2" class="cell" data-execution_count="118">
+     <div id="cell-1" class="cell markdown">
+
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [118]:</pre></div><div id="cell-2" class="cell" data-execution_count="118">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">EcologicalNetworks</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CairoMakie</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LinearAlgebra</span></span>
@@ -217,7 +220,9 @@
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFramesMeta</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>CairoMakie.<span class="fu">activate!</span>(; px_per_unit <span class="op">=</span> <span class="fl">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+<div id="cell-3" class="cell markdown">
 <p>The first step is to load a series of bipartite quantitative networks between hosts and parasites, coming from the Hadfield et al.&nbsp;paper on host-parasite phylogenetic structure.</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [119]:</pre></div><div id="cell-4" class="cell" data-execution_count="119">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ids <span class="op">=</span> <span class="fu">getfield</span>.(<span class="fu">filter</span>(n <span class="op">-&gt;</span> <span class="fu">contains</span>(<span class="st">"Hadfield"</span>)(n.Reference), <span class="fu">web_of_life</span>()), <span class="op">:</span>ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -244,7 +249,9 @@
  "A_HP_051"</code></pre>
 </div>
 </div></div>
+<div id="cell-5" class="cell markdown">
 <p>We convert these networks to binary bipartite networks, in order to make the metaweb aggregation easier.</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [120]:</pre></div><div id="cell-6" class="cell" data-execution_count="120">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> [<span class="fu">convert</span>(BipartiteNetwork, <span class="fu">web_of_life</span>(n)) for n <span class="kw">in</span> ids]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -271,14 +278,18 @@
  26×13 (String) bipartite ecological network (L: 107 - Bool)</code></pre>
 </div>
 </div></div>
+<div id="cell-7" class="cell markdown">
 <p>Transforming the array of networks into a metaweb is done through the union operation:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [121]:</pre></div><div id="cell-8" class="cell" data-execution_count="121">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="fu">reduce</span>(<span class="op">∪</span>, N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>206×121 (String) bipartite ecological network (L: 2131 - Bool)</code></pre>
 </div>
 </div></div>
+<div id="cell-9" class="cell markdown">
 <p>In order to identify the pairs of species that have never been observed together, we use the following loop to create a co-occurence matrix:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [122]:</pre></div><div id="cell-10" class="cell" data-execution_count="122">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> <span class="fu">zeros</span>(<span class="dt">Int64</span>, <span class="fu">size</span>(M))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> N</span>
@@ -287,7 +298,9 @@
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    C[i, j] <span class="op">.+=</span> <span class="fl">1</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+<div id="cell-11" class="cell markdown">
 <p>Before moving forward with the results, we will setup the multi-panel figure used in main text:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [123]:</pre></div><div id="cell-12" class="cell" data-execution_count="123">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>figure1 <span class="op">=</span> <span class="fu">Figure</span>(; resolution <span class="op">=</span> (<span class="fl">950</span>, <span class="fl">800</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>figure1a <span class="op">=</span> <span class="fu">Axis</span>(</span>
@@ -323,14 +336,18 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-13" class="cell markdown">
 <p>The first thing we want to do is measure the L2 loss (the sum of squared errors) as a function of the rank. The rank of the metaweb is at most the number of species on its least species-rich side:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [124]:</pre></div><div id="cell-14" class="cell" data-execution_count="124">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rank</span>(<span class="fu">adjacency</span>(M))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>121</code></pre>
 </div>
 </div></div>
+<div id="cell-15" class="cell markdown">
 <p>The following list comprehension will perform the RDPG embedding for each rank between 1 and the rank of the metaweb, then multiply the left/right subspaces together to get an approximated network, and report the per-interaction averaged L2 error:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [125]:</pre></div><div id="cell-16" class="cell" data-execution_count="125">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rnk <span class="op">=</span> <span class="fu">collect</span>(<span class="fl">1</span><span class="op">:</span><span class="fu">rank</span>(<span class="fu">adjacency</span>(M)))</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>L2 <span class="op">=</span> [<span class="fu">sum</span>((<span class="fu">adjacency</span>(M) <span class="op">-</span> <span class="fu">prod</span>(<span class="fu">rdpg</span>(M, r))) <span class="op">.^</span> <span class="fl">2</span>) <span class="op">./</span> <span class="fu">prod</span>(<span class="fu">size</span>(M)) for r <span class="kw">in</span> rnk]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -358,7 +375,9 @@
  3.383682609541635e-30</code></pre>
 </div>
 </div></div>
+<div id="cell-17" class="cell markdown">
 <p>We add this to the first panel of the figure:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [126]:</pre></div><div id="cell-18" class="cell" data-execution_count="126">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lines!</span>(figure1a, rnk, L2; color <span class="op">=</span> <span class="op">:</span>black)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -366,7 +385,9 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-19" class="cell markdown">
 <p>In order to identify the point of inflexion at which to perform the embedding, we could calculate the second order derivate of the loss function w.r.t. rank, using the approximation provided by the finite differences method, for which there are closed form solutions for the first (forward difference), last (backward difference), and any (central difference point). This can be done on the singular values of the SVD yielding the RDPG used for the embedding:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [127]:</pre></div><div id="cell-20" class="cell" data-execution_count="127">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>singularvalues <span class="op">=</span> <span class="fu">svd</span>(<span class="fu">adjacency</span>(M)).S</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines!</span>(</span>
@@ -379,7 +400,9 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-21" class="cell markdown">
 <p>The finite differences methods to get the inflexion points proper is simply given by:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [128]:</pre></div><div id="cell-22" class="cell" data-execution_count="128">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sv <span class="op">=</span> <span class="fu">copy</span>(singularvalues)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">size</span>(L2))</span>
@@ -393,14 +416,18 @@
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+<div id="cell-23" class="cell markdown">
 <p>In practice, the screeplot of variance explained by each rank is noisy, meaning that the correct inflexion point is not necessarilly obvious from the series of second order derivatives (themselves an approximation due to the finite differences method). Here, we are placing the inflexion point at the value that is closest to 0 (in absolute value) - this is a slightly conservative approach that will keep more dimensions, but provide a better approximation of the network.</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [129]:</pre></div><div id="cell-24" class="cell" data-execution_count="129">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>embedding_rank <span class="op">=</span> <span class="fu">last</span>(<span class="fu">findmin</span>(<span class="fu">abs</span>.(D)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>39</code></pre>
 </div>
 </div></div>
+<div id="cell-25" class="cell markdown">
 <p>We can add it to the figure:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [130]:</pre></div><div id="cell-26" class="cell" data-execution_count="130">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(figure1a, [embedding_rank], [L2[embedding_rank]]; color <span class="op">=</span> <span class="op">:</span>black)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
@@ -413,28 +440,36 @@
 <pre><code>Scatter{Tuple{Vector{Point{2, Float32}}}}</code></pre>
 </div>
 </div></div>
+<div id="cell-27" class="cell markdown">
 <p>In the next steps, we will perform the RDPG embedding at this rank. We can check the L2 loss associated with this representation:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [131]:</pre></div><div id="cell-28" class="cell" data-execution_count="131">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>L2[embedding_rank]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.008781432658004353</code></pre>
 </div>
 </div></div>
+<div id="cell-29" class="cell markdown">
 <p>The left/right subspaces are given by the <code>rdpg</code> function, which internally performs a t-SVD and then multiply each side by the square root of the eigenvalues:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [132]:</pre></div><div id="cell-30" class="cell" data-execution_count="132">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>L, R <span class="op">=</span> <span class="fu">rdpg</span>(M, embedding_rank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>([-0.31286375720303533 -0.043030881301210994 … 0.13089538016786548 -0.20429603515164355; -0.13639064534793804 -0.069120397590513 … -0.022693347528150234 0.11122052820015549; … ; -0.07325950183520884 0.055523273646558215 … 0.009841316351827679 -0.01931207868006777; -0.037791712381080346 0.03795436890539979 … 0.07396177101652388 -0.10508157577475588], [-1.484396333351671 -0.6088099455780831 … -0.18331412712563155 -0.018557865543628753; -0.06204291742899854 0.07811536918416419 … -0.0649963044402432 -0.004540292268812767; … ; -0.15780083148368063 0.030858539181893643 … 0.23635721814746793 -0.039464787454680156; 0.11993993308033085 -0.2685421627054579 … 0.007877516594161235 0.10605965189104812])</code></pre>
 </div>
 </div></div>
+<div id="cell-31" class="cell markdown">
 <p>Checking the sizes of the L and R subspaces is important. For example, the size of L is:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [133]:</pre></div><div id="cell-32" class="cell" data-execution_count="133">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">size</span>(L)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>(206, 39)</code></pre>
 </div>
 </div></div>
+<div id="cell-33" class="cell markdown">
 <p>The number of rows (parasite richness) and columns (subspaces dimensions) is correct, so we can move on to the next step (doing the same exercise for R will show why the L*R multiplication will give back a matrix of the correct dimension). We will approximate the network at the previously identified rank, and call it P:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [134]:</pre></div><div id="cell-34" class="cell" data-execution_count="134">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> <span class="fu">clamp</span>.(L <span class="op">*</span> R, <span class="fl">0</span>., <span class="fl">1</span>.)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -461,7 +496,9 @@
  0.03336    0.007738    0.0         …  0.00215311  0.0         0.0</code></pre>
 </div>
 </div></div>
+<div id="cell-35" class="cell markdown">
 <p>With this matrix, we can start looking at the weight given for (i) positive interactions, (ii) interactions that are never observed but for which the species pair is observed at least once, and (iii) species pairs that are never observed. We simply plot the desntiy for each of these three situations and add it to the figure:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [135]:</pre></div><div id="cell-36" class="cell" data-execution_count="135">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>noc <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">iszero</span>.(C))])</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> <span class="fu">density!</span>(figure1d, P[<span class="fu">findall</span>(<span class="fu">adjacency</span>(M))])</span>
@@ -475,8 +512,12 @@
 <pre><code>Legend()</code></pre>
 </div>
 </div></div>
+<div id="cell-37" class="cell markdown">
 <p>From this panel, it is rather clear that a lot of interactions without documented co-occurrence have a lower assigned weight, and are therefore less likely to be feasible. Turning this information into a prediction of interaction existence can be carried out as a binary classification exercise using <em>e.g.</em> weight thresholding.</p>
+</div>
+<div id="cell-38" class="cell markdown">
 <p>Another potentially useful visualisation is to look at the position of each species on the first/second dimension of the relevant subspace.</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [136]:</pre></div><div id="cell-39" class="cell" data-execution_count="136">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>para <span class="op">=</span> <span class="fu">scatter!</span>(figure1c, L[<span class="op">:</span>, <span class="fl">1</span>], L[<span class="op">:</span>, <span class="fl">2</span>]; marker <span class="op">=</span> <span class="op">:</span>rect)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>host <span class="op">=</span> <span class="fu">scatter!</span>(figure1c, R<span class="op">'</span>[<span class="op">:</span>, <span class="fl">1</span>], R<span class="op">'</span>[<span class="op">:</span>, <span class="fl">2</span>])</span>
@@ -486,7 +527,9 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-20-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-40" class="cell markdown">
 <p>We finally save a high-dpi version of the first figure to disk:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [137]:</pre></div><div id="cell-fig-illustration-1" class="cell" data-execution_count="137">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -498,7 +541,9 @@
 </div>
 </div>
 </div></div>
+<div id="cell-42" class="cell markdown">
 <p>In the second figure, we will relate the embedding information to taxonomic/ecological information about the species, using hosts as an illustration:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [138]:</pre></div><div id="cell-43" class="cell" data-execution_count="138">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>figure2 <span class="op">=</span> <span class="fu">Figure</span>(; resolution <span class="op">=</span> (<span class="fl">950</span>, <span class="fl">800</span>))</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>figure2a <span class="op">=</span> <span class="fu">Axis</span>(</span>
@@ -536,7 +581,9 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-44" class="cell markdown">
 <p>We can now link the position on the first dimension to ecologically relevant information, like <em>e.g.</em> the number of parasites.</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [139]:</pre></div><div id="cell-45" class="cell" data-execution_count="139">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(figure2a, R[<span class="fl">1</span>, <span class="op">:</span>], <span class="fu">vec</span>(<span class="fu">sum</span>(<span class="fu">adjacency</span>(M); dims <span class="op">=</span> <span class="fl">1</span>)); color <span class="op">=</span> <span class="op">:</span>black)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -544,7 +591,9 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-23-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-46" class="cell markdown">
 <p>We will now load the PanTHERIA database to get metadata and functional traits on host species:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [140]:</pre></div><div id="cell-47" class="cell" data-execution_count="140">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>pantheria <span class="op">=</span> <span class="fu">DataFrame</span>(CSV.<span class="fu">File</span>(<span class="fu">joinpath</span>(<span class="st">".."</span>, <span class="st">"code"</span>, <span class="st">"PanTHERIA_1-0_WR05_Aug2008.txt"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -2182,7 +2231,9 @@
 </div>
 </div>
 </div></div>
+<div id="cell-48" class="cell markdown">
 <p>We can match the PanTHERIA rows with species names, and extract the columns we will use: species name, family, position on the first dimension, and finally bodymass:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [141]:</pre></div><div id="cell-49" class="cell" data-execution_count="141">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>vidx <span class="op">=</span> <span class="fu">filter</span>(!isnothing, <span class="fu">indexin</span>(<span class="fu">species</span>(M; dims <span class="op">=</span> <span class="fl">2</span>), pantheria.MSW05_Binomial))</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>rodents <span class="op">=</span> pantheria[vidx, <span class="op">:</span>]</span>
@@ -2435,7 +2486,9 @@
 </div>
 </div>
 </div></div>
+<div id="cell-50" class="cell markdown">
 <p>We can plot the positions on the first dimension by taxonomic family (outliers do not appear on the boxplots):</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [142]:</pre></div><div id="cell-51" class="cell" data-execution_count="142">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rainclouds!</span>(</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    figure2d,</span>
@@ -2457,7 +2510,9 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-26-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-52" class="cell markdown">
 <p>To examine the relationship with functional traits, we remove the species with no known bodymass:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [143]:</pre></div><div id="cell-53" class="cell" data-execution_count="143">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@subset</span>!(rodents, <span class="op">:</span>bodymass <span class="op">.&gt;=</span> <span class="fl">0.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -2695,7 +2750,9 @@
 </div>
 </div>
 </div></div>
+<div id="cell-54" class="cell markdown">
 <p>And we can finally plot this as the last panel of the figure:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [144]:</pre></div><div id="cell-55" class="cell" data-execution_count="144">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter!</span>(</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    figure2b,</span>
@@ -2720,7 +2777,9 @@
 <p><img src="SupplementaryMaterial_files/figure-html/cell-29-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
+<div id="cell-57" class="cell markdown">
 <p>We save the figure to disk in the same way as before:</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [146]:</pre></div><div id="cell-fig-illustration-2" class="cell" data-execution_count="146">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">current_figure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
