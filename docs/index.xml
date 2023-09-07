@@ -24,6 +24,7 @@ limitations</article-title>
 <given-names>Tanya</given-names>
 </name>
 <string-name>Tanya Strydom</string-name>
+
 <email>tanya.strydom@umontreal.ca</email>
 <xref ref-type="aff" rid="udem">a</xref>
 <xref ref-type="aff" rid="qcbs">b</xref>
@@ -35,6 +36,7 @@ limitations</article-title>
 <given-names>Salomé</given-names>
 </name>
 <string-name>Salomé Bouskila</string-name>
+
 <email>salome.bouskila@umontreal.ca</email>
 <role vocab="https://credit.niso.org" vocab-term="writing – original
 draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">writing</role>
@@ -47,6 +49,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Francis</given-names>
 </name>
 <string-name>Francis Banville</string-name>
+
 <email>francis.banville@umontreal.ca</email>
 <xref ref-type="aff" rid="udem">a</xref>
 <xref ref-type="aff" rid="qcbs">b</xref>
@@ -59,6 +62,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Ceres</given-names>
 </name>
 <string-name>Ceres Barros</string-name>
+
 <email>cbarros@mail.ubc.ca</email>
 <xref ref-type="aff" rid="ubcforest">d</xref>
 </contrib>
@@ -69,6 +73,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Dominique</given-names>
 </name>
 <string-name>Dominique Caron</string-name>
+
 <email>dominique.caron@mail.mcgill.ca</email>
 <xref ref-type="aff" rid="mcgill">e</xref>
 <xref ref-type="aff" rid="qcbs">b</xref>
@@ -80,6 +85,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Maxwell J.</given-names>
 </name>
 <string-name>Maxwell J. Farrell</string-name>
+
 <email>maxwell.farrell@utoronto.ca</email>
 <xref ref-type="aff" rid="uoft">f</xref>
 </contrib>
@@ -90,6 +96,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Marie-Josée</given-names>
 </name>
 <string-name>Marie-Josée Fortin</string-name>
+
 <email>mariejosee.fortin@utoronto.ca</email>
 <xref ref-type="aff" rid="uoft">f</xref>
 </contrib>
@@ -100,6 +107,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Victoria</given-names>
 </name>
 <string-name>Victoria Hemming</string-name>
+
 <email>victoria.hemming@ubc.ca</email>
 <xref ref-type="aff" rid="ubccons">g</xref>
 </contrib>
@@ -110,6 +118,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Benjamin</given-names>
 </name>
 <string-name>Benjamin Mercier</string-name>
+
 <email>benjamin.b.mercier@usherbrooke.ca</email>
 <xref ref-type="aff" rid="udes">c</xref>
 <xref ref-type="aff" rid="qcbs">b</xref>
@@ -121,6 +130,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Laura J.</given-names>
 </name>
 <string-name>Laura J. Pollock</string-name>
+
 <email>laura.pollock@mcgill.ca</email>
 <xref ref-type="aff" rid="mcgill">e</xref>
 <xref ref-type="aff" rid="qcbs">b</xref>
@@ -132,6 +142,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Rogini</given-names>
 </name>
 <string-name>Rogini Runghen</string-name>
+
 <email>rogini.runghen@gmail.com</email>
 <xref ref-type="aff" rid="ubccons">g</xref>
 </contrib>
@@ -142,6 +153,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Giulio V. Dalla</given-names>
 </name>
 <string-name>Giulio V. Dalla Riva</string-name>
+
 <email>giulio.dallariva@canterbury.ac.nz</email>
 <xref ref-type="aff" rid="ubccons">g</xref>
 </contrib>
@@ -152,6 +164,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <given-names>Timothée</given-names>
 </name>
 <string-name>Timothée Poisot</string-name>
+
 <email>timothee.poisot@umontreal.ca</email>
 <xref ref-type="aff" rid="udem">a</xref>
 <xref ref-type="aff" rid="qcbs">b</xref>
@@ -1292,6 +1305,9 @@ required to accurately produce downscaled, local predictions.</p>
   editing the manuscript.</p>
   <p><bold>Data availability:</bold> There is no data associated with
   this manuscript.</p>
+</sec>
+<sec id="references">
+  <title>References</title>
 </sec>
 </body>
 
