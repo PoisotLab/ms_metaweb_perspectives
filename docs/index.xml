@@ -101,17 +101,6 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <xref ref-type="aff" rid="uoft">f</xref>
 </contrib>
 <contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0003-3220-6161</contrib-id>
-<name>
-<surname>Hemming</surname>
-<given-names>Victoria</given-names>
-</name>
-<string-name>Victoria Hemming</string-name>
-
-<email>victoria.hemming@ubc.ca</email>
-<xref ref-type="aff" rid="ubccons">g</xref>
-</contrib>
-<contrib contrib-type="author">
 <contrib-id contrib-id-type="orcid">0000-0002-4104-9463</contrib-id>
 <name>
 <surname>Mercier</surname>
@@ -168,7 +157,7 @@ draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-
 <email>timothee.poisot@umontreal.ca</email>
 <xref ref-type="aff" rid="udem">a</xref>
 <xref ref-type="aff" rid="qcbs">b</xref>
-<xref ref-type="corresp" rid="cor-13">&#x002A;</xref>
+<xref ref-type="corresp" rid="cor-12">&#x002A;</xref>
 </contrib>
 </contrib-group>
 <aff id="udem">
@@ -263,7 +252,7 @@ of British Columbia, Vancouver, Canada</institution>
 
 </aff>
 <author-notes>
-<corresp id="cor-13">timothee.poisot@umontreal.ca</corresp>
+<corresp id="cor-12">timothee.poisot@umontreal.ca</corresp>
 </author-notes>
 
 
@@ -277,6 +266,36 @@ of British Columbia, Vancouver, Canada</institution>
 <history></history>
 
 
+<abstract>
+<list list-type="bullet">
+  <list-item>
+    <p>Metawebs (networks of potential interactions within a species
+    pool) are a powerful abstraction to understand how large-scale
+    species interaction networks are structured.</p>
+  </list-item>
+  <list-item>
+    <p>Because metawebs are typically expressed at large spatial and
+    taxonomic scales, assembling them is a tedious and costly process;
+    predictive methods can help circumvent the limitations in data
+    deficiencies, by providing a first approximation of metawebs.”</p>
+  </list-item>
+  <list-item>
+    <p>One way to improve our ability to predict metawebs is to maximize
+    available information by using graph embeddings, as opposed to an
+    exhaustive list of species interactions. Graph embedding is an
+    emerging field in machine learning that holds great potential for
+    ecological problems.</p>
+  </list-item>
+  <list-item>
+    <p>Here, we outline how the challenges associated with inferring
+    metawebs line-up with the advantages of graph embeddings; followed
+    by a discussion as to how the choice of the species pool has
+    consequences on the reconstructed network, specifically as to the
+    role of human-made (or arbitrarily assigned) boundaries and how
+    these may influence ecological hypotheses.</p>
+  </list-item>
+</list>
+</abstract>
 
 
 
@@ -286,9 +305,9 @@ of British Columbia, Vancouver, Canada</institution>
 </front>
 
 <body>
-<p>The ability to infer <italic>potential</italic> interactions could
-serve as a significant breakthrough in our ability to conceptualize
-species interaction networks over large spatial scales
+<p>The ability to infer potential biotic interactions could serve as a
+significant breakthrough in our ability to conceptualize networks over
+large spatial scales
 (<xref alt="Hortal et al. 2015" rid="ref-Hortal2015Seven" ref-type="bibr">Hortal
 et al. 2015</xref>). Reliable inferences would not only boost our
 understanding of the structure of species interaction networks, but also
@@ -305,13 +324,14 @@ have interaction data) leaving us unable to make inference in data
 scarce regions (where we most need it); second, accurate predictors are
 important for accurate predictions, and the lack of methods that can
 leverage a small amount of <italic>accurate</italic> data is a serious
-impediment to our predictive ability. In this contribution, we highlight
-the power of viewing (and constructing) metawebs as
+impediment to our predictive ability. In this contribution, we (i)
+highlight the power of viewing (and constructing) metawebs as
 <italic>probabilistic</italic> objects in the context of low-probability
-interactions, discuss how a family of machine learning tools (graph
+interactions, (ii) discuss how a family of machine learning tools (graph
 embeddings and transfer learning) can be used to overcome data
-limitations to metaweb inference, and highlight how the use of metawebs
-introduces important questions for the field of network ecology.</p>
+limitations to metaweb inference, and (iii) highlight how the use of
+metawebs introduces important questions for the field of network
+ecology.</p>
 <p>In most places, our most reliable biodiversity knowledge is that of a
 species pool where a set of potentially interacting species in a given
 area could occur: through the analysis of databases like the Global
@@ -328,17 +348,17 @@ between species for a spatially delimited area (and so captures the
 diversity of interactions as per Poisot et al.
 (<xref alt="2012" rid="ref-Poisot2012Dissimilarity" ref-type="bibr">2012</xref>)).
 However, inferring the potential interactions between these species
-still remains a challenge. And yet, because the metaweb represents the
-joint effect of functional, phylogenetic, and macroecological processes
+still remains a challenge. And yet, the metaweb holds valuable
+ecological information: it represents the joint effect of functional,
+phylogenetic, and macroecological processes
 (<xref alt="Morales-Castilla et al. 2015" rid="ref-Morales-Castilla2015Inferring" ref-type="bibr">Morales-Castilla
 et al. 2015</xref>;
 <xref alt="Carlson et al. 2022" rid="ref-carlson2022" ref-type="bibr">Carlson
 et al. 2022</xref>;
 <xref alt="Morales-Castilla et al. 2021" rid="ref-morales-castilla2021" ref-type="bibr">Morales-Castilla
-et al. 2021</xref>), it holds valuable ecological information.
-Specifically, it represents the “upper bounds” on what the composition
-of the local networks, given a local species pool, can be (see
-<italic>e.g.</italic>
+et al. 2021</xref>). Specifically, it represents the “upper bounds” on
+what the composition of the local networks, given a local species pool,
+can be (see <italic>e.g.</italic>
 <xref alt="McLeod et al. 2021" rid="ref-McLeod2021Sampling" ref-type="bibr">McLeod
 et al. 2021</xref>); this information can help evaluate the ability of
 ecological assemblages to withstand the effects of, for example, climate
@@ -351,7 +371,7 @@ has been done for example for tree-galler-parasitoid systems
 (<xref alt="Gravel et al. 2018" rid="ref-Gravel2018Bringing" ref-type="bibr">Gravel
 et al. 2018</xref>), fish trophic interactions
 (<xref alt="Albouy et al. 2019" rid="ref-Albouy2019Marine" ref-type="bibr">Albouy
-et al. 2019</xref>), tetrapod trophic interactions
+et al. 2019</xref>), terrestrial tetrapod trophic interactions
 (<xref alt="J. Braga et al. 2019" rid="ref-Braga2019Spatial" ref-type="bibr">J.
 Braga et al. 2019</xref>;
 <xref alt="O’Connor et al. 2020" rid="ref-OConnor2020Unveiling" ref-type="bibr">O’Connor
@@ -365,8 +385,8 @@ structure, notably by having a larger connectance (see
 <xref alt="Wood et al. 2015" rid="ref-Wood2015Effects" ref-type="bibr">Wood
 et al. 2015</xref>) and complexity (see <italic>e.g.</italic>
 <xref alt="Galiana et al. 2022" rid="ref-Galiana2022Ecological" ref-type="bibr">Galiana
-et al. 2022</xref>), than any of these local networks. These local
-networks (which capture the <inline-formula><alternatives>
+et al. 2022</xref>), than any of these local networks. Local networks
+(which capture the <inline-formula><alternatives>
 <tex-math><![CDATA[\alpha]]></tex-math>
 <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>α</mml:mi></mml:math></alternatives></inline-formula>
 diversity of interactions) are a subset of the metaweb’s species and its
@@ -408,9 +428,8 @@ required to accurately produce downscaled, local predictions.</p>
   or rare interactions will be more prevalent in networks than common or
   strong interactions
   (<xref alt="Csermely 2004" rid="ref-Csermely2004Strong" ref-type="bibr">Csermely
-  2004</xref>), compared to strong, persistent interactions; this is
-  notably the case in food chains, wherein many weaker interactions are
-  key to the stability of a system
+  2004</xref>); this is notably the case in food chains, wherein many
+  weaker interactions are key to the stability of a system
   (<xref alt="Neutel, Heesterbeek, and de Ruiter 2002" rid="ref-Neutel2002Stability" ref-type="bibr">Neutel,
   Heesterbeek, and de Ruiter 2002</xref>). In the light of these
   observations, we expect to see an over-representation of
@@ -433,7 +452,8 @@ required to accurately produce downscaled, local predictions.</p>
   prediction
   (<xref alt="Gaucher, Klopp, and Robin 2021" rid="ref-Gaucher2021Outlier" ref-type="bibr">Gaucher,
   Klopp, and Robin 2021</xref>), but are able to work on generalizations
-  of the network. These considerations emphasize why metaweb predictions
+  of the network that capture statistical processes giving it its
+  structure. These considerations emphasize why metaweb predictions
   should focus on quantitative (preferentially probabilistic)
   predictions, and this should constrain the suite of models that are
   appropriate for prediction. Binary classifiers based on probabilities
@@ -457,10 +477,10 @@ required to accurately produce downscaled, local predictions.</p>
   to the false negatives. Furthermore, Strydom et al.
   (<xref alt="2022" rid="ref-Strydom2022Food" ref-type="bibr">2022</xref>)
   shows that t-SVD embedding is extremely robust to (and able to detect)
-  the presence of false positives. In a sense, that most ecological
-  interactions are elusive can call for a slightly different approach to
-  sampling: once the common interactions are documented, the effort
-  required in documenting each rare interaction will increase
+  the presence of false positives. In a sense, because most ecological
+  interactions are elusive, we should consider the direct consequences
+  this has on sampling: once the common interactions are documented, the
+  effort required in documenting each rare interaction will increase
   exponentially
   (<xref alt="Jordano 2016" rid="ref-Jordano2016Sampling" ref-type="bibr">Jordano
   2016</xref>). Recent proposals in other fields relying on machine
@@ -497,9 +517,9 @@ required to accurately produce downscaled, local predictions.</p>
     help to identify links (interactions) that may have been missed
     within the original community (represented by the orange dashed
     arrows, <bold>B</bold>). Transfer learning (<bold>D</bold>) allows
-    for the prediction links (interactions) even when novel species
+    for the prediction of links (interactions) even when novel species
     (<bold>C</bold>) are included alongside the original community. This
-    is achieved by learning using other relevant predictors
+    is achieved with other ecologically relevant predictors
     (<italic>e.g.</italic> traits) in conjunction with the known
     interactions to infer latent values (<bold>E</bold>). Ultimately
     this allows us to predict links (interactions) for species external
@@ -704,11 +724,11 @@ required to accurately produce downscaled, local predictions.</p>
         is concerned with joint-SDM-like approach, which is also very
         close to statistical associations as opposed to direct biotic
         interactions. Given the need to evaluate different methods on a
-        problem-specific basis, the fact that a lot of methods have not
-        been used on network problems is an opportunity for benchmarking
-        and method development. Note that the row for PCA also applies
-        to kernel/probabilistic PCA, which are variations on the more
-        general method of SVD. Note further that tSNE has been included
+        problem-specific basis, the fact that many methods have not been
+        used on network problems is an opportunity for benchmarking and
+        method development. Note that the row for PCA also applies to
+        kernel/probabilistic PCA, which are variations on the more
+        general method of SVD. Note further that t-SNE has been included
         because it is frequently used to embed graphs, including of
         species associations/interactions, despite not being strictly
         speaking, a graph embedding technique (see <italic>e.g.</italic>
@@ -734,7 +754,7 @@ required to accurately produce downscaled, local predictions.</p>
         </thead>
         <tbody>
           <tr>
-            <td>tSNE</td>
+            <td>t-SNE</td>
             <td>nodes</td>
             <td>statistical divergence</td>
             <td>Hinton and Roweis
@@ -983,7 +1003,7 @@ required to accurately produce downscaled, local predictions.</p>
   of the representation. In panel <bold>B</bold>, we show the increase
   in cumulative variance explained at each rank, and visualize that
   using 39 ranks explains about 70% of the variance in the empirical
-  metaweb. This is a different information from the
+  metaweb. This provides different information from the
   <inline-formula><alternatives>
   <tex-math><![CDATA[L_2]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
@@ -1006,13 +1026,14 @@ required to accurately produce downscaled, local predictions.</p>
   Because the values returned from RDPG are not bound to the unit
   interval, we performed a clamping of the weights to the unit space,
   showing a one-inflation in documented interactions, and a
-  zero-inflation in other species pairs. This last figure shows that
-  species pairs with no documented co-occurrence have weights that are
-  not distinguishable from species pairs with no documented
-  interactions; in other words, looking at the embedding, species that
-  do not co-occur are not easily distinguished from species that do not
-  interact. This suggests that (as befits a host-parasite model) the
-  ability to interact is a strong predictor of co-occurrence.</p>
+  zero-inflation in other species pairs. Panel <bold>D</bold>
+  specifically shows that species pairs with no documented co-occurrence
+  have weights that are not distinguishable from species pairs with no
+  documented interactions; in other words, looking at the embedding,
+  species that do not co-occur are not easily distinguished from species
+  that do not interact. This suggests that (as befits a host-parasite
+  model) the ability to interact is a strong predictor of
+  co-occurrence.</p>
   <fig id="fig-illustration-2">
     <caption><p>Figure 3: Ecological analysis of an embedding for a
     host-parasite metaweb, using Random Dot Product Graphs.
@@ -1027,22 +1048,23 @@ required to accurately produce downscaled, local predictions.</p>
     family.</p></caption>
     <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/fig-illustration-2-output-1.png" />
   </fig>
-  <p>The results of
+  <p>In <xref alt="Figure 3" rid="fig-illustration-2">Figure 3</xref>,
+  we relate the values of latent variables for hosts to different
+  ecologically-relevant data; we can perform this additional step,
+  because the results presented in
   <xref alt="Figure 2" rid="fig-illustration-1">Figure 2</xref> show
   that we can extract an embedding of the metaweb that captures enough
-  variance to be relevant; specifically, this is true for both
+  variance to be relevant. Importantly, this is true for both
   <inline-formula><alternatives>
   <tex-math><![CDATA[L_2]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
   loss (indicating that RDPG is able to capture pairwise processes) and
   the cumulative variance explained (indicating that RDPG is able to
-  capture network-level structure). Therefore, in
-  <xref alt="Figure 3" rid="fig-illustration-2">Figure 3</xref>, we
-  relate the values of latent variables for hosts to different
-  ecologically-relevant data. In panel <bold>A</bold>, we show that host
-  with a higher value on the first dimension have fewer parasites. This
-  relates to the body size of hosts in the <italic>PanTHERIA</italic>
-  database
+  capture network-level structure), which suggests that these approaches
+  may allow to predict interactions <italic>and</italic> network
+  structure. In panel <bold>A</bold>, we show that host with a higher
+  value on the first dimension have fewer parasites. This relates to the
+  body size of hosts in the <italic>PanTHERIA</italic> database
   (<xref alt="Jones et al. 2009" rid="ref-Jones2009Pantheria" ref-type="bibr">Jones
   et al. 2009</xref>), as shown in panel <bold>B</bold>: interestingly,
   the position on the first axis is only weakly correlated to body mass
@@ -1070,8 +1092,8 @@ required to accurately produce downscaled, local predictions.</p>
   planet-wide problems”; any inference of a metaweb must therefore
   contend with several novel, interwoven, families of problems. In this
   section, we outline three that we think are particularly important,
-  and can discuss how they may addressed with subsequent data analysis
-  or simulations, and how they emerge in the specific context of using
+  and discuss how they may be addressed with subsequent data analysis or
+  simulations, and how they emerge in the specific context of using
   embeddings; some of these issues are related to the application of
   these methods at the science-policy interface. Adressing these
   considerations as part of the methodological discussion is
@@ -1080,10 +1102,10 @@ required to accurately produce downscaled, local predictions.</p>
   <sec id="identifying-the-properties-of-the-network-to-embed">
     <title>Identifying the properties of the network to embed</title>
     <p>If the initial metaweb is too narrow in scope, notably from a
-    taxonomic point of view, the chances of finding another area with
-    enough related species (through phylogenetic relatedness or
-    similarity of functional traits) to make a reliable inference
-    decreases. This is because transfer requires similarity
+    taxonomic point of view, the chances decrease of finding another
+    area with enough related species (through phylogenetic relatedness
+    or similarity of functional traits) to make a reliable inference.
+    This is because transfer requires similarity
     (<xref alt="Figure 1" rid="fig-embedding">Figure 1</xref>). A
     diagnostic for the lack of similar species would likely be large
     confidence intervals during estimation of the values in the low-rank
@@ -1204,43 +1226,43 @@ required to accurately produce downscaled, local predictions.</p>
     beyond the technical and statistical, and into the governance
     consequences they can have. To embed data also embeds historical and
     contemporary biases that acted on these data, both because they
-    shaped the ecological processes generating them, and the global
-    processes leading to their measurement and publication. For a domain
-    as vast as species interaction networks, these biases exist at
-    multiple scales along the way, and a challenge for prediction is not
-    only to develop (or adopt) new quantitative tools, but to assess the
-    behavior of these tools in the proper context.</p>
+    shaped the ecological processes generating them (see Box 2), and the
+    global processes leading to their measurement and publication. For a
+    domain as vast as species interaction networks, these biases exist
+    at multiple scales along the way, and a challenge for prediction is
+    not only to develop (or adopt) new quantitative tools, but to assess
+    the behavior of these tools in the proper context.</p>
   </sec>
 </sec>
 <sec id="conclusion">
   <title>Conclusion</title>
   <p>Although promising, the application of embeddings to metaweb
-  prediction will require to address several challenges. First, there is
-  a need to understand how to define a metaweb as a single, cohesive,
-  unit of ecological organisation. This is likely to admit very
-  different answers based on the specific taxonomic group, temporal and
-  spatial resolution, and question being investigated. Second, there is
-  a need to understand the scale at which these predictions are
-  relevant. Although we have documented many cases of using embedding to
-  fill gaps in the metaweb, these techniques can likely be brought into
-  a spatial (and possibly temporal) context. The validation of these
-  predictions will have to proceed jointly with empirical sampling of
-  interactions, but also with the design of downsampling methods.
-  Finally, there is a need for a greater understanding of how biases in
-  the data propagate to the predictions. Because the volume of metawebs
-  is currently low, and because graph embeddings have not been commonly
-  applied, we anticipate that this discussion will take place
-  organically in the coming years.</p>
+  prediction still involved several challenges. First, there is a need
+  to understand how to define a metaweb as a single, cohesive, unit of
+  ecological organisation. This is likely to have very different answers
+  based on the specific taxonomic group, temporal and spatial
+  resolution, and question being investigated. Second, there is a need
+  to understand the scale at which these predictions are relevant.
+  Although we have documented many cases of using embedding to fill gaps
+  in the metaweb, these techniques can likely be brought into a spatial
+  (and possibly temporal) context. The validation of these predictions
+  will have to proceed jointly with empirical sampling of interactions,
+  but also with the design of downsampling methods. Finally, there is a
+  need for a greater understanding of how biases in the data propagate
+  to the predictions. Because the volume of metawebs is currently low,
+  and because graph embeddings have not been commonly applied, we
+  anticipate that this discussion will take place organically in the
+  coming years.</p>
   <boxed-text>
   <p><bold>Box 2 - Minding legacies shaping ecological
   datasets</bold></p>
   <p>In large parts of the world, boundaries that delineate geographic
-  regions are merely a reflection the legacy of settler colonialism,
-  which drives global disparity in capacity to collect and publish
-  ecological data. Applying any embedding to biased data does not debias
-  them, but rather embeds these biases, propagating them to the models
-  using embeddings to make predictions. Furthermore, the use of
-  ecological data itself is not an apolitical act
+  regions are a legacy of settler colonialism, which drives global
+  disparity in capacity to collect and publish ecological data. Applying
+  any embedding to biased data does not debias them, but rather embeds
+  these biases, propagating them to the models using embeddings to make
+  predictions. Furthermore, the use of ecological data itself is not an
+  apolitical act
   (<xref alt="Nost and Goldstein 2021" rid="ref-Nost2021Political" ref-type="bibr">Nost
   and Goldstein 2021</xref>): data infrastructures tend to be designed
   to answer questions within national boundaries (therefore placing
@@ -1275,36 +1297,34 @@ required to accurately produce downscaled, local predictions.</p>
   and Garroway 2022</xref>). Thus, the set of species found at a
   specific location is not only as the result of a response to
   ecological processes separate from human influence, but also the
-  result of human-environment interaction as well as the result
+  result of human-environment interaction as well as the results of
   legislative/political histories.</p>
   </boxed-text>
   <p><bold>Acknowledgements:</bold> We acknowledge that this study was
   conducted on land within the traditional unceded territory of the
   Saint Lawrence Iroquoian, Anishinabewaki, Mohawk, Huron-Wendat, and
-  Omàmiwininiwak nations. TP, TS, DC, and LP received funding from the
-  Canadian Institute for Ecology &amp; Evolution. FB is funded by the
-  Institute for Data Valorization (IVADO). TS, SB, and TP are funded by
-  a donation from the Courtois Foundation. CB was awarded a Mitacs
-  Elevate Fellowship no. IT12391, in partnership with fRI Research, and
-  also acknowledges funding from Alberta Innovates and the Forest
-  Resources Improvement Association of Alberta. M-JF acknowledges
-  funding from NSERC Discovery Grant and NSERC CRC. RR is funded by New
-  Zealand’s Biological Heritage Ngā Koiora Tuku Iho National Science
-  Challenge, administered by New Zealand Ministry of Business,
-  Innovation, and Employment. BM is funded by the NSERC Alexander Graham
-  Bell Canada Graduate Scholarship and the FRQNT master’s scholarship.
-  LP acknowledges funding from NSERC Discovery Grant (NSERC
+  Omàmiwininiwak nations. We thank Victoria Hemming for feedback on this
+  manuscript. TP, TS, DC, and LP received funding from the Canadian
+  Institute for Ecology &amp; Evolution. FB is funded by the Institute
+  for Data Valorization (IVADO). TS, SB, and TP are funded by a donation
+  from the Courtois Foundation. M-JF acknowledges funding from NSERC
+  Discovery Grant and NSERC CRC. RR is funded by New Zealand’s
+  Biological Heritage Ngā Koiora Tuku Iho National Science Challenge,
+  administered by New Zealand Ministry of Business, Innovation, and
+  Employment. BM is funded by the NSERC Alexander Graham Bell Canada
+  Graduate Scholarship and the FRQNT master’s scholarship. LP
+  acknowledges funding from NSERC Discovery Grant (NSERC
   RGPIN-2019-05771). TP acknowledges financial support from the
   Fondation Courtois, and NSERC through the Discovery Grants and
   Discovery Accelerator Supplement programs. MJF is supported by an
   NSERC PDF and an RBC Post-Doctoral Fellowship.</p>
   <p><bold>Conflict of interest:</bold> The authors have no conflict of
   interests to disclose</p>
-  <p><bold>Authors’ contributions:</bold> TS, and TP conceived the ideas
+  <p><bold>Authors’ contributions:</bold> TS and TP conceived the ideas
   discussed in the manuscript. All authors contributed to writing and
   editing the manuscript.</p>
-  <p><bold>Data availability:</bold> There is no data associated with
-  this manuscript.</p>
+  <p><bold>Data availability:</bold> The code to collect the data use in
+  figures is distributed as part of the Supplementary Material.</p>
 </sec>
 <sec id="references">
   <title>References</title>
