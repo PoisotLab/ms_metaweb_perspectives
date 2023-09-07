@@ -305,113 +305,119 @@ of British Columbia, Vancouver, Canada</institution>
 </front>
 
 <body>
-<p>The ability to infer potential biotic interactions could serve as a
-significant breakthrough in our ability to conceptualize networks over
-large spatial scales
-(<xref alt="Hortal et al. 2015" rid="ref-Hortal2015Seven" ref-type="bibr">Hortal
-et al. 2015</xref>). Reliable inferences would not only boost our
-understanding of the structure of species interaction networks, but also
-increase the amount of information that can be used for biodiversity
-management. In a recent overview of the field of ecological network
-prediction, Strydom et al.
-(<xref alt="2021" rid="ref-Strydom2021Roadmap" ref-type="bibr">2021</xref>)
-identified two challenges of interest to the prediction of interactions
-at large scales. First, there is a relative scarcity of relevant data in
-most places globally – which, due to the limitations in most predictive
-methods, restricts the ability to infer interactions to locations where
-it is least required (<italic>i.e.</italic> regions where we already
-have interaction data) leaving us unable to make inference in data
-scarce regions (where we most need it); second, accurate predictors are
-important for accurate predictions, and the lack of methods that can
-leverage a small amount of <italic>accurate</italic> data is a serious
-impediment to our predictive ability. In this contribution, we (i)
-highlight the power of viewing (and constructing) metawebs as
-<italic>probabilistic</italic> objects in the context of low-probability
-interactions, (ii) discuss how a family of machine learning tools (graph
-embeddings and transfer learning) can be used to overcome data
-limitations to metaweb inference, and (iii) highlight how the use of
-metawebs introduces important questions for the field of network
-ecology.</p>
-<p>In most places, our most reliable biodiversity knowledge is that of a
-species pool where a set of potentially interacting species in a given
-area could occur: through the analysis of databases like the Global
-Biodiversity Information Facility (GBIF) or the International Union for
-the Conservation of Nature (IUCN), it is possible to construct a list of
-species for a region of interest. Following the definition of Dunne
-(<xref alt="2006" rid="ref-Dunne2006Network" ref-type="bibr">2006</xref>),
-a metaweb is the ecological network analogue to the species pool;
-specifically, it inventories all <italic>potential</italic> interactions
-between species for a spatially delimited area (and so captures the
-<inline-formula><alternatives>
-<tex-math><![CDATA[\gamma]]></tex-math>
-<mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>γ</mml:mi></mml:math></alternatives></inline-formula>
-diversity of interactions as per Poisot et al.
-(<xref alt="2012" rid="ref-Poisot2012Dissimilarity" ref-type="bibr">2012</xref>)).
-However, inferring the potential interactions between these species
-still remains a challenge. And yet, the metaweb holds valuable
-ecological information: it represents the joint effect of functional,
-phylogenetic, and macroecological processes
-(<xref alt="Morales-Castilla et al. 2015" rid="ref-Morales-Castilla2015Inferring" ref-type="bibr">Morales-Castilla
-et al. 2015</xref>;
-<xref alt="Carlson et al. 2022" rid="ref-carlson2022" ref-type="bibr">Carlson
-et al. 2022</xref>;
-<xref alt="Morales-Castilla et al. 2021" rid="ref-morales-castilla2021" ref-type="bibr">Morales-Castilla
-et al. 2021</xref>). Specifically, it represents the “upper bounds” on
-what the composition of the local networks, given a local species pool,
-can be (see <italic>e.g.</italic>
-<xref alt="McLeod et al. 2021" rid="ref-McLeod2021Sampling" ref-type="bibr">McLeod
-et al. 2021</xref>); this information can help evaluate the ability of
-ecological assemblages to withstand the effects of, for example, climate
-change
-(<xref alt="Fricke et al. 2022" rid="ref-Fricke2022Effects" ref-type="bibr">Fricke
-et al. 2022</xref>). These local networks may be reconstructed given an
-appropriate knowledge of local species composition and provide
-information on the structure of networks at finer spatial scales. This
-has been done for example for tree-galler-parasitoid systems
-(<xref alt="Gravel et al. 2018" rid="ref-Gravel2018Bringing" ref-type="bibr">Gravel
-et al. 2018</xref>), fish trophic interactions
-(<xref alt="Albouy et al. 2019" rid="ref-Albouy2019Marine" ref-type="bibr">Albouy
-et al. 2019</xref>), terrestrial tetrapod trophic interactions
-(<xref alt="J. Braga et al. 2019" rid="ref-Braga2019Spatial" ref-type="bibr">J.
-Braga et al. 2019</xref>;
-<xref alt="O’Connor et al. 2020" rid="ref-OConnor2020Unveiling" ref-type="bibr">O’Connor
-et al. 2020</xref>), and crop-pest networks
-(<xref alt="Grünig et al. 2020" rid="ref-Grunig2020Crop" ref-type="bibr">Grünig
-et al. 2020</xref>).</p>
-<p>The metaweb itself is not a prediction of local networks at specific
-locations within the spatial area it covers: it will have a different
-structure, notably by having a larger connectance (see
-<italic>e.g.</italic>
-<xref alt="Wood et al. 2015" rid="ref-Wood2015Effects" ref-type="bibr">Wood
-et al. 2015</xref>) and complexity (see <italic>e.g.</italic>
-<xref alt="Galiana et al. 2022" rid="ref-Galiana2022Ecological" ref-type="bibr">Galiana
-et al. 2022</xref>), than any of these local networks. Local networks
-(which capture the <inline-formula><alternatives>
-<tex-math><![CDATA[\alpha]]></tex-math>
-<mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>α</mml:mi></mml:math></alternatives></inline-formula>
-diversity of interactions) are a subset of the metaweb’s species and its
-realized interactions, and have been called “metaweb realizations”
-(<xref alt="Poisot, Stouffer, and Gravel 2015" rid="ref-Poisot2015Species" ref-type="bibr">Poisot,
-Stouffer, and Gravel 2015</xref>). Differences between local networks
-and their metawebs are due to chance, species abundance and
-co-occurrence, local environmental conditions, and local distribution of
-functional traits, among others. Specifically, although co-occurrence
-can be driven by interactions
-(<xref alt="Cazelles et al. 2016" rid="ref-Cazelles2016Theory" ref-type="bibr">Cazelles
-et al. 2016</xref>), co-occurrence alone is not a predictor of
-interactions
-(<xref alt="Blanchet, Cazelles, and Gravel 2020" rid="ref-Blanchet2020Cooccurrence" ref-type="bibr">Blanchet,
-Cazelles, and Gravel 2020</xref>;
-<xref alt="Thurman et al. 2019" rid="ref-Thurman2019Testing" ref-type="bibr">Thurman
-et al. 2019</xref>), and therefore the lack of co-occurrence cannot be
-used to infer the lack of a feasible interaction. Yet, recent results by
-Saravia et al.
-(<xref alt="2021" rid="ref-Saravia2021Ecological" ref-type="bibr">2021</xref>)
-strongly suggested that local (metaweb) realizations only respond weakly
-to local conditions: instead, they reflect constraints inherited by the
-structure of their metaweb. This sets up the core goal of predictive
-network ecology as the prediction of metaweb structure, as it is
-required to accurately produce downscaled, local predictions.</p>
+<sec id="introduction">
+  <title>Introduction</title>
+  <p>The ability to infer potential biotic interactions could serve as a
+  significant breakthrough in our ability to conceptualize networks over
+  large spatial scales
+  (<xref alt="Hortal et al. 2015" rid="ref-Hortal2015Seven" ref-type="bibr">Hortal
+  et al. 2015</xref>). Reliable inferences would not only boost our
+  understanding of the structure of species interaction networks, but
+  also increase the amount of information that can be used for
+  biodiversity management. In a recent overview of the field of
+  ecological network prediction, Strydom et al.
+  (<xref alt="2021" rid="ref-Strydom2021Roadmap" ref-type="bibr">2021</xref>)
+  identified two challenges of interest to the prediction of
+  interactions at large scales. First, there is a relative scarcity of
+  relevant data in most places globally – which, due to the limitations
+  in most predictive methods, restricts the ability to infer
+  interactions to locations where it is least required
+  (<italic>i.e.</italic> regions where we already have interaction data)
+  leaving us unable to make inference in data scarce regions (where we
+  most need it); second, accurate predictors are important for accurate
+  predictions, and the lack of methods that can leverage a small amount
+  of <italic>accurate</italic> data is a serious impediment to our
+  predictive ability. In this contribution, we (i) highlight the power
+  of viewing (and constructing) metawebs as
+  <italic>probabilistic</italic> objects in the context of
+  low-probability interactions, (ii) discuss how a family of machine
+  learning tools (graph embeddings and transfer learning) can be used to
+  overcome data limitations to metaweb inference, and (iii) highlight
+  how the use of metawebs introduces important questions for the field
+  of network ecology.</p>
+  <p>In most places, our most reliable biodiversity knowledge is that of
+  a species pool where a set of potentially interacting species in a
+  given area could occur: through the analysis of databases like the
+  Global Biodiversity Information Facility (GBIF) or the International
+  Union for the Conservation of Nature (IUCN), it is possible to
+  construct a list of species for a region of interest. Following the
+  definition of Dunne
+  (<xref alt="2006" rid="ref-Dunne2006Network" ref-type="bibr">2006</xref>),
+  a metaweb is the ecological network analogue to the species pool;
+  specifically, it inventories all <italic>potential</italic>
+  interactions between species for a spatially delimited area (and so
+  captures the <inline-formula><alternatives>
+  <tex-math><![CDATA[\gamma]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>γ</mml:mi></mml:math></alternatives></inline-formula>
+  diversity of interactions as per Poisot et al.
+  (<xref alt="2012" rid="ref-Poisot2012Dissimilarity" ref-type="bibr">2012</xref>)).
+  However, inferring the potential interactions between these species
+  still remains a challenge. And yet, the metaweb holds valuable
+  ecological information: it represents the joint effect of functional,
+  phylogenetic, and macroecological processes
+  (<xref alt="Morales-Castilla et al. 2015" rid="ref-Morales-Castilla2015Inferring" ref-type="bibr">Morales-Castilla
+  et al. 2015</xref>;
+  <xref alt="Carlson et al. 2022" rid="ref-carlson2022" ref-type="bibr">Carlson
+  et al. 2022</xref>;
+  <xref alt="Morales-Castilla et al. 2021" rid="ref-morales-castilla2021" ref-type="bibr">Morales-Castilla
+  et al. 2021</xref>). Specifically, it represents the “upper bounds” on
+  what the composition of the local networks, given a local species
+  pool, can be (see <italic>e.g.</italic>
+  <xref alt="McLeod et al. 2021" rid="ref-McLeod2021Sampling" ref-type="bibr">McLeod
+  et al. 2021</xref>); this information can help evaluate the ability of
+  ecological assemblages to withstand the effects of, for example,
+  climate change
+  (<xref alt="Fricke et al. 2022" rid="ref-Fricke2022Effects" ref-type="bibr">Fricke
+  et al. 2022</xref>). These local networks may be reconstructed given
+  an appropriate knowledge of local species composition and provide
+  information on the structure of networks at finer spatial scales. This
+  has been done for example for tree-galler-parasitoid systems
+  (<xref alt="Gravel et al. 2018" rid="ref-Gravel2018Bringing" ref-type="bibr">Gravel
+  et al. 2018</xref>), fish trophic interactions
+  (<xref alt="Albouy et al. 2019" rid="ref-Albouy2019Marine" ref-type="bibr">Albouy
+  et al. 2019</xref>), terrestrial tetrapod trophic interactions
+  (<xref alt="J. Braga et al. 2019" rid="ref-Braga2019Spatial" ref-type="bibr">J.
+  Braga et al. 2019</xref>;
+  <xref alt="O’Connor et al. 2020" rid="ref-OConnor2020Unveiling" ref-type="bibr">O’Connor
+  et al. 2020</xref>), and crop-pest networks
+  (<xref alt="Grünig et al. 2020" rid="ref-Grunig2020Crop" ref-type="bibr">Grünig
+  et al. 2020</xref>).</p>
+  <p>The metaweb itself is not a prediction of local networks at
+  specific locations within the spatial area it covers: it will have a
+  different structure, notably by having a larger connectance (see
+  <italic>e.g.</italic>
+  <xref alt="Wood et al. 2015" rid="ref-Wood2015Effects" ref-type="bibr">Wood
+  et al. 2015</xref>) and complexity (see <italic>e.g.</italic>
+  <xref alt="Galiana et al. 2022" rid="ref-Galiana2022Ecological" ref-type="bibr">Galiana
+  et al. 2022</xref>), than any of these local networks. Local networks
+  (which capture the <inline-formula><alternatives>
+  <tex-math><![CDATA[\alpha]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>α</mml:mi></mml:math></alternatives></inline-formula>
+  diversity of interactions) are a subset of the metaweb’s species and
+  its realized interactions, and have been called “metaweb realizations”
+  (<xref alt="Poisot, Stouffer, and Gravel 2015" rid="ref-Poisot2015Species" ref-type="bibr">Poisot,
+  Stouffer, and Gravel 2015</xref>). Differences between local networks
+  and their metawebs are due to chance, species abundance and
+  co-occurrence, local environmental conditions, and local distribution
+  of functional traits, among others. Specifically, although
+  co-occurrence can be driven by interactions
+  (<xref alt="Cazelles et al. 2016" rid="ref-Cazelles2016Theory" ref-type="bibr">Cazelles
+  et al. 2016</xref>), co-occurrence alone is not a predictor of
+  interactions
+  (<xref alt="Blanchet, Cazelles, and Gravel 2020" rid="ref-Blanchet2020Cooccurrence" ref-type="bibr">Blanchet,
+  Cazelles, and Gravel 2020</xref>;
+  <xref alt="Thurman et al. 2019" rid="ref-Thurman2019Testing" ref-type="bibr">Thurman
+  et al. 2019</xref>), and therefore the lack of co-occurrence cannot be
+  used to infer the lack of a feasible interaction. Yet, recent results
+  by Saravia et al.
+  (<xref alt="2021" rid="ref-Saravia2021Ecological" ref-type="bibr">2021</xref>)
+  strongly suggested that local (metaweb) realizations only respond
+  weakly to local conditions: instead, they reflect constraints
+  inherited by the structure of their metaweb. This sets up the core
+  goal of predictive network ecology as the prediction of metaweb
+  structure, as it is required to accurately produce downscaled, local
+  predictions.</p>
+</sec>
 <sec id="a-metaweb-is-an-inherently-probabilistic-object">
   <title>A metaweb is an inherently probabilistic object</title>
   <p>Treating interactions as probabilistic (as opposed to binary)

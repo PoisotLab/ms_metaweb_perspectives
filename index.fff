@@ -1,0 +1,70 @@
+\begin{figure}
+
+{\centering \includegraphics{figures/conceptual_2.png}
+
+}
+
+\caption{\label{fig-embedding}The embedding process (\textbf{A}) can
+help to identify links (interactions) that may have been missed within
+the original community (represented by the orange dashed arrows,
+\textbf{B}). Transfer learning (\textbf{D}) allows for the prediction of
+links (interactions) even when novel species (\textbf{C}) are included
+alongside the original community. This is achieved with other
+ecologically relevant predictors (\emph{e.g.} traits) in conjunction
+with the known interactions to infer latent values (\textbf{E}).
+Ultimately this allows us to predict links (interactions) for species
+external from the original sample (blue dashed arrows) as well as
+missing within sample links (\textbf{F}). Within this context the
+predicted (and original) networks as well as the ecological predictors
+used (green boxes) are products that can be quantified through
+measurements in the field, whereas the embedded as well as imputed
+matrices (purple box) are representative of a decomposition of the
+interaction matrices onto the embedding space}
+
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+
+{\centering \includegraphics{index_files/figure-latex/fig-illustration-1-output-1.png}
+
+}
+
+\caption{\label{fig-illustration-1}Validation of an embedding for a
+host-parasite metaweb, using Random Dot Product Graphs. \textbf{A},
+decrease in approximation error as the number of dimensions in the
+subspaces increases. \textbf{B}, increase in cumulative variance
+explained as the number of ranks considered increases; in \textbf{A} and
+\textbf{B}, the dot represents the point of inflexion in the curve (at
+rank 39) estimated using the finite differences method. \textbf{C},
+position of hosts and parasites in the space of latent variables on the
+first and second dimensions of their respective subspaces (the results
+have been clamped to the unit interval). \textbf{D}, predicted
+interaction weight from the RDPG based on the status of the species pair
+in the metaweb. Source:
+\href{https://PoisotLab.github.io/ms_metaweb_perspectives/notebooks/SupplementaryMaterial-preview.html\#cell-fig-illustration-1}{Demonstration
+of metaweb embedding using RDPG}}
+
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[H]
+
+{\centering \includegraphics{index_files/figure-latex/fig-illustration-2-output-1.png}
+
+}
+
+\caption{\label{fig-illustration-2}Ecological analysis of an embedding
+for a host-parasite metaweb, using Random Dot Product Graphs.
+\textbf{A}, relationship between the number of parasites and position
+along the first axis of the right-subspace for all hosts, showing that
+the embedding captures elements of network structure at the species
+scale. \textbf{B}, weak relationship between the body mass of hosts (in
+grams) and the position alongside the same dimension. \textbf{C}, weak
+relationship between body mass of hosts and parasite richness.
+\textbf{D}, distribution of positions alongside the same axis for hosts
+grouped by taxonomic family. Source:
+\href{https://PoisotLab.github.io/ms_metaweb_perspectives/notebooks/SupplementaryMaterial-preview.html\#cell-fig-illustration-2}{Demonstration
+of metaweb embedding using RDPG}}
+
+\end{figure}
